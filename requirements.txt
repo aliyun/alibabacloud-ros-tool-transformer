@@ -1,0 +1,4 @@
+typer==0.2.1
+colorama==0.4.3
+openpyxl==3.0.3
+PyYAML==5.3.1

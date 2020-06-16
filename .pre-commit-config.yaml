@@ -1,0 +1,4 @@
+- repo: https://github.com/pre-commit/mirrors-autopep8
+  rev: 'v1.5.2'
+  hooks:
+    - id: autopep8
