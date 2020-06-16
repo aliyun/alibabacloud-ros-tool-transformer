@@ -41,7 +41,7 @@ setup(
     install_requires=requirements,
     classifiers=(
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: Apache License 2.0",
+        "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
