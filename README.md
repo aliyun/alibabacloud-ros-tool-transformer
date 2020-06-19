@@ -7,7 +7,7 @@ Python 3.6+
 
 ## Installation
 ```bash
-pip3 install alibabacloud-ros-tran
+python setup.py install
 ```
 
 ## Usage
