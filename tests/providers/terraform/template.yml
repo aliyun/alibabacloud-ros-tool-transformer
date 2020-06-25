@@ -1,0 +1,57 @@
+Outputs:
+  const_map:
+    Value:
+      foo: bar
+  instance_id:
+    Value:
+      Fn::GetAtt:
+      - alicloud_instance.myinstance
+      - InstanceId
+ROSTemplateFormatVersion: '2015-09-01'
+Resources:
+  alicloud_instance.myinstance:
+    DependsOn:
+    - alicloud_security_group.mysg
+    Properties:
+      DiskMappings:
+      - Category: cloud_efficiency
+        Description: null
+        DiskName: mydisk1
+        Size: 20
+      - Category: cloud_essd
+        Description: disk 2
+        DiskName: mydisk2
+        Size: 25
+      ImageId: centos_6_10_x64_20G_alibase_20200519.vhd
+      InstanceName: myinstance
+      InstanceType: ecs.n1.medium
+      SecurityGroupId: null
+      SystemDiskCategory: cloud_efficiency
+      VSwitchId:
+        Fn::GetAtt:
+        - alicloud_vswitch.myvswitch
+        - VSwitchId
+    Type: ALIYUN::ECS::Instance
+  alicloud_security_group.mysg:
+    Properties:
+      SecurityGroupName: mysg
+      VpcId:
+        Fn::GetAtt:
+        - alicloud_vpc.myvpc
+        - VpcId
+    Type: ALIYUN::ECS::SecurityGroup
+  alicloud_vpc.myvpc:
+    Properties:
+      CidrBlock: 172.16.0.0/12
+      VpcName: myvpc
+    Type: ALIYUN::ECS::VPC
+  alicloud_vswitch.myvswitch:
+    Properties:
+      CidrBlock: 172.16.0.0/21
+      VSwitchName: myvswitch
+      VpcId:
+        Fn::GetAtt:
+        - alicloud_vpc.myvpc
+        - VpcId
+      ZoneId: cn-beijing-g
+    Type: ALIYUN::ECS::VSwitch

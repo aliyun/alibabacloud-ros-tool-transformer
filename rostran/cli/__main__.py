@@ -8,22 +8,29 @@ from pathlib import Path
 import typer
 
 from rostran.core import exceptions
-from rostran.core.format import (SourceTemplateFormat, TargetTemplateFormat, GeneratorFileFormat,
-                                 convert_template_to_file_format)
+from rostran.core.format import (
+    SourceTemplateFormat,
+    TargetTemplateFormat,
+    GeneratorFileFormat,
+    convert_template_to_file_format,
+)
 
 app = typer.Typer(help=__doc__)
 SOURCE_TEMPLATE_FORMAT_DEFAULT = typer.Option(
-    SourceTemplateFormat.Auto, help='Source template format')
+    SourceTemplateFormat.Auto, help="Source template format"
+)
 TARGET_TEMPLATE_FORMAT_DEFAULT = typer.Option(
-    TargetTemplateFormat.Auto, help='Target template format')
+    TargetTemplateFormat.Auto, help="Target template format"
+)
 
 
 @app.command()
 def transform(
-        source_path: str,
-        source_format: SourceTemplateFormat = SOURCE_TEMPLATE_FORMAT_DEFAULT,
-        target_path: str = typer.Argument(None),
-        target_format: TargetTemplateFormat = TARGET_TEMPLATE_FORMAT_DEFAULT):
+    source_path: str,
+    source_format: SourceTemplateFormat = SOURCE_TEMPLATE_FORMAT_DEFAULT,
+    target_path: str = typer.Argument(None),
+    target_format: TargetTemplateFormat = TARGET_TEMPLATE_FORMAT_DEFAULT,
+):
     """
     Transform AWS CloudFormation/Terraform/Excel template to ROS template.
 
@@ -38,11 +45,11 @@ def transform(
         raise exceptions.TemplateNotExist(path=source_path)
 
     if source_format == SourceTemplateFormat.Auto:
-        if source_path.endswith('.xlsx'):
+        if source_path.endswith(".xlsx"):
             source_format = SourceTemplateFormat.Excel
-        elif source_path.endswith('.tf'):
+        elif source_path.endswith(".tf"):
             source_format = SourceTemplateFormat.Terraform
-        elif source_path.endswith(('.json', '.yaml', '.yml')):
+        elif source_path.endswith((".json", ".yaml", ".yml")):
             source_format = SourceTemplateFormat.CloudFormation
         else:
             raise exceptions.TemplateNotSupport(path=source_path)
@@ -50,14 +57,14 @@ def transform(
     # handle target template
     if not target_path:
         if target_format in (TargetTemplateFormat.Auto, TargetTemplateFormat.Yaml):
-            target_path = 'template.yml'
+            target_path = "template.yml"
             target_format = TargetTemplateFormat.Yaml
         else:
-            target_path = 'template.json'
+            target_path = "template.json"
     elif target_format == TargetTemplateFormat.Auto:
-        if target_path.endswith(('.yaml', '.yml')):
+        if target_path.endswith((".yaml", ".yml")):
             target_format = TargetTemplateFormat.Yaml
-        elif target_path.endswith('.json'):
+        elif target_path.endswith(".json"):
             target_format = TargetTemplateFormat.Json
         else:
             raise exceptions.TemplateNotSupport(path=target_path)
@@ -69,20 +76,20 @@ def transform(
         raise exceptions.PathNotExist(path=path.parent)
 
     # initialize template
-    source_file_format = convert_template_to_file_format(
-        source_format, source_path)
+    source_file_format = convert_template_to_file_format(source_format, source_path)
 
     if source_format == SourceTemplateFormat.Excel:
         from ..providers import ExcelTemplate
+
         template = ExcelTemplate.initialize(source_path, source_file_format)
     elif source_format == SourceTemplateFormat.Terraform:
         from ..providers import TerraformTemplate
-        template = TerraformTemplate.initialize(
-            source_path, source_file_format)
+
+        template = TerraformTemplate.initialize(source_path, source_file_format)
     elif source_format == SourceTemplateFormat.CloudFormation:
         from ..providers import CloudFormationTemplate
-        template = CloudFormationTemplate.initialize(
-            source_path, source_file_format)
+
+        template = CloudFormationTemplate.initialize(source_path, source_file_format)
     else:
         raise exceptions.TemplateNotSupport(path=source_path)
 
@@ -95,32 +102,33 @@ def transform(
     else:
         for i, ros_template in enumerate(ros_templates):
             name_parts = os.path.splitext(target_path)
-            path = f'{name_parts[0]}-{i}{name_parts[1]}'
+            path = f"{name_parts[0]}-{i}{name_parts[1]}"
             ros_template.save(path, target_format)
 
 
 @app.command()
-def generate(resource_type: str, file_format: GeneratorFileFormat = GeneratorFileFormat.Excel):
+def generate(
+    resource_type: str, file_format: GeneratorFileFormat = GeneratorFileFormat.Excel
+):
     """
     Generate specific resource template file by given resource type.
     """
-    typer.echo(
-        f'Generate "{resource_type}" to ROS template (Format: {file_format})')
+    typer.echo(f'Generate "{resource_type}" to ROS template (Format: {file_format})')
 
 
 def main():
-    logging.basicConfig(level=logging.INFO, format='%(message)s')
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
     try:
-        typer.main.get_command(app)(prog_name='rostran')
+        typer.main.get_command(app)(prog_name="rostran")
     except exceptions.RosTranWarning as e:
-        typer.secho(f'{e}', fg=typer.colors.YELLOW)
-        typer.Exit(0)
-    except exceptions.RosTranException as e:
-        typer.secho(f'{e}', fg=typer.colors.RED)
+        typer.secho(f"{e}", fg=typer.colors.YELLOW)
         typer.Exit(1)
+    except exceptions.RosTranException as e:
+        typer.secho(f"{e}", fg=typer.colors.RED)
+        typer.Exit(2)
     except Exception as e:
-        typer.secho(f'{e}', fg=typer.colors.RED)
+        typer.secho(f"{e}", fg=typer.colors.RED)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,0 +1,115 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: alicloud_instance
+  To: ALIYUN::ECS::Instance
+Properties:
+  image_id:
+    To: ImageId
+  instance_type:
+    To: InstanceType
+  io_optimized:
+    Ignore: true
+  security_groups:
+    To: SecurityGroupId
+    Warning: Only first security group id can be used
+    Handler: ecs_security_group_first_id
+  availability_zone:
+    To: ZoneId
+  instance_name:
+    To: InstanceName
+  allocate_public_ip:
+    To: AllocatePublicIP
+  system_disk_category:
+    To: SystemDiskCategory
+  system_disk_size:
+    To: SystemDiskSize
+  system_disk_auto_snapshot_policy_id:
+    Ignore: true
+  description:
+    To: Description
+  internet_charge_type:
+    To: InternetChargeType
+  internet_max_bandwidth_in:
+    To: InternetMaxBandwidthIn
+  internet_max_bandwidth_out:
+    To: InternetMaxBandwidthOut
+  host_name:
+    To: HostName
+  password:
+    To: Password
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  instance_charge_type:
+    To: InstanceChargeType
+  resource_group_id:
+    To: ResourceGroupId
+  period_unit:
+    To: PeriodUnit
+  period:
+    To: Period
+  renewal_status:
+    Ignore: true
+  auto_renew_period:
+    To: AutoRenewPeriod
+  auto_renew:
+    To: AutoRenew
+  tags:
+    To: Tags
+  volume_tags:
+    Ignore: true
+  user_data:
+    To: UserData
+  key_name:
+    To: KeyPairName
+  role_name:
+    To: RamRoleName
+  include_data_disks:
+    Ignore: true
+  dry_run:
+    Ignore: true
+  private_ip:
+    To: PrivateIpAddress
+  credit_specification:
+    Ignore: true
+  spot_strategy:
+    To: SpotStrategy
+  spot_price_limit:
+    To: SpotPriceLimit
+  deletion_protection:
+    To: DeletionProtection
+  force_delete:
+    Ignore: true
+  security_enhancement_strategy:
+    Ignore: true
+  data_disks:
+    To: DiskMappings
+    Type: List
+    Schema:
+      name:
+        To: DiskName
+      size:
+        To: Size
+      category:
+        To: Category
+      encrypted:
+        Ignore: true
+      snapshot_id:
+        To: SnapshotId
+      auto_snapshot_policy_id:
+        Ignore: true
+      delete_with_instance:
+        Ignore: true
+      description:
+        To: Description
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  public_ip:
+    To: PublicIp

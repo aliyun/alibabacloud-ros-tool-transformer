@@ -1,5 +1,5 @@
 class RosTranException(Exception):
-    msg = 'Internal error'
+    msg = "Internal error"
 
     def __init__(self, **kwargs):
         self.kwargs = kwargs
@@ -10,7 +10,7 @@ class RosTranException(Exception):
 
 
 class RosTranWarning(RosTranException):
-    msg = '{message}.'
+    msg = "{message}."
 
 
 class PathNotExist(RosTranException):
@@ -34,32 +34,76 @@ class TemplateFormatNotSupport(RosTranException):
 
 
 class InvalidTemplateParameter(RosTranException):
-    msg = 'Invalid template parameter {name}. {reason}.'
+    msg = "Invalid template parameter {name}. {reason}."
 
 
 class InvalidTemplateResource(RosTranException):
-    msg = 'Invalid template resource {name}. {reason}.'
+    msg = "Invalid template resource {name}. {reason}."
 
 
 class InvalidTemplateProperty(RosTranException):
-    msg = 'Invalid template property {name}. {reason}.'
+    msg = "Invalid template property {name}. {reason}."
+
+
+class InvalidTemplateOutput(RosTranException):
+    msg = "Invalid template output {name}. {reason}."
 
 
 class InvalidExcelTemplate(RosTranException):
-    msg = 'Invalid excel template. {reason}.'
+    msg = "Invalid excel template. {reason}."
 
 
 class InvalidExpression(RosTranException):
-    msg = 'Invalid expression {expression}.'
+    msg = "Invalid expression {expression}."
 
 
 class ConflictDataTypeInExpression(RosTranException):
-    msg = 'Conflict data type in expression {expression}.'
+    msg = "Conflict data type in expression {expression}."
 
 
 class DiscontinuousIndexInExpression(RosTranException):
-    msg = 'Discontinuous index {index} in expression {expression}.'
+    msg = "Discontinuous index {index} in expression {expression}."
 
 
 class InvalidIndexInExpression(RosTranException):
-    msg = 'Invalid index {index} in expression {expression}.'
+    msg = "Invalid index {index} in expression {expression}."
+
+
+class CommandNotFound(RosTranException):
+    msg = "Command {cmd} not found."
+
+
+class RunCommandFailed(RosTranException):
+    msg = "Run command {cmd} failed. Reason: {reason}."
+
+
+class TerraformPlanFormatVersionNotSupported(RosTranException):
+    msg = "Terraform plan format version {version} not supported."
+
+
+class TerraformMultiProvidersNotSupported(RosTranException):
+    msg = "Terraform multiple providers transformation is not supported."
+
+
+class TerraformProviderNotFound(RosTranException):
+    msg = "Terraform provider not found."
+
+
+class InvalidRuleSchema(RosTranException):
+    msg = 'Invalid rule file "{path}". Reason: {reason}.'
+
+
+class RuleVersionNotSupport(RosTranException):
+    msg = 'Rule file "{path}"(version: {version}) is not supported.'
+
+
+class RuleTypeNotSupport(RosTranException):
+    msg = 'Rule file "{path}"(type: {type}) is not supported.'
+
+
+class RuleAlreadyExist(RosTranException):
+    msg = 'Rule "{id}"(path: {path}) already exists.'
+
+
+class SystemNotSupport(RosTranException):
+    msg = "Current system {name} is not supported."

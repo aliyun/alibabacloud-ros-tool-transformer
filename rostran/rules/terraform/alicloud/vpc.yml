@@ -1,0 +1,29 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: alicloud_vpc
+  To: ALIYUN::ECS::VPC
+Properties:
+  cidr_block:
+    To: CidrBlock
+  name:
+    To: VpcName
+  description:
+    To: Description
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    To: Tags
+Attributes:
+  id:
+    To: VpcId
+  cidr_block:
+    Ignore: true
+  name:
+    Ignore: true
+  description:
+    Ignore: true
+  router_id:
+    To: VRouterId
+  route_table_id:
+    To: RouteTableId

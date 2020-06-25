@@ -1,0 +1,19 @@
+Version: 2020-06-01
+Type: PseudoParameters
+PseudoParameters:
+  AWS::AccountId:
+    To: ALIYUN::TenantId
+  AWS::NoValue:
+    To: ALIYUN::NoValue
+  AWS::Region:
+    To: ALIYUN::Region
+  AWS::StackId:
+    To: ALIYUN::StackId
+  AWS::StackName:
+    To: ALIYUN::StackName
+  AWS::NotificationARNs:
+    Ignore: true
+  AWS::Partition:
+    Ignore: true
+  AWS::URLSuffix:
+    Ignore: true

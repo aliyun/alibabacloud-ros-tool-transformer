@@ -1,0 +1,4 @@
+include requirements.txt
+include LICENSE
+recursive-include rostran/bin *
+recursive-include rostran/rules *

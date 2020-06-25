@@ -2,27 +2,27 @@ from enum import Enum
 
 
 class SourceTemplateFormat(str, Enum):
-    Auto = 'auto'
-    CloudFormation = 'cloudformation'
-    Terraform = 'terraform'
-    Excel = 'excel'
+    Auto = "auto"
+    CloudFormation = "cloudformation"
+    Terraform = "terraform"
+    Excel = "excel"
 
 
 class TargetTemplateFormat(str, Enum):
-    Auto = 'auto'
-    Json = 'json'
-    Yaml = 'yaml'
+    Auto = "auto"
+    Json = "json"
+    Yaml = "yaml"
 
 
 class GeneratorFileFormat(str, Enum):
-    Excel = 'excel'
+    Excel = "excel"
 
 
 class FileFormat(Enum):
-    Json = 'json'
-    Yaml = 'yaml'
-    Excel = 'excel'
-    Terraform = 'terraform'
+    Json = "json"
+    Yaml = "yaml"
+    Excel = "excel"
+    Terraform = "terraform"
 
 
 def convert_template_to_file_format(template_format, template_path: str = None):
@@ -33,17 +33,18 @@ def convert_template_to_file_format(template_format, template_path: str = None):
             return FileFormat.Terraform
         elif template_format == SourceTemplateFormat.CloudFormation:
             if template_path:
-                if template_path.endswith(('.yml', '.yaml')):
+                if template_path.endswith((".yml", ".yaml")):
                     return FileFormat.Yaml
-                elif template_path.endswith('.json'):
+                elif template_path.endswith(".json"):
                     return FileFormat.Json
             else:
                 raise ValueError(
-                    f'template_path is required when template_format is {template_format}')
+                    f"template_path is required when template_format is {template_format}"
+                )
     elif isinstance(template_format, TargetTemplateFormat):
         if template_format == TargetTemplateFormat.Yaml:
             return FileFormat.Yaml
         elif template_format == TargetTemplateFormat.Json:
             return FileFormat.Json
 
-    raise ValueError('Unsupported template_format {template_format}')
+    raise ValueError("Unsupported template_format {template_format}")

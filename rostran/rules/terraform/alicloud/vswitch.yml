@@ -1,0 +1,31 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: alicloud_vswitch
+  To: ALIYUN::ECS::VSwitch
+Properties:
+  availability_zone:
+    To: ZoneId
+  vpc_id:
+    To: VpcId
+  cidr_block:
+    To: CidrBlock
+  name:
+    To: VSwitchName
+  description:
+    To: Description
+  tags:
+    To: Tags
+Attributes:
+  id:
+    To: VSwitchId
+  availability_zone:
+    Ignore: true
+  cidr_block:
+    To: CidrBlock
+  vpc_id:
+    Ignore: true
+  name:
+    Ignore: true
+  description:
+    Ignore: true
