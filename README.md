@@ -1,6 +1,6 @@
 # ROS Template Transformer
 [ROS(Resource Orchestration Service)](https://www.alibabacloud.com/product/ros) Template Transformer
-is a tool for transforming **Excel** template to **ROS** template.
+is a tool for transforming **Terraform/Excel** template to **ROS** template.
 
 ## Requirements
 - Python 3.6+
