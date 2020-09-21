@@ -1,0 +1,17 @@
+Attributes:
+  id:
+    To: MountTargetDomain
+Properties:
+  access_group_name:
+    To: AccessGroupName
+  file_system_id:
+    To: FileSystemId
+  status:
+    To: Status
+  vswitch_id:
+    To: VSwitchId
+ResourceType:
+  From: alicloud_nas_mount_target
+  To: ALIYUN::NAS::MountTarget
+Type: Resource
+Version: '2020-06-01'

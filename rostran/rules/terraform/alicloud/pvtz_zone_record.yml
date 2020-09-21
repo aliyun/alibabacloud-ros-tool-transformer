@@ -1,0 +1,23 @@
+Attributes:
+  id:
+    Ignore: true
+  record_id:
+    To: RecordId
+Properties:
+  priority:
+    To: Priority
+  resource_record:
+    To: Rr
+  ttl:
+    To: Ttl
+  type:
+    To: Type
+  value:
+    To: Value
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_pvtz_zone_record
+  To: ALIYUN::PVTZ::ZoneRecord
+Type: Resource
+Version: '2020-06-01'

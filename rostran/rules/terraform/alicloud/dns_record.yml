@@ -1,0 +1,39 @@
+Attributes:
+  id:
+    To: RecordId
+  Locked:
+    Ignore: true
+  host_record:
+    Ignore: true
+  name:
+    Ignore: true
+  priority:
+    Ignore: true
+  routing:
+    Ignore: true
+  status:
+    Ignore: true
+  ttl:
+    Ignore: true
+  type:
+    Ignore: true
+  value:
+    Ignore: true
+Properties:
+  host_record:
+    To: RR
+  name:
+    To: DomainName
+  priority:
+    To: Priority
+  routing:
+    Ignore: true
+  type:
+    To: Type
+  value:
+    To: Value
+ResourceType:
+  From: alicloud_dns_record
+  To: ALIYUN::DNS::DomainRecord
+Type: Resource
+Version: '2020-06-01'

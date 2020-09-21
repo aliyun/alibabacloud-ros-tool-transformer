@@ -1,0 +1,19 @@
+Attributes:
+  id:
+    To: ClusterId
+Properties:
+  cluster_name:
+    To: ClusterName
+  cluster_type:
+    To: ClusterType
+  logical_region_id:
+    To: LogicalRegionId
+  network_mode:
+    To: NetworkMode
+  vpc_id:
+    To: VpcId
+ResourceType:
+  From: alicloud_edas_cluster
+  To: ALIYUN::EDAS::Cluster
+Type: Resource
+Version: '2020-06-01'

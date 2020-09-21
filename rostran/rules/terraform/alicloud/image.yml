@@ -1,0 +1,37 @@
+Attributes:
+  id:
+    To: ImageId
+Properties:
+  architecture:
+    To: Architecture
+  description:
+    To: Description
+  disk_device_mapping:
+    To: DiskDeviceMapping
+    Type: List
+    Schema:
+      device:
+        To: Device
+      disk_type:
+        To: DiskType
+      size:
+        To: Size
+      snapshot_id:
+        To: SnapshotId
+  force:
+    Ignore: true
+  image_name:
+    To: ImageName
+  instance_id:
+    To: InstanceId
+  platform:
+    To: Platform
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    To: Tags
+ResourceType:
+  From: alicloud_image
+  To: ALIYUN::ECS::CustomImage
+Type: Resource
+Version: '2020-06-01'

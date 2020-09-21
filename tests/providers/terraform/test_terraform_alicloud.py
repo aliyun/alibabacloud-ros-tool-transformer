@@ -56,12 +56,51 @@ tpl = {
             },
             "DependsOn": ["alicloud_security_group.mysg"],
         },
+        "alicloud_log_project.sls": {
+            "Type": "ALIYUN::SLS::Project",
+            "Properties": {
+                "Description": "created by terraform",
+                "Name": "tf-log"
+            }
+        },
+        "alicloud_log_machine_group.sls_machine_group": {
+            "Type": "ALIYUN::SLS::MachineGroup",
+            "Properties": {
+                "MachineIdentifyType": "ip",
+                "GroupName": "tf-machine-group",
+                "ProjectName": "tf-log"
+            },
+            "DependsOn": [
+                "alicloud_log_project.sls"
+            ]
+        }
     },
     "Outputs": {
         "instance_id": {
             "Value": {"Fn::GetAtt": ["alicloud_instance.myinstance", "InstanceId"]}
         },
         "const_map": {"Value": {"foo": "bar"}},
+        "log_machine_group_id": {
+            "Value": {
+                "Fn::Join": [
+                    ":",
+                    [
+                        {
+                            "Fn::GetAtt": [
+                                "alicloud_log_machine_group.sls_machine_group",
+                                "ProjectName"
+                            ]
+                        },
+                        {
+                            "Fn::GetAtt": [
+                                "alicloud_log_machine_group.sls_machine_group",
+                                "GroupName"
+                            ]
+                        }
+                    ]
+                ]
+            }
+        }
     },
 }
 

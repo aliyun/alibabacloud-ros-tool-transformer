@@ -1,0 +1,41 @@
+Attributes:
+  created_by:
+    Ignore: true
+  created_date:
+    Ignore: true
+  description:
+    Ignore: true
+  has_trigger:
+    Ignore: true
+  id:
+    To: TemplateName
+  share_type:
+    Ignore: true
+  template_format:
+    Ignore: true
+  template_id:
+    To: TemplateId
+  template_type:
+    Ignore: true
+  template_version:
+    Ignore: true
+  updated_by:
+    Ignore: true
+  updated_date:
+    Ignore: true
+Properties:
+  auto_delete_executions:
+    Ignore: true
+  content:
+    To: Content
+  tags:
+    To: Tags
+  template_name:
+    To: TemplateName
+  version_name:
+    Ignore: true
+ResourceType:
+  From: alicloud_oos_template
+  To: ALIYUN::OOS::Template
+Type: Resource
+Version: '2020-06-01'

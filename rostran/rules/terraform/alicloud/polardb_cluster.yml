@@ -1,0 +1,41 @@
+Attributes:
+  connection_string:
+    To: CustomConnectionStrings
+  id:
+    To: DBClusterId
+Properties:
+  auto_renew_period:
+    To: AutoRenewPeriod
+  db_node_class:
+    To: DBNodeClass
+  db_type:
+    To: DBType
+  db_version:
+    To: DBVersion
+  description:
+    To: DBClusterDescription
+  maintain_time:
+    To: MaintainTime
+  modify_type:
+    Ignore: true
+  parameters:
+    Ignore: true
+  pay_type:
+    To: PayType
+  period:
+    To: Period
+  renewal_status:
+    To: RenewalStatus
+  security_ips:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_polardb_cluster
+  To: ALIYUN::POLARDB::DBCluster
+Type: Resource
+Version: '2020-06-01'

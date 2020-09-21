@@ -1,0 +1,35 @@
+Attributes:
+  connection_string:
+    To: ConnectionString
+  engine:
+    Ignore: true
+  id:
+    To: DBInstanceId
+  port:
+    To: Port
+Properties:
+  engine_version:
+    To: EngineVersion
+  instance_name:
+    To: DBInstanceDescription
+  instance_storage:
+    To: DBInstanceStorage
+  instance_type:
+    To: DBInstanceClass
+  master_db_instance_id:
+    To: DBInstanceId
+  parameters:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    To: Tags
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_db_readonly_instance
+  To: ALIYUN::RDS::ReadOnlyDBInstance
+Type: Resource
+Version: '2020-06-01'

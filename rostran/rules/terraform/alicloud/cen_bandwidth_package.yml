@@ -1,0 +1,25 @@
+Attributes:
+  expired_time:
+    Ignore: true
+  id:
+    To: CenBandwidthPackageId
+  status:
+    Ignore: true
+Properties:
+  bandwidth:
+    To: Bandwidth
+  charge_type:
+    To: BandwidthPackageChargeType
+  description:
+    To: Description
+  geographic_region_ids:
+    Ignore: true
+  name:
+    To: Name
+  period:
+    To: Period
+ResourceType:
+  From: alicloud_cen_bandwidth_package
+  To: ALIYUN::CEN::CenBandwidthPackage
+Type: Resource
+Version: '2020-06-01'

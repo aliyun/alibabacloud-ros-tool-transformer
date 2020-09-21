@@ -1,0 +1,37 @@
+Attributes:
+  id:
+    To: LifecycleHookId
+  scaling_group_id:
+    Ignore: true
+  name:
+    Ignore: true
+  default_result:
+    Ignore: true
+  heartbeat_timeout:
+    Ignore: true
+  lifecycle_transition:
+    Ignore: true
+  notification_metadata:
+    Ignore: true
+  notification_arn:
+    Ignore: true
+Properties:
+  default_result:
+    To: DefaultResult
+  heartbeat_timeout:
+    To: HeartbeatTimeout
+  lifecycle_transition:
+    To: LifecycleTransition
+  name:
+    To: LifecycleHookName
+  notification_arn:
+    To: NotificationArn
+  notification_metadata:
+    To: NotificationMetadata
+  scaling_group_id:
+    To: ScalingGroupId
+ResourceType:
+  From: alicloud_ess_scaling_lifecycle_hook
+  To: ALIYUN::ESS::LifecycleHook
+Type: Resource
+Version: '2020-06-01'

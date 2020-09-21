@@ -1,0 +1,99 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_api_gateway_api
+  To: ALIYUN::ApiGateway::Api
+Properties:
+  auth_type:
+    To: AuthType
+  constant_parameters:
+    Type: List
+    To: ConstParameters
+    Schema:
+      name:
+        To: ServiceParameterName
+      in:
+        To: Location
+      value:
+        To: ConstValue
+      description:
+        To: Description
+  description:
+    To: Description
+  fc_service_config:
+    To: FunctionComputeConfig
+    Type: Map
+    Schema:
+      region:
+        To: fcRegionId
+      function_name:
+        To: functionName
+      service_name:
+        To: serviceName
+      arn_role:
+        To: roleArn
+      timeout:
+        Ignore: true
+  group_id:
+    To: GroupId
+  http_service_config:
+    Ignore: true
+  http_vpc_service_config:
+    Ignore: true
+  mock_service_config:
+    Ignore: true
+  name:
+    To: ApiName
+  request_config:
+    To: RequestConfig
+    Type: Map
+    Schema:
+      body_format:
+        To: BodyFormat
+      method:
+        To: RequestHttpMethod
+      mode:
+        To: RequestMode
+      path:
+        To: RequestPath
+      protocol:
+        To: RequestProtocol
+  request_parameters:
+    To: RequestParameters
+    Type: List
+    Schema:
+      default_value:
+        To: DefaultValue
+      description:
+        To: Description
+      in:
+        To: Location
+      in_service:
+        Ignore: true
+      name:
+        To: ApiParameterName
+      name_service:
+        Ignore: true
+      required:
+        To: Required
+      type:
+        To: ParameterType
+  service_type:
+    Ignore: true
+  stage_names:
+    Ignore: true
+  system_parameters:
+    To: SystemParameters
+    Type: List
+    Schema:
+      in:
+        To: Location
+      name:
+        To: ParameterName
+      name_service:
+        To: ServiceParameterName
+Attributes:
+  api_id:
+    To: ApiId
+  id:
+    Ignore: true

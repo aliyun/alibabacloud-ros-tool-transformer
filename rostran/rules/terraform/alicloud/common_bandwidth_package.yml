@@ -1,0 +1,23 @@
+Attributes:
+  id:
+    To: BandwidthPackageId
+Properties:
+  bandwidth:
+    To: Bandwidth
+  description:
+    To: Description
+  internet_charge_type:
+    To: InternetChargeType
+  isp:
+    To: ISP
+  name:
+    To: Name
+  ratio:
+    To: Ratio
+  resource_group_id:
+    To: ResourceGroupId
+ResourceType:
+  From: alicloud_common_bandwidth_package
+  To: ALIYUN::VPC::CommonBandwidthPackage
+Type: Resource
+Version: '2020-06-01'

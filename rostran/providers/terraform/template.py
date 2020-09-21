@@ -489,6 +489,15 @@ class TerraformTemplate(Template):
     def _transform_outputs(self, tf_outputs: dict, out_outputs: Outputs):
         for name, value in tf_outputs.items():
             value, _ = self._transform_prop_or_attr(value)
+            if not _:
+                resource_name = value['Fn::GetAtt'][0]
+                ros_attrs = value['Fn::GetAtt'][1]
+                if isinstance(ros_attrs, list):
+                    attr_list = [
+                        {'Fn::GetAtt': [resource_name, ros_attr]}
+                        for ros_attr in ros_attrs
+                    ]
+                    value = {'Fn::Join': [':', attr_list]}
             output = Output(name=name, value=value,)
 
             out_outputs.add(output)

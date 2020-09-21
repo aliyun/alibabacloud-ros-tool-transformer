@@ -1,0 +1,13 @@
+Attributes:
+  id:
+    To: [RouteTableId, VSwitchId]
+Properties:
+  route_table_id:
+    To: RouteTableId
+  vswitch_id:
+    To: VSwitchId
+ResourceType:
+  From: alicloud_route_table_attachment
+  To: ALIYUN::VPC::RouteTableAssociation
+Type: Resource
+Version: '2020-06-01'

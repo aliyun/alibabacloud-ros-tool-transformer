@@ -1,0 +1,47 @@
+Attributes:
+  id:
+    To: KeyId
+  arn:
+    Ignore: true
+  creation_date:
+    Ignore: true
+  creator:
+    Ignore: true
+  delete_date:
+    Ignore: true
+  last_rotation_date:
+    Ignore: true
+  material_expire_time:
+    Ignore: true
+  next_rotation_date:
+    Ignore: true
+  primary_key_version:
+    Ignore: true
+Properties:
+  automatic_rotation:
+    To: EnableAutomaticRotation
+  deletion_window_in_days:
+    To: PendingWindowInDays
+  description:
+    To: Description
+  is_enabled:
+    To: Enable
+  key_spec:
+    To: KeySpec
+  key_state:
+    To: Enable
+  key_usage:
+    To: KeyUsage
+  origin:
+    Ignore: true
+  pending_window_in_days:
+    To: PendingWindowInDays
+  protection_level:
+    To: ProtectionLevel
+  rotation_interval:
+    To: RotationInterval
+ResourceType:
+  From: alicloud_kms_key
+  To: ALIYUN::KMS::Key
+Type: Resource
+Version: '2020-06-01'

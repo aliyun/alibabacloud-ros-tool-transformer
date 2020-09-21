@@ -1,0 +1,37 @@
+Attributes:
+  id:
+    To: DiskId
+  status:
+    To: Status
+Properties:
+  availability_zone:
+    Ignore: true
+  category:
+    To: DiskCategory
+  delete_auto_snapshot:
+    To: DeleteAutoSnapshot
+  delete_with_instance:
+    Ignore: true
+  description:
+    To: Description
+  enable_auto_snapshot:
+    Ignore: true
+  encrypted:
+    To: Encrypted
+  kms_key_id:
+    Ignore: true
+  name:
+    To: DiskName
+  resource_group_id:
+    To: ResourceGroupId
+  size:
+    To: Size
+  snapshot_id:
+    To: SnapshotId
+  tags:
+    Ignore: true
+ResourceType:
+  From: alicloud_disk
+  To: ALIYUN::ECS::Disk
+Type: Resource
+Version: '2020-06-01'

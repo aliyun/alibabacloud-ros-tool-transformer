@@ -1,0 +1,23 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_alikafka_topic
+  To: ALIYUN::KAFKA::Topic
+Properties:
+  compact_topic:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  local_topic:
+    Ignore: true
+  partition_num:
+    To: PartitionNum
+  remark:
+    To: Remark
+  tags:
+    Ignore: true
+  topic:
+    To: Topic
+Attributes:
+  id:
+    Ignore: true

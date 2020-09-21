@@ -1,0 +1,21 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  delay_seconds:
+    To: DelaySeconds
+  maximum_message_size:
+    To: MaximumMessageSize
+  message_retention_period:
+    To: MessageRetentionPeriod
+  name:
+    To: QueueName
+  polling_wait_seconds:
+    To: PollingWaitSeconds
+  visibility_timeout:
+    To: VisibilityTimeout
+ResourceType:
+  From: alicloud_mns_queue
+  To: ALIYUN::MNS::Queue
+Type: Resource
+Version: '2020-06-01'

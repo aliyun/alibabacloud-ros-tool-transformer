@@ -1,0 +1,55 @@
+Attributes:
+  dba_nick_name:
+    Ignore: true
+  id:
+    Ignore: true
+  state:
+    Ignore: true
+Properties:
+  data_link_name:
+    To: DataLinkName
+  database_password:
+    To: DatabasePassword
+  database_user:
+    To: DatabaseUser
+  dba_uid:
+    To: DbaUid
+  ddl_online:
+    To: DdlOnline
+  ecs_instance_id:
+    To: EcsInstanceId
+  ecs_region:
+    To: EcsRegion
+  env_type:
+    To: EnvType
+  export_timeout:
+    To: ExportTimeout
+  host:
+    To: Host
+  instance_alias:
+    To: InstanceAlias
+  instance_source:
+    To: InstanceSource
+  instance_type:
+    To: InstanceType
+  network_type:
+    To: NetworkType
+  port:
+    To: Port
+  query_timeout:
+    To: QueryTimeout
+  safe_rule:
+    To: SafeRule
+  sid:
+    To: Sid
+  tid:
+    To: Tid
+  use_dsql:
+    To: UseDsql
+  vpc_id:
+    To: VpcId
+ResourceType:
+  From: alicloud_dms_enterprise_instance
+  To: ALIYUN::DMS::Instance
+Type: Resource
+Version: '2020-06-01'

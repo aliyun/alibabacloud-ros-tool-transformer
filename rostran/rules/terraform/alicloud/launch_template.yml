@@ -1,0 +1,95 @@
+Attributes:
+  id:
+    To: LaunchTemplateId
+Properties:
+  auto_release_time:
+    To: AutoReleaseTime
+  data_disks:
+    To: DiskMappings
+    Type: List
+    Schema:
+      size:
+        To: Size
+      name:
+        To: DiskName
+      category:
+        To: Category
+      encrypted:
+        To: Encrypted
+      snapshot_id:
+        To: SnapshotId
+      delete_with_instance:
+        Ignore: true
+      description:
+        To: Description
+  description:
+    To: Description
+  host_name:
+    To: HostName
+  image_id:
+    To: ImageId
+  instance_charge_type:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  internet_charge_type:
+    To: InternetChargeType
+  internet_max_bandwidth_in:
+    To: InternetMaxBandwidthIn
+  internet_max_bandwidth_out:
+    To: InternetMaxBandwidthOut
+  io_optimized:
+    To: IoOptimized
+  key_pair_name:
+    To: KeyPairName
+  name:
+    To: LaunchTemplateName
+  network_interfaces:
+    To: NetworkInterfaces
+    Type: List
+    Schema:
+      description:
+        To: Description
+      name:
+        Ignore: true
+      primary_ip:
+        To: PrimaryIpAddress
+      security_group_id:
+        To: SecurityGroupId
+      vswitch_id:
+        To: VSwitchId
+  network_type:
+    To: NetworkType
+  ram_role_name:
+    To: RamRoleName
+  security_enhancement_strategy:
+    To: SecurityEnhancementStrategy
+  security_group_id:
+    To: SecurityGroupId
+  spot_price_limit:
+    To: SpotPriceLimit
+  spot_strategy:
+    To: SpotStrategy
+  system_disk_category:
+    To: SystemDiskCategory
+  system_disk_description:
+    To: SystemDiskDescription
+  system_disk_name:
+    To: SystemDiskDiskName
+  system_disk_size:
+    To: SystemDiskSize
+  tags:
+    To: Tags
+  userdata:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_launch_template
+  To: ALIYUN::ECS::LaunchTemplate
+Type: Resource
+Version: '2020-06-01'

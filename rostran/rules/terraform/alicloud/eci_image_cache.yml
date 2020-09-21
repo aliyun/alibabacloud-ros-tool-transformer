@@ -1,0 +1,41 @@
+Attributes:
+  id:
+    To: ImageCacheId
+  container_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+Properties:
+  eip_instance_id:
+    To: EipInstanceId
+  image_cache_name:
+    To: ImageCacheName
+  image_cache_size:
+    Ignore: true
+  image_registry_credential:
+    To: ImageRegistryCredential
+    Type: List
+    Schema:
+      server:
+        To: Server
+      user_name:
+        To: UserName
+      password:
+        To: Password
+  images:
+    To: Image
+  resource_group_id:
+    To: ResourceGroupId
+  retention_days:
+    Ignore: true
+  security_group_id:
+    To: SecurityGroupId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    Ignore: true
+ResourceType:
+  From: alicloud_eci_image_cache
+  To: ALIYUN::ECI::ImageCache
+Type: Resource
+Version: '2020-06-01'

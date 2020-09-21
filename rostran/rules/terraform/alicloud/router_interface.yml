@@ -1,0 +1,71 @@
+Attributes:
+  access_point_id:
+    Ignore: true
+  description:
+    Ignore: true
+  health_check_source_ip:
+    Ignore: true
+  health_check_target_ip:
+    Ignore: true
+  id:
+    To: RouterInterfaceId
+  name:
+    Ignore: true
+  opposite_access_point_id:
+    Ignore: true
+  opposite_interface_id:
+    Ignore: true
+  opposite_interface_owner_id:
+    Ignore: true
+  opposite_router_id:
+    Ignore: true
+  opposite_router_type:
+    Ignore: true
+  role:
+    Ignore: true
+  router_id:
+    Ignore: true
+  router_type:
+    Ignore: true
+  specification:
+    Ignore: true
+Properties:
+  access_point_id:
+    To: AccessPointId
+  description:
+    To: Description
+  health_check_source_ip:
+    To: HealthCheckSourceIp
+  health_check_target_ip:
+    To: HealthCheckTargetIp
+  instance_charge_type:
+    To: InstanceChargeType
+  name:
+    To: Name
+  opposite_access_point_id:
+    To: OppositeAccessPointId
+  opposite_interface_id:
+    To: OppositeInterfaceId
+  opposite_interface_owner_id:
+    To: OppositeInterfaceOwnerId
+  opposite_region:
+    To: OppositeRegionId
+  opposite_router_id:
+    To: OppositeRouterId
+  opposite_router_type:
+    To: OppositeRouterType
+  period:
+    To: Period
+  role:
+    To: Role
+  router_id:
+    To: RouterId
+  router_type:
+    To: RouterType
+  specification:
+    To: Spec
+ResourceType:
+  From: alicloud_router_interface
+  To: ALIYUN::VPC::RouterInterface
+Type: Resource
+Version: '2020-06-01'

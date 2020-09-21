@@ -1,0 +1,53 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  field_search:
+    To: KeyIndices
+    Type: List
+    Schema:
+      name:
+        To: Name
+      type:
+        To: Type
+      alias:
+        To: Alias
+      case_sensitive:
+        To: CaseSensitive
+      include_chinese:
+        To: IncludeChinese
+      token:
+        Ignore: true
+      enable_analytics:
+        To: EnableAnalytics
+      json_keys:
+        To: JsonKeyIndices
+        Type: List
+        Schema:
+          name:
+            To: Name
+          type:
+            To: Type
+          alias:
+            To: Alias
+          doc_value:
+            To: EnableAnalytics
+  full_text:
+    To: FullTextIndex
+    Type: Map
+    Schema:
+      case_sensitive:
+        To: CaseSensitive
+      include_chinese:
+        To: IncludeChinese
+      token:
+        Ignore: true
+  logstore:
+    To: LogstoreName
+  project:
+    To: ProjectName
+ResourceType:
+  From: alicloud_log_store_index
+  To: ALIYUN::SLS::Index
+Type: Resource
+Version: '2020-06-01'

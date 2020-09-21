@@ -1,0 +1,39 @@
+Attributes:
+  last_modified:
+    Ignore: true
+  id:
+    To: ServiceId
+Properties:
+  description:
+    To: Description
+  internet_access:
+    To: InternetAccess
+  log_config:
+    To: LogConfig
+    Type: Map
+    Schema:
+      logstore:
+        To: Logstore
+      project:
+        To: Project
+  name:
+    To: ServiceName
+  name_prefix:
+    To: ServiceName
+  role:
+    To: Role
+  vpc_config:
+    To: VpcConfig
+    Type: Map
+    Schema:
+      security_group_id:
+        To: SecurityGroupId
+      vpc_id:
+        To: VpcId
+      vswitch_ids:
+        Ignore: true
+ResourceType:
+  From: alicloud_fc_service
+  To: ALIYUN::FC::Service
+Type: Resource
+Version: '2020-06-01'

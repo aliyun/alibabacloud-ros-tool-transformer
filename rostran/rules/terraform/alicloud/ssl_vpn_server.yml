@@ -1,0 +1,31 @@
+Attributes:
+  connections:
+    Ignore: true
+  id:
+    To: SslVpnServerId
+  internet_ip:
+    Ignore: true
+  max_connections:
+    Ignore: true
+Properties:
+  cipher:
+    To: Cipher
+  client_ip_pool:
+    To: ClientIpPool
+  compress:
+    To: Compress
+  local_subnet:
+    To: LocalSubnet
+  name:
+    To: Name
+  port:
+    To: Port
+  protocol:
+    To: Proto
+  vpn_gateway_id:
+    To: VpnGatewayId
+ResourceType:
+  From: alicloud_ssl_vpn_server
+  To: ALIYUN::VPC::SslVpnServer
+Type: Resource
+Version: '2020-06-01'

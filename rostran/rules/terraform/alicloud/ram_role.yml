@@ -1,0 +1,43 @@
+Attributes:
+  arn:
+    To: Arn
+  description:
+    Ignore: true
+  document:
+    Ignore: true
+  id:
+    To: RoleName
+  name:
+    To: RoleName
+  ram_users:
+    Ignore: true
+  role_id:
+    To: RoleId
+  services:
+    Ignore: true
+  version:
+    Ignore: true
+Properties:
+  apigateway:
+    Ignore: true
+  description:
+    To: Description
+  document:
+    To: AssumeRolePolicyDocument
+  force:
+    Ignore: true
+  log:
+    Ignore: true
+  name:
+    To: RoleName
+  ram_users:
+    Ignore: true
+  services:
+    Ignore: true
+  version:
+    Ignore: true
+ResourceType:
+  From: alicloud_ram_role
+  To: ALIYUN::RAM::Role
+Type: Resource
+Version: '2020-06-01'

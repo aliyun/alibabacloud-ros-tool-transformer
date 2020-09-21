@@ -1,0 +1,87 @@
+Attributes:
+  id:
+    To: ClusterId
+Properties:
+  bootstrap_action:
+    To: BootstrapAction
+    Type: List
+    Schema:
+      arg:
+        To: Arg
+      name:
+        To: Name
+      path:
+        To: Path
+  charge_type:
+    To: ChargeType
+  cluster_type:
+    To: ClusterType
+  deposit_type:
+    To: DepositType
+  eas_enable:
+    To: EasEnable
+  emr_ver:
+    To: EmrVer
+  high_availability_enable:
+    To: HighAvailabilityEnable
+  host_group:
+    To: HostGroup
+    Type: List
+    Schema:
+      auto_renew:
+        To: AutoRenew
+      charge_type:
+        To: ChargeType
+      disk_capacity:
+        To: DiskCapacity
+      disk_count:
+        To: DiskCount
+      disk_type:
+        To: DiskType
+      gpu_driver:
+        To: GpuDriver
+      host_group_name:
+        To: HostGroupName
+      host_group_type:
+        To: HostGroupType
+      instance_list:
+        Ignore: true
+      instance_type:
+        To: InstanceType
+      node_count:
+        To: NodeCount
+      period:
+        To: Period
+      sys_disk_capacity:
+        To: SysDiskCapacity
+      sys_disk_type:
+        To: SysDiskType
+  key_pair_name:
+    To: KeyPairName
+  master_pwd:
+    To: MasterPwd
+  name:
+    To: Name
+  option_software_list:
+    To: OptionSoftWareList
+  related_cluster_id:
+    To: RelatedClusterId
+  security_group_id:
+    To: SecurityGroupId
+  ssh_enable:
+    To: SshEnable
+  tags:
+    Ignore: true
+  use_local_metadb:
+    To: UseLocalMetaDb
+  user_defined_emr_ecs_role:
+    To: UserDefinedEmrEcsRole
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_emr_cluster
+  To: ALIYUN::EMR::Cluster
+Type: Resource
+Version: '2020-06-01'

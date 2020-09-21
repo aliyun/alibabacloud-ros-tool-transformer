@@ -1,0 +1,19 @@
+Attributes:
+  id:
+    To: SnapshotId
+Properties:
+  description:
+    To: Description
+  disk_id:
+    To: DiskId
+  name:
+    To: SnapshotName
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true
+ResourceType:
+  From: alicloud_snapshot
+  To: ALIYUN::ECS::Snapshot
+Type: Resource
+Version: '2020-06-01'

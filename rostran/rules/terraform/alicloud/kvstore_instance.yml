@@ -1,0 +1,59 @@
+Attributes:
+  connection_domain:
+    To: ConnectionDomain
+  id:
+    To: InstanceId
+  connection_string:
+    Ignore: true
+Properties:
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  availability_zone:
+    To: ZoneId
+  backup_id:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  instance_charge_type:
+    Ignore: true
+  instance_class:
+    To: InstanceClass
+  instance_name:
+    To: InstanceName
+  instance_type:
+    Ignore: true
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
+  parameters:
+    Ignore: true
+  password:
+    To: Password
+  period:
+    Ignore: true
+  private_ip:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_auth_mode:
+    To: VpcPasswordFree
+  vswitch_id:
+    To: VSwitchId
+ResourceType:
+  From: alicloud_kvstore_instance
+  To: ALIYUN::REDIS::Instance
+Type: Resource
+Version: '2020-06-01'

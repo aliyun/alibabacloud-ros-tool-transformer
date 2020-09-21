@@ -1,0 +1,31 @@
+Attributes:
+  backend_servers:
+    To: BackendServers
+  id:
+    Ignore: true
+  instance_ids:
+    Ignore: true
+  load_balancer_id:
+    To: LoadBalancerId
+  server_type:
+    Ignore: true
+  weight:
+    Ignore: true
+Properties:
+  delete_protection_validation:
+    Ignore: true
+  instance_ids:
+    To: BackendServerList
+  load_balancer_id:
+    To: LoadBalancerId
+  server_type:
+    Ignore: true
+  weight:
+    To: BackendServerWeightList
+    Warning: Only first weight can be used
+    Handler: ecs_security_group_first_id
+ResourceType:
+  From: alicloud_slb_attachment
+  To: ALIYUN::SLB::BackendServerAttachment
+Type: Resource
+Version: '2020-06-01'

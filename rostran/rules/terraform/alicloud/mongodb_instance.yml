@@ -1,0 +1,59 @@
+Attributes:
+  id:
+    To: DBInstanceId
+  replica_set_name:
+    To: ReplicaSetName
+  retention_period:
+    Ignore: true
+  ssl_status:
+    To: DBInstanceStatus
+Properties:
+  account_password:
+    To: AccountPassword
+  backup_period:
+    Ignore: true
+  backup_time:
+    Ignore: true
+  db_instance_class:
+    Ignore: true
+  db_instance_storage:
+    To: DBInstanceClass
+  engine_version:
+    To: EngineVersion
+  instance_charge_type:
+    To: ChargeType
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
+  name:
+    To: DBInstanceDescription
+  period:
+    To: Period
+  replication_factor:
+    To: ReplicationFactor
+  security_group_id:
+    Ignore: true
+  security_ip_list:
+    To: SecurityIPArray
+  ssl_action:
+    Ignore: true
+  storage_engine:
+    To: StorageEngine
+  tags:
+    Ignore: true
+  tde_status:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_mongodb_instance
+  To: ALIYUN::MONGODB::Instance
+Type: Resource
+Version: '2020-06-01'

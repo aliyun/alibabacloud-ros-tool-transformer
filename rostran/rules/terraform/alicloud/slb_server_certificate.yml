@@ -1,0 +1,25 @@
+Attributes:
+  id:
+    To: CertificateId
+Properties:
+  alicloud_certificate_id:
+    To: AliCloudCertificateId
+  alicloud_certificate_name:
+    To: AliCloudCertificateName
+  alicloud_certificate_region_id:
+    Ignore: true
+  name:
+    To: CertificateName
+  private_key:
+    To: PrivateKey
+  resource_group_id:
+    To: ResourceGroupId
+  server_certificate:
+    To: Certificate
+  tags:
+    Ignore: true
+ResourceType:
+  From: alicloud_slb_server_certificate
+  To: ALIYUN::SLB::Certificate
+Type: Resource
+Version: '2020-06-01'

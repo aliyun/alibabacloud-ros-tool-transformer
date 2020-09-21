@@ -1,0 +1,25 @@
+Attributes:
+  dns_server:
+    To: DnsServers
+  domain_id:
+    To: DomainId
+  id:
+    To: DomainName
+Properties:
+  domain_name:
+    To: DomainName
+  group_id:
+    To: GroupId
+  lang:
+    Ignore: true
+  remark:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true
+ResourceType:
+  From: alicloud_dns_domain
+  To: ALIYUN::DNS::Domain
+Type: Resource
+Version: '2020-06-01'

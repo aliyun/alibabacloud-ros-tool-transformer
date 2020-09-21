@@ -1,0 +1,31 @@
+Attributes:
+  id:
+    To: [ServiceName, FunctionName, TriggerName]
+  last_modified:
+    Ignore: true
+  trigger_id:
+    To: TriggerId
+Properties:
+  config:
+    To: TriggerConfig
+  config_mns:
+    Ignore: true
+  function:
+    To: FunctionName
+  name:
+    To: TriggerName
+  name_prefix:
+    To: TriggerName
+  role:
+    To: InvocationRole
+  service:
+    To: ServiceName
+  source_arn:
+    To: SourceArn
+  type:
+    To: TriggerType
+ResourceType:
+  From: alicloud_fc_trigger
+  To: ALIYUN::FC::Trigger
+Type: Resource
+Version: '2020-06-01'

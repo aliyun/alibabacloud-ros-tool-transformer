@@ -1,0 +1,19 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  Custom:
+    Ignore: true
+  System:
+    Ignore: true
+  policy_name:
+    To: PolicyName
+  policy_type:
+    To: PolicyType
+  user_name:
+    To: UserName
+ResourceType:
+  From: alicloud_ram_user_policy_attachment
+  To: ALIYUN::RAM::AttachPolicyToUser
+Type: Resource
+Version: '2020-06-01'

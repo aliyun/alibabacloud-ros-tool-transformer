@@ -1,0 +1,15 @@
+Attributes:
+  id:
+    To: TopicName
+Properties:
+  logging_enabled:
+    To: LoggingEnabled
+  maximum_message_size:
+    To: MaximumMessageSize
+  name:
+    To: TopicName
+ResourceType:
+  From: alicloud_mns_topic
+  To: ALIYUN::MNS::Topic
+Type: Resource
+Version: '2020-06-01'

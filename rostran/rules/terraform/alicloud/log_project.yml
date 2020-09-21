@@ -1,0 +1,15 @@
+Attributes:
+  id:
+    To: Name
+  name:
+    To: Name
+Properties:
+  description:
+    To: Description
+  name:
+    To: Name
+ResourceType:
+  From: alicloud_log_project
+  To: ALIYUN::SLS::Project
+Type: Resource
+Version: '2020-06-01'

@@ -1,0 +1,13 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  bandwidth_package_id:
+    To: BandwidthPackageId
+  instance_id:
+    Ignore: true
+ResourceType:
+  From: alicloud_common_bandwidth_package_attachment
+  To: ALIYUN::VPC::CommonBandwidthPackageIp
+Type: Resource
+Version: '2020-06-01'

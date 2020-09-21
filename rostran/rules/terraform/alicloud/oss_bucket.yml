@@ -1,0 +1,87 @@
+Attributes:
+  acl:
+    Ignore: true
+  creation_date:
+    Ignore: true
+  extranet_endpoint:
+    To: DomainName
+  id:
+    To: Name
+  intranet_endpoint:
+    To: InternalDomainName
+  location:
+    Ignore: true
+  owner:
+    Ignore: true
+Properties:
+  acl:
+    To: AccessControl
+  bucket:
+    To: BucketName
+  cors_rule:
+    To: CORSRule
+    Type: List
+    Schema:
+      allowed_headers:
+        To: AllowedHeader
+      allowed_methods:
+        To: AllowedMethod
+      allowed_origins:
+        To: AllowedOrigin
+      expose_headers:
+        To: ExposeHeader
+      max_age_seconds:
+        To: MaxAgeSeconds
+  force_destroy:
+    To: DeletionForce
+  lifecycle_rule:
+    Ignore: true
+  logging:
+    To: LoggingConfiguration
+    Type: Map
+    Schema:
+      target_bucket:
+        To: TargetBucket
+      target_prefix:
+        To: TargetPrefix
+  logging_isenable:
+    Ignore: true
+  policy:
+    To: Policy
+  redundancy_type:
+    Ignore: true
+  referer_config:
+    To: RefererConfiguration
+    Type: Map
+    Schema:
+      allow_empty:
+        To: AllowEmptyReferer
+      referers:
+        To: RefererList
+  server_side_encryption_rule:
+    To: ServerSideEncryptionConfiguration
+    Type: Map
+    Schema:
+      sse_algorithm:
+        To: SSEAlgorithm
+      kms_master_key_id:
+        To: KMSMasterKeyID
+  storage_class:
+    To: StorageClass
+  tags:
+    To: Tags
+  versioning:
+    Ignore: true
+  website:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      index_document:
+        To: IndexDocument
+      error_document:
+        To: ErrorDocument
+ResourceType:
+  From: alicloud_oss_bucket
+  To: ALIYUN::OSS::Bucket
+Type: Resource
+Version: '2020-06-01'
