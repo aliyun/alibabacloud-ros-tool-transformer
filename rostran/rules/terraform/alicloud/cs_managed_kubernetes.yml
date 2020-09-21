@@ -1,0 +1,99 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_cs_managed_kubernetes
+  To: ALIYUN::CS::ManagedKubernetesCluster
+Properties:
+  name:
+    To: Name
+  name_prefix:
+    Ignore: true
+  version:
+    To: KubernetesVersion
+  password:
+    To: LoginPassword
+  key_name:
+    To: KeyPair
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  user_ca:
+    Ignore: true
+  enable_ssh:
+    To: SshFlags
+  install_cloud_monitor:
+    To: CloudMonitorFlags
+  cpu_policy:
+    To: CpuPolicy
+  proxy_mode:
+    To: ProxyMode
+  image_id:
+    Ignore: true
+  user_data:
+    Ignore: true
+  exclude_autoscaler_nodes:
+    Ignore: true
+  node_name_mode:
+    Ignore: true
+  worker_data_disks:
+    To: WorkerDataDisks
+    Type: List
+    Schema:
+      size:
+        To: Size
+      category:
+        To: Category
+      auto_snapshot_policy_id:
+        Ignore: true
+      device:
+        Ignore: true
+      encrypted:
+        Ignore: true
+      kms_key_id:
+        Ignore: true
+      name:
+        Ignore: true
+      snapshot_id:
+        Ignore: true
+  security_group_id:
+    To: SecurityGroupId
+  is_enterprise_security_group:
+    Ignore: true
+  service_account_issuer:
+    Ignore: true
+  api_audiences:
+    Ignore: true
+  addons:
+    Schema:
+      config:
+        To: Config
+      disabled:
+        Ignore: true
+      name:
+        To: Name
+    To: Addons
+    Type: List
+Attributes:
+  id:
+    To: ClusterId
+  worker_ram_role_name:
+    To: WorkerRamRoleName
+  availability_zone:
+    Ignore: true
+  connections:
+    Ignore: true
+  name:
+    Ignore: true
+  nat_gateway_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  slb_intranet:
+    Ignore: true
+  version:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  worker_nodes:
+    Ignore: true

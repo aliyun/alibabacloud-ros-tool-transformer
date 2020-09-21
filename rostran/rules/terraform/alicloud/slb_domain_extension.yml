@@ -1,0 +1,19 @@
+Attributes:
+  id:
+    To: DomainExtensionId
+Properties:
+  delete_protection_validation:
+    Ignore: true
+  domain:
+    To: Domain
+  frontend_port:
+    To: ListenerPort
+  load_balancer_id:
+    To: LoadBalancerId
+  server_certificate_id:
+    To: ServerCertificateId
+ResourceType:
+  From: alicloud_slb_domain_extension
+  To: ALIYUN::SLB::DomainExtension
+Type: Resource
+Version: '2020-06-01'

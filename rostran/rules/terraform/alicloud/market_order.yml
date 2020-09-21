@@ -1,0 +1,25 @@
+Attributes:
+  id:
+    To: OrderId
+Properties:
+  components:
+    Ignore: true
+  coupon_id:
+    Ignore: true
+  duration:
+    To: Duration
+  package_version:
+    To: SkuCode
+  pay_type:
+    To: ChargeType
+  pricing_cycle:
+    To: PricingCycle
+  product_code:
+    To: ProductCode
+  quantity:
+    To: Quantity
+ResourceType:
+  From: alicloud_market_order
+  To: ALIYUN::MarketPlace::Order
+Type: Resource
+Version: '2020-06-01'

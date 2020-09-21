@@ -1,0 +1,23 @@
+Attributes:
+  id:
+    To: ZoneId
+  record_count:
+    Ignore: true
+Properties:
+  lang:
+    Ignore: true
+  name:
+    To: ZoneName
+  proxy_pattern:
+    To: ProxyPattern
+  remark:
+    To: Remark
+  resource_group_id:
+    Ignore: true
+  user_client_ip:
+    Ignore: true
+ResourceType:
+  From: alicloud_pvtz_zone
+  To: ALIYUN::PVTZ::Zone
+Type: Resource
+Version: '2020-06-01'

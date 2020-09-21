@@ -1,0 +1,50 @@
+Attributes:
+  id:
+    To: DedicatedHostIds
+  status:
+    Ignore: true
+Properties:
+  action_on_maintenance:
+    To: ActionOnMaintenance
+  auto_placement:
+    To: AutoPlacement
+  auto_release_time:
+    To: AutoReleaseTime
+  auto_renew:
+    To: AutoRenew
+  auto_renew_period:
+    To: AutoRenewPeriod
+  dedicated_host_name:
+    To: DedicatedHostName
+  dedicated_host_type:
+    To: DedicatedHostType
+  description:
+    To: Description
+  detail_fee:
+    Ignore: true
+  dry_run:
+    Ignore: true
+  expired_time:
+    Ignore: true
+  network_attributes:
+    Ignore: true
+    Schema:
+      slb_udp_timeout:
+        To: NetworkAttributesSlbUdpTimeout
+      udp_timeout:
+        To: NetworkAttributesUdpTimeout
+  payment_type:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  sale_cycle:
+    To: PeriodUnit
+  tags:
+    To: Tags
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_ecs_dedicated_host
+  To: ALIYUN::ECS::DedicatedHost
+Type: Resource
+Version: '2020-06-01'

@@ -1,0 +1,23 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_actiontrail_trail
+  To: ALIYUN::ACTIONTRAIL::Trail
+Properties:
+  event_rw:
+    To: EventRW
+  name:
+    To: Name
+  oss_bucket_name:
+    To: OssBucketName
+  oss_key_prefix:
+    To: OssKeyPrefix
+  role_name:
+    To: RoleName
+  sls_project_arn:
+    To: SlsProjectArn
+  sls_write_role_arn:
+    To: SlsWriteRoleArn
+Attributes:
+  id:
+    To: Name

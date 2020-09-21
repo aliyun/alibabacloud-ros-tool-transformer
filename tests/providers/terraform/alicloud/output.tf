@@ -7,3 +7,7 @@ output "const_map" {
     foo = "bar"
   }
 }
+
+output "log_machine_group_id" {
+  value = alicloud_log_machine_group.sls_machine_group.id
+}

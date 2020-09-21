@@ -1,0 +1,47 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_cs_serverless_kubernetes
+  To: ALIYUN::CS::ServerlessKubernetesCluster
+Properties:
+  client_key:
+    Ignore: true
+  cluster_ca_cert:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  endpoint_public_access_enabled:
+    Ignore: true
+  force_update:
+    Ignore: true
+  kube_config:
+    Ignore: true
+  name:
+    To: Name
+  name_prefix:
+    Ignore: true
+  new_nat_gateway:
+    To: NatGateway
+  private_zone:
+    To: PrivateZone
+  security_group_id:
+    Ignore: true
+  tags:
+    To: Tags
+  vpc_id:
+    To: VpcId
+  vswitch_ids:
+    To: VSwitchId
+Attributes:
+  id:
+    To: ClusterId
+  deletion_protection:
+    Ignore: true
+  name:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

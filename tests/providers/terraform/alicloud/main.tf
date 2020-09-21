@@ -62,3 +62,19 @@ resource "alicloud_instance" "myinstance" {
     description = "disk 2"
   }
 }
+
+resource "alicloud_log_project" "sls" {
+  name        = "tf-log"
+  description = "created by terraform"
+}
+
+resource "alicloud_log_machine_group" "sls_machine_group" {
+  project       = alicloud_log_project.sls.name
+  name          = "tf-machine-group"
+  identify_type = "ip"
+  topic         = "terraform"
+  identify_list = ["10.0.0.1", "10.0.0.2"]
+  depends_on    = [
+    "alicloud_log_project.sls"
+  ]
+}

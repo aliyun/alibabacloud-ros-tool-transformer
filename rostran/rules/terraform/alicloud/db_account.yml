@@ -1,0 +1,23 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  description:
+    To: AccountDescription
+  instance_id:
+    To: DBInstanceId
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  name:
+    To: AccountName
+  password:
+    To: AccountPassword
+  type:
+    To: AccountType
+ResourceType:
+  From: alicloud_db_account
+  To: ALIYUN::RDS::Account
+Type: Resource
+Version: '2020-06-01'

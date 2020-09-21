@@ -1,0 +1,61 @@
+Attributes:
+  id:
+    To: VpnConnectionId
+  ike_config:
+    Ignore: true
+  ipsec_config:
+    Ignore: true
+  status:
+    To: Status
+Properties:
+  name:
+    To: Name
+  vpn_gateway_id:
+    To: VpnGatewayId
+  customer_gateway_id:
+    To: CustomerGatewayId
+  local_subnet:
+    To: LocalSubnet
+  remote_subnet:
+    To: RemoteSubnet
+  effect_immediately:
+    To: EffectImmediately
+  ike_config:
+    To: IkeConfig
+    Type: Map
+    Schema:
+      ike_auth_alg:
+        To: IkeAuthAlg
+      ike_enc_alg:
+        To: IkeEncAlg
+      ike_lifetime:
+        To: IkeLifetime
+      ike_local_id:
+        To: LocalIdIPsec
+      ike_mode:
+        To: IkeMode
+      ike_pfs:
+        To: IkePfs
+      ike_remote_id:
+        Ignore: true
+      ike_version:
+        To: IkeVersion
+      psk:
+        To: Psk
+  ipsec_config:
+    Schema:
+      ipsec_auth_alg:
+        To: IpsecAuthAlg
+      ipsec_enc_alg:
+        To: IpsecEncAlg
+      ipsec_lifetime:
+        To: IpsecLifetime
+      ipsec_pfs:
+        To: IpsecPfs
+    To: IpsecConfig
+    Type: ''
+ResourceType:
+  From: alicloud_vpn_connection
+  To: ALIYUN::VPC::VpnConnection
+Type: Resource
+Version: '2020-06-01'

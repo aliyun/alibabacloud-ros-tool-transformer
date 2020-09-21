@@ -1,0 +1,55 @@
+Attributes:
+  id:
+    To: ScalingGroupId
+  db_instance_ids:
+    Ignore: true
+  default_cooldown:
+    Ignore: true
+  loadbalancer_ids:
+    Ignore: true
+  max_size:
+    Ignore: true
+  min_size:
+    Ignore: true
+  removal_policies:
+    Ignore: true
+  scaling_group_name:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true
+Properties:
+  db_instance_ids:
+    To: DBInstanceIds
+  default_cooldown:
+    To: DefaultCooldown
+  desired_capacity:
+    To: DesiredCapacity
+  loadbalancer_ids:
+    To: LoadBalancerIds
+  max_size:
+    To: MaxSize
+  min_size:
+    To: MinSize
+  multi_az_policy:
+    To: MultiAZPolicy
+  on_demand_base_capacity:
+    Ignore: true
+  on_demand_percentage_above_base_capacity:
+    Ignore: true
+  removal_policies:
+    To: RemovalPolicys
+  scaling_group_name:
+    To: ScalingGroupName
+  spot_instance_pools:
+    Ignore: true
+  spot_instance_remedy:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  vswitch_ids:
+    To: VSwitchIds
+ResourceType:
+  From: alicloud_ess_scaling_group
+  To: ALIYUN::ESS::ScalingGroup
+Type: Resource
+Version: '2020-06-01'

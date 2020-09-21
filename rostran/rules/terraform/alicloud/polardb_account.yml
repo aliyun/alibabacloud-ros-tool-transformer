@@ -1,0 +1,23 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  account_description:
+    To: AccountDescription
+  account_name:
+    To: AccountName
+  account_password:
+    To: AccountPassword
+  account_type:
+    To: AccountType
+  db_cluster_id:
+    To: DBClusterId
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+ResourceType:
+  From: alicloud_polardb_account
+  To: ALIYUN::POLARDB::Account
+Type: Resource
+Version: '2020-06-01'

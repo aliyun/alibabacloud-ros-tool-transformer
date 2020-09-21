@@ -28,7 +28,7 @@ TARGET_TEMPLATE_FORMAT_DEFAULT = typer.Option(
 def transform(
     source_path: str,
     source_format: SourceTemplateFormat = SOURCE_TEMPLATE_FORMAT_DEFAULT,
-    target_path: str = typer.Argument(None),
+    target_path: str = typer.Option(None),
     target_format: TargetTemplateFormat = TARGET_TEMPLATE_FORMAT_DEFAULT,
 ):
     """

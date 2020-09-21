@@ -1,0 +1,17 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  character_set:
+    To: CharacterSetName
+  instance_id:
+    To: DBInstanceId
+  name:
+    To: DBName
+  utf8mb4:
+    Ignore: true
+ResourceType:
+  From: alicloud_db_database
+  To: ALIYUN::RDS::Database
+Type: Resource
+Version: '2020-06-01'

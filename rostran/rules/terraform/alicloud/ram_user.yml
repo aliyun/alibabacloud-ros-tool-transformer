@@ -1,0 +1,21 @@
+Attributes:
+  id:
+    To: UserId
+Properties:
+  comments:
+    Ignore: true
+  display_name:
+    To: DisplayName
+  email:
+    Ignore: true
+  force:
+    Ignore: true
+  mobile:
+    To: MobilePhone
+  name:
+    To: UserName
+ResourceType:
+  From: alicloud_ram_user
+  To: ALIYUN::RAM::User
+Type: Resource
+Version: '2020-06-01'

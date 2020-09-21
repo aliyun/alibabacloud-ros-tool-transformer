@@ -1,0 +1,41 @@
+Attributes:
+  bandwidth_package_ids:
+    To: BandwidthPackageIds
+  description:
+    Ignore: true
+  forward_table_ids:
+    To: ForwardTableId
+  id:
+    To: NatGatewayId
+  name:
+    Ignore: true
+  snat_table_ids:
+    To: SNatTableId
+  spec:
+    Ignore: true
+  specification:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+Properties:
+  bandwidth_packages:
+    Ignore: true
+  description:
+    To: Description
+  instance_charge_type:
+    Ignore: true
+  name:
+    To: NatGatewayName
+  period:
+    Ignore: true
+  spec:
+    To: Spec
+  specification:
+    To: Spec
+  vpc_id:
+    To: VpcId
+ResourceType:
+  From: alicloud_nat_gateway
+  To: ALIYUN::ECS::NatGateway
+Type: Resource
+Version: '2020-06-01'

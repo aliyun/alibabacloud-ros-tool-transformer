@@ -1,0 +1,19 @@
+Attributes:
+  comments:
+    Ignore: true
+  id:
+    Ignore: true
+  name:
+    To: GroupName
+Properties:
+  comments:
+    To: Comments
+  force:
+    Ignore: true
+  name:
+    To: GroupName
+ResourceType:
+  From: alicloud_ram_group
+  To: ALIYUN::RAM::Group
+Type: Resource
+Version: '2020-06-01'

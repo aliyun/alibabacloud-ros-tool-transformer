@@ -1,0 +1,59 @@
+Attributes:
+  id:
+    To: DBInstanceId
+  mongo_list:
+    Ignore: true
+  retention_period:
+    Ignore: true
+  shard_list:
+    Ignore: true
+Properties:
+  account_password:
+    To: AccountPassword
+  backup_period:
+    Ignore: true
+  backup_time:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  instance_charge_type:
+    To: ChargeType
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  mongo_list:
+    To: Mongos
+    Type: List
+    Schema:
+      node_class:
+        To: Class
+  name:
+    To: DBInstanceDescription
+  period:
+    To: Period
+  security_group_id:
+    Ignore: true
+  security_ip_list:
+    To: SecurityIPArray
+  shard_list:
+    To: ReplicaSet
+    Type: List
+    Schema:
+      node_class:
+        To: Class
+      node_storage:
+        To: Storage
+  storage_engine:
+    To: StorageEngine
+  tde_status:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+ResourceType:
+  From: alicloud_mongodb_sharding_instance
+  To: ALIYUN::MONGODB::ShardingInstance
+Type: Resource
+Version: '2020-06-01'

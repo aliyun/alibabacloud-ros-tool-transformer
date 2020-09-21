@@ -1,0 +1,49 @@
+Attributes:
+  counters:
+    To: Counters
+  create_date:
+    Ignore: true
+  end_date:
+    Ignore: true
+  executed_by:
+    Ignore: true
+  id:
+    To: ExecutionId
+  is_parent:
+    Ignore: true
+  outputs:
+    To: Outputs
+  ram_role:
+    Ignore: true
+  start_date:
+    Ignore: true
+  status:
+    To: Status
+  status_message:
+    To: StatusMessage
+  template_id:
+    Ignore: true
+  update_date:
+    Ignore: true
+Properties:
+  description:
+    Ignore: true
+  loop_mode:
+    Ignore: true
+  mode:
+    To: Mode
+  parameters:
+    To: Parameters
+  parent_execution_id:
+    To: ParentExecutionId
+  safety_check:
+    To: SafetyCheck
+  template_name:
+    To: TemplateName
+  template_version:
+    To: TemplateVersion
+ResourceType:
+  From: alicloud_oos_execution
+  To: ALIYUN::OOS::Execution
+Type: Resource
+Version: '2020-06-01'

@@ -1,0 +1,41 @@
+Attributes:
+  id:
+    To: [ServiceName, FunctionName]
+  code_checksum:
+    Ignore: true
+  function_id:
+    To: FunctionId
+  last_modified:
+    Ignore: true
+Properties:
+  code_checksum:
+    Ignore: true
+  description:
+    To: Description
+  environment_variables:
+    To: EnvironmentVariables
+  filename:
+    Ignore: true
+  handler:
+    To: Handler
+  memory_size:
+    To: MemorySize
+  name:
+    To: FunctionName
+  name_prefix:
+    To: FunctionName
+  oss_bucket:
+    Ignore: true
+  oss_key:
+    Ignore: true
+  runtime:
+    To: Runtime
+  service:
+    To: ServiceName
+  timeout:
+    To: Timeout
+ResourceType:
+  From: alicloud_fc_function
+  To: ALIYUN::FC::Function
+Type: Resource
+Version: '2020-06-01'

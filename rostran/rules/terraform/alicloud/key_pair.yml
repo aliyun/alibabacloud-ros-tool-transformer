@@ -1,0 +1,23 @@
+Attributes:
+  key_name:
+    To: KeyPairName
+  fingerprint:
+    To: KeyPairFingerPrint
+Properties:
+  key_file:
+    Ignore: true
+  key_name:
+    To: KeyPairName
+  key_name_prefix:
+    To: KeyPairName
+  public_key:
+    To: PublicKeyBody
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    Ignore: true
+ResourceType:
+  From: alicloud_key_pair
+  To: ALIYUN::ECS::SSHKeyPair
+Type: Resource
+Version: '2020-06-01'

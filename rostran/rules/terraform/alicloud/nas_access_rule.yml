@@ -1,0 +1,21 @@
+Attributes:
+  access_rule_id:
+    To: AccessRuleId
+  id:
+    Ignore: true
+Properties:
+  access_group_name:
+    To: AccessGroupName
+  priority:
+    To: Priority
+  rw_access_type:
+    To: RWAccessType
+  source_cidr_ip:
+    To: SourceCidrIp
+  user_access_type:
+    To: UserAccessType
+ResourceType:
+  From: alicloud_nas_access_rule
+  To: ALIYUN::NAS::AccessRule
+Type: Resource
+Version: '2020-06-01'

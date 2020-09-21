@@ -1,0 +1,19 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  account_name:
+    To: AccountName
+  account_privilege:
+    To: AccountPrivilege
+  db_cluster_id:
+    To: DBClusterId
+  db_names:
+    To: DBName
+    Warning: Only first db can be used
+    Handler: ecs_security_group_first_id
+ResourceType:
+  From: alicloud_polardb_account_privilege
+  To: ALIYUN::POLARDB::AccountPrivilege
+Type: Resource
+Version: '2020-06-01'

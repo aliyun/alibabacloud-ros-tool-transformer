@@ -1,0 +1,27 @@
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  last_modify_time:
+    Ignore: true
+Properties:
+  comment:
+    To: Comment
+  life_cycle:
+    To: Lifecycle
+  name:
+    To: TopicName
+  project_name:
+    To: ProjectName
+  record_schema:
+    To: RecordSchema
+  record_type:
+    To: RecordType
+  shard_count:
+    To: ShardCount
+ResourceType:
+  From: alicloud_datahub_topic
+  To: ALIYUN::DATAHUB::Topic
+Type: Resource
+Version: '2020-06-01'

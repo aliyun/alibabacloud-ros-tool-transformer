@@ -1,0 +1,15 @@
+Attributes:
+  id:
+    To: NamespaceId
+Properties:
+  auto_create:
+    To: AutoCreate
+  default_visibility:
+    To: DefaultVisibility
+  name:
+    To: Namespace
+ResourceType:
+  From: alicloud_cr_namespace
+  To: ALIYUN::CR::Namespace
+Type: Resource
+Version: '2020-06-01'

@@ -1,0 +1,23 @@
+Attributes:
+  id:
+    Ignore: true
+  repo_id:
+    To: RepoId
+Properties:
+  detail:
+    To: Detail
+  instance_id:
+    Ignore: true
+  name:
+    To: RepoName
+  namespace:
+    To: RepoNamespace
+  repo_type:
+    To: RepoType
+  summary:
+    To: Summary
+ResourceType:
+  From: alicloud_cr_ee_repo
+  To: ALIYUN::CR::Repository
+Type: Resource
+Version: '2020-06-01'

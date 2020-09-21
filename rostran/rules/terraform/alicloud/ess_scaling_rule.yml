@@ -1,0 +1,39 @@
+Attributes:
+  id:
+    To: ScalingRuleId
+Properties:
+  adjustment_type:
+    To: AdjustmentType
+  adjustment_value:
+    To: AdjustmentValue
+  cooldown:
+    To: Cooldown
+  disable_scale_in:
+    To: DisableScaleIn
+  estimated_instance_warmup:
+    To: EstimatedInstanceWarmup
+  metric_name:
+    To: MetricName
+  scaling_group_id:
+    To: ScalingGroupId
+  scaling_rule_name:
+    To: ScalingRuleName
+  scaling_rule_type:
+    To: ScalingRuleType
+  step_adjustment:
+    To: StepAdjustment
+    Type: List
+    Schema:
+      metric_interval_lower_bound:
+        To: MetricIntervalLowerBound
+      metric_interval_upper_bound:
+        To: MetricIntervalUpperBound
+      scaling_adjustment:
+        To: ScalingAdjustment
+  target_value:
+    To: TargetValue
+ResourceType:
+  From: alicloud_ess_scaling_rule
+  To: ALIYUN::ESS::ScalingRule
+Type: Resource
+Version: '2020-06-01'

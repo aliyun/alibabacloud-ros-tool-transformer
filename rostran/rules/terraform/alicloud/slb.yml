@@ -1,0 +1,43 @@
+Attributes:
+  address:
+    To: IpAddress
+  id:
+    To: LoadBalancerId
+Properties:
+  address:
+    Ignore: true
+  address_ip_version:
+    Ignore: true
+  address_type:
+    To: AddressType
+  bandwidth:
+    To: Bandwidth
+  delete_protection:
+    To: DeletionProtection
+  instance_charge_type:
+    To: PayType
+  internet:
+    To: AddressType
+  internet_charge_type:
+    To: InternetChargeType
+  master_zone_id:
+    To: MasterZoneId
+  name:
+    To: LoadBalancerName
+  period:
+    To: Duration
+  resource_group_id:
+    To: ResourceGroupId
+  slave_zone_id:
+    To: SlaveZoneId
+  specification:
+    To: LoadBalancerSpec
+  tags:
+    To: Tags
+  vswitch_id:
+    To: VSwitchId
+ResourceType:
+  From: alicloud_slb
+  To: ALIYUN::SLB::LoadBalancer
+Type: Resource
+Version: '2020-06-01'

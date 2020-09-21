@@ -1,0 +1,67 @@
+Attributes:
+  domain:
+    To: Domain
+  id:
+    To: InstanceId
+  kibana_domain:
+    To: KibanaDomain
+  kibana_port:
+    To: KibanaPort
+  port:
+    To: Port
+  status:
+    To: Status
+Properties:
+  data_node_amount:
+    Ignore: true
+  data_node_disk_encrypted:
+    Ignore: true
+  data_node_disk_size:
+    Ignore: true
+  data_node_disk_type:
+    Ignore: true
+  data_node_spec:
+    Ignore: true
+  description:
+    To: Description
+  enable_kibana_private_network:
+    Ignore: true
+  enable_kibana_public_network:
+    Ignore: true
+  enable_public:
+    Ignore: true
+  instance_charge_type:
+    To: InstanceChargeType
+  kibana_private_whitelist:
+    Ignore: true
+  kibana_whitelist:
+    To: KibanaWhitelist
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  master_node_spec:
+    Ignore: true
+  password:
+    To: Password
+  period:
+    To: Period
+  private_whitelist:
+    To: PrivateWhitelist
+  public_whitelist:
+    To: PublicWhitelist
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true
+  version:
+    To: Version
+  vswitch_id:
+    To: VSwitchId
+  zone_count:
+    Ignore: true
+ResourceType:
+  From: alicloud_elasticsearch
+  To: ALIYUN::ElasticSearch::Instance
+Type: Resource
+Version: '2020-06-01'

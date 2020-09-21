@@ -1,0 +1,52 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_cdn_domain
+  To: ALIYUN::CDN::Domain
+Properties:
+  domain_name:
+    To: DomainName
+  cdn_type:
+    To: CdnType
+  source_type:
+    Ignore: true
+  source_port:
+    Ignore: true
+  sources:
+    To: Sources
+  scope:
+    To: Scope
+
+Attributes:
+  domain_name:
+    To: DomainName
+  cdn_type:
+    Ignore: true
+  sources:
+    Ignore: true
+  source_type:
+    Ignore: true
+  scope:
+    Ignore: true
+  optimize_enable:
+    Ignore: true
+  auth_config:
+    Ignore: true
+  cache_config:
+    Ignore: true
+  http_header_config:
+    Ignore: true
+  page_404_config:
+    Ignore: true
+  page_compress_enable:
+    Ignore: true
+  parameter_filter_config:
+    Ignore: true
+  range_enable:
+    Ignore: true
+  refer_config:
+    Ignore: true
+  video_seek_enable:
+    Ignore: true
+
+

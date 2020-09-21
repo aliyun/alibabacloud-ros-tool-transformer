@@ -1,0 +1,69 @@
+Attributes:
+  egress:
+    Ignore: true
+  id:
+    Ignore: true
+  ingress:
+    Ignore: true
+  ip_protocol:
+    Ignore: true
+  name:
+    Ignore: true
+  port_range:
+    Ignore: true
+  type:
+    Ignore: true
+Properties:
+  1-100:
+    Ignore: true
+  1/200:
+    Ignore: true
+  accept:
+    Ignore: true
+  all:
+    Ignore: true
+  cidr_ip:
+    Ignore: true
+  description:
+    To: Description
+  drop:
+    Ignore: true
+  egress:
+    Ignore: true
+  gre:
+    Ignore: true
+  icmp:
+    Ignore: true
+  ingress:
+    Ignore: true
+  internet:
+    Ignore: true
+  intranet:
+    Ignore: true
+  ip_protocol:
+    To: IpProtocol
+  nic_type:
+    To: NicType
+  policy:
+    To: Policy
+  port_range:
+    To: PortRange
+  priority:
+    To: Priority
+  security_group_id:
+    To: SecurityGroupId
+  source_group_owner_account:
+    Ignore: true
+  source_security_group_id:
+    Ignore: true
+  tcp:
+    Ignore: true
+  type:
+    Ignore: true
+  udp:
+    Ignore: true
+ResourceType:
+  From: alicloud_security_group_rule
+  To: ALIYUN::ECS::SecurityGroupIngress
+Type: Resource
+Version: '2020-06-01'

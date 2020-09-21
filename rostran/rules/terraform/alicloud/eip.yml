@@ -1,0 +1,35 @@
+Attributes:
+  id:
+    To: AllocationId
+  ip_address:
+    To: EipAddress
+  bandwidth:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  status:
+    Ignore: true
+Properties:
+  bandwidth:
+    To: Bandwidth
+  description:
+    To: Description
+  instance_charge_type:
+    To: InstanceChargeType
+  internet_charge_type:
+    To: InternetChargeType
+  isp:
+    To: Isp
+  name:
+    To: Name
+  period:
+    To: Period
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    To: Tags
+ResourceType:
+  From: alicloud_eip
+  To: ALIYUN::VPC::EIP
+Type: Resource
+Version: '2020-06-01'

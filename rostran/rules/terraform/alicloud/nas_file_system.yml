@@ -1,0 +1,23 @@
+Attributes:
+  id:
+    To: FileSystemId
+Properties:
+  Capacity:
+    To: Capacity
+  NFS:
+    Ignore: true
+  Performance:
+    Ignore: true
+  SMB:
+    Ignore: true
+  description:
+    To: Description
+  protocol_type:
+    To: ProtocolType
+  storage_type:
+    To: StorageType
+ResourceType:
+  From: alicloud_nas_file_system
+  To: ALIYUN::NAS::FileSystem
+Type: Resource
+Version: '2020-06-01'

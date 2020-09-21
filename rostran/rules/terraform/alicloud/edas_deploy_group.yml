@@ -1,0 +1,15 @@
+Attributes:
+  group_type:
+    Ignore: true
+  id:
+    To: [AppId, GroupName, Id]
+Properties:
+  app_id:
+    To: AppId
+  group_name:
+    To: GroupName
+ResourceType:
+  From: alicloud_edas_deploy_group
+  To: ALIYUN::EDAS::DeployGroup
+Type: Resource
+Version: '2020-06-01'

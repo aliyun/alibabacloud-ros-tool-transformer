@@ -1,0 +1,15 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_api_gateway_app
+  To: ALIYUN::ApiGateway::App
+Properties:
+  description:
+    To: Description
+  name:
+    To: AppName
+  tags:
+    To: Tags
+Attributes:
+  id:
+    To: AppId

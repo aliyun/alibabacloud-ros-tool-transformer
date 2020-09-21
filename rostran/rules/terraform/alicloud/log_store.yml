@@ -1,0 +1,41 @@
+Attributes:
+  name:
+    To: LogstoreName
+  append_meta:
+    Ignore: true
+  auto_split:
+    Ignore: true
+  enable_web_tracking:
+    Ignore: true
+  id:
+    Ignore: true
+  max_split_shard_count:
+    Ignore: true
+  project:
+    Ignore: true
+  retention_period:
+    Ignore: true
+  shard_count:
+    Ignore: true
+Properties:
+  append_meta:
+    To: AppendMeta
+  auto_split:
+    To: AutoSplit
+  enable_web_tracking:
+    To: EnableTracking
+  max_split_shard_count:
+    To: MaxSplitShard
+  name:
+    To: LogstoreName
+  project:
+    To: ProjectName
+  retention_period:
+    To: TTL
+  shard_count:
+    To: ShardCount
+ResourceType:
+  From: alicloud_log_store
+  To: ALIYUN::SLS::Logstore
+Type: Resource
+Version: '2020-06-01'

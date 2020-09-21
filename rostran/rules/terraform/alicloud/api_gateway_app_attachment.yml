@@ -1,0 +1,19 @@
+Type: Resource
+Version: '2020-06-01'
+ResourceType:
+  From: alicloud_api_gateway_app_attachment
+  To: ALIYUN::ApiGateway::Authorization
+Properties:
+  api_id:
+    To:
+      - ApiIds
+  app_id:
+    To:
+      - AppIds
+  group_id:
+    To: GroupId
+  stage_name:
+    To: StageName
+Attributes:
+  id:
+    Ignore: true

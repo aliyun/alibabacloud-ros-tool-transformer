@@ -1,0 +1,21 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  endpoint:
+    To: Endpoint
+  filter_tag:
+    To: FilterTag
+  name:
+    To: SubscriptionName
+  notify_content_format:
+    To: NotifyContentFormat
+  notify_strategy:
+    To: NotifyStrategy
+  topic_name:
+    To: TopicName
+ResourceType:
+  From: alicloud_mns_topic_subscription
+  To: ALIYUN::MNS::Subscription
+Type: Resource
+Version: '2020-06-01'

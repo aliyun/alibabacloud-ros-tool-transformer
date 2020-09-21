@@ -1,0 +1,19 @@
+Attributes:
+  id:
+    To: RouterInterfaceId
+Properties:
+  interface_id:
+    To: RouterInterfaceId
+  opposite_interface_id:
+    To: OppositeInterfaceId
+  opposite_interface_owner_id:
+    Ignore: true
+  opposite_router_id:
+    Ignore: true
+  opposite_router_type:
+    Ignore: true
+ResourceType:
+  From: alicloud_router_interface_connection
+  To: ALIYUN::VPC::PeeringRouterInterfaceConnection
+Type: Resource
+Version: '2020-06-01'

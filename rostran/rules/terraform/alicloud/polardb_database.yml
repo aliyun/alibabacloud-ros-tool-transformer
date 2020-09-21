@@ -1,0 +1,17 @@
+Attributes:
+  id:
+    Ignore: true
+Properties:
+  character_set_name:
+    To: CharacterSetName
+  db_cluster_id:
+    To: DBClusterId
+  db_description:
+    To: DBDescription
+  db_name:
+    To: DBName
+ResourceType:
+  From: alicloud_polardb_database
+  To: ALIYUN::POLARDB::DBInstance
+Type: Resource
+Version: '2020-06-01'
