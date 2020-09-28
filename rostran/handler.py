@@ -1,4 +1,4 @@
-def ecs_security_group_first_id(sg_ids, resolved):
+def ecs_security_group_first_id(sg_ids, resolved=False):
     if not sg_ids:
         return None
 

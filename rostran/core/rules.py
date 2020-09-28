@@ -21,12 +21,16 @@ class RuleManager:
         rule_classifier: str,
         resource_rules=None,
         pseudo_parameters_rule=None,
-        function_rules=None,
+        function_rule=None,
+        meta_data_rules=None,
+        association_property_rules=None,
     ):
         self.rule_classifier = rule_classifier
         self.resource_rules = resource_rules or {}
-        self.function_rules = function_rules or {}
+        self.function_rule = function_rule
         self.pseudo_parameters_rule = pseudo_parameters_rule
+        self.meta_data_rule = meta_data_rules
+        self.association_property_rule = association_property_rules
 
     @classmethod
     def initialize(cls, rule_classifier):
@@ -57,13 +61,27 @@ class RuleManager:
                     if self.pseudo_parameters_rule:
                         raise RuleAlreadyExist(id=rule.rule_id, path=filepath)
                     self.pseudo_parameters_rule = rule
+                elif rule.type == Rule.FUNCTION:
+                    if self.function_rule:
+                        raise RuleAlreadyExist(id=rule.rule_id, path=filepath)
+                    self.function_rule = rule
+                elif rule.type == Rule.META_DATA:
+                    if self.meta_data_rule:
+                        raise RuleAlreadyExist(id=rule.rule_id, path=filepath)
+                    self.meta_data_rule = rule
+                elif rule.type == Rule.ASSOCIATION_PROPERTY:
+                    if self.association_property_rule:
+                        raise RuleAlreadyExist(id=rule.rule_id, path=filepath)
+                    self.association_property_rule = rule
 
 
 class Rule:
-
-    TYPES = (RESOURCE, PSEUDO_PARAMETERS) = (
+    TYPES = (RESOURCE, PSEUDO_PARAMETERS, FUNCTION, META_DATA, ASSOCIATION_PROPERTY) = (
         "Resource",
         "PseudoParameters",
+        "Function",
+        "Metadata",
+        "AssociationProperty"
     )
 
     _PROPERTIES = (VERSION, TYPE, RESOURCE_TYPE, PROPERTIES, ATTRIBUTES,) = (
@@ -101,6 +119,12 @@ class Rule:
             return ResourceRule.initialize_from_info(path, data, version, type_)
         elif type_ == cls.PSEUDO_PARAMETERS:
             return PseudoParametersRule.initialize_from_info(path, data, version, type_)
+        elif type_ == cls.FUNCTION:
+            return FunctionRule.initialize_from_info(path, data, version, type_)
+        elif type_ == cls.META_DATA:
+            return MetaDataRule.initialize_from_info(path, data, version, type_)
+        elif type_ == cls.ASSOCIATION_PROPERTY:
+            return AssociationPropertyRule.initialize_from_info(path, data, version, type_)
 
 
 class ResourceRule(Rule):
@@ -146,3 +170,63 @@ class PseudoParametersRule(Rule):
 
         rule_id = cls.PSEUDO_PARAMETERS
         return cls(version, type, rule_id, pseudo_parameters)
+
+
+class FunctionRule(Rule):
+    def __init__(self, version, type, rule_id, function):
+        super().__init__(version, type, rule_id)
+        self.function = function
+        self.ignored = self.ignored_function()
+
+    @classmethod
+    def initialize_from_info(cls, path, data, version, type):
+        function = data.get(cls.FUNCTION, {})
+        if not isinstance(function, dict):
+            InvalidRuleSchema(
+                path=path, reason=f"{cls.FUNCTION} type should be dict"
+            )
+
+        rule_id = cls.FUNCTION
+        return cls(version, type, rule_id, function)
+
+    def ignored_function(self):
+
+        return [
+            aws
+            for aws, ros in self.function.items()
+            if ros.get("Ignore")
+        ]
+
+
+class MetaDataRule(Rule):
+    def __init__(self, version, type, rule_id, meta_data):
+        super().__init__(version, type, rule_id)
+        self.meta_data = meta_data
+
+    @classmethod
+    def initialize_from_info(cls, path, data, version, type):
+        meta_data = data.get(cls.META_DATA, {})
+        if not isinstance(meta_data, dict):
+            InvalidRuleSchema(
+                path=path, reason=f"{cls.META_DATA} type should be dict"
+            )
+
+        rule_id = cls.META_DATA
+        return cls(version, type, rule_id, meta_data)
+
+
+class AssociationPropertyRule(Rule):
+    def __init__(self, version, type, rule_id, association_property):
+        super().__init__(version, type, rule_id)
+        self.association_property = association_property
+
+    @classmethod
+    def initialize_from_info(cls, path, data, version, type):
+        association_property = data.get(cls.ASSOCIATION_PROPERTY, {})
+        if not isinstance(association_property, dict):
+            InvalidRuleSchema(
+                path=path, reason=f"{cls.ASSOCIATION_PROPERTY} type should be dict"
+            )
+
+        rule_id = cls.ASSOCIATION_PROPERTY
+        return cls(version, type, rule_id, association_property)

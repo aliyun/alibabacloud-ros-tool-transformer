@@ -15,10 +15,23 @@ class Parameter:
         "Boolean",
     )
 
-    def __init__(self, name, type, default=None):
+    def __init__(self, name, type, default=None, association_property=None, description=None,
+                 constraint_description=None, allowed_values=None, min_length=None, max_length=None,
+                 allowed_pattern=None, no_echo=None, min_value=None, max_value=None, label=None):
         self.name = name
         self.type = type
         self.default = default
+        self.association_property = association_property
+        self.description = description
+        self.constraint_description = constraint_description
+        self.allowed_values = allowed_values
+        self.allowed_pattern = allowed_pattern
+        self.min_length = min_length
+        self.max_length = max_length
+        self.no_echo = no_echo
+        self.min_value = min_value
+        self.max_value = max_value
+        self.label = label
 
     @classmethod
     def initialize_from_excel(cls, header_cell: Cell, data_cell: Cell):
@@ -59,6 +72,29 @@ class Parameters(dict):
             value = {"Type": param.type}
             if param.default is not None:
                 value.update({"Default": param.default})
+            if param.association_property is not None:
+                value.update({"AssociationProperty": param.association_property})
+            if param.description is not None:
+                value.update({"Description": param.description})
+            if param.constraint_description is not None:
+                value.update({"ConstraintDescription": param.constraint_description})
+            if param.allowed_values is not None:
+                value.update({"AllowedValues": param.allowed_values})
+            if param.min_length is not None:
+                value.update({"MinLength": param.min_length})
+            if param.max_length is not None:
+                value.update({"MaxLength": param.max_length})
+            if param.allowed_pattern is not None:
+                value.update({"AllowedPattern": param.allowed_pattern})
+            if param.no_echo is not None:
+                value.update({"NoEcho": param.no_echo})
+            if param.min_value is not None:
+                value.update({"MinValue": param.min_value})
+            if param.max_value is not None:
+                value.update({"MaxValue": param.max_value})
+            if param.label is not None:
+                value.update({"Label": param.label})
+
             data[key] = value
 
         return data

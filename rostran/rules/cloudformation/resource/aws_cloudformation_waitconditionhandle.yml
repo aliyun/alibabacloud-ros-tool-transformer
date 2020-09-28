@@ -1,0 +1,5 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::CloudFormation::WaitConditionHandle
+  To: AWS::ROS::WaitConditionHandle

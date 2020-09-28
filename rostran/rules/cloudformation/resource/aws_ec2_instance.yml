@@ -1,0 +1,101 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::Instance
+  To: ALIYUN::ECS::Instance
+Properties:
+  AdditionalInfo:
+    Ignore: true
+  Affinity:
+    Ignore: true
+  AvailabilityZone:
+    To: ZoneId
+  BlockDeviceMappings:
+    Type: List
+    To: DiskMappings
+    Schema:
+      DeviceName:
+        To: DiskName
+      Ebs:
+        Ignore: true
+      NoDevice:
+        Ignore: true
+      VirtualName:
+        Ignore: true
+  CpuOptions:
+    Ignore: true
+  CreditSpecification:
+    Ignore: true
+  DisableApiTermination:
+    Ignore: true
+  EbsOptimized:
+    Ignore: true
+  ElasticGpuSpecifications:
+    Ignore: true
+  ElasticInferenceAccelerators:
+    Ignore: true
+  HibernationOptions:
+    Ignore: true
+  HostId:
+    To: DedicatedHostId
+  HostResourceGroupArn:
+    Ignore: true
+  IamInstanceProfile:
+    Ignore: true
+  ImageId:
+    To: ImageId
+  InstanceInitiatedShutdownBehavior:
+    Ignore: true
+  InstanceType:
+    To: InstanceType
+  Ipv6AddressCount:
+    Ignore: true
+  Ipv6Addresses:
+    Ignore: true
+  KernelId:
+    Ignore: true
+  KeyName:
+    To: KeyPairName
+  LaunchTemplate:
+    Ignore: true
+  LicenseSpecifications:
+    Ignore: true
+  Monitoring:
+    Ignore: true
+  NetworkInterfaces:
+    Ignore: true
+  PlacementGroupName:
+    Ignore: true
+  PrivateIpAddress:
+    To: PrivateIpAddress
+  RamdiskId:
+    Ignore: true
+  SecurityGroupIds:
+    To: SecurityGroupId
+    Handler: ecs_security_group_first_id
+    Warning: Only first security group id can be used.
+  SecurityGroups:
+    Ignore: true
+  SourceDestCheck:
+    Ignore: true
+  SsmAssociations:
+    Ignore: true
+  SubnetId:
+    Ignore: true
+  Tags:
+    To: Tags
+  Tenancy:
+    Ignore: true
+  UserData:
+    To: UserData
+  Volumes:
+    Ignore: true
+Attributes:
+  AvailabilityZone:
+    To: ZoneId
+  PrivateDnsName:
+    Ignore: True
+  PublicDnsName:
+    Ignore: True
+  PrivateIp:
+    To: PrivateIp

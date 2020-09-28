@@ -1,0 +1,27 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::VPC
+  To: ALIYUN::ECS::VPC
+Properties:
+  CidrBlock:
+    To: CidrBlock
+  EnableDnsHostnames:
+    Ignore: true
+  EnableDnsSupport:
+    Ignore: true
+  InstanceTenancy:
+    Ignore: true
+  Tags:
+    To: Tags
+Attributes:
+  CidrBlock:
+    Ignore: true
+  CidrBlockAssociations:
+    Ignore: true
+  DefaultNetworkAcl:
+    Ignore: true
+  DefaultSecurityGroup:
+    Ignore: true
+  Ipv6CidrBlocks:
+    Ignore: true

@@ -1,0 +1,63 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::SecurityGroup
+  To: ALIYUN::ECS::SecurityGroup
+Properties:
+  GroupDescription:
+    To: Description
+  GroupName:
+    To: SecurityGroupName
+  SecurityGroupEgress:
+    To: SecurityGroupEgress
+    Type: List
+    Schema:
+      CidrIp:
+        To: DestCidrIp
+      CidrIpv6:
+        To: Ipv6DestCidrIp
+      Description:
+        To: Description
+      DestinationPrefixListId:
+        Ignore: true
+      DestinationSecurityGroupId:
+        Ignore: true
+      FromPort:
+        Ignore: true
+      IpProtocol:
+        To: IpProtocol
+      ToPort:
+        Ignore: true
+  SecurityGroupIngress:
+    To: SecurityGroupIngress
+    Type: List
+    Schema:
+      CidrIp:
+        To: SourceCidrIp
+      CidrIpv6:
+        To: Ipv6SourceCidrIp
+      Description:
+        To: Description
+      SourcePrefixListId:
+        Ignore: True
+      SourceSecurityGroupId:
+        To: SourceGroupId
+      SourceSecurityGroupName:
+        Ignore: True
+      SourceSecurityGroupOwnerId:
+        To: SourceGroupOwnerId
+      IpProtocol:
+        To: IpProtocol
+      FromPort:
+        Ignore: True
+      ToPort:
+        Ignore: True
+  Tags:
+    To: Tags
+  VpcId:
+    To: VpcId
+Attributes:
+  GroupId:
+    To: SecurityGroupId
+  VpcId:
+    Ignore: True
