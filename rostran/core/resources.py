@@ -7,19 +7,24 @@ from .utils import get_and_validate_cell
 
 class Resource:
 
-    PROPERTIES_ = (TYPE, PROPERTIES, DEPENDS_ON,) = (
+    PROPERTIES_ = (TYPE, PROPERTIES, DEPENDS_ON, CONDITION, DELETION_POLICY) = (
         "Type",
         "Properties",
         "DependsOn",
+        "Condition",
+        "DeletionPolicy"
     )
 
     def __init__(
-        self, resource_id, resource_type, properties: Properties = None, depends_on=None
+        self, resource_id, resource_type, properties: Properties = None, depends_on=None,
+        condition=None, deletion_policy=None,
     ):
         self.resource_id = resource_id
         self.type = resource_type
         self.properties = properties or Properties()
         self.depends_on = depends_on
+        self.condition = condition
+        self.deletion_policy = deletion_policy
 
     @classmethod
     def initialize_from_excel(cls, header_cell: Cell, data_cell: Cell):
@@ -71,6 +76,10 @@ class Resources(dict):
             }
             if resource.depends_on:
                 value[Resource.DEPENDS_ON] = resource.depends_on
+            if resource.condition:
+                value[Resource.CONDITION] = resource.condition
+            if resource.deletion_policy:
+                value[Resource.DELETION_POLICY] = resource.deletion_policy
 
             data[key] = value
 

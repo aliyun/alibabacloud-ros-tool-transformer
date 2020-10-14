@@ -1,0 +1,39 @@
+Version: 2020-06-01
+Type: AssociationProperty
+AssociationProperty:
+  AWS::EC2::AvailabilityZone::Name:
+    To: ALIYUN::ECS::Instance::ZoneId
+  AWS::EC2::Image::Id:
+    To: ALIYUN::ECS::Instance::ImageId
+  AWS::EC2::Instance::Id:
+    Ignore: true
+  AWS::EC2::KeyPair::KeyName:
+    To: ALIYUN::ECS::KeyPair::KeyPairName
+  AWS::EC2::SecurityGroup::GroupName:
+    Ignore: true
+  AWS::EC2::SecurityGroup::Id:
+    To: ALIYUN::ECS::SecurityGroup::SecurityGroupId
+  AWS::EC2::Subnet::Id:
+    Ignore: true
+  AWS::EC2::Volume::Id:
+    Ignore: true
+  AWS::EC2::VPC::Id:
+    To: ALIYUN::ECS::VPC::VPCId
+  AWS::Route53::HostedZone::Id:
+    Ignore: true
+  List<AWS::EC2::AvailabilityZone::Name>:
+    To: ALIYUN::ECS::Instance::ZoneId
+  List<AWS::EC2::Image::Id>:
+    To: ALIYUN::ECS::Instance::ImageId
+  List<AWS::EC2::SecurityGroup::GroupName>:
+    Ignore: true
+  List<AWS::EC2::SecurityGroup::Id>:
+    To: ALIYUN::ECS::SecurityGroup::SecurityGroupId
+  List<AWS::EC2::Subnet::Id>:
+    Ignore: true
+  List<AWS::EC2::Volume::Id>:
+    Ignore: true
+  List<AWS::EC2::VPC::Id>:
+    To: ALIYUN::ECS::VPC::VPCId
+  List<AWS::Route53::HostedZone::Id>:
+    Ignore: true

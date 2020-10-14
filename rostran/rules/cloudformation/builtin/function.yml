@@ -1,0 +1,37 @@
+Version: 2020-06-01
+Type: Function
+Function:
+  Fn::Base64:
+    To: Fn::Base64Encode
+  Fn::And:
+    To: Fn::And
+  Fn::Equals:
+    To: Fn::Equals
+  Fn::If:
+    To: Fn::If
+  Fn::Not:
+    To: Fn::Not
+  Fn::Or:
+    To: Fn::Or
+  Fn::FindInMap:
+    To: Fn::FindInMap
+  Fn::GetAtt:
+    To: Fn::GetAtt
+  Fn::GetAZs:
+    To: Fn::GetAZs
+  Fn::Join:
+    To: Fn::Join
+  Fn::Select:
+    To: Fn::Select
+  Fn::Split:
+    To: Fn::Split
+  Fn::Sub:
+    To: Fn::Sub
+  Ref:
+    To: Ref
+  Fn::Cidr:
+    Ignore: true
+  Fn::Transform:
+    Ignore: true
+  Fn::ImportValue:
+    Ignore: true

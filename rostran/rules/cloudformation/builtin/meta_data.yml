@@ -1,0 +1,9 @@
+Version: 2020-06-01
+Type: Metadata
+Metadata:
+  AWS::CloudFormation::Init:
+    Ignore: true
+  AWS::CloudFormation::Authentication:
+    Ignore: true
+  AWS::CloudFormation::Interface:
+    To: ALIYUN::ROS::Interface
