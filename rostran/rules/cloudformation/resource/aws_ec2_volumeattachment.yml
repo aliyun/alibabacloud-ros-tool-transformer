@@ -1,0 +1,12 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::VolumeAttachment
+  To: ALIYUN::ECS::DiskAttachment
+Properties:
+  Device:
+    To: Device
+  InstanceId:
+    To: InstanceId
+  VolumeId:
+    To: DiskId

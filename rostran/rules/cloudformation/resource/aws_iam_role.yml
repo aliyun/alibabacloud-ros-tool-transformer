@@ -1,0 +1,44 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::IAM::Role
+  To: ALIYUN::RAM::Role
+Properties:
+  AssumeRolePolicyDocument:
+    To: AssumeRolePolicyDocument
+    Type: Map
+    Schema:
+      Version:
+        To: Version
+      Statement:
+        To: Statement
+        Type: List
+        Schema:
+          Effect:
+            To: Effect
+          Principal:
+            To: Principal
+          Action:
+            To: Action
+            Handler: ecs_security_group_first_id
+            Warning: Only first action can be used.
+  Description:
+    To: Description
+  ManagedPolicyArns:
+    Ignore: true
+  MaxSessionDuration:
+    Ignore: true
+  Path:
+    Ignore: true
+  PermissionsBoundary: String
+  Policies:
+    To: Policies
+  RoleName:
+    To: RoleName
+  Tags:
+    Ignore: true
+Attributes:
+  Arn:
+    To: Arn
+  RoleId:
+    To: RoleId

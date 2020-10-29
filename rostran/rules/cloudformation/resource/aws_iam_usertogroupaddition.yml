@@ -1,0 +1,10 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::IAM::UserToGroupAddition
+  To: ALIYUN::RAM::UserToGroupAddition
+Properties:
+  GroupName:
+    To: GroupName
+  Users:
+    To: Users

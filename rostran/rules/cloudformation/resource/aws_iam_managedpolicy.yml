@@ -1,0 +1,20 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::IAM::ManagedPolicy
+  To: ALIYUN::RAM::ManagedPolicy
+Properties:
+  Description:
+    To: Description
+  Groups:
+    To: Groups
+  ManagedPolicyName:
+    To: PolicyName
+  Path:
+    Ignore: true
+  PolicyDocument:
+    To: PolicyDocument
+  Roles:
+    To: Roles
+  Users:
+    To: Users

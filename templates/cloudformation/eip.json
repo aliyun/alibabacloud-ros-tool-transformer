@@ -1,0 +1,34 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "InstanceId": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "Eip": {
+      "Type": "AWS::EC2::EIP"
+    },
+    "EipAssociation": {
+      "Type": "AWS::EC2::EIPAssociation",
+      "Properties": {
+        "AllocationId": {
+          "Ref": "Eip"
+        },
+        "InstanceId": {
+          "Ref": "InstanceId"
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "EipId": {
+      "Value": {
+        "Fn::GetAtt": [
+          "Eip",
+          "AllocationId"
+        ]
+      }
+    }
+  }
+}

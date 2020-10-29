@@ -1,0 +1,53 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "RoleName": {
+      "Type": "String",
+      "Default": "iam-trans"
+    },
+    "Version": {
+      "Type": "String"
+    },
+    "Effect": {
+      "Type": "String",
+      "AllowedValues": [
+        "Allow",
+        "Deny"
+      ]
+    },
+    "Service": {
+      "Type": "Json"
+    }
+  },
+  "Resources": {
+    "RootRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName": {
+          "Ref": "RoleName"
+        },
+        "AssumeRolePolicyDocument": {
+          "Version": {
+            "Ref": "Version"
+          },
+          "Statement": [
+            {
+              "Effect": {
+                "Ref": "Effect"
+              },
+              "Principal": {
+                "Service": {
+                  "Ref": "Service"
+                }
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Path": "/"
+      }
+    }
+  }
+}

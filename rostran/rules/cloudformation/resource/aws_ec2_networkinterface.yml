@@ -1,0 +1,33 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::NetworkInterface
+  To: ALIYUN::ECS::NetworkInterface
+Properties:
+  Description:
+    To: Description
+  GroupSet:
+    To: SecurityGroupIds
+  InterfaceType:
+    Ignore: true
+  Ipv6AddressCount:
+    Ignore: true
+  Ipv6Addresses:
+    Ignore: true
+  PrivateIpAddress:
+    To: PrimaryIpAddress
+  PrivateIpAddresses:
+    To: PrivateIpAddresses
+  SecondaryPrivateIpAddressCount:
+    Ignore: true
+  SourceDestCheck:
+    Ignore: true
+  SubnetId:
+    To: VSwitchId
+  Tags:
+    To: Tags
+Attributes:
+  PrimaryPrivateIpAddress:
+    To: PrivateIpAddress
+  SecondaryPrivateIpAddresses:
+    To: SecondaryPrivateIpAddresses

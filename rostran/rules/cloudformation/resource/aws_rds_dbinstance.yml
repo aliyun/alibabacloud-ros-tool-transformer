@@ -1,0 +1,115 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::RDS::DBInstance
+  To: ALIYUN::RDS::DBInstance
+Properties:
+  AllocatedStorage:
+    To: DBInstanceStorage
+  AllowMajorVersionUpgrade:
+    Ignore: true
+  AssociatedRoles:
+    Ignore: true
+  AutoMinorVersionUpgrade:
+    Ignore: true
+  AvailabilityZone:
+    To: ZoneId
+  BackupRetentionPeriod:
+    To: BackupRetentionPeriod
+  CACertificateIdentifier:
+    Ignore: true
+  CharacterSetName:
+    Ignore: true
+  CopyTagsToSnapshot:
+    Ignore: true
+  DBClusterIdentifier:
+    Ignore: true
+  DBInstanceClass:
+    To: DBInstanceClass
+  DBInstanceIdentifier:
+    Ignore: true
+  DBName:
+    Ignore: true
+  DBParameterGroupName:
+    Ignore: true
+  DBSecurityGroups:
+    Ignore: true
+  DBSnapshotIdentifier:
+    Ignore: true
+  DBSubnetGroupName:
+    Ignore: true
+  DeleteAutomatedBackups:
+    Ignore: true
+  DeletionProtection:
+    Ignore: true
+  Domain:
+    Ignore: true
+  DomainIAMRoleName:
+    Ignore: true
+  EnableCloudwatchLogsExports:
+    Ignore: true
+  EnableIAMDatabaseAuthentication:
+    Ignore: true
+  EnablePerformanceInsights:
+    Ignore: true
+  Engine:
+    To: Engine
+  EngineVersion:
+    To: EngineVersion
+  Iops:
+    Ignore: true
+  KmsKeyId:
+    To: EncryptionKey
+  LicenseModel:
+    Ignore: true
+  MasterUsername:
+    To: MasterUsername
+  MasterUserPassword:
+    To: MasterUserPassword
+  MaxAllocatedStorage:
+    Ignore: true
+  MonitoringInterval:
+    Ignore: true
+  MonitoringRoleArn:
+    Ignore: true
+  MultiAZ:
+    To: MultiAZ
+  OptionGroupName:
+    Ignore: true
+  PerformanceInsightsKMSKeyId:
+    Ignore: true
+  PerformanceInsightsRetentionPeriod:
+    Ignore: true
+  Port:
+    Ignore: true
+  PreferredBackupWindow:
+    Ignore: true
+  PreferredMaintenanceWindow:
+    Ignore: true
+  ProcessorFeatures:
+    Ignore: true
+  PromotionTier:
+    Ignore: true
+  PubliclyAccessible:
+    Ignore: true
+  SourceDBInstanceIdentifier:
+    Ignore: true
+  SourceRegion:
+    Ignore: true
+  StorageEncrypted:
+    Ignore: true
+  StorageType:
+    To: Category
+  Tags:
+    To: Tags
+  Timezone:
+    To: DBTimeZone
+  UseDefaultProcessorFeatures:
+    Ignore: true
+  VPCSecurityGroups:
+    Ignore: true
+Attributes:
+  Endpoint.Address:
+    To: PublicConnectionString
+  Endpoint.Port:
+    To: PublicPort

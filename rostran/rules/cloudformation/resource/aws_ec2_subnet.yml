@@ -1,0 +1,29 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::Subnet
+  To: ALIYUN::ECS::VSwitch
+Properties:
+  AssignIpv6AddressOnCreation:
+    Ignore: true
+  AvailabilityZone:
+    To: ZoneId
+  CidrBlock:
+    To: CidrBlock
+  Ipv6CidrBlock:
+    Ignore: true
+  MapPublicIpOnLaunch:
+    Ignore: true
+  Tags:
+    To: Tags
+  VpcId:
+    To: VpcId
+Attributes:
+  AvailabilityZone:
+    Ignore: true
+  Ipv6CidrBlocks:
+    Ignore: true
+  NetworkAclAssociationId:
+    Ignore: true
+  VpcId:
+    Ignore: true
