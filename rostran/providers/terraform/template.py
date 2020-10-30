@@ -2,12 +2,12 @@ import json
 import logging
 import os
 import shutil
-import platform
-from subprocess import check_output, CalledProcessError
+from subprocess import CalledProcessError
 from uuid import uuid4
 import importlib
 from typing import Any
 
+import parsetf
 from python_terraform import Terraform, TerraformCommandError
 
 from rostran.core.exceptions import (
@@ -18,7 +18,6 @@ from rostran.core.exceptions import (
     TerraformPlanFormatVersionNotSupported,
     TerraformMultiProvidersNotSupported,
     TerraformProviderNotFound,
-    SystemNotSupport,
 )
 from rostran.core.format import FileFormat
 from rostran.core.rules import RuleManager, RuleClassifier, ResourceRule
@@ -27,7 +26,6 @@ from rostran.core.template import Template
 from rostran.core.properties import Property
 from rostran.core.resources import Resources, Resource
 from rostran.core.outputs import Outputs, Output
-from rostran.core.settings import PARSETF_MAC_PATH
 
 logger = logging.getLogger(__name__)
 
@@ -154,12 +152,6 @@ class TerraformTemplate(Template):
 
     @classmethod
     def _get_plan_data(cls, tf_dir, tf_plan_path=None) -> (dict, dict):
-        # Check "parsetf" command
-        system = platform.system()
-        if system == "Darwin":
-            parsetf_cmd_path = PARSETF_MAC_PATH
-        else:
-            raise SystemNotSupport(name=system)
 
         # Check "terraform" command
         tf_cmd_path = shutil.which("terraform")
@@ -195,8 +187,8 @@ class TerraformTemplate(Template):
 
         # Using "parsetf" to parse configuration
         try:
-            cmd = [parsetf_cmd_path, "-path", tf_dir]
-            output = check_output(cmd)
+            output = parsetf.parse(tf_dir)
+
         except CalledProcessError as e:
             raise RunCommandFailed(cmd=e.cmd, reason=e.output)
 

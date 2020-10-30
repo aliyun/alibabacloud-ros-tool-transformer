@@ -1,0 +1,28 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::Volume
+  To: ALIYUN::ECS::Disk
+Properties:
+  AutoEnableIO:
+    Ignore: true
+  AvailabilityZone:
+    To: ZoneId
+  Encrypted:
+    To: Encrypted
+  Iops:
+    Ignore: true
+  KmsKeyId:
+    To: KMSKeyId
+  MultiAttachEnabled:
+    Ignore: true
+  OutpostArn:
+    Ignore: true
+  Size:
+    To: Size
+  SnapshotId:
+    To: SnapshotId
+  Tags:
+    To: Tags
+  VolumeType:
+    To: DiskCategory

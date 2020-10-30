@@ -1,0 +1,17 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::EIP
+  To: ALIYUN::VPC::EIP
+Properties:
+  Domain:
+    Ignore: True
+  InstanceId:
+    Ignore: True
+  PublicIpv4Pool:
+    Ignore: True
+  Tags:
+    To: Tags
+Attributes:
+  AllocationId:
+    To: AllocationId

@@ -81,7 +81,7 @@ Properties:
   SsmAssociations:
     Ignore: true
   SubnetId:
-    Ignore: true
+    To: VSwitchId
   Tags:
     To: Tags
   Tenancy:

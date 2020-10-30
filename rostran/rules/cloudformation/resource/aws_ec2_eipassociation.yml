@@ -1,0 +1,16 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::EIPAssociation
+  To: ALIYUN::VPC::EIPAssociation
+Properties:
+  AllocationId:
+    To: AllocationId
+  EIP:
+    To: AllocationId
+  InstanceId:
+    To: InstanceId
+  NetworkInterfaceId:
+    Ignore: True
+  PrivateIpAddress:
+    To: PrivateIpAddress

@@ -1,0 +1,53 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::ElasticLoadBalancing::LoadBalancer
+  To: ALIYUN::SLB::LoadBalancer
+Properties:
+  AccessLoggingPolicy:
+    Ignore: true
+  AppCookieStickinessPolicy:
+    Ignore: true
+  AvailabilityZones:
+    Handler: ecs_security_group_first_id
+    Warning: Only first zone id can be used.
+    To: MasterZoneId
+  ConnectionDrainingPolicy:
+    Ignore: true
+  ConnectionSettings:
+    Ignore: true
+  CrossZone:
+    Ignore: true
+  HealthCheck:
+    Ignore: true
+  Instances:
+    Ignore: true
+  LBCookieStickinessPolicy:
+    Ignore: true
+  Listeners:
+    Ignore: true
+  LoadBalancerName:
+    To: LoadBalancerName
+  Policies:
+    Ignore: true
+  Scheme:
+    Ignore: true
+  SecurityGroups:
+    Ignore: true
+  Subnets:
+    To: VSwitchId
+    Handler: ecs_security_group_first_id
+    Warning: Only first subnet can be used.
+  Tags:
+    To: Tags
+Attributes:
+  CanonicalHostedZoneName:
+    Ignore: true
+  CanonicalHostedZoneNameID:
+    Ignore: true
+  DNSName:
+    Ignore: true
+  SourceSecurityGroup.GroupName:
+    Ignore: true
+  SourceSecurityGroup.OwnerAlias:
+    Ignore: true
