@@ -1,0 +1,93 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Metadata": {
+    "AWS::CloudFormation::Interface": {
+      "ParameterLabels": {
+        "LoadBalancerNames": {
+          "default": "LoadBalancerIds"
+        },
+        "VPCZoneIdentifier": {
+          "default": "VSwitchIds"
+        }
+      }
+    }
+  },
+  "Parameters": {
+    "ScalingGroupName": {
+      "Type": "String"
+    },
+    "AvailabilityZones": {
+      "Type": "Json"
+    },
+    "Cooldown": {
+      "Type": "String",
+      "Default": "300"
+    },
+    "HealthCheckType": {
+      "Type": "String"
+    },
+    "InstanceId": {
+      "Type": "String"
+    },
+    "LoadBalancerNames": {
+      "Type": "String"
+    },
+    "MaxSize": {
+      "Type": "String"
+    },
+    "MinSize": {
+      "Type": "String"
+    },
+    "VPCZoneIdentifier": {
+      "Type": "Json"
+    },
+    "LifecycleTransition": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "ScalingGroup": {
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "Properties": {
+        "AutoScalingGroupName": {
+          "Ref": "ScalingGroupName"
+        },
+        "AvailabilityZones": {
+          "Ref": "AvailabilityZones"
+        },
+        "Cooldown": {
+          "Ref": "Cooldown"
+        },
+        "HealthCheckType": {
+          "Ref": "HealthCheckType"
+        },
+        "InstanceId": {
+          "Ref": "InstanceId"
+        },
+        "LoadBalancerNames": {
+          "Ref": "LoadBalancerNames"
+        },
+        "MaxSize": {
+          "Ref": "MaxSize"
+        },
+        "MinSize": {
+          "Ref": "MinSize"
+        },
+        "VPCZoneIdentifier": {
+          "Ref": "VPCZoneIdentifier"
+        }
+      }
+    },
+    "LifecycleHook": {
+      "Type": "AWS::AutoScaling::LifecycleHook",
+      "Properties": {
+        "AutoScalingGroupName": {
+          "Ref": "ScalingGroup"
+        },
+        "LifecycleTransition": {
+          "Ref": "LifecycleTransition"
+        }
+      }
+    }
+  }
+}
