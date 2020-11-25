@@ -1,0 +1,61 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::AutoScaling::AutoScalingGroup
+  To: ALIYUN::ESS::ScalingGroup
+Properties:
+  AutoScalingGroupName:
+    To: ScalingGroupName
+  AvailabilityZones:
+    Ignore: true
+  Cooldown:
+    To: DefaultCooldown
+  DesiredCapacity:
+    To: DesiredCapacity
+  HealthCheckGracePeriod:
+    Ignore: true
+  HealthCheckType:
+    To: HealthCheckType
+  InstanceId:
+    To: InstanceId
+  LaunchConfigurationName:
+    Ignore: true
+  LaunchTemplate:
+    Ignore: true
+  LifecycleHookSpecificationList:
+    Ignore: true
+  LoadBalancerNames:
+    To: LoadBalancerIds
+  MaxInstanceLifetime:
+    Ignore: true
+  MaxSize:
+    To: MaxSize
+  MinSize:
+    To: MinSize
+  MetricsCollection:
+    Ignore: true
+  MixedInstancesPolicy:
+    Ignore: true
+  NewInstancesProtectedFromScaleIn:
+    Ignore: true
+  NotificationConfigurations:
+    To: NotificationConfigurations
+    Type: List
+    Schema:
+      NotificationTypes:
+        To: NotificationTypes
+      TopicARN:
+        To: NotificationArn
+  PlacementGroup:
+    Ignore: true
+  ServiceLinkedRoleARN:
+    Ignore: true
+  Tags:
+    Ignore: true
+  TargetGroupARNs:
+    Ignore: true
+  TerminationPolicies:
+    Ignore: true
+  VPCZoneIdentifier:
+    To: VSwitchIds
+

@@ -1,0 +1,22 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::AutoScaling::LifecycleHook
+  To: ALIYUN::ESS::LifecycleHook
+Properties:
+  AutoScalingGroupName:
+    To: ScalingGroupId
+  DefaultResult:
+    To: DefaultResult
+  HeartbeatTimeout:
+    To: HeartbeatTimeout
+  LifecycleHookName:
+    To: LifecycleHookName
+  LifecycleTransition:
+    To: LifecycleTransition
+  NotificationMetadata:
+    To: NotificationMetadata
+  NotificationTargetARN:
+    To: NotificationArn
+  RoleARN:
+    Ignore: true

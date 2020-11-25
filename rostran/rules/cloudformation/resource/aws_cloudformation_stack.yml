@@ -1,0 +1,16 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::CloudFormation::Stack
+  To: ALIYUN::ROS::Stack
+Properties:
+  NotificationARNs:
+    Ignore: true
+  Parameters:
+    To: Parameters
+  Tags:
+    Ignore: true
+  TemplateURL:
+    To: TemplateURL
+  TimeoutInMinutes:
+    To: TimeoutMins
