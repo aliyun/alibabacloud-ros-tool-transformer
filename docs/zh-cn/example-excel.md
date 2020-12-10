@@ -1,17 +1,34 @@
 # Excel模板转ROS模板
 ## 命令
-使用以下命令可将 Execl 模板转换为 ROS 模板，并在当前目录生成 `template-{number}.json`。
-
-Excel 中的每个 sheet 都是一个模板。如果您在 Excel 中定义了多个 Sheet，则最多可同时转换 5 个 Sheet。
+使用以下命令可将 Excel 模板转换为 ROS 模板，并在当前目录生成 `template-{number}.json`：
 
 ```bash
 rostran transform templates/excel/EcsInstance.xlsx --target-path tests/template.json
 ```
 
+## Excel 模板语法
+Excel 模板仅支持 1 个 Sheet，其中：
+* 第 1 列为资源类型或属性。
+* 从第 2 列开始，每一列代表一个模板，对应的每一行为资源的属性值。
+
+### 参数和资源声明
+在第 1 列中，可按行填写资源类型及其属性，分为两个区块：
+* [选填] `ROS::Parameters` 表示生成到 ROS 模板中的参数，可以在属性值单元格中通过 `!Ref` 来引用。
+在 Sheet 中声明此区块后，接下来的每一行单元格可声明参数，直至遇到下一个区块声明。
+
+* [必填] `ROS::Resources` 表示生成到 ROS 模板中的资源。
+在 Sheet 中声明此区块后，可在后面的行单元格中声明[资源类型](https://www.alibabacloud.com/help/doc-detail/127039.htm)，
+然后再下面的 N 行中声明此资源的 N 个属性。可如此往复声明多个资源。
+
+### 注释
+* 单元格以 `#` 开始注释整行内容。
+* 如果单元格已经声明了区块，在此单元格中换行的内容也被视作注释。
+
+
 ## 原始 Excel 模板
 [点击查看](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
 
-<img src="https://github.com/aliyun/alibabacloud-ros-tool-transformer/raw/master/docs/_media/example-execl.png" style="zoom:50%" />
+<img src="https://github.com/aliyun/alibabacloud-ros-tool-transformer/raw/master/docs/_media/example-excel.png" style="zoom:50%" />
 
 ## 转换后的 ROS 模板
 - template-0.json
