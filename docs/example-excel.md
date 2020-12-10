@@ -13,7 +13,7 @@ rostran transform templates/excel/EcsInstance.xlsx.md --target-path tests/templa
 ## Original Excel Template
 [Click to View](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
 
-<img src="../_media/example-execl.png" style="zoom:50%" />
+<img src="https://github.com/aliyun/alibabacloud-ros-tool-transformer/raw/master/docs/_media/example-execl.png" style="zoom:50%" />
 
 ## Transformed ROS Template
 - template-0.json

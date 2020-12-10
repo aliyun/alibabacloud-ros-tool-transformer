@@ -11,7 +11,7 @@ rostran transform templates/excel/EcsInstance.xlsx --target-path tests/template.
 ## 原始 Excel 模板
 [点击查看](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
 
-<img src="../_media/example-execl.png" style="zoom:50%" />
+<img src="https://github.com/aliyun/alibabacloud-ros-tool-transformer/raw/master/docs/_media/example-execl.png" style="zoom:50%" />
 
 ## 转换后的 ROS 模板
 - template-0.json
