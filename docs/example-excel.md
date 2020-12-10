@@ -1,14 +1,21 @@
 # Transform Excel Template to ROS Template
 ## Command
-Use the following command to generate the ROS template `template.json` in the tests directory. <br>
-Each sheet in Excel is a template. If you define multiple templates in Excel, you can convert up to 5 templates at the same time and add an ordered suffix to the generated ROS template.
+Use the following command to transform Execl template into ROS template
+and generate `template-{number}.json` in the current directory.
+
+Each sheet in Excel is a template. If you define multiple sheets in Excel, 
+you can convert up to 5 sheets at the same time.
+
 ```bash
 rostran transform templates/excel/EcsInstance.xlsx.md --target-path tests/template.json
 ```
-## Excel Template
-[view](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
 
-## ROS Template
+## Original Excel Template
+[Click to View](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
+
+<img src="../_media/example-execl.png" style="zoom:50%" />
+
+## Transformed ROS Template
 - template-0.json
 ```json
 {

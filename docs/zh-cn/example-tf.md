@@ -1,18 +1,21 @@
-# Transform Terraform Template to ROS Template
-## Command
-Use the following command to generate the ROS template `template.yml` in the current directory.
+# Terraform 模板转 ROS 模板
+## 命令
+使用以下命令可将 Terraform 模板转换为 ROS 模板，并在当前目录生成 `template.json`：
 
 ```bash
 rostran transform templates/terraform/alicloud/main.tf
 ```
-When transforming the Terraform template, if `--source-format` is specified, `SOURCE_PATH` can be the directory where the Terraform template is located.
+
+也可以通过 `--source-format terraform` 显式指定原始模板的类别：
+
 ```bash
 rostran transform templates/terraform/alicloud --source-format terraform
 ```
-## Terraform Template
+
+## 原始 Terraform 模板
 - main.tf
 
-```hcl-terraform
+```hcl
 # Configure the AliCloud Provider
 provider "alicloud" {}
 
@@ -32,7 +35,7 @@ resource "alicloud_vswitch" "myvswitch" {
 
 - output.tf
 
-```hcl-terraform
+```hcl
 output "vpc_id" {
   value = alicloud_vpc.myvpc.id
 }
@@ -42,7 +45,7 @@ output "vswitch_id" {
 }
 
 ```
-## ROS Template
+## 转换后的 ROS 模板
 ```yaml
 ROSTemplateFormatVersion: '2015-09-01'
 Resources:

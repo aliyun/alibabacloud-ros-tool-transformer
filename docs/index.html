@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
-<div data-app id="app"></div>
+<div data-app id="app">Loading...</div>
 
 <script>
     window.$docsify = {
@@ -32,10 +32,30 @@
                 '/zh-cn/': '搜索',
             }
         },
+        plugins: [
+          function (hook, vm) {
+            hook.beforeEach(function (html) {
+              var url = 'https://github.com/aliyun/alibabacloud-ros-tool-transformer/tree/master/docs/' + vm.route.file
+              var editHtml = '[:memo: Edit Document](' + url + ')\n'
 
+              return editHtml
+                + html
+                + '\n\n----\n\n'
+                + '<a href="https://github.com/aliyun/alibabacloud-ros-tool-transformer">ROS Template Transformer</a> Copyright &copy; 2020-2020 <a href="https://www.alibabacloud.com/zh/product/ros">ROS</a>. '
+                + 'Powered By <a href="https://github.com/QingWei-Li/docsify" target="_blank">docsify</a>.'
+            })
+          }
+        ]
     }
 </script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-hcl.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
 </body>
 </html>

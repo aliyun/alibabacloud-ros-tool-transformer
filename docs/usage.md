@@ -4,13 +4,16 @@
 ```bash
 rostran --help
 ```
+
 ### Transform Template
 ```bash
 rostran transform SOURCE_PATH [OPTIONS] 
 ```
+
 ## Parameter
 ### SOURCE_PATH
 Required parameter, the path of the source template file, which can be a template file in Excel, Terraform, or AWS CloudFormation format.
+
 ### OPTIONS
 Optional parameters, you can use the following three valid parameters:
 - `--source-format`: The format of the source template file, valid values: `auto` (default value) | `terraform` | `excel`| `cloudformation`, the source file format is determined by the suffix of `SOURCE_PATH` by default.

@@ -1,12 +1,13 @@
-# AWS CloudFormation 模板转 ROS 模板
-## 命令
-使用以下命令在当前目录生成 ROS 模版 `template.json`。
+# Transform AWS CloudFormation Terraform to ROS Terraform
+## Command
+Use the following command to transform AWS CloudFormation template into ROS template 
+and generate `template.json` in the current directory:
 
 ```bash
 rostran transform templates/cloudformation/vpc_sg.json --target-format json
 ```
 
-## AWS CloudFormation 模板
+## Original AWS CloudFormation Template
 ```json
 {
   "AWSTemplateFormatVersion": "2010-09-09",
@@ -83,7 +84,7 @@ rostran transform templates/cloudformation/vpc_sg.json --target-format json
   }
 }
 ```
-## ROS 模板
+## Transformed ROS Template
 ```json
 {
   "ROSTemplateFormatVersion": "2015-09-01",

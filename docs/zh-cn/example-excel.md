@@ -1,14 +1,19 @@
 # Excel模板转ROS模板
 ## 命令
-使用以下命令在 tests 目录下生成 ROS 模板 `template.json`。<br>
-Excel 中的每个 sheet 都是一个模板。如果您在 Excel 中定义了多个模板，则最多可同时转换5个模板，并为生成的 ROS 模板添加有序后缀。
-```bash
-rostran transform templates/excel/EcsInstance.xlsx.md --target-path tests/template.json
-```
-## Excel 模板
-[view](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
+使用以下命令可将 Execl 模板转换为 ROS 模板，并在当前目录生成 `template-{number}.json`。
 
-## ROS 模板
+Excel 中的每个 sheet 都是一个模板。如果您在 Excel 中定义了多个 Sheet，则最多可同时转换 5 个 Sheet。
+
+```bash
+rostran transform templates/excel/EcsInstance.xlsx --target-path tests/template.json
+```
+
+## 原始 Excel 模板
+[点击查看](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
+
+<img src="../_media/example-execl.png" style="zoom:50%" />
+
+## 转换后的 ROS 模板
 - template-0.json
 ```json
 {
