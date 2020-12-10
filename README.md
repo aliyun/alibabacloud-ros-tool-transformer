@@ -4,8 +4,7 @@ is a tool for transforming **AWS CloudFormation/Terraform/Excel** template to **
 
 ## Requirements
 - Python 3.6+
-- For transforming terraform template, `terraform` need be installed first, 
-and only support MacOS currently.
+- For transforming terraform template, `terraform` need be installed first.
 
 ## Installation
 ```bash
