@@ -1,6 +1,6 @@
 typer==0.2.1
 colorama==0.4.3
 openpyxl==3.0.3
-PyYAML==5.3.1
+PyYAML==5.4
 python-terraform==0.10.1
 parsetf==3.0
