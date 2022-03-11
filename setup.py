@@ -20,7 +20,7 @@ finally:
 
 # requirements
 requirements = []
-for line in open('requirements.txt'):
+for line in open("requirements.txt"):
     requirement = line.strip()
     if requirement:
         requirements.append(requirement)
@@ -39,17 +39,22 @@ setup(
     include_package_data=True,
     platforms="any",
     install_requires=requirements,
-    classifiers=(
+    classifiers=[
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
-        "Topic :: Software Development",
-    ),
-    entry_points={
-        'console_scripts': ['rostran=rostran.cli.__main__:main'],
-    },
-
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Topic :: Software Development :: Libraries",
+        "Operating System :: MacOS :: MacOS X",
+        "Operating System :: POSIX",
+        "Operating System :: POSIX :: BSD",
+        "Operating System :: POSIX :: Linux",
+        "Operating System :: Microsoft :: Windows",
+    ],
+    entry_points={"console_scripts": ["rostran=rostran.cli.__main__:main"],},
 )

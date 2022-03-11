@@ -111,3 +111,4 @@ ENV/
 
 # Terraform
 .terraform
+.terraform.lock.hcl

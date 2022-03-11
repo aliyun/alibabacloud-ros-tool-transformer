@@ -10,77 +10,46 @@ tpl = {
     "Metadata": {
         "ALIYUN::ROS::Interface": {
             "ParameterGroups": {
-                "Parameters": [
-                    "CidrBlock"
-                ],
-                "Label": {
-                    "default": "VPC"
-                }
+                "Parameters": ["CidrBlock"],
+                "Label": {"default": "VPC"},
             },
-            "ParameterLabels": {
-                "CidrBlock": {
-                    "default": "Vpc Cidr Block"
-                }
-            }
+            "ParameterLabels": {"CidrBlock": {"default": "Vpc Cidr Block"}},
         }
     },
     "Parameters": {
         "CidrBlock": {
             "Type": "String",
             "Default": "10.0.0.0/16",
-            "Label": "Vpc Cidr Block"
+            "Label": "Vpc Cidr Block",
         }
     },
     "Resources": {
         "MyVpc": {
             "Type": "ALIYUN::ECS::VPC",
             "Properties": {
-                "CidrBlock": {
-                    "Ref": "CidrBlock"
-                },
-                "Tags": [
-                    {
-                        "Key": "foo",
-                        "Value": "bar"
-                    }
-                ]
+                "CidrBlock": {"Ref": "CidrBlock"},
+                "Tags": [{"Key": "foo", "Value": "bar"}],
             },
-            "DeletionPolicy": "Retain"
+            "DeletionPolicy": "Retain",
         },
         "MySg": {
             "Type": "ALIYUN::ECS::SecurityGroup",
             "Properties": {
                 "Description": "Create vpc security group",
-                "VpcId": {
-                    "Ref": "MyVpc"
-                }
+                "VpcId": {"Ref": "MyVpc"},
             },
-            "DependsOn": "MyVpc"
-        }
+            "DependsOn": "MyVpc",
+        },
     },
     "Outputs": {
-        "VpcId": {
-            "Value": {
-                "Ref": "MyVpc"
-            }
-        },
-        "SgId": {
-            "Value": {
-                "Fn::GetAtt": [
-                    "MySg",
-                    "SecurityGroupId"
-                ]
-            }
-        }
-    }
+        "VpcId": {"Value": {"Ref": "MyVpc"}},
+        "SgId": {"Value": {"Fn::GetAtt": ["MySg", "SecurityGroupId"]}},
+    },
 }
 
 
 def test_template():
-    aws_template = os.path.join(ROOT, 'templates', 'cloudformation', 'vpc_sg.json')
+    aws_template = os.path.join(ROOT, "templates", "cloudformation", "vpc_sg.json")
 
-    template = CloudFormationTemplate.initialize(
-        aws_template,
-        FileFormat.Json
-    )
+    template = CloudFormationTemplate.initialize(aws_template, FileFormat.Json)
     assert tpl == template.transform().as_dict()

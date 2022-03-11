@@ -2,7 +2,7 @@
 provider "alicloud" {}
 
 variable "system_disk" {
-  type = "map"
+  type = map
   default = {
     "category" = "cloud_efficiency"
   }
@@ -22,14 +22,14 @@ data "alicloud_images" "centos_image" {
 # Create VPC and VSwitch
 resource "alicloud_vpc" "myvpc" {
   cidr_block = "172.16.0.0/12"
-  name       = "myvpc"
+  vpc_name   = "myvpc"
 }
 
 resource "alicloud_vswitch" "myvswitch" {
   vpc_id            = alicloud_vpc.myvpc.id
   cidr_block        = "172.16.0.0/21"
-  availability_zone = "cn-beijing-g"
-  name              = "myvswitch"
+  zone_id           = "cn-beijing-g"
+  vswitch_name      = "myvswitch"
 }
 
 # Create security group
@@ -47,7 +47,7 @@ resource "alicloud_instance" "myinstance" {
   vswitch_id           = alicloud_vswitch.myvswitch.id
   system_disk_category = var.system_disk["category"]
   depends_on = [
-    "alicloud_security_group.mysg"
+    alicloud_security_group.mysg
   ]
   data_disks {
     name        = "mydisk1"
@@ -75,6 +75,6 @@ resource "alicloud_log_machine_group" "sls_machine_group" {
   topic         = "terraform"
   identify_list = ["10.0.0.1", "10.0.0.2"]
   depends_on    = [
-    "alicloud_log_project.sls"
+    alicloud_log_project.sls
   ]
 }

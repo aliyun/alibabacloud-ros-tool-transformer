@@ -10,12 +10,20 @@ app = typer.Typer(help=__doc__)
 
 @app.command()
 def parse(
-        ak: str = typer.Option(..., help="Alicloud AccessKey ID"),
-        sk: str = typer.Option(..., help="Alicloud AccessKey Secret"),
-        ros: str = typer.Option(..., help="ROS resource, for example, ALIYUN::ApiGateway::Api"),
-        terraform: str = typer.Option(None, "--terraform", "--tf",
-                                      help="Terraform resource, for example, alicloud_api_gateway_api"),
-        aws: str = typer.Option(None, help="AWS CloudFormation resource, for example, AWS::ApiGatewayV2::Api")
+    ak: str = typer.Option(..., help="Alicloud AccessKey ID"),
+    sk: str = typer.Option(..., help="Alicloud AccessKey Secret"),
+    ros: str = typer.Option(
+        ..., help="ROS resource, for example, ALIYUN::ApiGateway::Api"
+    ),
+    terraform: str = typer.Option(
+        None,
+        "--terraform",
+        "--tf",
+        help="Terraform resource, for example, alicloud_api_gateway_api",
+    ),
+    aws: str = typer.Option(
+        None, help="AWS CloudFormation resource, for example, AWS::ApiGatewayV2::Api"
+    ),
 ):
     """
     Analyze the relationship between ROS and Terraform/AwsCloudFormation resources.
@@ -25,10 +33,18 @@ def parse(
         typer.secho("Please enter terraform or aws resource.", fg=typer.colors.GREEN)
         exit(1)
     if terraform:
-        relative_path = os.path.join("rules", "terraform", "alicloud", f"{terraform.replace('alicloud_', '')}.yml")
+        relative_path = os.path.join(
+            "rules",
+            "terraform",
+            "alicloud",
+            f"{terraform.replace('alicloud_', '')}.yml",
+        )
         target_path = os.path.join(BASE_DIR, relative_path)
         if os.path.exists(target_path):
-            typer.secho(f"{os.path.join('rostran', relative_path)} already exist.", fg=typer.colors.YELLOW)
+            typer.secho(
+                f"{os.path.join('rostran', relative_path)} already exist.",
+                fg=typer.colors.YELLOW,
+            )
             exit(1)
         parse_tf_ros(ak, sk, ros, terraform, target_path)
     if aws:

@@ -81,7 +81,7 @@ class Rule:
         "PseudoParameters",
         "Function",
         "Metadata",
-        "AssociationProperty"
+        "AssociationProperty",
     )
 
     _PROPERTIES = (VERSION, TYPE, RESOURCE_TYPE, PROPERTIES, ATTRIBUTES,) = (
@@ -124,7 +124,9 @@ class Rule:
         elif type_ == cls.META_DATA:
             return MetaDataRule.initialize_from_info(path, data, version, type_)
         elif type_ == cls.ASSOCIATION_PROPERTY:
-            return AssociationPropertyRule.initialize_from_info(path, data, version, type_)
+            return AssociationPropertyRule.initialize_from_info(
+                path, data, version, type_
+            )
 
 
 class ResourceRule(Rule):
@@ -182,20 +184,14 @@ class FunctionRule(Rule):
     def initialize_from_info(cls, path, data, version, type):
         function = data.get(cls.FUNCTION, {})
         if not isinstance(function, dict):
-            InvalidRuleSchema(
-                path=path, reason=f"{cls.FUNCTION} type should be dict"
-            )
+            InvalidRuleSchema(path=path, reason=f"{cls.FUNCTION} type should be dict")
 
         rule_id = cls.FUNCTION
         return cls(version, type, rule_id, function)
 
     def ignored_function(self):
 
-        return [
-            aws
-            for aws, ros in self.function.items()
-            if ros.get("Ignore")
-        ]
+        return [aws for aws, ros in self.function.items() if ros.get("Ignore")]
 
 
 class MetaDataRule(Rule):
@@ -207,9 +203,7 @@ class MetaDataRule(Rule):
     def initialize_from_info(cls, path, data, version, type):
         meta_data = data.get(cls.META_DATA, {})
         if not isinstance(meta_data, dict):
-            InvalidRuleSchema(
-                path=path, reason=f"{cls.META_DATA} type should be dict"
-            )
+            InvalidRuleSchema(path=path, reason=f"{cls.META_DATA} type should be dict")
 
         rule_id = cls.META_DATA
         return cls(version, type, rule_id, meta_data)

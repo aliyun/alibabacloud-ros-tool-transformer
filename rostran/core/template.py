@@ -1,7 +1,9 @@
 import json
 import logging
 from typing import Optional
+from functools import partial
 
+import typer
 import yaml
 
 from .format import FileFormat, TargetTemplateFormat
@@ -68,10 +70,10 @@ class RosTemplate:
         return data
 
     def save(self, target_path, target_format: TargetTemplateFormat):
-        logger.info(f"Save template to {target_path}")
+        typer.secho(f"Save template to {target_path}.", fg="green")
 
         if target_format == TargetTemplateFormat.Yaml:
-            dump = yaml.dump
+            dump = partial(yaml.dump, sort_keys=False)
         else:
             dump = json.dump
 

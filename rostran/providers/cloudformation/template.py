@@ -10,8 +10,15 @@ from rostran.core.exceptions import RosTranWarning, TemplateFormatNotSupport
 from rostran.core.format import FileFormat
 from rostran.core.template import Template, RosTemplate
 from rostran.core.settings import RULES_DIR
-from rostran.core.rules import RuleClassifier, RuleManager, ResourceRule, PseudoParametersRule, MetaDataRule, \
-    AssociationPropertyRule, FunctionRule
+from rostran.core.rules import (
+    RuleClassifier,
+    RuleManager,
+    ResourceRule,
+    PseudoParametersRule,
+    MetaDataRule,
+    AssociationPropertyRule,
+    FunctionRule,
+)
 from rostran.core.outputs import Output, Outputs
 from rostran.core.resources import Resource, Resources
 from rostran.core.properties import Property
@@ -27,7 +34,6 @@ RESOURCE_RULES = os.path.join(RULES_DIR, "resource")
 
 
 class CloudFormationTemplate(Template):
-
     def __init__(self, source, rule_manager: RuleManager, *args, **kwargs):
         super().__init__(source, *args, **kwargs)
         self.rule_manager = rule_manager
@@ -57,17 +63,20 @@ class CloudFormationTemplate(Template):
             if ros.get("Ignore"):
                 logger.warning(f"Ignore MetaData: {aws}.")
             elif ros.get("To") and meta_data.get(aws):
-                meta_item = MetaItem(
-                    type=ros["To"],
-                    value=meta_data[aws]
-                )
+                meta_item = MetaItem(type=ros["To"], value=meta_data[aws])
                 out_meta_data.add(meta_item)
 
     def transform_parameters(self, out_parameters: Parameters):
-        association_properties_rule: AssociationPropertyRule = self.rule_manager.association_property_rule
+        association_properties_rule: AssociationPropertyRule = (
+            self.rule_manager.association_property_rule
+        )
         association_properties = association_properties_rule.association_property
         parameters = self.source.get("Parameters", {})
-        labels = self.source.get("Metadata", {}).get("AWS::CloudFormation::Interface", {}).get("ParameterLabels", {})
+        labels = (
+            self.source.get("Metadata", {})
+            .get("AWS::CloudFormation::Interface", {})
+            .get("ParameterLabels", {})
+        )
 
         for name, value in parameters.items():
             aws_parameter_type = value["Type"]
@@ -75,16 +84,22 @@ class CloudFormationTemplate(Template):
             if aws_parameter_type in Parameter.TYPES:
                 ros_parameter_type = aws_parameter_type
             elif association_properties.get(aws_parameter_type) is None:
-                logger.warning(f"Missing {aws_parameter_type} in association type rules, please fill in.")
+                logger.warning(
+                    f"Missing {aws_parameter_type} in association type rules, please fill in."
+                )
                 continue
             elif association_properties[aws_parameter_type].get("Ignore"):
                 ros_parameter_type = "String"
-                logger.warning(f"Ignore {aws_parameter_type}.\nType of parameter <{name}> will be converted to String.")
+                logger.warning(
+                    f"Ignore {aws_parameter_type}.\nType of parameter <{name}> will be converted to String."
+                )
             else:
                 ros_parameter_type = "String"
                 association_property = association_properties[aws_parameter_type]["To"]
             parameter = Parameter(
-                name=name, type=ros_parameter_type, association_property=association_property,
+                name=name,
+                type=ros_parameter_type,
+                association_property=association_property,
                 default=value.get("Default"),
                 description=value.get("Description"),
                 constraint_description=value.get("ConstraintDescription"),
@@ -95,7 +110,7 @@ class CloudFormationTemplate(Template):
                 no_echo=value.get("NoEcho"),
                 min_value=value.get("MinValue"),
                 max_value=value.get("MaxValue"),
-                label=labels.get(name, {}).get('default')
+                label=labels.get(name, {}).get("default"),
             )
             parameter.validate()
             out_parameters.add(parameter)
@@ -106,16 +121,19 @@ class CloudFormationTemplate(Template):
         for logical_id, aws_resource in resources.items():
             resource_type = aws_resource["Type"]
 
-            resource_rule: ResourceRule = self.rule_manager.resource_rules.get(resource_type)
+            resource_rule: ResourceRule = self.rule_manager.resource_rules.get(
+                resource_type
+            )
             self.rules[logical_id] = resource_rule
 
             ros_resource = Resource(
-                resource_id=logical_id,
-                resource_type=resource_rule.target_resource_type
+                resource_id=logical_id, resource_type=resource_rule.target_resource_type
             )
 
             aws_properties = aws_resource.get("Properties", {})
-            ros_properties = self.convert_property(aws_properties, resource_rule.properties, {})
+            ros_properties = self.convert_property(
+                aws_properties, resource_rule.properties, {}
+            )
             for k, v in ros_properties.items():
                 p = Property(k, v)
                 ros_resource.properties.add(p)
@@ -125,25 +143,35 @@ class CloudFormationTemplate(Template):
             ros_resource.deletion_policy = aws_resource.get("DeletionPolicy")
             out_resources.add(ros_resource)
 
-    def convert_property(self, aws_properties: dict, rule_properties: dict, ros_properties: dict):
+    def convert_property(
+        self, aws_properties: dict, rule_properties: dict, ros_properties: dict
+    ):
 
         for property_key, property_value in aws_properties.items():
 
             if rule_properties.get(property_key) is None:
                 logger.warning(f"Missing {property_key} in rule file.")
             elif rule_properties[property_key].get("Ignore"):
-                logger.warning(f"Property <{property_key}> can not be transformed to ROS, will be ignored.")
+                logger.warning(
+                    f"Property <{property_key}> can not be transformed to ROS, will be ignored."
+                )
             elif rule_properties[property_key].get("To"):
                 ros_property = rule_properties[property_key]["To"]
                 if rule_properties[property_key].get("Handler"):
                     handler_module = importlib.import_module("rostran.handler")
-                    handler_func = getattr(handler_module, rule_properties[property_key]["Handler"])
+                    handler_func = getattr(
+                        handler_module, rule_properties[property_key]["Handler"]
+                    )
                     property_value = handler_func(property_value)
                     logger.warning(rule_properties[property_key].get("Warning"))
 
                 if rule_properties[property_key].get("Schema") is None:
-                    property_value = self.check_nonsupport_pseudo_parameters(property_value)
-                    property_value = self.transform_function_pseudo_parameters(property_value, json.dumps(property_value))
+                    property_value = self.check_nonsupport_pseudo_parameters(
+                        property_value
+                    )
+                    property_value = self.transform_function_pseudo_parameters(
+                        property_value, json.dumps(property_value)
+                    )
 
                     ros_properties[ros_property] = property_value
                 elif rule_properties[property_key].get("Type") == "Map":
@@ -161,7 +189,9 @@ class CloudFormationTemplate(Template):
 
         return ros_properties
 
-    def transform_function_pseudo_parameters(self, aws_property_value: dict, ros_property_value: str):
+    def transform_function_pseudo_parameters(
+        self, aws_property_value: dict, ros_property_value: str
+    ):
         if not aws_property_value:
             return aws_property_value
         if isinstance(aws_property_value, (str, int, float)):
@@ -174,10 +204,14 @@ class CloudFormationTemplate(Template):
                 function_rule: FunctionRule = self.rule_manager.function_rule
                 to_function = function_rule.function.get(aws_fn_name, {})
                 if not to_function:
-                    logger.warning(f"Missing function <{aws_fn_name}>, please fill in the function rule file.")
+                    logger.warning(
+                        f"Missing function <{aws_fn_name}>, please fill in the function rule file."
+                    )
 
                 elif to_function.get("Ignore"):
-                    logger.warning(f"Ignore function <{aws_fn_name}>, please enter value in template.")
+                    logger.warning(
+                        f"Ignore function <{aws_fn_name}>, please enter value in template."
+                    )
                     return ""
                 elif to_function.get("Handler"):
                     handler_module = importlib.import_module("rostran.handler")
@@ -185,11 +219,15 @@ class CloudFormationTemplate(Template):
                     fn_value = handler_func(fn_value)
                     ros_fn_name = to_function["To"]
                     ros_property_value.replace(aws_fn_name, ros_fn_name, 1)
-                    self.transform_function_pseudo_parameters(fn_value, ros_property_value)
+                    self.transform_function_pseudo_parameters(
+                        fn_value, ros_property_value
+                    )
                 else:
                     ros_fn_name = to_function["To"]
                     ros_property_value.replace(aws_fn_name, ros_fn_name, 1)
-                    self.transform_function_pseudo_parameters(fn_value, ros_property_value)
+                    self.transform_function_pseudo_parameters(
+                        fn_value, ros_property_value
+                    )
         else:
             for i in aws_property_value:
                 self.transform_function_pseudo_parameters(i, ros_property_value)
@@ -216,19 +254,23 @@ class CloudFormationTemplate(Template):
                     ros_attribute = attr_rule[aws_attribute]["To"]
                     value: str = value.replace(
                         f'"Fn::GetAtt": ["{logical_id}", "{aws_attribute}"]',
-                        f'"Fn::GetAtt": ["{logical_id}", "{ros_attribute}"]'
+                        f'"Fn::GetAtt": ["{logical_id}", "{ros_attribute}"]',
                     )
             if value:
                 value: dict = json.loads(value)
                 value = self.check_nonsupport_pseudo_parameters(value)
-                value = self.transform_function_pseudo_parameters(value, json.dumps(value))
+                value = self.transform_function_pseudo_parameters(
+                    value, json.dumps(value)
+                )
                 output = Output(name=output_key, value=value)
                 out_outputs.add(output)
 
     def transform_pseudo_parameters(self):
 
         template = json.dumps(self.source)
-        pseudo_parameters_rule: PseudoParametersRule = self.rule_manager.pseudo_parameters_rule
+        pseudo_parameters_rule: PseudoParametersRule = (
+            self.rule_manager.pseudo_parameters_rule
+        )
         trans = {
             aws_pseudo: ros_pseudo["To"]
             for aws_pseudo, ros_pseudo in pseudo_parameters_rule.pseudo_parameters.items()
@@ -241,7 +283,9 @@ class CloudFormationTemplate(Template):
         self.source = json.loads(template)
 
     def check_nonsupport_pseudo_parameters(self, value):
-        pseudo_parameters_rule: PseudoParametersRule = self.rule_manager.pseudo_parameters_rule
+        pseudo_parameters_rule: PseudoParametersRule = (
+            self.rule_manager.pseudo_parameters_rule
+        )
 
         ignored = [
             aws

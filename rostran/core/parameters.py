@@ -15,9 +15,23 @@ class Parameter:
         "Boolean",
     )
 
-    def __init__(self, name, type, default=None, association_property=None, description=None,
-                 constraint_description=None, allowed_values=None, min_length=None, max_length=None,
-                 allowed_pattern=None, no_echo=None, min_value=None, max_value=None, label=None):
+    def __init__(
+        self,
+        name,
+        type,
+        default=None,
+        association_property=None,
+        description=None,
+        constraint_description=None,
+        allowed_values=None,
+        min_length=None,
+        max_length=None,
+        allowed_pattern=None,
+        no_echo=None,
+        min_value=None,
+        max_value=None,
+        label=None,
+    ):
         self.name = name
         self.type = type
         self.default = default

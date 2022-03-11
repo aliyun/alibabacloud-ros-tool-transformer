@@ -2,12 +2,11 @@ import json
 import logging
 import os
 import shutil
-from subprocess import CalledProcessError
 from uuid import uuid4
 import importlib
 from typing import Any
-
-import parsetf
+import typer
+from libterraform import TerraformConfig
 from python_terraform import Terraform, TerraformCommandError
 
 from rostran.core.exceptions import (
@@ -27,23 +26,28 @@ from rostran.core.properties import Property
 from rostran.core.resources import Resources, Resource
 from rostran.core.outputs import Outputs, Output
 
-logger = logging.getLogger(__name__)
-
 
 class TerraformTemplate(Template):
+    PROVIDERS = (ALICLOUD, AWS,) = (
+        "alicloud",
+        "aws",
+    )
+
+    SUPPORTED_PLAN_FORMAT_VERSIONS = ("1.0",)
+
     PLAN_PROPERTIES = (
-        FORMAT_VERSION,
-        CONFIGURATION,
-        PLANNED_VALUES,
-        RESOURCES,
-        PROVIDER_CONFIG,
-        ROOT_MODULE,
-        MODE,
-        ADDRESS,
-        VALUES,
-        VALUE,
-        OUTPUTS,
-        TYPE,
+        P_FORMAT_VERSION,
+        P_CONFIGURATION,
+        P_PLANNED_VALUES,
+        P_RESOURCES,
+        P_PROVIDER_CONFIG,
+        P_ROOT_MODULE,
+        P_MODE,
+        P_ADDRESS,
+        P_VALUES,
+        P_VALUE,
+        P_OUTPUTS,
+        P_TYPE,
     ) = (
         "format_version",
         "configuration",
@@ -59,38 +63,86 @@ class TerraformTemplate(Template):
         "type",
     )
 
+    PLAN_MODES = (P_MANAGED,) = ("managed",)
+
     SOURCE_PROPERTIES = (
-        SOURCE_RESOURCES,
-        SOURCE_OUTPUTS,
-        SOURCE_MODE,
-        SOURCE_TYPE,
-        SOURCE_NAME,
-        SOURCE_RAW_CONFIG,
-        SOURCE_BODY,
-        SOURCE_ATTRIBUTES,
-        SOURCE_BLOCKS,
-        SOURCE_EXPR,
-        DEPENDS_ON,
-        SOURCE_ARGS,
-        SOURCE_TRAVERSAL,
-        SOURCE_EACH,
+        MANAGED_RESOURCES,
+        DATA_RESOURCES,
+        OUTPUTS,
         PROPERTIES,
+        NAME,
+        MODE,
+        TYPE,
+        CONFIG,
+        BODY,
+        ATTRIBUTES,
+        BLOCKS,
+        SRC_RANGE,
+        END_RANGE,
+        COUNT,
+        EXPR,
+        TRAVERSAL,
+        ARGS,
+        PARTS,
+        FOR_EACH,
+        PROVIDER_CONFIG_REF,
+        PROVIDER,
+        NAMESPACE,
+        HOSTNAME,
+        DEPENDS_ON,
+        MANAGED,
+        CONNECTION,
+        PROVISIONERS,
+        CREATE_BEFORE_DESTROY,
+        PREVENT_DESTROY,
+        CREATE_BEFORE_DESTROY_SET,
+        PREVENT_DESTROY_SET,
+        IGNORE_CHANGED,
+        IGNORE_ALL_CHANGED,
+        DECL_RANGE,
+        TYPE_RANGE,
+        FILENAME,
+        START,
+        END,
     ) = (
-        "Resources",
+        "ManagedResources",
+        "DataResources",
         "Outputs",
+        "Properties",
+        "Name",
         "Mode",
         "Type",
-        "Name",
-        "RawConfig",
+        "Config",
         "Body",
         "Attributes",
         "Blocks",
+        "SrcRange",
+        "EndRange",
+        "Count",
         "Expr",
-        "DependsOn",
-        "Args",
         "Traversal",
-        "Each",
-        "Properties",
+        "Args",
+        "Parts",
+        "ForEach",
+        "ProviderConfigRef",
+        "Provider",
+        "Namespace",
+        "Hostname",
+        "DependsOn",
+        "Managed",
+        "Connection",
+        "Provisioners",
+        "CreateBeforeDestroy",
+        "PreventDestroy",
+        "CreateBeforeDestroySet",
+        "PreventDestroySet",
+        "IgnoreChanged",
+        "IgnoreAllChanged",
+        "DeclRanage",
+        "TypeRanage",
+        "FileName",
+        "Start",
+        "End",
     )
 
     RESOURCE_PROP_PROPERTIES = (PROP_TYPE, PROP_VALUE, PROP_ARGS,) = (
@@ -102,15 +154,6 @@ class TerraformTemplate(Template):
     RESOURCE_PROP_TYPES = (PROP_TYPE_VALUE, PROP_TYPE_FUNC,) = ("Value", "Func")
 
     RESOURCE_PROP_FUNCS = (FUNC_GET_ATT,) = ("GetAtt",)
-
-    SUPPORTED_PLAN_FORMAT_VERSIONS = ("0.1",)
-
-    PROVIDERS = (ALICLOUD, AWS,) = (
-        "alicloud",
-        "aws",
-    )
-
-    MODES = (MANAGED, DATA, SOURCE_MANAGED, SOURCE_DATA) = ("managed", "data", 0, 1)
 
     def __init__(self, source, plan, provider, rule_manager: RuleManager):
         super().__init__(source)
@@ -131,7 +174,7 @@ class TerraformTemplate(Template):
         tf_dir = path if os.path.isdir(path) else os.path.dirname(path)
         tf_plan, tf_data = cls._get_plan_data(tf_dir, tf_plan_path)
 
-        providers = tf_plan[cls.CONFIGURATION][cls.PROVIDER_CONFIG]
+        providers = tf_plan[cls.P_CONFIGURATION][cls.P_PROVIDER_CONFIG]
         if len(providers) > 1:
             raise TerraformMultiProvidersNotSupported()
         elif len(providers) < 1:
@@ -159,12 +202,13 @@ class TerraformTemplate(Template):
             raise CommandNotFound(cmd="terraform")
 
         # Using "terraform plan/show" to parse configuration
-        logger.info("Parsing terraform files...")
-        tf = Terraform()
+        typer.secho("Parsing terraform config...")
+        tf = Terraform(working_dir=tf_dir)
         if tf_plan_path is None:
-            tf_plan_path = os.path.join(os.getcwd(), str(uuid4()))
+            plan_filename = f"{str(uuid4())[:8]}.tfplan"
+            tf_plan_path = os.path.join(os.getcwd(), plan_filename)
             try:
-                cmd_args = ["plan", "-input=false", "-out", tf_plan_path, tf_dir]
+                cmd_args = ["plan", "-input=false", "-out", tf_plan_path]
                 tf.cmd(*cmd_args, raise_on_error=True)
                 cmd_args = ["show", "-json", tf_plan_path]
                 _, output, _ = tf.cmd(*cmd_args, raise_on_error=True)
@@ -181,24 +225,18 @@ class TerraformTemplate(Template):
                 raise RunCommandFailed(cmd=e.cmd, reason=e.err or e.out)
 
         tf_plan = json.loads(output)
-        version = tf_plan[cls.FORMAT_VERSION]
+        version = tf_plan[cls.P_FORMAT_VERSION]
         if version not in cls.SUPPORTED_PLAN_FORMAT_VERSIONS:
             raise TerraformPlanFormatVersionNotSupported(version=version)
 
-        # Using "parsetf" to parse configuration
-        try:
-            output = parsetf.parse(tf_dir)
-
-        except CalledProcessError as e:
-            raise RunCommandFailed(cmd=e.cmd, reason=e.output)
-
-        logger.info("Parse terraform files done")
-
-        tf_data = json.loads(output)
+        tf_data, _ = TerraformConfig.load_config_dir(tf_dir)
+        typer.secho("Parse terraform config done.")
         return tf_plan, tf_data
 
     def transform(self) -> RosTemplate:
-        logger.info(f"Transform terraform {self.provider} template to ROS template")
+        typer.secho(
+            f"Transforming terraform (provider: {self.provider}) template to ROS template..."
+        )
 
         template = RosTemplate()
         tf_resources = self._parse_resources()
@@ -207,49 +245,53 @@ class TerraformTemplate(Template):
         tf_outputs = self._parse_outputs()
         self._transform_outputs(tf_outputs, template.outputs)
 
+        typer.secho(
+            f"Transform terraform (provider: {self.provider}) template to ROS template successful.",
+            fg="green",
+        )
         return template
 
     def _parse_resources(self):
         planned_resources = {}
-        planned_resource_list: list = self.plan[self.PLANNED_VALUES][
-            self.ROOT_MODULE
-        ].get(self.RESOURCES, [])
+        planned_resource_list: list = self.plan[self.P_PLANNED_VALUES][
+            self.P_ROOT_MODULE
+        ].get(self.P_RESOURCES, [])
         for planned_resource in planned_resource_list:
-            if planned_resource[self.MODE] != self.MANAGED:
+            if planned_resource[self.P_MODE] != self.P_MANAGED:
                 continue
-            address = planned_resource[self.ADDRESS]
-            planned_resources[address] = planned_resource[self.VALUES]
+            address = planned_resource[self.P_ADDRESS]
+            planned_resources[address] = planned_resource[self.P_VALUES]
 
         resources = {}
-        source_resource_list: list = self.source[self.SOURCE_RESOURCES]
-        for source_resource in source_resource_list:
-            if source_resource[self.SOURCE_MODE] != self.SOURCE_MANAGED:
-                continue
-
-            name = source_resource[self.SOURCE_NAME]
-            type_ = source_resource[self.SOURCE_TYPE]
-            address = f"{type_}.{name}"
+        managed_resources: dict = self.source[self.MANAGED_RESOURCES]
+        for address, resource in managed_resources.items():
             planned_resource = planned_resources[address]
-            resource = self._parse_resource(source_resource, planned_resource)
+            resource = self._parse_resource(resource, planned_resource)
             resources[address] = resource
 
         return resources
 
-    def _parse_resource(self, source_resource: dict, planned_resource: dict):
+    def _parse_resource(self, managed_resource: dict, planned_resource: dict):
+        depends_on = []
         resource = {
-            self.DEPENDS_ON: source_resource.get(self.DEPENDS_ON),
-            self.SOURCE_TYPE: source_resource[self.SOURCE_TYPE],
+            self.DEPENDS_ON: depends_on,
+            self.TYPE: managed_resource[self.TYPE],
+            self.NAME: managed_resource[self.NAME],
         }
 
-        body = source_resource[self.SOURCE_RAW_CONFIG][self.SOURCE_BODY]
-        properties = self._parse_source_body(body, planned_resource)
+        m_depends_on = managed_resource.get(self.DEPENDS_ON)
+        if m_depends_on:
+            for items in m_depends_on:
+                depends_on.append(".".join(item[self.NAME] for item in items))
+        config = managed_resource[self.CONFIG]
+        properties = self._parse_source_config(config, planned_resource)
         resource[self.PROPERTIES] = properties
 
         return resource
 
-    def _parse_source_body(self, body: dict, planned_resource: dict = None):
+    def _parse_source_config(self, config: dict, planned_resource: dict = None):
         props = {}
-        attributes = body.get(self.SOURCE_ATTRIBUTES, {})
+        attributes = config.get(self.ATTRIBUTES, {})
         for propname, prop in attributes.items():
             if propname == "depends_on":
                 continue
@@ -262,14 +304,16 @@ class TerraformTemplate(Template):
             # If cannot get value from planned resource,
             # it means value cannot resolved statically
             if planned_value is None:
-                expr = prop[self.SOURCE_EXPR]
-                props[propname] = self._parse_source_expr(expr)
+                expr = prop[self.EXPR]
+                value = self._parse_source_expr(expr)
+                if value is not None:
+                    props[propname] = value
             else:
                 props[propname] = planned_value
 
-        blocks = body.get(self.SOURCE_BLOCKS, [])
+        blocks = config.get(self.BLOCKS, [])
         for block in blocks:
-            propname = block[self.SOURCE_TYPE]
+            propname = block[self.TYPE]
             if propname not in props:
                 props[propname] = []
                 index = 0
@@ -283,21 +327,21 @@ class TerraformTemplate(Template):
             else:
                 new_planned_resource = planned_resource[propname][index]
 
-            res = self._parse_source_body(block[self.SOURCE_BODY], new_planned_resource)
+            res = self._parse_source_config(block[self.BODY], new_planned_resource)
             props[propname].append(res)
 
-        if self.SOURCE_EXPR in body:
-            return self._parse_source_expr(body[self.SOURCE_EXPR])
+        if self.EXPR in config:
+            return self._parse_source_expr(config[self.EXPR])
 
         return props
 
     def _parse_source_expr(self, expr: dict):
         data = None
         # func
-        if self.SOURCE_ARGS in expr:
-            func_name = expr[self.SOURCE_NAME]
+        if self.ARGS in expr:
+            func_name = expr[self.NAME]
             func_args = []
-            for arg in expr[self.SOURCE_ARGS]:
+            for arg in expr[self.ARGS]:
                 func_args.append(self._parse_source_expr(arg))
             data = {
                 self.PROP_TYPE: self.PROP_TYPE_FUNC,
@@ -305,9 +349,9 @@ class TerraformTemplate(Template):
                 self.PROP_ARGS: func_args,
             }
         # dot attr
-        elif self.SOURCE_TRAVERSAL in expr:
-            traversal = expr[self.SOURCE_TRAVERSAL]
-            first = traversal[0][self.SOURCE_NAME]
+        elif self.TRAVERSAL in expr:
+            traversal = expr[self.TRAVERSAL]
+            first = traversal[0][self.NAME]
             # ROS not supports, so return None
             if first in ("var", "data"):
                 return None
@@ -317,20 +361,20 @@ class TerraformTemplate(Template):
                 self.PROP_TYPE: self.PROP_TYPE_FUNC,
                 self.PROP_VALUE: self.FUNC_GET_ATT,
                 self.PROP_ARGS: [
-                    f"{first}.{traversal[1][self.SOURCE_NAME]}",
-                    traversal[2][self.SOURCE_NAME],
+                    f"{first}.{traversal[1][self.NAME]}",
+                    traversal[2][self.NAME],
                 ],
             }
         # list literal (*)
-        # ROS not supports, so return NOne
-        elif self.SOURCE_EACH in expr:
+        # ROS not supports, so return None
+        elif self.FOR_EACH in expr:
             return None
 
         return data
 
     def _transform_resources(self, tf_resources: dict, out_resources: Resources):
         for resource_id, tf_resource in tf_resources.items():
-            tf_resource_type = tf_resource[self.SOURCE_TYPE]
+            tf_resource_type = tf_resource[self.TYPE]
             tf_resource_props = tf_resource[self.PROPERTIES]
 
             # Get rule by resource type
@@ -338,8 +382,9 @@ class TerraformTemplate(Template):
                 tf_resource_type
             )
             if resource_rule is None:
-                logger.warning(
-                    f"Resource type {tf_resource_type} is not supported and will be ignored."
+                typer.secho(
+                    f"Resource type {tf_resource_type!r} is not supported and will be ignored.",
+                    fg="yellow",
                 )
                 continue
 
@@ -370,15 +415,18 @@ class TerraformTemplate(Template):
             # Ignore not support prop
             prop_rule = resource_rule_props.get(name)
             if prop_rule is None or prop_rule.get("Ignore"):
-                logger.warning(
-                    f'Resource property "{name}" of {resource_type} is not supported and will be ignored.'
+                typer.secho(
+                    f"Resource property {name!r} of {resource_type!r} is not supported and will be ignored.",
+                    fg="yellow",
                 )
                 continue
 
             # Warn if specify Warning
             warn_msg = prop_rule.get("Warning")
             if warn_msg:
-                logger.warning(warn_msg)
+                if not warn_msg.endswith("."):
+                    warn_msg += "."
+                typer.secho(warn_msg, fg="yellow")
 
             transformed_value, resolved = self._transform_prop_or_attr(value)
             final_name = prop_rule["To"]
@@ -400,7 +448,8 @@ class TerraformTemplate(Template):
                 handler_func = getattr(handler_module, handler_name)
                 final_value = handler_func(final_value, resolved)
 
-            final_props[final_name] = final_value
+            if final_value is not None:
+                final_props[final_name] = final_value
 
         return final_props
 
@@ -429,24 +478,26 @@ class TerraformTemplate(Template):
 
     def _transform_func_get_att(self, resource_id, attrname):
         tf_resource_type = None
-        for resource in self.plan[self.PLANNED_VALUES][self.ROOT_MODULE].get(
-            self.RESOURCES, []
+        for resource in self.plan[self.P_PLANNED_VALUES][self.P_ROOT_MODULE].get(
+            self.P_RESOURCES, []
         ):
-            if resource_id == resource[self.ADDRESS]:
-                tf_resource_type = resource[self.TYPE]
+            if resource_id == resource[self.P_ADDRESS]:
+                tf_resource_type = resource[self.P_TYPE]
 
         resource_rule: ResourceRule = self.rule_manager.resource_rules.get(
             tf_resource_type
         )
         if tf_resource_type is None or resource_rule is None:
-            logger.warning(
-                f"Resource type {tf_resource_type} is not supported and will be ignored."
+            typer.secho(
+                f"Resource type {tf_resource_type!r} is not supported and will be ignored.",
+                fg="yellow",
             )
             return None
 
         if attrname not in resource_rule.attributes:
-            logger.warning(
-                f'Resource attribute "{attrname}" of {tf_resource_type} is not supported and will be ignored.'
+            typer.secho(
+                f"Resource attribute {attrname!r} of {tf_resource_type!r} is not supported and will be ignored.",
+                fg="yellow",
             )
 
         final_attrname = resource_rule.attributes[attrname]["To"]
@@ -454,15 +505,16 @@ class TerraformTemplate(Template):
 
     def _parse_outputs(self):
         planned_outputs = {}
-        raw_planned_outputs: dict = self.plan[self.PLANNED_VALUES].get(self.OUTPUTS, {})
+        raw_planned_outputs: dict = self.plan[self.P_PLANNED_VALUES].get(
+            self.P_OUTPUTS, {}
+        )
         for name, info in raw_planned_outputs.items():
-            value = info.get(self.VALUE)
+            value = info.get(self.P_VALUE)
             planned_outputs[name] = value
 
         outputs = {}
-        source_output_list: list = self.source[self.SOURCE_OUTPUTS]
-        for source_output in source_output_list:
-            name = source_output[self.SOURCE_NAME]
+        source_outputs: dict = self.source[self.OUTPUTS]
+        for name, source_output in source_outputs.items():
             planned_output = planned_outputs[name]
             output = self._parse_output(source_output, planned_output)
             outputs[name] = output
@@ -473,23 +525,21 @@ class TerraformTemplate(Template):
         if planned_output is not None:
             return planned_output
 
-        body = source_output[self.SOURCE_RAW_CONFIG][self.SOURCE_BODY]
-        output = self._parse_source_body(body, planned_output)
-
+        output = self._parse_source_config(source_output, planned_output)
         return output
 
     def _transform_outputs(self, tf_outputs: dict, out_outputs: Outputs):
         for name, value in tf_outputs.items():
             value, _ = self._transform_prop_or_attr(value)
             if not _:
-                resource_name = value['Fn::GetAtt'][0]
-                ros_attrs = value['Fn::GetAtt'][1]
+                resource_name = value["Fn::GetAtt"][0]
+                ros_attrs = value["Fn::GetAtt"][1]
                 if isinstance(ros_attrs, list):
                     attr_list = [
-                        {'Fn::GetAtt': [resource_name, ros_attr]}
+                        {"Fn::GetAtt": [resource_name, ros_attr]}
                         for ros_attr in ros_attrs
                     ]
-                    value = {'Fn::Join': [':', attr_list]}
+                    value = {"Fn::Join": [":", attr_list]}
             output = Output(name=name, value=value,)
 
             out_outputs.add(output)

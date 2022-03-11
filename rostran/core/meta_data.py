@@ -17,7 +17,6 @@ class MetaItem:
 
 
 class MetaData(dict):
-
     def add(self, meta_item: MetaItem):
         if meta_item.type is None:
             raise InvalidTemplateMetaData(

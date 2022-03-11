@@ -22,7 +22,9 @@ class TemplateNotExist(RosTranException):
 
 
 class TemplateAlreadyExist(RosTranException):
-    msg = 'Template "{path}" already exists.'
+    msg = (
+        'Template "{path}" already exists. Please remove it before transform template.'
+    )
 
 
 class TemplateNotSupport(RosTranException):

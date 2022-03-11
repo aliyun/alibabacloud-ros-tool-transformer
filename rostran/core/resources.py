@@ -12,12 +12,17 @@ class Resource:
         "Properties",
         "DependsOn",
         "Condition",
-        "DeletionPolicy"
+        "DeletionPolicy",
     )
 
     def __init__(
-        self, resource_id, resource_type, properties: Properties = None, depends_on=None,
-        condition=None, deletion_policy=None,
+        self,
+        resource_id,
+        resource_type,
+        properties: Properties = None,
+        depends_on=None,
+        condition=None,
+        deletion_policy=None,
     ):
         self.resource_id = resource_id
         self.type = resource_type

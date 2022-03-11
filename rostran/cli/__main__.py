@@ -69,6 +69,7 @@ def transform(
         else:
             raise exceptions.TemplateNotSupport(path=target_path)
 
+    target_path = os.path.abspath(target_path)
     path = Path(target_path)
     if path.exists():
         raise exceptions.TemplateAlreadyExist(path=target_path)

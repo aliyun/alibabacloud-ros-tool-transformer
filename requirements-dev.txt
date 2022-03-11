@@ -1,11 +1,12 @@
 -r requirements.txt
-pytest==5.4.3
-autopep8==1.5.2
-pre-commit==2.3.0
-twine==3.1.1
-wheel==0.34.2
-requests==2.22.0
-Markdown==3.2.2
-beautifulsoup4==4.8.1
-aliyun-python-sdk-core==2.13.25
-aliyun-python-sdk-ros==3.3.1
+pytest
+autopep8
+pre-commit
+twine
+wheel
+requests
+Markdown
+beautifulsoup4
+aliyun-python-sdk-core
+aliyun-python-sdk-ros
+black

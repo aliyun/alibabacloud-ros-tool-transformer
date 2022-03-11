@@ -15,12 +15,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
-    package_data={
-        "parsetf": [
-            "*.py",
-            "*.so",
-        ]
-    },
+    package_data={"parsetf": ["*.py", "*.so",]},
     classifiers=[
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
@@ -36,6 +31,5 @@ setuptools.setup(
         "Operating System :: Microsoft :: Windows",
     ],
     install_requires=[],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )
-
