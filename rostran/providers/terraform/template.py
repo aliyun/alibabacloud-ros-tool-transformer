@@ -204,11 +204,15 @@ class TerraformTemplate(Template):
         # Using "terraform plan/show" to parse configuration
         typer.secho("Parsing terraform config...")
         tf_plan = None
+        cwd = os.getcwd()
+        if not os.path.isabs(tf_dir):
+            tf_dir = os.path.join(cwd, tf_dir)
         tf = TerraformCommand(tf_dir)
         if tf_plan_path is None:
             plan_filename = f"{str(uuid4())[:8]}.tfplan"
-            tf_plan_path = os.path.join(os.getcwd(), plan_filename)
+            tf_plan_path = os.path.join(cwd, plan_filename)
             try:
+                tf.init(check=True)
                 tf.plan(out=tf_plan_path, check=True)
                 r = tf.show(tf_plan_path, check=True)
                 tf_plan = r.value
