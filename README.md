@@ -4,11 +4,10 @@ is a tool for transforming **AWS CloudFormation/Terraform/Excel** template to **
 
 ## Requirements
 - Python 3.6+
-- For transforming terraform template, `terraform` need be installed first.
 
 ## Installation
 ```bash
-python setup.py install
+pip install alibabacloud-ros-tran
 ```
 
 ## Document
