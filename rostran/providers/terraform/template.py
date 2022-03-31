@@ -1,13 +1,12 @@
 import json
-import logging
 import os
 import shutil
 from uuid import uuid4
 import importlib
 from typing import Any
 import typer
-from libterraform import TerraformConfig
-from python_terraform import Terraform, TerraformCommandError
+from libterraform import TerraformCommand, TerraformConfig
+from libterraform.exceptions import TerraformCommandError
 
 from rostran.core.exceptions import (
     RosTranWarning,
@@ -17,6 +16,7 @@ from rostran.core.exceptions import (
     TerraformPlanFormatVersionNotSupported,
     TerraformMultiProvidersNotSupported,
     TerraformProviderNotFound,
+    RosTranException,
 )
 from rostran.core.format import FileFormat
 from rostran.core.rules import RuleManager, RuleClassifier, ResourceRule
@@ -203,28 +203,30 @@ class TerraformTemplate(Template):
 
         # Using "terraform plan/show" to parse configuration
         typer.secho("Parsing terraform config...")
-        tf = Terraform(working_dir=tf_dir)
+        tf_plan = None
+        tf = TerraformCommand(tf_dir)
         if tf_plan_path is None:
             plan_filename = f"{str(uuid4())[:8]}.tfplan"
             tf_plan_path = os.path.join(os.getcwd(), plan_filename)
             try:
-                cmd_args = ["plan", "-input=false", "-out", tf_plan_path]
-                tf.cmd(*cmd_args, raise_on_error=True)
-                cmd_args = ["show", "-json", tf_plan_path]
-                _, output, _ = tf.cmd(*cmd_args, raise_on_error=True)
+                tf.plan(out=tf_plan_path, check=True)
+                r = tf.show(tf_plan_path, check=True)
+                tf_plan = r.value
             except TerraformCommandError as e:
-                raise RunCommandFailed(cmd=e.cmd, reason=e.err or e.out)
+                raise RunCommandFailed(cmd=e.cmd, reason=e.stderr or e.stdout)
             finally:
                 if os.path.exists(tf_plan_path):
                     os.remove(tf_plan_path)
         else:
             try:
-                cmd_args = ["show", "-json", tf_plan_path]
-                _, output, _ = tf.cmd(*cmd_args, raise_on_error=True)
+                r = tf.show(tf_plan_path, check=True)
+                tf_plan = r.value
             except TerraformCommandError as e:
-                raise RunCommandFailed(cmd=e.cmd, reason=e.err or e.out)
+                raise RunCommandFailed(cmd=e.cmd, reason=e.stderr or e.stdout)
 
-        tf_plan = json.loads(output)
+        if tf_plan is None:
+            raise RosTranException()
+
         version = tf_plan[cls.P_FORMAT_VERSION]
         if version not in cls.SUPPORTED_PLAN_FORMAT_VERSIONS:
             raise TerraformPlanFormatVersionNotSupported(version=version)
