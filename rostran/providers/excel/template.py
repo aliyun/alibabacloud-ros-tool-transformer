@@ -128,6 +128,10 @@ class ExcelTemplate(Template):
                         prop = Property.initialize_from_excel(header_cell, cell)
                         resource.properties.add(prop)
 
+        for template in templates:
+            for res in template.resources.values():
+                res: Resource
+                res.properties = res.properties.resolve()
         return templates
 
     def _handle_parameters(self, parameters: Parameters, cell: Cell):

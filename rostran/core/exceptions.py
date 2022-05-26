@@ -39,28 +39,64 @@ class InvalidTemplateParameter(RosTranException):
     msg = "Invalid template parameter {name}. {reason}."
 
 
+class InvalidRosTemplateFormatVersion(RosTranException):
+    msg = "Invalid ROSTemplateFormatVersion. {reason}."
+
+
+class InvalidTemplateParameters(RosTranException):
+    msg = "Invalid template parameters. {reason}."
+
+
+class InvalidTemplateMetaDataItem(RosTranException):
+    msg = "Invalid template meta data {name}. {reason}."
+
+
 class InvalidTemplateMetaData(RosTranException):
-    msg = "Invalid template meta_data {name}. {reason}."
+    msg = "Invalid template meta data. {reason}."
 
 
 class InvalidTemplateMapping(RosTranException):
     msg = "Invalid template mapping {name}. {reason}."
 
 
+class InvalidTemplateMappings(RosTranException):
+    msg = "Invalid template mappings. {reason}."
+
+
 class InvalidTemplateCondition(RosTranException):
     msg = "Invalid template condition {name}. {reason}."
+
+
+class InvalidTemplateConditions(RosTranException):
+    msg = "Invalid template conditions. {reason}."
 
 
 class InvalidTemplateResource(RosTranException):
     msg = "Invalid template resource {name}. {reason}."
 
 
+class InvalidTemplateResources(RosTranException):
+    msg = "Invalid template resources. {reason}."
+
+
 class InvalidTemplateProperty(RosTranException):
     msg = "Invalid template property {name}. {reason}."
 
 
+class InvalidTemplateProperties(RosTranException):
+    msg = "Invalid template properties. {reason}."
+
+
 class InvalidTemplateOutput(RosTranException):
     msg = "Invalid template output {name}. {reason}."
+
+
+class InvalidTemplateOutputs(RosTranException):
+    msg = "Invalid template outputs. {reason}."
+
+
+class InvalidTemplateWorkspace(RosTranException):
+    msg = "Invalid template workspace. {reason}."
 
 
 class InvalidExcelTemplate(RosTranException):

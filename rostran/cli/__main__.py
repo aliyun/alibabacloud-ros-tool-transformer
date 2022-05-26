@@ -1,11 +1,14 @@
 """
-Transforms and generates ROS template.
+Transforms, generates or formats ROS template.
 """
+import json
 import os
 import logging
+import traceback
 from pathlib import Path
 
 import typer
+import yaml
 
 from rostran.core import exceptions
 from rostran.core.format import (
@@ -13,7 +16,9 @@ from rostran.core.format import (
     TargetTemplateFormat,
     GeneratorFileFormat,
     convert_template_to_file_format,
+    FileFormat,
 )
+from rostran.core.template import RosTemplate
 
 app = typer.Typer(help=__doc__)
 SOURCE_TEMPLATE_FORMAT_DEFAULT = typer.Option(
@@ -128,7 +133,76 @@ def main():
         typer.secho(f"{e}", fg=typer.colors.RED)
         typer.Exit(2)
     except Exception as e:
-        typer.secho(f"{e}", fg=typer.colors.RED)
+        typer.secho(traceback.format_exc(), fg=typer.colors.RED)
+        typer.Exit(3)
+
+
+@app.command()
+def format(
+    path: str, replace: bool = False,
+):
+    """
+    Format and check ROS template according to the standard specification.
+    """
+    # handle source template
+    p = Path(path)
+    if not p.exists():
+        raise exceptions.PathNotExist(path=path)
+
+    if p.is_dir():
+        r = _format_directory(p, replace)
+    else:
+        r = _format_file(p, replace)
+
+    if r:
+        typer.secho("Formatted successfully.", fg="green")
+    else:
+        typer.secho("No templates were found that could be formatted.", fg="yellow")
+
+
+def _format_file(path: Path, replace: bool = False, check_suffix=True):
+    suffix = path.suffix
+    if suffix == ".json":
+        file_format = FileFormat.Json
+        path.open()
+        source = json.loads(path.read_text())
+    elif suffix in (".yaml", ".yml"):
+        file_format = FileFormat.Yaml
+        source = yaml.safe_load(path.read_text())
+    else:
+        if check_suffix:
+            raise exceptions.TemplateFormatNotSupport(path=path, format=suffix)
+        return
+
+    typer.secho(f"Format {path}.", fg="green")
+    template = RosTemplate.initialize(source)
+    data = template.as_dict(format=True)
+    if file_format == FileFormat.Json:
+        content = json.dumps(data, indent=2, ensure_ascii=False)
+    else:
+        content = yaml.safe_dump(data, sort_keys=False, allow_unicode=True)
+
+    if replace:
+        with path.open("w") as f:
+            f.write(content)
+    else:
+        typer.secho(content)
+        typer.echo()
+    return path
+
+
+def _format_directory(path: Path, replace: bool = False) -> list:
+    formatted_paths = []
+    for sub_path in path.iterdir():
+        if sub_path.is_dir():
+            r = _format_directory(sub_path, replace)
+            if r:
+                formatted_paths.extend(r)
+        else:
+            r = _format_file(sub_path, replace, check_suffix=False)
+            if r:
+                formatted_paths.append(r)
+    return formatted_paths
 
 
 if __name__ == "__main__":
