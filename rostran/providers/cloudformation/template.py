@@ -23,7 +23,7 @@ from rostran.core.outputs import Output, Outputs
 from rostran.core.resources import Resource, Resources
 from rostran.core.properties import Property
 from rostran.core.parameters import Parameter, Parameters
-from rostran.core.meta_data import MetaItem, MetaData
+from rostran.core.metadata import MetaItem, MetaData
 from rostran.core.conditions import Condition, Conditions
 from rostran.core.mappings import Mapping, Mappings
 
@@ -59,7 +59,6 @@ class CloudFormationTemplate(Template):
 
         meta_data_rule: MetaDataRule = self.rule_manager.meta_data_rule
         for aws, ros in meta_data_rule.meta_data.items():
-
             if ros.get("Ignore"):
                 logger.warning(f"Ignore MetaData: {aws}.")
             elif ros.get("To") and meta_data.get(aws):
@@ -328,7 +327,7 @@ class CloudFormationTemplate(Template):
         self.transform_resource(template.resources)
         self.transform_outputs(template.outputs)
 
-        self.transform_meta_data(template.meta_data)
+        self.transform_meta_data(template.metadata)
         self.transform_conditions(template.conditions)
         self.transform_mappings(template.mappings)
 

@@ -1,4 +1,6 @@
 import re
+from typing import Any
+
 from openpyxl.cell.cell import Cell
 
 from .exceptions import (
@@ -7,8 +9,9 @@ from .exceptions import (
     ConflictDataTypeInExpression,
     InvalidIndexInExpression,
     DiscontinuousIndexInExpression,
+    InvalidTemplateProperties,
 )
-from .utils import get_and_validate_cell
+from .utils import get_and_validate_cell, sorted_data
 
 NORMAL_PATTERN = re.compile(r"^([\w\-]+)$")
 LIST_PATTERN = re.compile(r"^([\w\-]+)(\[\d+\])+$")
@@ -17,9 +20,15 @@ REF_PATTERN = re.compile(r"^!Ref ([\w\-]+)$")
 
 
 class Property:
-    def __init__(self, name: str, value):
+    def __init__(self, name: str, value: Any):
         self.name = name
         self.value = value
+
+    @classmethod
+    def initialize(cls, name: str, value: dict):
+        prop = cls(name, value)
+        prop.validate()
+        return prop
 
     @classmethod
     def initialize_from_excel(cls, header_cell: Cell, data_cell: Cell):
@@ -34,14 +43,82 @@ class Property:
 
         return cls(name=prop_name, value=prop_value)
 
-
-class Properties(dict):
-    def add(self, prop: Property):
-        if prop.name is None:
+    def validate(self):
+        if not isinstance(self.name, str):
             raise InvalidTemplateProperty(
-                name=prop.name, reason="Property name should not be None"
+                name=self.name, reason=f"The type should be str",
             )
 
+    def as_dict(self, format=False):
+        return {self.name: self.value}
+
+    def get_depends_on_set(self) -> set:
+        depends_on_set = set()
+
+        def resolve_depends_on(val):
+            if isinstance(val, dict):
+                if len(val) == 1:
+                    ref_value = val.get("Ref")
+                    if ref_value and isinstance(ref_value, str):
+                        depends_on_set.add(ref_value)
+                    get_value = val.get("Fn::GetAtt")
+                    if (
+                        get_value
+                        and isinstance(get_value, list)
+                        and len(get_value) >= 2
+                    ):
+                        name = get_value[0]
+                        if isinstance(name, str):
+                            depends_on_set.add(name)
+                else:
+                    for v in val.values():
+                        resolve_depends_on(v)
+            elif isinstance(val, list):
+                for v in val:
+                    resolve_depends_on(v)
+
+        resolve_depends_on(self.value)
+        return depends_on_set
+
+
+class Properties(dict):
+    PROPERTIES_KEY_SCORES = {
+        "ZoneId": 0,
+        "MasterZoneIds": 1,
+        "WorkerZoneIds": 2,
+        "SlaveZoneIds": 3,
+        "VpcId": 4,
+        "VPCId": 5,
+        "VSwitchId": 6,
+        "VswitchId": 7,
+        "VSwitchIds": 8,
+        "MasterVSwitchIds": 9,
+        "WorkerVSwitchIds": 10,
+        "SourceVSwitchIds": 11,
+        "PodVswitchIds": 12,
+        "SecurityGroupId": 13,
+        "SecurityGroupIds": 14,
+        "NetworkInterfaceId": 15,
+        "PrimaryNetworkInterfaceId": 16,
+        "InstanceId": 17,
+        "InstanceIds": 18,
+        "ImageId": 19,
+    }
+
+    @classmethod
+    def initialize(cls, data: dict):
+        if not isinstance(data, dict):
+            raise InvalidTemplateProperties(
+                reason=f"The type of data ({data}) should be dict"
+            )
+
+        props = cls()
+        for name, value in data.items():
+            prop = Property.initialize(name, value)
+            props.add(prop)
+        return props
+
+    def add(self, prop: Property):
         self[prop.name] = prop
 
     def resolve(self) -> "Properties":
@@ -119,8 +196,23 @@ class Properties(dict):
 
         return props
 
-    def as_dict(self) -> dict:
-        return {k: v.value for k, v in self.items()}
+    def as_dict(self, format=False) -> dict:
+        data = {}
+        keys = self.keys()
+        if format:
+            keys = sorted_data(keys, scores=self.PROPERTIES_KEY_SCORES)
+        for key in keys:
+            prop: Property = self[key]
+            if prop.value is not None:
+                data.update(prop.as_dict(format))
+        return data
+
+    def get_depends_on_set(self) -> set:
+        depends_on_set = set()
+        for prop in self.values():
+            prop: Property
+            depends_on_set.update(prop.get_depends_on_set())
+        return depends_on_set
 
 
 def _handle_list_value(name_part, cur_value, expression, data=None):
