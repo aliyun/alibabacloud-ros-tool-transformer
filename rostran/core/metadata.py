@@ -10,7 +10,7 @@ class MetaItem:
     PARAMETER_GROUPS = "ParameterGroups"
     PARAMETERS = "Parameters"
     LABEL = "Label"
-    DEFAULT = "default"
+    LABEL_KEYS = (DEFAULT, EN, ZH_CN) = ("default", "en", "zh-cn")
     TEMPLATE_TAGS = "TemplateTags"
 
     PREDEFINED_PARAMETERS_KEY_SCORES = {NAME: 0, PARAMETERS: 1}
@@ -123,10 +123,11 @@ class MetaItem:
                             name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.LABEL}",
                             reason=f"The type of value ({label}) should be dict",
                         )
-                    if self.DEFAULT not in label:
+                    if not any(key in label for key in self.LABEL_KEYS):
+                        label_keys = ", ".join(self.LABEL_KEYS)
                         raise InvalidTemplateMetaDataItem(
                             name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.LABEL}",
-                            reason=f"{self.DEFAULT} is missing",
+                            reason=f"one of {label_keys} is missing",
                         )
 
             # validate TemplateTags

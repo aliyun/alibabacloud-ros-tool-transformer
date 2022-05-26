@@ -35,6 +35,10 @@ class TemplateFormatNotSupport(RosTranException):
     msg = 'Template "{path}"(format: {format}) is not supported.'
 
 
+class InvalidTemplateFormat(RosTranException):
+    msg = 'Template "{path}"(format: {format}) is not valid.'
+
+
 class InvalidTemplateParameter(RosTranException):
     msg = "Invalid template parameter {name}. {reason}."
 

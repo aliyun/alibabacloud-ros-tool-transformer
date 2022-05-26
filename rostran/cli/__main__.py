@@ -166,10 +166,16 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
     if suffix == ".json":
         file_format = FileFormat.Json
         path.open()
-        source = json.loads(path.read_text())
+        try:
+            source = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            raise exceptions.InvalidTemplateFormat(path=path, format="json")
     elif suffix in (".yaml", ".yml"):
         file_format = FileFormat.Yaml
-        source = yaml.safe_load(path.read_text())
+        try:
+            source = yaml.safe_load(path.read_text())
+        except yaml.YAMLError:
+            raise exceptions.InvalidTemplateFormat(path=path, format="yaml")
     else:
         if check_suffix:
             raise exceptions.TemplateFormatNotSupport(path=path, format=suffix)
