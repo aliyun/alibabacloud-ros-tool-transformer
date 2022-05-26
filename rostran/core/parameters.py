@@ -96,7 +96,8 @@ class Parameter:
     def initialize(cls, name: str, value: dict):
         if not isinstance(value, dict):
             raise InvalidTemplateParameter(
-                name=name, reason=f"The type of value ({value}) should be dict",
+                name=name,
+                reason=f"The type of value ({value}) should be dict",
             )
 
         param = cls(
@@ -143,7 +144,8 @@ class Parameter:
     def validate(self):
         if not isinstance(self.name, str):
             raise InvalidTemplateParameter(
-                name=self.name, reason=f"The type should be str",
+                name=self.name,
+                reason=f"The type should be str",
             )
 
         if self.type not in self.TYPES:

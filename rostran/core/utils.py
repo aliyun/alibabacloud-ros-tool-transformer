@@ -62,7 +62,9 @@ def sorted_data(data, traverse=False, scores: dict = None):
 
 
 def sorted_dict(
-    data: dict, traverse=False, dict_key_func=lambda item: str(item[0]),
+    data: dict,
+    traverse=False,
+    dict_key_func=lambda item: str(item[0]),
 ):
     sorted_d = dict(sorted(data.items(), key=dict_key_func))
     if traverse:

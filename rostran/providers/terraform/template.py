@@ -151,7 +151,10 @@ class TerraformTemplate(Template):
         ".Args",
     )
 
-    RESOURCE_PROP_TYPES = (PROP_TYPE_VALUE, PROP_TYPE_FUNC,) = ("Value", "Func")
+    RESOURCE_PROP_TYPES = (
+        PROP_TYPE_VALUE,
+        PROP_TYPE_FUNC,
+    ) = ("Value", "Func")
 
     RESOURCE_PROP_FUNCS = (FUNC_GET_ATT,) = ("GetAtt",)
 
@@ -546,6 +549,9 @@ class TerraformTemplate(Template):
                         for ros_attr in ros_attrs
                     ]
                     value = {"Fn::Join": [":", attr_list]}
-            output = Output(name=name, value=value,)
+            output = Output(
+                name=name,
+                value=value,
+            )
 
             out_outputs.add(output)

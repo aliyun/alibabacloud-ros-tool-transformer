@@ -3,7 +3,9 @@ from rostran.core.metadata import MetaData
 
 tpl_parameters = {
     "EnableProtection": {"Type": "Boolean", "Default": True},
-    "ZoneId": {"Type": "String",},
+    "ZoneId": {
+        "Type": "String",
+    },
     "Data": {"Type": "Json", "TextArea": True, "Default": {"k": "v"}},
     "Amount": {
         "Type": "Number",
@@ -43,7 +45,10 @@ tpl_parameters = {
 tpl_metadata_for_parameters = {
     "ALIYUN::ROS::Interface": {
         "ParameterGroups": [
-            {"Label": {"default": "Basic"}, "Parameters": ["ZoneId"],},
+            {
+                "Label": {"default": "Basic"},
+                "Parameters": ["ZoneId"],
+            },
             {
                 "Label": {"default": "ECS"},
                 "Parameters": ["InstanceType", "Amount", "Password"],

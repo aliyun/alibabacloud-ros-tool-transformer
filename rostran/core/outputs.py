@@ -36,15 +36,18 @@ class Output:
     def validate(self):
         if not isinstance(self.name, str):
             raise InvalidTemplateOutput(
-                name=self.name, reason=f"The type should be str",
+                name=self.name,
+                reason=f"The type should be str",
             )
         if self.value is None:
             raise InvalidTemplateOutput(
-                name=self.name, reason=f"The {self.VALUE} should not be empty",
+                name=self.name,
+                reason=f"The {self.VALUE} should not be empty",
             )
         if self.condition is not None and not isinstance(self.condition, str):
             raise InvalidTemplateOutput(
-                name=self.name, reason=f"The type of {self.CONDITION} should be str",
+                name=self.name,
+                reason=f"The type of {self.CONDITION} should be str",
             )
 
     def as_dict(self, format=False) -> dict:

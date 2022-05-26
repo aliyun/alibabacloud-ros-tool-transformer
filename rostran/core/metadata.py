@@ -3,14 +3,17 @@ from rostran.core.utils import sorted_data
 
 
 class MetaItem:
+    PREDEFINED_PARAMETERS = "PredefinedParameters"
     ROS_INTERFACE = "ALIYUN::ROS::Interface"
     ROS_DESIGNER = "ALIYUN::ROS::Designer"
+    NAME = "Name"
     PARAMETER_GROUPS = "ParameterGroups"
     PARAMETERS = "Parameters"
     LABEL = "Label"
     DEFAULT = "default"
     TEMPLATE_TAGS = "TemplateTags"
 
+    PREDEFINED_PARAMETERS_KEY_SCORES = {NAME: 0, PARAMETERS: 1}
     ROS_INTERFACE_KEY_SCORES = {PARAMETER_GROUPS: 0, TEMPLATE_TAGS: 1}
     PARAMETER_GROUP_KEY_SCORES = {PARAMETERS: 0, LABEL: 1}
 
@@ -27,13 +30,52 @@ class MetaItem:
     def validate(self):
         if not isinstance(self.type, str):
             raise InvalidTemplateMetaDataItem(
-                name=self.type, reason=f"The type should be str",
+                name=self.type,
+                reason=f"The type should be str",
             )
-        if not isinstance(self.value, dict):
+        if self.type in (self.ROS_INTERFACE, self.ROS_DESIGNER) and not isinstance(
+            self.value, dict
+        ):
             raise InvalidTemplateMetaDataItem(
                 name=self.type,
                 reason=f"The type of value ({self.value}) should be dict",
             )
+
+        # validate PredefinedParameters
+        if self.type == self.PREDEFINED_PARAMETERS:
+            if not isinstance(self.value, list):
+                raise InvalidTemplateMetaDataItem(
+                    name=self.type,
+                    reason=f"The type of value ({self.value}) should be list",
+                )
+            for i, pp in enumerate(self.value):
+                if not isinstance(pp, dict):
+                    raise InvalidTemplateMetaDataItem(
+                        name=f"{self.type}[{i}]",
+                        reason=f"The type of value ({pp}) should be dict",
+                    )
+                if self.NAME not in pp:
+                    raise InvalidTemplateMetaDataItem(
+                        name=f"{self.type}[{i}]",
+                        reason=f"{self.NAME} is missing",
+                    )
+                name = pp[self.NAME]
+                if not isinstance(name, str):
+                    raise InvalidTemplateMetaDataItem(
+                        name=f"{self.type}[{i}].{self.NAME}",
+                        reason=f"The type of value ({name}) should be str",
+                    )
+                if self.PARAMETERS not in pp:
+                    raise InvalidTemplateMetaDataItem(
+                        name=f"{self.type}[{i}]",
+                        reason=f"{self.PARAMETERS} is missing",
+                    )
+                parameters = pp[self.PARAMETERS]
+                if not isinstance(parameters, dict):
+                    raise InvalidTemplateMetaDataItem(
+                        name=f"{self.type}[{i}].{self.PARAMETERS}",
+                        reason=f"The type of value ({parameters}) should be dict",
+                    )
 
         # validate ALIYUN::ROS::Interface
         if self.type == self.ROS_INTERFACE:
@@ -107,6 +149,15 @@ class MetaItem:
         if not format:
             return data
 
+        if self.type == self.PREDEFINED_PARAMETERS:
+            sorted_pps = []
+            for i, pp in enumerate(self.value):
+                sorted_pp = sorted_data(
+                    pp, scores=self.PREDEFINED_PARAMETERS_KEY_SCORES
+                )
+                sorted_pps.append(sorted_pp)
+            data[self.type] = sorted_pps
+
         if self.type == self.ROS_INTERFACE:
             data[self.type] = sorted_data(
                 self.value, scores=self.ROS_INTERFACE_KEY_SCORES
@@ -128,7 +179,8 @@ class MetaItem:
 class MetaData(dict):
     ROS_INTERFACE = "ALIYUN::ROS::Interface"
     ROS_DESIGNER = "ALIYUN::ROS::Designer"
-    META_DATA_KEY_SCORES = {ROS_INTERFACE: 0, ROS_DESIGNER: 1}
+    PREDEFINED_PARAMETERS = "PredefinedParameters"
+    META_DATA_KEY_SCORES = {PREDEFINED_PARAMETERS: 0, ROS_INTERFACE: 1, ROS_DESIGNER: 2}
 
     @classmethod
     def initialize(cls, data: dict):

@@ -42,6 +42,44 @@ tpl_metadata = {
             }
         ],
     },
+    "PredefinedParameters": [
+        {
+            "Parameters": {
+                "EcsInstanceType": "ecs.c6.large",
+                "SystemDiskCategory": "cloud_efficiency",
+                "SystemDiskSize": 40,
+                "DataDiskCategory": "cloud_efficiency",
+                "DataDiskSize": 40,
+                "InstanceCount": 2,
+                "DBInstanceClass": "rds.mysql.s2.large",
+                "DBInstanceStorage": 20,
+                "LoadBalancerSpec": "slb.s1.small",
+                "LoadBalancerBandwidth": 5,
+                "NatGatewayBandwidth": 2,
+                "Engine": "MySQL",
+                "EngineVersion": 5.7,
+            },
+            "Name": "Basic",
+        },
+        {
+            "Parameters": {
+                "EcsInstanceType": "ecs.c6.large",
+                "SystemDiskCategory": "cloud_efficiency",
+                "SystemDiskSize": 40,
+                "DataDiskCategory": "cloud_efficiency",
+                "DataDiskSize": 80,
+                "InstanceCount": 3,
+                "DBInstanceClass": "rds.mysql.s2.xlarge",
+                "DBInstanceStorage": 20,
+                "LoadBalancerSpec": "slb.s3.small",
+                "LoadBalancerBandwidth": 10,
+                "NatGatewayBandwidth": 4,
+                "Engine": "MySQL",
+                "EngineVersion": 5.7,
+            },
+            "Name": "Advanced",
+        },
+    ],
 }
 
 
@@ -50,7 +88,15 @@ def test_format_metadata():
     data = meta_data.as_dict(format=True)
 
     # MetaData key order
-    assert list(data) == ["ALIYUN::ROS::Interface", "ALIYUN::ROS::Designer"]
+    assert list(data) == [
+        "PredefinedParameters",
+        "ALIYUN::ROS::Interface",
+        "ALIYUN::ROS::Designer",
+    ]
+
+    # PredefinedParameters key order
+    pp = data["PredefinedParameters"][0]
+    assert list(pp) == ["Name", "Parameters"]
 
     # ALIYUN::ROS::Interface key order
     ros_interface = data["ALIYUN::ROS::Interface"]

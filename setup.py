@@ -56,5 +56,7 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Operating System :: Microsoft :: Windows",
     ],
-    entry_points={"console_scripts": ["rostran=rostran.cli.__main__:main"],},
+    entry_points={
+        "console_scripts": ["rostran=rostran.cli.__main__:main"],
+    },
 )

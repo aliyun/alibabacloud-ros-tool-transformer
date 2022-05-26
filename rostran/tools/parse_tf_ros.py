@@ -25,8 +25,8 @@ def tf_properties_attrs(md: str):
     for i in h2:
         if i.string == "Attributes Reference":
             try:
-                li_list = i.next_sibling.next_sibling.next_sibling.next_sibling.find_all(
-                    "li"
+                li_list = (
+                    i.next_sibling.next_sibling.next_sibling.next_sibling.find_all("li")
                 )
             except AttributeError:
                 li_list = i.next_sibling.next_sibling.find_all("li")

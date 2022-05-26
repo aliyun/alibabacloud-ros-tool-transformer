@@ -52,7 +52,8 @@ class Resource:
     def initialize(cls, resource_id: str, value: dict):
         if not isinstance(value, dict):
             raise InvalidTemplateResource(
-                name=resource_id, reason=f"The type of value ({value}) should be dict",
+                name=resource_id,
+                reason=f"The type of value ({value}) should be dict",
             )
 
         value = value.copy()
@@ -95,19 +96,23 @@ class Resource:
     def validate(self):
         if not isinstance(self.resource_id, str):
             raise InvalidTemplateResource(
-                name=self.resource_id, reason=f"The type should be str",
+                name=self.resource_id,
+                reason=f"The type should be str",
             )
         if not self.resource_id:
             raise InvalidTemplateResource(
-                name=self.resource_id, reason=f"ResourceId should not be empty",
+                name=self.resource_id,
+                reason=f"ResourceId should not be empty",
             )
         if not isinstance(self.type, str):
             raise InvalidTemplateResource(
-                name=self.resource_id, reason=f"The type should be str",
+                name=self.resource_id,
+                reason=f"The type should be str",
             )
         if not self.type:
             raise InvalidTemplateResource(
-                name=self.type, reason=f"ResourceType should not be empty",
+                name=self.type,
+                reason=f"ResourceType should not be empty",
             )
         if self.depends_on is not None and not isinstance(self.depends_on, (str, list)):
             raise InvalidTemplateResource(

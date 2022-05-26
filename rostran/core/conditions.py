@@ -18,7 +18,8 @@ class Condition:
     def validate(self):
         if not isinstance(self.name, str):
             raise InvalidTemplateCondition(
-                name=self.name, reason=f"The type should be str",
+                name=self.name,
+                reason=f"The type should be str",
             )
         if not isinstance(self.value, dict):
             raise InvalidTemplateCondition(
@@ -30,7 +31,8 @@ class Condition:
         for key, value in self.value.items():
             if not isinstance(key, str):
                 raise InvalidTemplateCondition(
-                    name=f"{self.name}.{key}", reason=f"The type should be str",
+                    name=f"{self.name}.{key}",
+                    reason=f"The type should be str",
                 )
             if key not in self.CONDITION_FUNCS:
                 raise InvalidTemplateCondition(

@@ -16,7 +16,8 @@ class Mapping:
     def validate(self):
         if not isinstance(self.name, str):
             raise InvalidTemplateMapping(
-                name=self.name, reason=f"The type should be str",
+                name=self.name,
+                reason=f"The type should be str",
             )
         if not isinstance(self.value, dict):
             raise InvalidTemplateMapping(
@@ -28,7 +29,8 @@ class Mapping:
         for key, value in self.value.items():
             if not isinstance(key, str):
                 raise InvalidTemplateMapping(
-                    name=f"{self.name}.{key}", reason=f"The type should be str",
+                    name=f"{self.name}.{key}",
+                    reason=f"The type should be str",
                 )
             if not isinstance(value, dict):
                 raise InvalidTemplateMapping(

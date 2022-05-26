@@ -139,7 +139,8 @@ def main():
 
 @app.command()
 def format(
-    path: str, replace: bool = False,
+    path: str,
+    replace: bool = False,
 ):
     """
     Format and check ROS template according to the standard specification.
