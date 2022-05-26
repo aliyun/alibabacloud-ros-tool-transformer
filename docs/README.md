@@ -1,4 +1,7 @@
 # ROS Template Transformer
-ROS Template Transformer is used to transform Excel, Terraform, or AWS CloudFormation template to ROS template, which can help you use [Alibaba Cloud Resource Orchestration Services(ROS)](https://www.alibabacloud.com/product/ros) more conveniently.
+[ROS(Resource Orchestration Service)](https://www.alibabacloud.com/help/en/resource-orchestration-service) Template Transformer
+is a tool for transforming and formatting.
+- Transforms **AWS CloudFormation/Terraform/Excel** template to **ROS** template.
+- Formats ROS template.
 
-The project is developed in Python, and Python 3.6 or above needs to be installed. To convert Terraform templates to ROS templates, Golang and Terraform need to be installed.
+This project is developed in Python language and requires Python 3.6 or above.

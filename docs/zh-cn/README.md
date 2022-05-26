@@ -1,6 +1,6 @@
 # ROS Template Transformer
-ROS Template Transformer（阿里云ROS模板转换工具）用于将 Excel、Terraform 或 AWS CloudFormation 
-格式的模板转为 ROS 模板，可以帮助您更方便的使用[阿里云资源编排服务 ROS](https://www.alibabacloud.com/product/ros)。
+[ROS](https://help.aliyun.com/product/28850.html) Template Transformer（阿里云ROS模板转换工具）用于转换和格式化模板。
+- 将 Excel、Terraform 或 AWS CloudFormation 转换为 ROS 模板。
+- 将 ROS 模板格式化。
 
-该项目使用 Python 语言开发，需要安装 Python3.6 或以上版本，
-转换 Terraform 模板为 ROS 模板需要安装 Golang 环境和 Terraform。
+该项目使用 Python 语言开发，需要安装 Python3.6 或以上版本。
