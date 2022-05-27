@@ -6,6 +6,7 @@ import os
 import logging
 import traceback
 from pathlib import Path
+from typing import List
 
 import typer
 import yaml
@@ -25,16 +26,32 @@ SOURCE_TEMPLATE_FORMAT_DEFAULT = typer.Option(
     SourceTemplateFormat.Auto, help="Source template format"
 )
 TARGET_TEMPLATE_FORMAT_DEFAULT = typer.Option(
-    TargetTemplateFormat.Auto, help="Target template format"
+    TargetTemplateFormat.Auto, help="Target template format."
 )
 
 
 @app.command()
 def transform(
-    source_path: str,
-    source_format: SourceTemplateFormat = SOURCE_TEMPLATE_FORMAT_DEFAULT,
-    target_path: str = typer.Option(None),
-    target_format: TargetTemplateFormat = TARGET_TEMPLATE_FORMAT_DEFAULT,
+    source_path: str = typer.Argument(
+        ...,
+        help="The path of the source template file, which can be a template file in Excel, Terraform, "
+        "or AWS CloudFormation format.",
+    ),
+    source_format: SourceTemplateFormat = typer.Option(
+        SourceTemplateFormat.Auto,
+        show_default=False,
+        help="The format of the source template file. The source file format is determined by the suffix "
+        "of SOURCE_PATH by default. [default: Auto]",
+    ),
+    target_path: str = typer.Option(
+        None,
+        help="The file path of the generated ROS template. Default to current directory.",
+    ),
+    target_format: TargetTemplateFormat = typer.Option(
+        TargetTemplateFormat.Auto,
+        show_default=False,
+        help=" The generated ROS template format. [defult: auto]",
+    ),
 ):
     """
     Transform AWS CloudFormation/Terraform/Excel template to ROS template.
@@ -122,43 +139,53 @@ def generate(
     typer.echo(f'Generate "{resource_type}" to ROS template (Format: {file_format})')
 
 
-def main():
-    logging.basicConfig(level=logging.INFO, format="%(message)s")
-    try:
-        typer.main.get_command(app)(prog_name="rostran")
-    except exceptions.RosTranWarning as e:
-        typer.secho(f"{e}", fg=typer.colors.YELLOW)
-        typer.Exit(1)
-    except exceptions.RosTranException as e:
-        typer.secho(f"{e}", fg=typer.colors.RED)
-        typer.Exit(2)
-    except Exception as e:
-        typer.secho(traceback.format_exc(), fg=typer.colors.RED)
-        typer.Exit(3)
-
-
 @app.command()
 def format(
-    path: str,
-    replace: bool = False,
+    path: List[Path] = typer.Argument(
+        ...,
+        exists=True,
+        resolve_path=True,
+        help="The path of ROS template file to format.",
+    ),
+    replace: bool = typer.Option(
+        False,
+        help="Whether replace the content of the source file with the formatted content.",
+    ),
+    skip: List[Path] = typer.Option(
+        None,
+        exists=True,
+        resolve_path=True,
+        help="The path of ROS Template file that need to skip formatting.",
+    ),
 ):
     """
     Format and check ROS template according to the standard specification.
     """
-    # handle source template
-    p = Path(path)
-    if not p.exists():
-        raise exceptions.PathNotExist(path=path)
+    ps = []
+    ps_set = set()
+    skip_set = set(skip)
+    for p in path:
+        if p not in ps_set and p not in skip_set:
+            ps_set.add(p)
+            ps.append(p)
 
-    if p.is_dir():
-        r = _format_directory(p, replace)
-    else:
-        r = _format_file(p, replace)
-
-    if r:
-        typer.secho("Formatted successfully.", fg="green")
-    else:
+    if not ps:
         typer.secho("No templates were found that could be formatted.", fg="yellow")
+        return
+
+    for p in ps:
+        if not p.exists():
+            raise exceptions.PathNotExist(path=path)
+
+        if p.is_dir():
+            r = _format_directory(p, replace)
+        else:
+            r = _format_file(p, replace)
+
+        if r:
+            typer.secho("Formatted successfully.", fg="green")
+        else:
+            typer.secho("No templates were found that could be formatted.", fg="yellow")
 
 
 def _format_file(path: Path, replace: bool = False, check_suffix=True):
@@ -210,6 +237,21 @@ def _format_directory(path: Path, replace: bool = False) -> list:
             if r:
                 formatted_paths.append(r)
     return formatted_paths
+
+
+def main():
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
+    try:
+        typer.main.get_command(app)(prog_name="rostran")
+    except exceptions.RosTranWarning as e:
+        typer.secho(f"{e}", fg=typer.colors.YELLOW)
+        typer.Exit(1)
+    except exceptions.RosTranException as e:
+        typer.secho(f"{e}", fg=typer.colors.RED)
+        typer.Exit(2)
+    except Exception as e:
+        typer.secho(traceback.format_exc(), fg=typer.colors.RED)
+        typer.Exit(3)
 
 
 if __name__ == "__main__":
