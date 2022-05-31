@@ -6,7 +6,7 @@ import os
 import logging
 import traceback
 from pathlib import Path
-from typing import List
+from typing import List, Set
 
 import typer
 import yaml
@@ -169,30 +169,31 @@ def format(
             ps_set.add(p)
             ps.append(p)
 
-    if not ps:
-        typer.secho("No templates were found that could be formatted.", fg="yellow")
-        return
-
+    formatted_paths = []
     for p in ps:
         if not p.exists():
             raise exceptions.PathNotExist(path=path)
-
+        if p in skip_set:
+            continue
         if p.is_dir():
-            r = _format_directory(p, replace)
+            r = _format_directory(p, replace, skip_set)
+            if r:
+                formatted_paths.extend(r)
         else:
             r = _format_file(p, replace)
+            if r:
+                formatted_paths.append(r)
 
-        if r:
-            typer.secho("Formatted successfully.", fg="green")
-        else:
-            typer.secho("No templates were found that could be formatted.", fg="yellow")
+    if formatted_paths:
+        typer.secho("Formatted successfully.", fg="green")
+    else:
+        typer.secho("No templates were found that could be formatted.", fg="yellow")
 
 
 def _format_file(path: Path, replace: bool = False, check_suffix=True):
     suffix = path.suffix
     if suffix == ".json":
         file_format = FileFormat.Json
-        path.open()
         try:
             source = json.loads(path.read_text())
         except json.JSONDecodeError:
@@ -220,16 +221,20 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
         with path.open("w") as f:
             f.write(content)
     else:
-        typer.secho(content)
+        # typer.secho(content)
         typer.echo()
     return path
 
 
-def _format_directory(path: Path, replace: bool = False) -> list:
+def _format_directory(
+    path: Path, replace: bool = False, skip_paths: Set[Path] = None
+) -> list:
     formatted_paths = []
     for sub_path in path.iterdir():
+        if skip_paths and sub_path in skip_paths:
+            continue
         if sub_path.is_dir():
-            r = _format_directory(sub_path, replace)
+            r = _format_directory(sub_path, replace, skip_paths)
             if r:
                 formatted_paths.extend(r)
         else:
@@ -249,7 +254,7 @@ def main():
     except exceptions.RosTranException as e:
         typer.secho(f"{e}", fg=typer.colors.RED)
         typer.Exit(2)
-    except Exception as e:
+    except Exception:
         typer.secho(traceback.format_exc(), fg=typer.colors.RED)
         typer.Exit(3)
 
