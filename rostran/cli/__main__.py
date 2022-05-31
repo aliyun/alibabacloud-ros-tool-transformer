@@ -50,7 +50,7 @@ def transform(
     target_format: TargetTemplateFormat = typer.Option(
         TargetTemplateFormat.Auto,
         show_default=False,
-        help=" The generated ROS template format. [defult: auto]",
+        help="The generated ROS template format. [default: auto]",
     ),
 ):
     """
@@ -221,7 +221,7 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
         with path.open("w") as f:
             f.write(content)
     else:
-        # typer.secho(content)
+        typer.secho(content)
         typer.echo()
     return path
 
