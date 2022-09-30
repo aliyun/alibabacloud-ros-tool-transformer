@@ -12,7 +12,7 @@ AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
 URL = "https://www.alibabacloud.com/product/ros"
 
 # description
-desc_file = open("README.md")
+desc_file = open("README.md", encoding="utf-8")
 try:
     LONG_DESCRIPTION = desc_file.read()
 finally:
