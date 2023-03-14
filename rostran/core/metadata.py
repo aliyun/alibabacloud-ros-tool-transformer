@@ -87,6 +87,8 @@ class MetaItem:
                         name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}",
                         reason=f"The type of value ({param_groups}) should be list",
                     )
+
+                require_label = bool(len(param_groups) > 1)
                 for i, param_group in enumerate(param_groups):
                     if not isinstance(param_group, dict):
                         raise InvalidTemplateMetaDataItem(
@@ -113,22 +115,24 @@ class MetaItem:
                             )
                     # validate Label
                     if self.LABEL not in param_group:
-                        raise InvalidTemplateMetaDataItem(
-                            name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}]",
-                            reason=f"{self.LABEL} is missing",
-                        )
-                    label = param_group[self.LABEL]
-                    if not isinstance(label, dict):
-                        raise InvalidTemplateMetaDataItem(
-                            name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.LABEL}",
-                            reason=f"The type of value ({label}) should be dict",
-                        )
-                    if not any(key in label for key in self.LABEL_KEYS):
-                        label_keys = ", ".join(self.LABEL_KEYS)
-                        raise InvalidTemplateMetaDataItem(
-                            name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.LABEL}",
-                            reason=f"one of {label_keys} is missing",
-                        )
+                        if require_label:
+                            raise InvalidTemplateMetaDataItem(
+                                name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}]",
+                                reason=f"{self.LABEL} is missing",
+                            )
+                    else:
+                        label = param_group[self.LABEL]
+                        if not isinstance(label, dict):
+                            raise InvalidTemplateMetaDataItem(
+                                name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.LABEL}",
+                                reason=f"The type of value ({label}) should be dict",
+                            )
+                        if not any(key in label for key in self.LABEL_KEYS):
+                            label_keys = ", ".join(self.LABEL_KEYS)
+                            raise InvalidTemplateMetaDataItem(
+                                name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.LABEL}",
+                                reason=f"one of {label_keys} is missing",
+                            )
 
             # validate TemplateTags
             if self.TEMPLATE_TAGS in self.value:

@@ -21,6 +21,19 @@ from rostran.core.format import (
 )
 from rostran.core.template import RosTemplate
 
+
+# yaml hook
+def str_presenter(dumper, data):
+    if len(data.splitlines()) > 1:  # check for multiline string
+        return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data)
+
+
+yaml.add_representer(str, str_presenter)
+yaml.representer.SafeRepresenter.add_representer(str, str_presenter)
+
+
+# cli
 app = typer.Typer(help=__doc__)
 SOURCE_TEMPLATE_FORMAT_DEFAULT = typer.Option(
     SourceTemplateFormat.Auto, help="Source template format"
@@ -32,26 +45,26 @@ TARGET_TEMPLATE_FORMAT_DEFAULT = typer.Option(
 
 @app.command()
 def transform(
-    source_path: str = typer.Argument(
-        ...,
-        help="The path of the source template file, which can be a template file in Excel, Terraform, "
-        "or AWS CloudFormation format.",
-    ),
-    source_format: SourceTemplateFormat = typer.Option(
-        SourceTemplateFormat.Auto,
-        show_default=False,
-        help="The format of the source template file. The source file format is determined by the suffix "
-        "of SOURCE_PATH by default. [default: Auto]",
-    ),
-    target_path: str = typer.Option(
-        None,
-        help="The file path of the generated ROS template. Default to current directory.",
-    ),
-    target_format: TargetTemplateFormat = typer.Option(
-        TargetTemplateFormat.Auto,
-        show_default=False,
-        help="The generated ROS template format. [default: auto]",
-    ),
+        source_path: str = typer.Argument(
+            ...,
+            help="The path of the source template file, which can be a template file in Excel, Terraform, "
+                 "or AWS CloudFormation format.",
+        ),
+        source_format: SourceTemplateFormat = typer.Option(
+            SourceTemplateFormat.Auto,
+            show_default=False,
+            help="The format of the source template file. The source file format is determined by the suffix "
+                 "of SOURCE_PATH by default. [default: Auto]",
+        ),
+        target_path: str = typer.Option(
+            None,
+            help="The file path of the generated ROS template. Default to current directory.",
+        ),
+        target_format: TargetTemplateFormat = typer.Option(
+            TargetTemplateFormat.Auto,
+            show_default=False,
+            help="The generated ROS template format. [default: auto]",
+        ),
 ):
     """
     Transform AWS CloudFormation/Terraform/Excel template to ROS template.
@@ -131,7 +144,7 @@ def transform(
 
 @app.command()
 def generate(
-    resource_type: str, file_format: GeneratorFileFormat = GeneratorFileFormat.Excel
+        resource_type: str, file_format: GeneratorFileFormat = GeneratorFileFormat.Excel
 ):
     """
     Generate specific resource template file by given resource type.
@@ -141,22 +154,22 @@ def generate(
 
 @app.command()
 def format(
-    path: List[Path] = typer.Argument(
-        ...,
-        exists=True,
-        resolve_path=True,
-        help="The path of ROS template file to format.",
-    ),
-    replace: bool = typer.Option(
-        False,
-        help="Whether replace the content of the source file with the formatted content.",
-    ),
-    skip: List[Path] = typer.Option(
-        None,
-        exists=True,
-        resolve_path=True,
-        help="The path of ROS Template file that need to skip formatting.",
-    ),
+        path: List[Path] = typer.Argument(
+            ...,
+            exists=True,
+            resolve_path=True,
+            help="The path of ROS template file to format.",
+        ),
+        replace: bool = typer.Option(
+            False,
+            help="Whether replace the content of the source file with the formatted content.",
+        ),
+        skip: List[Path] = typer.Option(
+            None,
+            exists=True,
+            resolve_path=True,
+            help="The path of ROS Template file that need to skip formatting.",
+        ),
 ):
     """
     Format and check ROS template according to the standard specification.
@@ -215,7 +228,7 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
     if file_format == FileFormat.Json:
         content = json.dumps(data, indent=2, ensure_ascii=False)
     else:
-        content = yaml.safe_dump(data, sort_keys=False, allow_unicode=True)
+        content = yaml.safe_dump(data, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
     if replace:
         with path.open("w") as f:
@@ -227,7 +240,7 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
 
 
 def _format_directory(
-    path: Path, replace: bool = False, skip_paths: Set[Path] = None
+        path: Path, replace: bool = False, skip_paths: Set[Path] = None
 ) -> list:
     formatted_paths = []
     for sub_path in path.iterdir():
