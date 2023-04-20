@@ -33,7 +33,7 @@ class TerraformTemplate(Template):
         "aws",
     )
 
-    SUPPORTED_PLAN_FORMAT_VERSIONS = ("1.0",)
+    SUPPORTED_PLAN_FORMAT_VERSIONS = ("1.0", "1.1", "1.2")
 
     PLAN_PROPERTIES = (
         P_FORMAT_VERSION,
