@@ -51,6 +51,7 @@ class Parameter:
         "Confirm",
         "TextArea",
     )
+    NULL = ...
 
     def __init__(
         self,
@@ -100,10 +101,14 @@ class Parameter:
                 reason=f"The type of value ({value}) should be dict",
             )
 
+        if cls.DEFAULT in value:
+            default = cls.NULL if value[cls.DEFAULT] is None else value[cls.DEFAULT]
+        else:
+            default = None
         param = cls(
             name,
             type=value.get(cls.TYPE),
-            default=value.get(cls.DEFAULT),
+            default=default,
             association_property=value.get(cls.ASSOCIATION_PROPERTY),
             association_property_metadata=value.get(cls.ASSOCIATION_PROPERTY_METADATA),
             description=value.get(cls.DESCRIPTION),
@@ -190,7 +195,8 @@ class Parameter:
                     }
                 )
             if self.default is not None:
-                data.update({self.DEFAULT: self.default})
+                default = None if self.default is self.NULL else self.default
+                data.update({self.DEFAULT: default})
             if self.allowed_values is not None:
                 data.update({self.ALLOWED_VALUES: self.allowed_values})
             if self.allowed_pattern is not None:

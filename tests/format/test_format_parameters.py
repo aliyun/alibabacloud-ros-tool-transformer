@@ -2,7 +2,10 @@ from rostran.core.parameters import Parameters
 from rostran.core.metadata import MetaData
 
 tpl_parameters = {
-    "EnableProtection": {"Type": "Boolean", "Default": True},
+    "EnableProtection": {
+        "Type": "Boolean",
+        "Default": None
+    },
     "ZoneId": {
         "Type": "String",
     },
@@ -75,6 +78,7 @@ def test_format_parameters():
     # Parameters value key order
     v = data["EnableProtection"]
     assert list(v) == ["Type", "Default"]
+    assert v["Default"] is None
 
     v = data["ZoneId"]
     assert list(v) == ["Type"]
