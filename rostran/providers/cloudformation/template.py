@@ -123,8 +123,13 @@ class CloudFormationTemplate(Template):
             resource_rule: ResourceRule = self.rule_manager.resource_rules.get(
                 resource_type
             )
-            self.rules[logical_id] = resource_rule
+            if resource_rule:
+                logger.info(f"Transform resource {logical_id}<{resource_type}>")
+            else:
+                logger.warning(f"Ignore resource <{resource_type}>, due to not supported.")
+                continue
 
+            self.rules[logical_id] = resource_rule
             ros_resource = Resource(
                 resource_id=logical_id, resource_type=resource_rule.target_resource_type
             )
@@ -149,10 +154,10 @@ class CloudFormationTemplate(Template):
         for property_key, property_value in aws_properties.items():
 
             if rule_properties.get(property_key) is None:
-                logger.warning(f"Missing {property_key} in rule file.")
+                logger.warning(f"  Missing {property_key} in rule file.")
             elif rule_properties[property_key].get("Ignore"):
                 logger.warning(
-                    f"Property <{property_key}> can not be transformed to ROS, will be ignored."
+                    f"  Property <{property_key}> can not be transformed to ROS, will be ignored."
                 )
             elif rule_properties[property_key].get("To"):
                 ros_property = rule_properties[property_key]["To"]
@@ -162,7 +167,7 @@ class CloudFormationTemplate(Template):
                         handler_module, rule_properties[property_key]["Handler"]
                     )
                     property_value = handler_func(property_value)
-                    logger.warning(rule_properties[property_key].get("Warning"))
+                    logger.warning(f"  {rule_properties[property_key].get('Warning')}")
 
                 if rule_properties[property_key].get("Schema") is None:
                     property_value = self.check_nonsupport_pseudo_parameters(
@@ -204,12 +209,12 @@ class CloudFormationTemplate(Template):
                 to_function = function_rule.function.get(aws_fn_name, {})
                 if not to_function:
                     logger.warning(
-                        f"Missing function <{aws_fn_name}>, please fill in the function rule file."
+                        f"  Missing function <{aws_fn_name}>, please fill in the function rule file."
                     )
 
                 elif to_function.get("Ignore"):
                     logger.warning(
-                        f"Ignore function <{aws_fn_name}>, please enter value in template."
+                        f"  Ignore function <{aws_fn_name}>, please enter value in template."
                     )
                     return ""
                 elif to_function.get("Handler"):
