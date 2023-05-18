@@ -1,0 +1,15 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::VPNGateway
+  To: ALIYUN::VPC::VpnGateway
+Properties:
+  Tags:
+    To: Tags
+  Type:
+    Ignore: true
+  AmazonSideAsn:
+    Ignore: true
+Attributes:
+  RouteTableId:
+    To: RouteTableId
