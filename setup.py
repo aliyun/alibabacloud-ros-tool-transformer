@@ -12,11 +12,8 @@ AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
 URL = "https://www.alibabacloud.com/product/ros"
 
 # description
-desc_file = open("README.md", encoding="utf-8")
-try:
-    LONG_DESCRIPTION = desc_file.read()
-finally:
-    desc_file.close()
+with open("README.md", encoding="utf-8") as f:
+    LONG_DESCRIPTION = f.read()
 
 # requirements
 requirements = []
@@ -30,6 +27,7 @@ setup(
     version=__version__,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    long_description_content_type='text/markdown',
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license="Apache License 2.0",
