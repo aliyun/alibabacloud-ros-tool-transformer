@@ -1,0 +1,13 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::RouteTable
+  To: ALIYUN::VPC::RouteTable
+Properties:
+  Tags:
+    To: Tags
+  VpcId:
+    To: VpcId
+Attributes:
+  RouteTableId:
+    To: RouteTableId

@@ -1,0 +1,32 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::Route
+  To: ALIYUN::ECS::Route
+Properties:
+  CarrierGatewayId:
+    Ignore: True
+  DestinationIpv6CidrBlock:
+    Ignore: True
+  EgressOnlyInternetGatewayId:
+    Ignore: True
+  GatewayId:
+    Ignore: True
+  InstanceId:
+    Ignore: True
+  LocalGatewayId:
+    Ignore: True
+  NatGatewayId:
+    Ignore: True
+  NetworkInterfaceId:
+    Ignore: True
+  TransitGatewayId:
+    Ignore: True
+  VpcEndpointId:
+    Ignore: True
+  VpcPeeringConnectionId:
+    Ignore: True
+  DestinationCidrBlock:
+    To: DestinationCidrBlock
+  RouteTableId:
+    To: RouteTableId

@@ -1,0 +1,11 @@
+Version: 2020-06-01
+Type: Resource
+ResourceType:
+  From: AWS::EC2::InternetGateway
+  To: ALIYUN::VPC::NatGateway
+Properties:
+  Tags:
+    To: Tags
+Attributes:
+  InternetGatewayId:
+    To: NatGatewayId
