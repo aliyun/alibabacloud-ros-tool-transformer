@@ -5,11 +5,12 @@ import json
 import os
 import logging
 import traceback
+from io import StringIO
 from pathlib import Path
 from typing import List, Set
 
 import typer
-import yaml
+from ruamel.yaml import YAML, YAMLError
 
 from rostran.core import exceptions
 from rostran.core.format import (
@@ -21,17 +22,8 @@ from rostran.core.format import (
 )
 from rostran.core.template import RosTemplate
 
-
-# yaml hook
-def str_presenter(dumper, data):
-    if len(data.splitlines()) > 1:  # check for multiline string
-        return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
-    return dumper.represent_scalar('tag:yaml.org,2002:str', data)
-
-
-yaml.add_representer(str, str_presenter)
-yaml.representer.SafeRepresenter.add_representer(str, str_presenter)
-
+yaml = YAML()
+yaml.preserve_quotes = True
 
 # cli
 app = typer.Typer(help=__doc__)
@@ -214,8 +206,8 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
     elif suffix in (".yaml", ".yml"):
         file_format = FileFormat.Yaml
         try:
-            source = yaml.safe_load(path.read_text())
-        except yaml.YAMLError:
+            source = yaml.load(path.read_text())
+        except YAMLError:
             raise exceptions.InvalidTemplateFormat(path=path, format="yaml")
     else:
         if check_suffix:
@@ -228,7 +220,9 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
     if file_format == FileFormat.Json:
         content = json.dumps(data, indent=2, ensure_ascii=False)
     else:
-        content = yaml.safe_dump(data, sort_keys=False, allow_unicode=True, default_flow_style=False)
+        s = StringIO()
+        yaml.dump(data, s)
+        content = s.getvalue()
 
     if replace:
         with path.open("w") as f:

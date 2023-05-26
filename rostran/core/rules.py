@@ -1,5 +1,5 @@
 import os
-import yaml
+from ruamel.yaml import YAML
 from .exceptions import (
     InvalidRuleSchema,
     RuleVersionNotSupport,
@@ -7,6 +7,8 @@ from .exceptions import (
     RuleAlreadyExist,
 )
 from rostran.core.settings import RULES_DIR
+
+yaml = YAML()
 
 
 class RuleClassifier:
@@ -102,7 +104,7 @@ class Rule:
     @classmethod
     def initialize(cls, path: str):
         with open(path) as f:
-            data = yaml.safe_load(f)
+            data = yaml.load(f)
 
         if not isinstance(data, dict):
             raise InvalidRuleSchema(path=path, reason="rule data type should be dict")

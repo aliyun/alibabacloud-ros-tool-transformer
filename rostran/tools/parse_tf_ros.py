@@ -2,7 +2,7 @@ import re
 import json
 import logging
 
-import yaml
+import ruamel.yaml as yaml
 import requests
 import markdown
 import typer

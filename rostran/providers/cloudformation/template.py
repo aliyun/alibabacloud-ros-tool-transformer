@@ -4,7 +4,7 @@ import json
 import logging
 import importlib
 
-import yaml
+from ruamel.yaml import YAML
 
 from rostran.core.exceptions import RosTranWarning, TemplateFormatNotSupport
 from rostran.core.format import FileFormat
@@ -28,6 +28,8 @@ from rostran.core.conditions import Condition, Conditions
 from rostran.core.mappings import Mapping, Mappings
 
 logger = logging.getLogger(__name__)
+yaml = YAML()
+yaml.preserve_quotes = True
 RULES_DIR = os.path.join(RULES_DIR, "cloudformation")
 BUILTIN_RULES = os.path.join(RULES_DIR, "builtin")
 RESOURCE_RULES = os.path.join(RULES_DIR, "resource")
@@ -46,7 +48,7 @@ class CloudFormationTemplate(Template):
                 source = json.load(f)
         elif format == FileFormat.Yaml:
             with open(path) as f:
-                source = yaml.safe_load(f)
+                source = yaml.load(f)
         else:
             raise TemplateFormatNotSupport(path=path, format=format)
 

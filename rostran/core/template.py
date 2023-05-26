@@ -4,7 +4,7 @@ from typing import Optional, Union
 from functools import partial
 
 import typer
-import yaml
+from ruamel.yaml import YAML
 
 from .exceptions import InvalidRosTemplateFormatVersion
 from .format import FileFormat, TargetTemplateFormat
@@ -17,6 +17,9 @@ from .mappings import Mappings
 from .workspace import Workspace
 
 logger = logging.getLogger(__name__)
+
+yaml = YAML()
+yaml.preserve_quotes = True
 
 
 class Template:
@@ -57,16 +60,16 @@ class RosTemplate:
     )
 
     def __init__(
-        self,
-        description: Optional[Union[str, dict]] = None,
-        metadata: Optional[MetaData] = None,
-        mappings: Optional[Mappings] = None,
-        conditions: Optional[Conditions] = None,
-        parameters: Optional[Parameters] = None,
-        resources: Optional[Resources] = None,
-        outputs: Optional[Outputs] = None,
-        transform: Optional[str] = None,
-        workspace: Optional[Workspace] = None,
+            self,
+            description: Optional[Union[str, dict]] = None,
+            metadata: Optional[MetaData] = None,
+            mappings: Optional[Mappings] = None,
+            conditions: Optional[Conditions] = None,
+            parameters: Optional[Parameters] = None,
+            resources: Optional[Resources] = None,
+            outputs: Optional[Outputs] = None,
+            transform: Optional[str] = None,
+            workspace: Optional[Workspace] = None,
     ):
         self.description = description
         self.metadata = metadata if metadata is not None else MetaData()
@@ -147,7 +150,7 @@ class RosTemplate:
         typer.secho(f"Save template to {target_path}.", fg="green")
 
         if target_format == TargetTemplateFormat.Yaml:
-            dump = partial(yaml.dump, sort_keys=False)
+            dump = partial(yaml.dump)
         else:
             dump = json.dump
 
