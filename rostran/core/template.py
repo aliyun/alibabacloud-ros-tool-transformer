@@ -60,16 +60,16 @@ class RosTemplate:
     )
 
     def __init__(
-            self,
-            description: Optional[Union[str, dict]] = None,
-            metadata: Optional[MetaData] = None,
-            mappings: Optional[Mappings] = None,
-            conditions: Optional[Conditions] = None,
-            parameters: Optional[Parameters] = None,
-            resources: Optional[Resources] = None,
-            outputs: Optional[Outputs] = None,
-            transform: Optional[str] = None,
-            workspace: Optional[Workspace] = None,
+        self,
+        description: Optional[Union[str, dict]] = None,
+        metadata: Optional[MetaData] = None,
+        mappings: Optional[Mappings] = None,
+        conditions: Optional[Conditions] = None,
+        parameters: Optional[Parameters] = None,
+        resources: Optional[Resources] = None,
+        outputs: Optional[Outputs] = None,
+        transform: Optional[str] = None,
+        workspace: Optional[Workspace] = None,
     ):
         self.description = description
         self.metadata = metadata if metadata is not None else MetaData()
@@ -151,9 +151,11 @@ class RosTemplate:
 
         if target_format == TargetTemplateFormat.Yaml:
             dump = partial(yaml.dump)
+            kwargs = {}
         else:
             dump = json.dump
+            kwargs = {"indent": 2}
 
-        data = self.as_dict()
+        data = self.as_dict(format=True)
         with open(target_path, "w") as f:
-            dump(data, f, indent=2)
+            dump(data, f, **kwargs)

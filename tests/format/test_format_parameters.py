@@ -2,10 +2,7 @@ from rostran.core.parameters import Parameters
 from rostran.core.metadata import MetaData
 
 tpl_parameters = {
-    "EnableProtection": {
-        "Type": "Boolean",
-        "Default": None
-    },
+    "EnableProtection": {"Type": "Boolean", "Default": None},
     "ZoneId": {
         "Type": "String",
     },

@@ -1,0 +1,3 @@
+%{ for addr, port in ip_addrs ~}
+backend ${addr}:${port}
+%{ endfor ~}

@@ -1,6 +1,6 @@
 # AWS CloudFormation 模板转 ROS 模板
 ## 命令
-使用以下命令可将 AWS CloudFormation 模板转换为 ROS 模板，并在当前目录生成 `template.json`：
+使用以下命令可将 AWS CloudFormation 模板转换为 ROS 模板，并在当前目录生成模板文件：
 
 ```bash
 rostran transform templates/cloudformation/vpc_sg.json --target-format json
