@@ -37,26 +37,39 @@ TARGET_TEMPLATE_FORMAT_DEFAULT = typer.Option(
 
 @app.command()
 def transform(
-        source_path: str = typer.Argument(
-            ...,
-            help="The path of the source template file, which can be a template file in Excel, Terraform, "
-                 "or AWS CloudFormation format.",
-        ),
-        source_format: SourceTemplateFormat = typer.Option(
-            SourceTemplateFormat.Auto,
-            show_default=False,
-            help="The format of the source template file. The source file format is determined by the suffix "
-                 "of SOURCE_PATH by default. [default: Auto]",
-        ),
-        target_path: str = typer.Option(
-            None,
-            help="The file path of the generated ROS template. Default to current directory.",
-        ),
-        target_format: TargetTemplateFormat = typer.Option(
-            TargetTemplateFormat.Auto,
-            show_default=False,
-            help="The generated ROS template format. [default: auto]",
-        ),
+    source_path: str = typer.Argument(
+        ...,
+        help="The path of the source template file, which can be a template file in Excel, Terraform, "
+        "or AWS CloudFormation format.",
+    ),
+    source_format: SourceTemplateFormat = typer.Option(
+        SourceTemplateFormat.Auto,
+        "--source-format",
+        "-S",
+        show_default=False,
+        help="The format of the source template file. The source file format is determined by the suffix "
+        "of SOURCE_PATH by default. [default: auto]",
+    ),
+    target_path: str = typer.Option(
+        None,
+        "--target-path",
+        "-t",
+        help="The file path of the generated ROS template. Default to current directory.",
+    ),
+    target_format: TargetTemplateFormat = typer.Option(
+        TargetTemplateFormat.Auto,
+        "--target-format",
+        "-T",
+        show_default=False,
+        help="The generated ROS template format. [default: auto]",
+    ),
+    compatible: bool = typer.Option(
+        False,
+        show_default=True,
+        help="Whether to use compatible mode when transforming Terraform to ROS template. If compatible, "
+        "keep the Terraform file content in the generated ROS template. Otherwise, it is transformed "
+        "to a template using ROS syntax. This option is only available for Terraform template files.",
+    ),
 ):
     """
     Transform AWS CloudFormation/Terraform/Excel template to ROS template.
@@ -111,9 +124,16 @@ def transform(
 
         template = ExcelTemplate.initialize(source_path, source_file_format)
     elif source_format == SourceTemplateFormat.Terraform:
-        from ..providers import TerraformTemplate
+        if compatible:
+            from ..providers import CompatibleTerraformTemplate
 
-        template = TerraformTemplate.initialize(source_path, source_file_format)
+            template = CompatibleTerraformTemplate.initialize(
+                source_path, source_file_format
+            )
+        else:
+            from ..providers import TerraformTemplate
+
+            template = TerraformTemplate.initialize(source_path, source_file_format)
     elif source_format == SourceTemplateFormat.CloudFormation:
         from ..providers import CloudFormationTemplate
 
@@ -136,7 +156,7 @@ def transform(
 
 @app.command()
 def generate(
-        resource_type: str, file_format: GeneratorFileFormat = GeneratorFileFormat.Excel
+    resource_type: str, file_format: GeneratorFileFormat = GeneratorFileFormat.Excel
 ):
     """
     Generate specific resource template file by given resource type.
@@ -146,22 +166,22 @@ def generate(
 
 @app.command()
 def format(
-        path: List[Path] = typer.Argument(
-            ...,
-            exists=True,
-            resolve_path=True,
-            help="The path of ROS template file to format.",
-        ),
-        replace: bool = typer.Option(
-            False,
-            help="Whether replace the content of the source file with the formatted content.",
-        ),
-        skip: List[Path] = typer.Option(
-            None,
-            exists=True,
-            resolve_path=True,
-            help="The path of ROS Template file that need to skip formatting.",
-        ),
+    path: List[Path] = typer.Argument(
+        ...,
+        exists=True,
+        resolve_path=True,
+        help="The path of ROS template file to format.",
+    ),
+    replace: bool = typer.Option(
+        False,
+        help="Whether replace the content of the source file with the formatted content.",
+    ),
+    skip: List[Path] = typer.Option(
+        None,
+        exists=True,
+        resolve_path=True,
+        help="The path of ROS Template file that need to skip formatting.",
+    ),
 ):
     """
     Format and check ROS template according to the standard specification.
@@ -234,7 +254,7 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
 
 
 def _format_directory(
-        path: Path, replace: bool = False, skip_paths: Set[Path] = None
+    path: Path, replace: bool = False, skip_paths: Set[Path] = None
 ) -> list:
     formatted_paths = []
     for sub_path in path.iterdir():

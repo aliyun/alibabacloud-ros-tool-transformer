@@ -1,15 +1,15 @@
 # Terraform 模板转 ROS 模板
 ## 命令
-使用以下命令可将 Terraform 模板转换为 ROS 模板，并在当前目录生成 `template.json`：
+使用以下命令可将 Terraform 模板转换为 ROS 模板，并在当前目录生成模板文件：
 
 ```bash
 rostran transform templates/terraform/alicloud/main.tf
 ```
 
-也可以通过 `--source-format terraform` 显式指定原始模板的类别：
+也可以通过 `--source-format/-S terraform` 显式指定原始模板的类别：
 
 ```bash
-rostran transform templates/terraform/alicloud --source-format terraform
+rostran transform templates/terraform/alicloud -S terraform
 ```
 
 ## 原始 Terraform 模板

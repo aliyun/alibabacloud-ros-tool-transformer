@@ -1,4 +1,3 @@
-import json
 import os
 import shutil
 from uuid import uuid4
@@ -20,8 +19,7 @@ from rostran.core.exceptions import (
 )
 from rostran.core.format import FileFormat
 from rostran.core.rules import RuleManager, RuleClassifier, ResourceRule
-from rostran.core.template import RosTemplate
-from rostran.core.template import Template
+from rostran.core.template import Template, RosTemplate
 from rostran.core.properties import Property
 from rostran.core.resources import Resources, Resource
 from rostran.core.outputs import Outputs, Output

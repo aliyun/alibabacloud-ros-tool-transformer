@@ -1,16 +1,16 @@
 # Transform Terraform Template to ROS Template
 ## Command
 Use the following command to transform Terraform template to ROS template 
-and generate `template.json` in the current directory:
+and generate template file in the current directory:
 
 ```bash
 rostran transform templates/terraform/alicloud/main.tf
 ```
-You can also use `--source-format terraform` to explicitly specify the category 
+You can also use `--source-format/-S terraform` to explicitly specify the category 
 of the original template:
 
 ```bash
-rostran transform templates/terraform/alicloud --source-format terraform
+rostran transform templates/terraform/alicloud -S terraform
 ```
 
 ## Original Terraform Template

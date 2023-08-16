@@ -1,7 +1,7 @@
 # Transform Excel Template to ROS Template
 ## Command
 Use the following command to transform Excel template into ROS template
-and generate `template-{number}.json` in the current directory:
+and generate template file(s) in the current directory:
 
 ```bash
 rostran transform templates/excel/EcsInstance.xlsx.md --target-path tests/template.json

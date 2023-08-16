@@ -27,7 +27,7 @@ setup(
     version=__version__,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
-    long_description_content_type='text/markdown',
+    long_description_content_type="text/markdown",
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license="Apache License 2.0",

@@ -128,7 +128,9 @@ class CloudFormationTemplate(Template):
             if resource_rule:
                 logger.info(f"Transform resource {logical_id}<{resource_type}>")
             else:
-                logger.warning(f"Ignore resource <{resource_type}>, due to not supported.")
+                logger.warning(
+                    f"Ignore resource <{resource_type}>, due to not supported."
+                )
                 continue
 
             self.rules[logical_id] = resource_rule
