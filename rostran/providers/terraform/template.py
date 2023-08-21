@@ -18,7 +18,7 @@ from rostran.core.exceptions import (
     RosTranException,
 )
 from rostran.core.format import FileFormat
-from rostran.core.rules import RuleManager, RuleClassifier, ResourceRule
+from rostran.core.rule_manager import RuleManager, RuleClassifier, ResourceRule
 from rostran.core.template import Template, RosTemplate
 from rostran.core.properties import Property
 from rostran.core.resources import Resources, Resource

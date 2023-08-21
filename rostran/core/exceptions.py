@@ -59,6 +59,14 @@ class InvalidTemplateMetaData(RosTranException):
     msg = "Invalid template meta data. {reason}."
 
 
+class InvalidTemplateRule(RosTranException):
+    msg = "Invalid template rule {name}. {reason}."
+
+
+class InvalidTemplateRules(RosTranException):
+    msg = "Invalid template rules. {reason}."
+
+
 class InvalidTemplateMapping(RosTranException):
     msg = "Invalid template mapping {name}. {reason}."
 

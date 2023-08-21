@@ -10,7 +10,7 @@ from rostran.core.exceptions import RosTranWarning, TemplateFormatNotSupport
 from rostran.core.format import FileFormat
 from rostran.core.template import Template, RosTemplate
 from rostran.core.settings import RULES_DIR
-from rostran.core.rules import (
+from rostran.core.rule_manager import (
     RuleClassifier,
     RuleManager,
     ResourceRule,

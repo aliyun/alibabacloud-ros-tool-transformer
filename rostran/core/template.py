@@ -12,6 +12,7 @@ from .parameters import Parameters
 from .resources import Resources
 from .outputs import Outputs
 from .metadata import MetaData
+from .rules import Rules
 from .conditions import Conditions
 from .mappings import Mappings
 from .workspace import Workspace
@@ -44,6 +45,7 @@ class RosTemplate:
         PARAMETERS,
         RESOURCES,
         OUTPUTS,
+        RULES,
         METADATA,
         WORKSPACE,
     ) = (
@@ -55,6 +57,7 @@ class RosTemplate:
         "Parameters",
         "Resources",
         "Outputs",
+        "Rules",
         "Metadata",
         "Workspace",
     )
@@ -68,6 +71,7 @@ class RosTemplate:
         parameters: Optional[Parameters] = None,
         resources: Optional[Resources] = None,
         outputs: Optional[Outputs] = None,
+        rules: Optional[Rules] = None,
         transform: Optional[str] = None,
         workspace: Optional[Workspace] = None,
     ):
@@ -78,6 +82,7 @@ class RosTemplate:
         self.parameters = parameters if parameters is not None else Parameters()
         self.resources = resources if resources is not None else Resources()
         self.outputs = outputs if outputs is not None else Outputs()
+        self.rules = rules if rules is not None else Rules()
         self.transform = transform
         self.workspace = workspace
 
@@ -92,9 +97,7 @@ class RosTemplate:
                 reason=f"{cls.ROS_TEMPLATE_FORMAT_VERSION} can only be 2015-09-01"
             )
 
-        metadata = (
-            mappings
-        ) = conditions = parameters = resources = outputs = workspace = None
+        metadata = mappings = conditions = parameters = resources = outputs = rules = workspace = None
         transform = data.get(cls.TRANSFORM)
         description = data.get(cls.DESCRIPTION)
         if cls.CONDITIONS in data:
@@ -107,6 +110,8 @@ class RosTemplate:
             resources = Resources.initialize(data[cls.RESOURCES])
         if cls.OUTPUTS in data:
             outputs = Outputs.initialize(data[cls.OUTPUTS])
+        if cls.RULES in data:
+            rules = Rules.initialize(data[cls.RULES])
         if cls.METADATA in data:
             metadata = MetaData.initialize(data[cls.METADATA])
         if cls.WORKSPACE in data:
@@ -120,6 +125,7 @@ class RosTemplate:
             parameters,
             resources,
             outputs,
+            rules,
             transform,
             workspace,
         )
@@ -140,6 +146,8 @@ class RosTemplate:
             data[self.RESOURCES] = self.resources.as_dict(format)
         if self.outputs:
             data[self.OUTPUTS] = self.outputs.as_dict(format)
+        if self.rules:
+            data[self.RULES] = self.rules.as_dict(format)
         if self.metadata:
             data[self.METADATA] = self.metadata.as_dict(format)
         if self.workspace:
