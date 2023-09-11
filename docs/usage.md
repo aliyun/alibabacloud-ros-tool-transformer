@@ -34,6 +34,13 @@ The following options are supported:
   Terraform file content in the generated ROS template. Otherwise, it is transformed to a template using ROS syntax.
   **This option is only available for Terraform template files.**
 
+> :warning: If you want to convert Terraform templates, please configure the following environment variables:
+> ```bash
+> $ export ALICLOUD_ACCESS_KEY="access_key"
+> $ export ALICLOUD_SECRET_KEY="secret_key"
+> $ export ALICLOUD_REGION="region_id"
+> ```
+
 ## Format Template
 
 ### Command

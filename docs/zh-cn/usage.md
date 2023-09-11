@@ -25,6 +25,14 @@ rostran transform [OPTIONS] SOURCE_PATH
   模版格式与`--target-path`文件格式相同；取值为`auto`且`--target-path`为目录时，生成的 ROS 模板名为`template.yml`。
 - `--compatible`：Terraform 转换为 ROS 模板时是否使用兼容模式。 如果兼容，则将 Terraform 文件内容保留在生成的 ROS 模板中。 否则，转换为使用 ROS 语法的模板。**此选项仅适用于 Terraform 模板文件**。
 
+> :warning: 如果要转换Terraform模板，请配置如下环境变量：
+> ```bash
+> $ export ALICLOUD_ACCESS_KEY="access_key"
+> $ export ALICLOUD_SECRET_KEY="secret_key"
+> $ export ALICLOUD_REGION="region_id"
+> ```
+
+
 ## 格式化模板
 
 ### 命令
