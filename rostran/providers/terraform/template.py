@@ -196,12 +196,6 @@ class TerraformTemplate(Template):
 
     @classmethod
     def _get_plan_data(cls, tf_dir, tf_plan_path=None) -> (dict, dict):
-
-        # Check "terraform" command
-        tf_cmd_path = shutil.which("terraform")
-        if tf_cmd_path is None:
-            raise CommandNotFound(cmd="terraform")
-
         # Using "terraform plan/show" to parse configuration
         typer.secho("Parsing terraform config...")
         tf_plan = None
