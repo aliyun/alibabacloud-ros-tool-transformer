@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   architecture:
     To: Architecture
+  delete_auto_snapshot:
+    Ignore: true
   description:
     To: Description
   disk_device_mapping:
@@ -26,12 +28,32 @@ Properties:
     To: ImageName
   instance_id:
     To: InstanceId
+  name:
+    Ignore: true
   platform:
     To: Platform
   resource_group_id:
     To: ResourceGroupId
+  snapshot_id:
+    To: SnapshotId
   tags:
     To: Tags
 Attributes:
   id:
     To: ImageId
+  architecture:
+    Ignore: true
+  description:
+    Ignore: true
+  disk_device_mapping:
+    Ignore: true
+  image_name:
+    Ignore: true
+  name:
+    Ignore: true
+  platform:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true

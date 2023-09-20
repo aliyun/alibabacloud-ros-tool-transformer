@@ -9,3 +9,5 @@ Properties:
 Attributes:
   id:
     To: AclId
+  name:
+    Ignore: true

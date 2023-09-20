@@ -19,3 +19,15 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  endpoint:
+    Ignore: true
+  filter_tag:
+    Ignore: true
+  name:
+    Ignore: true
+  notify_content_format:
+    Ignore: true
+  notify_strategy:
+    Ignore: true
+  topic_name:
+    To: TopicName

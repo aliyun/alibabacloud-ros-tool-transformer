@@ -4,16 +4,31 @@ ResourceType:
   From: alicloud_cen_instance
   To: ALIYUN::CEN::CenInstance
 Properties:
+  cen_instance_name:
+    Ignore: true
   description:
     To: Description
   name:
     To: Name
-  tags:
+  protection_level:
+    To: ProtectionLevel
+  status:
     Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: CenId
+  cen_instance_name:
+    Ignore: true
+  description:
+    Ignore: true
+  name:
+    Ignore: true
   protection_level:
     Ignore: true
   status:
+    Ignore: true
+  tags:
     Ignore: true

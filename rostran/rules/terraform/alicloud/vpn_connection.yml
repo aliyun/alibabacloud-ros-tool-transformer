@@ -4,10 +4,18 @@ ResourceType:
   From: alicloud_vpn_connection
   To: ALIYUN::VPC::VpnConnection
 Properties:
+  bgp_config:
+    Ignore: true
   customer_gateway_id:
     To: CustomerGatewayId
   effect_immediately:
     To: EffectImmediately
+  enable_dpd:
+    Ignore: true
+  enable_nat_traversal:
+    Ignore: true
+  health_check_config:
+    Ignore: true
   ike_config:
     To: IkeConfig
     Type: Map
@@ -47,14 +55,36 @@ Properties:
     To: Name
   remote_subnet:
     To: RemoteSubnet
+  status:
+    Ignore: true
   vpn_gateway_id:
     To: VpnGatewayId
 Attributes:
   id:
     To: VpnConnectionId
+  bgp_config:
+    Ignore: true
+  customer_gateway_id:
+    Ignore: true
+  effect_immediately:
+    Ignore: true
+  enable_dpd:
+    Ignore: true
+  enable_nat_traversal:
+    Ignore: true
+  health_check_config:
+    Ignore: true
   ike_config:
     Ignore: true
   ipsec_config:
     Ignore: true
+  local_subnet:
+    Ignore: true
+  name:
+    Ignore: true
+  remote_subnet:
+    Ignore: true
   status:
     To: Status
+  vpn_gateway_id:
+    Ignore: true

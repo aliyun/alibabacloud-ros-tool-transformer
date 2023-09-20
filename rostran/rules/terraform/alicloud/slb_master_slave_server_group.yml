@@ -31,3 +31,7 @@ Properties:
 Attributes:
   id:
     To: MasterSlaveServerGroupId
+  load_balancer_id:
+    Ignore: true
+  name:
+    Ignore: true

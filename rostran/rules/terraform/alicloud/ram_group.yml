@@ -12,8 +12,8 @@ Properties:
     To: GroupName
 Attributes:
   id:
-    Ignore: true
+    To: GroupName
   comments:
     Ignore: true
   name:
-    To: GroupName
+    Ignore: true

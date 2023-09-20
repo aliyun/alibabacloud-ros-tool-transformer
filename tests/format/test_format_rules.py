@@ -3,31 +3,19 @@ from rostran.core.rules import Rules
 tpl_rules = {
     "PublicNet": {
         "Assertions": [
-            {
-                "Assert": {
-                    "Fn::Equals": [{"Ref": "InternetMaxBandwidthOut"}, 0]
-                }
-            },
-            {
-                "Assert": {
-                    "Fn::Equals": [{"Ref": "InternetMaxBandwidthIn"}, 0]
-                }
-            }
+            {"Assert": {"Fn::Equals": [{"Ref": "InternetMaxBandwidthOut"}, 0]}},
+            {"Assert": {"Fn::Equals": [{"Ref": "InternetMaxBandwidthIn"}, 0]}},
         ],
-        "RuleCondition": {
-            "Fn::Equals": [{"Ref": "Environment"}, "prod"]
-        }
+        "RuleCondition": {"Fn::Equals": [{"Ref": "Environment"}, "prod"]},
     },
     "ChargeType": {
         "Assertions": [
             {
-                "Assert": {
-                    "Fn::Equals": [{"Ref": "InstanceChargeType"}, "PayAsYouGo"]
-                },
+                "Assert": {"Fn::Equals": [{"Ref": "InstanceChargeType"}, "PayAsYouGo"]},
                 "AssertDescription": "ECS instance should be postpaid when the environment is pre.",
             }
         ]
-    }
+    },
 }
 
 
@@ -37,4 +25,4 @@ def test_format_rules():
 
     # Rules key order
     assert list(data) == ["ChargeType", "PublicNet"]
-    assert list(data['PublicNet']) == ["RuleCondition", "Assertions"]
+    assert list(data["PublicNet"]) == ["RuleCondition", "Assertions"]

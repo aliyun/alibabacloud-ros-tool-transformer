@@ -14,6 +14,10 @@ Properties:
     To: AutoRenew
   auto_renew_period:
     To: AutoRenewPeriod
+  cpu_over_commit_ratio:
+    Ignore: true
+  dedicated_host_cluster_id:
+    Ignore: true
   dedicated_host_name:
     To: DedicatedHostName
   dedicated_host_type:
@@ -26,12 +30,9 @@ Properties:
     Ignore: true
   expired_time:
     Ignore: true
+  min_quantity:
+    Ignore: true
   network_attributes:
-    Schema:
-      slb_udp_timeout:
-        To: NetworkAttributesSlbUdpTimeout
-      udp_timeout:
-        To: NetworkAttributesUdpTimeout
     Ignore: true
   payment_type:
     Ignore: true
@@ -39,12 +40,41 @@ Properties:
     To: ResourceGroupId
   sale_cycle:
     To: PeriodUnit
+  status:
+    Ignore: true
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   zone_id:
     To: ZoneId
 Attributes:
   id:
     To: DedicatedHostIds
+  action_on_maintenance:
+    Ignore: true
+  auto_placement:
+    Ignore: true
+  auto_release_time:
+    Ignore: true
+  cpu_over_commit_ratio:
+    Ignore: true
+  dedicated_host_name:
+    Ignore: true
+  dedicated_host_type:
+    Ignore: true
+  description:
+    Ignore: true
+  network_attributes:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  sale_cycle:
+    Ignore: true
   status:
+    Ignore: true
+  tags:
+    Ignore: true
+  zone_id:
     Ignore: true

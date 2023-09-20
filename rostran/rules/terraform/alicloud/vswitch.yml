@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_vswitch
@@ -8,14 +8,29 @@ Properties:
     To: ZoneId
   cidr_block:
     To: CidrBlock
+  create_time:
+    Ignore: true
   description:
     To: Description
+  enable_ipv6:
+    Ignore: true
+  ipv6_cidr_block:
+    Ignore: true
+  ipv6_cidr_block_mask:
+    Ignore: true
   name:
     To: VSwitchName
+  status:
+    Ignore: true
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   vpc_id:
     To: VpcId
+  vswitch_name:
+    To: VSwitchName
+  zone_id:
+    To: ZoneId
 Attributes:
   id:
     To: VSwitchId
@@ -23,9 +38,25 @@ Attributes:
     Ignore: true
   cidr_block:
     To: CidrBlock
+  create_time:
+    Ignore: true
   description:
+    Ignore: true
+  enable_ipv6:
+    Ignore: true
+  ipv6_cidr_block:
+    To: Ipv6CidrBlock
+  ipv6_cidr_block_mask:
     Ignore: true
   name:
     Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
   vpc_id:
+    Ignore: true
+  vswitch_name:
+    To: VSwitchName
+  zone_id:
     Ignore: true

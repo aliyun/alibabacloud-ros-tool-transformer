@@ -6,12 +6,20 @@ ResourceType:
 Properties:
   comment:
     To: Comment
+  create_time:
+    Ignore: true
+  last_modify_time:
+    Ignore: true
   name:
     To: ProjectName
 Attributes:
   id:
     To: ProjectName
+  comment:
+    Ignore: true
   create_time:
     Ignore: true
   last_modify_time:
+    Ignore: true
+  name:
     Ignore: true

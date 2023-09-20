@@ -4,38 +4,211 @@ ResourceType:
   From: alicloud_polardb_cluster
   To: ALIYUN::POLARDB::DBCluster
 Properties:
+  allow_shut_down:
+    Ignore: true
   auto_renew_period:
     To: AutoRenewPeriod
+  backup_retention_policy_on_cluster_deletion:
+    To: BackupRetentionPolicyOnClusterDeletion
+  clone_data_point:
+    To: CloneDataPoint
+  collector_status:
+    Ignore: true
+  connection_string:
+    Ignore: true
+  create_time:
+    Ignore: true
+  creation_category:
+    To: CreationCategory
+  creation_option:
+    To: CreationOption
+  db_cluster_ip_array:
+    Ignore: true
   db_node_class:
     To: DBNodeClass
+  db_node_count:
+    Ignore: true
+  db_node_num:
+    Ignore: true
   db_type:
     To: DBType
   db_version:
     To: DBVersion
+  default_time_zone:
+    To: DefaultTimeZone
+  deletion_lock:
+    Ignore: true
   description:
     To: DBClusterDescription
+  encrypt_new_tables:
+    Ignore: true
+  encryption_key:
+    Ignore: true
+  from_time_service:
+    Ignore: true
+  gdn_id:
+    Ignore: true
+  hot_standby_cluster:
+    To: HotStandbyCluster
+  imci_switch:
+    Ignore: true
+  loose_polar_log_bin:
+    To: LoosePolarLogBin
+  lower_case_table_names:
+    To: LowerCaseTableNames
   maintain_time:
     To: MaintainTime
   modify_type:
     Ignore: true
+  parameter_group_id:
+    To: ParameterGroupId
   parameters:
     Ignore: true
   pay_type:
     To: PayType
   period:
     To: Period
+  planned_end_time:
+    Ignore: true
+  planned_start_time:
+    Ignore: true
+  port:
+    Ignore: true
+  proxy_class:
+    To: ProxyClass
+  proxy_type:
+    To: ProxyType
   renewal_status:
     To: RenewalStatus
+  resource_group_id:
+    To: ResourceGroupId
+  role_arn:
+    Ignore: true
+  scale_max:
+    To: ScaleMax
+  scale_min:
+    To: ScaleMin
+  scale_ro_num_max:
+    To: ScaleRoNumMax
+  scale_ro_num_min:
+    To: ScaleRoNumMin
+  seconds_until_auto_pause:
+    Ignore: true
+  security_group_ids:
+    To: SecurityGroupIds
+    Type: List
   security_ips:
     Ignore: true
-  tags:
+  serverless_type:
+    To: ServerlessType
+  source_resource_id:
+    To: SourceResourceId
+  status:
     Ignore: true
+  storage_pay_type:
+    To: StoragePayType
+  storage_space:
+    To: StorageSpace
+  storage_type:
+    To: StorageType
+  sub_category:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  tde_region:
+    Ignore: true
+  tde_status:
+    Ignore: true
+  upgrade_type:
+    Ignore: true
+  vpc_id:
+    To: VpcId
   vswitch_id:
     To: VSwitchId
   zone_id:
     To: ZoneId
 Attributes:
   id:
+    Ignore: true
     To: DBClusterId
+  allow_shut_down:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  collector_status:
+    Ignore: true
   connection_string:
-    To: CustomConnectionStrings
+    Ignore: true
+  create_time:
+    Ignore: true
+  creation_category:
+    Ignore: true
+  db_cluster_ip_array:
+    Ignore: true
+  db_node_class:
+    Ignore: true
+  db_node_count:
+    Ignore: true
+  db_node_id:
+    Ignore: true
+  db_type:
+    Ignore: true
+  db_version:
+    Ignore: true
+  deletion_lock:
+    Ignore: true
+  description:
+    Ignore: true
+  encrypt_new_tables:
+    Ignore: true
+  encryption_key:
+    Ignore: true
+  maintain_time:
+    Ignore: true
+  pay_type:
+    Ignore: true
+  port:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  role_arn:
+    Ignore: true
+  scale_max:
+    Ignore: true
+  scale_min:
+    Ignore: true
+  scale_ro_num_max:
+    Ignore: true
+  scale_ro_num_min:
+    Ignore: true
+  seconds_until_auto_pause:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  serverless_type:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_pay_type:
+    Ignore: true
+  storage_space:
+    Ignore: true
+  storage_type:
+    Ignore: true
+  tags:
+    Ignore: true
+  tde_region:
+    Ignore: true
+  tde_status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

@@ -4,12 +4,22 @@ ResourceType:
   From: alicloud_kms_key
   To: ALIYUN::KMS::Key
 Properties:
+  arn:
+    Ignore: true
   automatic_rotation:
     To: EnableAutomaticRotation
+  creation_date:
+    Ignore: true
+  creator:
+    Ignore: true
+  delete_date:
+    Ignore: true
   deletion_window_in_days:
     To: PendingWindowInDays
   description:
     To: Description
+  dkms_instance_id:
+    Ignore: true
   is_enabled:
     To: Enable
   key_spec:
@@ -18,18 +28,32 @@ Properties:
     To: Enable
   key_usage:
     To: KeyUsage
+  last_rotation_date:
+    Ignore: true
+  material_expire_time:
+    Ignore: true
+  next_rotation_date:
+    Ignore: true
   origin:
     Ignore: true
   pending_window_in_days:
     To: PendingWindowInDays
+  primary_key_version:
+    Ignore: true
   protection_level:
     To: ProtectionLevel
   rotation_interval:
     To: RotationInterval
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
 Attributes:
   id:
     To: KeyId
   arn:
+    Ignore: true
+  automatic_rotation:
     Ignore: true
   creation_date:
     Ignore: true
@@ -37,11 +61,31 @@ Attributes:
     Ignore: true
   delete_date:
     Ignore: true
+  description:
+    Ignore: true
+  dkms_instance_id:
+    Ignore: true
+  key_spec:
+    Ignore: true
+  key_state:
+    Ignore: true
+  key_usage:
+    Ignore: true
   last_rotation_date:
     Ignore: true
   material_expire_time:
     Ignore: true
   next_rotation_date:
     Ignore: true
+  origin:
+    Ignore: true
   primary_key_version:
+    Ignore: true
+  protection_level:
+    Ignore: true
+  rotation_interval:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
     Ignore: true

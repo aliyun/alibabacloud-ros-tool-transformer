@@ -17,3 +17,13 @@ Properties:
 Attributes:
   id:
     To: RouterInterfaceId
+  interface_id:
+    Ignore: true
+  opposite_interface_id:
+    To: OppositeInterfaceId
+  opposite_interface_owner_id:
+    Ignore: true
+  opposite_router_id:
+    Ignore: true
+  opposite_router_type:
+    Ignore: true

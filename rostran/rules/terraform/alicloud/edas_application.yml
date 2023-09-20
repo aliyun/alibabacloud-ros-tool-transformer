@@ -10,8 +10,6 @@ Properties:
     To: BuildPackId
   cluster_id:
     To: ClusterId
-  component_ids:
-    To: ComponentIds
   descriotion:
     To: Description
   ecu_info:
@@ -31,3 +29,15 @@ Properties:
 Attributes:
   id:
     To: AppId
+  application_name:
+    Ignore: true
+  build_pack_id:
+    Ignore: true
+  cluster_id:
+    Ignore: true
+  descriotion:
+    Ignore: true
+  health_check_url:
+    Ignore: true
+  package_type:
+    Ignore: true

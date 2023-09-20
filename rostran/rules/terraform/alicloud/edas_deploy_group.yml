@@ -8,11 +8,17 @@ Properties:
     To: AppId
   group_name:
     To: GroupName
+  group_type:
+    Ignore: true
 Attributes:
   id:
     To:
     - AppId
     - GroupName
     - Id
+  app_id:
+    To: AppId
+  group_name:
+    To: GroupName
   group_type:
     Ignore: true

@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   account_password:
     To: AccountPassword
+  auto_renew:
+    To: AutoRenew
   backup_period:
     Ignore: true
   backup_time:
@@ -16,6 +18,8 @@ Properties:
     To: DBInstanceClass
   engine_version:
     To: EngineVersion
+  hidden_zone_id:
+    To: HiddenZoneId
   instance_charge_type:
     To: ChargeType
   kms_encrypted_password:
@@ -28,22 +32,47 @@ Properties:
     Ignore: true
   name:
     To: DBInstanceDescription
+  network_type:
+    To: NetworkType
+  order_type:
+    Ignore: true
+  parameters:
+    Ignore: true
   period:
     To: Period
+  readonly_replicas:
+    To: ReadonlyReplicas
+  replica_set_name:
+    Ignore: true
+  replica_sets:
+    Ignore: true
   replication_factor:
     To: ReplicationFactor
-  security_group_id:
+  resource_group_id:
+    To: ResourceGroupId
+  retention_period:
     Ignore: true
+  secondary_zone_id:
+    To: SecondaryZoneId
+  security_group_id:
+    To: SecurityGroupId
   security_ip_list:
     To: SecurityIPArray
   ssl_action:
     Ignore: true
+  ssl_status:
+    Ignore: true
   storage_engine:
     To: StorageEngine
+  storage_type:
+    To: StorageType
   tags:
-    Ignore: true
+    To: Tags
+    Handler: tags_dict_to_list
   tde_status:
     Ignore: true
+  vpc_id:
+    To: VpcId
   vswitch_id:
     To: VSwitchId
   zone_id:
@@ -51,9 +80,61 @@ Properties:
 Attributes:
   id:
     To: DBInstanceId
+  backup_period:
+    Ignore: true
+  backup_time:
+    Ignore: true
+  db_instance_class:
+    Ignore: true
+  db_instance_storage:
+    Ignore: true
+  engine_version:
+    Ignore: true
+  hidden_zone_id:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
+  name:
+    Ignore: true
+  network_type:
+    Ignore: true
+  period:
+    Ignore: true
+  readonly_replicas:
+    Ignore: true
   replica_set_name:
     To: ReplicaSetName
+  replica_sets:
+    Ignore: true
+  replication_factor:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
   retention_period:
     Ignore: true
+  secondary_zone_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  security_ip_list:
+    Ignore: true
   ssl_status:
-    To: DBInstanceStatus
+    Ignore: true
+  storage_engine:
+    Ignore: true
+  storage_type:
+    Ignore: true
+  tags:
+    Ignore: true
+  tde_Status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

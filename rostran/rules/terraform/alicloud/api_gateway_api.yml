@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_api_gateway_api
   To: ALIYUN::ApiGateway::Api
 Properties:
+  api_id:
+    Ignore: true
   auth_type:
     To: AuthType
   constant_parameters:
@@ -13,11 +15,11 @@ Properties:
       description:
         To: Description
       in:
-        To: Location
+        Ignore: true
       name:
-        To: ServiceParameterName
+        Ignore: true
       value:
-        To: ConstValue
+        Ignore: true
   description:
     To: Description
   fc_service_config:
@@ -34,6 +36,8 @@ Properties:
         To: serviceName
       timeout:
         Ignore: true
+  force_nonce_check:
+    To: ForceNonceCheck
   group_id:
     To: GroupId
   http_service_config:
@@ -94,6 +98,24 @@ Properties:
         To: ServiceParameterName
 Attributes:
   id:
-    Ignore: true
+    To: ApiId
   api_id:
     To: ApiId
+  auth_type:
+    Ignore: true
+  constant_parameters:
+    Ignore: true
+  description:
+    Ignore: true
+  force_nonce_check:
+    Ignore: true
+  group_id:
+    Ignore: true
+  name:
+    Ignore: true
+  request_parameters:
+    Ignore: true
+  service_type:
+    Ignore: true
+  system_parameters:
+    Ignore: true

@@ -28,6 +28,8 @@ Properties:
     To: Period
   scaling_group_id:
     To: ScalingGroupId
+  state:
+    Ignore: true
   statistics:
     To: Statistics
   threshold:
@@ -35,5 +37,31 @@ Properties:
 Attributes:
   id:
     To: AlarmTaskId
+  alarm_actions:
+    Ignore: true
+  cloud_monitor_group_id:
+    Ignore: true
+  comparison_operator:
+    Ignore: true
+  description:
+    Ignore: true
+  enable:
+    Ignore: true
+  evaluation_count:
+    Ignore: true
+  metric_name:
+    Ignore: true
+  metric_type:
+    Ignore: true
+  name:
+    Ignore: true
+  period:
+    Ignore: true
+  scaling_group_id:
+    Ignore: true
   state:
+    Ignore: true
+  statistics:
+    Ignore: true
+  threshold:
     Ignore: true

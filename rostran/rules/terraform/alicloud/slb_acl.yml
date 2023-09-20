@@ -5,21 +5,30 @@ ResourceType:
   To: ALIYUN::SLB::AccessControl
 Properties:
   entry_list:
-    To: AclEntrys
+    To: AclEntries
     Type: List
     Schema:
       comment:
-        To: comment
+        To: Comment
       entry:
-        To: entry
+        To: Entry
   ip_version:
     To: AddressIPVersion
   name:
     To: AclName
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   tags:
-    Ignore: true
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: AclId
+  ip_version:
+    Ignore: true
+  name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true

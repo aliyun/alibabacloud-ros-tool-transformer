@@ -7,11 +7,13 @@ Properties:
   detail:
     To: Detail
   instance_id:
-    Ignore: true
+    To: InstanceId
   name:
     To: RepoName
   namespace:
     To: RepoNamespace
+  repo_id:
+    Ignore: true
   repo_type:
     To: RepoType
   summary:
@@ -19,5 +21,17 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  detail:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  name:
+    Ignore: true
+  namespace:
+    Ignore: true
   repo_id:
     To: RepoId
+  repo_type:
+    To: RepoType
+  summary:
+    Ignore: true

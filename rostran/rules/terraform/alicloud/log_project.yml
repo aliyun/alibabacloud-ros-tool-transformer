@@ -8,8 +8,17 @@ Properties:
     To: Description
   name:
     To: Name
+  policy:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: Name
+  description:
+    Ignore: true
   name:
     To: Name
+  policy:
+    Ignore: true

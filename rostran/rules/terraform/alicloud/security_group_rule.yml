@@ -4,40 +4,22 @@ ResourceType:
   From: alicloud_security_group_rule
   To: ALIYUN::ECS::SecurityGroupIngress
 Properties:
-  1-100:
-    Ignore: true
-  1/200:
-    Ignore: true
-  accept:
-    Ignore: true
-  all:
-    Ignore: true
   cidr_ip:
     Ignore: true
   description:
     To: Description
-  drop:
-    Ignore: true
-  egress:
-    Ignore: true
-  gre:
-    Ignore: true
-  icmp:
-    Ignore: true
-  ingress:
-    Ignore: true
-  internet:
-    Ignore: true
-  intranet:
-    Ignore: true
   ip_protocol:
     To: IpProtocol
+  ipv6_cidr_ip:
+    Ignore: true
   nic_type:
     To: NicType
   policy:
     To: Policy
   port_range:
     To: PortRange
+  prefix_list_id:
+    Ignore: true
   priority:
     To: Priority
   security_group_id:
@@ -46,24 +28,34 @@ Properties:
     Ignore: true
   source_security_group_id:
     Ignore: true
-  tcp:
-    Ignore: true
   type:
-    Ignore: true
-  udp:
     Ignore: true
 Attributes:
   id:
     Ignore: true
-  egress:
+  cidr_ip:
     Ignore: true
-  ingress:
+  description:
     Ignore: true
   ip_protocol:
     Ignore: true
-  name:
+  ipv6_cidr_ip:
+    Ignore: true
+  nic_type:
+    Ignore: true
+  policy:
     Ignore: true
   port_range:
+    Ignore: true
+  prefix_list_id:
+    Ignore: true
+  priority:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  source_group_owner_account:
+    Ignore: true
+  source_security_group_id:
     Ignore: true
   type:
     Ignore: true

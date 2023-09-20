@@ -6,14 +6,24 @@ ResourceType:
 Properties:
   allocation_id:
     To: AllocationId
+  force:
+    Ignore: true
   instance_id:
     To: InstanceId
   instance_type:
     Ignore: true
   private_ip_address:
     To: PrivateIpAddress
+  vpc_id:
+    Ignore: true
 Attributes:
+  id:
+    Ignore: true
   allocation_id:
     To: AllocationId
   instance_id:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  vpc_id:
     Ignore: true

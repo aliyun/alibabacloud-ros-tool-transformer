@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_image_copy
   To: ALIYUN::ECS::CopyImage
 Properties:
+  delete_auto_snapshot:
+    Ignore: true
   description:
     Ignore: true
   encrypted:
@@ -14,11 +16,20 @@ Properties:
     To: DestinationImageName
   kms_key_id:
     To: KMSKeyId
+  name:
+    Ignore: true
   source_image_id:
     To: ImageId
   source_region_id:
-    Ignore: true
+    To: SourceRegionId
   tags:
     To: Tag
 Attributes:
-  To: ImageId
+  id:
+    To: ImageId
+  description:
+    Ignore: true
+  image_name:
+    Ignore: true
+  name:
+    Ignore: true

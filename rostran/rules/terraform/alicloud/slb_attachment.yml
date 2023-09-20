@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_slb_attachment
   To: ALIYUN::SLB::BackendServerAttachment
 Properties:
+  backend_servers:
+    Ignore: true
   delete_protection_validation:
     Ignore: true
   instance_ids:

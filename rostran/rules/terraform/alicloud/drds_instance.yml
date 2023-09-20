@@ -4,14 +4,22 @@ ResourceType:
   From: alicloud_drds_instance
   To: ALIYUN::DRDS::DrdsInstance
 Properties:
+  connection_string:
+    Ignore: true
   description:
     To: Description
   instance_charge_type:
     Ignore: true
   instance_series:
     To: InstanceSeries
+  mysql_version:
+    Ignore: true
+  port:
+    Ignore: true
   specification:
     To: Specification
+  vpc_id:
+    To: VpcId
   vswitch_id:
     To: VswitchId
   zone_id:
@@ -19,3 +27,15 @@ Properties:
 Attributes:
   id:
     To: DrdsInstanceId
+  connection_string:
+    Ignore: true
+  description:
+    Ignore: true
+  mysql_version:
+    Ignore: true
+  port:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

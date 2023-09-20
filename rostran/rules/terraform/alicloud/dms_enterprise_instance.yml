@@ -10,6 +10,10 @@ Properties:
     To: DatabasePassword
   database_user:
     To: DatabaseUser
+  dba_id:
+    Ignore: true
+  dba_nick_name:
+    Ignore: true
   dba_uid:
     To: DbaUid
   ddl_online:
@@ -26,6 +30,10 @@ Properties:
     To: Host
   instance_alias:
     To: InstanceAlias
+  instance_id:
+    Ignore: true
+  instance_name:
+    Ignore: true
   instance_source:
     To: InstanceSource
   instance_type:
@@ -38,8 +46,16 @@ Properties:
     To: QueryTimeout
   safe_rule:
     To: SafeRule
+  safe_rule_id:
+    Ignore: true
   sid:
     To: Sid
+  skip_test:
+    Ignore: true
+  state:
+    Ignore: true
+  status:
+    Ignore: true
   tid:
     To: Tid
   use_dsql:
@@ -48,8 +64,50 @@ Properties:
     To: VpcId
 Attributes:
   id:
+    To: InstanceId
+  data_link_name:
+    Ignore: true
+  database_user:
+    Ignore: true
+  dba_id:
     Ignore: true
   dba_nick_name:
     Ignore: true
+  ddl_online:
+    Ignore: true
+  ecs_instance_id:
+    Ignore: true
+  ecs_region:
+    Ignore: true
+  env_type:
+    Ignore: true
+  export_timeout:
+    Ignore: true
+  host:
+    To: Host
+  instance_alias:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  instance_name:
+    Ignore: true
+  instance_source:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  port:
+    To: Port
+  query_timeout:
+    Ignore: true
+  safe_rule_id:
+    Ignore: true
+  sid:
+    Ignore: true
   state:
+    Ignore: true
+  status:
+    Ignore: true
+  use_dsql:
+    Ignore: true
+  vpc_id:
     Ignore: true

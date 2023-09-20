@@ -17,3 +17,11 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  account_name:
+    Ignore: true
+  account_privilege:
+    Ignore: true
+  db_cluster_id:
+    Ignore: true
+  db_names:
+    Ignore: true

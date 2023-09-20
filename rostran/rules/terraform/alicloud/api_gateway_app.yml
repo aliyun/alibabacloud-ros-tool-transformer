@@ -10,6 +10,13 @@ Properties:
     To: AppName
   tags:
     To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: AppId
+  description:
+    Ignore: true
+  name:
+    Ignore: true
+  tags:
+    To: Tags

@@ -4,10 +4,32 @@ ResourceType:
   From: alicloud_cdn_domain
   To: ALIYUN::CDN::Domain
 Properties:
+  auth_config:
+    Ignore: true
+  block_ips:
+    Ignore: true
+  cache_config:
+    Ignore: true
   cdn_type:
     To: CdnType
+  certificate_config:
+    Ignore: true
   domain_name:
     To: DomainName
+  http_header_config:
+    Ignore: true
+  optimize_enable:
+    Ignore: true
+  page_404_config:
+    Ignore: true
+  page_compress_enable:
+    Ignore: true
+  parameter_filter_config:
+    Ignore: true
+  range_enable:
+    Ignore: true
+  refer_config:
+    Ignore: true
   scope:
     To: Scope
   source_port:
@@ -16,12 +38,20 @@ Properties:
     Ignore: true
   sources:
     To: Sources
+  video_seek_enable:
+    Ignore: true
 Attributes:
+  id:
+    To: DomainName
   auth_config:
+    Ignore: true
+  block_ips:
     Ignore: true
   cache_config:
     Ignore: true
   cdn_type:
+    Ignore: true
+  certificate_config:
     Ignore: true
   domain_name:
     To: DomainName

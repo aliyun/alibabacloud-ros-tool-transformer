@@ -14,6 +14,7 @@ Properties:
     To: InstanceName
   tags:
     To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: InstanceName
@@ -24,6 +25,6 @@ Attributes:
   instance_type:
     Ignore: true
   name:
-    To: InstanceName
+    Ignore: true
   tags:
     Ignore: true

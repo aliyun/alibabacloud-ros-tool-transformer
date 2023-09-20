@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ssl_certificates_service_certificate
+  To: ALIYUN::CAS::Certificate
+Properties:
+  cert:
+    To: Cert
+  certificate_name:
+    To: Name
+  key:
+    To: Key
+  lang:
+    To: Lang
+  name:
+    To: Name
+Attributes:
+  id:
+    To: CertId
+  cert:
+    Ignore: true
+  certificate_name:
+    Ignore: true
+  key:
+    Ignore: true
+  name:
+    Ignore: true

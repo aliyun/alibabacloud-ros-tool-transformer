@@ -13,3 +13,9 @@ Properties:
 Attributes:
   id:
     To: NamespaceId
+  auto_create:
+    Ignore: true
+  default_visibility:
+    Ignore: true
+  name:
+    Ignore: true

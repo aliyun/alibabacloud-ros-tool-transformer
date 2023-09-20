@@ -1,0 +1,169 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_elasticsearch_instance
+  To: ALIYUN::ElasticSearch::Instance
+Properties:
+  auto_renew_duration:
+    Ignore: true
+  client_node_amount:
+    Ignore: true
+  client_node_spec:
+    Ignore: true
+  data_node_amount:
+    Ignore: true
+  data_node_disk_encrypted:
+    Ignore: true
+  data_node_disk_performance_level:
+    Ignore: true
+  data_node_disk_size:
+    Ignore: true
+  data_node_disk_type:
+    Ignore: true
+  data_node_spec:
+    Ignore: true
+  description:
+    To: Description
+  domain:
+    Ignore: true
+  enable_kibana_private_network:
+    Ignore: true
+  enable_kibana_public_network:
+    Ignore: true
+  enable_public:
+    To: EnablePublic
+  instance_charge_type:
+    To: InstanceChargeType
+  kibana_domain:
+    Ignore: true
+  kibana_node_spec:
+    Ignore: true
+  kibana_port:
+    Ignore: true
+  kibana_private_whitelist:
+    Ignore: true
+  kibana_whitelist:
+    To: KibanaWhitelist
+    Type: List
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  master_node_disk_type:
+    Ignore: true
+  master_node_spec:
+    Ignore: true
+  password:
+    To: Password
+  period:
+    To: Period
+  port:
+    Ignore: true
+  private_whitelist:
+    To: PrivateWhitelist
+    Type: List
+  protocol:
+    Ignore: true
+  public_domain:
+    Ignore: true
+  public_port:
+    Ignore: true
+  public_whitelist:
+    To: PublicWhitelist
+    Type: List
+  renew_status:
+    Ignore: true
+  renewal_duration_unit:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  setting_config:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  version:
+    To: Version
+  vswitch_id:
+    To: VSwitchId
+  zone_count:
+    To: ZoneCount
+Attributes:
+  id:
+    To: InstanceId
+  auto_renew_duration:
+    Ignore: true
+  client_node_amount:
+    Ignore: true
+  client_node_spec:
+    Ignore: true
+  data_node_amount:
+    Ignore: true
+  data_node_disk_encrypted:
+    Ignore: true
+  data_node_disk_performance_level:
+    Ignore: true
+  data_node_disk_size:
+    Ignore: true
+  data_node_disk_type:
+    Ignore: true
+  data_node_spec:
+    Ignore: true
+  description:
+    Ignore: true
+  domain:
+    To: Domain
+  enable_kibana_private_network:
+    Ignore: true
+  enable_kibana_public_network:
+    Ignore: true
+  enable_public:
+    Ignore: true
+  instance_charge_type:
+    To: InstanceChargeType
+  kibana_domain:
+    To: KibanaDomain
+  kibana_node_spec:
+    Ignore: true
+  kibana_port:
+    To: KibanaPort
+  kibana_private_whitelist:
+    Ignore: true
+  kibana_whitelist:
+    Ignore: true
+  master_node_disk_type:
+    Ignore: true
+  master_node_spec:
+    Ignore: true
+  port:
+    To: Port
+  private_whitelist:
+    Ignore: true
+  protocol:
+    Ignore: true
+  public_domain:
+    To: PublicDomain
+  public_port:
+    Ignore: true
+  public_whitelist:
+    Ignore: true
+  renew_status:
+    Ignore: true
+  renewal_duration_unit:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  setting_config:
+    Ignore: true
+  status:
+    To: Status
+  tags:
+    Ignore: true
+  version:
+    To: Version
+  vswitch_id:
+    To: VSwitchId
+  zone_count:
+    Ignore: true

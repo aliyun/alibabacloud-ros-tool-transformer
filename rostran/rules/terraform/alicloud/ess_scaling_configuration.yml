@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   active:
     Ignore: true
+  credit_specification:
+    To: CreditSpecification
   data_disk:
     To: DiskMappings
     Type: List
@@ -34,6 +36,8 @@ Properties:
     Ignore: true
   force_delete:
     Ignore: true
+  host_name:
+    To: HostName
   image_id:
     To: ImageId
   image_name:
@@ -42,10 +46,13 @@ Properties:
     To: InstanceId
   instance_name:
     To: InstanceName
+  instance_pattern_info:
+    Ignore: true
   instance_type:
     To: InstanceType
   instance_types:
     To: InstanceTypes
+    Type: List
   internet_charge_type:
     To: InternetChargeType
   internet_max_bandwidth_in:
@@ -65,9 +72,11 @@ Properties:
   override:
     Ignore: true
   password:
-    Ignore: true
+    To: Password
   password_inherit:
     To: PasswordInherit
+  resource_group_id:
+    To: ResourceGroupId
   role_name:
     To: RamRoleName
   scaling_configuration_name:
@@ -78,6 +87,10 @@ Properties:
     To: SecurityGroupId
   security_group_ids:
     Ignore: true
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    To: SpotStrategy
   substitute:
     Ignore: true
   system_disk_auto_snapshot_policy_id:
@@ -86,8 +99,12 @@ Properties:
     To: SystemDiskCategory
   system_disk_description:
     Ignore: true
+  system_disk_encrypted:
+    Ignore: true
   system_disk_name:
     Ignore: true
+  system_disk_performance_level:
+    To: SystemDiskPerformanceLevel
   system_disk_size:
     To: SystemDiskSize
   tags:
@@ -97,3 +114,69 @@ Properties:
 Attributes:
   id:
     To: ScalingConfigurationId
+  active:
+    Ignore: true
+  credit_specification:
+    Ignore: true
+  data_disk:
+    Ignore: true
+  force_delete:
+    Ignore: true
+  host_name:
+    Ignore: true
+  image_id:
+    Ignore: true
+  image_name:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  instance_types:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_in:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  key_name:
+    Ignore: true
+  override:
+    Ignore: true
+  password_inherit:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  role_name:
+    Ignore: true
+  scaling_configuration_name:
+    Ignore: true
+  scaling_group_id:
+    To: ScalingGroupId
+  security_group_id:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  system_disk_auto_snapshot_policy_id:
+    Ignore: true
+  system_disk_category:
+    Ignore: true
+  system_disk_description:
+    Ignore: true
+  system_disk_encrypted:
+    Ignore: true
+  system_disk_name:
+    Ignore: true
+  system_disk_performance_level:
+    Ignore: true
+  system_disk_size:
+    Ignore: true
+  tags:
+    Ignore: true
+  user_data:
+    Ignore: true

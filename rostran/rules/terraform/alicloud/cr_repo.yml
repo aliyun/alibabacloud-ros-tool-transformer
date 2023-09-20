@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   detail:
     To: Detail
+  domain_list:
+    Ignore: true
   name:
     To: RepoName
   namespace:
@@ -17,5 +19,15 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  detail:
+    Ignore: true
   domain_list:
+    Ignore: true
+  name:
+    Ignore: true
+  namespace:
+    Ignore: true
+  repo_type:
+    To: RepoType
+  summary:
     Ignore: true

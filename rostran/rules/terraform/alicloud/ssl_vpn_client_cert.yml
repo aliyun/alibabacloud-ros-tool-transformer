@@ -4,10 +4,20 @@ ResourceType:
   From: alicloud_ssl_vpn_client_cert
   To: ALIYUN::VPC::SslVpnClientCert
 Properties:
+  ca_cert:
+    Ignore: true
+  client_cert:
+    Ignore: true
+  client_config:
+    Ignore: true
+  client_key:
+    Ignore: true
   name:
     To: Name
   ssl_vpn_server_id:
     To: SslVpnServerId
+  status:
+    Ignore: true
 Attributes:
   id:
     To: SslVpnClientCertId
@@ -18,6 +28,10 @@ Attributes:
   client_config:
     Ignore: true
   client_key:
+    Ignore: true
+  name:
+    Ignore: true
+  ssl_vpn_server_id:
     Ignore: true
   status:
     Ignore: true

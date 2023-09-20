@@ -8,10 +8,34 @@ Properties:
     Ignore: true
   content:
     To: Content
+  created_by:
+    Ignore: true
+  created_date:
+    Ignore: true
+  description:
+    Ignore: true
+  has_trigger:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  share_type:
+    Ignore: true
   tags:
     To: Tags
+  template_format:
+    Ignore: true
+  template_id:
+    Ignore: true
   template_name:
     To: TemplateName
+  template_type:
+    Ignore: true
+  template_version:
+    Ignore: true
+  updated_by:
+    Ignore: true
+  updated_date:
+    Ignore: true
   version_name:
     Ignore: true
 Attributes:
@@ -25,12 +49,18 @@ Attributes:
     Ignore: true
   has_trigger:
     Ignore: true
+  resource_group_id:
+    Ignore: true
   share_type:
+    Ignore: true
+  tags:
     Ignore: true
   template_format:
     Ignore: true
   template_id:
     To: TemplateId
+  template_name:
+    To: TemplateName
   template_type:
     Ignore: true
   template_version:

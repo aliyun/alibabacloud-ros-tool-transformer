@@ -28,4 +28,20 @@ Properties:
     To: Value
 Attributes:
   id:
+    To: RecordId
+  domain_name:
+    Ignore: true
+  line:
+    Ignore: true
+  priority:
+    Ignore: true
+  rr:
+    Ignore: true
+  status:
+    Ignore: true
+  ttl:
+    Ignore: true
+  type:
+    Ignore: true
+  value:
     Ignore: true

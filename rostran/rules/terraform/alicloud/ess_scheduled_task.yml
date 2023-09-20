@@ -33,3 +33,29 @@ Properties:
 Attributes:
   id:
     To: ScheduledTaskId
+  description:
+    Ignore: true
+  desired_capacity:
+    Ignore: true
+  launch_expiration_time:
+    Ignore: true
+  launch_time:
+    Ignore: true
+  max_value:
+    Ignore: true
+  min_value:
+    Ignore: true
+  recurrence_end_time:
+    Ignore: true
+  recurrence_type:
+    Ignore: true
+  recurrence_value:
+    Ignore: true
+  scaling_group_id:
+    Ignore: true
+  scheduled_action:
+    Ignore: true
+  scheduled_task_name:
+    Ignore: true
+  task_enabled:
+    Ignore: true

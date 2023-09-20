@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_oss_bucket
   To: ALIYUN::OSS::Bucket
 Properties:
+  access_monitor:
+    Ignore: true
   acl:
     To: AccessControl
   bucket:
@@ -22,9 +24,19 @@ Properties:
         To: ExposeHeader
       max_age_seconds:
         To: MaxAgeSeconds
+  creation_date:
+    Ignore: true
+  extranet_endpoint:
+    Ignore: true
   force_destroy:
     To: DeletionForce
+  intranet_endpoint:
+    Ignore: true
   lifecycle_rule:
+    Ignore: true
+  lifecycle_rule_allow_same_action_overlap:
+    Ignore: true
+  location:
     Ignore: true
   logging:
     To: LoggingConfiguration
@@ -36,10 +48,12 @@ Properties:
         To: TargetPrefix
   logging_isenable:
     Ignore: true
+  owner:
+    Ignore: true
   policy:
     To: Policy
   redundancy_type:
-    Ignore: true
+    To: RedundancyType
   referer_config:
     To: RefererConfiguration
     Type: Map
@@ -60,6 +74,8 @@ Properties:
     To: StorageClass
   tags:
     To: Tags
+  transfer_acceleration:
+    Ignore: true
   versioning:
     Ignore: true
   website:
@@ -73,15 +89,27 @@ Properties:
 Attributes:
   id:
     To: Name
+  access_monitor:
+    Ignore: true
   acl:
+    Ignore: true
+  bucket:
     Ignore: true
   creation_date:
     Ignore: true
   extranet_endpoint:
-    To: DomainName
+    Ignore: true
   intranet_endpoint:
-    To: InternalDomainName
+    Ignore: true
   location:
     Ignore: true
   owner:
+    Ignore: true
+  redundancy_type:
+    Ignore: true
+  server_side_encryption_rule:
+    Ignore: true
+  storage_class:
+    Ignore: true
+  versioning:
     Ignore: true

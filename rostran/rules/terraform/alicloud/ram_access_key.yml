@@ -4,11 +4,13 @@ ResourceType:
   From: alicloud_ram_access_key
   To: ALIYUN::RAM::AccessKey
 Properties:
-  Active:
+  encrypted_secret:
     Ignore: true
-  Inactive:
+  key_fingerprint:
     Ignore: true
   pgp_key:
+    Ignore: true
+  secret:
     Ignore: true
   secret_file:
     Ignore: true
@@ -20,7 +22,7 @@ Attributes:
   id:
     To: AccessKeyId
   encrypted_secret:
-    To: AccessKeySecret
+    Ignore: true
   key_fingerprint:
     Ignore: true
   status:

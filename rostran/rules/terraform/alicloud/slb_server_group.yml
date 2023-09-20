@@ -31,5 +31,3 @@ Attributes:
     Ignore: true
   name:
     Ignore: true
-  servers:
-    To: BackendServers

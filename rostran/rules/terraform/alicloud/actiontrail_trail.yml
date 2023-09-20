@@ -6,18 +6,52 @@ ResourceType:
 Properties:
   event_rw:
     To: EventRW
+  is_organization_trail:
+    Ignore: true
+  mns_topic_arn:
+    Ignore: true
   name:
     To: Name
   oss_bucket_name:
     To: OssBucketName
   oss_key_prefix:
     To: OssKeyPrefix
+  oss_write_role_arn:
+    Ignore: true
   role_name:
     To: RoleName
   sls_project_arn:
     To: SlsProjectArn
   sls_write_role_arn:
     To: SlsWriteRoleArn
+  status:
+    Ignore: true
+  trail_name:
+    Ignore: true
+  trail_region:
+    Ignore: true
 Attributes:
   id:
     To: Name
+  event_rw:
+    Ignore: true
+  is_organization_trail:
+    Ignore: true
+  name:
+    To: Name
+  oss_bucket_name:
+    Ignore: true
+  oss_key_prefix:
+    Ignore: true
+  oss_write_role_arn:
+    Ignore: true
+  sls_project_arn:
+    Ignore: true
+  sls_write_role_arn:
+    Ignore: true
+  status:
+    Ignore: true
+  trail_name:
+    Ignore: true
+  trail_region:
+    Ignore: true

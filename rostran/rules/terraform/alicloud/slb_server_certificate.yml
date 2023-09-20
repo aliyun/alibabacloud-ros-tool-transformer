@@ -4,6 +4,10 @@ ResourceType:
   From: alicloud_slb_server_certificate
   To: ALIYUN::SLB::Certificate
 Properties:
+  alicloud_certifacte_id:
+    Ignore: true
+  alicloud_certifacte_name:
+    Ignore: true
   alicloud_certificate_id:
     To: AliCloudCertificateId
   alicloud_certificate_name:
@@ -19,7 +23,10 @@ Properties:
   server_certificate:
     To: Certificate
   tags:
-    Ignore: true
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: CertificateId
+  tags:
+    Ignore: true

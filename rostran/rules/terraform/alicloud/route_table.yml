@@ -4,14 +4,43 @@ ResourceType:
   From: alicloud_route_table
   To: ALIYUN::VPC::RouteTable
 Properties:
+  associate_type:
+    Ignore: true
+  create_time:
+    Ignore: true
   description:
     To: Description
   name:
     To: RouteTableName
+  resource_group_id:
+    Ignore: true
+  route_table_name:
+    To: RouteTableName
+  status:
+    Ignore: true
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   vpc_id:
     To: VpcId
 Attributes:
   id:
+    To: RouteTableId
+  associate_type:
     Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  route_table_name:
+    To: RouteTableName
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    To: VpcId

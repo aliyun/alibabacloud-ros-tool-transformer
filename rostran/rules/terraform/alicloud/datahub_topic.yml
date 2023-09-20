@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   comment:
     To: Comment
+  create_time:
+    Ignore: true
+  last_modify_time:
+    Ignore: true
   life_cycle:
     To: Lifecycle
   name:
@@ -21,7 +25,21 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  comment:
+    Ignore: true
   create_time:
     Ignore: true
   last_modify_time:
+    Ignore: true
+  life_cycle:
+    Ignore: true
+  name:
+    Ignore: true
+  project_name:
+    To: ProjectName
+  record_schema:
+    Ignore: true
+  record_type:
+    Ignore: true
+  shard_count:
     Ignore: true

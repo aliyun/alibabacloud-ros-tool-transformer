@@ -27,3 +27,23 @@ Properties:
 Attributes:
   id:
     To: AcrId
+  acl_id:
+    Ignore: true
+  description:
+    Ignore: true
+  dest_cidr:
+    Ignore: true
+  dest_port_range:
+    Ignore: true
+  direction:
+    Ignore: true
+  ip_protocol:
+    Ignore: true
+  policy:
+    Ignore: true
+  priority:
+    Ignore: true
+  source_cidr:
+    Ignore: true
+  source_port_range:
+    Ignore: true

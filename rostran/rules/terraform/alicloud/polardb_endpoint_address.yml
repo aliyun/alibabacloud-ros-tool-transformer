@@ -6,18 +6,32 @@ ResourceType:
 Properties:
   connection_prefix:
     To: ConnectionStringPrefix
+  connection_string:
+    Ignore: true
   db_cluster_id:
     To: DBClusterId
   db_endpoint_id:
     To: DBEndpointId
+  ip_address:
+    Ignore: true
   net_type:
     To: NetType
+  port:
+    Ignore: true
 Attributes:
   id:
     Ignore: true
+  connection_prefix:
+    Ignore: true
   connection_string:
     To: ConnectionString
+  db_cluster_id:
+    Ignore: true
+  db_endpoint_id:
+    Ignore: true
   ip_address:
-    To: Address
+    Ignore: true
+  net_type:
+    Ignore: true
   port:
     Ignore: true

@@ -17,3 +17,11 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  api_id:
+    Ignore: true
+  app_id:
+    Ignore: true
+  group_id:
+    Ignore: true
+  stage_name:
+    Ignore: true

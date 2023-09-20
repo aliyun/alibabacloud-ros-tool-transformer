@@ -6,18 +6,65 @@ ResourceType:
 Properties:
   bandwidth:
     To: Bandwidth
+  bandwidth_package_name:
+    Ignore: true
+  create_time:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
   description:
     To: Description
+  force:
+    Ignore: true
   internet_charge_type:
     To: InternetChargeType
   isp:
     To: ISP
   name:
     To: Name
+  payment_type:
+    Ignore: true
   ratio:
     To: Ratio
   resource_group_id:
     To: ResourceGroupId
+  security_protection_types:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  zone:
+    To: Zone
 Attributes:
   id:
     To: BandwidthPackageId
+  bandwidth:
+    Ignore: true
+  bandwidth_package_name:
+    Ignore: true
+  create_time:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  description:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  isp:
+    Ignore: true
+  name:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  ratio:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_protection_types:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

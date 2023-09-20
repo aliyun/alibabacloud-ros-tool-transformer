@@ -51,3 +51,7 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  logstore:
+    Ignore: true
+  project:
+    Ignore: true

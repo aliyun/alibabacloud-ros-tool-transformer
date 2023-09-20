@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_instance
@@ -6,12 +6,14 @@ ResourceType:
 Properties:
   allocate_public_ip:
     To: AllocatePublicIP
-  auto_renew:
-    To: AutoRenew
+  auto_release_time:
+    Ignore: true
   auto_renew_period:
     To: AutoRenewPeriod
   availability_zone:
     To: ZoneId
+  cpu:
+    Ignore: true
   credit_specification:
     Ignore: true
   data_disks:
@@ -26,16 +28,28 @@ Properties:
         Ignore: true
       description:
         To: Description
+      device:
+        To: Device
       encrypted:
+        Ignore: true
+      kms_key_id:
         Ignore: true
       name:
         To: DiskName
+      performance_level:
+        To: PerformanceLevel
       size:
         To: Size
       snapshot_id:
         To: SnapshotId
+  dedicated_host_id:
+    To: DedicatedHostId
   deletion_protection:
     To: DeletionProtection
+  deployment_set_group_no:
+    Ignore: true
+  deployment_set_id:
+    To: DeploymentSetId
   description:
     To: Description
   dry_run:
@@ -44,6 +58,14 @@ Properties:
     Ignore: true
   host_name:
     To: HostName
+  hpc_cluster_id:
+    To: HpcClusterId
+  http_endpoint:
+    Ignore: true
+  http_put_response_hop_limit:
+    Ignore: true
+  http_tokens:
+    Ignore: true
   image_id:
     To: ImageId
   include_data_disks:
@@ -61,6 +83,12 @@ Properties:
   internet_max_bandwidth_out:
     To: InternetMaxBandwidthOut
   io_optimized:
+    To: IoOptimized
+  ipv6_address_count:
+    Ignore: true
+  ipv6_addresses:
+    Ignore: true
+  is_outdated:
     Ignore: true
   key_name:
     To: KeyPairName
@@ -68,40 +96,87 @@ Properties:
     Ignore: true
   kms_encryption_context:
     Ignore: true
+  maintenance_action:
+    Ignore: true
+  maintenance_notify:
+    Ignore: true
+  maintenance_time:
+    Ignore: true
+  memory:
+    Ignore: true
+  network_interface_id:
+    Ignore: true
+  operator_type:
+    Ignore: true
+  os_name:
+    Ignore: true
+  os_type:
+    Ignore: true
   password:
     To: Password
   period:
     To: Period
   period_unit:
     To: PeriodUnit
+  primary_ip_address:
+    Ignore: true
   private_ip:
     To: PrivateIpAddress
+  public_ip:
+    Ignore: true
   renewal_status:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
   role_name:
     To: RamRoleName
-  security_enhancement_strategy:
+  secondary_private_ip_address_count:
     Ignore: true
+  secondary_private_ips:
+    Ignore: true
+  security_enhancement_strategy:
+    To: SecurityEnhancementStrategy
   security_groups:
     To: SecurityGroupId
     Handler: ecs_security_group_first_id
     Warning: Only first security group id can be used
+  spot_duration:
+    To: SpotDuration
   spot_price_limit:
     To: SpotPriceLimit
   spot_strategy:
     To: SpotStrategy
   status:
     Ignore: true
+  stopped_mode:
+    Ignore: true
+  subnet_id:
+    Ignore: true
   system_disk_auto_snapshot_policy_id:
     Ignore: true
   system_disk_category:
     To: SystemDiskCategory
+  system_disk_description:
+    To: SystemDiskDescription
+  system_disk_encrypt_algorithm:
+    Ignore: true
+  system_disk_encrypted:
+    Ignore: true
+  system_disk_id:
+    Ignore: true
+  system_disk_kms_key_id:
+    Ignore: true
+  system_disk_name:
+    Ignore: true
+  system_disk_performance_level:
+    To: SystemDiskPerformanceLevel
   system_disk_size:
     To: SystemDiskSize
+  system_disk_storage_cluster_id:
+    Ignore: true
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   user_data:
     To: UserData
   volume_tags:
@@ -111,5 +186,127 @@ Properties:
 Attributes:
   id:
     To: InstanceId
+  auto_release_time:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  availability_zone:
+    To: ZoneId
+  cpu:
+    Ignore: true
+  credit_specification:
+    Ignore: true
+  dedicated_host_id:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  deployment_set_group_no:
+    Ignore: true
+  deployment_set_id:
+    Ignore: true
+  description:
+    Ignore: true
+  host_name:
+    To: HostName
+  hpc_cluster_id:
+    Ignore: true
+  http_endpoint:
+    Ignore: true
+  http_put_response_hop_limit:
+    Ignore: true
+  http_tokens:
+    Ignore: true
+  image_id:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_in:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  ipv6_address_count:
+    Ignore: true
+  ipv6_addresses:
+    Ignore: true
+  key_name:
+    Ignore: true
+  maintenance_action:
+    Ignore: true
+  maintenance_notify:
+    Ignore: true
+  maintenance_time:
+    Ignore: true
+  memory:
+    Ignore: true
+  network_interface_id:
+    Ignore: true
+  os_name:
+    Ignore: true
+  os_type:
+    Ignore: true
+  password:
+    Ignore: true
+  period_unit:
+    Ignore: true
+  primary_ip_address:
+    Ignore: true
+  private_ip:
+    To: PrivateIp
   public_ip:
     To: PublicIp
+  renewal_status:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  role_name:
+    Ignore: true
+  secondary_private_ip_address_count:
+    Ignore: true
+  secondary_private_ips:
+    Ignore: true
+  spot_duration:
+    Ignore: true
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  status:
+    Ignore: true
+  stopped_mode:
+    Ignore: true
+  subnet_id:
+    Ignore: true
+  system_disk_auto_snapshot_policy_id:
+    Ignore: true
+  system_disk_category:
+    Ignore: true
+  system_disk_description:
+    Ignore: true
+  system_disk_encrypted:
+    Ignore: true
+  system_disk_id:
+    Ignore: true
+  system_disk_kms_key_id:
+    Ignore: true
+  system_disk_name:
+    Ignore: true
+  system_disk_performance_level:
+    Ignore: true
+  system_disk_size:
+    Ignore: true
+  system_disk_storage_cluster_id:
+    Ignore: true
+  tags:
+    Ignore: true
+  user_data:
+    Ignore: true
+  volume_tags:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

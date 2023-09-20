@@ -13,3 +13,7 @@ Attributes:
     To:
     - RouteTableId
     - VSwitchId
+  route_table_id:
+    To: RouteTableId
+  vswitch_id:
+    To: VSwitchId

@@ -10,6 +10,16 @@ Properties:
     To: DefaultCooldown
   desired_capacity:
     To: DesiredCapacity
+  group_deletion_protection:
+    To: GroupDeletionProtection
+  group_type:
+    To: GroupType
+  health_check_type:
+    To: HealthCheckType
+  launch_template_id:
+    To: LaunchTemplateId
+  launch_template_version:
+    To: LaunchTemplateVersion
   loadbalancer_ids:
     To: LoadBalancerIds
   max_size:
@@ -19,17 +29,23 @@ Properties:
   multi_az_policy:
     To: MultiAZPolicy
   on_demand_base_capacity:
-    Ignore: true
+    To: OnDemandBaseCapacity
   on_demand_percentage_above_base_capacity:
-    Ignore: true
+    To: OnDemandPercentageAboveBaseCapacity
+  protected_instances:
+    To: ProtectedInstances
+    Type: List
   removal_policies:
     To: RemovalPolicys
   scaling_group_name:
     To: ScalingGroupName
   spot_instance_pools:
-    Ignore: true
+    To: SpotInstancePools
   spot_instance_remedy:
-    Ignore: true
+    To: SpotInstanceRemedy
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
   vswitch_id:
     To: VSwitchId
   vswitch_ids:
@@ -41,15 +57,41 @@ Attributes:
     Ignore: true
   default_cooldown:
     Ignore: true
+  desired_capacity:
+    Ignore: true
+  group_deletion_protection:
+    Ignore: true
+  group_type:
+    Ignore: true
+  health_check_type:
+    Ignore: true
+  launch_template_id:
+    Ignore: true
+  launch_template_version:
+    Ignore: true
   loadbalancer_ids:
     Ignore: true
   max_size:
     Ignore: true
   min_size:
     Ignore: true
+  multi_az_policy:
+    Ignore: true
+  on_demand_base_capacity:
+    Ignore: true
+  on_demand_percentage_above_base_capacity:
+    Ignore: true
+  protected_instances:
+    Ignore: true
   removal_policies:
     Ignore: true
   scaling_group_name:
+    To: ScalingGroupName
+  spot_instance_pools:
+    Ignore: true
+  spot_instance_remedy:
+    Ignore: true
+  tags:
     Ignore: true
   vswitch_ids:
     Ignore: true

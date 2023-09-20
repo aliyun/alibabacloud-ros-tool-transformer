@@ -4,19 +4,65 @@ ResourceType:
   From: alicloud_db_instance
   To: ALIYUN::RDS::DBInstance
 Properties:
-  auto_renew:
+  acl:
     Ignore: true
+  auto_renew:
+    To: AutoRenew
   auto_renew_period:
     Ignore: true
   auto_upgrade_minor_version:
     Ignore: true
+  babelfish_config:
+    Ignore: true
+  babelfish_port:
+    Ignore: true
+  ca_type:
+    Ignore: true
+  category:
+    To: Category
+  client_ca_cert:
+    Ignore: true
+  client_ca_enabled:
+    Ignore: true
+  client_cert_revocation_list:
+    Ignore: true
+  client_crl_enabled:
+    Ignore: true
+  connection_string:
+    Ignore: true
+  connection_string_prefix:
+    To: ConnectionStringPrefix
+  create_time:
+    Ignore: true
+  db_instance_ip_array_attribute:
+    Ignore: true
+  db_instance_ip_array_name:
+    Ignore: true
   db_instance_storage_type:
     To: DBInstanceStorageType
+  db_instance_type:
+    Ignore: true
+  db_is_ignore_case:
+    Ignore: true
+  db_time_zone:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  direction:
+    Ignore: true
+  effective_time:
+    Ignore: true
+  encryption_key:
+    To: EncryptionKey
   engine:
     To: Engine
   engine_version:
     To: EngineVersion
   force_restart:
+    Ignore: true
+  fresh_white_list_readins:
+    Ignore: true
+  ha_config:
     Ignore: true
   instance_charge_type:
     To: PayType
@@ -28,40 +74,212 @@ Properties:
     To: DBInstanceClass
   maintain_time:
     To: MaintainTime
+  manual_ha_time:
+    Ignore: true
+  modify_mode:
+    Ignore: true
   monitoring_period:
     Ignore: true
   parameters:
     Ignore: true
   period:
     To: Period
+  pg_hba_conf:
+    Ignore: true
+  port:
+    Ignore: true
+  private_ip_address:
+    To: PrivateIpAddress
+  released_keep_policy:
+    To: ReleasedKeepPolicy
+  replication_acl:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  role_arn:
+    Ignore: true
+  security_group_id:
+    To: SecurityGroupId
   security_group_ids:
     Ignore: true
   security_ip_mode:
     Ignore: true
+  security_ip_type:
+    Ignore: true
   security_ips:
     To: SecurityIPList
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  serverless_config:
+    Ignore: true
   sql_collector_config_value:
     Ignore: true
   sql_collector_status:
     Ignore: true
   ssl_action:
     Ignore: true
+  ssl_connection_string:
+    Ignore: true
+  ssl_status:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_auto_scale:
+    Ignore: true
+  storage_threshold:
+    Ignore: true
+  storage_upper_bound:
+    Ignore: true
+  switch_time:
+    Ignore: true
   tags:
     To: Tags
+  target_minor_version:
+    Ignore: true
+  tcp_connection_type:
+    Ignore: true
   tde_status:
     Ignore: true
+  upgrade_db_instance_kernel_version:
+    Ignore: true
+  upgrade_time:
+    Ignore: true
+  vpc_id:
+    To: VpcId
   vswitch_id:
+    To: VSwitchId
+  whitelist_network_type:
     Ignore: true
   zone_id:
     To: ZoneId
+  zone_id_slave_a:
+    Ignore: true
+  zone_id_slave_b:
+    Ignore: true
 Attributes:
   id:
     To: DBInstanceId
+  acl:
+    Ignore: true
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  auto_upgrade_minor_version:
+    Ignore: true
+  babelfish_port:
+    Ignore: true
+  ca_type:
+    Ignore: true
+  category:
+    Ignore: true
+  client_ca_cert:
+    Ignore: true
+  client_ca_enabled:
+    Ignore: true
+  client_cert_revocation_list:
+    Ignore: true
+  client_crl_enabled:
+    Ignore: true
   connection_string:
-    To: InnerConnectionString
+    Ignore: true
+  connection_string_prefix:
+    Ignore: true
+  create_time:
+    Ignore: true
+  db_instance_ip_array_attribute:
+    Ignore: true
+  db_instance_ip_array_name:
+    Ignore: true
+  db_instance_storage_type:
+    Ignore: true
+  db_instance_type:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  engine:
+    Ignore: true
+  engine_version:
+    Ignore: true
+  ha_config:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_storage:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  maintain_time:
+    Ignore: true
+  manual_ha_time:
+    Ignore: true
+  monitoring_period:
+    Ignore: true
+  period:
+    Ignore: true
   port:
-    To: InnerPort
+    Ignore: true
+  private_ip_address:
+    Ignore: true
+  replication_acl:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  security_ip_mode:
+    Ignore: true
+  security_ip_type:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  serverless_config:
+    Ignore: true
+  sql_collector_config_value:
+    Ignore: true
+  sql_collector_status:
+    Ignore: true
+  ssl_action:
+    Ignore: true
+  ssl_connection_string:
+    Ignore: true
   ssl_status:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_auto_scale:
+    Ignore: true
+  storage_threshold:
+    Ignore: true
+  storage_upper_bound:
+    Ignore: true
+  tags:
+    Ignore: true
+  target_minor_version:
+    Ignore: true
+  tcp_connection_type:
+    Ignore: true
+  tde_Status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  whitelist_network_type:
+    Ignore: true
+  zone_id:
+    Ignore: true
+  zone_id_slave_a:
+    Ignore: true
+  zone_id_slave_b:
     Ignore: true

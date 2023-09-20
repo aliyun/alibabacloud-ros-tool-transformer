@@ -10,8 +10,14 @@ Properties:
     To: ClientIpPool
   compress:
     To: Compress
+  connections:
+    Ignore: true
+  internet_ip:
+    Ignore: true
   local_subnet:
     To: LocalSubnet
+  max_connections:
+    Ignore: true
   name:
     To: Name
   port:
@@ -23,9 +29,25 @@ Properties:
 Attributes:
   id:
     To: SslVpnServerId
+  cipher:
+    Ignore: true
+  client_ip_pool:
+    Ignore: true
+  compress:
+    Ignore: true
   connections:
     Ignore: true
   internet_ip:
     Ignore: true
+  local_subnet:
+    Ignore: true
   max_connections:
+    Ignore: true
+  name:
+    Ignore: true
+  port:
+    Ignore: true
+  protocol:
+    Ignore: true
+  vpn_gateway_id:
     Ignore: true

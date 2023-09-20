@@ -15,3 +15,11 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  character_set_name:
+    Ignore: true
+  db_cluster_id:
+    Ignore: true
+  db_description:
+    Ignore: true
+  db_name:
+    Ignore: true

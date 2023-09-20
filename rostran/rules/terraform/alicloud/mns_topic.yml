@@ -13,3 +13,9 @@ Properties:
 Attributes:
   id:
     To: TopicName
+  logging_enabled:
+    Ignore: true
+  maximum_message_size:
+    Ignore: true
+  name:
+    Ignore: true

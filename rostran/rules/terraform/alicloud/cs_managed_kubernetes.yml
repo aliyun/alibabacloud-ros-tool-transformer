@@ -11,49 +11,146 @@ Properties:
       config:
         To: Config
       disabled:
-        Ignore: true
+        To: Disabled
       name:
         To: Name
   api_audiences:
     Ignore: true
+  availability_zone:
+    Ignore: true
+  certificate_authority:
+    Ignore: true
+  client_cert:
+    Ignore: true
+  client_key:
+    Ignore: true
+  cluster_ca_cert:
+    Ignore: true
+  cluster_domain:
+    Ignore: true
+  cluster_network_type:
+    Ignore: true
+  cluster_spec:
+    To: ClusterSpec
+  connections:
+    Ignore: true
+  control_plane_log_components:
+    Ignore: true
+  control_plane_log_project:
+    Ignore: true
+  control_plane_log_ttl:
+    Ignore: true
   cpu_policy:
     To: CpuPolicy
+  custom_san:
+    Ignore: true
+  deletion_protection:
+    To: DeletionProtection
+  enable_rrsa:
+    Ignore: true
   enable_ssh:
     To: SshFlags
+  encryption_provider_key:
+    To: EncryptionProviderKey
   exclude_autoscaler_nodes:
+    Ignore: true
+  force_update:
     Ignore: true
   image_id:
     Ignore: true
   install_cloud_monitor:
     To: CloudMonitorFlags
   is_enterprise_security_group:
-    Ignore: true
+    To: IsEnterpriseSecurityGroup
   key_name:
     To: KeyPair
   kms_encrypted_password:
     Ignore: true
   kms_encryption_context:
     Ignore: true
+  kube_config:
+    Ignore: true
+  load_balancer_spec:
+    To: LoadBalancerSpec
+  log_config:
+    Ignore: true
+  maintenance_window:
+    Ignore: true
   name:
     To: Name
   name_prefix:
     Ignore: true
-  node_name_mode:
+  nat_gateway_id:
     Ignore: true
+  new_nat_gateway:
+    Ignore: true
+  node_cidr_mask:
+    To: NodeCidrMask
+  node_name_mode:
+    To: NodeNameMode
+  node_port_range:
+    Ignore: true
+  os_type:
+    To: OsType
   password:
     To: LoginPassword
+  platform:
+    To: Platform
+  pod_cidr:
+    Ignore: true
+  pod_vswitch_ids:
+    To: PodVswitchIds
+    Type: List
   proxy_mode:
     To: ProxyMode
+  rds_instances:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  retain_resources:
+    Ignore: true
+  rrsa_metadata:
+    Ignore: true
+  runtime:
+    Ignore: true
   security_group_id:
     To: SecurityGroupId
   service_account_issuer:
     Ignore: true
+  service_cidr:
+    To: ServiceCidr
+  slb_id:
+    Ignore: true
+  slb_internet:
+    Ignore: true
+  slb_internet_enabled:
+    Ignore: true
+  slb_intranet:
+    Ignore: true
+  tags:
+    Ignore: true
+  taints:
+    Ignore: true
+  timezone:
+    Ignore: true
   user_ca:
     Ignore: true
   user_data:
-    Ignore: true
+    To: UserData
   version:
     To: KubernetesVersion
+  vpc_id:
+    To: VpcId
+  vswitch_ids:
+    Ignore: true
+  worker_auto_renew:
+    Ignore: true
+  worker_auto_renew_period:
+    Ignore: true
+  worker_data_disk_category:
+    Ignore: true
+  worker_data_disk_size:
+    Ignore: true
   worker_data_disks:
     To: WorkerDataDisks
     Type: List
@@ -70,30 +167,41 @@ Properties:
         Ignore: true
       name:
         Ignore: true
+      performance_level:
+        Ignore: true
       size:
-        To: Size
+        Ignore: true
       snapshot_id:
         Ignore: true
+  worker_disk_category:
+    Ignore: true
+  worker_disk_performance_level:
+    Ignore: true
+  worker_disk_size:
+    Ignore: true
+  worker_disk_snapshot_policy_id:
+    Ignore: true
+  worker_instance_charge_type:
+    Ignore: true
+  worker_instance_type:
+    Ignore: true
+  worker_instance_types:
+    To: WorkerInstanceTypes
+    Type: List
+  worker_nodes:
+    Ignore: true
+  worker_number:
+    Ignore: true
+  worker_numbers:
+    Ignore: true
+  worker_period:
+    Ignore: true
+  worker_period_unit:
+    Ignore: true
+  worker_ram_role_name:
+    Ignore: true
+  worker_vswitch_ids:
+    Ignore: true
 Attributes:
   id:
     To: ClusterId
-  availability_zone:
-    Ignore: true
-  connections:
-    Ignore: true
-  name:
-    Ignore: true
-  nat_gateway_id:
-    Ignore: true
-  security_group_id:
-    Ignore: true
-  slb_intranet:
-    Ignore: true
-  version:
-    Ignore: true
-  vpc_id:
-    Ignore: true
-  worker_nodes:
-    Ignore: true
-  worker_ram_role_name:
-    To: WorkerRamRoleName

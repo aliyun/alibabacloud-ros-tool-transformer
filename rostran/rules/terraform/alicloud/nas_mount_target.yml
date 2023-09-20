@@ -8,10 +8,32 @@ Properties:
     To: AccessGroupName
   file_system_id:
     To: FileSystemId
+  mount_target_domain:
+    Ignore: true
+  network_type:
+    To: NetworkType
+  security_group_id:
+    To: SecurityGroupId
   status:
     To: Status
+  vpc_id:
+    To: VpcId
   vswitch_id:
     To: VSwitchId
 Attributes:
   id:
     To: MountTargetDomain
+  access_group_name:
+    Ignore: true
+  file_system_id:
+    Ignore: true
+  mount_target_domain:
+    To: MountTargetDomain
+  network_type:
+    Ignore: true
+  status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

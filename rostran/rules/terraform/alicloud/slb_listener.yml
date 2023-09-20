@@ -10,17 +10,108 @@ Properties:
     To: AclStatus
   acl_type:
     To: AclType
-  alicloud_slb_server_group:
-    To: VServerGroupId
   backend_port:
     To: BackendServerPort
   bandwidth:
     To: Bandwidth
+  ca_certificate_id:
+    Ignore: true
   cookie:
     Ignore: true
   cookie_timeout:
     Ignore: true
   delete_protection_validation:
+    Ignore: true
+  description:
+    To: Description
+  enable_http2:
+    To: EnableHttp2
+  established_timeout:
+    Ignore: true
+  forward_port:
+    Ignore: true
+  frontend_port:
+    Ignore: true
+  gzip:
+    Ignore: true
+  health_check:
+    Ignore: true
+  health_check_connect_port:
+    Ignore: true
+  health_check_domain:
+    Ignore: true
+  health_check_http_code:
+    Ignore: true
+  health_check_interval:
+    Ignore: true
+  health_check_method:
+    Ignore: true
+  health_check_timeout:
+    Ignore: true
+  health_check_type:
+    Ignore: true
+  health_check_uri:
+    Ignore: true
+  healthy_threshold:
+    Ignore: true
+  idle_timeout:
+    To: IdleTimeout
+  instance_port:
+    Ignore: true
+  lb_port:
+    Ignore: true
+  lb_protocol:
+    Ignore: true
+  listener_forward:
+    Ignore: true
+  load_balancer_id:
+    To: LoadBalancerId
+  master_slave_server_group_id:
+    To: MasterSlaveServerGroupId
+  persistence_timeout:
+    Ignore: true
+  protocol:
+    To: Protocol
+  proxy_protocol_v2_enabled:
+    Ignore: true
+  request_timeout:
+    To: RequestTimeout
+  scheduler:
+    To: Scheduler
+  server_certificate_id:
+    To: ServerCertificateId
+  server_group_id:
+    To: VServerGroupId
+  ssl_certificate_id:
+    To: ServerCertificateId
+  sticky_session:
+    Ignore: true
+  sticky_session_type:
+    Ignore: true
+  tls_cipher_policy:
+    Ignore: true
+  unhealthy_threshold:
+    Ignore: true
+  x_forwarded_for:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  acl_id:
+    Ignore: true
+  acl_status:
+    Ignore: true
+  acl_type:
+    Ignore: true
+  backend_port:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  ca_certificate_id:
+    Ignore: true
+  cookie:
+    Ignore: true
+  cookie_timeout:
     Ignore: true
   description:
     Ignore: true
@@ -55,25 +146,29 @@ Properties:
   healthy_threshold:
     Ignore: true
   idle_timeout:
-    To: IdleTimeout
+    Ignore: true
   listener_forward:
     Ignore: true
   load_balancer_id:
     To: LoadBalancerId
+  master_slave_server_group_id:
+    Ignore: true
   persistence_timeout:
     Ignore: true
   protocol:
-    To: Protocol
+    Ignore: true
+  proxy_protocol_v2_enabled:
+    Ignore: true
   request_timeout:
-    To: RequestTimeout
+    Ignore: true
   scheduler:
-    To: Scheduler
+    Ignore: true
   server_certificate_id:
-    To: ServerCertificateId
+    Ignore: true
   server_group_id:
-    To: VServerGroupId
+    Ignore: true
   ssl_certificate_id:
-    To: ServerCertificateId
+    Ignore: true
   sticky_session:
     Ignore: true
   sticky_session_type:
@@ -83,53 +178,4 @@ Properties:
   unhealthy_threshold:
     Ignore: true
   x_forwarded_for:
-    Ignore: true
-Attributes:
-  id:
-    Ignore: true
-  backend_port:
-    Ignore: true
-  bandwidth:
-    To: Bandwidth
-  cookie:
-    Ignore: true
-  cookie_timeout:
-    Ignore: true
-  frontend_port:
-    To: ListenerPort
-  health_check:
-    Ignore: true
-  health_check_connect_port:
-    Ignore: true
-  health_check_domain:
-    Ignore: true
-  health_check_http_code:
-    Ignore: true
-  health_check_interval:
-    Ignore: true
-  health_check_method:
-    Ignore: true
-  health_check_timeout:
-    Ignore: true
-  health_check_type:
-    Ignore: true
-  health_check_uri:
-    Ignore: true
-  healthy_threshold:
-    Ignore: true
-  load_balancer_id:
-    To: LoadBalancerId
-  persistence_timeout:
-    Ignore: true
-  protocol:
-    Ignore: true
-  scheduler:
-    Ignore: true
-  server_certificate_id:
-    To: ServerCertificateId
-  sticky_session:
-    Ignore: true
-  sticky_session_type:
-    Ignore: true
-  unhealthy_threshold:
     Ignore: true

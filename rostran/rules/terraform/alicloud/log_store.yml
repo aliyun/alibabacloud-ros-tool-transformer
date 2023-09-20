@@ -10,8 +10,14 @@ Properties:
     To: AutoSplit
   enable_web_tracking:
     To: EnableTracking
+  encrypt_conf:
+    Ignore: true
+  hot_ttl:
+    Ignore: true
   max_split_shard_count:
     To: MaxSplitShard
+  mode:
+    Ignore: true
   name:
     To: LogstoreName
   project:
@@ -20,6 +26,10 @@ Properties:
     To: TTL
   shard_count:
     To: ShardCount
+  shards:
+    Ignore: true
+  telemetry_type:
+    Ignore: true
 Attributes:
   id:
     Ignore: true
@@ -29,13 +39,21 @@ Attributes:
     Ignore: true
   enable_web_tracking:
     Ignore: true
+  hot_ttl:
+    Ignore: true
   max_split_shard_count:
     Ignore: true
+  mode:
+    Ignore: true
   name:
-    To: LogstoreName
+    Ignore: true
   project:
     Ignore: true
   retention_period:
     Ignore: true
   shard_count:
+    Ignore: true
+  shards:
+    Ignore: true
+  telemetry_type:
     Ignore: true

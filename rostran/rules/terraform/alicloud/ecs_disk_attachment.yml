@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_disk_attachment
+  To: ALIYUN::ECS::DiskAttachment
+Properties:
+  bootable:
+    Ignore: true
+  delete_with_instance:
+    To: DeleteWithInstance
+  device:
+    To: Device
+  disk_id:
+    To: DiskId
+  instance_id:
+    To: InstanceId
+  key_pair_name:
+    Ignore: true
+  password:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  device:
+    To: Device
+  disk_id:
+    To: DiskId
+  instance_id:
+    Ignore: true

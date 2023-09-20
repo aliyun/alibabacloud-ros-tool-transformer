@@ -1,0 +1,103 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_eip_address
+  To: ALIYUN::VPC::EIP
+Properties:
+  activity_id:
+    Ignore: true
+  address_name:
+    To: Name
+  auto_pay:
+    To: AutoPay
+  bandwidth:
+    To: Bandwidth
+  create_time:
+    Ignore: true
+  deletion_protection:
+    To: DeletionProtection
+  description:
+    To: Description
+  high_definition_monitor_log_status:
+    Ignore: true
+  instance_charge_type:
+    To: InstanceChargeType
+  internet_charge_type:
+    To: InternetChargeType
+  ip_address:
+    Ignore: true
+  isp:
+    To: Isp
+  log_project:
+    Ignore: true
+  log_store:
+    Ignore: true
+  name:
+    To: Name
+  netmode:
+    To: Netmode
+  payment_type:
+    To: InstanceChargeType
+  period:
+    To: Period
+  pricing_cycle:
+    To: PricingCycle
+  public_ip_address_pool_id:
+    To: PublicIpAddressPoolId
+  resource_group_id:
+    To: ResourceGroupId
+  security_protection_types:
+    To: SecurityProtectionTypes
+    Type: List
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  zone:
+    To: Zone
+Attributes:
+  id:
+    To: AllocationId
+  address_name:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  create_time:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  description:
+    Ignore: true
+  high_definition_monitor_log_status:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  ip_address:
+    Ignore: true
+  isp:
+    To: Isp
+  log_project:
+    Ignore: true
+  log_store:
+    Ignore: true
+  name:
+    Ignore: true
+  netmode:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  public_ip_address_pool_id:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_protection_types:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  zone:
+    Ignore: true

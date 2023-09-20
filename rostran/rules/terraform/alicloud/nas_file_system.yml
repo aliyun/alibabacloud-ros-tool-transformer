@@ -4,20 +4,47 @@ ResourceType:
   From: alicloud_nas_file_system
   To: ALIYUN::NAS::FileSystem
 Properties:
-  Capacity:
+  capacity:
     To: Capacity
-  NFS:
-    Ignore: true
-  Performance:
-    Ignore: true
-  SMB:
-    Ignore: true
   description:
     To: Description
+  encrypt_type:
+    To: EncryptType
+  file_system_type:
+    To: FileSystemType
+  kms_key_id:
+    Ignore: true
   protocol_type:
     To: ProtocolType
   storage_type:
     To: StorageType
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
 Attributes:
   id:
     To: FileSystemId
+  capacity:
+    Ignore: true
+  description:
+    Ignore: true
+  encrypt_type:
+    Ignore: true
+  file_system_type:
+    Ignore: true
+  kms_key_id:
+    Ignore: true
+  protocol_type:
+    Ignore: true
+  storage_type:
+    Ignore: true
+  tags:
+    Ignore: true
+  zone_id:
+    Ignore: true

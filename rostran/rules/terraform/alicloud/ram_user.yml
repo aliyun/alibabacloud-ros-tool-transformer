@@ -5,11 +5,11 @@ ResourceType:
   To: ALIYUN::RAM::User
 Properties:
   comments:
-    Ignore: true
+    To: Comments
   display_name:
     To: DisplayName
   email:
-    Ignore: true
+    To: Email
   force:
     Ignore: true
   mobile:
@@ -19,3 +19,13 @@ Properties:
 Attributes:
   id:
     To: UserId
+  comments:
+    Ignore: true
+  display_name:
+    Ignore: true
+  email:
+    Ignore: true
+  mobile:
+    Ignore: true
+  name:
+    Ignore: true

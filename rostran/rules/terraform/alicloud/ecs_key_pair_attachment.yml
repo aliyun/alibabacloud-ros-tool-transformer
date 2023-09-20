@@ -1,0 +1,22 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_key_pair_attachment
+  To: ALIYUN::ECS::SSHKeyPairAttachment
+Properties:
+  force:
+    Ignore: true
+  instance_ids:
+    To: InstanceIds
+    Type: List
+  key_name:
+    Ignore: true
+  key_pair_name:
+    To: KeyPairName
+Attributes:
+  id:
+    Ignore: true
+  instance_ids:
+    Ignore: true
+  key_name:
+    Ignore: true

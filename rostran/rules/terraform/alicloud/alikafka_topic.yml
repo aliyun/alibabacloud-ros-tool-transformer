@@ -5,19 +5,34 @@ ResourceType:
   To: ALIYUN::KAFKA::Topic
 Properties:
   compact_topic:
+    To: CompactTopic
+  instance_id:
+    To: InstanceId
+  local_topic:
+    To: LocalTopic
+  partition_num:
+    To: PartitionNum
+  remark:
+    To: Remark
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  topic:
+    To: Topic
+Attributes:
+  id:
+    Ignore: true
+  compact_topic:
     Ignore: true
   instance_id:
     To: InstanceId
   local_topic:
     Ignore: true
   partition_num:
-    To: PartitionNum
+    Ignore: true
   remark:
-    To: Remark
+    Ignore: true
   tags:
     Ignore: true
   topic:
     To: Topic
-Attributes:
-  id:
-    Ignore: true

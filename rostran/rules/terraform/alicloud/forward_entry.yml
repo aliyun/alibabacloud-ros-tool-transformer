@@ -8,6 +8,10 @@ Properties:
     To: ExternalIp
   external_port:
     To: ExternalPort
+  forward_entry_id:
+    Ignore: true
+  forward_entry_name:
+    To: ForwardEntryName
   forward_table_id:
     To: ForwardTableId
   internal_ip:
@@ -18,8 +22,30 @@ Properties:
     To: IpProtocol
   name:
     Ignore: true
+  port_break:
+    To: PortBreak
+  status:
+    Ignore: true
 Attributes:
   id:
+    To: ForwardEntryId
+  external_ip:
+    Ignore: true
+  external_port:
     Ignore: true
   forward_entry_id:
     To: ForwardEntryId
+  forward_entry_name:
+    Ignore: true
+  forward_table_id:
+    Ignore: true
+  internal_ip:
+    Ignore: true
+  internal_port:
+    Ignore: true
+  ip_protocol:
+    Ignore: true
+  name:
+    Ignore: true
+  status:
+    Ignore: true

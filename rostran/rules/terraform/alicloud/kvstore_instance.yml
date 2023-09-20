@@ -8,18 +8,66 @@ Properties:
     Ignore: true
   auto_renew_period:
     Ignore: true
+  auto_use_coupon:
+    Ignore: true
   availability_zone:
     To: ZoneId
   backup_id:
     Ignore: true
+  backup_period:
+    Ignore: true
+  backup_time:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  business_info:
+    Ignore: true
+  capacity:
+    Ignore: true
+  config:
+    Ignore: true
+  connection_domain:
+    Ignore: true
+  connection_string:
+    Ignore: true
+  connection_string_prefix:
+    Ignore: true
+  coupon_no:
+    Ignore: true
+  db_instance_name:
+    Ignore: true
+  dedicated_host_group_id:
+    Ignore: true
+  dry_run:
+    Ignore: true
+  effective_time:
+    Ignore: true
+  enable_backup_log:
+    Ignore: true
+  enable_public:
+    Ignore: true
+  encryption_key:
+    Ignore: true
+  encryption_name:
+    Ignore: true
+  end_time:
+    Ignore: true
   engine_version:
     To: EngineVersion
+  force_upgrade:
+    Ignore: true
+  global_instance:
+    Ignore: true
+  global_instance_id:
+    Ignore: true
   instance_charge_type:
     Ignore: true
   instance_class:
     To: InstanceClass
   instance_name:
     To: InstanceName
+  instance_release_protection:
+    Ignore: true
   instance_type:
     Ignore: true
   kms_encrypted_password:
@@ -30,30 +78,153 @@ Properties:
     Ignore: true
   maintain_start_time:
     Ignore: true
+  modify_mode:
+    Ignore: true
+  node_type:
+    To: NodeType
+  order_type:
+    Ignore: true
   parameters:
     Ignore: true
   password:
     To: Password
+  payment_type:
+    Ignore: true
   period:
+    Ignore: true
+  port:
+    Ignore: true
+  private_connection_port:
+    Ignore: true
+  private_connection_prefix:
     Ignore: true
   private_ip:
     Ignore: true
-  resource_group_id:
+  qps:
     Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  restore_time:
+    Ignore: true
+  role_arn:
+    Ignore: true
+  secondary_zone_id:
+    To: SecondaryZoneId
   security_group_id:
+    To: SecurityGroupId
+  security_ip_group_attribute:
+    Ignore: true
+  security_ip_group_name:
     Ignore: true
   security_ips:
     Ignore: true
+  shard_count:
+    To: ShardCount
+  srcdb_instance_id:
+    Ignore: true
+  ssl_enable:
+    Ignore: true
+  status:
+    Ignore: true
   tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  tde_status:
     Ignore: true
   vpc_auth_mode:
     To: VpcPasswordFree
   vswitch_id:
     To: VSwitchId
+  zone_id:
+    To: ZoneId
 Attributes:
   id:
     To: InstanceId
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  availability_zone:
+    To: ZoneId
+  backup_period:
+    Ignore: true
+  backup_time:
+    Ignore: true
+  bandwidth:
+    To: Bandwidth
+  capacity:
+    To: Capacity
+  config:
+    Ignore: true
   connection_domain:
     To: ConnectionDomain
   connection_string:
     Ignore: true
+  db_instance_name:
+    Ignore: true
+  enable_public:
+    Ignore: true
+  encryption_key:
+    Ignore: true
+  encryption_name:
+    Ignore: true
+  end_time:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  instance_charge_type:
+    Ignore: true
+  instance_class:
+    To: InstanceClass
+  instance_name:
+    To: InstanceName
+  instance_release_protection:
+    Ignore: true
+  instance_type:
+    To: InstanceType
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
+  node_type:
+    To: NodeType
+  parameters:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  private_connection_port:
+    Ignore: true
+  private_ip:
+    To: PrivateIp
+  qps:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  role_arn:
+    Ignore: true
+  secondary_zone_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  security_ip_group_attribute:
+    Ignore: true
+  security_ip_group_name:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  shard_count:
+    Ignore: true
+  ssl_enable:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  tde_status:
+    Ignore: true
+  vpc_auth_mode:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId

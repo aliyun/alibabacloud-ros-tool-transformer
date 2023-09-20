@@ -4,10 +4,6 @@ ResourceType:
   From: alicloud_ram_user_policy_attachment
   To: ALIYUN::RAM::AttachPolicyToUser
 Properties:
-  Custom:
-    Ignore: true
-  System:
-    Ignore: true
   policy_name:
     To: PolicyName
   policy_type:
@@ -16,4 +12,10 @@ Properties:
     To: UserName
 Attributes:
   id:
+    Ignore: true
+  policy_name:
+    Ignore: true
+  policy_type:
+    Ignore: true
+  user_name:
     Ignore: true

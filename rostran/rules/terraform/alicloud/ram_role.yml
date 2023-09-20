@@ -4,7 +4,7 @@ ResourceType:
   From: alicloud_ram_role
   To: ALIYUN::RAM::Role
 Properties:
-  apigateway:
+  arn:
     Ignore: true
   description:
     To: Description
@@ -12,11 +12,13 @@ Properties:
     To: AssumeRolePolicyDocument
   force:
     Ignore: true
-  log:
-    Ignore: true
+  max_session_duration:
+    To: MaxSessionDuration
   name:
     To: RoleName
   ram_users:
+    Ignore: true
+  role_id:
     Ignore: true
   services:
     Ignore: true
@@ -31,8 +33,10 @@ Attributes:
     Ignore: true
   document:
     Ignore: true
+  max_session_duration:
+    Ignore: true
   name:
-    To: RoleName
+    Ignore: true
   ram_users:
     Ignore: true
   role_id:

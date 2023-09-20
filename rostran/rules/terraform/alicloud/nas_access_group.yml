@@ -11,13 +11,23 @@ Properties:
   description:
     To: Description
   file_system_type:
-    Ignore: true
+    To: FileSystemType
   name:
     To: AccessGroupName
-  standard:
-    Ignore: true
   type:
     To: AccessGroupType
 Attributes:
   id:
     To: AccessGroupName
+  access_group_name:
+    To: AccessGroupName
+  access_group_type:
+    Ignore: true
+  description:
+    Ignore: true
+  file_system_type:
+    Ignore: true
+  name:
+    Ignore: true
+  type:
+    Ignore: true

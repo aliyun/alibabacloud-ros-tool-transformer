@@ -4,14 +4,32 @@ ResourceType:
   From: alicloud_cen_instance_attachment
   To: ALIYUN::CEN::CenInstanceAttachment
 Properties:
+  cen_owner_id:
+    Ignore: true
   child_instance_id:
     To: ChildInstanceId
   child_instance_owner_id:
     To: ChildInstanceOwnerId
   child_instance_region_id:
     To: ChildInstanceRegionId
+  child_instance_type:
+    To: ChildInstanceType
   instance_id:
     To: CenId
+  status:
+    Ignore: true
 Attributes:
   id:
+    Ignore: true
+  child_instance_id:
+    Ignore: true
+  child_instance_owner_id:
+    Ignore: true
+  child_instance_region_id:
+    Ignore: true
+  child_instance_type:
+    Ignore: true
+  instance_id:
+    Ignore: true
+  status:
     Ignore: true

@@ -8,6 +8,8 @@ Properties:
     To: AdjustmentType
   adjustment_value:
     To: AdjustmentValue
+  ari:
+    Ignore: true
   cooldown:
     To: Cooldown
   disable_scale_in:
@@ -27,9 +29,9 @@ Properties:
     Type: List
     Schema:
       metric_interval_lower_bound:
-        To: MetricIntervalLowerBound
+        Ignore: true
       metric_interval_upper_bound:
-        To: MetricIntervalUpperBound
+        Ignore: true
       scaling_adjustment:
         To: ScalingAdjustment
   target_value:
@@ -37,3 +39,27 @@ Properties:
 Attributes:
   id:
     To: ScalingRuleId
+  adjustment_type:
+    Ignore: true
+  adjustment_value:
+    Ignore: true
+  ari:
+    Ignore: true
+  cooldown:
+    Ignore: true
+  disable_scale_in:
+    Ignore: true
+  estimated_instance_warmup:
+    Ignore: true
+  metric_name:
+    Ignore: true
+  scaling_group_id:
+    Ignore: true
+  scaling_rule_name:
+    Ignore: true
+  scaling_rule_type:
+    Ignore: true
+  step_adjustment:
+    Ignore: true
+  target_value:
+    Ignore: true

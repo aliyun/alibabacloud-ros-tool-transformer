@@ -1,0 +1,221 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_launch_template
+  To: ALIYUN::ECS::LaunchTemplate
+Properties:
+  auto_release_time:
+    To: AutoReleaseTime
+  data_disks:
+    To: DiskMappings
+    Type: List
+    Schema:
+      category:
+        To: Category
+      delete_with_instance:
+        To: DeleteWithInstance
+      description:
+        To: Description
+      encrypted:
+        To: Encrypted
+      name:
+        Ignore: true
+      performance_level:
+        To: PerformanceLevel
+      size:
+        To: Size
+      snapshot_id:
+        To: SnapshotId
+  deployment_set_id:
+    To: DeploymentSetId
+  description:
+    To: Description
+  enable_vm_os_config:
+    Ignore: true
+  host_name:
+    To: HostName
+  image_id:
+    To: ImageId
+  image_owner_alias:
+    To: ImageOwnerAlias
+  instance_charge_type:
+    To: InstanceChargeType
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  internet_charge_type:
+    To: InternetChargeType
+  internet_max_bandwidth_in:
+    Ignore: true
+  internet_max_bandwidth_out:
+    To: InternetMaxBandwidthOut
+  io_optimized:
+    To: IoOptimized
+  key_pair_name:
+    To: KeyPairName
+  launch_template_name:
+    To: LaunchTemplateName
+  name:
+    Ignore: true
+  network_interfaces:
+    To: NetworkInterfaces
+    Type: List
+    Schema:
+      description:
+        To: Description
+      name:
+        Ignore: true
+      primary_ip:
+        Ignore: true
+      security_group_id:
+        To: SecurityGroupId
+      vswitch_id:
+        Ignore: true
+  network_type:
+    To: NetworkType
+  password_inherit:
+    To: PasswordInherit
+  period:
+    To: Period
+  private_ip_address:
+    To: PrivateIpAddress
+  ram_role_name:
+    To: RamRoleName
+  resource_group_id:
+    To: ResourceGroupId
+  security_enhancement_strategy:
+    To: SecurityEnhancementStrategy
+  security_group_id:
+    To: SecurityGroupId
+  security_group_ids:
+    To: SecurityGroupIds
+    Type: List
+  spot_duration:
+    Ignore: true
+  spot_price_limit:
+    To: SpotPriceLimit
+  spot_strategy:
+    To: SpotStrategy
+  system_disk:
+    Ignore: true
+  system_disk_category:
+    To: SystemDiskCategory
+  system_disk_description:
+    To: SystemDiskDescription
+  system_disk_name:
+    Ignore: true
+  system_disk_size:
+    To: SystemDiskSize
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  template_resource_group_id:
+    To: TemplateResourceGroupId
+  template_tags:
+    To: TemplateTags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
+  user_data:
+    To: UserData
+  userdata:
+    To: UserData
+  version_description:
+    To: VersionDescription
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: LaunchTemplateId
+  auto_release_time:
+    Ignore: true
+  deployment_set_id:
+    Ignore: true
+  description:
+    Ignore: true
+  enable_vm_os_config:
+    Ignore: true
+  host_name:
+    Ignore: true
+  image_id:
+    Ignore: true
+  image_owner_alias:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_in:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  io_optimized:
+    Ignore: true
+  key_pair_name:
+    Ignore: true
+  launch_template_name:
+    To: LaunchTemplateName
+  name:
+    Ignore: true
+  network_type:
+    Ignore: true
+  password_inherit:
+    Ignore: true
+  period:
+    Ignore: true
+  private_ip_address:
+    Ignore: true
+  ram_role_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_enhancement_strategy:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  spot_duration:
+    Ignore: true
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  system_disk:
+    Ignore: true
+  system_disk_category:
+    Ignore: true
+  system_disk_description:
+    Ignore: true
+  system_disk_name:
+    Ignore: true
+  system_disk_size:
+    Ignore: true
+  tags:
+    Ignore: true
+  template_tags:
+    Ignore: true
+  user_data:
+    Ignore: true
+  userdata:
+    Ignore: true
+  version_description:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

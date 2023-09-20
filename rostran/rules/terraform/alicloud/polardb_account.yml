@@ -21,3 +21,11 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  account_description:
+    Ignore: true
+  account_name:
+    Ignore: true
+  account_type:
+    Ignore: true
+  db_cluster_id:
+    Ignore: true

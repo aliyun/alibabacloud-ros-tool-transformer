@@ -6,20 +6,50 @@ ResourceType:
 Properties:
   bandwidth:
     To: Bandwidth
+  cen_bandwidth_package_name:
+    Ignore: true
   charge_type:
     To: BandwidthPackageChargeType
   description:
     To: Description
+  expired_time:
+    Ignore: true
+  geographic_region_a_id:
+    To: GeographicRegionAId
+  geographic_region_b_id:
+    To: GeographicRegionBId
   geographic_region_ids:
     Ignore: true
   name:
     To: Name
+  payment_type:
+    Ignore: true
   period:
     To: Period
+  status:
+    Ignore: true
 Attributes:
   id:
     To: CenBandwidthPackageId
+  bandwidth:
+    Ignore: true
+  cen_bandwidth_package_name:
+    Ignore: true
+  charge_type:
+    Ignore: true
+  description:
+    Ignore: true
   expired_time:
+    Ignore: true
+  geographic_region_a_id:
+    Ignore: true
+  geographic_region_b_id:
+    Ignore: true
+  geographic_region_ids:
+    Ignore: true
+  name:
+    Ignore: true
+  payment_type:
     Ignore: true
   status:
     Ignore: true

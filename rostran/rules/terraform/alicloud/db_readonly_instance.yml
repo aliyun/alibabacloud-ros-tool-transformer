@@ -4,8 +4,44 @@ ResourceType:
   From: alicloud_db_readonly_instance
   To: ALIYUN::RDS::ReadOnlyDBInstance
 Properties:
+  acl:
+    Ignore: true
+  auto_renew:
+    To: AutoRenew
+  auto_renew_period:
+    Ignore: true
+  ca_type:
+    Ignore: true
+  client_ca_cert:
+    Ignore: true
+  client_ca_enabled:
+    Ignore: true
+  client_cert_revocation_list:
+    Ignore: true
+  client_crl_enabled:
+    Ignore: true
+  connection_string:
+    Ignore: true
+  db_instance_ip_array_attribute:
+    Ignore: true
+  db_instance_ip_array_name:
+    Ignore: true
+  db_instance_storage_type:
+    Ignore: true
+  deletion_protection:
+    To: DeletionProtection
+  direction:
+    Ignore: true
+  effective_time:
+    Ignore: true
+  engine:
+    Ignore: true
   engine_version:
     To: EngineVersion
+  force_restart:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
   instance_name:
     To: DBInstanceDescription
   instance_storage:
@@ -14,22 +50,112 @@ Properties:
     To: DBInstanceClass
   master_db_instance_id:
     To: DBInstanceId
+  modify_mode:
+    Ignore: true
   parameters:
+    Ignore: true
+  period:
+    To: Period
+  port:
+    Ignore: true
+  replication_acl:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  security_ip_type:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  ssl_enabled:
+    Ignore: true
+  switch_time:
+    Ignore: true
   tags:
     To: Tags
+  target_minor_version:
+    Ignore: true
+  upgrade_db_instance_kernel_version:
+    Ignore: true
+  upgrade_time:
+    Ignore: true
   vswitch_id:
     To: VSwitchId
+  whitelist_network_type:
+    Ignore: true
   zone_id:
     To: ZoneId
 Attributes:
   id:
     To: DBInstanceId
+  acl:
+    Ignore: true
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  ca_type:
+    Ignore: true
+  client_ca_cert:
+    Ignore: true
+  client_ca_enabled:
+    Ignore: true
+  client_cert_revocation_list:
+    Ignore: true
+  client_crl_enabled:
+    Ignore: true
   connection_string:
     To: ConnectionString
+  db_instance_ip_array_attribute:
+    Ignore: true
+  db_instance_ip_array_name:
+    Ignore: true
+  db_instance_storage_type:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
   engine:
+    Ignore: true
+  engine_version:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_storage:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  master_db_instance_id:
     Ignore: true
   port:
     To: Port
+  replication_acl:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_ip_type:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  ssl_enabled:
+    Ignore: true
+  ssl_status:
+    Ignore: true
+  tags:
+    Ignore: true
+  target_minor_version:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  whitelist_network_type:
+    Ignore: true
+  zone_id:
+    Ignore: true

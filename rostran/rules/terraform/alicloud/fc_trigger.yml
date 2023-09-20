@@ -10,6 +10,8 @@ Properties:
     Ignore: true
   function:
     To: FunctionName
+  last_modified:
+    Ignore: true
   name:
     To: TriggerName
   name_prefix:
@@ -20,6 +22,8 @@ Properties:
     To: ServiceName
   source_arn:
     To: SourceArn
+  trigger_id:
+    Ignore: true
   type:
     To: TriggerType
 Attributes:
@@ -28,7 +32,19 @@ Attributes:
     - ServiceName
     - FunctionName
     - TriggerName
+  function:
+    Ignore: true
   last_modified:
+    Ignore: true
+  name:
+    Ignore: true
+  role:
+    Ignore: true
+  service:
+    Ignore: true
+  source_arn:
     Ignore: true
   trigger_id:
     To: TriggerId
+  type:
+    Ignore: true

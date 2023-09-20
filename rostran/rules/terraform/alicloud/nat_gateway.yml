@@ -4,38 +4,87 @@ ResourceType:
   From: alicloud_nat_gateway
   To: ALIYUN::ECS::NatGateway
 Properties:
+  bandwidth_package_ids:
+    Ignore: true
   bandwidth_packages:
     Ignore: true
+  deletion_protection:
+    To: DeletionProtection
   description:
     To: Description
-  instance_charge_type:
+  dry_run:
     Ignore: true
+  eip_bind_mode:
+    Ignore: true
+  force:
+    Ignore: true
+  forward_table_ids:
+    Ignore: true
+  instance_charge_type:
+    To: InstanceChargeType
+  internet_charge_type:
+    To: InternetChargeType
   name:
     To: NatGatewayName
+  nat_gateway_name:
+    To: NatGatewayName
+  nat_type:
+    To: NatType
+  network_type:
+    Ignore: true
+  payment_type:
+    Ignore: true
   period:
+    Ignore: true
+  snat_table_ids:
     Ignore: true
   spec:
     To: Spec
   specification:
     To: Spec
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
   vpc_id:
     To: VpcId
+  vswitch_id:
+    To: VSwitchId
 Attributes:
   id:
     To: NatGatewayId
-  bandwidth_package_ids:
-    To: BandwidthPackageIds
+  deletion_protection:
+    Ignore: true
   description:
     Ignore: true
+  eip_bind_mode:
+    Ignore: true
   forward_table_ids:
-    To: ForwardTableId
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
   name:
     Ignore: true
+  nat_gateway_name:
+    Ignore: true
+  nat_type:
+    Ignore: true
+  network_type:
+    Ignore: true
+  payment_type:
+    Ignore: true
   snat_table_ids:
-    To: SNatTableId
-  spec:
     Ignore: true
   specification:
     Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
   vpc_id:
+    Ignore: true
+  vswitch_id:
     Ignore: true

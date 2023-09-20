@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   access_group_name:
     To: AccessGroupName
+  access_rule_id:
+    Ignore: true
   priority:
     To: Priority
   rw_access_type:
@@ -17,5 +19,15 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  access_group_name:
+    Ignore: true
   access_rule_id:
     To: AccessRuleId
+  priority:
+    Ignore: true
+  rw_access_type:
+    Ignore: true
+  source_cidr_ip:
+    Ignore: true
+  user_access_type:
+    Ignore: true

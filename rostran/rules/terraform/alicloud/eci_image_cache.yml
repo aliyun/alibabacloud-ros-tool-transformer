@@ -4,12 +4,14 @@ ResourceType:
   From: alicloud_eci_image_cache
   To: ALIYUN::ECI::ImageCache
 Properties:
+  container_group_id:
+    Ignore: true
   eip_instance_id:
     To: EipInstanceId
   image_cache_name:
     To: ImageCacheName
   image_cache_size:
-    Ignore: true
+    To: ImageCacheSize
   image_registry_credential:
     To: ImageRegistryCredential
     Type: List
@@ -25,17 +27,23 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   retention_days:
-    Ignore: true
+    To: RetentionDays
   security_group_id:
     To: SecurityGroupId
+  status:
+    Ignore: true
   vswitch_id:
     To: VSwitchId
   zone_id:
-    Ignore: true
+    To: ZoneId
 Attributes:
   id:
     To: ImageCacheId
   container_group_id:
+    Ignore: true
+  image_cache_name:
+    Ignore: true
+  images:
     Ignore: true
   status:
     Ignore: true

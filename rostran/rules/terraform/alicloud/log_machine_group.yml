@@ -24,8 +24,8 @@ Attributes:
   identify_type:
     Ignore: true
   name:
-    To: GroupName
+    Ignore: true
   project:
-    To: ProjectName
+    Ignore: true
   topic:
     Ignore: true

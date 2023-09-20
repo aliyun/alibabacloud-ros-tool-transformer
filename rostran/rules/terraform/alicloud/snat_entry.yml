@@ -4,8 +4,10 @@ ResourceType:
   From: alicloud_snat_entry
   To: ALIYUN::ECS::SNatEntry
 Properties:
-  snat_entry_name:
+  snat_entry_id:
     Ignore: true
+  snat_entry_name:
+    To: SnatEntryName
   snat_ip:
     To: SNatIp
   snat_table_id:
@@ -14,8 +16,22 @@ Properties:
     Ignore: true
   source_vswitch_id:
     To: SourceVSwitchId
+  status:
+    Ignore: true
 Attributes:
   id:
-    Ignore: true
-  snat_entry_id:
     To: SNatEntryId
+  snat_entry_id:
+    Ignore: SNatEntryId
+  snat_entry_name:
+    Ignore: true
+  snat_ip:
+    Ignore: true
+  snat_table_id:
+    Ignore: true
+  source_cidr:
+    Ignore: true
+  source_vswitch_id:
+    Ignore: true
+  status:
+    Ignore: true

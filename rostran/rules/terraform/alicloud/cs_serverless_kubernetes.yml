@@ -4,17 +4,39 @@ ResourceType:
   From: alicloud_cs_serverless_kubernetes
   To: ALIYUN::CS::ServerlessKubernetesCluster
 Properties:
+  addons:
+    To: Addons
+    Type: List
+    Schema:
+      config:
+        To: Config
+      disabled:
+        To: Disabled
+      name:
+        To: Name
+  client_cert:
+    Ignore: true
   client_key:
     Ignore: true
   cluster_ca_cert:
     Ignore: true
+  cluster_spec:
+    Ignore: true
+  create_v2_cluster:
+    Ignore: true
   deletion_protection:
+    Ignore: true
+  enable_rrsa:
     Ignore: true
   endpoint_public_access_enabled:
     Ignore: true
   force_update:
     Ignore: true
   kube_config:
+    Ignore: true
+  load_balancer_spec:
+    Ignore: true
+  logging_type:
     Ignore: true
   name:
     To: Name
@@ -24,24 +46,58 @@ Properties:
     To: NatGateway
   private_zone:
     To: PrivateZone
+  resource_group_id:
+    To: ResourceGroupId
+  retain_resources:
+    Ignore: true
+  rrsa_metadata:
+    Ignore: true
   security_group_id:
+    To: SecurityGroupId
+  service_cidr:
+    To: ServiceCidr
+  service_discovery_types:
+    Ignore: true
+  sls_project_name:
     Ignore: true
   tags:
     To: Tags
+  time_zone:
+    Ignore: true
+  version:
+    Ignore: true
   vpc_id:
     To: VpcId
+  vswitch_id:
+    To: VSwitchId
   vswitch_ids:
     To: VSwitchId
+  zone_id:
+    To: ZoneId
 Attributes:
   id:
     To: ClusterId
+  cluster_spec:
+    Ignore: true
   deletion_protection:
+    Ignore: true
+  load_balancer_spec:
+    Ignore: true
+  logging_type:
     Ignore: true
   name:
     Ignore: true
+  resource_group_id:
+    Ignore: true
+  rrsa_metadata:
+    Ignore: true
   security_group_id:
+    Ignore: true
+  version:
     Ignore: true
   vpc_id:
     Ignore: true
   vswitch_id:
+    Ignore: true
+  vswitch_ids:
     Ignore: true

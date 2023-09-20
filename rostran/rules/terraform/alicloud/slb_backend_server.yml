@@ -23,3 +23,5 @@ Properties:
 Attributes:
   id:
     To: LoadBalancerId
+  load_balancer_id:
+    To: LoadBalancerId

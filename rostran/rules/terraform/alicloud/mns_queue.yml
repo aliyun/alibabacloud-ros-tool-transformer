@@ -18,4 +18,16 @@ Properties:
     To: VisibilityTimeout
 Attributes:
   id:
+    To: QueueName
+  delay_seconds:
+    Ignore: true
+  maximum_message_size:
+    Ignore: true
+  message_retention_period:
+    Ignore: true
+  name:
+    Ignore: true
+  polling_wait_seconds:
+    Ignore: true
+  visibility_timeout:
     Ignore: true

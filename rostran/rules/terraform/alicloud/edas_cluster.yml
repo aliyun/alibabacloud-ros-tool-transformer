@@ -17,3 +17,11 @@ Properties:
 Attributes:
   id:
     To: ClusterId
+  cluster_name:
+    To: ClusterName
+  cluster_type:
+    To: ClusterType
+  network_mode:
+    Ignore: true
+  vpc_id:
+    Ignore: true

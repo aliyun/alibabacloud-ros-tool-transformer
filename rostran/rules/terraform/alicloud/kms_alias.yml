@@ -11,3 +11,7 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  alias_name:
+    Ignore: true
+  key_id:
+    Ignore: true
