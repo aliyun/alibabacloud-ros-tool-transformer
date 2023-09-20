@@ -1,3 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_api_gateway_group
+  To: ALIYUN::ApiGateway::Group
+Properties:
+  description:
+    To: Description
+  name:
+    To: GroupName
 Attributes:
   id:
     To: GroupId
@@ -5,13 +15,3 @@ Attributes:
     To: SubDomain
   vpc_domain:
     Ignore: true
-Properties:
-  description:
-    To: Description
-  name:
-    To: GroupName
-ResourceType:
-  From: alicloud_api_gateway_group
-  To: ALIYUN::ApiGateway::Group
-Type: Resource
-Version: '2020-06-01'

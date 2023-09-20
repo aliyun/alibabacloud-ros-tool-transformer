@@ -1,16 +1,8 @@
-Attributes:
-  domain:
-    To: Domain
-  id:
-    To: InstanceId
-  kibana_domain:
-    To: KibanaDomain
-  kibana_port:
-    To: KibanaPort
-  port:
-    To: Port
-  status:
-    To: Status
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_elasticsearch
+  To: ALIYUN::ElasticSearch::Instance
 Properties:
   data_node_amount:
     Ignore: true
@@ -60,8 +52,16 @@ Properties:
     To: VSwitchId
   zone_count:
     Ignore: true
-ResourceType:
-  From: alicloud_elasticsearch
-  To: ALIYUN::ElasticSearch::Instance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: InstanceId
+  domain:
+    To: Domain
+  kibana_domain:
+    To: KibanaDomain
+  kibana_port:
+    To: KibanaPort
+  port:
+    To: Port
+  status:
+    To: Status

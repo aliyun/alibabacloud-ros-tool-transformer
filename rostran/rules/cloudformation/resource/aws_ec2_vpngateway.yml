@@ -4,11 +4,11 @@ ResourceType:
   From: AWS::EC2::VPNGateway
   To: ALIYUN::VPC::VpnGateway
 Properties:
+  AmazonSideAsn:
+    Ignore: true
   Tags:
     To: Tags
   Type:
-    Ignore: true
-  AmazonSideAsn:
     Ignore: true
 Attributes:
   RouteTableId:

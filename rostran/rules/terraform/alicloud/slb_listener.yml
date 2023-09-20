@@ -1,52 +1,8 @@
-Attributes:
-  backend_port:
-    Ignore: true
-  bandwidth:
-    To: Bandwidth
-  cookie:
-    Ignore: true
-  cookie_timeout:
-    Ignore: true
-  frontend_port:
-    To: ListenerPort
-  health_check:
-    Ignore: true
-  health_check_connect_port:
-    Ignore: true
-  health_check_domain:
-    Ignore: true
-  health_check_http_code:
-    Ignore: true
-  health_check_interval:
-    Ignore: true
-  health_check_method:
-    Ignore: true
-  health_check_timeout:
-    Ignore: true
-  health_check_type:
-    Ignore: true
-  health_check_uri:
-    Ignore: true
-  healthy_threshold:
-    Ignore: true
-  id:
-    Ignore: true
-  load_balancer_id:
-    To: LoadBalancerId
-  persistence_timeout:
-    Ignore: true
-  protocol:
-    Ignore: true
-  scheduler:
-    Ignore: true
-  server_certificate_id:
-    To: ServerCertificateId
-  sticky_session:
-    Ignore: true
-  sticky_session_type:
-    Ignore: true
-  unhealthy_threshold:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_slb_listener
+  To: ALIYUN::SLB::Listener
 Properties:
   acl_id:
     To: AclId
@@ -128,8 +84,52 @@ Properties:
     Ignore: true
   x_forwarded_for:
     Ignore: true
-ResourceType:
-  From: alicloud_slb_listener
-  To: ALIYUN::SLB::Listener
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true
+  backend_port:
+    Ignore: true
+  bandwidth:
+    To: Bandwidth
+  cookie:
+    Ignore: true
+  cookie_timeout:
+    Ignore: true
+  frontend_port:
+    To: ListenerPort
+  health_check:
+    Ignore: true
+  health_check_connect_port:
+    Ignore: true
+  health_check_domain:
+    Ignore: true
+  health_check_http_code:
+    Ignore: true
+  health_check_interval:
+    Ignore: true
+  health_check_method:
+    Ignore: true
+  health_check_timeout:
+    Ignore: true
+  health_check_type:
+    Ignore: true
+  health_check_uri:
+    Ignore: true
+  healthy_threshold:
+    Ignore: true
+  load_balancer_id:
+    To: LoadBalancerId
+  persistence_timeout:
+    Ignore: true
+  protocol:
+    Ignore: true
+  scheduler:
+    Ignore: true
+  server_certificate_id:
+    To: ServerCertificateId
+  sticky_session:
+    Ignore: true
+  sticky_session_type:
+    Ignore: true
+  unhealthy_threshold:
+    Ignore: true

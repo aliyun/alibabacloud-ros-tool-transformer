@@ -1,10 +1,8 @@
-Attributes:
-  dns_server:
-    To: DnsServers
-  domain_id:
-    To: DomainId
-  id:
-    To: DomainName
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dns_domain
+  To: ALIYUN::DNS::Domain
 Properties:
   domain_name:
     To: DomainName
@@ -18,8 +16,10 @@ Properties:
     Ignore: true
   tags:
     Ignore: true
-ResourceType:
-  From: alicloud_dns_domain
-  To: ALIYUN::DNS::Domain
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DomainName
+  dns_server:
+    To: DnsServers
+  domain_id:
+    To: DomainId

@@ -4,22 +4,22 @@ ResourceType:
   From: alicloud_security_group
   To: ALIYUN::ECS::SecurityGroup
 Properties:
-  name:
-    To: SecurityGroupName
   description:
     To: Description
-  vpc_id:
-    To: VpcId
-  resource_group_id:
-    ResourceGroupId
-  security_group_type:
-    To: SecurityGroupType
   inner_access:
     Ignore: true
   inner_access_policy:
     Ignore: true
+  name:
+    To: SecurityGroupName
+  resource_group_id:
+    To: ResourceGroupId
+  security_group_type:
+    To: SecurityGroupType
   tags:
     To: Tags
+  vpc_id:
+    To: VpcId
 Attributes:
   id:
     To: SecurityGroupId

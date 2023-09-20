@@ -11,6 +11,6 @@ Properties:
   InstanceId:
     To: InstanceId
   NetworkInterfaceId:
-    Ignore: True
+    Ignore: true
   PrivateIpAddress:
     To: PrivateIpAddress

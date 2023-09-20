@@ -1,18 +1,8 @@
-Attributes:
-  egress:
-    Ignore: true
-  id:
-    Ignore: true
-  ingress:
-    Ignore: true
-  ip_protocol:
-    Ignore: true
-  name:
-    Ignore: true
-  port_range:
-    Ignore: true
-  type:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_security_group_rule
+  To: ALIYUN::ECS::SecurityGroupIngress
 Properties:
   1-100:
     Ignore: true
@@ -62,8 +52,18 @@ Properties:
     Ignore: true
   udp:
     Ignore: true
-ResourceType:
-  From: alicloud_security_group_rule
-  To: ALIYUN::ECS::SecurityGroupIngress
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true
+  egress:
+    Ignore: true
+  ingress:
+    Ignore: true
+  ip_protocol:
+    Ignore: true
+  name:
+    Ignore: true
+  port_range:
+    Ignore: true
+  type:
+    Ignore: true

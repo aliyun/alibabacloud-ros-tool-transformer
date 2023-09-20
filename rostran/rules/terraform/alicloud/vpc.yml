@@ -6,10 +6,10 @@ ResourceType:
 Properties:
   cidr_block:
     To: CidrBlock
-  name:
-    To: VpcName
   description:
     To: Description
+  name:
+    To: VpcName
   resource_group_id:
     To: ResourceGroupId
   tags:
@@ -19,11 +19,11 @@ Attributes:
     To: VpcId
   cidr_block:
     Ignore: true
-  name:
-    Ignore: true
   description:
     Ignore: true
-  router_id:
-    To: VRouterId
+  name:
+    Ignore: true
   route_table_id:
     To: RouteTableId
+  router_id:
+    To: VRouterId

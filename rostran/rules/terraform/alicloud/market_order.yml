@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: OrderId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_market_order
+  To: ALIYUN::MarketPlace::Order
 Properties:
   components:
     Ignore: true
@@ -18,8 +20,6 @@ Properties:
     To: ProductCode
   quantity:
     To: Quantity
-ResourceType:
-  From: alicloud_market_order
-  To: ALIYUN::MarketPlace::Order
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: OrderId

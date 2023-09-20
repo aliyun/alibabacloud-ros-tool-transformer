@@ -4,10 +4,10 @@ ResourceType:
   From: AWS::EC2::SubnetRouteTableAssociation
   To: ALIYUN::VPC::RouteTableAssociation
 Properties:
-  SubnetId:
-    To: VSwitchId
   RouteTableId:
     To: RouteTableId
+  SubnetId:
+    To: VSwitchId
 Attributes:
   Id:
     To: RouteTableId

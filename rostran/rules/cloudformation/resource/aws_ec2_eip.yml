@@ -5,11 +5,11 @@ ResourceType:
   To: ALIYUN::VPC::EIP
 Properties:
   Domain:
-    Ignore: True
+    Ignore: true
   InstanceId:
-    Ignore: True
+    Ignore: true
   PublicIpv4Pool:
-    Ignore: True
+    Ignore: true
   Tags:
     To: Tags
 Attributes:

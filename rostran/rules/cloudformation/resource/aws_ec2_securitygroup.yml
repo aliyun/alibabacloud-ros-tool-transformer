@@ -38,20 +38,20 @@ Properties:
         To: Ipv6SourceCidrIp
       Description:
         To: Description
+      FromPort:
+        Ignore: true
+      IpProtocol:
+        To: IpProtocol
       SourcePrefixListId:
-        Ignore: True
+        Ignore: true
       SourceSecurityGroupId:
         To: SourceGroupId
       SourceSecurityGroupName:
-        Ignore: True
+        Ignore: true
       SourceSecurityGroupOwnerId:
         To: SourceGroupOwnerId
-      IpProtocol:
-        To: IpProtocol
-      FromPort:
-        Ignore: True
       ToPort:
-        Ignore: True
+        Ignore: true
   Tags:
     To: Tags
   VpcId:
@@ -60,4 +60,4 @@ Attributes:
   GroupId:
     To: SecurityGroupId
   VpcId:
-    Ignore: True
+    Ignore: true

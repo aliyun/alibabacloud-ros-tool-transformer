@@ -1,12 +1,8 @@
-Attributes:
-  id:
-    To: DBInstanceId
-  replica_set_name:
-    To: ReplicaSetName
-  retention_period:
-    Ignore: true
-  ssl_status:
-    To: DBInstanceStatus
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mongodb_instance
+  To: ALIYUN::MONGODB::Instance
 Properties:
   account_password:
     To: AccountPassword
@@ -52,8 +48,12 @@ Properties:
     To: VSwitchId
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_mongodb_instance
-  To: ALIYUN::MONGODB::Instance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DBInstanceId
+  replica_set_name:
+    To: ReplicaSetName
+  retention_period:
+    Ignore: true
+  ssl_status:
+    To: DBInstanceStatus

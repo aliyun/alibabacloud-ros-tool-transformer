@@ -1,12 +1,8 @@
-Attributes:
-  id:
-    To: DBInstanceId
-  mongo_list:
-    Ignore: true
-  retention_period:
-    Ignore: true
-  shard_list:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mongodb_sharding_instance
+  To: ALIYUN::MONGODB::ShardingInstance
 Properties:
   account_password:
     To: AccountPassword
@@ -52,8 +48,12 @@ Properties:
     To: VSwitchId
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_mongodb_sharding_instance
-  To: ALIYUN::MONGODB::ShardingInstance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DBInstanceId
+  mongo_list:
+    Ignore: true
+  retention_period:
+    Ignore: true
+  shard_list:
+    Ignore: true

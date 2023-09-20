@@ -1,5 +1,8 @@
-Attributes:
-  To: ImageId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_image_copy
+  To: ALIYUN::ECS::CopyImage
 Properties:
   description:
     Ignore: true
@@ -17,8 +20,5 @@ Properties:
     Ignore: true
   tags:
     To: Tag
-ResourceType:
-  From: alicloud_image_copy
-  To: ALIYUN::ECS::CopyImage
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  To: ImageId

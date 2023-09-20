@@ -1,12 +1,8 @@
-Attributes:
-  id:
-    To: VServerGroupId
-  load_balancer_id:
-    Ignore: true
-  name:
-    Ignore: true
-  servers:
-    To: BackendServers
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_slb_server_group
+  To: ALIYUN::SLB::VServerGroup
 Properties:
   delete_protection_validation:
     Ignore: true
@@ -18,18 +14,22 @@ Properties:
     To: BackendServers
     Type: List
     Schema:
-      server_ids:
-        To: ServerId
-        Warning: Only first server_id can be used
-        Handler: ecs_security_group_first_id
       port:
         To: Port
-      weight:
-        To: Weight
+      server_ids:
+        To: ServerId
+        Handler: ecs_security_group_first_id
+        Warning: Only first server_id can be used
       type:
         Ignore: true
-ResourceType:
-  From: alicloud_slb_server_group
-  To: ALIYUN::SLB::VServerGroup
-Type: Resource
-Version: '2020-06-01'
+      weight:
+        To: Weight
+Attributes:
+  id:
+    To: VServerGroupId
+  load_balancer_id:
+    Ignore: true
+  name:
+    Ignore: true
+  servers:
+    To: BackendServers

@@ -1,9 +1,8 @@
-Attributes:
-  id:
-    To: AlarmTaskId
-  state:
-    Ignore: true
-
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ess_alarm
+  To: ALIYUN::ESS::AlarmTask
 Properties:
   alarm_actions:
     To: AlarmAction
@@ -33,8 +32,8 @@ Properties:
     To: Statistics
   threshold:
     To: Threshold
-ResourceType:
-  From: alicloud_ess_alarm
-  To: ALIYUN::ESS::AlarmTask
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: AlarmTaskId
+  state:
+    Ignore: true

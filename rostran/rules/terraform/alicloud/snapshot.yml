@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: SnapshotId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_snapshot
+  To: ALIYUN::ECS::Snapshot
 Properties:
   description:
     To: Description
@@ -12,8 +14,6 @@ Properties:
     Ignore: true
   tags:
     Ignore: true
-ResourceType:
-  From: alicloud_snapshot
-  To: ALIYUN::ECS::Snapshot
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: SnapshotId

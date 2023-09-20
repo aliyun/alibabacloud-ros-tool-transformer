@@ -1,10 +1,8 @@
-Attributes:
-  device_name:
-    To: Device
-  disk_id:
-    To: DiskId
-  instance_id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_disk_attachment
+  To: ALIYUN::ECS::DiskAttachment
 Properties:
   device_name:
     To: Device
@@ -12,8 +10,10 @@ Properties:
     To: DiskId
   instance_id:
     To: InstanceId
-ResourceType:
-  From: alicloud_disk_attachment
-  To: ALIYUN::ECS::DiskAttachment
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  device_name:
+    To: Device
+  disk_id:
+    To: DiskId
+  instance_id:
+    Ignore: true

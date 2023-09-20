@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cdn_domain_config
+  To: ALIYUN::CDN::DomainConfig
 Properties:
   domain_name:
     To: DomainNames
@@ -8,8 +10,6 @@ Properties:
     Ignore: true
   function_name:
     Ignore: true
-ResourceType:
-  From: alicloud_cdn_domain_config
-  To: ALIYUN::CDN::DomainConfig
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

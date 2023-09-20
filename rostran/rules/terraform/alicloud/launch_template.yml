@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: LaunchTemplateId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_launch_template
+  To: ALIYUN::ECS::LaunchTemplate
 Properties:
   auto_release_time:
     To: AutoReleaseTime
@@ -8,20 +10,20 @@ Properties:
     To: DiskMappings
     Type: List
     Schema:
-      size:
-        To: Size
-      name:
-        To: DiskName
       category:
         To: Category
-      encrypted:
-        To: Encrypted
-      snapshot_id:
-        To: SnapshotId
       delete_with_instance:
         Ignore: true
       description:
         To: Description
+      encrypted:
+        To: Encrypted
+      name:
+        To: DiskName
+      size:
+        To: Size
+      snapshot_id:
+        To: SnapshotId
   description:
     To: Description
   host_name:
@@ -88,8 +90,6 @@ Properties:
     To: VSwitchId
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_launch_template
-  To: ALIYUN::ECS::LaunchTemplate
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: LaunchTemplateId

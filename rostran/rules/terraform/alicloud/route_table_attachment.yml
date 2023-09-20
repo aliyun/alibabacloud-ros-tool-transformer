@@ -1,13 +1,15 @@
-Attributes:
-  id:
-    To: [RouteTableId, VSwitchId]
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_route_table_attachment
+  To: ALIYUN::VPC::RouteTableAssociation
 Properties:
   route_table_id:
     To: RouteTableId
   vswitch_id:
     To: VSwitchId
-ResourceType:
-  From: alicloud_route_table_attachment
-  To: ALIYUN::VPC::RouteTableAssociation
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To:
+    - RouteTableId
+    - VSwitchId

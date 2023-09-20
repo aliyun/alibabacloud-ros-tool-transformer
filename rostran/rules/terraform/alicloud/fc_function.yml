@@ -1,12 +1,8 @@
-Attributes:
-  id:
-    To: [ServiceName, FunctionName]
-  code_checksum:
-    Ignore: true
-  function_id:
-    To: FunctionId
-  last_modified:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_fc_function
+  To: ALIYUN::FC::Function
 Properties:
   code_checksum:
     Ignore: true
@@ -34,8 +30,14 @@ Properties:
     To: ServiceName
   timeout:
     To: Timeout
-ResourceType:
-  From: alicloud_fc_function
-  To: ALIYUN::FC::Function
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To:
+    - ServiceName
+    - FunctionName
+  code_checksum:
+    Ignore: true
+  function_id:
+    To: FunctionId
+  last_modified:
+    Ignore: true

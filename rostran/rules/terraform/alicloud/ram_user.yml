@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: UserId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ram_user
+  To: ALIYUN::RAM::User
 Properties:
   comments:
     Ignore: true
@@ -14,8 +16,6 @@ Properties:
     To: MobilePhone
   name:
     To: UserName
-ResourceType:
-  From: alicloud_ram_user
-  To: ALIYUN::RAM::User
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: UserId

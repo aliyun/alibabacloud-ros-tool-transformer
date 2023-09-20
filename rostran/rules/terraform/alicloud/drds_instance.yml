@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: DrdsInstanceId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_drds_instance
+  To: ALIYUN::DRDS::DrdsInstance
 Properties:
   description:
     To: Description
@@ -14,8 +16,6 @@ Properties:
     To: VswitchId
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_drds_instance
-  To: ALIYUN::DRDS::DrdsInstance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DrdsInstanceId

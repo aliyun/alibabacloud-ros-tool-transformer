@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: ScalingRuleId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ess_scaling_rule
+  To: ALIYUN::ESS::ScalingRule
 Properties:
   adjustment_type:
     To: AdjustmentType
@@ -32,8 +34,6 @@ Properties:
         To: ScalingAdjustment
   target_value:
     To: TargetValue
-ResourceType:
-  From: alicloud_ess_scaling_rule
-  To: ALIYUN::ESS::ScalingRule
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: ScalingRuleId

@@ -1,10 +1,8 @@
-Attributes:
-  connection_domain:
-    To: ConnectionDomain
-  id:
-    To: InstanceId
-  connection_string:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_kvstore_instance
+  To: ALIYUN::REDIS::Instance
 Properties:
   auto_renew:
     Ignore: true
@@ -52,8 +50,10 @@ Properties:
     To: VpcPasswordFree
   vswitch_id:
     To: VSwitchId
-ResourceType:
-  From: alicloud_kvstore_instance
-  To: ALIYUN::REDIS::Instance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: InstanceId
+  connection_domain:
+    To: ConnectionDomain
+  connection_string:
+    Ignore: true

@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: AppId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_application
+  To: ALIYUN::EDAS::Application
 Properties:
   application_name:
     To: ApplicationName
@@ -26,8 +28,6 @@ Properties:
     Ignore: true
   war_url:
     Ignore: true
-ResourceType:
-  From: alicloud_edas_application
-  To: ALIYUN::EDAS::Application
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: AppId

@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ram_role_policy_attachment
+  To: ALIYUN::RAM::AttachPolicyToRole
 Properties:
   policy_name:
     To: PolicyName
@@ -8,8 +10,6 @@ Properties:
     To: PolicyType
   role_name:
     To: RoleName
-ResourceType:
-  From: alicloud_ram_role_policy_attachment
-  To: ALIYUN::RAM::AttachPolicyToRole
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

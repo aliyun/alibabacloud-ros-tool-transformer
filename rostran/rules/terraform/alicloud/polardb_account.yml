@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_polardb_account
+  To: ALIYUN::POLARDB::Account
 Properties:
   account_description:
     To: AccountDescription
@@ -16,8 +18,6 @@ Properties:
     Ignore: true
   kms_encryption_context:
     Ignore: true
-ResourceType:
-  From: alicloud_polardb_account
-  To: ALIYUN::POLARDB::Account
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

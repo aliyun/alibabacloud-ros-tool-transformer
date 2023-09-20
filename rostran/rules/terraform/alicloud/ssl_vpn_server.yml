@@ -1,12 +1,8 @@
-Attributes:
-  connections:
-    Ignore: true
-  id:
-    To: SslVpnServerId
-  internet_ip:
-    Ignore: true
-  max_connections:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ssl_vpn_server
+  To: ALIYUN::VPC::SslVpnServer
 Properties:
   cipher:
     To: Cipher
@@ -24,8 +20,12 @@ Properties:
     To: Proto
   vpn_gateway_id:
     To: VpnGatewayId
-ResourceType:
-  From: alicloud_ssl_vpn_server
-  To: ALIYUN::VPC::SslVpnServer
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: SslVpnServerId
+  connections:
+    Ignore: true
+  internet_ip:
+    Ignore: true
+  max_connections:
+    Ignore: true

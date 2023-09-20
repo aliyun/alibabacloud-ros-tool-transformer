@@ -1,18 +1,8 @@
-Attributes:
-  deviation_cell_version_in_sec:
-    Ignore: true
-  id:
-    Ignore: true
-  instance_name:
-    Ignore: true
-  max_version:
-    Ignore: true
-  primary_key:
-    Ignore: true
-  table_name:
-    To: TableName
-  time_to_live:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ots_table
+  To: ALIYUN::OTS::Table
 Properties:
   deviation_cell_version_in_sec:
     To: DeviationCellVersionInSec
@@ -23,19 +13,29 @@ Properties:
   name:
     To: TableName
   primary_key:
+    To: PrimaryKey
+    Type: List
     Schema:
       name:
         To: Name
       type:
         To: Type
-    To: PrimaryKey
-    Type: List
   table_name:
     To: TableName
   time_to_live:
     To: TimeToLive
-ResourceType:
-  From: alicloud_ots_table
-  To: ALIYUN::OTS::Table
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true
+  deviation_cell_version_in_sec:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  max_version:
+    Ignore: true
+  primary_key:
+    Ignore: true
+  table_name:
+    To: TableName
+  time_to_live:
+    Ignore: true

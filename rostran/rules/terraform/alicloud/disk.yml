@@ -1,8 +1,8 @@
-Attributes:
-  id:
-    To: DiskId
-  status:
-    To: Status
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_disk
+  To: ALIYUN::ECS::Disk
 Properties:
   availability_zone:
     Ignore: true
@@ -30,8 +30,8 @@ Properties:
     To: SnapshotId
   tags:
     Ignore: true
-ResourceType:
-  From: alicloud_disk
-  To: ALIYUN::ECS::Disk
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DiskId
+  status:
+    To: Status

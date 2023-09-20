@@ -1,8 +1,8 @@
-Attributes:
-  id:
-    To: ZoneId
-  record_count:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pvtz_zone
+  To: ALIYUN::PVTZ::Zone
 Properties:
   lang:
     Ignore: true
@@ -16,8 +16,8 @@ Properties:
     Ignore: true
   user_client_ip:
     Ignore: true
-ResourceType:
-  From: alicloud_pvtz_zone
-  To: ALIYUN::PVTZ::Zone
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: ZoneId
+  record_count:
+    Ignore: true

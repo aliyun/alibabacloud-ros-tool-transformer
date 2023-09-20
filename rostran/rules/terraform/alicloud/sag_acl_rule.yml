@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: AcrId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sag_acl_rule
+  To: ALIYUN::SAG::ACLRule
 Properties:
   acl_id:
     To: AclId
@@ -22,8 +24,6 @@ Properties:
     To: SourceCidr
   source_port_range:
     To: SourcePortRange
-ResourceType:
-  From: alicloud_sag_acl_rule
-  To: ALIYUN::SAG::ACLRule
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: AcrId

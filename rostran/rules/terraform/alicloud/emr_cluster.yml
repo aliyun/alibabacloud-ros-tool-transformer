@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: ClusterId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_emr_cluster
+  To: ALIYUN::EMR::Cluster
 Properties:
   bootstrap_action:
     To: BootstrapAction
@@ -80,8 +82,6 @@ Properties:
     To: VSwitchId
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_emr_cluster
-  To: ALIYUN::EMR::Cluster
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: ClusterId

@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: ImageId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_image
+  To: ALIYUN::ECS::CustomImage
 Properties:
   architecture:
     To: Architecture
@@ -30,8 +32,6 @@ Properties:
     To: ResourceGroupId
   tags:
     To: Tags
-ResourceType:
-  From: alicloud_image
-  To: ALIYUN::ECS::CustomImage
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: ImageId

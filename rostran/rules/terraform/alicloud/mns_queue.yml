@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mns_queue
+  To: ALIYUN::MNS::Queue
 Properties:
   delay_seconds:
     To: DelaySeconds
@@ -14,8 +16,6 @@ Properties:
     To: PollingWaitSeconds
   visibility_timeout:
     To: VisibilityTimeout
-ResourceType:
-  From: alicloud_mns_queue
-  To: ALIYUN::MNS::Queue
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

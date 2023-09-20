@@ -1,22 +1,8 @@
-Attributes:
-  id:
-    To: ScalingGroupId
-  db_instance_ids:
-    Ignore: true
-  default_cooldown:
-    Ignore: true
-  loadbalancer_ids:
-    Ignore: true
-  max_size:
-    Ignore: true
-  min_size:
-    Ignore: true
-  removal_policies:
-    Ignore: true
-  scaling_group_name:
-    Ignore: true
-  vswitch_ids:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ess_scaling_group
+  To: ALIYUN::ESS::ScalingGroup
 Properties:
   db_instance_ids:
     To: DBInstanceIds
@@ -48,8 +34,22 @@ Properties:
     To: VSwitchId
   vswitch_ids:
     To: VSwitchIds
-ResourceType:
-  From: alicloud_ess_scaling_group
-  To: ALIYUN::ESS::ScalingGroup
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: ScalingGroupId
+  db_instance_ids:
+    Ignore: true
+  default_cooldown:
+    Ignore: true
+  loadbalancer_ids:
+    Ignore: true
+  max_size:
+    Ignore: true
+  min_size:
+    Ignore: true
+  removal_policies:
+    Ignore: true
+  scaling_group_name:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true

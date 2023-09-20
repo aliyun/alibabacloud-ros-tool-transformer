@@ -1,13 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dns_group
+  To: ALIYUN::DNS::DomainGroup
+Properties:
+  name:
+    To: GroupName
 Attributes:
   id:
     To: GroupId
   name:
     Ignore: true
-Properties:
-  name:
-    To: GroupName
-ResourceType:
-  From: alicloud_dns_group
-  To: ALIYUN::DNS::DomainGroup
-Type: Resource
-Version: '2020-06-01'

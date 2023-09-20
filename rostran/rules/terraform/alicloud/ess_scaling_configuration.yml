@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: ScalingConfigurationId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ess_scaling_configuration
+  To: ALIYUN::ESS::ScalingConfiguration
 Properties:
   active:
     Ignore: true
@@ -10,24 +12,24 @@ Properties:
     Schema:
       Size:
         To: Size
-      device:
-        To: Device
+      auto_snapshot_policy_id:
+        To: AutoSnapshotPolicyId
       category:
         To: Category
-      snapshot_id:
-        To: SnapshotId
       delete_with_instance:
         Ignore: true
+      description:
+        To: Description
+      device:
+        To: Device
       encrypted:
         To: Encrypted
       kms_key_id:
         To: KMSKeyId
       name:
         To: DiskName
-      description:
-        To: Description
-      auto_snapshot_policy_id:
-        To: AutoSnapshotPolicyId
+      snapshot_id:
+        To: SnapshotId
   enable:
     Ignore: true
   force_delete:
@@ -92,8 +94,6 @@ Properties:
     To: TagList
   user_data:
     To: UserData
-ResourceType:
-  From: alicloud_ess_scaling_configuration
-  To: ALIYUN::ESS::ScalingConfiguration
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: ScalingConfigurationId

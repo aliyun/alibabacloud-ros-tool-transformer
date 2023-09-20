@@ -1,51 +1,67 @@
-Type: Resource
 Version: '2020-06-01'
+Type: Resource
 ResourceType:
   From: alicloud_cs_managed_kubernetes
   To: ALIYUN::CS::ManagedKubernetesCluster
 Properties:
-  name:
-    To: Name
-  name_prefix:
+  addons:
+    To: Addons
+    Type: List
+    Schema:
+      config:
+        To: Config
+      disabled:
+        Ignore: true
+      name:
+        To: Name
+  api_audiences:
     Ignore: true
-  version:
-    To: KubernetesVersion
-  password:
-    To: LoginPassword
+  cpu_policy:
+    To: CpuPolicy
+  enable_ssh:
+    To: SshFlags
+  exclude_autoscaler_nodes:
+    Ignore: true
+  image_id:
+    Ignore: true
+  install_cloud_monitor:
+    To: CloudMonitorFlags
+  is_enterprise_security_group:
+    Ignore: true
   key_name:
     To: KeyPair
   kms_encrypted_password:
     Ignore: true
   kms_encryption_context:
     Ignore: true
-  user_ca:
-    Ignore: true
-  enable_ssh:
-    To: SshFlags
-  install_cloud_monitor:
-    To: CloudMonitorFlags
-  cpu_policy:
-    To: CpuPolicy
-  proxy_mode:
-    To: ProxyMode
-  image_id:
-    Ignore: true
-  user_data:
-    Ignore: true
-  exclude_autoscaler_nodes:
+  name:
+    To: Name
+  name_prefix:
     Ignore: true
   node_name_mode:
     Ignore: true
+  password:
+    To: LoginPassword
+  proxy_mode:
+    To: ProxyMode
+  security_group_id:
+    To: SecurityGroupId
+  service_account_issuer:
+    Ignore: true
+  user_ca:
+    Ignore: true
+  user_data:
+    Ignore: true
+  version:
+    To: KubernetesVersion
   worker_data_disks:
     To: WorkerDataDisks
     Type: List
     Schema:
-      size:
-        To: Size
-      category:
-        To: Category
       auto_snapshot_policy_id:
         Ignore: true
+      category:
+        To: Category
       device:
         Ignore: true
       encrypted:
@@ -54,31 +70,13 @@ Properties:
         Ignore: true
       name:
         Ignore: true
+      size:
+        To: Size
       snapshot_id:
         Ignore: true
-  security_group_id:
-    To: SecurityGroupId
-  is_enterprise_security_group:
-    Ignore: true
-  service_account_issuer:
-    Ignore: true
-  api_audiences:
-    Ignore: true
-  addons:
-    Schema:
-      config:
-        To: Config
-      disabled:
-        Ignore: true
-      name:
-        To: Name
-    To: Addons
-    Type: List
 Attributes:
   id:
     To: ClusterId
-  worker_ram_role_name:
-    To: WorkerRamRoleName
   availability_zone:
     Ignore: true
   connections:
@@ -97,3 +95,5 @@ Attributes:
     Ignore: true
   worker_nodes:
     Ignore: true
+  worker_ram_role_name:
+    To: WorkerRamRoleName

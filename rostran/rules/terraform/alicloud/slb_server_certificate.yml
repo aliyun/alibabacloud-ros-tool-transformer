@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: CertificateId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_slb_server_certificate
+  To: ALIYUN::SLB::Certificate
 Properties:
   alicloud_certificate_id:
     To: AliCloudCertificateId
@@ -18,8 +20,6 @@ Properties:
     To: Certificate
   tags:
     Ignore: true
-ResourceType:
-  From: alicloud_slb_server_certificate
-  To: ALIYUN::SLB::Certificate
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: CertificateId

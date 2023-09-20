@@ -1,10 +1,8 @@
-Attributes:
-  id:
-    To: CenId
-  protection_level:
-    Ignore: true
-  status:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_instance
+  To: ALIYUN::CEN::CenInstance
 Properties:
   description:
     To: Description
@@ -12,8 +10,10 @@ Properties:
     To: Name
   tags:
     Ignore: true
-ResourceType:
-  From: alicloud_cen_instance
-  To: ALIYUN::CEN::CenInstance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: CenId
+  protection_level:
+    Ignore: true
+  status:
+    Ignore: true

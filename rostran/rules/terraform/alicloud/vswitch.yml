@@ -6,16 +6,16 @@ ResourceType:
 Properties:
   availability_zone:
     To: ZoneId
-  vpc_id:
-    To: VpcId
   cidr_block:
     To: CidrBlock
-  name:
-    To: VSwitchName
   description:
     To: Description
+  name:
+    To: VSwitchName
   tags:
     To: Tags
+  vpc_id:
+    To: VpcId
 Attributes:
   id:
     To: VSwitchId
@@ -23,9 +23,9 @@ Attributes:
     Ignore: true
   cidr_block:
     To: CidrBlock
-  vpc_id:
+  description:
     Ignore: true
   name:
     Ignore: true
-  description:
+  vpc_id:
     Ignore: true

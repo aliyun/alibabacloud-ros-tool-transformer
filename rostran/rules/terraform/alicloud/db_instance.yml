@@ -1,16 +1,14 @@
-Attributes:
-  connection_string:
-    To: InnerConnectionString
-  id:
-    To: DBInstanceId
-  port:
-    To: InnerPort
-  ssl_status:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_db_instance
+  To: ALIYUN::RDS::DBInstance
 Properties:
   auto_renew:
     Ignore: true
   auto_renew_period:
+    Ignore: true
+  auto_upgrade_minor_version:
     Ignore: true
   db_instance_storage_type:
     To: DBInstanceStorageType
@@ -28,6 +26,8 @@ Properties:
     To: DBInstanceStorage
   instance_type:
     To: DBInstanceClass
+  maintain_time:
+    To: MaintainTime
   monitoring_period:
     Ignore: true
   parameters:
@@ -36,16 +36,8 @@ Properties:
     To: Period
   resource_group_id:
     To: ResourceGroupId
-  tde_status:
-    Ignore: true
-  ssl_action:
-    Ignore: true
-  auto_upgrade_minor_version:
-    Ignore: true
   security_group_ids:
     Ignore: true
-  maintain_time:
-    To: MaintainTime
   security_ip_mode:
     Ignore: true
   security_ips:
@@ -54,14 +46,22 @@ Properties:
     Ignore: true
   sql_collector_status:
     Ignore: true
+  ssl_action:
+    Ignore: true
   tags:
     To: Tags
+  tde_status:
+    Ignore: true
   vswitch_id:
     Ignore: true
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_db_instance
-  To: ALIYUN::RDS::DBInstance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DBInstanceId
+  connection_string:
+    To: InnerConnectionString
+  port:
+    To: InnerPort
+  ssl_status:
+    Ignore: true

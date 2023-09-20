@@ -11,8 +11,8 @@ Properties:
   AvailabilityZone:
     To: ZoneId
   BlockDeviceMappings:
-    Type: List
     To: DiskMappings
+    Type: List
     Schema:
       DeviceName:
         To: DiskName
@@ -94,8 +94,8 @@ Attributes:
   AvailabilityZone:
     To: ZoneId
   PrivateDnsName:
-    Ignore: True
-  PublicDnsName:
-    Ignore: True
+    Ignore: true
   PrivateIp:
     To: PrivateIp
+  PublicDnsName:
+    Ignore: true

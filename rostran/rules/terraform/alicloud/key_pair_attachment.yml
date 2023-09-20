@@ -1,8 +1,8 @@
-Attributes:
-  instance_ids:
-    Ignore: true
-  key_name:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_key_pair_attachment
+  To: ALIYUN::ECS::SSHKeyPairAttachment
 Properties:
   force:
     Ignore: true
@@ -10,8 +10,8 @@ Properties:
     To: InstanceIds
   key_name:
     To: KeyPairName
-ResourceType:
-  From: alicloud_key_pair_attachment
-  To: ALIYUN::ECS::SSHKeyPairAttachment
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  instance_ids:
+    Ignore: true
+  key_name:
+    Ignore: true

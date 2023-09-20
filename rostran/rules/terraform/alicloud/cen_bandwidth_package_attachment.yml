@@ -1,13 +1,13 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_bandwidth_package_attachment
+  To: ALIYUN::CEN::CenBandwidthPackageAssociation
 Properties:
   bandwidth_package_id:
     To: CenBandwidthPackageId
   instance_id:
     To: CenId
-ResourceType:
-  From: alicloud_cen_bandwidth_package_attachment
-  To: ALIYUN::CEN::CenBandwidthPackageAssociation
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

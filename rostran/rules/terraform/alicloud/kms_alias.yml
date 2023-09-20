@@ -1,13 +1,13 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_kms_alias
+  To: ALIYUN::KMS::Alias
 Properties:
   alias_name:
     To: AliasName
   key_id:
     To: KeyId
-ResourceType:
-  From: alicloud_kms_alias
-  To: ALIYUN::KMS::Alias
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

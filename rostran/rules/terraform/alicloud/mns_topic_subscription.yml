@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mns_topic_subscription
+  To: ALIYUN::MNS::Subscription
 Properties:
   endpoint:
     To: Endpoint
@@ -14,8 +16,6 @@ Properties:
     To: NotifyStrategy
   topic_name:
     To: TopicName
-ResourceType:
-  From: alicloud_mns_topic_subscription
-  To: ALIYUN::MNS::Subscription
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

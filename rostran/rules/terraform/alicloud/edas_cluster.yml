@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: ClusterId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_cluster
+  To: ALIYUN::EDAS::Cluster
 Properties:
   cluster_name:
     To: ClusterName
@@ -12,8 +14,6 @@ Properties:
     To: NetworkMode
   vpc_id:
     To: VpcId
-ResourceType:
-  From: alicloud_edas_cluster
-  To: ALIYUN::EDAS::Cluster
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: ClusterId

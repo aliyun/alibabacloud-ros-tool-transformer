@@ -1,5 +1,5 @@
-Type: Resource
 Version: '2020-06-01'
+Type: Resource
 ResourceType:
   From: alicloud_api_gateway_api
   To: ALIYUN::ApiGateway::Api
@@ -7,31 +7,31 @@ Properties:
   auth_type:
     To: AuthType
   constant_parameters:
-    Type: List
     To: ConstParameters
+    Type: List
     Schema:
-      name:
-        To: ServiceParameterName
-      in:
-        To: Location
-      value:
-        To: ConstValue
       description:
         To: Description
+      in:
+        To: Location
+      name:
+        To: ServiceParameterName
+      value:
+        To: ConstValue
   description:
     To: Description
   fc_service_config:
     To: FunctionComputeConfig
     Type: Map
     Schema:
-      region:
-        To: fcRegionId
-      function_name:
-        To: functionName
-      service_name:
-        To: serviceName
       arn_role:
         To: roleArn
+      function_name:
+        To: functionName
+      region:
+        To: fcRegionId
+      service_name:
+        To: serviceName
       timeout:
         Ignore: true
   group_id:
@@ -93,7 +93,7 @@ Properties:
       name_service:
         To: ServiceParameterName
 Attributes:
-  api_id:
-    To: ApiId
   id:
     Ignore: true
+  api_id:
+    To: ApiId

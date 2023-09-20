@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_route_table
+  To: ALIYUN::VPC::RouteTable
 Properties:
   description:
     To: Description
@@ -10,8 +12,6 @@ Properties:
     To: Tags
   vpc_id:
     To: VpcId
-ResourceType:
-  From: alicloud_route_table
-  To: ALIYUN::VPC::RouteTable
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

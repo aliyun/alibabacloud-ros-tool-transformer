@@ -1,8 +1,8 @@
-Attributes:
-  access_rule_id:
-    To: AccessRuleId
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_nas_access_rule
+  To: ALIYUN::NAS::AccessRule
 Properties:
   access_group_name:
     To: AccessGroupName
@@ -14,8 +14,8 @@ Properties:
     To: SourceCidrIp
   user_access_type:
     To: UserAccessType
-ResourceType:
-  From: alicloud_nas_access_rule
-  To: ALIYUN::NAS::AccessRule
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true
+  access_rule_id:
+    To: AccessRuleId

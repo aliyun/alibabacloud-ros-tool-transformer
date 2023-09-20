@@ -1,15 +1,18 @@
-Attributes:
-  group_type:
-    Ignore: true
-  id:
-    To: [AppId, GroupName, Id]
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_deploy_group
+  To: ALIYUN::EDAS::DeployGroup
 Properties:
   app_id:
     To: AppId
   group_name:
     To: GroupName
-ResourceType:
-  From: alicloud_edas_deploy_group
-  To: ALIYUN::EDAS::DeployGroup
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To:
+    - AppId
+    - GroupName
+    - Id
+  group_type:
+    Ignore: true

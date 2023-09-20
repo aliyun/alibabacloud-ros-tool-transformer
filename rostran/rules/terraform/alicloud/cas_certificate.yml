@@ -1,11 +1,8 @@
-Type: Resource
 Version: '2020-06-01'
+Type: Resource
 ResourceType:
   From: alicloud_cas_certificate
   To: ALIYUN::CAS::Certificate
-Attributes:
-  id:
-    To: CertId
 Properties:
   cert:
     To: Cert
@@ -13,3 +10,6 @@ Properties:
     To: Key
   name:
     To: Name
+Attributes:
+  id:
+    To: CertId

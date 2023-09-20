@@ -1,8 +1,8 @@
-Attributes:
-  domain_list:
-    Ignore: true
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cr_repo
+  To: ALIYUN::CR::Repository
 Properties:
   detail:
     To: Detail
@@ -14,8 +14,8 @@ Properties:
     To: RepoType
   summary:
     To: Summary
-ResourceType:
-  From: alicloud_cr_repo
-  To: ALIYUN::CR::Repository
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true
+  domain_list:
+    Ignore: true

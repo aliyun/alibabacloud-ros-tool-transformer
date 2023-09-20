@@ -1,16 +1,8 @@
-Attributes:
-  accessed_by:
-    Ignore: true
-  description:
-    Ignore: true
-  id:
-    To: InstanceName
-  instance_type:
-    Ignore: true
-  name:
-    To: InstanceName
-  tags:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ots_instance
+  To: ALIYUN::OTS::Instance
 Properties:
   accessed_by:
     To: Network
@@ -22,8 +14,16 @@ Properties:
     To: InstanceName
   tags:
     To: Tags
-ResourceType:
-  From: alicloud_ots_instance
-  To: ALIYUN::OTS::Instance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: InstanceName
+  accessed_by:
+    Ignore: true
+  description:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  name:
+    To: InstanceName
+  tags:
+    Ignore: true

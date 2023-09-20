@@ -1,10 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
-  create_time:
-    Ignore: true
-  last_modify_time:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_datahub_topic
+  To: ALIYUN::DATAHUB::Topic
 Properties:
   comment:
     To: Comment
@@ -20,8 +18,10 @@ Properties:
     To: RecordType
   shard_count:
     To: ShardCount
-ResourceType:
-  From: alicloud_datahub_topic
-  To: ALIYUN::DATAHUB::Topic
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  last_modify_time:
+    Ignore: true

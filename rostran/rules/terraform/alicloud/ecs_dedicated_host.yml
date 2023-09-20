@@ -1,8 +1,8 @@
-Attributes:
-  id:
-    To: DedicatedHostIds
-  status:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_dedicated_host
+  To: ALIYUN::ECS::DedicatedHost
 Properties:
   action_on_maintenance:
     To: ActionOnMaintenance
@@ -27,12 +27,12 @@ Properties:
   expired_time:
     Ignore: true
   network_attributes:
-    Ignore: true
     Schema:
       slb_udp_timeout:
         To: NetworkAttributesSlbUdpTimeout
       udp_timeout:
         To: NetworkAttributesUdpTimeout
+    Ignore: true
   payment_type:
     Ignore: true
   resource_group_id:
@@ -43,8 +43,8 @@ Properties:
     To: Tags
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_ecs_dedicated_host
-  To: ALIYUN::ECS::DedicatedHost
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DedicatedHostIds
+  status:
+    Ignore: true

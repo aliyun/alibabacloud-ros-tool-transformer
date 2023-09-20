@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: DomainExtensionId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_slb_domain_extension
+  To: ALIYUN::SLB::DomainExtension
 Properties:
   delete_protection_validation:
     Ignore: true
@@ -12,8 +14,6 @@ Properties:
     To: LoadBalancerId
   server_certificate_id:
     To: ServerCertificateId
-ResourceType:
-  From: alicloud_slb_domain_extension
-  To: ALIYUN::SLB::DomainExtension
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DomainExtensionId

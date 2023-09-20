@@ -62,10 +62,10 @@ Properties:
     To: EncryptionKey
   LicenseModel:
     Ignore: true
-  MasterUsername:
-    To: MasterUsername
   MasterUserPassword:
     To: MasterUserPassword
+  MasterUsername:
+    To: MasterUsername
   MaxAllocatedStorage:
     Ignore: true
   MonitoringInterval:

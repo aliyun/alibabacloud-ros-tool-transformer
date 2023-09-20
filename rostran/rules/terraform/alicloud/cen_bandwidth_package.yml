@@ -1,10 +1,8 @@
-Attributes:
-  expired_time:
-    Ignore: true
-  id:
-    To: CenBandwidthPackageId
-  status:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_bandwidth_package
+  To: ALIYUN::CEN::CenBandwidthPackage
 Properties:
   bandwidth:
     To: Bandwidth
@@ -18,8 +16,10 @@ Properties:
     To: Name
   period:
     To: Period
-ResourceType:
-  From: alicloud_cen_bandwidth_package
-  To: ALIYUN::CEN::CenBandwidthPackage
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: CenBandwidthPackageId
+  expired_time:
+    Ignore: true
+  status:
+    Ignore: true

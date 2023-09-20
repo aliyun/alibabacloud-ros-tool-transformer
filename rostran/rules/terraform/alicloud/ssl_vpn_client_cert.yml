@@ -1,4 +1,16 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ssl_vpn_client_cert
+  To: ALIYUN::VPC::SslVpnClientCert
+Properties:
+  name:
+    To: Name
+  ssl_vpn_server_id:
+    To: SslVpnServerId
 Attributes:
+  id:
+    To: SslVpnClientCertId
   ca_cert:
     Ignore: true
   client_cert:
@@ -7,17 +19,5 @@ Attributes:
     Ignore: true
   client_key:
     Ignore: true
-  id:
-    To: SslVpnClientCertId
   status:
     Ignore: true
-Properties:
-  name:
-    To: Name
-  ssl_vpn_server_id:
-    To: SslVpnServerId
-ResourceType:
-  From: alicloud_ssl_vpn_client_cert
-  To: ALIYUN::VPC::SslVpnClientCert
-Type: Resource
-Version: '2020-06-01'

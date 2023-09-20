@@ -8,20 +8,20 @@ Properties:
     To: AssumeRolePolicyDocument
     Type: Map
     Schema:
-      Version:
-        To: Version
       Statement:
         To: Statement
         Type: List
         Schema:
-          Effect:
-            To: Effect
-          Principal:
-            To: Principal
           Action:
             To: Action
             Handler: ecs_security_group_first_id
             Warning: Only first action can be used.
+          Effect:
+            To: Effect
+          Principal:
+            To: Principal
+      Version:
+        To: Version
   Description:
     To: Description
   ManagedPolicyArns:

@@ -30,10 +30,10 @@ Properties:
     Ignore: true
   MaxSize:
     To: MaxSize
-  MinSize:
-    To: MinSize
   MetricsCollection:
     Ignore: true
+  MinSize:
+    To: MinSize
   MixedInstancesPolicy:
     Ignore: true
   NewInstancesProtectedFromScaleIn:
@@ -58,4 +58,3 @@ Properties:
     Ignore: true
   VPCZoneIdentifier:
     To: VSwitchIds
-

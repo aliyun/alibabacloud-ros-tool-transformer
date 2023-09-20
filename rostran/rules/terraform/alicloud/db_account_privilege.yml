@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_db_account_privilege
+  To: ALIYUN::RDS::AccountPrivilege
 Properties:
   account_name:
     To: AccountName
@@ -8,8 +10,6 @@ Properties:
     To: DBInstanceId
   privilege:
     To: AccountPrivilege
-ResourceType:
-  From: alicloud_db_account_privilege
-  To: ALIYUN::RDS::AccountPrivilege
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

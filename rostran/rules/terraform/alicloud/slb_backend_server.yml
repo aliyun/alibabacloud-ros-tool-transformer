@@ -1,8 +1,12 @@
-Attributes:
-  id:
-    To: LoadBalancerId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_slb_backend_server
+  To: ALIYUN::SLB::BackendServerAttachment
 Properties:
   backend_servers:
+    To: BackendServers
+    Type: List
     Schema:
       server_id:
         To: ServerId
@@ -12,14 +16,10 @@ Properties:
         To: Type
       weight:
         To: Weight
-    To: BackendServers
-    Type: List
   delete_protection_validation:
     Ignore: true
   load_balancer_id:
     To: LoadBalancerId
-ResourceType:
-  From: alicloud_slb_backend_server
-  To: ALIYUN::SLB::BackendServerAttachment
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: LoadBalancerId

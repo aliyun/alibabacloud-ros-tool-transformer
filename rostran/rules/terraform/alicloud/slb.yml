@@ -1,8 +1,8 @@
-Attributes:
-  address:
-    To: IpAddress
-  id:
-    To: LoadBalancerId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_slb
+  To: ALIYUN::SLB::LoadBalancer
 Properties:
   address:
     Ignore: true
@@ -36,8 +36,8 @@ Properties:
     To: Tags
   vswitch_id:
     To: VSwitchId
-ResourceType:
-  From: alicloud_slb
-  To: ALIYUN::SLB::LoadBalancer
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: LoadBalancerId
+  address:
+    To: IpAddress

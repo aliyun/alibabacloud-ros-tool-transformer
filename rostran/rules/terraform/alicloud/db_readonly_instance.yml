@@ -1,12 +1,8 @@
-Attributes:
-  connection_string:
-    To: ConnectionString
-  engine:
-    Ignore: true
-  id:
-    To: DBInstanceId
-  port:
-    To: Port
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_db_readonly_instance
+  To: ALIYUN::RDS::ReadOnlyDBInstance
 Properties:
   engine_version:
     To: EngineVersion
@@ -28,8 +24,12 @@ Properties:
     To: VSwitchId
   zone_id:
     To: ZoneId
-ResourceType:
-  From: alicloud_db_readonly_instance
-  To: ALIYUN::RDS::ReadOnlyDBInstance
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: DBInstanceId
+  connection_string:
+    To: ConnectionString
+  engine:
+    Ignore: true
+  port:
+    To: Port

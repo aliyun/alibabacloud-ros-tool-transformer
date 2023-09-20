@@ -1,12 +1,8 @@
-Attributes:
-  encrypted_secret:
-    To: AccessKeySecret
-  id:
-    To: AccessKeyId
-  key_fingerprint:
-    Ignore: true
-  status:
-    To: Status
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ram_access_key
+  To: ALIYUN::RAM::AccessKey
 Properties:
   Active:
     Ignore: true
@@ -20,8 +16,12 @@ Properties:
     Ignore: true
   user_name:
     To: UserName
-ResourceType:
-  From: alicloud_ram_access_key
-  To: ALIYUN::RAM::AccessKey
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: AccessKeyId
+  encrypted_secret:
+    To: AccessKeySecret
+  key_fingerprint:
+    Ignore: true
+  status:
+    To: Status

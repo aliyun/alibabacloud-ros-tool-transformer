@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_instance_attachment
+  To: ALIYUN::CEN::CenInstanceAttachment
 Properties:
   child_instance_id:
     To: ChildInstanceId
@@ -10,8 +12,6 @@ Properties:
     To: ChildInstanceRegionId
   instance_id:
     To: CenId
-ResourceType:
-  From: alicloud_cen_instance_attachment
-  To: ALIYUN::CEN::CenInstanceAttachment
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true

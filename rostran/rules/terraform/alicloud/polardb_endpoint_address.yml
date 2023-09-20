@@ -1,12 +1,8 @@
-Attributes:
-  connection_string:
-    To: ConnectionString
-  id:
-    Ignore: true
-  ip_address:
-    To: Address
-  port:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_polardb_endpoint_address
+  To: ALIYUN::POLARDB::DBClusterEndpointAddress
 Properties:
   connection_prefix:
     To: ConnectionStringPrefix
@@ -16,8 +12,12 @@ Properties:
     To: DBEndpointId
   net_type:
     To: NetType
-ResourceType:
-  From: alicloud_polardb_endpoint_address
-  To: ALIYUN::POLARDB::DBClusterEndpointAddress
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    Ignore: true
+  connection_string:
+    To: ConnectionString
+  ip_address:
+    To: Address
+  port:
+    Ignore: true

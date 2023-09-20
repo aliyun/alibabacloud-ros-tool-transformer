@@ -1,34 +1,8 @@
-Attributes:
-  access_point_id:
-    Ignore: true
-  description:
-    Ignore: true
-  health_check_source_ip:
-    Ignore: true
-  health_check_target_ip:
-    Ignore: true
-  id:
-    To: RouterInterfaceId
-  name:
-    Ignore: true
-  opposite_access_point_id:
-    Ignore: true
-  opposite_interface_id:
-    Ignore: true
-  opposite_interface_owner_id:
-    Ignore: true
-  opposite_router_id:
-    Ignore: true
-  opposite_router_type:
-    Ignore: true
-  role:
-    Ignore: true
-  router_id:
-    Ignore: true
-  router_type:
-    Ignore: true
-  specification:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_router_interface
+  To: ALIYUN::VPC::RouterInterface
 Properties:
   access_point_id:
     To: AccessPointId
@@ -64,8 +38,34 @@ Properties:
     To: RouterType
   specification:
     To: Spec
-ResourceType:
-  From: alicloud_router_interface
-  To: ALIYUN::VPC::RouterInterface
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: RouterInterfaceId
+  access_point_id:
+    Ignore: true
+  description:
+    Ignore: true
+  health_check_source_ip:
+    Ignore: true
+  health_check_target_ip:
+    Ignore: true
+  name:
+    Ignore: true
+  opposite_access_point_id:
+    Ignore: true
+  opposite_interface_id:
+    Ignore: true
+  opposite_interface_owner_id:
+    Ignore: true
+  opposite_router_id:
+    Ignore: true
+  opposite_router_type:
+    Ignore: true
+  role:
+    Ignore: true
+  router_id:
+    Ignore: true
+  router_type:
+    Ignore: true
+  specification:
+    Ignore: true

@@ -1,6 +1,8 @@
-Attributes:
-  id:
-    To: NamespaceId
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cr_namespace
+  To: ALIYUN::CR::Namespace
 Properties:
   auto_create:
     To: AutoCreate
@@ -8,8 +10,6 @@ Properties:
     To: DefaultVisibility
   name:
     To: Namespace
-ResourceType:
-  From: alicloud_cr_namespace
-  To: ALIYUN::CR::Namespace
-Type: Resource
-Version: '2020-06-01'
+Attributes:
+  id:
+    To: NamespaceId

@@ -1,18 +1,8 @@
-Attributes:
-  acl:
-    Ignore: true
-  creation_date:
-    Ignore: true
-  extranet_endpoint:
-    To: DomainName
-  id:
-    To: Name
-  intranet_endpoint:
-    To: InternalDomainName
-  location:
-    Ignore: true
-  owner:
-    Ignore: true
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket
+  To: ALIYUN::OSS::Bucket
 Properties:
   acl:
     To: AccessControl
@@ -62,10 +52,10 @@ Properties:
     To: ServerSideEncryptionConfiguration
     Type: Map
     Schema:
-      sse_algorithm:
-        To: SSEAlgorithm
       kms_master_key_id:
         To: KMSMasterKeyID
+      sse_algorithm:
+        To: SSEAlgorithm
   storage_class:
     To: StorageClass
   tags:
@@ -76,12 +66,22 @@ Properties:
     To: WebsiteConfiguration
     Type: Map
     Schema:
-      index_document:
-        To: IndexDocument
       error_document:
         To: ErrorDocument
-ResourceType:
-  From: alicloud_oss_bucket
-  To: ALIYUN::OSS::Bucket
-Type: Resource
-Version: '2020-06-01'
+      index_document:
+        To: IndexDocument
+Attributes:
+  id:
+    To: Name
+  acl:
+    Ignore: true
+  creation_date:
+    Ignore: true
+  extranet_endpoint:
+    To: DomainName
+  intranet_endpoint:
+    To: InternalDomainName
+  location:
+    Ignore: true
+  owner:
+    Ignore: true

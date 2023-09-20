@@ -9,9 +9,9 @@ Properties:
   AppCookieStickinessPolicy:
     Ignore: true
   AvailabilityZones:
+    To: MasterZoneId
     Handler: ecs_security_group_first_id
     Warning: Only first zone id can be used.
-    To: MasterZoneId
   ConnectionDrainingPolicy:
     Ignore: true
   ConnectionSettings:
