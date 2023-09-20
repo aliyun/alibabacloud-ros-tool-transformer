@@ -10,3 +10,6 @@ beautifulsoup4
 aliyun-python-sdk-core
 aliyun-python-sdk-ros
 black
+alibabacloud_ros20190910
+requests
+pyyaml
