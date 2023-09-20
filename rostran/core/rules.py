@@ -1,14 +1,16 @@
-from rostran.core.exceptions import InvalidTemplateMetaDataItem, InvalidTemplateRules, InvalidTemplateRule
+from rostran.core.exceptions import (
+    InvalidTemplateMetaDataItem,
+    InvalidTemplateRules,
+    InvalidTemplateRule,
+)
 from rostran.core.utils import sorted_data
 
 
 class Rule:
-
     RULE_KEYS = (
-        RULE_CONDITION, ASSERTIONS,
-    ) = (
-        "RuleCondition", "Assertions"
-    )
+        RULE_CONDITION,
+        ASSERTIONS,
+    ) = ("RuleCondition", "Assertions")
     RULE_KEY_SCORES = {RULE_CONDITION: 0, ASSERTIONS: 1}
 
     def __init__(self, name, value):
@@ -53,9 +55,9 @@ class Rule:
                 )
         if self.ASSERTIONS not in self.value:
             raise InvalidTemplateRule(
-                    name=self.name,
-                    reason=f"Rule key {self.ASSERTIONS} is required.",
-                )
+                name=self.name,
+                reason=f"Rule key {self.ASSERTIONS} is required.",
+            )
 
     def as_dict(self, format=False):
         data = {self.name: self.value}
@@ -70,7 +72,6 @@ class Rule:
 
 
 class Rules(dict):
-
     @classmethod
     def initialize(cls, data: dict):
         if not isinstance(data, dict):

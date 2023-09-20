@@ -97,7 +97,9 @@ class RosTemplate:
                 reason=f"{cls.ROS_TEMPLATE_FORMAT_VERSION} can only be 2015-09-01"
             )
 
-        metadata = mappings = conditions = parameters = resources = outputs = rules = workspace = None
+        metadata = (
+            mappings
+        ) = conditions = parameters = resources = outputs = rules = workspace = None
         transform = data.get(cls.TRANSFORM)
         description = data.get(cls.DESCRIPTION)
         if cls.CONDITIONS in data:

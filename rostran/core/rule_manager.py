@@ -86,7 +86,13 @@ class Rule:
         "AssociationProperty",
     )
 
-    _PROPERTIES = (VERSION, TYPE, RESOURCE_TYPE, PROPERTIES, ATTRIBUTES,) = (
+    _PROPERTIES = (
+        VERSION,
+        TYPE,
+        RESOURCE_TYPE,
+        PROPERTIES,
+        ATTRIBUTES,
+    ) = (
         "Version",
         "Type",
         "ResourceType",
@@ -192,7 +198,6 @@ class FunctionRule(Rule):
         return cls(version, type, rule_id, function)
 
     def ignored_function(self):
-
         return [aws for aws, ros in self.function.items() if ros.get("Ignore")]
 
 

@@ -154,9 +154,7 @@ class CloudFormationTemplate(Template):
     def convert_property(
         self, aws_properties: dict, rule_properties: dict, ros_properties: dict
     ):
-
         for property_key, property_value in aws_properties.items():
-
             if rule_properties.get(property_key) is None:
                 logger.warning(f"  Missing {property_key} in rule file.")
             elif rule_properties[property_key].get("Ignore"):
@@ -274,7 +272,6 @@ class CloudFormationTemplate(Template):
                 out_outputs.add(output)
 
     def transform_pseudo_parameters(self):
-
         template = json.dumps(self.source)
         pseudo_parameters_rule: PseudoParametersRule = (
             self.rule_manager.pseudo_parameters_rule

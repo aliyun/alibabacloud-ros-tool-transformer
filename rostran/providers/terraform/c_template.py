@@ -22,7 +22,6 @@ class CompatibleTerraformTemplate(Template):
         source = {}
         if os.path.isdir(path):
             for dirpath, dirnames, filenames in os.walk(path):
-
                 for filename in filenames:
                     if filename.endswith((".tf", ".tftpl")):
                         filepath = os.path.join(dirpath, filename)
