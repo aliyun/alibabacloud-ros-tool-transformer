@@ -1,0 +1,54 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_dhcp_options_set
+  To: ALIYUN::VPC::DhcpOptionsSet
+Properties:
+  associate_vpcs:
+    Ignore: true
+  dhcp_options_set_description:
+    To: DhcpOptionsSetDescription
+  dhcp_options_set_name:
+    To: DhcpOptionsSetName
+  domain_name:
+    To: DomainName
+  domain_name_servers:
+    To: DomainNameServers
+
+  ipv6_lease_time:
+    Ignore: true
+  lease_time:
+    Ignore: true
+  owner_id:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    To: DhcpOptionsSetId
+  associate_vpcs:
+    Ignore: true
+  dhcp_options_set_description:
+    Ignore: true
+  dhcp_options_set_name:
+    Ignore: true
+  domain_name:
+    Ignore: true
+  domain_name_servers:
+    Ignore: true
+  ipv6_lease_time:
+    Ignore: true
+  lease_time:
+    Ignore: true
+  owner_id:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

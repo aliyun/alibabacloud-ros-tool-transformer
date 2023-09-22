@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_activation
+  To: ALIYUN::ECS::Activation
+Properties:
+  description:
+    To: Description
+  instance_count:
+    To: InstanceCount
+  instance_name:
+    To: InstanceName
+  ip_address_range:
+    To: IpAddressRange
+  time_to_live_in_hours:
+    To: TimeToLiveInHours
+Attributes:
+  id:
+    To: ActivationId
+  description:
+    Ignore: true
+  instance_count:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  ip_address_range:
+    Ignore: true
+  time_to_live_in_hours:
+    Ignore: true

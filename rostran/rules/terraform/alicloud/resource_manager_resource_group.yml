@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_resource_group
+  To: ALIYUN::ResourceManager::ResourceGroup
+Properties:
+  account_id:
+    Ignore: true
+  create_date:
+    Ignore: true
+  display_name:
+    To: DisplayName
+  name:
+    To: Name
+  region_statuses:
+    Ignore: true
+  resource_group_name:
+    To: Name
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: Id
+  account_id:
+    To: AccountId
+  display_name:
+    To: DisplayName
+  name:
+    To: Name
+  resource_group_name:
+    To: Name
+  status:
+    Ignore: true

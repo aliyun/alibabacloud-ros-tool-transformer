@@ -52,8 +52,6 @@ Properties:
     To: DeploymentSetId
   description:
     To: Description
-  dry_run:
-    Ignore: true
   force_delete:
     Ignore: true
   host_name:

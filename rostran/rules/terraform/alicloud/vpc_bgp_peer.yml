@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_bgp_peer
+  To: ALIYUN::VPC::BgpPeer
+Properties:
+  bfd_multi_hop:
+    Ignore: true
+  bgp_group_id:
+    To: BgpGroupId
+  enable_bfd:
+    To: EnableBfd
+  ip_version:
+    Ignore: true
+  peer_ip_address:
+    To: PeerIpAddress
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: BgpPeerId
+  bfd_multi_hop:
+    Ignore: true
+  bgp_group_id:
+    Ignore: true
+  enable_bfd:
+    Ignore: true
+  ip_version:
+    Ignore: true
+  peer_ip_address:
+    Ignore: true
+  status:
+    Ignore: true

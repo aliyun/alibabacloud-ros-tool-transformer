@@ -1,0 +1,73 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_traffic_mirror_filter
+  To: ALIYUN::VPC::TrafficMirrorFilter
+Properties:
+  egress_rules:
+    To: EgressRules
+    Type: List
+    Schema:
+      action:
+        To: Action
+      destination_cidr_block:
+        To: DestinationCidrBlock
+      destination_port_range:
+        To: DestinationPortRange
+      priority:
+        To: Priority
+      protocol:
+        To: Protocol
+      source_cidr_block:
+        To: SourceCidrBlock
+      source_port_range:
+        To: SourcePortRange
+      traffic_mirror_filter_rule_status:
+        Ignore: true
+  ingress_rules:
+    To: IngressRules
+    Type: List
+    Schema:
+      action:
+        To: Action
+      destination_cidr_block:
+        To: DestinationCidrBlock
+      destination_port_range:
+        To: DestinationPortRange
+      priority:
+        To: Priority
+      protocol:
+        To: Protocol
+      source_cidr_block:
+        To: SourceCidrBlock
+      source_port_range:
+        To: SourcePortRange
+      traffic_mirror_filter_rule_status:
+        Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  traffic_mirror_filter_description:
+    To: TrafficMirrorFilterDescription
+  traffic_mirror_filter_name:
+    To: TrafficMirrorFilterName
+Attributes:
+  id:
+    To: TrafficMirrorFilterId
+  egress_rules:
+    To: EgressRules
+  ingress_rules:
+    To: IngressRules
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  traffic_mirror_filter_description:
+    To: TrafficMirrorFilterDescription
+  traffic_mirror_filter_name:
+    To: TrafficMirrorFilterName

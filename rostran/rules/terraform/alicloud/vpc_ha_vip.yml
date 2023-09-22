@@ -1,0 +1,70 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_ha_vip
+  To: ALIYUN::VPC::HaVip
+Properties:
+  associated_eip_addresses:
+    Ignore: true
+  associated_instance_type:
+    Ignore: true
+  associated_instances:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  ha_vip_id:
+    Ignore: true
+  ha_vip_name:
+    To: Name
+  havip_name:
+    To: Name
+  ip_address:
+    To: IpAddress
+  master_instance_id:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: HaVipId
+  associated_eip_addresses:
+    Ignore: true
+  associated_instance_type:
+    Ignore: true
+  associated_instances:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  ha_vip_id:
+    To: HaVipId
+  ha_vip_name:
+    Ignore: true
+  havip_name:
+    Ignore: true
+  ip_address:
+    To: IpAddress
+  master_instance_id:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

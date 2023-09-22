@@ -38,8 +38,6 @@ Properties:
     Ignore: true
   dedicated_host_group_id:
     Ignore: true
-  dry_run:
-    Ignore: true
   effective_time:
     Ignore: true
   enable_backup_log:

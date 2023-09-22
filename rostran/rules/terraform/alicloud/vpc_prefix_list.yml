@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_prefix_list
+  To: ALIYUN::VPC::PrefixList
+Properties:
+  create_time:
+    Ignore: true
+  entrys:
+    To: Entries
+    Schema:
+      cidr: Cidr
+      description: Description
+  ip_version:
+    To: IpVersion
+  max_entries:
+    To: MaxEntries
+  prefix_list_association:
+    Ignore: true
+  prefix_list_description:
+    To: PrefixListDescription
+  prefix_list_id:
+    Ignore: true
+  prefix_list_name:
+    To: PrefixListName
+  resource_group_id:
+    To: ResourceGroupId
+  share_type:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+Attributes:
+  id:
+    To: PrefixListId
+  create_time:
+    To: CreateTime
+  entrys:
+    To: Entries
+  ip_version:
+    To: IpVersion
+  max_entries:
+    To: MaxEntries
+  prefix_list_association:
+    Ignore: true
+  prefix_list_description:
+    To: PrefixListDescription
+  prefix_list_id:
+    To: PrefixListId
+  prefix_list_name:
+    To: PrefixListName
+  resource_group_id:
+    To: ResourceGroupId
+  share_type:
+    To: ShareType
+  status:
+    Ignore: true
+  tags:
+    To: Tags

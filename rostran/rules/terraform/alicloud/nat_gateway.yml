@@ -12,8 +12,6 @@ Properties:
     To: DeletionProtection
   description:
     To: Description
-  dry_run:
-    Ignore: true
   eip_bind_mode:
     Ignore: true
   force:

@@ -1,0 +1,69 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_flow_log
+  To: ALIYUN::VPC::FlowLog
+Properties:
+  aggregation_interval:
+    Ignore: true
+  business_status:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  flow_log_id:
+    Ignore: true
+  flow_log_name:
+    To: FlowLogName
+  log_store_name:
+    To: LogStoreName
+  project_name:
+    To: ProjectName
+  resource_group_id:
+    Ignore: true
+  resource_id:
+    To: ResourceId
+  resource_type:
+    To: ResourceType
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  traffic_path:
+    Ignore: true
+  traffic_type:
+    To: TrafficType
+Attributes:
+  id:
+    To: FlowLogId
+  aggregation_interval:
+    Ignore: true
+  business_status:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  flow_log_id:
+    To: FlowLogId
+  flow_log_name:
+    To: FlowLogName
+  log_store_name:
+    To: LogStoreName
+  project_name:
+    To: ProjectName
+  resource_group_id:
+    Ignore: true
+  resource_id:
+    To: ResourceId
+  resource_type:
+    To: ResourceType
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  traffic_path:
+    Ignore: true
+  traffic_type:
+    To: TrafficType

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_network_interface_permission
+  To: ALIYUN::ECS::NetworkInterfacePermission
+Properties:
+  account_id:
+    To: AccountId
+  force:
+    Ignore: true
+  network_interface_id:
+    To: NetworkInterfaceId
+  permission:
+    To: Permission
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: NetworkInterfacePermissionId
+  account_id:
+    Ignore: true
+  network_interface_id:
+    Ignore: true
+  permission:
+    Ignore: true
+  status:
+    Ignore: true
