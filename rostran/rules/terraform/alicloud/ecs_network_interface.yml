@@ -1,0 +1,90 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_network_interface
+  To: ALIYUN::ECS::NetworkInterface
+Properties:
+  description:
+    To: Description
+  ipv6_address_count:
+    To: Ipv6AddressCount
+  ipv6_addresses:
+    To: Ipv6Addresses
+    Type: List
+  mac:
+    Ignore: true
+  name:
+    To: NetworkInterfaceName
+  network_interface_name:
+    To: NetworkInterfaceName
+  primary_ip_address:
+    To: PrimaryIpAddress
+  private_ip:
+    Ignore: true
+  private_ip_addresses:
+    To: PrivateIpAddresses
+    Type: List
+  private_ips:
+    To: PrivateIpAddresses
+  private_ips_count:
+    To: SecondaryPrivateIpAddressCount
+  queue_number:
+    To: QueueNumber
+  resource_group_id:
+    To: ResourceGroupId
+  secondary_private_ip_address_count:
+    To: SecondaryPrivateIpAddressCount
+  security_group_ids:
+    To: SecurityGroupIds
+    Type: List
+  security_groups:
+    To: SecurityGroupIds
+    Type: List
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: NetworkInterfaceId
+  description:
+    Ignore: true
+  ipv6_address_count:
+    Ignore: true
+  ipv6_addresses:
+    Ignore: true
+  mac:
+    To: MacAddress
+  name:
+    Ignore: true
+  network_interface_name:
+    Ignore: true
+  primary_ip_address:
+    Ignore: true
+  private_ip:
+    To: PrivateIpAddress
+  private_ip_addresses:
+    To: PrivateIpAddress
+  private_ips:
+    To: PrivateIpAddress
+  private_ips_count:
+    Ignore: true
+  queue_number:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  secondary_private_ip_address_count:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  security_groups:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

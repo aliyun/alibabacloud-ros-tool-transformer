@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_command
+  To: ALIYUN::ECS::Command
+Properties:
+  command_content:
+    To: CommandContent
+  description:
+    To: Description
+  enable_parameter:
+    To: EnableParameter
+  name:
+    To: Name
+  timeout:
+    To: Timeout
+  type:
+    To: Type
+  working_dir:
+    To: WorkingDir
+Attributes:
+  id:
+    To: CommandId
+  command_content:
+    Ignore: true
+  description:
+    Ignore: true
+  enable_parameter:
+    Ignore: true
+  name:
+    Ignore: true
+  timeout:
+    Ignore: true
+  type:
+    Ignore: true
+  working_dir:
+    Ignore: true

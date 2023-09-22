@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_ipv6_internet_bandwidth
+  To: ALIYUN::VPC::Ipv6InternetBandwidth
+Properties:
+  bandwidth:
+    To: Bandwidth
+  internet_charge_type:
+    To: InternetChargeType
+  ipv6_address_id:
+    To: Ipv6AddressId
+  ipv6_gateway_id:
+    To: Ipv6GatewayId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: InternetBandwidthId
+  bandwidth:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  ipv6_address_id:
+    Ignore: true
+  ipv6_gateway_id:
+    Ignore: true
+  status:
+    Ignore: true

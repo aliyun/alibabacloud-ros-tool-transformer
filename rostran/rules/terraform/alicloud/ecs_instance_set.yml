@@ -1,0 +1,189 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_instance_set
+  To: ALIYUN::ECS::InstanceGroup
+Properties:
+  amount:
+    To: MaxAmount
+  auto_release_time:
+    To: AutoReleaseTime
+  auto_renew:
+    To: AutoRenew
+  auto_renew_period:
+    To: AutoRenewPeriod
+  boot_check_os_with_assistant:
+    Ignore: true
+  data_disks:
+    To: DiskMappings
+    Type: List
+    Schema:
+      auto_snapshot_policy_id:
+        To: AutoSnapshotPolicyId
+      disk_category:
+        To: Category
+      disk_description:
+        To: Description
+      disk_name:
+        To: DiskName
+      disk_size:
+        To: Size
+      encrypted:
+        To: Encrypted
+      kms_key_id:
+        To: KMSKeyId
+      performance_level:
+        To: PerformanceLevel
+      snapshot_id:
+        To: SnapshotId
+  dedicated_host_id:
+    To: DedicatedHostId
+  deletion_protection:
+    To: DeletionProtection
+  deployment_set_id:
+    To: DeploymentSetId
+  description:
+    To: Description
+  exclude_instance_filter:
+    Ignore: true
+  host_name:
+    To: HostName
+  hpc_cluster_id:
+    To: HpcClusterId
+  image_id:
+    To: ImageId
+  instance_charge_type:
+    To: InstanceChargeType
+  instance_ids:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  internet_charge_type:
+    To: InternetChargeType
+  internet_max_bandwidth_out:
+    To: InternetMaxBandwidthOut
+  key_pair_name:
+    To: KeyPairName
+  launch_template_id:
+    To: LaunchTemplateId
+  launch_template_name:
+    To: LaunchTemplateName
+  launch_template_version:
+    To: LaunchTemplateVersion
+  network_interfaces:
+    To: EniMappings
+    Type: List
+    Schema:
+      security_group_id:
+        To: SecurityGroupId
+      vswitch_id:
+        To: VSwitchId
+      description:
+        To: Description
+      network_interface_name:
+        To: NetworkInterfaceName
+      primary_ip_address:
+        To: PrimaryIpAddress
+  password:
+    To: Password
+  password_inherit:
+    To: PasswordInherit
+  period:
+    To: Period
+  period_unit:
+    To: PeriodUnit
+  ram_role_name:
+    To: RamRoleName
+  resource_group_id:
+    To: ResourceGroupId
+  security_enhancement_strategy:
+    To: SecurityEnhancementStrategy
+  security_group_ids:
+    To: SecurityGroupIds
+    Type: List
+  spot_price_limit:
+    To: SpotPriceLimit
+  spot_strategy:
+    To: SpotStrategy
+  system_disk_auto_snapshot_policy_id:
+    To: SystemDiskAutoSnapshotPolicyId
+  system_disk_category:
+    To: SystemDiskCategory
+  system_disk_description:
+    To: SystemDiskDescription
+  system_disk_name:
+    To: SystemDiskDiskName
+  system_disk_performance_level:
+    To: SystemDiskPerformanceLevel
+  system_disk_size:
+    To: SystemDiskSize
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  unique_suffix:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    Ignore: true
+  auto_release_time:
+    Ignore: true
+  dedicated_host_id:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  deployment_set_id:
+    Ignore: true
+  description:
+    Ignore: true
+  host_name:
+    Ignore: true
+  hpc_cluster_id:
+    Ignore: true
+  image_id:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_ids:
+    To: InstanceIds
+  instance_name:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  key_pair_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  system_disk_auto_snapshot_policy_id:
+    Ignore: true
+  system_disk_category:
+    Ignore: true
+  system_disk_description:
+    Ignore: true
+  system_disk_name:
+    Ignore: true
+  system_disk_performance_level:
+    Ignore: true
+  system_disk_size:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

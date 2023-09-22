@@ -12,8 +12,6 @@ Properties:
     Ignore: true
   description:
     To: Description
-  dry_run:
-    Ignore: true
   enable_ipv6:
     To: EnableIpv6
   ipv6_cidr_block:
