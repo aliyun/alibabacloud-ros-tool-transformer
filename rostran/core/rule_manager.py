@@ -1,4 +1,7 @@
 import os
+from typing import Dict
+
+import typer
 from ruamel.yaml import YAML
 from .exceptions import (
     InvalidRuleSchema,
@@ -21,18 +24,18 @@ class RuleManager:
     def __init__(
         self,
         rule_classifier: str,
-        resource_rules=None,
-        pseudo_parameters_rule=None,
-        function_rule=None,
-        meta_data_rules=None,
-        association_property_rules=None,
+        resource_rules: Dict[str, "ResourceRule"] = None,
+        pseudo_parameters_rule: "PseudoParametersRule" = None,
+        function_rule: "FunctionRule" = None,
+        meta_data_rule: "MetaDataRule" = None,
+        association_property_rule: "AssociationPropertyRule" = None,
     ):
         self.rule_classifier = rule_classifier
         self.resource_rules = resource_rules or {}
         self.function_rule = function_rule
         self.pseudo_parameters_rule = pseudo_parameters_rule
-        self.meta_data_rule = meta_data_rules
-        self.association_property_rule = association_property_rules
+        self.meta_data_rule = meta_data_rule
+        self.association_property_rule = association_property_rule
 
     @classmethod
     def initialize(cls, rule_classifier):
@@ -76,6 +79,90 @@ class RuleManager:
                         raise RuleAlreadyExist(id=rule.rule_id, path=filepath)
                     self.association_property_rule = rule
 
+    def show(self, markdown=False, with_link=False):
+        typer.secho(f"# Rules for {self.rule_classifier}", fg=typer.colors.GREEN)
+        newline = False
+
+        def sorted_echo(d, getter, from_link_func=None, to_link_func=None):
+            if markdown:
+                typer.echo("| From |  To  |")
+                typer.echo("| ---- | ---- |")
+
+            for from_ in sorted(d):
+                to = getter(d[from_])
+                if not to:
+                    continue
+                if markdown:
+                    if with_link:
+                        if from_link_func:
+                            from_link = from_link_func(from_)
+                            if from_link:
+                                from_ = f"[{from_}]({from_link})"
+                        if to_link_func:
+                            to_link = to_link_func(to)
+                            if to_link:
+                                to = f"[{to}]({to_link})"
+                    typer.echo(f"| {from_} | {to} |")
+                else:
+                    typer.echo(f"{from_} -> {to}")
+
+        def resource_from_link_func(rt: str):
+            if self.rule_classifier == RuleClassifier.TerraformAliCloud:
+                rt = rt.replace("alicloud_", "")
+                return f"https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/{rt}"
+            elif self.rule_classifier == RuleClassifier.CloudFormation:
+                rt = rt.replace("AWS::", "").replace("::", "-").lower()
+                return f"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-{rt}"
+            else:
+                return None
+
+        def resource_to_link_func(rt: str):
+            rt = rt.replace("::", "-").lower()
+            return f"https://www.alibabacloud.com/help/resource-orchestration-service/latest/{rt}"
+
+        if self.resource_rules:
+            typer.secho("## Resources", fg=typer.colors.GREEN)
+            newline = True
+            sorted_echo(
+                self.resource_rules,
+                getter=lambda x: x.target_resource_type,
+                from_link_func=resource_from_link_func,
+                to_link_func=resource_to_link_func,
+            )
+
+        if self.pseudo_parameters_rule:
+            if newline:
+                typer.echo("")
+            typer.secho("## Pseudo Parameters", fg=typer.colors.GREEN)
+            newline = True
+            sorted_echo(
+                self.pseudo_parameters_rule.pseudo_parameters,
+                getter=lambda x: x.get("To"),
+            )
+
+        if self.function_rule:
+            if newline:
+                typer.echo("")
+            typer.secho("## Function", fg=typer.colors.GREEN)
+            newline = True
+            sorted_echo(self.function_rule.function, getter=lambda d: d.get("To"))
+
+        if self.association_property_rule:
+            if newline:
+                typer.echo("")
+            typer.secho("## Association Property", fg=typer.colors.GREEN)
+            newline = True
+            sorted_echo(
+                self.association_property_rule.association_property,
+                getter=lambda x: x.get("To"),
+            )
+
+        if self.meta_data_rule:
+            if newline:
+                typer.echo("")
+            typer.secho("## Metadata", fg=typer.colors.GREEN)
+            sorted_echo(self.meta_data_rule.meta_data, getter=lambda x: x.get("To"))
+
 
 class Rule:
     TYPES = (RESOURCE, PSEUDO_PARAMETERS, FUNCTION, META_DATA, ASSOCIATION_PROPERTY) = (
@@ -86,13 +173,7 @@ class Rule:
         "AssociationProperty",
     )
 
-    _PROPERTIES = (
-        VERSION,
-        TYPE,
-        RESOURCE_TYPE,
-        PROPERTIES,
-        ATTRIBUTES,
-    ) = (
+    _PROPERTIES = (VERSION, TYPE, RESOURCE_TYPE, PROPERTIES, ATTRIBUTES,) = (
         "Version",
         "Type",
         "ResourceType",

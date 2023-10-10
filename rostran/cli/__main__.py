@@ -20,6 +20,7 @@ from rostran.core.format import (
     convert_template_to_file_format,
     FileFormat,
 )
+from rostran.core.rule_manager import RuleManager, RuleClassifier
 from rostran.core.template import RosTemplate
 
 yaml = YAML()
@@ -155,16 +156,6 @@ def transform(
 
 
 @app.command()
-def generate(
-    resource_type: str, file_format: GeneratorFileFormat = GeneratorFileFormat.Excel
-):
-    """
-    Generate specific resource template file by given resource type.
-    """
-    typer.echo(f'Generate "{resource_type}" to ROS template (Format: {file_format})')
-
-
-@app.command()
 def format(
     path: List[Path] = typer.Argument(
         ...,
@@ -269,6 +260,40 @@ def _format_directory(
             if r:
                 formatted_paths.append(r)
     return formatted_paths
+
+
+@app.command()
+def rules(
+    terraform: bool = typer.Option(
+        True,
+        help="Whether to show Terraform transform rules.",
+    ),
+    cloudformation: bool = typer.Option(
+        True,
+        help="Whether to show AWS CloudFormation transform rules.",
+    ),
+    markdown: bool = typer.Option(
+        False,
+        help="Whether to show rules in markdown format.",
+    ),
+    with_link: bool = typer.Option(
+        False,
+        help="Whether to include links when showing rules in markdown format.",
+    ),
+):
+    """
+    Show transform rules of Terraform and CloudFormation.
+    """
+    newline = False
+    if terraform:
+        rule_manager = RuleManager.initialize(RuleClassifier.TerraformAliCloud)
+        rule_manager.show(markdown, with_link)
+        newline = True
+    if cloudformation:
+        if newline:
+            typer.echo("")
+        rule_manager = RuleManager.initialize(RuleClassifier.CloudFormation)
+        rule_manager.show(markdown, with_link)
 
 
 def main():

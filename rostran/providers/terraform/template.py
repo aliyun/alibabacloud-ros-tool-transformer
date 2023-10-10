@@ -24,10 +24,7 @@ from rostran.core.outputs import Outputs, Output
 
 
 class TerraformTemplate(Template):
-    PROVIDERS = (
-        ALICLOUD,
-        AWS,
-    ) = (
+    PROVIDERS = (ALICLOUD, AWS,) = (
         "alicloud",
         "aws",
     )
@@ -144,11 +141,7 @@ class TerraformTemplate(Template):
         "End",
     )
 
-    RESOURCE_PROP_PROPERTIES = (
-        PROP_TYPE,
-        PROP_VALUE,
-        PROP_ARGS,
-    ) = (
+    RESOURCE_PROP_PROPERTIES = (PROP_TYPE, PROP_VALUE, PROP_ARGS,) = (
         ".Type",
         ".Value",
         ".Args",
