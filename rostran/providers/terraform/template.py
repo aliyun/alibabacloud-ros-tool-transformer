@@ -1,5 +1,4 @@
 import os
-import shutil
 from uuid import uuid4
 import importlib
 from typing import Any
@@ -10,7 +9,6 @@ from libterraform.exceptions import TerraformCommandError
 from rostran.core.exceptions import (
     RosTranWarning,
     TemplateFormatNotSupport,
-    CommandNotFound,
     RunCommandFailed,
     TerraformPlanFormatVersionNotSupported,
     TerraformMultiProvidersNotSupported,
@@ -447,6 +445,12 @@ class TerraformTemplate(Template):
                         resource_type, each, prop_schema
                     )
                     final_value.append(val)
+            elif prop_type == "Map" and prop_schema:
+                if isinstance(transformed_value, list):
+                    transformed_value = transformed_value[0]
+                final_value = self._transform_resource_props(
+                    resource_type, transformed_value, prop_schema
+                )
             else:
                 final_value = transformed_value
 
