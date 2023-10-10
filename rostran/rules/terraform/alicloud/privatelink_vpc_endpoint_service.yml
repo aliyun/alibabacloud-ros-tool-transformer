@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_privatelink_vpc_endpoint_service
+  To: ALIYUN::PrivateLink::VpcEndpointService
+Properties:
+  auto_accept_connection:
+    To: AutoAcceptEnabled
+  connect_bandwidth:
+    To: ConnectBandwidth
+  dry_run:
+    Ignore: true
+  payer:
+    To: Payer
+  service_business_status:
+    Ignore: true
+  service_description:
+    To: ServiceDescription
+  service_domain:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: ServiceId
+  auto_accept_connection:
+    Ignore: true
+  connect_bandwidth:
+    Ignore: true
+  service_business_status:
+    Ignore: true
+  service_description:
+    To: ServiceDescription
+  service_domain:
+    To: ServiceDomain
+  status:
+    Ignore: true

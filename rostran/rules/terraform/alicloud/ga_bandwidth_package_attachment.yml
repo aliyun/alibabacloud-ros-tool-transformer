@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_bandwidth_package_attachment
+  To: ALIYUN::GA::BandwidthPackageAcceleratorAddition
+Properties:
+  accelerator_id:
+    To: AcceleratorId
+  accelerators:
+    Ignore: true
+  bandwidth_package_id:
+    To: BandwidthPackageId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  accelerator_id:
+    To: AcceleratorId
+  accelerators:
+    Ignore: true
+  bandwidth_package_id:
+    To: BandwidthPackageId
+  status:
+    Ignore: true

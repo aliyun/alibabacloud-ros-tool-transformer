@@ -1,0 +1,96 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alikafka_instance
+  To: ALIYUN::KAFKA::Instance
+Properties:
+  config:
+    Ignore: true
+  deploy_type:
+    To: DeployType
+  disk_size:
+    To: DiskSize
+  disk_type:
+    To: DiskType
+  eip_max:
+    To: EipMax
+  end_point:
+    Ignore: true
+  io_max:
+    To: IoMax
+  io_max_spec:
+    To: IoMaxSpec
+  kms_key_id:
+    Ignore: true
+  name:
+    Ignore: true
+  paid_type:
+    Ignore: true
+  partition_num:
+    To: PartitionNum
+  security_group:
+    Ignore: true
+  selected_zones:
+    Ignore: true
+  service_version:
+    Ignore: true
+  spec_type:
+    To: SpecType
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  topic_quota:
+    To: TopicQuota
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  config:
+    Ignore: true
+  deploy_type:
+    Ignore: true
+  disk_size:
+    Ignore: true
+  disk_type:
+    Ignore: true
+  eip_max:
+    Ignore: true
+  end_point:
+    Ignore: true
+  io_max:
+    Ignore: true
+  io_max_spec:
+    Ignore: true
+  kms_key_id:
+    Ignore: true
+  name:
+    To: Name
+  paid_type:
+    Ignore: true
+  partition_num:
+    Ignore: true
+  security_group:
+    Ignore: true
+  service_version:
+    Ignore: true
+  spec_type:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  topic_quota:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

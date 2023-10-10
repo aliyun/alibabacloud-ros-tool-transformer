@@ -23,7 +23,7 @@ Properties:
   name:
     To: Name
   payment_type:
-    Ignore: true
+    To: BandwidthPackageChargeType
   period:
     To: Period
   status:

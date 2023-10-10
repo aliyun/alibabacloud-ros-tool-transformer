@@ -1,0 +1,52 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_site_monitor
+  To: ALIYUN::CMS::SiteMonitor
+Properties:
+  address:
+    To: Address
+  alert_ids:
+    To: AlertIds
+    Type: List
+  create_time:
+    Ignore: true
+  interval:
+    To: Interval
+  isp_cities:
+    To: IspCities
+    Type: List
+    Schema:
+      city:
+        To: City
+      isp:
+        To: Isp
+  options_json:
+    To: OptionsJson
+  task_name:
+    To: TaskName
+  task_state:
+    Ignore: true
+  task_type:
+    To: TaskType
+  update_time:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  address:
+    Ignore: true
+  create_time:
+    Ignore: true
+  interval:
+    Ignore: true
+  options_json:
+    Ignore: true
+  task_name:
+    Ignore: true
+  task_state:
+    Ignore: true
+  task_type:
+    Ignore: true
+  update_time:
+    Ignore: true

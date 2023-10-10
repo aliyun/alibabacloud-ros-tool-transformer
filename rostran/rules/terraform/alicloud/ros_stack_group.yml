@@ -1,0 +1,48 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ros_stack_group
+  To: ALIYUN::ROS::StackGroup
+Properties:
+  account_ids:
+    Ignore: true
+  administration_role_name:
+    To: AdministrationRoleName
+  description:
+    To: Description
+  execution_role_name:
+    To: ExecutionRoleName
+  operation_description:
+    Ignore: true
+  operation_preferences:
+    Ignore: true
+  # todo: Need to support list to map
+  parameters:
+    Ignore: true
+  region_ids:
+    Ignore: true
+  stack_group_name:
+    To: StackGroupName
+  template_body:
+    To: TemplateBody
+  template_url:
+    To: TemplateURL
+  template_version:
+    To: TemplateVersion
+Attributes:
+  id:
+    Ignore: true
+  administration_role_name:
+    Ignore: true
+  description:
+    Ignore: true
+  execution_role_name:
+    Ignore: true
+  stack_group_id:
+    To: StackGroupId
+  stack_group_name:
+    Ignore: true
+  status:
+    Ignore: true
+  template_body:
+    Ignore: true

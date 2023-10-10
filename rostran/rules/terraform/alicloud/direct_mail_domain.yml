@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_direct_mail_domain
+  To: ALIYUN::DirectMail::Domain
+Properties:
+  domain_name:
+    To: DomainName
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: DomainId
+  domain_name:
+    To: DomainName
+  status:
+    Ignore: true

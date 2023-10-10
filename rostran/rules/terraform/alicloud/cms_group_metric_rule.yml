@@ -1,0 +1,77 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_group_metric_rule
+  To: ALIYUN::CMS::GroupMetricRule
+Properties:
+  category:
+    To: Category
+  contact_groups:
+    Ignore: true
+  dimensions:
+    To: Dimensions
+  effective_interval:
+    To: EffectiveInterval
+  email_subject:
+    To: EmailSubject
+  escalations:
+    Ignore: true
+  group_id:
+    To: GroupId
+  group_metric_rule_name:
+    Ignore: true
+  interval:
+    Ignore: true
+  metric_name:
+    To: MetricName
+  namespace:
+    To: Namespace
+  no_effective_interval:
+    To: NoEffectiveInterval
+  period:
+    To: Period
+  rule_id:
+    To: RuleId
+  silence_time:
+    To: SilenceTime
+  status:
+    Ignore: true
+  targets:
+    Ignore: true
+  webhook:
+    To: Webhook
+Attributes:
+  id:
+    To: RuleId
+  contact_groups:
+    Ignore: true
+  dimensions:
+    Ignore: true
+  effective_interval:
+    Ignore: true
+  email_subject:
+    Ignore: true
+  escalations:
+    Ignore: true
+  group_id:
+    Ignore: true
+  group_metric_rule_name:
+    Ignore: true
+  metric_name:
+    Ignore: true
+  namespace:
+    Ignore: true
+  no_effective_interval:
+    Ignore: true
+  period:
+    Ignore: true
+  rule_id:
+    To: RuleId
+  silence_time:
+    Ignore: true
+  status:
+    Ignore: true
+  targets:
+    Ignore: true
+  webhook:
+    Ignore: true

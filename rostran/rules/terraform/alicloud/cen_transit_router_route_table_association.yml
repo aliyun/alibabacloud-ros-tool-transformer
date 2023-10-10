@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_transit_router_route_table_association
+  To: ALIYUN::CEN::TransitRouterRouteTableAssociation
+Properties:
+  dry_run:
+    Ignore: true
+  status:
+    Ignore: true
+  transit_router_attachment_id:
+    To: TransitRouterAttachmentId
+  transit_router_route_table_id:
+    To: TransitRouterRouteTableId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true
+  transit_router_attachment_id:
+    To: TransitRouterAttachmentId
+  transit_router_route_table_id:
+    To: TransitRouterRouteTableId

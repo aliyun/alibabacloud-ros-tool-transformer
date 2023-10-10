@@ -88,7 +88,8 @@ Properties:
   master_period_unit:
     Ignore: true
   master_vswitch_ids:
-    Ignore: true
+    To: MasterVSwitchIds
+    Type: List
   name:
     To: Name
   name_prefix:
@@ -216,7 +217,8 @@ Properties:
   worker_ram_role_name:
     Ignore: true
   worker_vswitch_ids:
-    Ignore: true
+    To: WorkerVSwitchIds
+    Type: List
 Attributes:
   id:
     To: ClusterId

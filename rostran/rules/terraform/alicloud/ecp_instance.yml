@@ -1,0 +1,64 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecp_instance
+  To: ALIYUN::CloudPhone::InstanceGroup
+Properties:
+  auto_pay:
+    To: AutoPay
+  auto_renew:
+    To: AutoRenew
+  description:
+    To: Description
+  eip_bandwidth:
+    To: EipBandwidth
+  force:
+    Ignore: true
+  image_id:
+    To: ImageId
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  key_pair_name:
+    To: KeyPairName
+  payment_type:
+    To: ChargeType
+  period:
+    To: Period
+  period_unit:
+    To: PeriodUnit
+  resolution:
+    To: Resolution
+  security_group_id:
+    To: SecurityGroupId
+  status:
+    Ignore: true
+  vnc_password:
+    To: VncPassword
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  # todo: Need to support single-valued attribute mapping to multi-valued attribute
+  id:
+    Ignore: true
+  description:
+    Ignore: true
+  image_id:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  key_pair_name:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  resolution:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

@@ -201,7 +201,8 @@ Properties:
   worker_ram_role_name:
     Ignore: true
   worker_vswitch_ids:
-    Ignore: true
+    To: WorkerVSwitchIds
+    Type: List
 Attributes:
   id:
     To: ClusterId

@@ -6,11 +6,17 @@ ResourceType:
 Properties:
   host_record:
     To: RR
+  locked:
+    Ignore: true
   name:
     To: DomainName
   priority:
     To: Priority
   routing:
+    Ignore: true
+  status:
+    Ignore: true
+  ttl:
     Ignore: true
   type:
     To: Type
@@ -19,9 +25,9 @@ Properties:
 Attributes:
   id:
     To: RecordId
-  Locked:
-    Ignore: true
   host_record:
+    Ignore: true
+  locked:
     Ignore: true
   name:
     Ignore: true

@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_flowlog
+  To: ALIYUN::VPC::FlowLog
+Properties:
+  cen_id:
+    Ignore: true
+  description:
+    To: Description
+  flow_log_name:
+    To: FlowLogName
+  log_store_name:
+    To: LogStoreName
+  project_name:
+    To: ProjectName
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: FlowLogId
+  cen_id:
+    Ignore: true
+  description:
+    To: Description
+  flow_log_name:
+    To: FlowLogName
+  log_store_name:
+    To: LogStoreName
+  project_name:
+    To: ProjectName
+  status:
+    Ignore: true

@@ -1,0 +1,38 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ros_stack_instance
+  To: ALIYUN::ROS::StackInstances
+Properties:
+  # todo: Need to support single-valued attribute mapping to multi-valued attribute
+  operation_description:
+    To: OperationDescription
+  operation_preferences:
+    Ignore: true
+  parameter_overrides:
+    Ignore: true
+  retain_stacks:
+    To: RetainStacks
+  stack_group_name:
+    To: StackGroupName
+  stack_instance_account_id:
+    Ignore: true
+  stack_instance_region_id:
+    Ignore: true
+  status:
+    Ignore: true
+  timeout_in_minutes:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  parameter_overrides:
+    Ignore: true
+  stack_group_name:
+    Ignore: true
+  stack_instance_account_id:
+    Ignore: true
+  stack_instance_region_id:
+    Ignore: true
+  status:
+    Ignore: true

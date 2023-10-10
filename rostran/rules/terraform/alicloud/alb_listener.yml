@@ -1,0 +1,93 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_listener
+  To: ALIYUN::ALB::Listener
+Properties:
+  access_log_record_customized_headers_enabled:
+    Ignore: true
+  access_log_tracing_config:
+    Ignore: true
+  acl_config:
+    Ignore: true
+  certificates:
+    To: Certificates
+    Type: List
+    Schema:
+      certificate_id:
+        To: CertificateId
+  default_actions:
+    To: DefaultActions
+    Type: List
+    Schema:
+      forward_group_config:
+        Ignore: true
+      type:
+        To: Type
+  dry_run:
+    Ignore: true
+  gzip_enabled:
+    To: GzipEnabled
+  http2_enabled:
+    To: Http2Enabled
+  idle_timeout:
+    To: IdleTimeout
+  listener_description:
+    To: ListenerDescription
+  listener_port:
+    To: ListenerPort
+  listener_protocol:
+    To: ListenerProtocol
+  load_balancer_id:
+    To: LoadBalancerId
+  quic_config:
+    Ignore: true
+  request_timeout:
+    To: RequestTimeout
+  security_policy_id:
+    To: SecurityPolicyId
+  status:
+    Ignore: true
+  x_forwarded_for_config:
+    Ignore: true
+  xforwarded_for_config:
+    Ignore: true
+Attributes:
+  id:
+    To: ListenerId
+  access_log_record_customized_headers_enabled:
+    Ignore: true
+  access_log_tracing_config:
+    Ignore: true
+  acl_config:
+    Ignore: true
+  certificates:
+    Ignore: true
+  default_actions:
+    Ignore: true
+  gzip_enabled:
+    Ignore: true
+  http2_enabled:
+    Ignore: true
+  idle_timeout:
+    Ignore: true
+  listener_description:
+    Ignore: true
+  listener_port:
+    Ignore: true
+  listener_protocol:
+    Ignore: true
+  load_balancer_id:
+    Ignore: true
+  quic_config:
+    Ignore: true
+  request_timeout:
+    Ignore: true
+  security_policy_id:
+    Ignore: true
+  status:
+    Ignore: true
+  x_forwarded_for_config:
+    Ignore: true
+  xforwarded_for_config:
+    Ignore: true

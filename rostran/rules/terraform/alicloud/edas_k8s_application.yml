@@ -1,0 +1,113 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_k8s_application
+  To: ALIYUN::EDAS::K8sApplication
+Properties:
+  application_descriotion:
+    Ignore: true
+  application_name:
+    Ignore: true
+  cluster_id:
+    To: ClusterId
+  command:
+    To: Command
+  command_args:
+    Ignore: true
+  edas_container_version:
+    To: EdasContainerVersion
+  envs:
+    Ignore: true
+  image_url:
+    To: ImageUrl
+  internet_slb_id:
+    To: InternetSlbId
+  internet_slb_port:
+    To: InternetSlbPort
+  internet_slb_protocol:
+    To: InternetSlbProtocol
+  internet_target_port:
+    To: InternetTargetPort
+  jdk:
+    Ignore: true
+  limit_m_cpu:
+    Ignore: true
+  limit_mem:
+    To: LimitMem
+  liveness:
+    Ignore: true
+  local_volume:
+    Ignore: true
+  logical_region_id:
+    To: LogicalRegionId
+  mount_descs:
+    Ignore: true
+  namespace:
+    To: Namespace
+  nas_id:
+    To: NasId
+  package_type:
+    To: PackageType
+  package_url:
+    To: PackageUrl
+  package_version:
+    To: PackageVersion
+  post_start:
+    Ignore: true
+  pre_stop:
+    Ignore: true
+  readiness:
+    Ignore: true
+  replicas:
+    To: Replicas
+  requests_m_cpu:
+    Ignore: true
+  requests_mem:
+    To: RequestsMem
+  web_container:
+    To: WebContainer
+Attributes:
+  id:
+    To: AppId
+  application_descriotion:
+    Ignore: true
+  application_name:
+    To: AppName
+  cluster_id:
+    To: ClusterId
+  command:
+    Ignore: true
+  command_args:
+    Ignore: true
+  edas_container_version:
+    Ignore: true
+  envs:
+    Ignore: true
+  image_url:
+    Ignore: true
+  jdk:
+    Ignore: true
+  limit_mem:
+    Ignore: true
+  liveness:
+    Ignore: true
+  namespace:
+    Ignore: true
+  package_type:
+    Ignore: true
+  package_url:
+    Ignore: true
+  package_version:
+    Ignore: true
+  post_start:
+    Ignore: true
+  pre_stop:
+    Ignore: true
+  readiness:
+    Ignore: true
+  replicas:
+    Ignore: true
+  requests_m_cpu:
+    Ignore: true
+  requests_mem:
+    Ignore: true

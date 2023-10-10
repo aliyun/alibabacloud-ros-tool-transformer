@@ -1,0 +1,85 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_endpoint_group
+  To: ALIYUN::GA::EndpointGroup
+Properties:
+  accelerator_id:
+    To: AcceleratorId
+  description:
+    To: Description
+  endpoint_configurations:
+    To: EndpointConfigurations
+    Type: List
+    Schema:
+      enable_clientip_preservation:
+        Ignore: true
+      enable_proxy_protocol:
+        To: EnableProxyProtocol
+      endpoint:
+        To: Endpoint
+      type:
+        To: Type
+      weight:
+        To: Weight
+  endpoint_group_region:
+    To: EndpointGroupRegion
+  endpoint_group_type:
+    To: EndpointGroupType
+  endpoint_request_protocol:
+    To: EndpointRequestProtocol
+  health_check_interval_seconds:
+    To: HealthCheckIntervalSeconds
+  health_check_path:
+    To: HealthCheckPath
+  health_check_port:
+    To: HealthCheckPort
+  health_check_protocol:
+    To: HealthCheckProtocol
+  listener_id:
+    To: ListenerId
+  name:
+    To: Name
+  port_overrides:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  threshold_count:
+    To: ThresholdCount
+  traffic_percentage:
+    To: TrafficPercentage
+Attributes:
+  id:
+    To: EndpointGroupId
+  accelerator_id:
+    Ignore: true
+  description:
+    Ignore: true
+  endpoint_group_region:
+    Ignore: true
+  endpoint_group_type:
+    Ignore: true
+  endpoint_request_protocol:
+    Ignore: true
+  health_check_interval_seconds:
+    Ignore: true
+  health_check_path:
+    Ignore: true
+  health_check_port:
+    Ignore: true
+  health_check_protocol:
+    Ignore: true
+  listener_id:
+    Ignore: true
+  name:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  threshold_count:
+    Ignore: true
+  traffic_percentage:
+    Ignore: true

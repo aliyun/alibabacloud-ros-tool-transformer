@@ -1,0 +1,136 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_instance
+  To: ALIYUN::GPDB::DBInstance
+Properties:
+  availability_zone:
+    To: ZoneId
+  connection_string:
+    Ignore: true
+  create_sample_data:
+    To: CreateSampleData
+  db_instance_category:
+    To: DBInstanceCategory
+  db_instance_class:
+    To: DBInstanceClass
+  db_instance_mode:
+    To: DBInstanceMode
+  description:
+    To: DBInstanceDescription
+  encryption_key:
+    To: EncryptionKey
+  encryption_type:
+    To: EncryptionType
+  engine:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  instance_charge_type:
+    To: PayType
+  instance_group_count:
+    To: DBInstanceGroupCount
+  instance_network_type:
+    Ignore: true
+  instance_spec:
+    To: InstanceSpec
+  ip_whitelist:
+    Ignore: true
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
+  master_node_num:
+    To: MasterNodeNum
+  payment_type:
+    To: PayType
+  period:
+    To: Period
+  port:
+    Ignore: true
+  private_ip_address:
+    To: PrivateIpAddress
+  resource_group_id:
+    Ignore: true
+  security_ip_list:
+    Ignore: true
+  seg_node_num:
+    To: SegNodeNum
+  seg_storage_type:
+    To: SegStorageType
+  ssl_enabled:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_size:
+    To: StorageSize
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  used_time:
+    Ignore: true
+  vector_configuration_status:
+    To: VectorConfigurationStatus
+  vpc_id:
+    To: VPCId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBInstanceId
+  availability_zone:
+    Ignore: true
+  connection_string:
+    To: ConnectionString
+  db_instance_category:
+    Ignore: true
+  db_instance_mode:
+    Ignore: true
+  description:
+    Ignore: true
+  encryption_key:
+    Ignore: true
+  encryption_type:
+    Ignore: true
+  engine:
+    Ignore: true
+  engine_version:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_network_type:
+    Ignore: true
+  ip_whitelist:
+    Ignore: true
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
+  master_node_num:
+    Ignore: true
+  node_num:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  port:
+    To: Port
+  seg_node_num:
+    Ignore: true
+  ssl_enabled:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_size:
+    Ignore: true
+  tags:
+    Ignore: true
+  vector_configuration_status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

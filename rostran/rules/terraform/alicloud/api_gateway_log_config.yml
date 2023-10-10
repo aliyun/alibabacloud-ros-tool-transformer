@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_api_gateway_log_config
+  To: ALIYUN::ApiGateway::LogConfig
+Properties:
+  log_type:
+    Ignore: true
+  sls_log_store:
+    To: SlsLogStore
+  sls_project:
+    To: SlsProject
+Attributes:
+  id:
+    Ignore: true
+  log_type:
+    Ignore: true
+  sls_log_store:
+    To: SlsLogStore
+  sls_project:
+    To: SlsProject

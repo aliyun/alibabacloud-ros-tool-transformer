@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_peer_connection
+  To: ALIYUN::VPC::VpcPeerConnection
+Properties:
+  accepting_ali_uid:
+    To: AcceptingAliUid
+  accepting_region_id:
+    To: AcceptingRegionId
+  accepting_vpc_id:
+    To: AcceptingVpcId
+  bandwidth:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  dry_run:
+    Ignore: true
+  peer_connection_name:
+    To: Name
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    To: InstanceId
+  accepting_ali_uid:
+    Ignore: true
+  accepting_region_id:
+    Ignore: true
+  accepting_vpc_id:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  peer_connection_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    Ignore: true

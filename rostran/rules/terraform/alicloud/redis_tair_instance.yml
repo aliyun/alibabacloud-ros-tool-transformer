@@ -1,0 +1,77 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_redis_tair_instance
+  To: ALIYUN::REDIS::Instance
+Properties:
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  create_time:
+    Ignore: true
+  effective_time:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  force_upgrade:
+    Ignore: true
+  instance_class:
+    To: InstanceClass
+  instance_type:
+    Ignore: true
+  password:
+    To: Password
+  payment_type:
+    To: ChargeType
+  period:
+    To: Period
+  port:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  secondary_zone_id:
+    To: SecondaryZoneId
+  shard_count:
+    To: ShardCount
+  status:
+    Ignore: true
+  tair_instance_name:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: InstanceId
+  create_time:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  instance_class:
+    To: InstanceClass
+  instance_type:
+    To: InstanceType
+  payment_type:
+    Ignore: true
+  port:
+    To: Port
+  resource_group_id:
+    To: ResourceGroupId
+  secondary_zone_id:
+    Ignore: true
+  shard_count:
+    Ignore: true
+  status:
+    Ignore: true
+  tair_instance_name:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId

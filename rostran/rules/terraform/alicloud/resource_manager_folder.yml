@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_folder
+  To: ALIYUN::ResourceManager::Folder
+Properties:
+  folder_name:
+    To: FolderName
+  parent_folder_id:
+    To: ParentFolderId
+Attributes:
+  id:
+    To: FolderId
+  folder_name:
+    To: FolderName
+  parent_folder_id:
+    To: ParentFolderId

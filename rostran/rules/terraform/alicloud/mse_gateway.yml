@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mse_gateway
+  To: ALIYUN::MSE::Gateway
+Properties:
+  backup_vswitch_id:
+    Ignore: true
+  delete_slb:
+    Ignore: true
+  enterprise_security_group:
+    Ignore: true
+  gateway_name:
+    Ignore: true
+  internet_slb_spec:
+    To: InternetSlbSpec
+  replica:
+    To: Replica
+  slb_list:
+    Ignore: true
+  slb_spec:
+    To: SlbSpec
+  spec:
+    To: Spec
+  status:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: GatewayUniqueId
+  backup_vswitch_id:
+    Ignore: true
+  gateway_name:
+    Ignore: true
+  replica:
+    To: Replica
+  slb_list:
+    Ignore: true
+  spec:
+    To: Spec
+  status:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId

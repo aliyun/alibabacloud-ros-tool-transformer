@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_monitor_group_instances
+  To: ALIYUN::CMS::MonitorGroupInstances
+Properties:
+  group_id:
+    To: GroupId
+  instances:
+    To: Instances
+    Type: List
+    Schema:
+      category:
+        To: Category
+      instance_id:
+        To: InstanceId
+      instance_name:
+        To: InstanceName
+      region_id:
+        To: RegionId
+Attributes:
+  id:
+    To: GroupId
+  group_id:
+    To: GroupId

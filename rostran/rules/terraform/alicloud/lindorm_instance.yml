@@ -1,0 +1,211 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_lindorm_instance
+  To: ALIYUN::Lindorm::Instance
+Properties:
+  arbiter_vswitch_id:
+    Ignore: true
+  arbiter_zone_id:
+    Ignore: true
+  arch_version:
+    Ignore: true
+  cold_storage:
+    To: ColdStorage
+  core_num:
+    Ignore: true
+  core_single_storage:
+    Ignore: true
+  core_spec:
+    To: CoreSpec
+  deletion_proection:
+    Ignore: true
+  disk_category:
+    To: DiskCategory
+  duration:
+    To: Period
+  enabled_file_engine:
+    Ignore: true
+  enabled_lts_engine:
+    Ignore: true
+  enabled_search_engine:
+    Ignore: true
+  enabled_stream_engine:
+    Ignore: true
+  enabled_table_engine:
+    Ignore: true
+  enabled_time_serires_engine:
+    Ignore: true
+  file_engine_node_count:
+    To: FilestoreNum
+  file_engine_specification:
+    To: FilestoreSpec
+  group_name:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_storage:
+    Ignore: true
+  ip_white_list:
+    Ignore: true
+  log_disk_category:
+    Ignore: true
+  log_num:
+    Ignore: true
+  log_single_storage:
+    Ignore: true
+  log_spec:
+    Ignore: true
+  lts_node_count:
+    Ignore: true
+  lts_node_specification:
+    Ignore: true
+  multi_zone_combination:
+    Ignore: true
+  payment_type:
+    To: InstanceChargeType
+  phoenix_node_count:
+    Ignore: true
+  phoenix_node_specification:
+    Ignore: true
+  pricing_cycle:
+    To: PeriodUnit
+  primary_vswitch_id:
+    Ignore: true
+  primary_zone_id:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  search_engine_node_count:
+    To: SolrNum
+  search_engine_specification:
+    To: SolrSpec
+  service_type:
+    Ignore: true
+  standby_vswitch_id:
+    Ignore: true
+  standby_zone_id:
+    Ignore: true
+  status:
+    Ignore: true
+  stream_engine_node_count:
+    To: StreamNum
+  stream_engine_specification:
+    To: StreamSpec
+  table_engine_node_count:
+    Ignore: true
+  table_engine_specification:
+    Ignore: true
+  tags:
+    Ignore: true
+  time_series_engine_node_count:
+    Ignore: true
+  time_series_engine_specification:
+    Ignore: true
+  time_serires_engine_specification:
+    Ignore: true
+  upgrade_type:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: InstanceId
+  arbiter_vswitch_id:
+    Ignore: true
+  arbiter_zone_id:
+    Ignore: true
+  arch_version:
+    Ignore: true
+  cold_storage:
+    Ignore: true
+  core_single_storage:
+    Ignore: true
+  core_spec:
+    Ignore: true
+  deletion_proection:
+    Ignore: true
+  disk_category:
+    Ignore: true
+  enabled_file_engine:
+    Ignore: true
+  enabled_lts_engine:
+    Ignore: true
+  enabled_search_engine:
+    Ignore: true
+  enabled_stream_engine:
+    Ignore: true
+  enabled_table_engine:
+    Ignore: true
+  enabled_time_serires_engine:
+    Ignore: true
+  file_engine_node_count:
+    Ignore: true
+  file_engine_specification:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_storage:
+    To: InstanceStorage
+  ip_white_list:
+    Ignore: true
+  log_disk_category:
+    Ignore: true
+  log_num:
+    Ignore: true
+  log_single_storage:
+    Ignore: true
+  log_spec:
+    Ignore: true
+  lts_node_count:
+    Ignore: true
+  lts_node_specification:
+    Ignore: true
+  multi_zone_combination:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  primary_vswitch_id:
+    Ignore: true
+  primary_zone_id:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  search_engine_node_count:
+    Ignore: true
+  search_engine_specification:
+    Ignore: true
+  service_type:
+    Ignore: true
+  standby_vswitch_id:
+    Ignore: true
+  standby_zone_id:
+    Ignore: true
+  status:
+    Ignore: true
+  stream_engine_node_count:
+    Ignore: true
+  stream_engine_specification:
+    Ignore: true
+  table_engine_node_count:
+    Ignore: true
+  table_engine_specification:
+    Ignore: true
+  tags:
+    Ignore: true
+  time_series_engine_node_count:
+    Ignore: true
+  time_series_engine_specification:
+    Ignore: true
+  time_serires_engine_specification:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

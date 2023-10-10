@@ -33,9 +33,9 @@ Properties:
   name:
     Ignore: true
   payment_type:
-    Ignore: true
+    To: PayType
   period:
-    Ignore: true
+    To: Duration
   resource_group_id:
     To: ResourceGroupId
   slave_zone_id:

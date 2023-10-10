@@ -1,0 +1,142 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_route_map
+  To: ALIYUN::CEN::CenRouteMap
+Properties:
+  as_path_match_mode:
+    To: AsPathMatchMode
+  cen_id:
+    To: CenId
+  cen_region_id:
+    To: CenRegionId
+  cidr_match_mode:
+    To: CidrMatchMode
+  community_match_mode:
+    To: CommunityMatchMode
+  community_operate_mode:
+    To: CommunityOperateMode
+  description:
+    To: Description
+  destination_child_instance_types:
+    To: DestinationChildInstanceTypes
+    Type: List
+  destination_cidr_blocks:
+    To: DestinationCidrBlocks
+    Type: List
+  destination_instance_ids:
+    To: DestinationInstanceIds
+    Type: List
+  destination_instance_ids_reverse_match:
+    To: DestinationInstanceIdsReverseMatch
+  destination_route_table_ids:
+    To: DestinationRouteTableIds
+    Type: List
+  map_result:
+    To: MapResult
+  match_asns:
+    To: MatchAsns
+    Type: List
+  match_community_set:
+    To: MatchCommunitySet
+    Type: List
+  next_priority:
+    To: NextPriority
+  operate_community_set:
+    To: OperateCommunitySet
+    Type: List
+  preference:
+    To: Preference
+  prepend_as_path:
+    To: PrependAsPath
+    Type: List
+  priority:
+    To: Priority
+  route_map_id:
+    Ignore: true
+  route_types:
+    To: RouteTypes
+    Type: List
+  source_child_instance_types:
+    To: SourceChildInstanceTypes
+    Type: List
+  source_instance_ids:
+    To: SourceInstanceIds
+    Type: List
+  source_instance_ids_reverse_match:
+    To: SourceInstanceIdsReverseMatch
+  source_region_ids:
+    To: SourceRegionIds
+    Type: List
+  source_route_table_ids:
+    To: SourceRouteTableIds
+    Type: List
+  status:
+    Ignore: true
+  transit_router_route_table_id:
+    Ignore: true
+  transmit_direction:
+    To: TransmitDirection
+Attributes:
+  id:
+    To: RouteMapId
+  as_path_match_mode:
+    Ignore: true
+  cen_id:
+    Ignore: true
+  cen_region_id:
+    Ignore: true
+  cidr_match_mode:
+    Ignore: true
+  community_match_mode:
+    Ignore: true
+  community_operate_mode:
+    Ignore: true
+  description:
+    Ignore: true
+  destination_child_instance_types:
+    Ignore: true
+  destination_cidr_blocks:
+    Ignore: true
+  destination_instance_ids:
+    Ignore: true
+  destination_instance_ids_reverse_match:
+    Ignore: true
+  destination_route_table_ids:
+    Ignore: true
+  map_result:
+    Ignore: true
+  match_asns:
+    Ignore: true
+  match_community_set:
+    Ignore: true
+  next_priority:
+    Ignore: true
+  operate_community_set:
+    Ignore: true
+  preference:
+    Ignore: true
+  prepend_as_path:
+    Ignore: true
+  priority:
+    Ignore: true
+  route_map_id:
+    To: RouteMapId
+  route_types:
+    Ignore: true
+  source_child_instance_types:
+    Ignore: true
+  source_instance_ids:
+    Ignore: true
+  source_instance_ids_reverse_match:
+    Ignore: true
+  source_region_ids:
+    Ignore: true
+  source_route_table_ids:
+    Ignore: true
+  status:
+    Ignore: true
+  transit_router_route_table_id:
+    Ignore: true
+  transmit_direction:
+    Ignore: true

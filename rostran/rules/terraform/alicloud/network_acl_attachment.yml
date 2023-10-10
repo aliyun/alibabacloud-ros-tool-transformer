@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_network_acl_attachment
+  To: ALIYUN::VPC::NetworkAclAssociation
+Properties:
+  network_acl_id:
+    To: NetworkAclId
+  resources:
+    To: Resources
+    Type: List
+    Schema:
+      resource_id:
+        To: ResourceId
+      resource_type:
+        To: ResourceType
+Attributes:
+  id:
+    Ignore: true
+  network_acl_id:
+    To: NetworkAclId
+  resources:
+    Ignore: true

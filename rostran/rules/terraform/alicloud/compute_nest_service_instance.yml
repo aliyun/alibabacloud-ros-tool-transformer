@@ -1,0 +1,62 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_compute_nest_service_instance
+  To: ALIYUN::ComputeNest::ServiceInstance
+Properties:
+  commodity:
+    Ignore: true
+  enable_instance_ops:
+    To: EnableInstanceOps
+  enable_user_prometheus:
+    To: EnableUserPrometheus
+  operation_metadata:
+    Ignore: true
+  parameters:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  service_id:
+    Ignore: true
+  service_instance_name:
+    Ignore: true
+  service_version:
+    Ignore: true
+  specification_name:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  template_name:
+    To: TemplateName
+Attributes:
+  id:
+    To: ServiceInstanceId
+  enable_instance_ops:
+    To: EnableInstanceOps
+  enable_user_prometheus:
+    To: EnableUserPrometheus
+  operation_metadata:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  service_id:
+    To: ServiceInstanceId
+  service_instance_name:
+    To: Name
+  service_version:
+    Ignore: true
+  specification_name:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+  template_name:
+    To: TemplateName

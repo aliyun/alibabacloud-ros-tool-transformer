@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_drds_polardbx_instance
+  To: ALIYUN::PolarDBX::DBInstance
+Properties:
+  cn_class:
+    Ignore: true
+  cn_node_count:
+    Ignore: true
+  create_time:
+    Ignore: true
+  dn_class:
+    Ignore: true
+  dn_node_count:
+    Ignore: true
+  primary_zone:
+    To: PrimaryZone
+  resource_group_id:
+    To: ResourceGroupId
+  secondary_zone:
+    To: SecondaryZone
+  status:
+    Ignore: true
+  tertiary_zone:
+    To: TertiaryZone
+  topology_type:
+    To: TopologyType
+  vpc_id:
+    To: VPCId
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    Ignore: true
+  cn_class:
+    Ignore: true
+  cn_node_count:
+    Ignore: true
+  create_time:
+    Ignore: true
+  dn_class:
+    Ignore: true
+  dn_node_count:
+    Ignore: true
+  primary_zone:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  secondary_zone:
+    Ignore: true
+  status:
+    Ignore: true
+  tertiary_zone:
+    Ignore: true
+  topology_type:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

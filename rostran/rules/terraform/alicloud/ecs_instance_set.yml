@@ -76,16 +76,16 @@ Properties:
     To: EniMappings
     Type: List
     Schema:
-      security_group_id:
-        To: SecurityGroupId
-      vswitch_id:
-        To: VSwitchId
       description:
         To: Description
       network_interface_name:
         To: NetworkInterfaceName
       primary_ip_address:
         To: PrimaryIpAddress
+      security_group_id:
+        To: SecurityGroupId
+      vswitch_id:
+        To: VSwitchId
   password:
     To: Password
   password_inherit:

@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_alarm_contact
+  To: ALIYUN::CMS::Contact
+Properties:
+  alarm_contact_name:
+    Ignore: true
+  channels_aliim:
+    Ignore: true
+  channels_ding_web_hook:
+    Ignore: true
+  channels_mail:
+    Ignore: true
+  channels_sms:
+    Ignore: true
+  describe:
+    To: Describe
+  lang:
+    Ignore: true
+Attributes:
+  id:
+    To: ContactName
+  alarm_contact_name:
+    Ignore: true
+  channels_aliim:
+    Ignore: true
+  channels_ding_web_hook:
+    Ignore: true
+  channels_mail:
+    Ignore: true
+  channels_sms:
+    Ignore: true
+  describe:
+    Ignore: true
+  lang:
+    Ignore: true

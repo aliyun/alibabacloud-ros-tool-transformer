@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_k8s_slb_attachment
+  To: ALIYUN::EDAS::K8sSlbBinding
+Properties:
+  app_id:
+    To: AppId
+  slb_configs:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  app_id:
+    To: AppId

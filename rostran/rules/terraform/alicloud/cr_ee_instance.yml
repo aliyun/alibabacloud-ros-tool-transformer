@@ -1,0 +1,51 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cr_ee_instance
+  To: ALIYUN::CR::Instance
+Properties:
+  created_time:
+    Ignore: true
+  custom_oss_bucket:
+    Ignore: true
+  end_time:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  password:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  period:
+    To: Period
+  renew_period:
+    To: RenewPeriod
+  renewal_status:
+    To: RenewalStatus
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  created_time:
+    To: CreateTime
+  end_time:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_type:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  renew_period:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  status:
+    Ignore: true

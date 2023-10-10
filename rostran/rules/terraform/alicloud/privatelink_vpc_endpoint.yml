@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_privatelink_vpc_endpoint
+  To: ALIYUN::PrivateLink::VpcEndpoint
+Properties:
+  bandwidth:
+    Ignore: true
+  connection_status:
+    Ignore: true
+  dry_run:
+    Ignore: true
+  endpoint_business_status:
+    Ignore: true
+  endpoint_description:
+    To: EndpointDescription
+  endpoint_domain:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  service_id:
+    To: ServiceId
+  service_name:
+    To: ServiceName
+  status:
+    Ignore: true
+  vpc_endpoint_name:
+    To: EndpointName
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    To: EndpointId
+  bandwidth:
+    To: Bandwidth
+  connection_status:
+    Ignore: true
+  endpoint_business_status:
+    Ignore: true
+  endpoint_description:
+    Ignore: true
+  endpoint_domain:
+    To: EndpointDomain
+  security_group_ids:
+    Ignore: true
+  service_id:
+    To: ServiceId
+  service_name:
+    To: ServiceName
+  status:
+    Ignore: true
+  vpc_endpoint_name:
+    To: EndpointName
+  vpc_id:
+    To: VpcId

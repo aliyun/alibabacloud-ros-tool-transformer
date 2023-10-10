@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_resource_directory
+  To: ALIYUN::ResourceManager::ResourceDirectory
+Properties:
+  master_account_id:
+    Ignore: true
+  master_account_name:
+    Ignore: true
+  member_deletion_status:
+    Ignore: true
+  root_folder_id:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: ResourceDirectoryId
+  master_account_id:
+    To: MasterAccountId
+  master_account_name:
+    To: MasterAccountName
+  member_deletion_status:
+    Ignore: true
+  root_folder_id:
+    To: RootFolderId
+  status:
+    Ignore: true

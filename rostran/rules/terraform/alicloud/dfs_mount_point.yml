@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dfs_mount_point
+  To: ALIYUN::DFS::MountPoint
+Properties:
+  access_group_id:
+    To: AccessGroupId
+  description:
+    To: Description
+  file_system_id:
+    To: FileSystemId
+  mount_point_id:
+    Ignore: true
+  network_type:
+    To: NetworkType
+  status:
+    To: Status
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: MountPointId
+  access_group_id:
+    Ignore: true
+  description:
+    Ignore: true
+  file_system_id:
+    Ignore: true
+  mount_point_id:
+    To: MountPointId
+  network_type:
+    Ignore: true
+  status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

@@ -11,10 +11,10 @@ Properties:
   entry:
     To: Entries
     Schema:
-      description:
-        To: Description
       cidr:
         To: Cidr
+      description:
+        To: Description
   max_entries:
     To: MaxEntries
   prefix_list_name:

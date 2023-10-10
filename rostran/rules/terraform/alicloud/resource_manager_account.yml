@@ -1,0 +1,53 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_account
+  To: ALIYUN::ResourceManager::Account
+Properties:
+  abandon_able_check_id:
+    Ignore: true
+  account_name_prefix:
+    Ignore: true
+  display_name:
+    To: DisplayName
+  folder_id:
+    To: FolderId
+  join_method:
+    Ignore: true
+  join_time:
+    Ignore: true
+  modify_time:
+    Ignore: true
+  payer_account_id:
+    To: PayerAccountId
+  resource_directory_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  type:
+    Ignore: true
+Attributes:
+  id:
+    To: AccountId
+  display_name:
+    To: DisplayName
+  folder_id:
+    To: FolderId
+  join_method:
+    To: JoinMethod
+  join_time:
+    Ignore: true
+  modify_time:
+    Ignore: true
+  payer_account_id:
+    Ignore: true
+  resource_directory_id:
+    To: ResourceDirectoryId
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  type:
+    To: Type

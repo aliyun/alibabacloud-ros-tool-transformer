@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_alert_contact_group
+  To: ALIYUN::ARMS::AlertContactGroup
+Properties:
+  alert_contact_group_name:
+    Ignore: true
+  contact_ids:
+    Ignore: true
+Attributes:
+  id:
+    To: ContactGroupId
+  alert_contact_group_name:
+    Ignore: true
+  contact_ids:
+    Ignore: true

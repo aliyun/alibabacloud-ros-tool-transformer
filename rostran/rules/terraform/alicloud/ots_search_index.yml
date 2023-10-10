@@ -1,0 +1,28 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ots_search_index
+  To: ALIYUN::OTS::SearchIndex
+Properties:
+  index_name:
+    To: IndexName
+  instance_name:
+    To: InstanceName
+  # todo: Need to support single-valued attribute mapping to multi-valued attribute
+  schema:
+    Ignore: true
+  table_name:
+    To: TableName
+  time_to_live:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  current_sync_timestamp:
+    Ignore: true
+  index_id:
+    Ignore: true
+  sync_phase:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_polardb_global_database_network
+  To: ALIYUN::POLARDB::GlobalDatabaseNetwork
+Properties:
+  db_cluster_id:
+    To: DbClusterId
+  description:
+    To: GdnDescription
+  status:
+    ignore: true
+Attributes:
+  id:
+    To: GdnId
+  db_cluster_id:
+    Ignore: true
+  description:
+    Ignore: true

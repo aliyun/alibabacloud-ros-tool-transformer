@@ -1,0 +1,48 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_event_rule
+  To: ALIYUN::CMS::EventRule
+Properties:
+  description:
+    To: Description
+  event_pattern:
+    To: EventPattern
+    Type: List
+    Schema:
+      event_type_list:
+        To: EventTypeList
+        Type: List
+      level_list:
+        To: LevelList
+        Type: List
+      name_list:
+        To: NameList
+        Type: List
+      product:
+        To: Product
+      sql_filter:
+        Ignore: true
+  group_id:
+    To: GroupId
+  rule_name:
+    To: RuleName
+  silence_time:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  description:
+    Ignore: true
+  event_pattern:
+    Ignore: true
+  group_id:
+    Ignore: true
+  rule_name:
+    Ignore: true
+  silence_time:
+    Ignore: true
+  status:
+    Ignore: true

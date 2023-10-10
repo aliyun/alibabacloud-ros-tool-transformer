@@ -1,0 +1,64 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecd_desktop
+  To: ALIYUN::ECD::Desktops
+Properties:
+  amount:
+    To: Amount
+  auto_pay:
+    To: AutoPay
+  auto_renew:
+    To: AutoRenew
+  bundle_id:
+    To: BundleId
+  desktop_name:
+    To: DesktopName
+  desktop_type:
+    Ignore: true
+  end_user_ids:
+    Ignore: true
+  host_name:
+    Ignore: true
+  office_site_id:
+    To: OfficeSiteId
+  payment_type:
+    To: ChargeType
+  period:
+    To: Period
+  period_unit:
+    To: PeriodUnit
+  policy_group_id:
+    To: PolicyGroupId
+  root_disk_size_gib:
+    Ignore: true
+  status:
+    Ignore: true
+  stopped_mode:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  user_assign_mode:
+    To: UserAssignMode
+  user_disk_size_gib:
+    Ignore: true
+Attributes:
+  id:
+    To: DesktopId
+  desktop_name:
+    Ignore: true
+  desktop_type:
+    Ignore: true
+  end_user_ids:
+    Ignore: true
+  office_site_id:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  policy_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

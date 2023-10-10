@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oos_patch_baseline
+  To: ALIYUN::OOS::PatchBaseline
+Properties:
+  approval_rules:
+    To: ApprovalRules
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  operation_system:
+    To: OperationSystem
+  patch_baseline_name:
+    To: PatchBaselineName
+  rejected_patches:
+    Ignore: true
+  rejected_patches_action:
+    Ignore: true
+Attributes:
+  id:
+    To: PatchBaselineName
+  approval_rules:
+    To: ApprovalRules
+  create_time:
+    To: CreateTime
+  description:
+    To: Description
+  operation_system:
+    To: OperationSystem
+  patch_baseline_name:
+    To: PatchBaselineName
+  rejected_patches:
+    Ignore: true
+  rejected_patches_action:
+    Ignore: true

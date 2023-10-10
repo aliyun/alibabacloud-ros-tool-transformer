@@ -1,0 +1,87 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_nlb_listener
+  To: ALIYUN::NLB::Listener
+Properties:
+  alpn_enabled:
+    To: AlpnEnabled
+  alpn_policy:
+    To: AlpnPolicy
+  ca_certificate_ids:
+    To: CaCertificateIds
+    Type: List
+  ca_enabled:
+    To: CaEnabled
+  certificate_ids:
+    To: CertificateIds
+    Type: List
+  cps:
+    To: Cps
+  end_port:
+    To: EndPort
+  idle_timeout:
+    To: IdleTimeout
+  listener_description:
+    To: ListenerDescription
+  listener_port:
+    To: ListenerPort
+  listener_protocol:
+    To: ListenerProtocol
+  load_balancer_id:
+    To: LoadBalancerId
+  mss:
+    To: Mss
+  proxy_protocol_enabled:
+    To: ProxyProtocolEnabled
+  sec_sensor_enabled:
+    To: SecSensorEnabled
+  security_policy_id:
+    To: SecurityPolicyId
+  server_group_id:
+    To: ServerGroupId
+  start_port:
+    To: StartPort
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: ListenerId
+  alpn_enabled:
+    Ignore: true
+  alpn_policy:
+    Ignore: true
+  ca_certificate_ids:
+    Ignore: true
+  ca_enabled:
+    Ignore: true
+  certificate_ids:
+    Ignore: true
+  cps:
+    Ignore: true
+  end_port:
+    Ignore: true
+  idle_timeout:
+    Ignore: true
+  listener_description:
+    Ignore: true
+  listener_port:
+    To: ListenerPort
+  listener_protocol:
+    Ignore: true
+  load_balancer_id:
+    Ignore: true
+  mss:
+    Ignore: true
+  proxy_protocol_enabled:
+    Ignore: true
+  sec_sensor_enabled:
+    Ignore: true
+  security_policy_id:
+    Ignore: true
+  server_group_id:
+    Ignore: true
+  start_port:
+    Ignore: true
+  status:
+    Ignore: true

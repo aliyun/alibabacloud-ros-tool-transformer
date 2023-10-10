@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_listener_acl_attachment
+  To: ALIYUN::ALB::AclAssociation
+Properties:
+  acl_id:
+    Ignore: true
+  acl_type:
+    To: AclType
+  listener_id:
+    To: ListenerId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  acl_id:
+    Ignore: true
+  acl_type:
+    Ignore: true
+  listener_id:
+    To: ListenerId
+  status:
+    Ignore: true

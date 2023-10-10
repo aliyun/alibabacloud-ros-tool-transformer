@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alikafka_consumer_group
+  To: ALIYUN::KAFKA::ConsumerGroup
+Properties:
+  consumer_id:
+    To: ConsumerId
+  description:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+Attributes:
+  id:
+    Ignore: true
+  consumer_id:
+    To: ConsumerId
+  description:
+    Ignore: true
+  instance_id:
+    Ignore: true
+  tags:
+    Ignore: true

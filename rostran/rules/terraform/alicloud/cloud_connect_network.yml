@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_connect_network
+  To: ALIYUN::SAG::CloudConnectNetwork
+Properties:
+  cidr_block:
+    Ignore: true
+  description:
+    To: Description
+  is_default:
+    To: IsDefault
+  name:
+    To: Name
+Attributes:
+  id:
+    To: CcnId
+  cidr_block:
+    Ignore: true
+  description:
+    Ignore: true
+  is_default:
+    Ignore: true
+  name:
+    Ignore: true

@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_transit_router_vbr_attachment
+  To: ALIYUN::CEN::TransitRouterVbrAttachment
+Properties:
+  auto_publish_route_enabled:
+    To: AutoPublishRouteEnabled
+  cen_id:
+    To: CenId
+  dry_run:
+    Ignore: true
+  resource_type:
+    Ignore: true
+  route_table_association_enabled:
+    Ignore: true
+  route_table_propagation_enabled:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  transit_router_attachment_description:
+    To: TransitRouterAttachmentDescription
+  transit_router_attachment_id:
+    Ignore: true
+  transit_router_attachment_name:
+    To: TransitRouterAttachmentName
+  transit_router_id:
+    To: TransitRouterId
+  vbr_id:
+    To: VbrId
+  vbr_owner_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  auto_publish_route_enabled:
+    To: AutoPublishRouteEnabled
+  cen_id:
+    To: CenId
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  transit_router_attachment_description:
+    To: TransitRouterAttachmentDescription
+  transit_router_attachment_id:
+    To: TransitRouterAttachmentId
+  transit_router_attachment_name:
+    To: TransitRouterAttachmentName
+  transit_router_id:
+    To: TransitRouterId
+  vbr_id:
+    To: VbrId
+  vbr_owner_id:
+    To: VbrOwnerId

@@ -1,0 +1,38 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_ip_set
+  To: ALIYUN::GA::IpSets
+Properties:
+  accelerate_region_id:
+    Ignore: true
+  accelerator_id:
+    To: AcceleratorId
+  bandwidth:
+    Ignore: true
+  ip_address_list:
+    Ignore: true
+  ip_version:
+    Ignore: true
+  isp_type:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  # todo: Need to support single-valued attribute mapping to multi-valued attribute
+  id:
+    Ignore: true
+  accelerate_region_id:
+    Ignore: true
+  accelerator_id:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  ip_address_list:
+    Ignore: true
+  ip_version:
+    Ignore: true
+  isp_type:
+    Ignore: true
+  status:
+    Ignore: true

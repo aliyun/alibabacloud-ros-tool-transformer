@@ -87,9 +87,9 @@ Properties:
   password:
     To: Password
   payment_type:
-    Ignore: true
+    To: ChargeType
   period:
-    Ignore: true
+    To: Period
   port:
     Ignore: true
   private_connection_port:

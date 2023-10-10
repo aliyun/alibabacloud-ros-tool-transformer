@@ -1,0 +1,107 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_auto_provisioning_group
+  To: ALIYUN::ECS::AutoProvisioningGroup
+Properties:
+  auto_provisioning_group_name:
+    To: AutoProvisioningGroupName
+  auto_provisioning_group_type:
+    To: AutoProvisioningGroupType
+  default_target_capacity_type:
+    To: DefaultTargetCapacityType
+  description:
+    To: Description
+  excess_capacity_termination_policy:
+    To: ExcessCapacityTerminationPolicy
+  launch_template_config:
+    To: LaunchTemplateConfig
+    Type: List
+    Schema:
+      instance_type:
+        To: InstanceType
+      max_price:
+        Ignore: true
+      priority:
+        Ignore: true
+      vswitch_id:
+        To: VSwitchId
+      weighted_capacity:
+        Ignore: true
+  launch_template_id:
+    To: LaunchTemplateId
+  launch_template_version:
+    To: LaunchTemplateVersion
+  max_spot_price:
+    To: MaxSpotPrice
+  pay_as_you_go_allocation_strategy:
+    To: PayAsYouGoAllocationStrategy
+  pay_as_you_go_target_capacity:
+    To: PayAsYouGoTargetCapacity
+  spot_allocation_strategy:
+    To: SpotAllocationStrategy
+  spot_instance_interruption_behavior:
+    To: SpotInstanceInterruptionBehavior
+  spot_instance_pools_to_use_count:
+    To: SpotInstancePoolsToUseCount
+  spot_target_capacity:
+    To: SpotTargetCapacity
+  terminate_instances:
+    To: TerminateInstances
+  terminate_instances_with_expiration:
+    To: TerminateInstancesWithExpiration
+  total_target_capacity:
+    To: TotalTargetCapacity
+  valid_from:
+    To: ValidFrom
+  valid_until:
+    To: ValidUntil
+Attributes:
+  id:
+    To: AutoProvisioningGroupId
+  auto_provisioning_group_id:
+    To: AutoProvisioningGroupId
+  auto_provisioning_group_name:
+    To: AutoProvisioningGroupName
+  auto_provisioning_group_type:
+    Ignore: true
+  create_time:
+    Ignore: true
+  default_target_capacity_type:
+    Ignore: true
+  excess_capacity_termination_policy:
+    Ignore: true
+  launch_template_config:
+    Ignore: true
+  launch_template_id:
+    Ignore: true
+  launch_template_version:
+    Ignore: true
+  max_spot_price:
+    Ignore: true
+  pay_as_you_go_allocation_strategy:
+    Ignore: true
+  pay_as_you_go_target_capacity:
+    Ignore: true
+  spot_allocation_strategy:
+    Ignore: true
+  spot_instance_interruption_behavior:
+    Ignore: true
+  spot_instance_pools_to_use_count:
+    Ignore: true
+  spot_target_capacity:
+    Ignore: true
+  state:
+    Ignore: true
+  status:
+    Ignore: true
+  terminate_instances:
+    Ignore: true
+  terminate_instances_with_expiration:
+    Ignore: true
+  total_target_capacity:
+    Ignore: true
+  valid_from:
+    Ignore: true
+  valid_until:
+    Ignore: true

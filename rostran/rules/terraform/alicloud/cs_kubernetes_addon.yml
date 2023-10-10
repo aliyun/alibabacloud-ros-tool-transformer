@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cs_kubernetes_addon
+  To: ALIYUN::CS::ClusterAddons
+Properties:
+  can_upgrade:
+    Ignore: true
+  cluster_id:
+    To: ClusterId
+  config:
+    Ignore: true
+  name:
+    Ignore: true
+  next_version:
+    Ignore: true
+  required:
+    Ignore: true
+  version:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  can_upgrade:
+    Ignore: true
+  cluster_id:
+    To: ClusterId
+  config:
+    Ignore: true
+  name:
+    Ignore: true
+  next_version:
+    Ignore: true
+  required:
+    Ignore: true
+  version:
+    Ignore: true

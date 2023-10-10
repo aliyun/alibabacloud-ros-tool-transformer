@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_namespace
+  To: ALIYUN::EDAS::UserDefineRegion
+Properties:
+  debug_enable:
+    To: DebugEnable
+  description:
+    To: Description
+  namespace_logical_id:
+    To: RegionTag
+  namespace_name:
+    To: RegionName
+Attributes:
+  id:
+    To: Id
+  debug_enable:
+    To: DebugEnable
+  description:
+    Ignore: true
+  namespace_logical_id:
+    To: Id
+  namespace_name:
+    To: RegionName

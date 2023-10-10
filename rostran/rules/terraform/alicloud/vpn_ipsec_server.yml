@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpn_ipsec_server
+  To: ALIYUN::VPC::IpsecServer
+Properties:
+  client_ip_pool:
+    To: ClientIpPool
+  dry_run:
+    Ignore: true
+  effect_immediately:
+    To: EffectImmediately
+  ike_config:
+    To: IkeConfig
+    Type: Map
+    Schema:
+      ike_auth_alg:
+        To: IkeAuthAlg
+      ike_enc_alg:
+        To: IkeEncAlg
+      ike_lifetime:
+        To: IkeLifetime
+      ike_mode:
+        To: IkeMode
+      ike_pfs:
+        To: IkePfs
+      ike_version:
+        To: IkeVersion
+      local_id:
+        To: LocalId
+      remote_id:
+        To: RemoteId
+  ipsec_config:
+    To: IpsecConfig
+    Type: Map
+    Schema:
+      ipsec_auth_alg:
+        To: IpsecAuthAlg
+      ipsec_enc_alg:
+        To: IpsecEncAlg
+      ipsec_lifetime:
+        To: IpsecLifetime
+      ipsec_pfs:
+        To: IpsecPfs
+  ipsec_server_name:
+    To: IpsecServerName
+  local_subnet:
+    To: LocalSubnet
+  psk:
+    To: Psk
+  psk_enabled:
+    To: PskEnabled
+  vpn_gateway_id:
+    To: VpnGatewayId
+Attributes:
+  id:
+    To: IpsecServerId
+  client_ip_pool:
+    Ignore: true
+  effect_immediately:
+    Ignore: true
+  ike_config:
+    Ignore: true
+  ipsec_config:
+    Ignore: true
+  ipsec_server_name:
+    To: IpsecServerName
+  local_subnet:
+    Ignore: true
+  psk:
+    Ignore: true
+  psk_enabled:
+    Ignore: true
+  vpn_gateway_id:
+    Ignore: true

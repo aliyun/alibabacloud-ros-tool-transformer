@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_child_instance_route_entry_to_attachment
+  To: ALIYUN::CEN::ChildInstanceRouteEntryToAttachment
+Properties:
+  cen_id:
+    To: CenId
+  child_instance_route_table_id:
+    Ignore: true
+  destination_cidr_block:
+    To: DestinationCidrBlock
+  dry_run:
+    Ignore: true
+  service_type:
+    Ignore: true
+  status:
+    Ignore: true
+  transit_router_attachment_id:
+    To: TransitRouterAttachmentId
+Attributes:
+  id:
+    Ignore: true
+  cen_id:
+    To: CenId
+  child_instance_route_table_id:
+    Ignore: true
+  destination_cidr_block:
+    To: DestinationCidrBlock
+  service_type:
+    Ignore: true
+  status:
+    Ignore: true
+  transit_router_attachment_id:
+    To: TransitRouterAttachmentId

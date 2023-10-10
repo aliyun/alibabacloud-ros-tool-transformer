@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_eip_segment_address
+  To: ALIYUN::VPC::EIPSegment
+Properties:
+  bandwidth:
+    Ignore: true
+  create_time:
+    Ignore: true
+  eip_mask:
+    Ignore: true
+  internet_charge_type:
+    To: InternetChargeType
+  isp:
+    Ignore: true
+  netmode:
+    To: Netmode
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: EipSegmentInstanceId
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

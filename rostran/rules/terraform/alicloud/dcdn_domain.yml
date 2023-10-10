@@ -1,0 +1,72 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dcdn_domain
+  To: ALIYUN::DCDN::Domain
+Properties:
+  cert_name:
+    Ignore: true
+  cert_type:
+    Ignore: true
+  check_url:
+    To: CheckUrl
+  cname:
+    Ignore: true
+  domain_name:
+    To: DomainName
+  force_set:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  scope:
+    To: Scope
+  security_token:
+    Ignore: true
+  sources:
+    To: Sources
+    Type: List
+    Schema:
+      content:
+        To: Content
+      port:
+        To: Port
+      priority:
+        To: Priority
+      type:
+        To: Type
+      weight:
+        To: Weight
+  ssl_pri:
+    Ignore: true
+  ssl_protocol:
+    Ignore: true
+  ssl_pub:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  top_level_domain:
+    To: TopLevelDomain
+Attributes:
+  id:
+    To: DomainName
+  cert_name:
+    Ignore: true
+  cname:
+    To: Cname
+  domain_name:
+    To: DomainName
+  resource_group_id:
+    Ignore: true
+  scope:
+    Ignore: true
+  ssl_protocol:
+    Ignore: true
+  ssl_pub:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

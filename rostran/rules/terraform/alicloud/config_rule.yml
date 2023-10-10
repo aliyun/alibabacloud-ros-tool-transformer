@@ -1,0 +1,114 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_config_rule
+  To: ALIYUN::Config::Rule
+Properties:
+  account_id:
+    Ignore: true
+  compliance:
+    Ignore: true
+  compliance_pack_id:
+    Ignore: true
+  config_rule_arn:
+    Ignore: true
+  config_rule_id:
+    Ignore: true
+  config_rule_trigger_types:
+    To: ConfigRuleTriggerTypes
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  event_source:
+    Ignore: true
+  exclude_resource_ids_scope:
+    To: ExcludeResourceIdsScope
+  input_parameters:
+    To: InputParameters
+  maximum_execution_frequency:
+    To: MaximumExecutionFrequency
+  modified_timestamp:
+    Ignore: true
+  region_ids_scope:
+    To: RegionIdsScope
+  resource_group_ids_scope:
+    To: ResourceGroupIdsScope
+  resource_types_scope:
+    To: ResourceTypesScope
+    Type: List
+  risk_level:
+    To: RiskLevel
+  rule_name:
+    To: RuleName
+  scope_compliance_resource_types:
+    Ignore: true
+  source_detail_message_type:
+    Ignore: true
+  source_identifier:
+    To: SourceIdentifier
+  source_maximum_execution_frequency:
+    Ignore: true
+  source_owner:
+    To: SourceOwner
+  status:
+    Ignore: true
+  tag_key_scope:
+    To: TagKeyScope
+  tag_value_scope:
+    To: TagValueScope
+Attributes:
+  id:
+    Ignore: true
+  account_id:
+    Ignore: true
+  compliance:
+    Ignore: true
+  compliance_pack_id:
+    Ignore: true
+  config_rule_arn:
+    To: ConfigRuleArn
+  config_rule_id:
+    To: ConfigRuleId
+  config_rule_trigger_types:
+    To: ConfigRuleTriggerTypes
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  event_source:
+    To: EventSource
+  exclude_resource_ids_scope:
+    To: ExcludeResourceIdsScope
+  input_parameters:
+    To: InputParameters
+  maximum_execution_frequency:
+    To: MaximumExecutionFrequency
+  modified_timestamp:
+    Ignore: true
+  region_ids_scope:
+    To: RegionIdsScope
+  resource_group_ids_scope:
+    To: ResourceGroupIdsScope
+  resource_types_scope:
+    To: ResourceTypesScope
+  risk_level:
+    To: RiskLevel
+  rule_name:
+    To: RuleName
+  scope_compliance_resource_types:
+    Ignore: true
+  source_detail_message_type:
+    Ignore: true
+  source_identifier:
+    To: SourceIdentifier
+  source_maximum_execution_frequency:
+    Ignore: true
+  source_owner:
+    To: SourceOwner
+  status:
+    Ignore: true
+  tag_key_scope:
+    To: TagKeyScope
+  tag_value_scope:
+    To: TagValueScope

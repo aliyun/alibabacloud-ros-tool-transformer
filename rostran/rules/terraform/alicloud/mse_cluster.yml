@@ -1,0 +1,76 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mse_cluster
+  To: ALIYUN::MSE::Cluster
+Properties:
+  acl_entry_list:
+    To: AclEntryList
+    Type: List
+  app_version:
+    Ignore: true
+  cluster_alias_name:
+    To: ClusterAliasName
+  cluster_id:
+    Ignore: true
+  cluster_specification:
+    To: ClusterSpecification
+  cluster_type:
+    To: ClusterType
+  cluster_version:
+    To: ClusterVersion
+  connection_type:
+    To: ConnectionType
+  disk_type:
+    To: DiskType
+  instance_count:
+    To: InstanceCount
+  mse_version:
+    To: MseVersion
+  net_type:
+    To: NetType
+  private_slb_specification:
+    To: PrivateSlbSpecification
+  pub_network_flow:
+    To: PubNetworkFlow
+  pub_slb_specification:
+    To: PubSlbSpecification
+  request_pars:
+    To: RequestPars
+  status:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: ClusterId
+  app_version:
+    To: AppVersion
+  cluster_alias_name:
+    To: ClusterAliasName
+  cluster_id:
+    To: ClusterId
+  cluster_specification:
+    To: ClusterSpecification
+  cluster_type:
+    To: ClusterType
+  cluster_version:
+    To: ClusterVersion
+  connection_type:
+    To: ConnectionType
+  instance_count:
+    To: InstanceCount
+  mse_version:
+    To: MseVersion
+  net_type:
+    To: NetType
+  pub_network_flow:
+    To: PubNetworkFlow
+  status:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId

@@ -1,0 +1,81 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_instance
+  To: ALIYUN::ENS::Instance
+Properties:
+  auto_renew:
+    Ignore: true
+  carrier:
+    Ignore: true
+  data_disk:
+    Ignore: true
+  ens_region_id:
+    To: EnsRegionId
+  host_name:
+    To: HostName
+  image_id:
+    To: ImageId
+  instance_charge_strategy:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  internet_charge_type:
+    To: InternetChargeType
+  internet_max_bandwidth_out:
+    Ignore: true
+  net_district_code:
+    Ignore: true
+  password:
+    To: Password
+  password_inherit:
+    Ignore: true
+  payment_type:
+    To: PaymentType
+  period:
+    To: Period
+  period_unit:
+    Ignore: true
+  public_ip_identification:
+    Ignore: true
+  quantity:
+    Ignore: true
+  schedule_area_level:
+    Ignore: true
+  scheduling_price_strategy:
+    Ignore: true
+  scheduling_strategy:
+    Ignore: true
+  status:
+    Ignore: true
+  system_disk:
+    Ignore: true
+  unique_suffix:
+    To: UniqueSuffix
+  user_data:
+    To: UserData
+Attributes:
+  id:
+    To: InstanceId
+  data_disk:
+    Ignore: true
+  ens_region_id:
+    To: EnsRegionId
+  host_name:
+    To: HostName
+  image_id:
+    To: ImageId
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  internet_max_bandwidth_out:
+    Ignore: true
+  payment_type:
+    To: PaymentType
+  status:
+    Ignore: true
+  system_disk:
+    Ignore: true

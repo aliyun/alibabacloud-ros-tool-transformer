@@ -1,0 +1,286 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sae_application
+  To: ALIYUN::SAE::Application
+Properties:
+  acr_assume_role_arn:
+    Ignore: true
+  acr_instance_id:
+    Ignore: true
+  app_description:
+    To: AppDescription
+  app_name:
+    To: AppName
+  auto_config:
+    Ignore: true
+  auto_enable_application_scaling_rule:
+    Ignore: true
+  batch_wait_time:
+    Ignore: true
+  change_order_desc:
+    Ignore: true
+  command:
+    To: Command
+  command_args:
+    To: CommandArgs
+  command_args_v2:
+    Ignore: true
+  config_map_mount_desc:
+    Ignore: true
+  config_map_mount_desc_v2:
+    Ignore: true
+  cpu:
+    To: Cpu
+  custom_host_alias:
+    To: CustomHostAlias
+  custom_host_alias_v2:
+    Ignore: true
+  deploy:
+    To: Deploy
+  edas_container_version:
+    To: EdasContainerVersion
+  enable_ahas:
+    Ignore: true
+  enable_grey_tag_route:
+    Ignore: true
+  envs:
+    To: Envs
+  image_pull_secrets:
+    Ignore: true
+  image_url:
+    To: ImageUrl
+  jar_start_args:
+    To: JarStartArgs
+  jar_start_options:
+    To: JarStartOptions
+  jdk:
+    To: Jdk
+  kafka_configs:
+    Ignore: true
+  liveness:
+    To: Liveness
+  liveness_v2:
+    Ignore: true
+  memory:
+    To: Memory
+  micro_registration:
+    Ignore: true
+  min_ready_instance_ratio:
+    Ignore: true
+  min_ready_instances:
+    Ignore: true
+  mount_desc:
+    To: MountDesc
+  mount_host:
+    To: MountHost
+  namespace_id:
+    To: NamespaceId
+  nas_configs:
+    Ignore: true
+  nas_id:
+    To: NasId
+  oss_ak_id:
+    Ignore: true
+  oss_ak_secret:
+    Ignore: true
+  oss_mount_descs:
+    Ignore: true
+  oss_mount_descs_v2:
+    Ignore: true
+  package_type:
+    To: PackageType
+  package_url:
+    To: PackageUrl
+  package_version:
+    To: PackageVersion
+  php:
+    Ignore: true
+  php_arms_config_location:
+    Ignore: true
+  php_config:
+    Ignore: true
+  php_config_location:
+    Ignore: true
+  post_start:
+    To: PostStart
+  post_start_v2:
+    Ignore: true
+  pre_stop:
+    To: PreStop
+  pre_stop_v2:
+    Ignore: true
+  programming_language:
+    Ignore: true
+  pvtz_discovery_svc:
+    Ignore: true
+  readiness:
+    To: Readiness
+  readiness_v2:
+    Ignore: true
+  replicas:
+    To: Replicas
+  security_group_id:
+    To: SecurityGroupId
+  sls_configs:
+    To: SlsConfigs
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  termination_grace_period_seconds:
+    Ignore: true
+  timezone:
+    To: Timezone
+  tomcat_config:
+    Ignore: true
+  tomcat_config_v2:
+    Ignore: true
+  update_strategy:
+    Ignore: true
+  update_strategy_v2:
+    Ignore: true
+  version_id:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  war_start_options:
+    To: WarStartOptions
+  web_container:
+    To: WebContainer
+Attributes:
+  id:
+    To: AppId
+  acr_assume_role_arn:
+    Ignore: true
+  acr_instance_id:
+    Ignore: true
+  app_description:
+    Ignore: true
+  app_name:
+    Ignore: true
+  batch_wait_time:
+    Ignore: true
+  command:
+    Ignore: true
+  command_args:
+    Ignore: true
+  command_args_v2:
+    Ignore: true
+  config_map_mount_desc:
+    Ignore: true
+  config_map_mount_desc_v2:
+    Ignore: true
+  cpu:
+    Ignore: true
+  custom_host_alias:
+    Ignore: true
+  custom_host_alias_v2:
+    Ignore: true
+  edas_container_version:
+    Ignore: true
+  enable_ahas:
+    Ignore: true
+  enable_grey_tag_route:
+    Ignore: true
+  envs:
+    Ignore: true
+  image_pull_secrets:
+    Ignore: true
+  image_url:
+    Ignore: true
+  jar_start_args:
+    Ignore: true
+  jar_start_options:
+    Ignore: true
+  jdk:
+    Ignore: true
+  kafka_configs:
+    Ignore: true
+  liveness:
+    Ignore: true
+  liveness_v2:
+    Ignore: true
+  memory:
+    Ignore: true
+  micro_registration:
+    Ignore: true
+  min_ready_instance_ratio:
+    Ignore: true
+  min_ready_instances:
+    Ignore: true
+  namespace_id:
+    Ignore: true
+  nas_configs:
+    Ignore: true
+  oss_ak_id:
+    Ignore: true
+  oss_ak_secret:
+    Ignore: true
+  oss_mount_descs:
+    Ignore: true
+  oss_mount_descs_v2:
+    Ignore: true
+  package_type:
+    Ignore: true
+  package_url:
+    Ignore: true
+  package_version:
+    Ignore: true
+  php:
+    Ignore: true
+  php_arms_config_location:
+    Ignore: true
+  php_config:
+    Ignore: true
+  php_config_location:
+    Ignore: true
+  post_start:
+    Ignore: true
+  post_start_v2:
+    Ignore: true
+  pre_stop:
+    Ignore: true
+  pre_stop_v2:
+    Ignore: true
+  programming_language:
+    Ignore: true
+  pvtz_discovery_svc:
+    Ignore: true
+  readiness:
+    Ignore: true
+  readiness_v2:
+    Ignore: true
+  replicas:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  sls_configs:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  termination_grace_period_seconds:
+    Ignore: true
+  timezone:
+    Ignore: true
+  tomcat_config:
+    Ignore: true
+  tomcat_config_v2:
+    Ignore: true
+  update_strategy:
+    Ignore: true
+  update_strategy_v2:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  war_start_options:
+    Ignore: true
+  web_container:
+    Ignore: true

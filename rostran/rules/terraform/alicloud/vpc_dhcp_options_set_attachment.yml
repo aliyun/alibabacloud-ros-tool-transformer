@@ -6,7 +6,6 @@ ResourceType:
 Properties:
   dhcp_options_set_id:
     To: DhcpOptionsSetId
-
   status:
     Ignore: true
   vpc_id:

@@ -14,7 +14,6 @@ Properties:
     To: DomainName
   domain_name_servers:
     To: DomainNameServers
-
   ipv6_lease_time:
     Ignore: true
   lease_time:

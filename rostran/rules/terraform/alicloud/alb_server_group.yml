@@ -1,0 +1,56 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_server_group
+  To: ALIYUN::ALB::ServerGroup
+Properties:
+  dry_run:
+    Ignore: true
+  health_check_config:
+    Ignore: true
+  protocol:
+    To: Protocol
+  resource_group_id:
+    To: ResourceGroupId
+  scheduler:
+    To: Scheduler
+  server_group_name:
+    To: ServerGroupName
+  server_group_type:
+    To: ServerGroupType
+  servers:
+    Ignore: true
+  status:
+    Ignore: true
+  sticky_session_config:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    To: ServerGroupId
+  health_check_config:
+    Ignore: true
+  protocol:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  scheduler:
+    Ignore: true
+  server_group_name:
+    Ignore: true
+  server_group_type:
+    Ignore: true
+  servers:
+    Ignore: true
+  status:
+    Ignore: true
+  sticky_session_config:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    Ignore: true

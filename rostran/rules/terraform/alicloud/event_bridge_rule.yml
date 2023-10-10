@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_event_bridge_rule
+  To: ALIYUN::EventBridge::Rule
+Properties:
+  description:
+    To: Description
+  event_bus_name:
+    To: EventBusName
+  filter_pattern:
+    Ignore: true
+  rule_name:
+    To: RuleName
+  status:
+    To: Status
+  targets:
+    To: Targets
+    Type: List
+    Schema:
+      dead_letter_queue:
+        Ignore: true
+      endpoint:
+        To: Endpoint
+      param_list:
+        To: ParamList
+        Type: List
+        Schema:
+          form:
+            To: Form
+          resource_key:
+            To: ResourceKey
+          template:
+            To: Template
+          value:
+            To: Value
+      push_retry_strategy:
+        To: PushRetryStrategy
+      target_id:
+        Ignore: true
+      type:
+        To: Type
+Attributes:
+  id:
+    Ignore: true
+  description:
+    Ignore: true
+  event_bus_name:
+    To: EventBusName
+  filter_pattern:
+    Ignore: true
+  rule_name:
+    To: RuleName
+  status:
+    Ignore: true

@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_kvstore_account
+  To: ALIYUN::REDIS::Account
+Properties:
+  account_name:
+    To: AccountName
+  account_password:
+    To: AccountPassword
+  account_privilege:
+    To: AccountPrivilege
+  account_type:
+    To: AccountType
+  description:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  account_name:
+    To: AccountName
+  account_privilege:
+    Ignore: true
+  account_type:
+    Ignore: true
+  description:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  status:
+    Ignore: true

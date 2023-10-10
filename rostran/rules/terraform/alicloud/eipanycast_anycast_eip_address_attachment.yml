@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_eipanycast_anycast_eip_address_attachment
+  To: ALIYUN::VPC::AnycastEIPAssociation
+Properties:
+  anycast_id:
+    To: AnycastId
+  association_mode:
+    Ignore: true
+  bind_instance_id:
+    To: BindInstanceId
+  bind_instance_region_id:
+    To: BindInstanceRegionId
+  bind_instance_type:
+    To: BindInstanceType
+  bind_time:
+    Ignore: true
+  pop_locations:
+    Ignore: true
+  private_ip_address:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  anycast_id:
+    To: AnycastId
+  association_mode:
+    Ignore: true
+  bind_instance_id:
+    To: BindInstanceId
+  bind_instance_region_id:
+    To: BindInstanceRegionId
+  bind_instance_type:
+    To: BindInstanceType
+  bind_time:
+    Ignore: true
+  pop_locations:
+    Ignore: true
+  private_ip_address:
+    Ignore: true
+  status:
+    Ignore: true

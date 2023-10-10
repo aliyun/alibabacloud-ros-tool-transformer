@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecd_simple_office_site
+  To: ALIYUN::ECD::SimpleOfficeSite
+Properties:
+  bandwidth:
+    To: Bandwidth
+  cen_id:
+    To: CenId
+  cen_owner_id:
+    Ignore: true
+  cidr_block:
+    To: CidrBlock
+  desktop_access_type:
+    To: DesktopAccessType
+  enable_admin_access:
+    To: EnableAdminAccess
+  enable_cross_desktop_access:
+    Ignore: true
+  enable_internet_access:
+    To: EnableInternetAccess
+  mfa_enabled:
+    Ignore: true
+  office_site_name:
+    To: OfficeSiteName
+  sso_enabled:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: OfficeSiteId
+  bandwidth:
+    Ignore: true
+  cen_id:
+    Ignore: true
+  cidr_block:
+    Ignore: true
+  desktop_access_type:
+    Ignore: true
+  enable_admin_access:
+    Ignore: true
+  enable_cross_desktop_access:
+    Ignore: true
+  enable_internet_access:
+    Ignore: true
+  mfa_enabled:
+    Ignore: true
+  office_site_name:
+    Ignore: true
+  sso_enabled:
+    Ignore: true
+  status:
+    Ignore: true

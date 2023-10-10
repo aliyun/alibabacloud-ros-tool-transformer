@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_control_policy
+  To: ALIYUN::ResourceManager::ControlPolicy
+Properties:
+  control_policy_name:
+    To: ControlPolicyName
+  description:
+    To: Description
+  effect_scope:
+    To: EffectScope
+  policy_document:
+    To: PolicyDocument
+Attributes:
+  id:
+    To: PolicyId
+  control_policy_name:
+    To: ControlPolicyName
+  description:
+    To: Description
+  effect_scope:
+    To: EffectScope
+  policy_document:
+    To: PolicyDocument

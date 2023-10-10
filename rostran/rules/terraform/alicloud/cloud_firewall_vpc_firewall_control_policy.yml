@@ -1,0 +1,103 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_vpc_firewall_control_policy
+  To: ALIYUN::CLOUDFW::VpcFirewallControlPolicy
+Properties:
+  acl_action:
+    To: AclAction
+  acl_uuid:
+    To: AclUuid
+  application_id:
+    Ignore: true
+  application_name:
+    To: ApplicationName
+  description:
+    To: Description
+  dest_port:
+    To: DestPort
+  dest_port_group:
+    To: DestPortGroup
+  dest_port_group_ports:
+    Ignore: true
+  dest_port_type:
+    To: DestPortType
+  destination:
+    To: Destination
+  destination_group_cidrs:
+    Ignore: true
+  destination_group_type:
+    Ignore: true
+  destination_type:
+    To: DestinationType
+  hit_times:
+    Ignore: true
+  lang:
+    To: Lang
+  member_uid:
+    Ignore: true
+  order:
+    Ignore: true
+  proto:
+    To: Proto
+  release:
+    Ignore: true
+  source:
+    To: Source
+  source_group_cidrs:
+    Ignore: true
+  source_group_type:
+    Ignore: true
+  source_type:
+    To: SourceType
+  vpc_firewall_id:
+    To: VpcFirewallId
+Attributes:
+  id:
+    Ignore: true
+  acl_action:
+    Ignore: true
+  acl_uuid:
+    To: AclUuid
+  application_id:
+    Ignore: true
+  application_name:
+    Ignore: true
+  description:
+    Ignore: true
+  dest_port:
+    Ignore: true
+  dest_port_group:
+    Ignore: true
+  dest_port_group_ports:
+    Ignore: true
+  dest_port_type:
+    Ignore: true
+  destination:
+    Ignore: true
+  destination_group_cidrs:
+    Ignore: true
+  destination_group_type:
+    Ignore: true
+  destination_type:
+    Ignore: true
+  hit_times:
+    Ignore: true
+  member_uid:
+    Ignore: true
+  order:
+    Ignore: true
+  proto:
+    Ignore: true
+  release:
+    Ignore: true
+  source:
+    Ignore: true
+  source_group_cidrs:
+    Ignore: true
+  source_group_type:
+    Ignore: true
+  source_type:
+    Ignore: true
+  vpc_firewall_id:
+    Ignore: true

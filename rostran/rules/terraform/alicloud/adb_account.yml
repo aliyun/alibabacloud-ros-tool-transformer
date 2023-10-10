@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_adb_account
+  To: ALIYUN::ADB::Account
+Properties:
+  account_description:
+    To: AccountDescription
+  account_name:
+    To: AccountName
+  account_password:
+    To: AccountPassword
+  account_type:
+    To: AccountType
+  db_cluster_id:
+    Ignore: true
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  account_description:
+    Ignore: true
+  account_name:
+    To: AccountName
+  db_cluster_id:
+    Ignore: true

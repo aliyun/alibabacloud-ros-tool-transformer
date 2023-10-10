@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cddc_dedicated_host_group
+  To: ALIYUN::CDDC::DedicatedHostGroup
+Properties:
+  allocation_policy:
+    To: AllocationPolicy
+  cpu_allocation_ratio:
+    To: CpuAllocationRatio
+  dedicated_host_group_desc:
+    To: DedicatedHostGroupDesc
+  disk_allocation_ratio:
+    To: DiskAllocationRatio
+  engine:
+    To: Engine
+  host_replace_policy:
+    To: HostReplacePolicy
+  mem_allocation_ratio:
+    To: MemAllocationRatio
+  open_permission:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    To: DedicatedHostGroupId
+  allocation_policy:
+    To: AllocationPolicy
+  cpu_allocation_ratio:
+    To: CpuAllocationRatio
+  dedicated_host_group_desc:
+    To: DedicatedHostGroupDesc
+  disk_allocation_ratio:
+    To: DiskAllocationRatio
+  engine:
+    To: Engine
+  host_replace_policy:
+    To: HostReplacePolicy
+  mem_allocation_ratio:
+    To: MemAllocationRatio
+  open_permission:
+    To: OpenPermission
+  vpc_id:
+    To: VpcId

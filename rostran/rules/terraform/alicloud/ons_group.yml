@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ons_group
+  To: ALIYUN::ROCKETMQ::Group
+Properties:
+  group_id:
+    To: GroupId
+  group_name:
+    Ignore: true
+  group_type:
+    To: GroupType
+  instance_id:
+    To: InstanceId
+  read_enable:
+    Ignore: true
+  remark:
+    To: Remark
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  group_id:
+    To: GroupId
+  group_name:
+    Ignore: true
+  group_type:
+    To: GroupType
+  instance_id:
+    To: InstanceId
+  remark:
+    Ignore: true
+  tags:
+    Ignore: true

@@ -71,7 +71,7 @@ Properties:
       security_group_id:
         To: SecurityGroupId
       vswitch_id:
-        Ignore: true
+        To: VSwitchId
   network_type:
     To: NetworkType
   password_inherit:

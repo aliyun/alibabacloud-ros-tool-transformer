@@ -1,0 +1,77 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_network_acl
+  To: ALIYUN::VPC::NetworkAcl
+Properties:
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  egress_acl_entries:
+    To: EgressAclEntries
+    Type: List
+    Schema:
+      description:
+        To: Description
+      destination_cidr_ip:
+        To: DestinationCidrIp
+      network_acl_entry_name:
+        To: NetworkAclEntryName
+      policy:
+        To: Policy
+      port:
+        To: Port
+      protocol:
+        To: Protocol
+  ingress_acl_entries:
+    To: IngressAclEntries
+    Type: List
+    Schema:
+      description:
+        To: Description
+      network_acl_entry_name:
+        To: NetworkAclEntryName
+      policy:
+        To: Policy
+      port:
+        To: Port
+      protocol:
+        To: Protocol
+      source_cidr_ip:
+        To: SourceCidrIp
+  name:
+    To: NetworkAclName
+  network_acl_name:
+    To: NetworkAclName
+  resources:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    To: NetworkAclId
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  egress_acl_entries:
+    Ignore: true
+  ingress_acl_entries:
+    Ignore: true
+  name:
+    To: NetworkAclEntryName
+  network_acl_name:
+    To: NetworkAclEntryName
+  resources:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    Ignore: true

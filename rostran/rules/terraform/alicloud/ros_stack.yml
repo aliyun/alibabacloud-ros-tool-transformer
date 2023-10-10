@@ -1,0 +1,67 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ros_stack
+  To: ALIYUN::ROS::Stack
+Properties:
+  create_option:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  disable_rollback:
+    Ignore: true
+  notification_urls:
+    Ignore: true
+  # todo: Need to support list to map
+  parameters:
+    Ignore: true
+  ram_role_name:
+    Ignore: true
+  replacement_option:
+    Ignore: true
+  retain_all_resources:
+    Ignore: true
+  retain_resources:
+    Ignore: true
+  stack_name:
+    Ignore: true
+  stack_policy_body:
+    Ignore: true
+  stack_policy_during_update_body:
+    Ignore: true
+  stack_policy_during_update_url:
+    Ignore: true
+  stack_policy_url:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  template_body:
+    To: TemplateBody
+  template_url:
+    To: TemplateURL
+  template_version:
+    To: TemplateVersion
+  timeout_in_minutes:
+    To: TimeoutMins
+  use_previous_parameters:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
+  disable_rollback:
+    Ignore: true
+  ram_role_name:
+    Ignore: true
+  stack_name:
+    Ignore: true
+  stack_policy_body:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  timeout_in_minutes:
+    Ignore: true

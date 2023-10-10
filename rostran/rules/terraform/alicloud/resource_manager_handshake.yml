@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_handshake
+  To: ALIYUN::ResourceManager::Handshake
+Properties:
+  expire_time:
+    Ignore: true
+  master_account_id:
+    Ignore: true
+  master_account_name:
+    Ignore: true
+  modify_time:
+    Ignore: true
+  note:
+    To: Note
+  resource_directory_id:
+    Ignore: true
+  status:
+    Ignore: true
+  target_entity:
+    To: TargetEntity
+  target_type:
+    To: TargetType
+Attributes:
+  id:
+    To: HandshakeId
+  expire_time:
+    Ignore: true
+  master_account_id:
+    To: MasterAccountId
+  master_account_name:
+    To: MasterAccountName
+  modify_time:
+    Ignore: true
+  note:
+    To: Note
+  resource_directory_id:
+    To: ResourceDirectoryId
+  status:
+    Ignore: true
+  target_entity:
+    To: TargetEntity
+  target_type:
+    To: TargetType

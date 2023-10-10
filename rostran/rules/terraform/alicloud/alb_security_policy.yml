@@ -1,0 +1,36 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_security_policy
+  To: ALIYUN::ALB::SecurityPolicy
+Properties:
+  ciphers:
+    To: Ciphers
+    Type: List
+  dry_run:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  security_policy_name:
+    To: SecurityPolicyName
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  tls_versions:
+    Ignore: true
+Attributes:
+  id:
+    To: SecurityPolicyId
+  ciphers:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_policy_name:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  tls_versions:
+    Ignore: true

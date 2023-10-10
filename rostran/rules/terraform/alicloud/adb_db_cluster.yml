@@ -1,0 +1,116 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_adb_db_cluster
+  To: ALIYUN::ADB::DBCluster
+Properties:
+  auto_renew_period:
+    Ignore: true
+  compute_resource:
+    To: ComputeResource
+  connection_string:
+    Ignore: true
+  db_cluster_category:
+    To: DBClusterCategory
+  db_cluster_class:
+    To: DBClusterClass
+  db_cluster_version:
+    To: DBClusterVersion
+  db_node_class:
+    Ignore: true
+  db_node_count:
+    To: DBNodeGroupCount
+  db_node_storage:
+    To: DBNodeStorage
+  description:
+    To: DBClusterDescription
+  disk_performance_level:
+    Ignore: true
+  elastic_io_resource:
+    Ignore: true
+  elastic_io_resource_size:
+    Ignore: true
+  maintain_time:
+    Ignore: true
+  mode:
+    To: Mode
+  modify_type:
+    Ignore: true
+  pay_type:
+    To: PayType
+  payment_type:
+    To: PayType
+  period:
+    To: Period
+  port:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  security_ips:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  vpc_id:
+    To: VPCId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBClusterId
+  auto_renew_period:
+    Ignore: true
+  compute_resource:
+    Ignore: true
+  connection_string:
+    To: ConnectionString
+  db_cluster_category:
+    Ignore: true
+  db_cluster_version:
+    Ignore: true
+  db_node_class:
+    Ignore: true
+  db_node_count:
+    Ignore: true
+  db_node_storage:
+    Ignore: true
+  description:
+    Ignore: true
+  disk_performance_level:
+    Ignore: true
+  elastic_io_resource:
+    Ignore: true
+  elastic_io_resource_size:
+    Ignore: true
+  maintain_time:
+    Ignore: true
+  mode:
+    Ignore: true
+  pay_type:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  port:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

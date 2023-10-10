@@ -1,0 +1,83 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_click_house_db_cluster
+  To: ALIYUN::ClickHouse::DBCluster
+Properties:
+  category:
+    To: Category
+  connection_string:
+    Ignore: true
+  db_cluster_access_white_list:
+    Ignore: true
+  db_cluster_class:
+    Ignore: true
+  db_cluster_description:
+    Ignore: true
+  db_cluster_network_type:
+    Ignore: true
+  db_cluster_version:
+    Ignore: true
+  db_node_group_count:
+    Ignore: true
+  db_node_storage:
+    Ignore: true
+  encryption_key:
+    To: EncryptionKey
+  encryption_type:
+    To: EncryptionType
+  maintain_time:
+    Ignore: true
+  payment_type:
+    To: PaymentType
+  period:
+    To: Period
+  port:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_type:
+    Ignore: true
+  used_time:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBClusterId
+  category:
+    To: Category
+  connection_string:
+    To: ConnectionString
+  db_cluster_access_white_list:
+    Ignore: true
+  db_cluster_description:
+    Ignore: true
+  db_cluster_network_type:
+    Ignore: true
+  db_node_storage:
+    Ignore: true
+  encryption_key:
+    To: EncryptionKey
+  encryption_type:
+    To: EncryptionType
+  maintain_time:
+    Ignore: true
+  payment_type:
+    To: PaymentType
+  port:
+    To: Port
+  status:
+    Ignore: true
+  storage_type:
+    To: StorageType
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId

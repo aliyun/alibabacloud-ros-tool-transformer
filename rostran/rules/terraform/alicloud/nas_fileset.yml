@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_nas_fileset
+  To: ALIYUN::NAS::Fileset
+Properties:
+  description:
+    To: Description
+  dry_run:
+    Ignore: true
+  file_system_id:
+    To: FileSystemId
+  file_system_path:
+    To: FileSystemPath
+  fileset_id:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: FileSystemId
+  description:
+    Ignore: true
+  file_system_id:
+    To: FileSystemId
+  file_system_path:
+    To: FileSystemPath
+  fileset_id:
+    Ignore: true
+  status:
+    Ignore: true

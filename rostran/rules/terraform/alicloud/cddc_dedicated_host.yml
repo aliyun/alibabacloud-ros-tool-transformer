@@ -1,0 +1,58 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cddc_dedicated_host
+  To: ALIYUN::CDDC::DedicatedHost
+Properties:
+  allocation_status:
+    Ignore: true
+  auto_renew:
+    Ignore: true
+  dedicated_host_group_id:
+    To: DedicatedHostGroupId
+  dedicated_host_id:
+    Ignore: true
+  host_class:
+    To: HostClass
+  host_name:
+    To: HostName
+  image_category:
+    To: ImageCategory
+  os_password:
+    To: OsPassword
+  payment_type:
+    To: PaymentType
+  period:
+    To: Period
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  used_time:
+    To: UsedTime
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DedicatedHostId
+  allocation_status:
+    Ignore: true
+  dedicated_host_group_id:
+    To: DedicatedHostGroupId
+  dedicated_host_id:
+    To: DedicatedHostId
+  host_class:
+    To: HostClass
+  host_name:
+    To: HostName
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId

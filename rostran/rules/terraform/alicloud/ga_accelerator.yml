@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_accelerator
+  To: ALIYUN::GA::Accelerator
+Properties:
+  accelerator_name:
+    To: AcceleratorName
+  auto_renew_duration:
+    Ignore: true
+  auto_use_coupon:
+    Ignore: true
+  bandwidth_billing_type:
+    To: BandwidthBillingType
+  cross_border_mode:
+    Ignore: true
+  cross_border_status:
+    Ignore: true
+  description:
+    Ignore: true
+  duration:
+    To: Duration
+  payment_type:
+    To: InstanceChargeType
+  pricing_cycle:
+    To: PricingCycle
+  promotion_option_no:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  spec:
+    To: Spec
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    To: AcceleratorId
+  accelerator_name:
+    To: AcceleratorName
+  auto_renew_duration:
+    Ignore: true
+  bandwidth_billing_type:
+    Ignore: true
+  cross_border_mode:
+    Ignore: true
+  cross_border_status:
+    Ignore: true
+  description:
+    Ignore: true
+  payment_type:
+    To: PaymentType
+  renewal_status:
+    Ignore: true
+  spec:
+    To: Spec
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

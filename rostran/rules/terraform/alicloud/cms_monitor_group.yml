@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_monitor_group
+  To: ALIYUN::CMS::MonitorGroup
+Properties:
+  contact_groups:
+    Ignore: true
+  monitor_group_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  resource_group_name:
+    Ignore: true
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    To: GroupId
+  contact_groups:
+    Ignore: true
+  monitor_group_name:
+    Ignore: true
+  tags:
+    Ignore: true

@@ -1,0 +1,103 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_nlb_load_balancer
+  To: ALIYUN::NLB::LoadBalancer
+Properties:
+  address_ip_version:
+    To: AddressIpVersion
+  address_type:
+    To: AddressType
+  bandwidth_package_id:
+    To: BandwidthPackageId
+  create_time:
+    Ignore: true
+  cross_zone_enabled:
+    To: CrossZoneEnabled
+  # todo: Need to support different levels of property mapping
+  deletion_protection_enabled:
+    Ignore: true
+  deletion_protection_reason:
+    Ignore: true
+  dns_name:
+    To: DNSName
+  ipv6_address_type:
+    Ignore: true
+  load_balancer_business_status:
+    Ignore: true
+  load_balancer_name:
+    To: LoadBalancerName
+  load_balancer_type:
+    To: LoadBalancerType
+  modification_protection_reason:
+    Ignore: true
+  modification_protection_status:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  vpc_id:
+    To: VpcId
+  zone_mappings:
+    To: ZoneMappings
+    Type: List
+    Schema:
+      allocation_id:
+        To: AllocationId
+      eni_id:
+        Ignore: true
+      ipv6_address:
+        Ignore: true
+      private_ipv4_address:
+        To: PrivateIPv4Address
+      public_ipv4_address:
+        Ignore: true
+      vswitch_id:
+        To: VSwitchId
+      zone_id:
+        To: ZoneId
+Attributes:
+  id:
+    To: LoadBalancerId
+  address_ip_version:
+    To: AddressIpVersion
+  address_type:
+    To: AddressType
+  bandwidth_package_id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  cross_zone_enabled:
+    Ignore: true
+  deletion_protection_enabled:
+    Ignore: true
+  deletion_protection_reason:
+    Ignore: true
+  dns_name:
+    To: DNSName
+  ipv6_address_type:
+    Ignore: true
+  load_balancer_business_status:
+    Ignore: true
+  load_balancer_name:
+    Ignore: true
+  load_balancer_type:
+    To: LoadBalancerType
+  modification_protection_reason:
+    Ignore: true
+  modification_protection_status:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  zone_mappings:
+    To: ZoneMappings

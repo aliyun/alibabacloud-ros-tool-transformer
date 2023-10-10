@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_havip_attachment
+  To: ALIYUN::VPC::HaVipAssociation
+Properties:
+  force:
+    Ignore: true
+  ha_vip_id:
+    To: HaVipId
+  havip_id:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  instance_type:
+    To: InstanceType
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  ha_vip_id:
+    Ignore: true
+  havip_id:
+    Ignore: true
+  instance_id:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  status:
+    Ignore: true

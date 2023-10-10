@@ -1,0 +1,220 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ehpc_cluster
+  To: ALIYUN::EHPC::Cluster
+Properties:
+  account_type:
+    To: AccountType
+  additional_volumes:
+    To: AdditionalVolumes
+    Type: List
+    Schema:
+      job_queue:
+        To: JobQueue
+      local_directory:
+        To: LocalDirectory
+      location:
+        To: Location
+      remote_directory:
+        To: RemoteDirectory
+      roles:
+        Ignore: true
+      volume_id:
+        To: VolumeId
+      volume_mount_option:
+        Ignore: true
+      volume_mountpoint:
+        To: VolumeMountpoint
+      volume_protocol:
+        To: VolumeProtocol
+      volume_type:
+        To: VolumeType
+  application:
+    To: Application
+    Type: List
+    Schema:
+      tag:
+        To: Tag
+  auto_renew:
+    To: AutoRenew
+  auto_renew_period:
+    To: AutoRenewPeriod
+  client_version:
+    To: ClientVersion
+  cluster_name:
+    Ignore: true
+  cluster_version:
+    Ignore: true
+  compute_count:
+    Ignore: true
+  compute_enable_ht:
+    To: ComputeEnableHt
+  compute_instance_type:
+    Ignore: true
+  compute_spot_price_limit:
+    To: ComputeSpotPriceLimit
+  compute_spot_strategy:
+    To: ComputeSpotStrategy
+  deploy_mode:
+    To: DeployMode
+  description:
+    To: Description
+  domain:
+    Ignore: true
+  ecs_charge_type:
+    To: EcsChargeType
+  ehpc_version:
+    To: EhpcVersion
+  ha_enable:
+    To: HaEnable
+  image_id:
+    To: ImageId
+  image_owner_alias:
+    To: ImageOwnerAlias
+  input_file_url:
+    To: InputFileUrl
+  is_compute_ess:
+    To: IsComputeEss
+  job_queue:
+    To: JobQueue
+  key_pair_name:
+    To: KeyPairName
+  login_count:
+    Ignore: true
+  login_instance_type:
+    Ignore: true
+  manager_count:
+    Ignore: true
+  manager_instance_type:
+    Ignore: true
+  os_tag:
+    To: OsTag
+  password:
+    To: Password
+  period:
+    To: Period
+  period_unit:
+    To: PeriodUnit
+  plugin:
+    Ignore: true
+  post_install_script:
+    To: PostInstallScript
+    Type: List
+    Schema:
+      args:
+        To: Args
+      url:
+        To: Url
+  ram_node_types:
+    To: RamNodeTypes
+    Type: List
+  ram_role_name:
+    To: RamRoleName
+  release_instance:
+    Ignore: true
+  remote_directory:
+    To: RemoteDirectory
+  remote_vis_enable:
+    To: RemoteVisEnable
+  resource_group_id:
+    To: ResourceGroupId
+  scc_cluster_id:
+    To: SccClusterId
+  scheduler_type:
+    To: SchedulerType
+  security_group_id:
+    To: SecurityGroupId
+  security_group_name:
+    To: SecurityGroupName
+  status:
+    Ignore: true
+  system_disk_level:
+    To: SystemDiskLevel
+  system_disk_size:
+    To: SystemDiskSize
+  system_disk_type:
+    To: SystemDiskType
+  volume_id:
+    To: VolumeId
+  volume_mount_option:
+    Ignore: true
+  volume_mountpoint:
+    To: VolumeMountpoint
+  volume_protocol:
+    To: VolumeProtocol
+  volume_type:
+    To: VolumeType
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  without_agent:
+    Ignore: true
+  without_elastic_ip:
+    To: WithoutElasticIp
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: ClusterId
+  account_type:
+    Ignore: true
+  application:
+    Ignore: true
+  client_version:
+    Ignore: true
+  cluster_name:
+    To: Name
+  compute_count:
+    Ignore: true
+  compute_instance_type:
+    Ignore: true
+  deploy_mode:
+    Ignore: true
+  description:
+    Ignore: true
+  ecs_charge_type:
+    Ignore: true
+  ha_enable:
+    Ignore: true
+  image_id:
+    Ignore: true
+  image_owner_alias:
+    Ignore: true
+  key_pair_name:
+    Ignore: true
+  login_count:
+    Ignore: true
+  login_instance_type:
+    Ignore: true
+  manager_count:
+    Ignore: true
+  manager_instance_type:
+    Ignore: true
+  os_tag:
+    Ignore: true
+  post_install_script:
+    Ignore: true
+  remote_directory:
+    Ignore: true
+  scc_cluster_id:
+    Ignore: true
+  scheduler_type:
+    Ignore: true
+  security_group_id:
+    To: SecurityGroupId
+  status:
+    Ignore: true
+  volume_id:
+    Ignore: true
+  volume_mountpoint:
+    Ignore: true
+  volume_protocol:
+    Ignore: true
+  volume_type:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

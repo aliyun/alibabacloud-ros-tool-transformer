@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_eais_instance
+  To: ALIYUN::EAIS::Instance
+Properties:
+  force:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  security_group_id:
+    To: SecurityGroupId
+  status:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: InstanceId
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  status:
+    Ignore: true

@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_simple_application_server_instance
+  To: ALIYUN::SWAS::Instance
+Properties:
+  auto_renew:
+    To: AutoRenew
+  auto_renew_period:
+    To: AutoRenewPeriod
+  data_disk_size:
+    To: DataDiskSize
+  image_id:
+    To: ImageId
+  instance_name:
+    Ignore: true
+  password:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  period:
+    To: Period
+  plan_id:
+    To: PlanId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  image_id:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  plan_id:
+    Ignore: true
+  status:
+    Ignore: true

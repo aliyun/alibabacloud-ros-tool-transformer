@@ -1,0 +1,135 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cs_edge_kubernetes
+  To: ALIYUN::CS::ManagedEdgeKubernetesCluster
+Properties:
+  addons:
+    To: Addons
+    Type: List
+    Schema:
+      config:
+        To: Config
+      disabled:
+        To: Disabled
+      name:
+        To: Name
+  availability_zone:
+    Ignore: true
+  certificate_authority:
+    Ignore: true
+  client_cert:
+    Ignore: true
+  client_key:
+    Ignore: true
+  cluster_ca_cert:
+    Ignore: true
+  cluster_spec:
+    To: ClusterSpec
+  connections:
+    Ignore: true
+  deletion_protection:
+    To: DeletionProtection
+  force_update:
+    Ignore: true
+  install_cloud_monitor:
+    Ignore: true
+  is_enterprise_security_group:
+    To: IsEnterpriseSecurityGroup
+  key_name:
+    Ignore: true
+  kube_config:
+    Ignore: true
+  load_balancer_spec:
+    Ignore: true
+  log_config:
+    Ignore: true
+  name:
+    To: Name
+  name_prefix:
+    Ignore: true
+  nat_gateway_id:
+    Ignore: true
+  new_nat_gateway:
+    Ignore: true
+  node_cidr_mask:
+    To: NodeCidrMask
+  password:
+    Ignore: true
+  pod_cidr:
+    Ignore: true
+  proxy_mode:
+    To: ProxyMode
+  rds_instances:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  retain_resources:
+    Ignore: true
+  runtime:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  service_cidr:
+    To: ServiceCidr
+  slb_internet:
+    Ignore: true
+  slb_internet_enabled:
+    Ignore: true
+  slb_intranet:
+    Ignore: true
+  tags:
+    Ignore: true
+  user_data:
+    Ignore: true
+  version:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  worker_data_disks:
+    To: WorkerDataDisks
+    Type: List
+    Schema:
+      auto_snapshot_policy_id:
+        Ignore: true
+      category:
+        To: Category
+      device:
+        Ignore: true
+      encrypted:
+        Ignore: true
+      kms_key_id:
+        Ignore: true
+      name:
+        Ignore: true
+      performance_level:
+        Ignore: true
+      size:
+        Ignore: true
+      snapshot_id:
+        Ignore: true
+  worker_disk_category:
+    Ignore: true
+  worker_disk_performance_level:
+    Ignore: true
+  worker_disk_size:
+    Ignore: true
+  worker_disk_snapshot_policy_id:
+    Ignore: true
+  worker_instance_charge_type:
+    Ignore: true
+  worker_instance_types:
+    To: WorkerInstanceTypes
+    Type: List
+  worker_nodes:
+    Ignore: true
+  worker_number:
+    Ignore: true
+  worker_ram_role_name:
+    Ignore: true
+  worker_vswitch_ids:
+    To: WorkerVSwitchIds
+    Type: List
+Attributes:
+  id:
+    To: ClusterId

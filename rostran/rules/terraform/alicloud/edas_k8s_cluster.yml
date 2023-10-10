@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_k8s_cluster
+  To: ALIYUN::EDAS::K8sCluster
+Properties:
+  cluster_import_status:
+    Ignore: true
+  cluster_name:
+    Ignore: true
+  cluster_type:
+    Ignore: true
+  cs_cluster_id:
+    To: CsClusterId
+  namespace_id:
+    To: NamespaceId
+  network_mode:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+Attributes:
+  id:
+    To: ClusterId
+  cluster_import_status:
+    Ignore: true
+  cluster_name:
+    To: ClusterName
+  cluster_type:
+    To: ClusterType
+  cs_cluster_id:
+    To: CsClusterId
+  namespace_id:
+    Ignore: true
+  network_mode:
+    To: NetworkMode
+  vpc_id:
+    To: VpcId

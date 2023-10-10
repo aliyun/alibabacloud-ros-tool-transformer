@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_nat_gateway
-  To: ALIYUN::ECS::NatGateway
+  To: ALIYUN::VPC::NatGateway
 Properties:
   bandwidth_package_ids:
     Ignore: true
@@ -12,8 +12,10 @@ Properties:
     To: DeletionProtection
   description:
     To: Description
-  eip_bind_mode:
+  dry_run:
     Ignore: true
+  eip_bind_mode:
+    To: EipBindMode
   force:
     Ignore: true
   forward_table_ids:
@@ -29,11 +31,11 @@ Properties:
   nat_type:
     To: NatType
   network_type:
-    Ignore: true
+    To: NetworkType
   payment_type:
-    Ignore: true
+    To: InstanceChargeType
   period:
-    Ignore: true
+    To: Duration
   snat_table_ids:
     Ignore: true
   spec:

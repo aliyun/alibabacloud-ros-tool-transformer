@@ -1,0 +1,213 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cs_kubernetes_node_pool
+  To: ALIYUN::CS::ClusterNodePool
+Properties:
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  cis_enabled:
+    Ignore: true
+  cluster_id:
+    To: ClusterId
+  cpu_policy:
+    Ignore: true
+  data_disks:
+    Ignore: true
+  deployment_set_id:
+    Ignore: true
+  desired_size:
+    Ignore: true
+  format_disk:
+    Ignore: true
+  image_id:
+    Ignore: true
+  image_type:
+    Ignore: true
+  install_cloud_monitor:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_types:
+    Ignore: true
+  instances:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  keep_instance_name:
+    Ignore: true
+  key_name:
+    Ignore: true
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  kubelet_configuration:
+    Ignore: true
+  labels:
+    Ignore: true
+  management:
+    Ignore: true
+  name:
+    Ignore: true
+  node_count:
+    Ignore: true
+  node_name_mode:
+    Ignore: true
+  password:
+    Ignore: true
+  period:
+    Ignore: true
+  period_unit:
+    Ignore: true
+  platform:
+    Ignore: true
+  polardb_ids:
+    Ignore: true
+  rds_instances:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  rolling_policy:
+    Ignore: true
+  rollout_policy:
+    Ignore: true
+  runtime_name:
+    Ignore: true
+  runtime_version:
+    Ignore: true
+  scaling_config:
+    Ignore: true
+  scaling_group_id:
+    Ignore: true
+  scaling_policy:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  soc_enabled:
+    Ignore: true
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  system_disk_category:
+    Ignore: true
+  system_disk_encrypt_algorithm:
+    Ignore: true
+  system_disk_encrypted:
+    Ignore: true
+  system_disk_kms_key:
+    Ignore: true
+  system_disk_performance_level:
+    Ignore: true
+  system_disk_size:
+    Ignore: true
+  system_disk_snapshot_policy_id:
+    Ignore: true
+  tags:
+    Ignore: true
+  taints:
+    Ignore: true
+  unschedulable:
+    Ignore: true
+  user_data:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true
+Attributes:
+  id:
+    To: NodePoolId
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  cis_enabled:
+    Ignore: true
+  cluster_id:
+    Ignore: true
+  deployment_set_id:
+    Ignore: true
+  desired_size:
+    Ignore: true
+  image_id:
+    Ignore: true
+  image_type:
+    Ignore: true
+  install_cloud_monitor:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_types:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  key_name:
+    Ignore: true
+  name:
+    Ignore: true
+  node_count:
+    Ignore: true
+  node_name_mode:
+    Ignore: true
+  password:
+    Ignore: true
+  period:
+    Ignore: true
+  period_unit:
+    Ignore: true
+  platform:
+    Ignore: true
+  polardb_ids:
+    Ignore: true
+  rds_instances:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  runtime_name:
+    Ignore: true
+  runtime_version:
+    Ignore: true
+  scaling_group_id:
+    Ignore: true
+  scaling_policy:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  soc_enabled:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  system_disk_category:
+    Ignore: true
+  system_disk_encrypt_algorithm:
+    Ignore: true
+  system_disk_encrypted:
+    Ignore: true
+  system_disk_kms_key:
+    Ignore: true
+  system_disk_performance_level:
+    Ignore: true
+  system_disk_size:
+    Ignore: true
+  system_disk_snapshot_policy_id:
+    Ignore: true
+  unschedulable:
+    Ignore: true
+  user_data:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true

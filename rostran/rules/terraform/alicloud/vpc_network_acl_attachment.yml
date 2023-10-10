@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_network_acl_attachment
+  To: ALIYUN::VPC::NetworkAclAssociation
+Properties:
+  network_acl_id:
+    To: NetworkAclId
+  # todo: Need to support different levels of property mapping
+  resource_id:
+    Ignore: true
+  resource_type:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  network_acl_id:
+    To: NetworkAclId
+  resource_id:
+    Ignore: true
+  resource_type:
+    Ignore: true
+  status:
+    Ignore: true

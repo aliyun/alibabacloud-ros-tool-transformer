@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ons_topic
+  To: ALIYUN::ROCKETMQ::Topic
+Properties:
+  instance_id:
+    To: InstanceId
+  message_type:
+    To: MessageType
+  perm:
+    Ignore: true
+  remark:
+    To: Remark
+  tags:
+    Ignore: true
+  topic:
+    To: Topic
+  topic_name:
+    To: Topic
+Attributes:
+  id:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  message_type:
+    To: MessageType
+  perm:
+    Ignore: true
+  remark:
+    Ignore: true
+  tags:
+    Ignore: true
+  topic:
+    To: Topic
+  topic_name:
+    To: Topic

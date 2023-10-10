@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_acl
+  To: ALIYUN::ALB::Acl
+Properties:
+  acl_entries:
+    To: AclEntries
+    Type: List
+    Schema:
+      description:
+        To: Description
+      entry:
+        To: Entry
+      status:
+        Ignore: true
+  acl_name:
+    To: AclName
+  dry_run:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    To: AclId
+  acl_entries:
+    Ignore: true
+  acl_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

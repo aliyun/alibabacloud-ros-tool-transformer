@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbr_vault
+  To: ALIYUN::HBR::Vault
+Properties:
+  description:
+    To: Description
+  encrypt_type:
+    To: EncryptType
+  kms_key_id:
+    To: KmsKeyId
+  redundancy_type:
+    To: RedundancyType
+  status:
+    Ignore: true
+  vault_name:
+    To: VaultName
+  vault_storage_class:
+    To: VaultStorageClass
+  vault_type:
+    To: VaultType
+Attributes:
+  id:
+    To: VaultId
+  description:
+    To: Description
+  encrypt_type:
+    Ignore: true
+  kms_key_id:
+    Ignore: true
+  status:
+    Ignore: true
+  vault_name:
+    To: VaultName
+  vault_storage_class:
+    To: VaultStorageClass
+  vault_type:
+    To: VaultType

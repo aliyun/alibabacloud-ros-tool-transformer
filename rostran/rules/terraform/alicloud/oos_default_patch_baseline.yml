@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oos_default_patch_baseline
+  To: ALIYUN::OOS::DefaultPatchBaseline
+Properties:
+  patch_baseline_name:
+    To: PatchBaselineName
+Attributes:
+  id:
+    To: PatchBaselineId
+  patch_baseline_id:
+    To: PatchBaselineId
+  patch_baseline_name:
+    To: PatchBaselineName

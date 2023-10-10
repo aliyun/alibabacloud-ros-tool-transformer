@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_log_audit
+  To: ALIYUN::SLS::Audit
+Properties:
+  aliuid:
+    Ignore: true
+  display_name:
+    To: DisplayName
+  multi_account:
+    To: MultiAccount
+    Type: List
+  resource_directory_type:
+    Ignore: true
+  variable_map:
+    To: VariableMap
+Attributes:
+  id:
+    To: DisplayName
+  aliuid:
+    Ignore: true
+  display_name:
+    To: DisplayName
+  multi_account:
+    Ignore: true
+  resource_directory_type:
+    Ignore: true
+  variable_map:
+    Ignore: true

@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_tsdb_instance
+  To: ALIYUN::TSDB::HiTSDBInstance
+Properties:
+  app_key:
+    Ignore: true
+  disk_category:
+    To: DiskCategory
+  duration:
+    To: Duration
+  engine_type:
+    Ignore: true
+  instance_alias:
+    To: InstanceAlias
+  instance_class:
+    To: InstanceClass
+  instance_storage:
+    Ignore: true
+  payment_type:
+    To: PayType
+  status:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: InstanceId
+  disk_category:
+    Ignore: true
+  engine_type:
+    To: EngineType
+  instance_alias:
+    Ignore: true
+  instance_class:
+    Ignore: true
+  instance_storage:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  status:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

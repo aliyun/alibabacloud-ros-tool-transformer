@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ebs_disk_replica_group
+  To: ALIYUN::EBS::DiskReplicaGroup
+Properties:
+  description:
+    To: Description
+  destination_region_id:
+    To: DestinationRegionId
+  destination_zone_id:
+    To: DestinationZoneId
+  group_name:
+    Ignore: true
+  rpo:
+    Ignore: true
+  source_region_id:
+    To: SourceRegionId
+  source_zone_id:
+    To: SourceZoneId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: ReplicaGroupId
+  description:
+    To: Description
+  destination_region_id:
+    To: DestinationRegionId
+  destination_zone_id:
+    To: DestinationZoneId
+  group_name:
+    To: DiskReplicaGroupName
+  rpo:
+    To: RPO
+  source_region_id:
+    To: SourceRegionId
+  source_zone_id:
+    To: SourceZoneId
+  status:
+    Ignore: true

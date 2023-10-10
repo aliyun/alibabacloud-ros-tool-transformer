@@ -1,0 +1,42 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ons_instance
+  To: ALIYUN::ROCKETMQ::Instance
+Properties:
+  instance_name:
+    To: InstanceName
+  instance_status:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  name:
+    Ignore: true
+  release_time:
+    Ignore: true
+  remark:
+    To: Remark
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+Attributes:
+  id:
+    To: InstanceId
+  instance_name:
+    To: InstanceName
+  instance_status:
+    Ignore: true
+  instance_type:
+    To: InstanceType
+  name:
+    To: InstanceName
+  release_time:
+    Ignore: true
+  remark:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

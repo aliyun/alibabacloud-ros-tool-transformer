@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_eipanycast_anycast_eip_address
+  To: ALIYUN::VPC::AnycastEIP
+Properties:
+  anycast_eip_address_name:
+    Ignore: true
+  bandwidth:
+    To: Bandwidth
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  internet_charge_type:
+    To: InternetChargeType
+  payment_type:
+    To: InstanceChargeType
+  resource_group_id:
+    Ignore: true
+  service_location:
+    To: ServiceLocation
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    To: AnycastId
+  anycast_eip_address_name:
+    To: Name
+  bandwidth:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  service_location:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

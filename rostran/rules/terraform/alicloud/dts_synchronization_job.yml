@@ -1,0 +1,144 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dts_synchronization_job
+  To: ALIYUN::DTS::SynchronizationJob
+Properties:
+  # todo: Need to support different levels of property mapping
+  checkpoint:
+    Ignore: true
+  data_initialization:
+    To: DataInitialization
+  data_synchronization:
+    Ignore: true
+  db_list:
+    Ignore: true
+  delay_notice:
+    Ignore: true
+  delay_phone:
+    Ignore: true
+  delay_rule_time:
+    Ignore: true
+  destination_endpoint_database_name:
+    Ignore: true
+  destination_endpoint_engine_name:
+    Ignore: true
+  destination_endpoint_instance_id:
+    Ignore: true
+  destination_endpoint_instance_type:
+    Ignore: true
+  destination_endpoint_ip:
+    Ignore: true
+  destination_endpoint_oracle_sid:
+    Ignore: true
+  destination_endpoint_password:
+    Ignore: true
+  destination_endpoint_port:
+    Ignore: true
+  destination_endpoint_region:
+    Ignore: true
+  destination_endpoint_user_name:
+    Ignore: true
+  dts_instance_id:
+    Ignore: true
+  dts_job_name:
+    Ignore: true
+  error_notice:
+    Ignore: true
+  error_phone:
+    Ignore: true
+  instance_class:
+    Ignore: true
+  reserve:
+    Ignore: true
+  source_endpoint_database_name:
+    Ignore: true
+  source_endpoint_engine_name:
+    Ignore: true
+  source_endpoint_instance_id:
+    Ignore: true
+  source_endpoint_instance_type:
+    Ignore: true
+  source_endpoint_ip:
+    Ignore: true
+  source_endpoint_oracle_sid:
+    Ignore: true
+  source_endpoint_owner_id:
+    Ignore: true
+  source_endpoint_password:
+    Ignore: true
+  source_endpoint_port:
+    Ignore: true
+  source_endpoint_region:
+    Ignore: true
+  source_endpoint_role:
+    Ignore: true
+  source_endpoint_user_name:
+    Ignore: true
+  status:
+    Ignore: true
+  structure_initialization:
+    To: StructureInitialization
+  synchronization_direction:
+    Ignore: true
+Attributes:
+  id:
+    To: SynchronizationJobId
+  checkpoint:
+    Ignore: true
+  data_initialization:
+    Ignore: true
+  data_synchronization:
+    Ignore: true
+  db_list:
+    Ignore: true
+  destination_endpoint_database_name:
+    Ignore: true
+  destination_endpoint_engine_name:
+    Ignore: true
+  destination_endpoint_instance_id:
+    Ignore: true
+  destination_endpoint_instance_type:
+    Ignore: true
+  destination_endpoint_ip:
+    Ignore: true
+  destination_endpoint_oracle_sid:
+    Ignore: true
+  destination_endpoint_port:
+    Ignore: true
+  destination_endpoint_region:
+    Ignore: true
+  destination_endpoint_user_name:
+    Ignore: true
+  dts_instance_id:
+    Ignore: true
+  dts_job_name:
+    Ignore: true
+  source_endpoint_database_name:
+    Ignore: true
+  source_endpoint_engine_name:
+    Ignore: true
+  source_endpoint_instance_id:
+    Ignore: true
+  source_endpoint_instance_type:
+    Ignore: true
+  source_endpoint_ip:
+    Ignore: true
+  source_endpoint_oracle_sid:
+    Ignore: true
+  source_endpoint_owner_id:
+    Ignore: true
+  source_endpoint_port:
+    Ignore: true
+  source_endpoint_region:
+    Ignore: true
+  source_endpoint_role:
+    Ignore: true
+  source_endpoint_user_name:
+    Ignore: true
+  status:
+    Ignore: true
+  structure_initialization:
+    Ignore: true
+  synchronization_direction:
+    Ignore: true

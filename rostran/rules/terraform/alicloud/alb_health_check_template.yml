@@ -1,0 +1,60 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_health_check_template
+  To: ALIYUN::ALB::HealthCheckTemplate
+Properties:
+  dry_run:
+    Ignore: true
+  health_check_codes:
+    To: HealthCheckCodes
+    Type: List
+  health_check_connect_port:
+    To: HealthCheckConnectPort
+  health_check_host:
+    To: HealthCheckHost
+  health_check_http_version:
+    Ignore: true
+  health_check_interval:
+    To: HealthCheckInterval
+  health_check_method:
+    To: HealthCheckMethod
+  health_check_path:
+    To: HealthCheckPath
+  health_check_protocol:
+    To: HealthCheckProtocol
+  health_check_template_name:
+    To: HealthCheckTemplateName
+  health_check_timeout:
+    To: HealthCheckTimeout
+  healthy_threshold:
+    To: HealthyThreshold
+  unhealthy_threshold:
+    To: UnhealthyThreshold
+Attributes:
+  id:
+    To: HealthCheckTemplateId
+  health_check_codes:
+    Ignore: true
+  health_check_connect_port:
+    Ignore: true
+  health_check_host:
+    Ignore: true
+  health_check_http_version:
+    Ignore: true
+  health_check_interval:
+    Ignore: true
+  health_check_method:
+    Ignore: true
+  health_check_path:
+    Ignore: true
+  health_check_protocol:
+    Ignore: true
+  health_check_template_name:
+    Ignore: true
+  health_check_timeout:
+    Ignore: true
+  healthy_threshold:
+    Ignore: true
+  unhealthy_threshold:
+    Ignore: true

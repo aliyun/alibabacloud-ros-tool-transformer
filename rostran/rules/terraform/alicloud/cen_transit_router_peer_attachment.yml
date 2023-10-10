@@ -1,0 +1,67 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_transit_router_peer_attachment
+  To: ALIYUN::CEN::TransitRouterPeerAttachment
+Properties:
+  auto_publish_route_enabled:
+    To: AutoPublishRouteEnabled
+  bandwidth:
+    To: Bandwidth
+  bandwidth_type:
+    Ignore: true
+  cen_bandwidth_package_id:
+    To: CenBandwidthPackageId
+  cen_id:
+    To: CenId
+  dry_run:
+    Ignore: true
+  peer_transit_router_id:
+    To: PeerTransitRouterId
+  peer_transit_router_region_id:
+    To: PeerTransitRouterRegionId
+  resource_type:
+    Ignore: true
+  route_table_association_enabled:
+    Ignore: true
+  route_table_propagation_enabled:
+    Ignore: true
+  status:
+    Ignore: true
+  transit_router_attachment_description:
+    To: TransitRouterAttachmentDescription
+  transit_router_attachment_id:
+    Ignore: true
+  transit_router_attachment_name:
+    To: TransitRouterAttachmentName
+  transit_router_id:
+    To: TransitRouterId
+Attributes:
+  id:
+    Ignore: true
+  auto_publish_route_enabled:
+    To: AutoPublishRouteEnabled
+  bandwidth:
+    To: Bandwidth
+  bandwidth_type:
+    Ignore: true
+  cen_bandwidth_package_id:
+    To: CenBandwidthPackageId
+  cen_id:
+    To: CenId
+  peer_transit_router_id:
+    To: PeerTransitRouterId
+  peer_transit_router_region_id:
+    To: PeerTransitRouterRegionId
+  resource_type:
+    To: ResourceType
+  status:
+    Ignore: true
+  transit_router_attachment_description:
+    To: TransitRouterAttachmentDescription
+  transit_router_attachment_id:
+    To: TransitRouterAttachmentId
+  transit_router_attachment_name:
+    To: TransitRouterAttachmentName
+  transit_router_id:
+    To: TransitRouterId

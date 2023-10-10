@@ -1,0 +1,109 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbr_restore_job
+  To: ALIYUN::HBR::RestoreJob
+Properties:
+  cross_account_role_name:
+    Ignore: true
+  cross_account_type:
+    Ignore: true
+  cross_account_user_id:
+    Ignore: true
+  exclude:
+    Ignore: true
+  include:
+    Ignore: true
+  options:
+    Ignore: true
+  ots_detail:
+    Ignore: true
+  restore_job_id:
+    Ignore: true
+  restore_type:
+    To: RestoreType
+  snapshot_hash:
+    Ignore: true
+  snapshot_id:
+    To: SnapshotId
+  source_type:
+    To: SourceType
+  status:
+    Ignore: true
+  target_bucket:
+    Ignore: true
+  target_client_id:
+    To: TargetClientId
+  target_create_time:
+    Ignore: true
+  target_data_source_id:
+    Ignore: true
+  target_file_system_id:
+    Ignore: true
+  target_instance_id:
+    To: TargetInstanceId
+  target_instance_name:
+    Ignore: true
+  target_path:
+    To: TargetPath
+  target_prefix:
+    Ignore: true
+  target_table_name:
+    Ignore: true
+  target_time:
+    Ignore: true
+  udm_detail:
+    Ignore: true
+  vault_id:
+    To: VaultId
+Attributes:
+  id:
+    To: RestoreId
+  cross_account_role_name:
+    Ignore: true
+  cross_account_type:
+    Ignore: true
+  cross_account_user_id:
+    Ignore: true
+  options:
+    Ignore: true
+  ots_detail:
+    Ignore: true
+  restore_job_id:
+    Ignore: true
+  restore_type:
+    To: RestoreType
+  snapshot_hash:
+    Ignore: true
+  snapshot_id:
+    Ignore: true
+  source_type:
+    To: SourceType
+  status:
+    To: Status
+  target_bucket:
+    Ignore: true
+  target_client_id:
+    Ignore: true
+  target_create_time:
+    Ignore: true
+  target_data_source_id:
+    Ignore: true
+  target_file_system_id:
+    Ignore: true
+  target_instance_id:
+    Ignore: true
+  target_instance_name:
+    Ignore: true
+  target_path:
+    Ignore: true
+  target_prefix:
+    Ignore: true
+  target_table_name:
+    Ignore: true
+  target_time:
+    Ignore: true
+  udm_detail:
+    Ignore: true
+  vault_id:
+    Ignore: true

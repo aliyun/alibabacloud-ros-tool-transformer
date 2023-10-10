@@ -1,0 +1,115 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_eci_container_group
+  To: ALIYUN::ECI::ContainerGroup
+Properties:
+  acr_registry_info:
+    To: AcrRegistryInfo
+    Type: List
+    Schema:
+      domains:
+        Ignore: true
+      instance_id:
+        To: InstanceId
+      instance_name:
+        To: InstanceName
+      region_id:
+        To: RegionId
+  auto_create_eip:
+    Ignore: true
+  auto_match_image_cache:
+    To: AutoMatchImageCache
+  container_group_name:
+    To: ContainerGroupName
+  containers:
+    Ignore: true
+  cpu:
+    To: Cpu
+  dns_config:
+    Ignore: true
+  eci_security_context:
+    Ignore: true
+  eip_bandwidth:
+    Ignore: true
+  eip_instance_id:
+    To: EipInstanceId
+  host_aliases:
+    Ignore: true
+  image_registry_credential:
+    To: ImageRegistryCredential
+    Type: List
+    Schema:
+      password:
+        To: Password
+      server:
+        To: Server
+      user_name:
+        To: UserName
+  init_containers:
+    Ignore: true
+  insecure_registry:
+    Ignore: true
+  instance_type:
+    To: InstanceType
+  internet_ip:
+    Ignore: true
+  intranet_ip:
+    Ignore: true
+  memory:
+    To: Memory
+  plain_http_registry:
+    Ignore: true
+  ram_role_name:
+    To: RamRoleName
+  resource_group_id:
+    To: ResourceGroupId
+  restart_policy:
+    To: RestartPolicy
+  security_group_id:
+    To: SecurityGroupId
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  volumes:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: ContainerGroupId
+  container_group_name:
+    To: ContainerGroupName
+  cpu:
+    Ignore: true
+  dns_config:
+    Ignore: true
+  eci_security_context:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  internet_ip:
+    To: InternetIp
+  intranet_ip:
+    To: IntranetIp
+  memory:
+    Ignore: true
+  ram_role_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  restart_policy:
+    Ignore: true
+  security_group_id:
+    To: SecurityGroupId
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId

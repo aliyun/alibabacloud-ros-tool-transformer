@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dfs_file_system
+  To: ALIYUN::DFS::FileSystem
+Properties:
+  description:
+    To: Description
+  file_system_name:
+    To: FileSystemName
+  protocol_type:
+    To: ProtocolType
+  provisioned_throughput_in_mi_bps:
+    To: ProvisionedThroughputInMiBps
+  space_capacity:
+    To: SpaceCapacity
+  storage_type:
+    To: StorageType
+  throughput_mode:
+    To: ThroughputMode
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: FileSystemId
+  description:
+    Ignore: true
+  file_system_name:
+    Ignore: true
+  protocol_type:
+    Ignore: true
+  provisioned_throughput_in_mi_bps:
+    Ignore: true
+  space_capacity:
+    Ignore: true
+  storage_type:
+    Ignore: true
+  throughput_mode:
+    Ignore: true
+  zone_id:
+    Ignore: true

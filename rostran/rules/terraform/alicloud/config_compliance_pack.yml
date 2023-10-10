@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_config_compliance_pack
+  To: ALIYUN::Config::CompliancePack
+Properties:
+  compliance_pack_name:
+    To: CompliancePackName
+  compliance_pack_template_id:
+    To: CompliancePackTemplateId
+  config_rule_ids:
+    Ignore: true
+  config_rules:
+    To: ConfigRules
+    Type: List
+    Schema:
+      config_rule_parameters:
+        To: ConfigRuleParameters
+        Type: List
+        Schema:
+          parameter_name:
+            To: ParameterName
+          parameter_value:
+            To: ParameterValue
+      managed_rule_identifier:
+        To: ManagedRuleIdentifier
+  description:
+    To: Description
+  risk_level:
+    To: RiskLevel
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: CompliancePackId
+  compliance_pack_name:
+    To: CompliancePackName
+  compliance_pack_template_id:
+    To: CompliancePackTemplateId
+  config_rule_ids:
+    Ignore: true
+  config_rules:
+    Ignore: true
+  description:
+    To: Description
+  risk_level:
+    To: RiskLevel
+  status:
+    Ignore: true

@@ -1,0 +1,144 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_emrv2_cluster
+  To: ALIYUN::EMR::Cluster2
+Properties:
+  application_configs:
+    To: ApplicationConfigs
+    Type: List
+    Schema:
+      application_name:
+        To: ApplicationName
+      config_description:
+        Ignore: true
+      config_file_name:
+        To: ConfigFileName
+      config_item_key:
+        To: ConfigItemKey
+      config_item_value:
+        To: ConfigItemValue
+      config_scope:
+        To: ConfigScope
+      node_group_id:
+        To: NodeGroupId
+      node_group_name:
+        To: NodeGroupName
+  applications:
+    Ignore: true
+  bootstrap_scripts:
+    To: BootstrapScripts
+    Type: List
+    Schema:
+      execution_fail_strategy:
+        To: ExecutionFailStrategy
+      execution_moment:
+        To: ExecutionMoment
+      node_selector:
+        Ignore: true
+      priority:
+        To: Priority
+      script_args:
+        To: ScriptArgs
+      script_name:
+        To: ScriptName
+      script_path:
+        To: ScriptPath
+  cluster_name:
+    To: ClusterName
+  cluster_type:
+    To: ClusterType
+  deploy_mode:
+    To: DeployMode
+  node_attributes:
+    Ignore: true
+  node_groups:
+    To: NodeGroups
+    Type: List
+    Schema:
+      additional_security_group_ids:
+        To: AdditionalSecurityGroupIds
+        Type: List
+      cost_optimized_config:
+        Ignore: true
+      data_disks:
+        To: DataDisks
+        Type: List
+        Schema:
+          category:
+            To: Category
+          count:
+            To: Count
+          performance_level:
+            To: PerformanceLevel
+          size:
+            To: Size
+      graceful_shutdown:
+        To: GracefulShutdown
+      instance_types:
+        To: InstanceTypes
+        Type: List
+      node_count:
+        To: NodeCount
+      node_group_name:
+        To: NodeGroupName
+      node_group_type:
+        To: NodeGroupType
+      payment_type:
+        Ignore: true
+      spot_bid_prices:
+        To: SpotBidPrices
+        Type: List
+        Schema:
+          bid_price:
+            To: BidPrice
+          instance_type:
+            To: InstanceType
+      spot_instance_remedy:
+        To: SpotInstanceRemedy
+      subscription_config:
+        Ignore: true
+      system_disk:
+        Ignore: true
+      vswitch_ids:
+        Ignore: true
+      with_public_ip:
+        To: WithPublicIp
+  payment_type:
+    To: PaymentType
+  release_version:
+    To: ReleaseVersion
+  resource_group_id:
+    To: ResourceGroupId
+  security_mode:
+    To: SecurityMode
+  subscription_config:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+Attributes:
+  id:
+    To: ClusterId
+  applications:
+    Ignore: true
+  cluster_name:
+    Ignore: true
+  cluster_type:
+    Ignore: true
+  deploy_mode:
+    Ignore: true
+  node_attributes:
+    Ignore: true
+  node_groups:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  release_version:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_mode:
+    Ignore: true
+  tags:
+    Ignore: true

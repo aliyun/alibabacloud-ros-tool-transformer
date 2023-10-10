@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_prometheus
+  To: ALIYUN::ARMS::ManagedPrometheus
+Properties:
+  cluster_id:
+    To: ClusterId
+  cluster_name:
+    To: ClusterName
+  cluster_type:
+    To: ClusterType
+  grafana_instance_id:
+    To: GrafanaInstanceId
+  resource_group_id:
+    Ignore: true
+  security_group_id:
+    To: SecurityGroupId
+  sub_clusters_json:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    Ignore: true
+  cluster_id:
+    Ignore: true
+  cluster_name:
+    Ignore: true
+  cluster_type:
+    To: ClusterType
+  grafana_instance_id:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  sub_clusters_json:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    Ignore: true

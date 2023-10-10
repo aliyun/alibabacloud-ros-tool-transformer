@@ -1,0 +1,78 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_log_etl
+  To: ALIYUN::SLS::Etl
+Properties:
+  # todo: Need to support different levels of property mapping
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  display_name:
+    To: DisplayName
+  etl_name:
+    Ignore: true
+  etl_sinks:
+    Ignore: true
+  etl_type:
+    Ignore: true
+  from_time:
+    Ignore: true
+  last_modified_time:
+    Ignore: true
+  logstore:
+    Ignore: true
+  parameters:
+    Ignore: true
+  project:
+    Ignore: true
+  role_arn:
+    Ignore: true
+  schedule:
+    Ignore: true
+  script:
+    Ignore: true
+  status:
+    Ignore: true
+  to_time:
+    Ignore: true
+  version:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  display_name:
+    Ignore: true
+  etl_name:
+    Ignore: true
+  etl_sinks:
+    Ignore: true
+  etl_type:
+    Ignore: true
+  from_time:
+    Ignore: true
+  last_modified_time:
+    Ignore: true
+  logstore:
+    Ignore: true
+  parameters:
+    Ignore: true
+  project:
+    Ignore: true
+  role_arn:
+    Ignore: true
+  schedule:
+    Ignore: true
+  script:
+    Ignore: true
+  status:
+    Ignore: true
+  to_time:
+    Ignore: true
+  version:
+    Ignore: true

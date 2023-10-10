@@ -1,0 +1,63 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_listener
+  To: ALIYUN::GA::Listener
+Properties:
+  accelerator_id:
+    To: AcceleratorId
+  certificates:
+    To: Certificates
+    Type: List
+    Schema:
+      id:
+        To: Id
+  client_affinity:
+    To: ClientAffinity
+  description:
+    To: Description
+  forwarded_for_config:
+    Ignore: true
+  listener_type:
+    Ignore: true
+  name:
+    To: Name
+  port_ranges:
+    To: PortRanges
+    Type: List
+    Schema:
+      from_port:
+        To: FromPort
+      to_port:
+        To: ToPort
+  protocol:
+    To: Protocol
+  proxy_protocol:
+    To: ProxyProtocol
+  security_policy_id:
+    To: SecurityPolicyId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: ListenerId
+  accelerator_id:
+    Ignore: true
+  client_affinity:
+    Ignore: true
+  description:
+    Ignore: true
+  forwarded_for_config:
+    Ignore: true
+  listener_type:
+    Ignore: true
+  name:
+    Ignore: true
+  protocol:
+    Ignore: true
+  proxy_protocol:
+    Ignore: true
+  security_policy_id:
+    Ignore: true
+  status:
+    Ignore: true

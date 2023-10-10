@@ -9,12 +9,13 @@ tpl = {
     "ROSTemplateFormatVersion": "2015-09-01",
     "Resources": {
         "alicloud_nat_gateway.example": {
-            "Type": "ALIYUN::ECS::NatGateway",
+            "Type": "ALIYUN::VPC::NatGateway",
             "Properties": {
                 "Description": "terraform-example",
                 "InternetChargeType": "PayByLcu",
                 "NatGatewayName": "terraform-example",
                 "NatType": "Enhanced",
+                "NetworkType": "intranet",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.example", "VpcId"]},
                 "VSwitchId": {"Fn::GetAtt": ["alicloud_vswitch.example", "VSwitchId"]},
             },

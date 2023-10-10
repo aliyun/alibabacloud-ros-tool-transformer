@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cr_ee_namespace
+  To: ALIYUN::CR::Namespace
+Properties:
+  auto_create:
+    To: AutoCreate
+  default_visibility:
+    To: DefaultVisibility
+  instance_id:
+    To: InstanceId
+  name:
+    To: Namespace
+Attributes:
+  id:
+    To: NamespaceId
+  auto_create:
+    Ignore: true
+  default_visibility:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  name:
+    to: Namespace
