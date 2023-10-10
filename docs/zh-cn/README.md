@@ -3,4 +3,4 @@
 - 将 Excel、Terraform 或 AWS CloudFormation 转换为 ROS 模板。
 - 将 ROS 模板格式化。
 
-该项目使用 Python 语言开发，需要安装 Python3.6 或以上版本。
+该项目使用 Python 语言开发，需要安装 Python3.7 或以上版本。

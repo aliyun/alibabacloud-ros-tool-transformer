@@ -25,13 +25,13 @@ rostran transform [OPTIONS] SOURCE_PATH
   模版格式与`--target-path`文件格式相同；取值为`auto`且`--target-path`为目录时，生成的 ROS 模板名为`template.yml`。
 - `--compatible`：Terraform 转换为 ROS 模板时是否使用兼容模式。 如果兼容，则将 Terraform 文件内容保留在生成的 ROS 模板中。 否则，转换为使用 ROS 语法的模板。**此选项仅适用于 Terraform 模板文件**。
 
-> :warning: 如果要转换Terraform模板，请配置如下环境变量：
+> :warning: 如果要转换 Terraform 模板，请配置如下环境变量：
+>
 > ```bash
 > $ export ALICLOUD_ACCESS_KEY="access_key"
 > $ export ALICLOUD_SECRET_KEY="secret_key"
 > $ export ALICLOUD_REGION="region_id"
 > ```
-
 
 ## 格式化模板
 
@@ -45,7 +45,7 @@ rostran format [OPTIONS] PATH...
 
 #### PATH
 
-【必填】需要格式化的ROS模板文件路径。支持指定多个。
+【必填】需要格式化的 ROS 模板文件路径。支持指定多个。
 
 #### OPTIONS
 
@@ -53,7 +53,7 @@ rostran format [OPTIONS] PATH...
 
 - `--replace`: 将源文件内容替换为格式化后的内容。
 - `--no-replace`: 【默认】仅输出格式化内容。
-- `--skip PATH`: 需要跳过格式化的ROS模板文件路径。支持指定多个。
+- `--skip PATH`: 需要跳过格式化的 ROS 模板文件路径。支持指定多个。
 
 #### 格式化规则
 
@@ -66,6 +66,27 @@ rostran format [OPTIONS] PATH...
 - `Outputs` 区块的输出属性按照 `Description`、`Condition`、`Value` 排序。
 - `Metadata` 区块按照 `ALIYUN::ROS::Interface`、`ALIYUN::ROS::Designer`、`PredefinedParameters` 排序；每项值属性按照一定规则排序。
 - `Workspace` 区块按照字母升序排序，其中 `main.tf` 永远会放在第一个。
+
+## 查看转换规则
+
+### 命令
+
+```bash
+rostran rules [OPTIONS]
+```
+
+#### OPTIONS
+
+支持如下可选项：
+
+- `--terraform`: 【默认】展示 Terraform 转换规则。
+- `--no-terraform`: 不展示 Terraform 转换规则。
+- `--cloudformation`: 【默认】展示 CloudFormation 转换规则。
+- `--no-cloudformation`: 不展示 CloudFormation 转换规则。
+- `--markdown`: 以 markdown 格式展示规则。
+- `--no-markdown`: 【默认】以普通方式展示规则。
+- `--with-link`: 以 markdown 格式展示规则时附加链接。
+- `--no-with-link`: 【默认】以 markdown 格式展示规则时不附加链接。
 
 ## 查看帮助信息
 

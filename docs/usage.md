@@ -35,6 +35,7 @@ The following options are supported:
   **This option is only available for Terraform template files.**
 
 > :warning: If you want to convert Terraform templates, please configure the following environment variables:
+>
 > ```bash
 > $ export ALICLOUD_ACCESS_KEY="access_key"
 > $ export ALICLOUD_SECRET_KEY="secret_key"
@@ -80,7 +81,28 @@ The following options are supported:
   , `PredefinedParameters`. The attributes of each Metadata value are sorted according to certain rules.
 - The `Workspace` section is sorted in ascending alphabetical order, where `main.tf` is always placed first.
 
-### View Help Information
+## Show Transform Rules
+
+### Command
+
+```bash
+rostran rules [OPTIONS]
+```
+
+#### OPTIONS
+
+The following options are supported:
+
+- `--terraform`: [Default] Show Terraform transform rules.
+- `--no-terraform`: Do not show Terraform transform rules.
+- `--cloudformation`: [Default] Show CloudFormation transform rules.
+- `--no-cloudformation`: Do not show CloudFormation transform rules.
+- `--markdown`: Show rules in markdown format.
+- `--no-markdown`: [Default] Show rules in normal way.
+- `--with-link`: Append a link when showing rules in markdown format.
+- `--no-with-link`: [Default] No link is attached when showing rules in markdown format.
+
+## View Help Information
 
 ### Command
 
