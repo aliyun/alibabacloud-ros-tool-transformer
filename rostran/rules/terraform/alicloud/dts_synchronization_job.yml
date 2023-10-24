@@ -4,7 +4,6 @@ ResourceType:
   From: alicloud_dts_synchronization_job
   To: ALIYUN::DTS::SynchronizationJob
 Properties:
-  # todo: Need to support different levels of property mapping
   checkpoint:
     Ignore: true
   data_initialization:
@@ -22,23 +21,23 @@ Properties:
   destination_endpoint_database_name:
     Ignore: true
   destination_endpoint_engine_name:
-    Ignore: true
+    To: DestinationEndpoint.InstanceTypeForCreation
   destination_endpoint_instance_id:
-    Ignore: true
+    To: DestinationEndpoint.InstanceId
   destination_endpoint_instance_type:
-    Ignore: true
+    To: DestinationEndpoint.InstanceType
   destination_endpoint_ip:
-    Ignore: true
+    To: DestinationEndpoint.IP
   destination_endpoint_oracle_sid:
     Ignore: true
   destination_endpoint_password:
-    Ignore: true
+    To: DestinationEndpoint.Password
   destination_endpoint_port:
-    Ignore: true
+    To: DestinationEndpoint.Port
   destination_endpoint_region:
     Ignore: true
   destination_endpoint_user_name:
-    Ignore: true
+    To: DestinationEndpoint.UserName
   dts_instance_id:
     Ignore: true
   dts_job_name:
@@ -48,33 +47,33 @@ Properties:
   error_phone:
     Ignore: true
   instance_class:
-    Ignore: true
+    To: SynchronizationJobClass
   reserve:
     Ignore: true
   source_endpoint_database_name:
     Ignore: true
   source_endpoint_engine_name:
-    Ignore: true
+    To: SourceEndpoint.InstanceTypeForCreation
   source_endpoint_instance_id:
-    Ignore: true
+    To: SourceEndpoint.InstanceId
   source_endpoint_instance_type:
-    Ignore: true
+    To: SourceEndpoint.InstanceType
   source_endpoint_ip:
-    Ignore: true
+    To: SourceEndpoint.IP
   source_endpoint_oracle_sid:
     Ignore: true
   source_endpoint_owner_id:
-    Ignore: true
+    To: SourceEndpoint.OwnerID
   source_endpoint_password:
-    Ignore: true
+    To: SourceEndpoint.Password
   source_endpoint_port:
-    Ignore: true
+    To: SourceEndpoint.Port
   source_endpoint_region:
     Ignore: true
   source_endpoint_role:
-    Ignore: true
+    To: SourceEndpoint.Role
   source_endpoint_user_name:
-    Ignore: true
+    To: SourceEndpoint.UserName
   status:
     Ignore: true
   structure_initialization:

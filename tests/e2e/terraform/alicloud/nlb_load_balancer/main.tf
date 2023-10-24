@@ -42,4 +42,8 @@ resource "alicloud_nlb_load_balancer" "default" {
     vswitch_id = alicloud_vswitch.default2.id
     zone_id    = data.alicloud_nlb_zones.default.zones.1.id
   }
+  modification_protection_status = "ConsoleProtection"
+  modification_protection_reason = "just protect"
+  deletion_protection_enabled    = true
+  deletion_protection_reason     = "just protect"
 }

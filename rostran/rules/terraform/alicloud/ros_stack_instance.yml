@@ -4,11 +4,12 @@ ResourceType:
   From: alicloud_ros_stack_instance
   To: ALIYUN::ROS::StackInstances
 Properties:
-  # todo: Need to support single-valued attribute mapping to multi-valued attribute
   operation_description:
     To: OperationDescription
   operation_preferences:
-    Ignore: true
+    To: OperationPreferences
+    Handler: json_load
+  # todo: Need to support list to map
   parameter_overrides:
     Ignore: true
   retain_stacks:
@@ -16,13 +17,13 @@ Properties:
   stack_group_name:
     To: StackGroupName
   stack_instance_account_id:
-    Ignore: true
+    To: AccountIds.0
   stack_instance_region_id:
-    Ignore: true
+    To: RegionIds.0
   status:
     Ignore: true
   timeout_in_minutes:
-    Ignore: true
+    To: TimeoutInMinutes
 Attributes:
   id:
     Ignore: true

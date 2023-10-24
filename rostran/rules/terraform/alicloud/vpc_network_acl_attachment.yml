@@ -6,11 +6,10 @@ ResourceType:
 Properties:
   network_acl_id:
     To: NetworkAclId
-  # todo: Need to support different levels of property mapping
   resource_id:
-    Ignore: true
+    To: Resources.0.ResourceId
   resource_type:
-    Ignore: true
+    To: Resources.0.ResourceType
   status:
     Ignore: true
 Attributes:

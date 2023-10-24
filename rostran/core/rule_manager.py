@@ -173,7 +173,13 @@ class Rule:
         "AssociationProperty",
     )
 
-    _PROPERTIES = (VERSION, TYPE, RESOURCE_TYPE, PROPERTIES, ATTRIBUTES,) = (
+    _PROPERTIES = (
+        VERSION,
+        TYPE,
+        RESOURCE_TYPE,
+        PROPERTIES,
+        ATTRIBUTES,
+    ) = (
         "Version",
         "Type",
         "ResourceType",

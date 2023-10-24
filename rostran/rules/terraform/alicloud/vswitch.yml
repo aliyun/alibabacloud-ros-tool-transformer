@@ -55,7 +55,7 @@ Attributes:
   tags:
     Ignore: true
   vpc_id:
-    Ignore: true
+    To: VpcId
   vswitch_name:
     To: VSwitchName
   zone_id:

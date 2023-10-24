@@ -4,7 +4,6 @@ ResourceType:
   From: alicloud_slb_rule
   To: ALIYUN::SLB::Rule
 Properties:
-  # todo: Need to support different levels of property mapping
   cookie:
     Ignore: true
   cookie_timeout:
@@ -12,9 +11,9 @@ Properties:
   delete_protection_validation:
     Ignore: true
   domain:
-    Ignore: true
+    To: RuleList.0.Domain
   frontend_port:
-    Ignore: true
+    To: ListenerPort
   health_check:
     Ignore: true
   health_check_connect_port:
@@ -36,11 +35,11 @@ Properties:
   load_balancer_id:
     To: LoadBalancerId
   name:
-    Ignore: true
+    To: RuleList.0.RuleName
   scheduler:
     Ignore: true
   server_group_id:
-    Ignore: true
+    To: RuleList.0.VServerGroupId
   sticky_session:
     Ignore: true
   sticky_session_type:
@@ -48,7 +47,7 @@ Properties:
   unhealthy_threshold:
     Ignore: true
   url:
-    Ignore: true
+    To: RuleList.0.Url
 Attributes:
   id:
     Ignore: true

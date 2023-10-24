@@ -4,7 +4,6 @@ ResourceType:
   From: alicloud_ram_policy
   To: ALIYUN::RAM::ManagedPolicy
 Properties:
-  # todo: Need to support single-valued attribute mapping to multi-valued attribute
   attachment_count:
     Ignore: true
   default_version:
@@ -12,23 +11,33 @@ Properties:
   description:
     To: Description
   document:
-    Ignore: true
+    To: PolicyDocument
+    Handler: json_load
   force:
     Ignore: true
   name:
-    Ignore: true
+    To: PolicyName
   policy_document:
-    Ignore: true
+    To: PolicyDocument
+    Handler: json_load
   policy_name:
     To: PolicyName
   rotate_strategy:
     Ignore: true
   statement:
-    Ignore: true
+    To: PolicyDocument.Statement
+    Type: List
+    Schema:
+      resource:
+        To: Resource
+      action:
+        To: Action
+      effect:
+        To: Effect
   type:
     Ignore: true
   version:
-    Ignore: true
+    To: PolicyDocument.Version
   version_id:
     Ignore: true
 Attributes:

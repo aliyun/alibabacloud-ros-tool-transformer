@@ -4,19 +4,18 @@ ResourceType:
   From: alicloud_slb_server_group_server_attachment
   To: ALIYUN::SLB::BackendServerToVServerGroupAddition
 Properties:
-  # todo: Need to support different levels of property mapping
   description:
-    Ignore: true
+    To: BackendServers.Description
   port:
-    Ignore: true
+    To: BackendServers.Port
   server_group_id:
     To: VServerGroupId
   server_id:
-    Ignore: true
+    To: BackendServers.ServerId
   type:
-    Ignore: true
+    To: BackendServers.Type
   weight:
-    Ignore: true
+    To: BackendServers.Weight
 Attributes:
   id:
     Ignore: true
@@ -25,7 +24,7 @@ Attributes:
   port:
     Ignore: true
   server_group_id:
-    Ignore: true
+    To: VServerGroupId
   server_id:
     Ignore: true
   type:

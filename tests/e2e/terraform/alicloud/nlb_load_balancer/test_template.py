@@ -13,8 +13,13 @@ tpl = {
             "Properties": {
                 "AddressIpVersion": "Ipv4",
                 "AddressType": "Internet",
+                "DeletionProtectionConfig": {"Enabled": True, "Reason": "just protect"},
                 "LoadBalancerName": "tf-example",
                 "LoadBalancerType": "Network",
+                "ModificationProtectionConfig": {
+                    "Reason": "just protect",
+                    "Status": "ConsoleProtection",
+                },
                 "ResourceGroupId": "rg-acfm2xwmxvrzq6q",
                 "Tags": [
                     {"Key": "Created", "Value": "TF"},

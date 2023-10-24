@@ -38,6 +38,7 @@ Properties:
     Handler: tags_dict_to_list
   template_body:
     To: TemplateBody
+    Handler: json_load
   template_url:
     To: TemplateURL
   template_version:

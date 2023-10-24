@@ -15,11 +15,11 @@ Properties:
   bandwidth:
     To: Bandwidth
   ca_certificate_id:
-    Ignore: true
+    To: CACertificateId
   cookie:
-    Ignore: true
+    To: Persistence.Cookie
   cookie_timeout:
-    Ignore: true
+    To: Persistence.CookieTimeout
   delete_protection_validation:
     Ignore: true
   description:
@@ -29,31 +29,31 @@ Properties:
   established_timeout:
     Ignore: true
   forward_port:
-    Ignore: true
+    To: HttpConfig.ForwardPort
   frontend_port:
-    Ignore: true
+    To: ListenerPort
   gzip:
-    Ignore: true
+    To: Gzip
   health_check:
-    Ignore: true
+    To: HealthCheck.Switch
   health_check_connect_port:
-    Ignore: true
+    To: HealthCheck.Port
   health_check_domain:
-    Ignore: true
+    To: HealthCheck.Domain
   health_check_http_code:
-    Ignore: true
+    To: HealthCheck.HttpCode
   health_check_interval:
-    Ignore: true
+    To: HealthCheck.Interval
   health_check_method:
-    Ignore: true
+    To: HealthCheck.HealthCheckMethod
   health_check_timeout:
-    Ignore: true
+    To: HealthCheck.Timeout
   health_check_type:
-    Ignore: true
+    To: HealthCheck.HealthCheckType
   health_check_uri:
-    Ignore: true
+    To: HealthCheck.URI
   healthy_threshold:
-    Ignore: true
+    To: HealthCheck.HealthyThreshold
   idle_timeout:
     To: IdleTimeout
   instance_port:
@@ -65,11 +65,11 @@ Properties:
   listener_forward:
     Ignore: true
   load_balancer_id:
-    To: LoadBalancerId
+    Ignore: true
   master_slave_server_group_id:
     To: MasterSlaveServerGroupId
   persistence_timeout:
-    Ignore: true
+    To: Persistence.PersistenceTimeout
   protocol:
     To: Protocol
   proxy_protocol_v2_enabled:
@@ -85,15 +85,16 @@ Properties:
   ssl_certificate_id:
     To: ServerCertificateId
   sticky_session:
-    Ignore: true
+    To: Persistence.StickySession
   sticky_session_type:
-    Ignore: true
+    To: Persistence.StickySessionType
   tls_cipher_policy:
-    Ignore: true
+    To: TLSCipherPolicy
   unhealthy_threshold:
-    Ignore: true
+    To: HealthCheck.UnhealthyThreshold
   x_forwarded_for:
-    Ignore: true
+    To: Persistence.__single_to_multi_handler__
+    Handler: slb_x_forwarded_for
 Attributes:
   id:
     Ignore: true

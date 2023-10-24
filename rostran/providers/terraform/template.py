@@ -14,6 +14,7 @@ from rostran.core.exceptions import (
     TerraformMultiProvidersNotSupported,
     TerraformProviderNotFound,
     RosTranException,
+    InvalidRuleSchema,
 )
 from rostran.core.format import FileFormat
 from rostran.core.rule_manager import RuleManager, RuleClassifier, ResourceRule
@@ -24,7 +25,10 @@ from rostran.core.outputs import Outputs, Output
 
 
 class TerraformTemplate(Template):
-    PROVIDERS = (ALICLOUD, AWS,) = (
+    PROVIDERS = (
+        ALICLOUD,
+        AWS,
+    ) = (
         "alicloud",
         "aws",
     )
@@ -141,7 +145,11 @@ class TerraformTemplate(Template):
         "End",
     )
 
-    RESOURCE_PROP_PROPERTIES = (PROP_TYPE, PROP_VALUE, PROP_ARGS,) = (
+    RESOURCE_PROP_PROPERTIES = (
+        PROP_TYPE,
+        PROP_VALUE,
+        PROP_ARGS,
+    ) = (
         ".Type",
         ".Value",
         ".Args",
@@ -388,7 +396,10 @@ class TerraformTemplate(Template):
                 continue
 
             props = self._transform_resource_props(
-                tf_resource_type, tf_resource_props, resource_rule.properties
+                tf_resource_type,
+                tf_resource_props,
+                resource_rule.properties,
+                resource_rule.rule_id,
             )
             if props is None:
                 continue
@@ -407,7 +418,7 @@ class TerraformTemplate(Template):
             out_resources.add(resource)
 
     def _transform_resource_props(
-        self, resource_type, resource_props, resource_rule_props
+        self, resource_type, resource_props, resource_rule_props, rule_id
     ):
         final_props = {}
         for name, value in resource_props.items():
@@ -435,14 +446,17 @@ class TerraformTemplate(Template):
                 final_value = []
                 for each in transformed_value:
                     val = self._transform_resource_props(
-                        resource_type, each, prop_schema
+                        resource_type,
+                        each,
+                        prop_schema,
+                        rule_id,
                     )
                     final_value.append(val)
             elif prop_type == "Map" and prop_schema:
                 if isinstance(transformed_value, list):
                     transformed_value = transformed_value[0]
                 final_value = self._transform_resource_props(
-                    resource_type, transformed_value, prop_schema
+                    resource_type, transformed_value, prop_schema, rule_id
                 )
             else:
                 final_value = transformed_value
@@ -454,9 +468,54 @@ class TerraformTemplate(Template):
                 final_value = handler_func(final_value, resolved)
 
             if final_value is not None:
-                final_props[final_name] = final_value
+                # If To is a multi-level attribute, it needs to be converted level by level.
+                # For example, if To is RuleList.0.Url, it should be converted to
+                # final_props["RuleList"][0]["Url"] = value.
+                self._handle_props_and_value(
+                    final_props, final_name.split("."), final_value, rule_id
+                )
 
         return final_props
+
+    def _handle_props_and_value(self, data, names: list, value, rule_id, _name_path=""):
+        if not names:
+            return
+
+        name = names[0]
+        if name.isdigit():
+            name = int(name)
+
+        _name_path = f"{_name_path}.{name}" if _name_path else f"{name}"
+        if len(names) == 1:
+            if name == "__single_to_multi_handler__":
+                if value:
+                    data.update(value)
+            else:
+                try:
+                    data[name] = value
+                except IndexError:
+                    if name != len(data):
+                        raise InvalidRuleSchema(
+                            path=rule_id,
+                            reason=f"{_name_path} is invalid. The index should be {len(data)}",
+                        )
+                    data.append(value)
+        else:
+            default_sub_data = [] if names[1].isdigit() else {}
+            try:
+                sub_data = data[name]
+            except KeyError:
+                sub_data = data[name] = default_sub_data
+            except IndexError:
+                if name != len(data):
+                    raise InvalidRuleSchema(
+                        path=rule_id,
+                        reason=f"{_name_path} is invalid. The index should be {len(data)}",
+                    )
+                data.append(default_sub_data)
+                sub_data = default_sub_data
+
+            self._handle_props_and_value(sub_data, names[1:], value, _name_path)
 
     def _transform_prop_or_attr(self, value) -> (Any, bool):
         if not isinstance(value, dict):
@@ -499,11 +558,15 @@ class TerraformTemplate(Template):
             )
             return None
 
-        if attrname not in resource_rule.attributes:
+        if (
+            attrname not in resource_rule.attributes
+            or "To" not in resource_rule.attributes[attrname]
+        ):
             typer.secho(
                 f"Resource attribute {attrname!r} of {tf_resource_type!r} is not supported and will be ignored.",
                 fg="yellow",
             )
+            return None
 
         final_attrname = resource_rule.attributes[attrname]["To"]
         return {"Fn::GetAtt": [resource_id, final_attrname]}

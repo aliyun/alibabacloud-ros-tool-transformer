@@ -25,6 +25,7 @@ Properties:
     To: StackGroupName
   template_body:
     To: TemplateBody
+    Handler: json_load
   template_url:
     To: TemplateURL
   template_version:

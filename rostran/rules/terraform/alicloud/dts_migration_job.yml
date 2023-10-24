@@ -4,69 +4,68 @@ ResourceType:
   From: alicloud_dts_migration_job
   To: ALIYUN::DTS::MigrationJob
 Properties:
-  # todo: Need to support different levels of property mapping
   checkpoint:
     Ignore: true
   data_initialization:
-    Ignore: true
+    To: MigrationMode.DataIntialization
   data_synchronization:
-    Ignore: true
+    To: MigrationMode.DataSynchronization
   db_list:
     Ignore: true
   destination_endpoint_database_name:
-    Ignore: true
+    To: DestinationEndpoint.DatabaseName
   destination_endpoint_engine_name:
-    Ignore: true
+    To: DestinationEndpoint.EngineName
   destination_endpoint_instance_id:
-    Ignore: true
+    To: DestinationEndpoint.InstanceID
   destination_endpoint_instance_type:
-    Ignore: true
+    To: DestinationEndpoint.InstanceType
   destination_endpoint_ip:
-    Ignore: true
+    To: DestinationEndpoint.IP
   destination_endpoint_oracle_sid:
     Ignore: true
   destination_endpoint_password:
-    Ignore: true
+    To: DestinationEndpoint.Password
   destination_endpoint_port:
-    Ignore: true
+    To: DestinationEndpoint.Port
   destination_endpoint_region:
-    Ignore: true
+    To: DestinationEndpoint.Region
   destination_endpoint_user_name:
-    Ignore: true
+    To: DestinationEndpoint.UserName
   dts_instance_id:
     Ignore: true
   dts_job_name:
-    Ignore: true
+    To: MigrationJobName
   instance_class:
-    Ignore: true
+    To: MigrationJobClass
   source_endpoint_database_name:
-    Ignore: true
+    To: SourceEndpoint.DatabaseName
   source_endpoint_engine_name:
-    Ignore: true
+    To: SourceEndpoint.EngineName
   source_endpoint_instance_id:
-    Ignore: true
+    To: SourceEndpoint.InstanceID
   source_endpoint_instance_type:
-    Ignore: true
+    To: SourceEndpoint.InstanceType
   source_endpoint_ip:
-    Ignore: true
+    To: SourceEndpoint.IP
   source_endpoint_oracle_sid:
-    Ignore: true
+    To: SourceEndpoint.OracleSID
   source_endpoint_owner_id:
-    Ignore: true
+    To: SourceEndpoint.OwnerID
   source_endpoint_password:
-    Ignore: true
+    To: SourceEndpoint.Password
   source_endpoint_port:
-    Ignore: true
+    To: SourceEndpoint.Port
   source_endpoint_region:
-    Ignore: true
+    To: SourceEndpoint.Region
   source_endpoint_role:
-    Ignore: true
+    To: SourceEndpoint.Role
   source_endpoint_user_name:
-    Ignore: true
+    To: SourceEndpoint.UserName
   status:
     Ignore: true
   structure_initialization:
-    Ignore: true
+    To: MigrationMode.StructureIntialization
 Attributes:
   id:
     To: MigrationJobId

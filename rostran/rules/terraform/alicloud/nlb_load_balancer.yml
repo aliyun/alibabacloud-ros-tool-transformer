@@ -14,11 +14,10 @@ Properties:
     Ignore: true
   cross_zone_enabled:
     To: CrossZoneEnabled
-  # todo: Need to support different levels of property mapping
   deletion_protection_enabled:
-    Ignore: true
+    To: DeletionProtectionConfig.Enabled
   deletion_protection_reason:
-    Ignore: true
+    To: DeletionProtectionConfig.Reason
   dns_name:
     To: DNSName
   ipv6_address_type:
@@ -30,9 +29,9 @@ Properties:
   load_balancer_type:
     To: LoadBalancerType
   modification_protection_reason:
-    Ignore: true
+    To: ModificationProtectionConfig.Reason
   modification_protection_status:
-    Ignore: true
+    To: ModificationProtectionConfig.Status
   resource_group_id:
     To: ResourceGroupId
   status:

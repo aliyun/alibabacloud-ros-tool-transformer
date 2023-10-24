@@ -4,7 +4,6 @@ ResourceType:
   From: alicloud_log_etl
   To: ALIYUN::SLS::Etl
 Properties:
-  # todo: Need to support different levels of property mapping
   create_time:
     Ignore: true
   description:
@@ -12,33 +11,53 @@ Properties:
   display_name:
     To: DisplayName
   etl_name:
-    Ignore: true
+    To: Name
   etl_sinks:
-    Ignore: true
+    To: Configuration.Sinks
+    Type: List
+    Schema:
+      name:
+        To: Name
+      access_key_id:
+        Ignore: true
+      access_key_secret:
+        Ignore: true
+      kms_encrypted_access_key_id:
+        Ignore: true
+      kms_encrypted_access_key_secret:
+        Ignore: true
+      endpoint:
+        To: Endpoint
+      project:
+        To: Project
+      logstore:
+        To: Logstore
+      role_arn:
+        To: RoleArn
   etl_type:
     Ignore: true
   from_time:
-    Ignore: true
+    To: Configuration.FromTime
   last_modified_time:
     Ignore: true
   logstore:
-    Ignore: true
+    To: Configuration.Logstore
   parameters:
-    Ignore: true
+    To: Configuration.Parameters
   project:
-    Ignore: true
+    To: ProjectName
   role_arn:
-    Ignore: true
+    To: Configuration.RoleArn
   schedule:
-    Ignore: true
+    To: Schedule.Type
   script:
-    Ignore: true
+    To: Configuration.Script
   status:
     Ignore: true
   to_time:
-    Ignore: true
+    To: Configuration.ToTime
   version:
-    Ignore: true
+    To: Configuration.Version
 Attributes:
   id:
     Ignore: true
@@ -49,7 +68,7 @@ Attributes:
   display_name:
     Ignore: true
   etl_name:
-    Ignore: true
+    To: Name
   etl_sinks:
     Ignore: true
   etl_type:
