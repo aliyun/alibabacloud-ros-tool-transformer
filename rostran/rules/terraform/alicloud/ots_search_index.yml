@@ -15,10 +15,6 @@ Properties:
         To: FieldSchemas
         Type: List
         Schema:
-          index:
-            To: Index
-          is_array:
-            To: IsArray
           analyzer:
             To: Analyzer
           enable_sort_and_agg:
@@ -27,8 +23,18 @@ Properties:
             To: FieldName
           field_type:
             To: FieldType
+          index:
+            To: Index
+          is_array:
+            To: IsArray
           store:
             To: Store
+      index_setting:
+        To: IndexSetting
+        Type: Map
+        Schema:
+          routing_fields:
+            To: RoutingFields
       index_sort:
         To: IndexSort
         Type: Map
@@ -36,12 +42,6 @@ Properties:
           sorter:
             To: Sorters
             Handler: ots_search_index_sorters
-      index_setting:
-        To: IndexSetting
-        Type: Map
-        Schema:
-          routing_fields:
-            To: RoutingFields
   table_name:
     To: TableName
   time_to_live:

@@ -28,12 +28,12 @@ Properties:
     To: PolicyDocument.Statement
     Type: List
     Schema:
-      resource:
-        To: Resource
       action:
         To: Action
       effect:
         To: Effect
+      resource:
+        To: Resource
   type:
     Ignore: true
   version:

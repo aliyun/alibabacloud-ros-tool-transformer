@@ -16,22 +16,22 @@ Properties:
     To: Configuration.Sinks
     Type: List
     Schema:
-      name:
-        To: Name
       access_key_id:
         Ignore: true
       access_key_secret:
         Ignore: true
+      endpoint:
+        To: Endpoint
       kms_encrypted_access_key_id:
         Ignore: true
       kms_encrypted_access_key_secret:
         Ignore: true
-      endpoint:
-        To: Endpoint
-      project:
-        To: Project
       logstore:
         To: Logstore
+      name:
+        To: Name
+      project:
+        To: Project
       role_arn:
         To: RoleArn
   etl_type:
