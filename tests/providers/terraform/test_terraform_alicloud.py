@@ -58,8 +58,8 @@ tpl = {
             "Type": "ALIYUN::ECS::VSwitch",
             "Properties": {
                 "CidrBlock": "172.16.0.0/21",
-                "VSwitchName": "myvswitch",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.myvpc", "VpcId"]},
+                "VSwitchName": "myvswitch",
                 "ZoneId": "cn-beijing-g",
             },
         },

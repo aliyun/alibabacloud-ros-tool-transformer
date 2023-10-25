@@ -439,9 +439,15 @@ class TerraformTemplate(Template):
                 typer.secho(warn_msg, fg="yellow")
 
             transformed_value, resolved = self._transform_prop_or_attr(value)
-            final_name = prop_rule["To"]
+            final_name = prop_rule.get("To")
             prop_type = prop_rule.get("Type")
             prop_schema = prop_rule.get("Schema")
+
+            if final_name is None and prop_type != "Map":
+                raise InvalidRuleSchema(
+                    path=rule_id,
+                    reason=f"{name} is invalid. The Type should be 'Map' when To is None",
+                )
             if prop_type == "List" and prop_schema:
                 final_value = []
                 for each in transformed_value:
@@ -468,12 +474,16 @@ class TerraformTemplate(Template):
                 final_value = handler_func(final_value, resolved)
 
             if final_value is not None:
-                # If To is a multi-level attribute, it needs to be converted level by level.
-                # For example, if To is RuleList.0.Url, it should be converted to
-                # final_props["RuleList"][0]["Url"] = value.
-                self._handle_props_and_value(
-                    final_props, final_name.split("."), final_value, rule_id
-                )
+                if final_name is None:
+                    assert isinstance(final_value, dict)
+                    final_props.update(final_value)
+                else:
+                    # If To is a multi-level attribute, it needs to be converted level by level.
+                    # For example, if To is RuleList.0.Url, it should be converted to
+                    # final_props["RuleList"][0]["Url"] = value.
+                    self._handle_props_and_value(
+                        final_props, final_name.split("."), final_value, rule_id
+                    )
 
         return final_props
 
@@ -568,8 +578,42 @@ class TerraformTemplate(Template):
             )
             return None
 
-        final_attrname = resource_rule.attributes[attrname]["To"]
-        return {"Fn::GetAtt": [resource_id, final_attrname]}
+        def parse(n):
+            names = n.split(".")
+            final_attrname = names[0]
+            result = {"Fn::GetAtt": [resource_id, final_attrname]}
+
+            if len(names) > 1:
+                # using JQ to get value
+                jq_expr = "."
+                for name in names[1:]:
+                    try:
+                        index = int(name)
+                        jq_expr += f"[{index}]"
+                    except ValueError:
+                        jq_expr += f".{name}"
+                result = {"Fn::Jq": ["First", jq_expr, result]}
+            return result
+
+        attr_rule = resource_rule.attributes[attrname]
+        to_name = attr_rule["To"]
+        if isinstance(to_name, str):
+            final_value = parse(to_name)
+        elif isinstance(to_name, (list, tuple)):
+            final_value = [parse(each) for each in to_name]
+        else:
+            raise InvalidRuleSchema(
+                path=resource_rule.rule_id,
+                reason=f"The type of To={to_name} is invalid. Expect str or list",
+            )
+
+        handler_name = attr_rule.get("Handler")
+        if handler_name is not None:
+            handler_module = importlib.import_module("rostran.handler")
+            handler_func = getattr(handler_module, handler_name)
+            final_value = handler_func(final_value, False)
+
+        return final_value
 
     def _parse_outputs(self):
         planned_outputs = {}
@@ -599,15 +643,6 @@ class TerraformTemplate(Template):
     def _transform_outputs(self, tf_outputs: dict, out_outputs: Outputs):
         for name, value in tf_outputs.items():
             value, _ = self._transform_prop_or_attr(value)
-            if not _:
-                resource_name = value["Fn::GetAtt"][0]
-                ros_attrs = value["Fn::GetAtt"][1]
-                if isinstance(ros_attrs, list):
-                    attr_list = [
-                        {"Fn::GetAtt": [resource_name, ros_attr]}
-                        for ros_attr in ros_attrs
-                    ]
-                    value = {"Fn::Join": [":", attr_list]}
             output = Output(
                 name=name,
                 value=value,

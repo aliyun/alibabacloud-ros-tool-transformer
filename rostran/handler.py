@@ -72,6 +72,22 @@ def kv_list_to_map_wrapper(k_name, v_name):
     return kv_list_to_map
 
 
+def join_wrapper(splitter=":"):
+    def join(items, resolved=False):
+        if not items:
+            return None
+
+        if resolved:
+            return splitter.join(items)
+
+        return {"Fn::Join": [splitter, items]}
+
+    return join
+
+
+colon_join = join_wrapper(":")
+
+
 ##############################
 # Product Handlers
 ##############################
@@ -99,4 +115,46 @@ def slb_x_forwarded_for(x_forwarded_for, resolved=False):
     return props
 
 
-ros_parameters = kv_list_to_map_wrapper(k_name='parameter_key', v_name='parameter_value')
+ros_parameters = kv_list_to_map_wrapper(
+    k_name="parameter_key", v_name="parameter_value"
+)
+
+
+def ots_search_index_sorters(sorters, resolved=False):
+    if not sorters or not resolved:
+        return None
+
+    mapping = {
+        "FieldSort": {
+            "mode": "SortMode",
+            "order": "SortOrder",
+            "field_name": "FieldName",
+        },
+        "PrimaryKeySort": {
+            "order": "SortOrder",
+        },
+        "ScoreSort": {
+            "order": "SortOrder",
+        },
+        "GeoDistanceSort": {
+            "mode": "SortMode",
+            "order": "SortOrder",
+            "field_name": "FieldName",
+        },
+    }
+    result = []
+    for sorter in sorters:
+        sorter_type = sorter.get("sorter_type") or "PrimaryKeySort"
+        sorter_type_mapping = mapping.get(sorter_type)
+        if not sorter_type_mapping:
+            continue
+
+        new_sorter = {}
+        for from_, to in sorter_type_mapping.items():
+            val = sorter.get(from_)
+            if val is not None:
+                new_sorter[to] = val
+        if new_sorter:
+            result.append({sorter_type: new_sorter})
+
+    return result

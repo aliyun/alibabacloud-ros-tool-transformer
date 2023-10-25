@@ -5,25 +5,24 @@ ResourceType:
   To: ALIYUN::GA::IpSets
 Properties:
   accelerate_region_id:
-    Ignore: true
+    To: AccelerateRegion.0.AccelerateRegionId
   accelerator_id:
     To: AcceleratorId
   bandwidth:
-    Ignore: true
+    To: AccelerateRegion.0.Bandwidth
   ip_address_list:
     Ignore: true
   ip_version:
-    Ignore: true
+    To: AccelerateRegion.0.IpVersion
   isp_type:
     Ignore: true
   status:
     Ignore: true
 Attributes:
-  # todo: Need to support single-valued attribute mapping to multi-valued attribute
   id:
-    Ignore: true
+    To: IpSetIds.0
   accelerate_region_id:
-    Ignore: true
+    To: AccelerateRegionIds.0
   accelerator_id:
     Ignore: true
   bandwidth:
@@ -31,7 +30,7 @@ Attributes:
   ip_address_list:
     Ignore: true
   ip_version:
-    Ignore: true
+    To: IpVersions.0
   isp_type:
     Ignore: true
   status:

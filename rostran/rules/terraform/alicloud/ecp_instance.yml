@@ -39,9 +39,8 @@ Properties:
   vswitch_id:
     To: VSwitchId
 Attributes:
-  # todo: Need to support single-valued attribute mapping to multi-valued attribute
   id:
-    Ignore: true
+    To: InstanceIds.0
   description:
     Ignore: true
   image_id:

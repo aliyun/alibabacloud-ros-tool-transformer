@@ -19,13 +19,14 @@ Attributes:
     To:
     - ProjectName
     - GroupName
+    Handler: colon_join
   identify_list:
     Ignore: true
   identify_type:
     Ignore: true
   name:
-    Ignore: true
+    To: GroupName
   project:
-    Ignore: true
+    To: ProjectName
   topic:
     Ignore: true

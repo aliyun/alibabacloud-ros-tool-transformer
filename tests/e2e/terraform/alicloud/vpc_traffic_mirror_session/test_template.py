@@ -97,5 +97,4 @@ tpl = {
 
 def test_template():
     t = _test_template(root, tf_plan_path)
-    # assert t == tpl
-    print(t)
+    assert t == tpl
