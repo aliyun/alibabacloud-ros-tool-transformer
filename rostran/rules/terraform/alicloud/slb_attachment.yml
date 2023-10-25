@@ -16,7 +16,7 @@ Properties:
     Ignore: true
   weight:
     To: BackendServerWeightList
-    Handler: ecs_security_group_first_id
+    Handler: select_first
     Warning: Only first weight can be used
 Attributes:
   id:

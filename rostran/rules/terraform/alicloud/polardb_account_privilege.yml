@@ -12,7 +12,7 @@ Properties:
     To: DBClusterId
   db_names:
     To: DBName
-    Handler: ecs_security_group_first_id
+    Handler: select_first
     Warning: Only first db can be used
 Attributes:
   id:

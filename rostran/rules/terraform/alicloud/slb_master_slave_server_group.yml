@@ -20,7 +20,7 @@ Properties:
         To: Port
       server_ids:
         To: ServerId
-        Handler: ecs_security_group_first_id
+        Handler: select_first
         Warning: Only first server_id can be used
       server_type:
         To: ServerType

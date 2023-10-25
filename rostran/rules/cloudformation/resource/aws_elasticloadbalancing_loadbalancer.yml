@@ -10,7 +10,7 @@ Properties:
     Ignore: true
   AvailabilityZones:
     To: MasterZoneId
-    Handler: ecs_security_group_first_id
+    Handler: select_first
     Warning: Only first zone id can be used.
   ConnectionDrainingPolicy:
     Ignore: true
@@ -36,7 +36,7 @@ Properties:
     Ignore: true
   Subnets:
     To: VSwitchId
-    Handler: ecs_security_group_first_id
+    Handler: select_first
     Warning: Only first subnet can be used.
   Tags:
     To: Tags

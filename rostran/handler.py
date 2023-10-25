@@ -1,17 +1,20 @@
 import json
 
 
-def ecs_security_group_first_id(sg_ids, resolved=False):
-    if not sg_ids:
+##############################
+# Common Handlers
+##############################
+def json_load(content, resolved=False):
+    if not content or not resolved:
         return None
 
-    if resolved:
-        return sg_ids[0]
-
-    return {"Fn::Select": ["0", sg_ids]}
+    return json.loads(content)
 
 
 def tags_dict_to_list(tags_dict, resolved=False):
+    """
+    Convert dictionary-formatted tags to list format.
+    """
     if not tags_dict:
         return None
 
@@ -27,6 +30,35 @@ def tags_dict_to_list(tags_dict, resolved=False):
     }
 
 
+def kv_list_to_map(kv_list, k_name, v_name):
+    """
+    Convert a list containing dictionaries with key-value pairs into a dictionary.
+    For example,
+        [{"parameter_key": "Name", "parameter_value": "test"}] will be converted to
+        {"Name": "test"}.
+    """
+    if not kv_list:
+        return None
+
+    return {e[k_name]: e[v_name] for e in kv_list}
+
+
+def select_first(resource_ids, resolved=False):
+    """
+    Select the first ID from the list of resource IDs.
+    """
+    if not resource_ids:
+        return None
+
+    if resolved:
+        return resource_ids[0]
+
+    return {"Fn::Select": ["0", resource_ids]}
+
+
+##############################
+# Product Handlers
+##############################
 def slb_x_forwarded_for(x_forwarded_for, resolved=False):
     if not x_forwarded_for or not resolved:
         return None
@@ -49,10 +81,3 @@ def slb_x_forwarded_for(x_forwarded_for, resolved=False):
     if props:
         props.update({"XForwardedFor": "on"})
     return props
-
-
-def json_load(content, resolved=False):
-    if not content or not resolved:
-        return None
-
-    return json.loads(content)

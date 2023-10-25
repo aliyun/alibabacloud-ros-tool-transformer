@@ -14,7 +14,7 @@ Properties:
         Schema:
           Action:
             To: Action
-            Handler: ecs_security_group_first_id
+            Handler: select_first
             Warning: Only first action can be used.
           Effect:
             To: Effect

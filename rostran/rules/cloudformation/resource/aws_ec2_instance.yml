@@ -72,7 +72,7 @@ Properties:
     Ignore: true
   SecurityGroupIds:
     To: SecurityGroupId
-    Handler: ecs_security_group_first_id
+    Handler: select_first
     Warning: Only first security group id can be used.
   SecurityGroups:
     Ignore: true
