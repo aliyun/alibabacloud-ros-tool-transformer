@@ -12,9 +12,9 @@ Properties:
     Ignore: true
   notification_urls:
     Ignore: true
-  # todo: Need to support list to map
   parameters:
-    Ignore: true
+    To: Parameters
+    Handler: ros_parameters
   ram_role_name:
     Ignore: true
   replacement_option:

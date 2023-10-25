@@ -9,9 +9,9 @@ Properties:
   operation_preferences:
     To: OperationPreferences
     Handler: json_load
-  # todo: Need to support list to map
   parameter_overrides:
-    Ignore: true
+    To: ParameterOverrides
+    Handler: ros_parameters
   retain_stacks:
     To: RetainStacks
   stack_group_name:

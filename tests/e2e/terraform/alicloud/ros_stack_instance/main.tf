@@ -5,11 +5,11 @@ resource "alicloud_ros_stack_group" "example" {
   description      = "test for stack groups"
   parameters {
     parameter_key   = "VpcName"
-    parameter_value = "VpcName"
+    parameter_value = "terraform-example"
   }
   parameters {
     parameter_key   = "InstanceType"
-    parameter_value = "InstanceType"
+    parameter_value = "ecs.g6.large"
   }
 }
 
@@ -19,7 +19,7 @@ resource "alicloud_ros_stack_instance" "example" {
   stack_instance_region_id  = "cn-beijing"
   operation_preferences     = "{\"FailureToleranceCount\": 1, \"MaxConcurrentCount\": 2}"
   parameter_overrides {
-    parameter_value = "VpcName"
+    parameter_value = "terraform-example"
     parameter_key   = "VpcName"
   }
 }

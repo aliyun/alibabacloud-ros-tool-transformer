@@ -16,9 +16,9 @@ Properties:
     Ignore: true
   operation_preferences:
     Ignore: true
-  # todo: Need to support list to map
   parameters:
-    Ignore: true
+    To: Parameters
+    Handler: ros_parameters
   region_ids:
     Ignore: true
   stack_group_name:

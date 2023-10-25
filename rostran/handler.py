@@ -56,6 +56,22 @@ def select_first(resource_ids, resolved=False):
     return {"Fn::Select": ["0", resource_ids]}
 
 
+def kv_list_to_map_wrapper(k_name, v_name):
+    def kv_list_to_map(kv_list, resolved=False):
+        """
+        Convert a list containing dictionaries with key-value pairs into a dictionary.
+        For example,
+            [{"parameter_key": "Name", "parameter_value": "test"}] will be converted to
+            {"Name": "test"}.
+        """
+        if not kv_list or not resolved:
+            return None
+
+        return {e[k_name]: e[v_name] for e in kv_list}
+
+    return kv_list_to_map
+
+
 ##############################
 # Product Handlers
 ##############################
@@ -81,3 +97,6 @@ def slb_x_forwarded_for(x_forwarded_for, resolved=False):
     if props:
         props.update({"XForwardedFor": "on"})
     return props
+
+
+ros_parameters = kv_list_to_map_wrapper(k_name='parameter_key', v_name='parameter_value')

@@ -20,6 +20,7 @@ tpl = {
                         "InstanceType": {"Type": "String"},
                     },
                 },
+                "Parameters": {"InstanceType": "ecs.g6.large", "VpcName": "terraform-example"},
             },
         },
         "alicloud_ros_stack_instance.example": {
@@ -32,6 +33,7 @@ tpl = {
                 "StackGroupName": "terraform-example",
                 "AccountIds": ["123456789"],
                 "RegionIds": ["cn-beijing"],
+                "ParameterOverrides": {"VpcName": "terraform-example"},
             },
         },
     },
