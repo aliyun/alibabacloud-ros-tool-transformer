@@ -20,7 +20,11 @@ Properties:
     To: Weight
 Attributes:
   id:
-    Ignore: true
+    To:
+      - VpnGatewayId
+      - NextHop
+      - RouteDest
+    Handler: colon_join
   next_hop:
     To: NextHop
   publish_vpc:

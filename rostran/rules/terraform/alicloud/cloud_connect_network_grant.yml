@@ -12,10 +12,13 @@ Properties:
     To: CenUid
 Attributes:
   id:
-    Ignore: true
+    To:
+      - CcnInstanceId
+      - CenInstanceId
+    Handler: colon_join
   ccn_id:
-    Ignore: true
+    To: CcnInstanceId
   cen_id:
-    Ignore: true
+    To: CenInstanceId
   cen_uid:
     Ignore: true

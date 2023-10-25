@@ -12,7 +12,10 @@ Properties:
     To: VpcId
 Attributes:
   id:
-    Ignore: true
+    To:
+      - VpcId
+      - DhcpOptionsSetId
+    Handler: colon_join
   dhcp_options_set_id:
     To: DhcpOptionsSetId
   status:

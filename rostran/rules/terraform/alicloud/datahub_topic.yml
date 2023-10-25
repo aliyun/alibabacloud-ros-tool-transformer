@@ -24,7 +24,10 @@ Properties:
     To: ShardCount
 Attributes:
   id:
-    Ignore: true
+    To:
+      - ProjectName
+      - TopicName
+    Handler: colon_join
   comment:
     Ignore: true
   create_time:
@@ -34,7 +37,7 @@ Attributes:
   life_cycle:
     Ignore: true
   name:
-    Ignore: true
+    To: TopicName
   project_name:
     To: ProjectName
   record_schema:

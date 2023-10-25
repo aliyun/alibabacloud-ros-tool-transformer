@@ -18,7 +18,10 @@ Properties:
     To: TopicName
 Attributes:
   id:
-    Ignore: true
+    To:
+      - TopicName
+      - SubscriptionName
+    Handler: colon_join
   endpoint:
     Ignore: true
   filter_tag:

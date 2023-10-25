@@ -18,15 +18,18 @@ Properties:
     To: Summary
 Attributes:
   id:
-    Ignore: true
+    To:
+      - RepoNamespace
+      - RepoName
+    Handler: slash_join
   detail:
     Ignore: true
   domain_list:
     Ignore: true
   name:
-    Ignore: true
+    To: RepoName
   namespace:
-    Ignore: true
+    To: RepoNamespace
   repo_type:
     To: RepoType
   summary:

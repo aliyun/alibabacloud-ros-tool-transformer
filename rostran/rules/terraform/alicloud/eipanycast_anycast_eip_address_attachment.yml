@@ -24,7 +24,12 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To:
+      - AnycastId
+      - BindInstanceId
+      - BindInstanceRegionId
+      - BindInstanceType
+    Handler: colon_join
   anycast_id:
     To: AnycastId
   association_mode:

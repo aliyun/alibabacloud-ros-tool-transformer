@@ -20,10 +20,13 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To:
+      - DBClusterId
+      - AccountName
+    Handler: colon_join
   account_description:
     Ignore: true
   account_name:
     To: AccountName
   db_cluster_id:
-    Ignore: true
+    To: DBClusterId

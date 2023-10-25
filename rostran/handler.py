@@ -86,6 +86,23 @@ def join_wrapper(splitter=":"):
 
 
 colon_join = join_wrapper(":")
+slash_join = join_wrapper("/")
+
+
+def replace_wrapper(old, new):
+    def replace(string, resolved=False):
+        if not string:
+            return None
+
+        if resolved:
+            return string.replace(old, new)
+
+        return {"Fn::Replace": [{old: new}, string]}
+
+    return replace
+
+
+replace_slash_to_colon = replace_wrapper("/", ":")
 
 
 ##############################

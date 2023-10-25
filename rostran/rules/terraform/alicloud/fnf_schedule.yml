@@ -22,7 +22,10 @@ Properties:
     To: ScheduleName
 Attributes:
   id:
-    Ignore: true
+    To:
+      - ScheduleName
+      - FlowName
+    Handler: colon_join
   cron_expression:
     Ignore: true
   description:

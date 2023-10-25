@@ -20,7 +20,8 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: Id
+    Handler: replace_slash_to_colon
   access_region_id:
     Ignore: true
   cen_id:

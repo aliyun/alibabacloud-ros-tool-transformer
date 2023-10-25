@@ -20,7 +20,7 @@ Properties:
     Warning: Only first weight can be used
 Attributes:
   id:
-    Ignore: true
+    To: LoadBalancerId
   backend_servers:
     To: BackendServers
   instance_ids:

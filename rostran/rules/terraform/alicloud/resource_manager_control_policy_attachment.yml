@@ -10,7 +10,10 @@ Properties:
     To: TargetId
 Attributes:
   id:
-    Ignore: true
+    To:
+      - PolicyId
+      - TargetId
+    Handler: colon_join
   policy_id:
     To: PolicyId
   target_id:

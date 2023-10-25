@@ -21,7 +21,10 @@ Properties:
     To: Topic
 Attributes:
   id:
-    Ignore: true
+    To:
+      - InstanceId
+      - Topic
+    Handler: colon_join
   compact_topic:
     Ignore: true
   instance_id:

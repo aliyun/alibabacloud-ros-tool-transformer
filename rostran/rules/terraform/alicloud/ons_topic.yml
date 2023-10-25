@@ -20,7 +20,10 @@ Properties:
     To: Topic
 Attributes:
   id:
-    Ignore: true
+    To:
+      - InstanceId
+      - Topic
+    Handler: colon_join
   instance_id:
     To: InstanceId
   message_type:

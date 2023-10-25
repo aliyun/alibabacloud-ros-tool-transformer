@@ -5,61 +5,140 @@ ResourceType:
   To: ALIYUN::SLS::Alert
 Properties:
   alert_description:
-    Ignore: true
+    To: Detail.Description
   alert_displayname:
-    Ignore: true
+    To: Detail.DisplayName
   alert_name:
-    Ignore: true
+    To: Detail.Name
   annotations:
-    Ignore: true
+    To: Detail.Configuration.Annotations
+    Type: List
+    Schema:
+      key:
+        To: Key
+      value:
+        To: Value
   auto_annotation:
-    Ignore: true
+    To: Detail.Configuration.AutoAnnotation
   condition:
-    Ignore: true
+    To: Detail.Configuration.Condition
   dashboard:
-    Ignore: true
+    To: Detail.Configuration.Dashboard
   group_configuration:
-    Ignore: true
+    To: Detail.Configuration.GroupConfiguration
+    Type: Map
+    Schema:
+      type:
+        To: Type
+      fields:
+        To: Fields
+        Type: List
   join_configurations:
-    Ignore: true
+    To: Detail.Configuration.JoinConfigurations
+    Type: List
+    Schema:
+      type:
+        To: Type
+      condition:
+        To: Condition
   labels:
-    Ignore: true
+    To: Detail.Configuration.Labels
+    Type: List
+    Schema:
+      key:
+        To: Key
+      value:
+        To: Value
   mute_until:
-    Ignore: true
+    To: Detail.Configuration.MuteUntil
   no_data_fire:
-    Ignore: true
+    To: Detail.Configuration.NoDataFire
   no_data_severity:
-    Ignore: true
+    To: Detail.Configuration.NoDataSeverity
   notification_list:
-    Ignore: true
+    To: Detail.Configuration.NotificationList
+    Type: List
+    Schema:
+      type:
+        To: Type
+      content:
+        To: Content
+      mobile_list:
+        To: MobileList
+      service_uri:
+        To: ServiceUri
+      email_list:
+        To: EmailList
+      method:
+        To: Method
+      headers:
+        To: Headers
   notify_threshold:
-    Ignore: true
+    To: Detail.Configuration.NotifyThreshold
   policy_configuration:
-    Ignore: true
+    To: Detail.Configuration.PolicyConfiguration
+    Type: Map
+    Schema:
+      repeat_interval:
+        To: RepeatInterval
+      action_policy_id:
+        To: ActionPolicyId
+      alert_policy_id:
+        To: AlertPolicyId
+      use_default:
+        To: UseDefault
   project_name:
-    Ignore: true
+    To: Project
   query_list:
-    Ignore: true
+    To: Detail.Configuration.QueryList
   schedule:
-    Ignore: true
+    To: Detail.Configuration.Schedule
+    Type: Map
+    Schema:
+      type:
+        To: Type
+      interval:
+        To: Interval
+      hour:
+        To: Hour
+      day_of_week:
+        To: DayOfWeek
+      cron_expression:
+        To: CronExpression
+      delay:
+        To: Delay
+      run_immediately:
+        To: RunImmediately
   schedule_interval:
-    Ignore: true
+    To: Detail.Configuration.Schedule.Interval
   schedule_type:
-    Ignore: true
+    To: Detail.Configuration.Schedule.Type
   send_resolved:
-    Ignore: true
+    To: Detail.Configuration.SendResolved
   severity_configurations:
-    Ignore: true
+    To: Detail.Configuration.SeverityConfigurations
+    Type: List
+    Schema:
+      eval_condition:
+        To: EvalCondition
+        Type: Map
+        Schema:
+          condition:
+            To: Condition
+          count_condition:
+            To: CountCondition
+      severity:
+        To: Severity
   template_configuration:
     Ignore: true
   threshold:
-    Ignore: true
+    To: Detail.Configuration.Threshold
   throttling:
-    Ignore: true
+    To: Detail.Configuration.Throttling
   type:
-    Ignore: true
+    To: Detail.Type
   version:
-    Ignore: true
+    To: Detail.Configuration.Version
 Attributes:
   id:
     Ignore: true

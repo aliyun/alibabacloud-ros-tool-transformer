@@ -52,7 +52,10 @@ Properties:
     To: WriteTime
 Attributes:
   id:
-    Ignore: true
+    To:
+      - InstanceId
+      - DomainName
+    Handler: colon_join
   cluster_type:
     To: ClusterType
   cname:

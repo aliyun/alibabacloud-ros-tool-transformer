@@ -46,7 +46,7 @@ Attributes:
   mode:
     Ignore: true
   name:
-    Ignore: true
+    To: LogstoreName
   project:
     Ignore: true
   retention_period:

@@ -16,7 +16,6 @@ Properties:
     To: ServerCertificateId
 Attributes:
   id:
-    Ignore: true
     To: DomainExtensionId
   domain:
     Ignore: true

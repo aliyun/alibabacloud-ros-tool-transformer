@@ -24,7 +24,10 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To:
+      - InstanceId
+      - AccountName
+    Handler: colon_join
   account_name:
     To: AccountName
   account_privilege:

@@ -20,7 +20,12 @@ Properties:
     To: Weight
 Attributes:
   id:
-    Ignore: true
+    To:
+      - VpcGatewayId
+      - NextHop
+      - RouteSource
+      - RouteDest
+    Handler: colon_join
   next_hop:
     To: NextHop
   publish_vpc:

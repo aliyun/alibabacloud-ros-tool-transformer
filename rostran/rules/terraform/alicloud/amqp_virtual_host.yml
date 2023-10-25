@@ -14,4 +14,4 @@ Attributes:
   instance_id:
     Ignore: true
   virtual_host_name:
-    Ignore: true
+    To: VirtualHost

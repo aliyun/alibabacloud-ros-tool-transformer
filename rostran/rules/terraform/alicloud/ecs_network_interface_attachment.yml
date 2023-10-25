@@ -14,7 +14,10 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To:
+      - NetworkInterfaceId
+      - InstanceId
+    Handler: colon_join
   instance_id:
     To: InstanceId
   network_interface_id:

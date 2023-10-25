@@ -16,7 +16,13 @@ Properties:
     To: ResourceGroupId
 Attributes:
   id:
-    Ignore: true
+    To:
+      - PolicyName
+      - PolicyType
+      - PrincipalName
+      - PrincipalType
+      - ResourceGroupId
+    Handler: colon_join
   policy_name:
     To: PolicyName
   policy_type:

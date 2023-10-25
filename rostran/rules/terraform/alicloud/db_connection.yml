@@ -26,7 +26,7 @@ Attributes:
   connection_string:
     To: ConnectionString
   instance_id:
-    Ignore: true
+    To: DBInstanceId
   ip_address:
     Ignore: true
   port:

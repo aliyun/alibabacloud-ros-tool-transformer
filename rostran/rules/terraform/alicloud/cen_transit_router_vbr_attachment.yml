@@ -34,7 +34,10 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To:
+      - TransitRouterId
+      - TransitRouterAttachmentId
+    Handler: colon_join
   auto_publish_route_enabled:
     To: AutoPublishRouteEnabled
   cen_id:

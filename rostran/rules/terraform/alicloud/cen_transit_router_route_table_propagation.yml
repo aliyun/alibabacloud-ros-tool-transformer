@@ -14,7 +14,10 @@ Properties:
     To: TransitRouterRouteTableId
 Attributes:
   id:
-    Ignore: true
+    To:
+      - TransitRouterRouteTableId
+      - TransitRouterAttachmentId
+    Handler: colon_join
   status:
     Ignore: true
   transit_router_attachment_id:

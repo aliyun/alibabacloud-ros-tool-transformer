@@ -20,15 +20,19 @@ Properties:
     To: Summary
 Attributes:
   id:
-    Ignore: true
+    To:
+      - InstanceId
+      - RepoNamespace
+      - RepoName
+    Handler: colon_join
   detail:
     Ignore: true
   instance_id:
     To: InstanceId
   name:
-    Ignore: true
+    To: RepoName
   namespace:
-    Ignore: true
+    To: RepoNamespace
   repo_id:
     To: RepoId
   repo_type:

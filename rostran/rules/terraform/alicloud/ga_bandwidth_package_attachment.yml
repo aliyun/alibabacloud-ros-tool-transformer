@@ -14,7 +14,7 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: BandwidthPackageId
   accelerator_id:
     To: AcceleratorId
   accelerators:

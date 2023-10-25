@@ -12,7 +12,10 @@ Properties:
     To: AuthorizedUserId
 Attributes:
   id:
-    Ignore: true
+    To:
+      - AuthorizedUserId
+      - AuthType
+    Handler: colon_join
   auth_type:
     To: AuthType
   authorized_user_id:

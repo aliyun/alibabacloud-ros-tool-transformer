@@ -9,15 +9,15 @@ Properties:
   cluster_id:
     To: ClusterId
   config:
-    Ignore: true
+    To: Addons.Config
   name:
-    Ignore: true
+    To: Addons.Name
   next_version:
     Ignore: true
   required:
     Ignore: true
   version:
-    Ignore: true
+    To: Addons.Version
 Attributes:
   id:
     Ignore: true

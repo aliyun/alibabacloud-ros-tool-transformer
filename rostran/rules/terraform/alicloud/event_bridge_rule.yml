@@ -42,7 +42,10 @@ Properties:
         To: Type
 Attributes:
   id:
-    Ignore: true
+    To:
+      - EventBusName
+      - RuleName
+    Handler: colon_join
   description:
     Ignore: true
   event_bus_name:
