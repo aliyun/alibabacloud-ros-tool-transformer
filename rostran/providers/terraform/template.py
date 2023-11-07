@@ -1,4 +1,5 @@
 import os
+import linecache
 from uuid import uuid4
 import importlib
 from typing import Any
@@ -36,6 +37,7 @@ class TerraformTemplate(Template):
     SUPPORTED_PLAN_FORMAT_VERSIONS = ("1.0", "1.1", "1.2")
 
     PLAN_PROPERTIES = (
+        P_PLANNED_RESOURCES,
         P_FORMAT_VERSION,
         P_CONFIGURATION,
         P_PLANNED_VALUES,
@@ -49,6 +51,7 @@ class TerraformTemplate(Template):
         P_OUTPUTS,
         P_TYPE,
     ) = (
+        "planned_resources",
         "format_version",
         "configuration",
         "planned_values",
@@ -82,8 +85,12 @@ class TerraformTemplate(Template):
         COUNT,
         EXPR,
         TRAVERSAL,
+        SOURCE,
+        COLLECTION,
+        KEY,
         ARGS,
         PARTS,
+        EACH,
         FOR_EACH,
         PROVIDER_CONFIG_REF,
         PROVIDER,
@@ -121,8 +128,12 @@ class TerraformTemplate(Template):
         "Count",
         "Expr",
         "Traversal",
+        "Source",
+        "Collection",
+        "Key",
         "Args",
         "Parts",
+        "Each",
         "ForEach",
         "ProviderConfigRef",
         "Provider",
@@ -140,7 +151,7 @@ class TerraformTemplate(Template):
         "IgnoreAllChanged",
         "DeclRanage",
         "TypeRanage",
-        "FileName",
+        "Filename",
         "Start",
         "End",
     )
@@ -246,10 +257,10 @@ class TerraformTemplate(Template):
         )
 
         template = RosTemplate()
-        tf_resources = self._parse_resources()
+        tf_resources, planned_resources = self._parse_resources()
         self._transform_resources(tf_resources, template.resources)
 
-        tf_outputs = self._parse_outputs()
+        tf_outputs = self._parse_outputs(planned_resources)
         self._transform_outputs(tf_outputs, template.outputs)
 
         typer.secho(
@@ -266,17 +277,25 @@ class TerraformTemplate(Template):
         for planned_resource in planned_resource_list:
             if planned_resource[self.P_MODE] != self.P_MANAGED:
                 continue
-            address = planned_resource[self.P_ADDRESS]
-            planned_resources[address] = planned_resource[self.P_VALUES]
+
+            org_address = "{type}.{name}".format(**planned_resource)
+            # Handle resource using `count`
+            if "index" in planned_resource:
+                count_resource_list = planned_resources.setdefault(org_address, [])
+                count_resource_list.append(planned_resource)
+            # Handle normal resource
+            else:
+                planned_resources[org_address] = [planned_resource]
 
         resources = {}
         managed_resources: dict = self.source[self.MANAGED_RESOURCES]
-        for address, resource in managed_resources.items():
-            planned_resource = planned_resources[address]
-            resource = self._parse_resource(resource, planned_resource)
-            resources[address] = resource
+        for org_address, managed_resource in managed_resources.items():
+            for planned_resource in planned_resources[org_address]:
+                resource = self._parse_resource(managed_resource, planned_resource)
+                address = planned_resource[self.P_ADDRESS]
+                resources[address] = resource
 
-        return resources
+        return resources, planned_resources
 
     def _parse_resource(self, managed_resource: dict, planned_resource: dict):
         depends_on = []
@@ -296,55 +315,73 @@ class TerraformTemplate(Template):
 
         return resource
 
-    def _parse_source_config(self, config: dict, planned_resource: dict = None):
-        props = {}
-        attributes = config.get(self.ATTRIBUTES, {})
-        for propname, prop in attributes.items():
-            if propname == "depends_on":
-                continue
+    def _parse_source_config(
+        self, config: dict, planned_entity: dict, entity_type: str = P_RESOURCES
+    ):
+        # For resource
+        if entity_type == self.P_RESOURCES:
+            props = {}
+            planned_props = planned_entity[self.P_VALUES]
+            attributes = config.get(self.ATTRIBUTES)
+            if attributes:
+                for name, prop in attributes.items():
+                    if name in ("depends_on", "count"):
+                        continue
 
-            if planned_resource is None:
-                planned_value = None
-            else:
-                planned_value = planned_resource.get(propname)
+                    if planned_props is None:
+                        planned_value = None
+                    else:
+                        planned_value = planned_props.get(name)
 
-            # If cannot get value from planned resource,
-            # it means value cannot resolved statically
-            if planned_value is None:
-                expr = prop[self.EXPR]
-                value = self._parse_source_expr(expr)
-                if value is not None:
-                    props[propname] = value
-            else:
-                props[propname] = planned_value
+                    # If cannot get value from planned resource,
+                    # it means value cannot resolved statically
+                    if planned_value is None:
+                        expr = prop[self.EXPR]
+                        value = self._parse_source_expr(
+                            expr, planned_entity.get("index")
+                        )
+                        if value is not None:
+                            props[name] = value
+                    else:
+                        props[name] = planned_value
 
-        blocks = config.get(self.BLOCKS, [])
-        for block in blocks:
-            propname = block[self.TYPE]
-            if propname not in props:
-                props[propname] = []
-                index = 0
-            else:
-                index = len(props[propname])
+            blocks = config.get(self.BLOCKS, [])
+            for block in blocks:
+                name = block[self.TYPE]
+                if name not in props:
+                    props[name] = []
+                    index = 0
+                else:
+                    index = len(props[name])
 
-            if planned_resource is None or not isinstance(
-                planned_resource[propname], list
-            ):
-                new_planned_resource = None
-            else:
-                new_planned_resource = planned_resource[propname][index]
+                if planned_props is None or not isinstance(planned_props[name], list):
+                    new_planned_props = None
+                else:
+                    new_planned_props = planned_props[name][index]
 
-            res = self._parse_source_config(block[self.BODY], new_planned_resource)
-            props[propname].append(res)
+                new_planned_entity = {self.P_VALUES: new_planned_props}
+                res = self._parse_source_config(
+                    block[self.BODY], new_planned_entity, entity_type=entity_type
+                )
+                props[name].append(res)
+            return props
+        # For output
+        elif entity_type == self.P_OUTPUTS:
+            assert self.EXPR in config
+            assert self.P_PLANNED_RESOURCES in planned_entity
+            return self._parse_source_expr(
+                config[self.EXPR],
+                planned_entity.get("index"),
+                planned_entity.get(self.P_PLANNED_RESOURCES),
+            )
+        else:
+            raise ValueError(f"entity_type: {entity_type!r} not supported")
 
-        if self.EXPR in config:
-            return self._parse_source_expr(config[self.EXPR])
-
-        return props
-
-    def _parse_source_expr(self, expr: dict):
+    def _parse_source_expr(
+        self, expr: dict, count_index: int = None, planned_resources: dict = None
+    ):
         data = None
-        # func
+        # Func
         if self.ARGS in expr:
             func_name = expr[self.NAME]
             func_args = []
@@ -355,23 +392,87 @@ class TerraformTemplate(Template):
                 self.PROP_VALUE: func_name,
                 self.PROP_ARGS: func_args,
             }
-        # dot attr
+        # Attr refer
         elif self.TRAVERSAL in expr:
             traversal = expr[self.TRAVERSAL]
+            source = expr.get(self.SOURCE)
+            # Attr refer a resource with count
+            if source and count_index is not None:
+                collection_traversal = source[self.COLLECTION][self.TRAVERSAL]
+                data = {
+                    self.PROP_TYPE: self.PROP_TYPE_FUNC,
+                    self.PROP_VALUE: self.FUNC_GET_ATT,
+                    self.PROP_ARGS: [
+                        f"{collection_traversal[0][self.NAME]}.{collection_traversal[1][self.NAME]}[{count_index}]",
+                        traversal[0][self.NAME],
+                    ],
+                }
+                return data
+
             first = traversal[0][self.NAME]
             # ROS not supports, so return None
             if first in ("var", "data"):
                 return None
-            if len(traversal) != 3:
-                return None
-            data = {
-                self.PROP_TYPE: self.PROP_TYPE_FUNC,
-                self.PROP_VALUE: self.FUNC_GET_ATT,
-                self.PROP_ARGS: [
-                    f"{first}.{traversal[1][self.NAME]}",
-                    traversal[2][self.NAME],
-                ],
-            }
+
+            traversal_length = len(traversal)
+            if traversal_length == 3:
+                data = {
+                    self.PROP_TYPE: self.PROP_TYPE_FUNC,
+                    self.PROP_VALUE: self.FUNC_GET_ATT,
+                    self.PROP_ARGS: [
+                        f"{first}.{traversal[1][self.NAME]}",
+                        traversal[2][self.NAME],
+                    ],
+                }
+            elif traversal_length == 4 and self.KEY in traversal[2]:
+                # As there is no value for the Key (which is in traversal[2]), it needs to be read from a file.
+                src_range = traversal[2][self.SRC_RANGE]
+                start = src_range[self.START]
+                end = src_range[self.END]
+                content = ""
+                for lineno in range(start["Line"], end["Line"] + 1):
+                    content += linecache.getline(
+                        src_range[self.FILENAME], lineno
+                    ).rstrip("\n")
+
+                key = content[start["Column"] : end["Column"] - 1]
+                try:
+                    count_index = int(key)
+                except ValueError:
+                    return None
+
+                data = {
+                    self.PROP_TYPE: self.PROP_TYPE_FUNC,
+                    self.PROP_VALUE: self.FUNC_GET_ATT,
+                    self.PROP_ARGS: [
+                        f"{first}.{traversal[1][self.NAME]}[{count_index}]",
+                        traversal[3][self.NAME],
+                    ],
+                }
+        # Attr refer using *
+        elif self.SOURCE in expr and self.EACH in expr and planned_resources:
+            attr_name = expr[self.EACH][self.TRAVERSAL][0][self.NAME]
+            source_traversal = expr[self.SOURCE][self.TRAVERSAL]
+            raw_address = (
+                f"{source_traversal[0][self.NAME]}.{source_traversal[1][self.NAME]}"
+            )
+            resource_list = planned_resources.get(raw_address)
+            if resource_list:
+                data = []
+                for resource in resource_list:
+                    data.append(
+                        {
+                            self.PROP_TYPE: self.PROP_TYPE_FUNC,
+                            self.PROP_VALUE: self.FUNC_GET_ATT,
+                            self.PROP_ARGS: [
+                                resource[self.P_ADDRESS],
+                                attr_name,
+                            ],
+                        }
+                    )
+                return data
+            return None
+
         # list literal (*)
         # ROS not supports, so return None
         elif self.FOR_EACH in expr:
@@ -528,27 +629,38 @@ class TerraformTemplate(Template):
             self._handle_props_and_value(sub_data, names[1:], value, _name_path)
 
     def _transform_prop_or_attr(self, value) -> (Any, bool):
-        if not isinstance(value, dict):
-            return value, True
-
-        if self.PROP_TYPE not in value:
-            data = {}
+        if isinstance(value, list):
+            data = []
             resolved = True
-            for k, v in value.items():
+            for v in value:
                 val, resolved_ = self._transform_prop_or_attr(v)
                 if resolved_ is False:
                     resolved = False
-                data[k] = val
+                data.append(val)
             return data, resolved
+        elif isinstance(value, dict):
+            if self.PROP_TYPE not in value:
+                data = {}
+                resolved = True
+                for k, v in value.items():
+                    val, resolved_ = self._transform_prop_or_attr(v)
+                    if resolved_ is False:
+                        resolved = False
+                    data[k] = val
+                return data, resolved
 
-        prop_type = value.get(self.PROP_TYPE)
-        if prop_type == self.PROP_TYPE_FUNC:
-            prop_args = value.get(self.PROP_ARGS)
-            prop_value = value.get(self.PROP_VALUE)
-            if prop_value == self.FUNC_GET_ATT:
-                return self._transform_func_get_att(prop_args[0], prop_args[1]), False
+            prop_type = value.get(self.PROP_TYPE)
+            if prop_type == self.PROP_TYPE_FUNC:
+                prop_args = value.get(self.PROP_ARGS)
+                prop_value = value.get(self.PROP_VALUE)
+                if prop_value == self.FUNC_GET_ATT:
+                    return (
+                        self._transform_func_get_att(prop_args[0], prop_args[1]),
+                        False,
+                    )
+            return None, True
 
-        return None, True
+        return value, True
 
     def _transform_func_get_att(self, resource_id, attrname):
         tf_resource_type = None
@@ -615,7 +727,7 @@ class TerraformTemplate(Template):
 
         return final_value
 
-    def _parse_outputs(self):
+    def _parse_outputs(self, planned_resources: dict = None):
         planned_outputs = {}
         raw_planned_outputs: dict = self.plan[self.P_PLANNED_VALUES].get(
             self.P_OUTPUTS, {}
@@ -628,16 +740,30 @@ class TerraformTemplate(Template):
         source_outputs: dict = self.source[self.OUTPUTS]
         for name, source_output in source_outputs.items():
             planned_output = planned_outputs[name]
-            output = self._parse_output(source_output, planned_output)
+            output = self._parse_output(
+                source_output, planned_output, planned_resources
+            )
             outputs[name] = output
 
         return outputs
 
-    def _parse_output(self, source_output: dict, planned_output: dict = None):
+    def _parse_output(
+        self,
+        source_output: dict,
+        planned_output: dict = None,
+        planned_resources: dict = None,
+    ):
         if planned_output is not None:
             return planned_output
 
-        output = self._parse_source_config(source_output, planned_output)
+        output = self._parse_source_config(
+            source_output,
+            {
+                self.P_VALUES: planned_output,
+                self.P_PLANNED_RESOURCES: planned_resources,
+            },
+            entity_type=self.P_OUTPUTS,
+        )
         return output
 
     def _transform_outputs(self, tf_outputs: dict, out_outputs: Outputs):
