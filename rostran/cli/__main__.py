@@ -225,7 +225,7 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
             raise exceptions.TemplateFormatNotSupport(path=path, format=suffix)
         return
 
-    typer.secho(f"Format {path}.", fg="green")
+    typer.secho(f"Formatting {path}.", fg="green")
     template = RosTemplate.initialize(source)
     data = template.as_dict(format=True)
     if file_format == FileFormat.Json:
