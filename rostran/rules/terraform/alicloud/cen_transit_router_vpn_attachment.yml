@@ -1,0 +1,48 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_transit_router_vpn_attachment
+  To: ALIYUN::CEN::TransitRouterVpnAttachment
+Properties:
+  auto_publish_route_enabled:
+    To: AutoPublishRouteEnabled
+  cen_id:
+    To: CenId
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  transit_router_attachment_description:
+    To: TransitRouterAttachmentDescription
+  transit_router_attachment_name:
+    To: TransitRouterAttachmentName
+  transit_router_id:
+    To: TransitRouterId
+  vpn_id:
+    To: VpnId
+  vpn_owner_id:
+    To: VpnOwnerId
+  zone:
+    To: ZoneId
+Attributes:
+  id:
+    To: TransitRouterAttachmentId
+  auto_publish_route_enabled:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  transit_router_attachment_description:
+    Ignore: true
+  transit_router_attachment_name:
+    Ignore: true
+  transit_router_id:
+    Ignore: true
+  vpn_id:
+    Ignore: true
+  vpn_owner_id:
+    Ignore: true
+  zone:
+    Ignore: true

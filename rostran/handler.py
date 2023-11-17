@@ -30,6 +30,16 @@ def tags_dict_to_list(tags_dict, resolved=False):
     }
 
 
+def to_boolean(data, resolved=False):
+    """
+    Convert data to boolean.
+    """
+    if data is None or not resolved:
+        return None
+
+    return bool(data)
+
+
 def kv_list_to_map(kv_list, k_name, v_name):
     """
     Convert a list containing dictionaries with key-value pairs into a dictionary.
@@ -87,6 +97,7 @@ def join_wrapper(splitter=":"):
 
 colon_join = join_wrapper(":")
 slash_join = join_wrapper("/")
+comma_join = join_wrapper(",")
 
 
 def replace_wrapper(old, new):

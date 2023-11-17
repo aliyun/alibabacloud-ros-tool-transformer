@@ -1,0 +1,71 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_control_policy
+  To: ALIYUN::CLOUDFW::ControlPolicy
+Properties:
+  acl_action:
+    To: AclAction
+  acl_uuid:
+    Ignore: true
+  application_name:
+    To: ApplicationName
+  description:
+    To: Description
+  dest_port:
+    To: DestPort
+  dest_port_group:
+    To: DestPortGroup
+  dest_port_type:
+    To: DestPortType
+  destination:
+    To: Destination
+  destination_type:
+    To: DestinationType
+  direction:
+    To: Direction
+  ip_version:
+    Ignore: true
+  lang:
+    Ignore: true
+  proto:
+    To: Proto
+  release:
+    Ignore: true
+  source:
+    To: Source
+  source_ip:
+    Ignore: true
+  source_type:
+    To: SourceType
+Attributes:
+  id:
+    Ignore: true
+  acl_action:
+    Ignore: true
+  acl_uuid:
+    To: AclUuid
+  application_name:
+    Ignore: true
+  description:
+    Ignore: true
+  dest_port:
+    Ignore: true
+  dest_port_group:
+    Ignore: true
+  dest_port_type:
+    Ignore: true
+  destination:
+    Ignore: true
+  destination_type:
+    Ignore: true
+  direction:
+    Ignore: true
+  proto:
+    Ignore: true
+  release:
+    Ignore: true
+  source:
+    Ignore: true
+  source_type:
+    Ignore: true
