@@ -4,25 +4,26 @@ from subprocess import run
 from tempfile import NamedTemporaryFile
 
 import requests
-from alibabacloud_ros20190910 import models
-from alibabacloud_ros20190910.client import Client
+import jsonref
+from alibabacloud_ros20190910 import models as ros_models
+from alibabacloud_ros20190910.client import Client as RosClient
 
 from tools import exceptions
 
 
 class RosResource:
-    def __init__(self, client: Client, resource_type: str):
+    def __init__(self, client: RosClient, resource_type: str):
         self.resource_type = resource_type
         self.client = client
         self._rt_info = None
 
     def fetch(self):
-        req = models.GetResourceTypeRequest(self.resource_type)
+        req = ros_models.GetResourceTypeRequest(self.resource_type)
         resp = self.client.get_resource_type(req)
         self._rt_info = resp.body
 
     @property
-    def rt_info(self) -> models.GetResourceTypeResponseBody:
+    def rt_info(self) -> ros_models.GetResourceTypeResponseBody:
         if not self._rt_info:
             self.fetch()
         return self._rt_info
@@ -224,16 +225,15 @@ class TerraformResource:
         for elt in ast_schema["Elts"]:
             prop_name = eval(elt["Key"]["Value"])
             new_prop_path = f"{prop_path}.{prop_name}" if prop_path else prop_name
-            # print(new_path)
             try:
-                prop_schema = self._get_property_schema(elt["Value"], new_prop_path)
+                prop = self._get_property_schema(elt["Value"], new_prop_path)
             except ValueError as e:
                 if prop_name in self.KEYS_USING_DEFAULT_TAGS_SCHEMA:
-                    prop_schema = self.DEFAULT_TAGS_SCHEMA
+                    prop = self.DEFAULT_TAGS_SCHEMA
                 else:
                     path_or_url, t = self.path_or_url()
                     raise ValueError(f"{e}. Path: {path_or_url}")
-            properties_schema[prop_name] = prop_schema
+            properties_schema[prop_name] = prop
 
         return properties_schema
 
@@ -244,14 +244,14 @@ class TerraformResource:
                 f'Found function call in schema "{path}", not supported. Path: {path_or_url}'
             )
 
-        prop_schema = {"Required": True}
+        prop = {"Required": True}
         for elt in ast_prop["Elts"]:
             elt_key_name = elt["Key"]["Name"]
             elt_value = elt["Value"]
             if elt_key_name == "Type":
-                prop_schema["Type"] = self.TYPE_MAPPING[elt_value["Sel"]["Name"]]
+                prop["Type"] = self.TYPE_MAPPING[elt_value["Sel"]["Name"]]
             elif elt_key_name == "Optional":
-                prop_schema["Required"] = elt_value["Name"] == '"True"'
+                prop["Required"] = elt_value["Name"] == '"True"'
             elif elt_key_name == "Elem":
                 node_type = elt_value["NodeType"]
                 if node_type == "UnaryExpr":
@@ -260,20 +260,114 @@ class TerraformResource:
                         x_name = x["Type"]["Sel"]["Name"]
                         new_prop_path = f"{path}.*"
                         if x_name == "Schema":
-                            sub_prop_schema = self._get_property_schema(
-                                x, new_prop_path
-                            )
-                            prop_schema["Schema"] = {"*": sub_prop_schema}
+                            sub_prop = self._get_property_schema(x, new_prop_path)
+                            prop["Schema"] = {"*": sub_prop}
                         elif x_name == "Resource":
-                            sub_props_schema = self._get_properties_schema(
+                            sub_props = self._get_properties_schema(
                                 x["Elts"][0]["Value"], new_prop_path
                             )
-                            prop_schema["Schema"] = {
+                            prop["Schema"] = {
                                 "*": {
                                     "Required": False,
                                     "Type": "map",
-                                    "Schema": sub_props_schema,
+                                    "Schema": sub_props,
                                 }
                             }
 
-        return prop_schema
+        return prop
+
+
+class CloudFormationResource:
+    def __init__(self, client, resource_type: str):
+        self.client = client
+        self.resource_type = resource_type
+        self._rt_info = None
+        self._schema = None
+
+    def fetch(self):
+        resp = self.client.describe_type(
+            Type="RESOURCE",
+            TypeName=self.resource_type,
+        )
+        self._rt_info = resp
+
+    @property
+    def rt_info(self) -> dict:
+        if not self._rt_info:
+            self.fetch()
+        return self._rt_info
+
+    @property
+    def schema(self) -> dict:
+        if not self._schema:
+            s = self.rt_info["Schema"]
+            # remove resource-schema.json due to can not resolve
+            s = s.replace("resource-schema.json#", "#")
+            self._schema = jsonref.loads(s, proxies=False, lazy_load=False)
+            self._schema["type"] = "object"
+            self._handle_prop(self._schema)
+        return self._schema
+
+    def properties(self):
+        return self._get_props(read_only=False)
+
+    def attributes(self):
+        return self._get_props(read_only=True)
+
+    def _get_props(self, read_only=False):
+        properties = self.schema["Properties"]
+        read_only_properties = self.schema.get("ReadOnlyProperties")
+        if read_only_properties:
+            read_only_names = set(
+                n.replace("/properties/", "") for n in read_only_properties
+            )
+        else:
+            read_only_names = set()
+
+        if read_only:
+            props = {n: properties[n] for n in properties if n in read_only_names}
+        else:
+            props = {n: properties[n] for n in properties if n not in read_only_names}
+        return props
+
+    def _handle_props(self, props: dict, required_names: list = None):
+        for name, prop in props.items():
+            if required_names and name in required_names:
+                prop["Required"] = True
+            else:
+                prop["Required"] = False
+            self._handle_prop(prop)
+
+    def _handle_prop(self, prop: dict):
+        for k in list(prop):
+            if k == "required" and prop.get("type") == "object":
+                nk = ".RequiredList"
+            else:
+                nk = "{}{}".format(k[0].upper(), k[1:])
+            prop[nk] = prop.pop(k)
+
+        t = prop.get("Type")
+        if isinstance(t, list):
+            if "object" in t:
+                t = "object"
+            elif "array" in t:
+                t = "array"
+            else:
+                t = t[-1]
+            prop["Type"] = t
+
+        if t == "array":
+            prop["Type"] = "list"
+            item_schema = prop.get("Items")
+            self._handle_prop(item_schema)
+            prop["Schema"] = {"*": item_schema}
+        elif t == "object":
+            prop["Type"] = "map"
+            props = prop.get("Properties")
+            if props:
+                required_names = prop.pop(".RequiredList", None)
+                self._handle_props(props, required_names)
+                prop["Schema"] = props
+        elif not t and "oneof" in prop:
+            for each_prop in prop["oneof"]:
+                self._handle_prop(each_prop)

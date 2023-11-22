@@ -13,3 +13,5 @@ black
 alibabacloud_ros20190910
 requests
 pyyaml
+boto3
+jsonref

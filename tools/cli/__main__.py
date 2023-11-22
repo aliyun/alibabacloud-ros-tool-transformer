@@ -9,8 +9,8 @@ import typer
 
 from tools import exceptions
 from tools.formatter import RuleFormatter
-from tools.generator import RuleGenerator
-from tools.settings import TF_ALI_ROS_GENERATE_MAPPING
+from tools.generator import TerraformRuleGenerator, CloudFormationRuleGenerator
+from tools.settings import TF_ALI_ROS_GENERATE_MAPPINGS, CF_ROS_GENERATE_MAPPINGS
 
 from tools.settings import TF_ALI_RULES_DIR, CF_RESOURCE_RULES_DIR
 
@@ -22,42 +22,61 @@ app = typer.Typer(help=__doc__)
 def generate(
     ros: str = typer.Option(
         "",
-        help="The resource type of ROS.",
+        help="The resource type of ROS. 'all' represents all types of resources.",
     ),
     tf: str = typer.Option(
         "",
-        help="The resource type of Terraform",
+        help="The resource type of Terraform. 'all' represents all types of resources.",
+    ),
+    cf: str = typer.Option(
+        "",
+        help="The resource type of Cloud Formation. 'all' represents all types of resources.",
     ),
 ):
     """
-    Generate rules from Terraform to ROS.
+    Generate rules from Terraform/CloudFormation to ROS.
+    By default, rules are generated from Terraform to ROS.
     """
-    if not ros and not tf:
-        generate_mapping = TF_ALI_ROS_GENERATE_MAPPING
-    elif ros and tf:
-        generate_mapping = {tf: ros}
-    else:
-        raise exceptions.RosToolException(message="Please supply --ros and --terraform")
+    if not any((ros, tf, cf)):
+        ros = tf = cf = "all"
 
-    alicloud_local = os.getenv("TERRAFORM_PROVIDER_ALICLOUD")
-    if alicloud_local:
-        typer.echo(
-            f"Found env TERRAFORM_PROVIDER_ALICLOUD={alicloud_local}. "
-            f"The rule generator will use local alicloud provider as the source to parse."
+    if not ros:
+        raise exceptions.RosToolException(message="Please supply --ros")
+    elif not any((tf, cf)):
+        raise exceptions.RosToolException(message="Please supply --tf/--cf")
+    elif all((tf, cf)):
+        raise exceptions.RosToolException(
+            message="Please supply --tf or --cf, but not both"
         )
+    elif tf:
+        alicloud_local = os.getenv("TERRAFORM_PROVIDER_ALICLOUD")
+        if alicloud_local:
+            typer.echo(
+                f"Found env TERRAFORM_PROVIDER_ALICLOUD={alicloud_local}. "
+                f"The rule generator will use local alicloud provider as the source to parse."
+            )
+        else:
+            typer.echo(
+                f"Env TERRAFORM_PROVIDER_ALICLOUD not found. "
+                f"The rule generator will use the alicloud provider on github as the source to parse."
+            )
+
+        generate_mapping = TF_ALI_ROS_GENERATE_MAPPINGS if tf == "all" else {tf: ros}
+        for tf, ros in generate_mapping.items():
+            tf_filename = None
+            if isinstance(ros, (list, tuple)):
+                tf_filename, ros = ros
+            typer.echo(f"Generating Terraform rule: {tf} -> {ros}")
+            generator = TerraformRuleGenerator.initialize(tf, ros, tf_filename)
+            generator.generate()
+            typer.echo(f"Generate Terraform rule success: {tf} -> {ros}")
     else:
-        typer.echo(
-            f"Env TERRAFORM_PROVIDER_ALICLOUD not found. "
-            f"The rule generator will use the alicloud provider on github as the source to parse."
-        )
-    for tf, ros in generate_mapping.items():
-        tf_filename = None
-        if isinstance(ros, (list, tuple)):
-            tf_filename, ros = ros
-        typer.echo(f"Generating rule: {tf} -> {ros}")
-        generator = RuleGenerator.initialize(tf, ros, tf_filename)
-        generator.generate()
-        typer.echo(f"Generate rule success: {tf} -> {ros}")
+        generate_mapping = CF_ROS_GENERATE_MAPPINGS if cf == "all" else {cf: ros}
+        for cf, ros in generate_mapping.items():
+            typer.echo(f"Generating CloudFormation rule: {cf} -> {ros}")
+            generator = CloudFormationRuleGenerator.initialize(cf, ros)
+            generator.generate()
+            typer.echo(f"Generate CloudFormation rule success: {cf} -> {ros}")
 
 
 @app.command()
