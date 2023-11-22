@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::EC2::Volume
@@ -24,5 +24,16 @@ Properties:
     To: SnapshotId
   Tags:
     To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
+  Throughput:
+    Ignore: true
   VolumeType:
     To: DiskCategory
+Attributes:
+  VolumeId:
+    To: DiskId

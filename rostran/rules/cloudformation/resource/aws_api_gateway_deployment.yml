@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ApiGateway::Deployment
+  To: ALIYUN::ApiGateway::Deployment
+Properties:
+  DeploymentCanarySettings:
+    Ignore: true
+  Description:
+    To: Description
+  RestApiId:
+    Ignore: true
+  StageDescription:
+    Ignore: true
+  StageName:
+    To: StageName
+Attributes:
+  DeploymentId:
+    Ignore: true

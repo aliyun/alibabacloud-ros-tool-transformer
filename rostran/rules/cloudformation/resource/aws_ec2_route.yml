@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::EC2::Route
@@ -9,6 +9,8 @@ Properties:
   DestinationCidrBlock:
     To: DestinationCidrBlock
   DestinationIpv6CidrBlock:
+    Ignore: true
+  DestinationPrefixListId:
     Ignore: true
   EgressOnlyInternetGatewayId:
     Ignore: true
@@ -29,4 +31,7 @@ Properties:
   VpcEndpointId:
     Ignore: true
   VpcPeeringConnectionId:
+    Ignore: true
+Attributes:
+  CidrBlock:
     Ignore: true

@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::EC2::EIPAssociation
@@ -14,3 +14,6 @@ Properties:
     Ignore: true
   PrivateIpAddress:
     To: PrivateIpAddress
+Attributes:
+  Id:
+    Ignore: true

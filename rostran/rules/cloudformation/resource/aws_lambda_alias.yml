@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::Lambda::Alias
+  To: ALIYUN::FC::Alias
+Properties:
+  Description:
+    To: Description
+  FunctionName:
+    Ignore: true
+  FunctionVersion:
+    Ignore: true
+  Name:
+    Ignore: true
+  ProvisionedConcurrencyConfig:
+    Ignore: true
+  RoutingConfig:
+    Ignore: true
+Attributes:
+  Id:
+    To: AliasName

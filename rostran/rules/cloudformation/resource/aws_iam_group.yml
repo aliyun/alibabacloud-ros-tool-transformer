@@ -1,11 +1,11 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::IAM::Group
   To: ALIYUN::RAM::Group
 Properties:
   GroupName:
-    To: String
+    To: GroupName
   ManagedPolicyArns:
     Ignore: true
   Path:

@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EFS::FileSystem
+  To: ALIYUN::NAS::FileSystem
+Properties:
+  AvailabilityZoneName:
+    Ignore: true
+  BackupPolicy:
+    Ignore: true
+  BypassPolicyLockoutSafetyCheck:
+    Ignore: true
+  Encrypted:
+    Ignore: true
+  FileSystemPolicy:
+    Ignore: true
+  FileSystemTags:
+    Ignore: true
+  KmsKeyId:
+    Ignore: true
+  LifecyclePolicies:
+    Ignore: true
+  PerformanceMode:
+    Ignore: true
+  ProvisionedThroughputInMibps:
+    Ignore: true
+  ReplicationConfiguration:
+    Ignore: true
+  ThroughputMode:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  FileSystemId:
+    To: FileSystemId

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::Config::DeliveryChannel
+  To: ALIYUN::Config::DeliveryChannel
+Properties:
+  ConfigSnapshotDeliveryProperties:
+    Ignore: true
+  Name:
+    Ignore: true
+  S3BucketName:
+    Ignore: true
+  S3KeyPrefix:
+    Ignore: true
+  S3KmsKeyArn:
+    Ignore: true
+  SnsTopicARN:
+    Ignore: true
+Attributes:
+  Id:
+    To: DeliveryChannelId

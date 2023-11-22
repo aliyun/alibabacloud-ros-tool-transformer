@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::IAM::SAMLProvider
+  To: ALIYUN::RAM::SAMLProvider
+Properties:
+  Name:
+    Ignore: true
+  SamlMetadataDocument:
+    Ignore: true
+  Tags:
+    Ignore: true
+Attributes:
+  Arn:
+    To: Arn

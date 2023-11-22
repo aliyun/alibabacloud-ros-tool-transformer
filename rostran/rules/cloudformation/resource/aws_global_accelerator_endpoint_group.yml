@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::GlobalAccelerator::EndpointGroup
+  To: ALIYUN::GA::EndpointGroup
+Properties:
+  EndpointConfigurations:
+    To: EndpointConfigurations
+    Type: List
+    Schema:
+      ClientIPPreservationEnabled:
+        Ignore: true
+      EndpointId:
+        Ignore: true
+      Weight:
+        To: Weight
+  EndpointGroupRegion:
+    To: EndpointGroupRegion
+  HealthCheckIntervalSeconds:
+    To: HealthCheckIntervalSeconds
+  HealthCheckPath:
+    To: HealthCheckPath
+  HealthCheckPort:
+    To: HealthCheckPort
+  HealthCheckProtocol:
+    To: HealthCheckProtocol
+  ListenerArn:
+    Ignore: true
+  PortOverrides:
+    Ignore: true
+  ThresholdCount:
+    To: ThresholdCount
+  TrafficDialPercentage:
+    Ignore: true
+Attributes:
+  EndpointGroupArn:
+    Ignore: true

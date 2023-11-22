@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ElasticLoadBalancingV2::LoadBalancer
+  To: ALIYUN::SLB::LoadBalancer
+Properties:
+  IpAddressType:
+    Ignore: true
+  LoadBalancerAttributes:
+    Ignore: true
+  Name:
+    Ignore: true
+  Scheme:
+    Ignore: true
+  SecurityGroups:
+    Ignore: true
+  SubnetMappings:
+    Ignore: true
+  Subnets:
+    Ignore: true
+  Tags:
+    To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
+  Type:
+    Ignore: true
+Attributes:
+  CanonicalHostedZoneID:
+    Ignore: true
+  DNSName:
+    Ignore: true
+  LoadBalancerArn:
+    Ignore: true
+  LoadBalancerFullName:
+    Ignore: true
+  LoadBalancerName:
+    To: LoadBalancerName

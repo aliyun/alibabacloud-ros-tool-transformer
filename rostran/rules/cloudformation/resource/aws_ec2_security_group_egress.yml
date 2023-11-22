@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EC2::SecurityGroupEgress
+  To: ALIYUN::ECS::SecurityGroupEgress
+Properties:
+  CidrIp:
+    Ignore: true
+  CidrIpv6:
+    Ignore: true
+  Description:
+    To: Description
+  DestinationPrefixListId:
+    Ignore: true
+  DestinationSecurityGroupId:
+    Ignore: true
+  FromPort:
+    Ignore: true
+  GroupId:
+    Ignore: true
+  IpProtocol:
+    To: IpProtocol
+  ToPort:
+    Ignore: true
+Attributes:
+  Id:
+    Ignore: true

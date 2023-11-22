@@ -1,0 +1,59 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::CloudFormation::Stack
+  To: ALIYUN::ROS::Stack
+Properties:
+  Capabilities:
+    Ignore: true
+  Description:
+    Ignore: true
+  DisableRollback:
+    Ignore: true
+  EnableTerminationProtection:
+    Ignore: true
+  NotificationARNs:
+    Ignore: true
+  Parameters:
+    To: Parameters
+  RoleARN:
+    Ignore: true
+  StackName:
+    Ignore: true
+  StackPolicyBody:
+    Ignore: true
+  StackPolicyURL:
+    Ignore: true
+  StackStatusReason:
+    Ignore: true
+  Tags:
+    To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
+  TemplateBody:
+    To: TemplateBody
+  TemplateURL:
+    To: TemplateURL
+  TimeoutInMinutes:
+    To: TimeoutMins
+Attributes:
+  ChangeSetId:
+    Ignore: true
+  CreationTime:
+    Ignore: true
+  LastUpdateTime:
+    Ignore: true
+  Outputs:
+    Ignore: true
+  ParentId:
+    Ignore: true
+  RootId:
+    Ignore: true
+  StackId:
+    Ignore: true
+  StackStatus:
+    Ignore: true

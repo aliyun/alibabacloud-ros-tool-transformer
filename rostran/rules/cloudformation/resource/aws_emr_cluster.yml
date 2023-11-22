@@ -1,0 +1,65 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EMR::Cluster
+  To: ALIYUN::EMR::Cluster
+Properties:
+  AdditionalInfo:
+    Ignore: true
+  Applications:
+    Ignore: true
+  AutoScalingRole:
+    Ignore: true
+  AutoTerminationPolicy:
+    Ignore: true
+  BootstrapActions:
+    Ignore: true
+  Configurations:
+    Ignore: true
+  CustomAmiId:
+    Ignore: true
+  EbsRootVolumeSize:
+    Ignore: true
+  Instances:
+    Ignore: true
+  JobFlowRole:
+    Ignore: true
+  KerberosAttributes:
+    Ignore: true
+  LogEncryptionKmsKeyId:
+    Ignore: true
+  LogUri:
+    Ignore: true
+  ManagedScalingPolicy:
+    Ignore: true
+  Name:
+    To: Name
+  OSReleaseLabel:
+    Ignore: true
+  ReleaseLabel:
+    Ignore: true
+  ScaleDownBehavior:
+    Ignore: true
+  SecurityConfiguration:
+    Ignore: true
+  ServiceRole:
+    Ignore: true
+  StepConcurrencyLevel:
+    Ignore: true
+  Steps:
+    Ignore: true
+  Tags:
+    To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
+  VisibleToAllUsers:
+    Ignore: true
+Attributes:
+  Id:
+    To: ClusterId
+  MasterPublicDNS:
+    Ignore: true

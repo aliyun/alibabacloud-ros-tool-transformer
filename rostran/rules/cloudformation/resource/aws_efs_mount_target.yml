@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EFS::MountTarget
+  To: ALIYUN::NAS::MountTarget
+Properties:
+  FileSystemId:
+    To: FileSystemId
+  IpAddress:
+    Ignore: true
+  SecurityGroups:
+    Ignore: true
+  SubnetId:
+    Ignore: true
+Attributes:
+  Id:
+    Ignore: true

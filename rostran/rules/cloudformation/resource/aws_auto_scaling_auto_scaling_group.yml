@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::AutoScaling::AutoScalingGroup
@@ -8,16 +8,26 @@ Properties:
     To: ScalingGroupName
   AvailabilityZones:
     Ignore: true
+  CapacityRebalance:
+    Ignore: true
+  Context:
+    Ignore: true
   Cooldown:
     To: DefaultCooldown
+  DefaultInstanceWarmup:
+    Ignore: true
   DesiredCapacity:
     To: DesiredCapacity
+  DesiredCapacityType:
+    Ignore: true
   HealthCheckGracePeriod:
     Ignore: true
   HealthCheckType:
     To: HealthCheckType
   InstanceId:
     To: InstanceId
+  InstanceMaintenancePolicy:
+    Ignore: true
   LaunchConfigurationName:
     Ignore: true
   LaunchTemplate:
@@ -27,7 +37,7 @@ Properties:
   LoadBalancerNames:
     To: LoadBalancerIds
   MaxInstanceLifetime:
-    Ignore: true
+    To: MaxInstanceLifetime
   MaxSize:
     To: MaxSize
   MetricsCollection:
@@ -38,20 +48,31 @@ Properties:
     Ignore: true
   NewInstancesProtectedFromScaleIn:
     Ignore: true
+  NotificationConfiguration:
+    Ignore: true
   NotificationConfigurations:
     To: NotificationConfigurations
     Type: List
     Schema:
       NotificationTypes:
         To: NotificationTypes
+        Type: List
       TopicARN:
-        To: NotificationArn
+        Ignore: true
   PlacementGroup:
     Ignore: true
   ServiceLinkedRoleARN:
     Ignore: true
   Tags:
-    Ignore: true
+    To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      PropagateAtLaunch:
+        Ignore: true
+      Value:
+        To: Value
   TargetGroupARNs:
     Ignore: true
   TerminationPolicies:

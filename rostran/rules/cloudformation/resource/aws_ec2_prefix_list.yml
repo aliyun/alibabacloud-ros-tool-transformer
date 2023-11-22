@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EC2::PrefixList
+  To: ALIYUN::ECS::PrefixList
+Properties:
+  AddressFamily:
+    To: AddressFamily
+  Entries:
+    To: Entries
+    Type: List
+    Schema:
+      Cidr:
+        To: Cidr
+      Description:
+        To: Description
+  MaxEntries:
+    To: MaxEntries
+  PrefixListName:
+    To: PrefixListName
+  Tags:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  OwnerId:
+    Ignore: true
+  PrefixListId:
+    To: PrefixListId
+  Version:
+    Ignore: true

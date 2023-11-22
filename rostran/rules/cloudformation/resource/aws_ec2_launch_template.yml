@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EC2::LaunchTemplate
+  To: ALIYUN::ECS::LaunchTemplate
+Properties:
+  LaunchTemplateData:
+    Ignore: true
+  LaunchTemplateName:
+    To: LaunchTemplateName
+  TagSpecifications:
+    Ignore: true
+  VersionDescription:
+    To: VersionDescription
+Attributes:
+  DefaultVersionNumber:
+    To: DefaultVersionNumber
+  LatestVersionNumber:
+    To: LatestVersionNumber
+  LaunchTemplateId:
+    To: LaunchTemplateId

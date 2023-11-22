@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ElasticLoadBalancingV2::Listener
+  To: ALIYUN::SLB::Listener
+Properties:
+  AlpnPolicy:
+    Ignore: true
+  Certificates:
+    Ignore: true
+  DefaultActions:
+    Ignore: true
+  LoadBalancerArn:
+    Ignore: true
+  Port:
+    Ignore: true
+  Protocol:
+    To: Protocol
+  SslPolicy:
+    Ignore: true
+Attributes:
+  ListenerArn:
+    Ignore: true

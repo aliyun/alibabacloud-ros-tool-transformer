@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::EC2::NetworkInterface
@@ -10,23 +10,41 @@ Properties:
     To: SecurityGroupIds
   InterfaceType:
     Ignore: true
-  Ipv6AddressCount:
+  Ipv4PrefixCount:
     Ignore: true
+  Ipv4Prefixes:
+    Ignore: true
+  Ipv6AddressCount:
+    To: Ipv6AddressCount
   Ipv6Addresses:
+    To: Ipv6Addresses
+    Handler: ec2_network_interface_ipv6_addresses
+  Ipv6PrefixCount:
+    Ignore: true
+  Ipv6Prefixes:
     Ignore: true
   PrivateIpAddress:
     To: PrimaryIpAddress
   PrivateIpAddresses:
     To: PrivateIpAddresses
+    Handler: ec2_network_interface_private_addresses
   SecondaryPrivateIpAddressCount:
-    Ignore: true
+    To: SecondaryPrivateIpAddressCount
   SourceDestCheck:
     Ignore: true
   SubnetId:
     To: VSwitchId
   Tags:
     To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
 Attributes:
+  Id:
+    To: NetworkInterfaceId
   PrimaryPrivateIpAddress:
     To: PrivateIpAddress
   SecondaryPrivateIpAddresses:

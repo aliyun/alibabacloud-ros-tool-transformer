@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::RDS::DBInstance
@@ -12,17 +12,27 @@ Properties:
     Ignore: true
   AutoMinorVersionUpgrade:
     Ignore: true
+  AutomaticBackupReplicationRegion:
+    Ignore: true
   AvailabilityZone:
     To: ZoneId
   BackupRetentionPeriod:
     To: BackupRetentionPeriod
   CACertificateIdentifier:
     Ignore: true
+  CertificateDetails:
+    Ignore: true
+  CertificateRotationRestart:
+    Ignore: true
   CharacterSetName:
     Ignore: true
   CopyTagsToSnapshot:
     Ignore: true
+  CustomIAMInstanceProfile:
+    Ignore: true
   DBClusterIdentifier:
+    Ignore: true
+  DBClusterSnapshotIdentifier:
     Ignore: true
   DBInstanceClass:
     To: DBInstanceClass
@@ -38,19 +48,31 @@ Properties:
     Ignore: true
   DBSubnetGroupName:
     Ignore: true
+  DedicatedLogVolume:
+    Ignore: true
   DeleteAutomatedBackups:
     Ignore: true
   DeletionProtection:
     Ignore: true
   Domain:
     Ignore: true
+  DomainAuthSecretArn:
+    Ignore: true
+  DomainDnsIps:
+    Ignore: true
+  DomainFqdn:
+    Ignore: true
   DomainIAMRoleName:
+    Ignore: true
+  DomainOu:
     Ignore: true
   EnableCloudwatchLogsExports:
     Ignore: true
   EnableIAMDatabaseAuthentication:
     Ignore: true
   EnablePerformanceInsights:
+    Ignore: true
+  Endpoint:
     Ignore: true
   Engine:
     To: Engine
@@ -62,8 +84,12 @@ Properties:
     To: EncryptionKey
   LicenseModel:
     Ignore: true
+  ManageMasterUserPassword:
+    Ignore: true
   MasterUserPassword:
     To: MasterUserPassword
+  MasterUserSecret:
+    Ignore: true
   MasterUsername:
     To: MasterUsername
   MaxAllocatedStorage:
@@ -74,6 +100,10 @@ Properties:
     Ignore: true
   MultiAZ:
     To: MultiAZ
+  NcharCharacterSetName:
+    Ignore: true
+  NetworkType:
+    Ignore: true
   OptionGroupName:
     Ignore: true
   PerformanceInsightsKMSKeyId:
@@ -81,7 +111,7 @@ Properties:
   PerformanceInsightsRetentionPeriod:
     Ignore: true
   Port:
-    Ignore: true
+    To: Port
   PreferredBackupWindow:
     Ignore: true
   PreferredMaintenanceWindow:
@@ -92,24 +122,45 @@ Properties:
     Ignore: true
   PubliclyAccessible:
     Ignore: true
+  ReplicaMode:
+    Ignore: true
+  RestoreTime:
+    Ignore: true
+  SourceDBClusterIdentifier:
+    Ignore: true
+  SourceDBInstanceAutomatedBackupsArn:
+    Ignore: true
   SourceDBInstanceIdentifier:
+    Ignore: true
+  SourceDbiResourceId:
     Ignore: true
   SourceRegion:
     Ignore: true
   StorageEncrypted:
     Ignore: true
+  StorageThroughput:
+    Ignore: true
   StorageType:
     To: Category
   Tags:
     To: Tags
+    Handler: tags_list_to_dict
+  TdeCredentialArn:
+    Ignore: true
+  TdeCredentialPassword:
+    Ignore: true
   Timezone:
     To: DBTimeZone
   UseDefaultProcessorFeatures:
     Ignore: true
+  UseLatestRestorableTime:
+    Ignore: true
   VPCSecurityGroups:
     Ignore: true
 Attributes:
-  Endpoint.Address:
-    To: PublicConnectionString
-  Endpoint.Port:
-    To: PublicPort
+  DBInstanceArn:
+    Ignore: true
+  DBSystemId:
+    Ignore: true
+  DbiResourceId:
+    Ignore: true

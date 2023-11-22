@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::IAM::User
@@ -6,6 +6,7 @@ ResourceType:
 Properties:
   Groups:
     To: Groups
+    Type: List
   LoginProfile:
     To: LoginProfile
     Type: Map
@@ -32,3 +33,6 @@ Properties:
     Ignore: true
   UserName:
     To: UserName
+Attributes:
+  Arn:
+    Ignore: true

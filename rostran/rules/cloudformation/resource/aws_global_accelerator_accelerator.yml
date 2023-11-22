@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::GlobalAccelerator::Accelerator
+  To: ALIYUN::GA::Accelerator
+Properties:
+  Enabled:
+    Ignore: true
+  IpAddressType:
+    Ignore: true
+  IpAddresses:
+    Ignore: true
+  Name:
+    To: AcceleratorName
+  Tags:
+    Ignore: true
+Attributes:
+  AcceleratorArn:
+    Ignore: true
+  DnsName:
+    Ignore: true
+  DualStackDnsName:
+    Ignore: true
+  Ipv4Addresses:
+    Ignore: true
+  Ipv6Addresses:
+    Ignore: true

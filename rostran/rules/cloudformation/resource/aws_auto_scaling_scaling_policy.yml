@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::AutoScaling::ScalingPolicy
+  To: ALIYUN::ESS::ScalingRule
+Properties:
+  AdjustmentType:
+    To: AdjustmentType
+  AutoScalingGroupName:
+    Ignore: true
+  Cooldown:
+    To: Cooldown
+  EstimatedInstanceWarmup:
+    To: EstimatedInstanceWarmup
+  MetricAggregationType:
+    Ignore: true
+  MinAdjustmentMagnitude:
+    To: MinAdjustmentMagnitude
+  PolicyType:
+    Ignore: true
+  PredictiveScalingConfiguration:
+    Ignore: true
+  ScalingAdjustment:
+    Ignore: true
+  StepAdjustments:
+    Ignore: true
+  TargetTrackingConfiguration:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  PolicyName:
+    Ignore: true

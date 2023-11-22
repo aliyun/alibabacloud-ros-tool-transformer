@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::ElasticLoadBalancing::LoadBalancer
@@ -34,12 +34,22 @@ Properties:
     Ignore: true
   SecurityGroups:
     Ignore: true
+  SourceSecurityGroupGroupName:
+    Ignore: true
+  SourceSecurityGroupOwnerAlias:
+    Ignore: true
   Subnets:
     To: VSwitchId
     Handler: select_first
     Warning: Only first subnet can be used.
   Tags:
     To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
 Attributes:
   CanonicalHostedZoneName:
     Ignore: true
@@ -47,7 +57,5 @@ Attributes:
     Ignore: true
   DNSName:
     Ignore: true
-  SourceSecurityGroup.GroupName:
-    Ignore: true
-  SourceSecurityGroup.OwnerAlias:
-    Ignore: true
+  Id:
+    To: LoadBalancerId

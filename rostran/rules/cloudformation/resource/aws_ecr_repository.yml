@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ECR::Repository
+  To: ALIYUN::CR::Repository
+Properties:
+  EmptyOnDelete:
+    Ignore: true
+  EncryptionConfiguration:
+    Ignore: true
+  ImageScanningConfiguration:
+    Ignore: true
+  ImageTagMutability:
+    Ignore: true
+  LifecyclePolicy:
+    Ignore: true
+  RepositoryName:
+    Ignore: true
+  RepositoryPolicyText:
+    Ignore: true
+  Tags:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  RepositoryUri:
+    Ignore: true

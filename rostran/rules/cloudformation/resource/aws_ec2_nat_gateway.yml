@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EC2::NatGateway
+  To: ALIYUN::VPC::NatGateway
+Properties:
+  AllocationId:
+    Ignore: true
+  ConnectivityType:
+    Ignore: true
+  MaxDrainDurationSeconds:
+    Ignore: true
+  PrivateIpAddress:
+    Ignore: true
+  SecondaryAllocationIds:
+    Ignore: true
+  SecondaryPrivateIpAddressCount:
+    Ignore: true
+  SecondaryPrivateIpAddresses:
+    Ignore: true
+  SubnetId:
+    To: VSwitchId
+  Tags:
+    To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
+Attributes:
+  NatGatewayId:
+    To: NatGatewayId

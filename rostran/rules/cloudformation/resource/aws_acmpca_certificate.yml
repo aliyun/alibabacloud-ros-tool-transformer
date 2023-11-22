@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ACMPCA::Certificate
+  To: ALIYUN::CAS::Certificate
+Properties:
+  ApiPassthrough:
+    Ignore: true
+  CertificateAuthorityArn:
+    Ignore: true
+  CertificateSigningRequest:
+    Ignore: true
+  SigningAlgorithm:
+    Ignore: true
+  TemplateArn:
+    Ignore: true
+  Validity:
+    Ignore: true
+  ValidityNotBefore:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  Certificate:
+    Ignore: true

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::Organizations::Account
+  To: ALIYUN::ResourceManager::Account
+Properties:
+  AccountName:
+    Ignore: true
+  Email:
+    Ignore: true
+  ParentIds:
+    Ignore: true
+  RoleName:
+    Ignore: true
+  Tags:
+    Ignore: true
+Attributes:
+  AccountId:
+    To: AccountId
+  Arn:
+    Ignore: true
+  JoinedMethod:
+    Ignore: true
+  JoinedTimestamp:
+    Ignore: true
+  Status:
+    Ignore: true

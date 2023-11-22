@@ -1,0 +1,10 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::KMS::Alias
+  To: ALIYUN::KMS::Alias
+Properties:
+  AliasName:
+    To: AliasName
+  TargetKeyId:
+    Ignore: true

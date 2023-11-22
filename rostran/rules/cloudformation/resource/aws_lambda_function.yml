@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::Lambda::Function
+  To: ALIYUN::FC::Function
+Properties:
+  Architectures:
+    Ignore: true
+  CodeSigningConfigArn:
+    Ignore: true
+  DeadLetterConfig:
+    Ignore: true
+  Description:
+    To: Description
+  Environment:
+    Ignore: true
+  EphemeralStorage:
+    Ignore: true
+  FileSystemConfigs:
+    Ignore: true
+  FunctionName:
+    To: FunctionName
+  Handler:
+    To: Handler
+  ImageConfig:
+    Ignore: true
+  KmsKeyArn:
+    Ignore: true
+  Layers:
+    Ignore: true
+  LoggingConfig:
+    Ignore: true
+  MemorySize:
+    To: MemorySize
+  PackageType:
+    Ignore: true
+  Policy:
+    Ignore: true
+  ReservedConcurrentExecutions:
+    Ignore: true
+  Role:
+    Ignore: true
+  Runtime:
+    To: Runtime
+  RuntimeManagementConfig:
+    Ignore: true
+  SnapStart:
+    Ignore: true
+  Tags:
+    Ignore: true
+  Timeout:
+    To: Timeout
+  TracingConfig:
+    Ignore: true
+  VpcConfig:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  SnapStartResponse:
+    Ignore: true

@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ElasticLoadBalancingV2::ListenerCertificate
+  To: ALIYUN::SLB::Certificate
+Properties:
+  Certificates:
+    Ignore: true
+  ListenerArn:
+    Ignore: true
+Attributes:
+  Id:
+    To: CertificateId

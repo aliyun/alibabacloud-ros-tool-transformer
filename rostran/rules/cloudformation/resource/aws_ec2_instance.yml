@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::EC2::Instance
@@ -34,6 +34,8 @@ Properties:
     Ignore: true
   ElasticInferenceAccelerators:
     Ignore: true
+  EnclaveOptions:
+    Ignore: true
   HibernationOptions:
     Ignore: true
   HostId:
@@ -66,14 +68,17 @@ Properties:
     Ignore: true
   PlacementGroupName:
     Ignore: true
+  PrivateDnsNameOptions:
+    Ignore: true
   PrivateIpAddress:
     To: PrivateIpAddress
+  PropagateTagsToVolumeOnCreation:
+    Ignore: true
   RamdiskId:
     Ignore: true
   SecurityGroupIds:
-    To: SecurityGroupId
-    Handler: select_first
-    Warning: Only first security group id can be used.
+    To: SecurityGroupIds
+    Type: List
   SecurityGroups:
     Ignore: true
   SourceDestCheck:
@@ -84,6 +89,12 @@ Properties:
     To: VSwitchId
   Tags:
     To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
   Tenancy:
     Ignore: true
   UserData:
@@ -91,11 +102,13 @@ Properties:
   Volumes:
     Ignore: true
 Attributes:
-  AvailabilityZone:
-    To: ZoneId
+  Id:
+    To: InstanceId
   PrivateDnsName:
     Ignore: true
   PrivateIp:
     To: PrivateIp
   PublicDnsName:
     Ignore: true
+  PublicIp:
+    To: PublicIp

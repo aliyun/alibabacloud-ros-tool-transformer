@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::EC2::Subnet
@@ -8,22 +8,40 @@ Properties:
     Ignore: true
   AvailabilityZone:
     To: ZoneId
+  AvailabilityZoneId:
+    To: ZoneId
   CidrBlock:
     To: CidrBlock
+  EnableDns64:
+    Ignore: true
+  Ipv4NetmaskLength:
+    Ignore: true
   Ipv6CidrBlock:
+    To: Ipv6CidrBlock
+  Ipv6Native:
+    Ignore: true
+  Ipv6NetmaskLength:
     Ignore: true
   MapPublicIpOnLaunch:
     Ignore: true
+  OutpostArn:
+    Ignore: true
+  PrivateDnsNameOptionsOnLaunch:
+    Ignore: true
   Tags:
     To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
   VpcId:
     To: VpcId
 Attributes:
-  AvailabilityZone:
-    Ignore: true
   Ipv6CidrBlocks:
     Ignore: true
   NetworkAclAssociationId:
     Ignore: true
-  VpcId:
-    Ignore: true
+  SubnetId:
+    To: VSwitchId

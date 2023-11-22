@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::EC2::SecurityGroup
@@ -54,10 +54,16 @@ Properties:
         Ignore: true
   Tags:
     To: Tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
   VpcId:
     To: VpcId
 Attributes:
   GroupId:
     To: SecurityGroupId
-  VpcId:
-    Ignore: true
+  Id:
+    To: SecurityGroupId

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::Lambda::Version
+  To: ALIYUN::FC::Version
+Properties:
+  CodeSha256:
+    Ignore: true
+  Description:
+    To: Description
+  FunctionName:
+    Ignore: true
+  ProvisionedConcurrencyConfig:
+    Ignore: true
+  RuntimePolicy:
+    Ignore: true
+Attributes:
+  FunctionArn:
+    Ignore: true
+  Version:
+    To: VersionId

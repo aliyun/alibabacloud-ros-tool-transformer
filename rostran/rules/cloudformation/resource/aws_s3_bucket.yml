@@ -1,0 +1,50 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::S3::Bucket
+  To: ALIYUN::OSS::Bucket
+Properties:
+  AccelerateConfiguration:
+    Ignore: true
+  AccessControl:
+    To: AccessControl
+  AnalyticsConfigurations:
+    Ignore: true
+  BucketEncryption:
+    Ignore: true
+  BucketName:
+    To: BucketName
+  CorsConfiguration:
+    Ignore: true
+  IntelligentTieringConfigurations:
+    Ignore: true
+  InventoryConfigurations:
+    Ignore: true
+  MetricsConfigurations:
+    Ignore: true
+  NotificationConfiguration:
+    Ignore: true
+  ObjectLockConfiguration:
+    Ignore: true
+  ObjectLockEnabled:
+    Ignore: true
+  OwnershipControls:
+    Ignore: true
+  PublicAccessBlockConfiguration:
+    Ignore: true
+  ReplicationConfiguration:
+    Ignore: true
+  Tags:
+    To: Tags
+    Handler: tags_list_to_dict
+Attributes:
+  Arn:
+    Ignore: true
+  DomainName:
+    To: DomainName
+  DualStackDomainName:
+    Ignore: true
+  RegionalDomainName:
+    Ignore: true
+  WebsiteURL:
+    Ignore: true

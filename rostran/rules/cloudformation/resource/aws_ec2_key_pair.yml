@@ -1,16 +1,16 @@
 Version: '2020-06-01'
 Type: Resource
 ResourceType:
-  From: AWS::EC2::EIP
-  To: ALIYUN::VPC::EIP
+  From: AWS::EC2::KeyPair
+  To: ALIYUN::ECS::SSHKeyPair
 Properties:
-  Domain:
+  KeyFormat:
     Ignore: true
-  InstanceId:
+  KeyName:
     Ignore: true
-  NetworkBorderGroup:
+  KeyType:
     Ignore: true
-  PublicIpv4Pool:
+  PublicKeyMaterial:
     Ignore: true
   Tags:
     To: Tags
@@ -20,10 +20,8 @@ Properties:
         To: Key
       Value:
         To: Value
-  TransferAddress:
-    Ignore: true
 Attributes:
-  AllocationId:
-    To: AllocationId
-  PublicIp:
-    To: EipAddress
+  KeyFingerprint:
+    Ignore: true
+  KeyPairId:
+    Ignore: true

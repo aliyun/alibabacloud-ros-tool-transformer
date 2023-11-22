@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ApiGatewayV2::Deployment
+  To: ALIYUN::ApiGateway::Deployment
+Properties:
+  ApiId:
+    To: ApiId
+  Description:
+    To: Description
+  StageName:
+    To: StageName
+Attributes:
+  DeploymentId:
+    Ignore: true

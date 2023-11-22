@@ -30,6 +30,25 @@ def tags_dict_to_list(tags_dict, resolved=False):
     }
 
 
+def tags_list_to_dict(tags_list, resolved=False):
+    """
+    Convert list-formatted tags to dict format.
+    """
+    if not tags_list:
+        return None
+
+    if resolved:
+        return [{tag["Key"]: tag["Value"]} for tag in tags_list]
+
+    return {
+        "Fn::Jq": [
+            "First",
+            "map({(.Key): .Value})|add",
+            tags_list,
+        ]
+    }
+
+
 def to_boolean(data, resolved=False):
     """
     Convert data to boolean.
@@ -186,3 +205,17 @@ def ots_search_index_sorters(sorters, resolved=False):
             result.append({sorter_type: new_sorter})
 
     return result
+
+
+def ec2_network_interface_ipv6_addresses(ipv6_addresses, resolved=False):
+    if not ipv6_addresses or not resolved:
+        return None
+
+    return [addr["Ipv6Address"] for addr in ipv6_addresses]
+
+
+def ec2_network_interface_private_addresses(private_addresses, resolved=False):
+    if not private_addresses or not resolved:
+        return None
+
+    return [addr["PrivateIpAddress"] for addr in private_addresses]

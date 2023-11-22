@@ -1,0 +1,44 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::AutoScaling::LaunchConfiguration
+  To: ALIYUN::ESS::ScalingConfiguration
+Properties:
+  AssociatePublicIpAddress:
+    Ignore: true
+  BlockDeviceMappings:
+    Ignore: true
+  ClassicLinkVPCId:
+    Ignore: true
+  ClassicLinkVPCSecurityGroups:
+    Ignore: true
+  EbsOptimized:
+    Ignore: true
+  IamInstanceProfile:
+    Ignore: true
+  ImageId:
+    To: ImageId
+  InstanceId:
+    To: InstanceId
+  InstanceMonitoring:
+    Ignore: true
+  InstanceType:
+    To: InstanceType
+  KernelId:
+    Ignore: true
+  KeyName:
+    Ignore: true
+  LaunchConfigurationName:
+    Ignore: true
+  MetadataOptions:
+    Ignore: true
+  PlacementTenancy:
+    Ignore: true
+  RamDiskId:
+    Ignore: true
+  SecurityGroups:
+    Ignore: true
+  SpotPrice:
+    Ignore: true
+  UserData:
+    To: UserData

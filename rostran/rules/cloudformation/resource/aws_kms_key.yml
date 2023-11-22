@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::KMS::Key
+  To: ALIYUN::KMS::Key
+Properties:
+  BypassPolicyLockoutSafetyCheck:
+    Ignore: true
+  Description:
+    To: Description
+  EnableKeyRotation:
+    Ignore: true
+  Enabled:
+    Ignore: true
+  KeyPolicy:
+    Ignore: true
+  KeySpec:
+    To: KeySpec
+  KeyUsage:
+    To: KeyUsage
+  MultiRegion:
+    Ignore: true
+  Origin:
+    Ignore: true
+  PendingWindowInDays:
+    To: PendingWindowInDays
+  Tags:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  KeyId:
+    To: KeyId

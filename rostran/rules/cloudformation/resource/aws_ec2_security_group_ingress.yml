@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::EC2::SecurityGroupIngress
+  To: ALIYUN::ECS::SecurityGroupIngress
+Properties:
+  CidrIp:
+    Ignore: true
+  CidrIpv6:
+    Ignore: true
+  Description:
+    To: Description
+  FromPort:
+    Ignore: true
+  GroupId:
+    Ignore: true
+  GroupName:
+    Ignore: true
+  IpProtocol:
+    To: IpProtocol
+  SourcePrefixListId:
+    To: SourcePrefixListId
+  SourceSecurityGroupId:
+    Ignore: true
+  SourceSecurityGroupName:
+    Ignore: true
+  SourceSecurityGroupOwnerId:
+    Ignore: true
+  ToPort:
+    Ignore: true
+Attributes:
+  Id:
+    Ignore: true

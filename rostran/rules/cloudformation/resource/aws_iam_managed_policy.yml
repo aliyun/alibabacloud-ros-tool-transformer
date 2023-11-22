@@ -1,0 +1,40 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::IAM::ManagedPolicy
+  To: ALIYUN::RAM::ManagedPolicy
+Properties:
+  Description:
+    To: Description
+  Groups:
+    To: Groups
+    Type: List
+  ManagedPolicyName:
+    To: PolicyName
+  Path:
+    Ignore: true
+  PolicyDocument:
+    To: PolicyDocument
+  Roles:
+    To: Roles
+    Type: List
+  Users:
+    To: Users
+    Type: List
+Attributes:
+  AttachmentCount:
+    Ignore: true
+  CreateDate:
+    Ignore: true
+  DefaultVersionId:
+    Ignore: true
+  IsAttachable:
+    Ignore: true
+  PermissionsBoundaryUsageCount:
+    Ignore: true
+  PolicyArn:
+    Ignore: true
+  PolicyId:
+    Ignore: true
+  UpdateDate:
+    Ignore: true

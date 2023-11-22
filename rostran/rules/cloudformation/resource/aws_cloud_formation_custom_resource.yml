@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::CloudFormation::CustomResource
+  To: ALIYUN::ROS::CustomResource
+Properties:
+  ServiceToken:
+    To: ServiceToken
+Attributes:
+  Id:
+    Ignore: true

@@ -1,0 +1,46 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ApiGatewayV2::Api
+  To: ALIYUN::ApiGateway::Api
+Properties:
+  ApiKeySelectionExpression:
+    Ignore: true
+  BasePath:
+    Ignore: true
+  Body:
+    Ignore: true
+  BodyS3Location:
+    Ignore: true
+  CorsConfiguration:
+    Ignore: true
+  CredentialsArn:
+    Ignore: true
+  Description:
+    To: Description
+  DisableExecuteApiEndpoint:
+    Ignore: true
+  DisableSchemaValidation:
+    Ignore: true
+  FailOnWarnings:
+    Ignore: true
+  Name:
+    Ignore: true
+  ProtocolType:
+    Ignore: true
+  RouteKey:
+    Ignore: true
+  RouteSelectionExpression:
+    Ignore: true
+  Tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  Target:
+    Ignore: true
+  Version:
+    Ignore: true
+Attributes:
+  ApiEndpoint:
+    Ignore: true
+  ApiId:
+    To: ApiId

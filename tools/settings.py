@@ -1599,7 +1599,7 @@ CF_ROS_GENERATE_MAPPINGS = {
     # "AWS::IAM::InstanceProfile": "",
     "AWS::IAM::ManagedPolicy": "ALIYUN::RAM::ManagedPolicy",
     # "AWS::IAM::OIDCProvider": "",
-    # "AWS::IAM::Policy": "",
+    "AWS::IAM::Policy": "ALIYUN::RAM::ManagedPolicy",
     "AWS::IAM::Role": "ALIYUN::RAM::Role",
     # "AWS::IAM::RolePolicy": "",
     "AWS::IAM::SAMLProvider": "ALIYUN::RAM::SAMLProvider",

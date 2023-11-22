@@ -1,0 +1,59 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::Events::Rule
+  To: ALIYUN::EventBridge::Rule
+Properties:
+  Description:
+    To: Description
+  EventBusName:
+    To: EventBusName
+  EventPattern:
+    Ignore: true
+  Name:
+    Ignore: true
+  RoleArn:
+    Ignore: true
+  ScheduleExpression:
+    Ignore: true
+  State:
+    Ignore: true
+  Targets:
+    To: Targets
+    Type: List
+    Schema:
+      Arn:
+        Ignore: true
+      BatchParameters:
+        Ignore: true
+      DeadLetterConfig:
+        Ignore: true
+      EcsParameters:
+        Ignore: true
+      HttpParameters:
+        Ignore: true
+      Id:
+        To: Id
+      Input:
+        Ignore: true
+      InputPath:
+        Ignore: true
+      InputTransformer:
+        Ignore: true
+      KinesisParameters:
+        Ignore: true
+      RedshiftDataParameters:
+        Ignore: true
+      RetryPolicy:
+        Ignore: true
+      RoleArn:
+        Ignore: true
+      RunCommandParameters:
+        Ignore: true
+      SageMakerPipelineParameters:
+        Ignore: true
+      SqsParameters:
+        Ignore: true
+Attributes:
+  Arn:
+    To: RuleARN

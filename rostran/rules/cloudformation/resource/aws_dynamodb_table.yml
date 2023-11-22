@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::DynamoDB::Table
+  To: ALIYUN::OTS::Table
+Properties:
+  AttributeDefinitions:
+    Ignore: true
+  BillingMode:
+    Ignore: true
+  ContributorInsightsSpecification:
+    Ignore: true
+  DeletionProtectionEnabled:
+    Ignore: true
+  GlobalSecondaryIndexes:
+    Ignore: true
+  ImportSourceSpecification:
+    Ignore: true
+  KeySchema:
+    Ignore: true
+  KinesisStreamSpecification:
+    Ignore: true
+  LocalSecondaryIndexes:
+    Ignore: true
+  PointInTimeRecoverySpecification:
+    Ignore: true
+  ProvisionedThroughput:
+    Ignore: true
+  SSESpecification:
+    Ignore: true
+  StreamSpecification:
+    Ignore: true
+  TableClass:
+    Ignore: true
+  TableName:
+    To: TableName
+  Tags:
+    Ignore: true
+  TimeToLiveSpecification:
+    Ignore: true
+Attributes:
+  Arn:
+    Ignore: true
+  StreamArn:
+    Ignore: true

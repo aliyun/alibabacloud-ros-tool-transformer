@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::GlobalAccelerator::Listener
+  To: ALIYUN::GA::Listener
+Properties:
+  AcceleratorArn:
+    Ignore: true
+  ClientAffinity:
+    To: ClientAffinity
+  PortRanges:
+    To: PortRanges
+    Type: List
+    Schema:
+      FromPort:
+        To: FromPort
+      ToPort:
+        To: ToPort
+  Protocol:
+    To: Protocol
+Attributes:
+  ListenerArn:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: AWS::ElasticLoadBalancingV2::ListenerRule
+  To: ALIYUN::SLB::Rule
+Properties:
+  Actions:
+    Ignore: true
+  Conditions:
+    Ignore: true
+  ListenerArn:
+    Ignore: true
+  Priority:
+    Ignore: true
+Attributes:
+  IsDefault:
+    Ignore: true
+  RuleArn:
+    Ignore: true

@@ -1,4 +1,4 @@
-Version: 2020-06-01
+Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: AWS::IAM::Role
@@ -6,33 +6,24 @@ ResourceType:
 Properties:
   AssumeRolePolicyDocument:
     To: AssumeRolePolicyDocument
-    Type: Map
-    Schema:
-      Statement:
-        To: Statement
-        Type: List
-        Schema:
-          Action:
-            To: Action
-            Handler: select_first
-            Warning: Only first action can be used.
-          Effect:
-            To: Effect
-          Principal:
-            To: Principal
-      Version:
-        To: Version
   Description:
     To: Description
   ManagedPolicyArns:
     Ignore: true
   MaxSessionDuration:
-    Ignore: true
+    To: MaxSessionDuration
   Path:
     Ignore: true
-  PermissionsBoundary: String
+  PermissionsBoundary:
+    Ignore: true
   Policies:
     To: Policies
+    Type: List
+    Schema:
+      PolicyDocument:
+        To: PolicyDocument
+      PolicyName:
+        To: PolicyName
   RoleName:
     To: RoleName
   Tags:
