@@ -118,7 +118,7 @@ class RuleManager:
 
         def resource_to_link_func(rt: str):
             rt = rt.replace("::", "-").lower()
-            return f"https://www.alibabacloud.com/help/resource-orchestration-service/latest/{rt}"
+            return f"https://www.alibabacloud.com/help/ros/developer-reference/{rt}"
 
         if self.resource_rules:
             typer.secho("## Resources", fg=typer.colors.GREEN)
