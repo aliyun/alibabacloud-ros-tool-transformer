@@ -22,8 +22,8 @@ Properties:
 Attributes:
   id:
     To:
-      - InstanceId
-      - Topic
+    - InstanceId
+    - Topic
     Handler: colon_join
   compact_topic:
     Ignore: true

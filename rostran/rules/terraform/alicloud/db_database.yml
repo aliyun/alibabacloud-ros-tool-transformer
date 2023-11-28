@@ -15,8 +15,8 @@ Properties:
 Attributes:
   id:
     To:
-      - DBInstanceId
-      - DBName
+    - DBInstanceId
+    - DBName
     Handler: colon_join
   character_set:
     Ignore: true

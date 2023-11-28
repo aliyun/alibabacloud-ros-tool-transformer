@@ -21,8 +21,8 @@ Properties:
 Attributes:
   id:
     To:
-      - DBClusterId
-      - AccountName
+    - DBClusterId
+    - AccountName
     Handler: colon_join
   account_description:
     Ignore: true

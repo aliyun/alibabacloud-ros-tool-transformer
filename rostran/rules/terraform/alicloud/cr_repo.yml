@@ -19,8 +19,8 @@ Properties:
 Attributes:
   id:
     To:
-      - RepoNamespace
-      - RepoName
+    - RepoNamespace
+    - RepoName
     Handler: slash_join
   detail:
     Ignore: true

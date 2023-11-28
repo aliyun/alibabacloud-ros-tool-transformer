@@ -21,10 +21,10 @@ Properties:
 Attributes:
   id:
     To:
-      - VpcGatewayId
-      - NextHop
-      - RouteSource
-      - RouteDest
+    - VpcGatewayId
+    - NextHop
+    - RouteSource
+    - RouteDest
     Handler: colon_join
   next_hop:
     To: NextHop

@@ -21,9 +21,9 @@ Properties:
 Attributes:
   id:
     To:
-      - VpnGatewayId
-      - NextHop
-      - RouteDest
+    - VpnGatewayId
+    - NextHop
+    - RouteDest
     Handler: colon_join
   next_hop:
     To: NextHop

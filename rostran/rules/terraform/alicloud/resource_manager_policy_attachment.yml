@@ -17,11 +17,11 @@ Properties:
 Attributes:
   id:
     To:
-      - PolicyName
-      - PolicyType
-      - PrincipalName
-      - PrincipalType
-      - ResourceGroupId
+    - PolicyName
+    - PolicyType
+    - PrincipalName
+    - PrincipalType
+    - ResourceGroupId
     Handler: colon_join
   policy_name:
     To: PolicyName

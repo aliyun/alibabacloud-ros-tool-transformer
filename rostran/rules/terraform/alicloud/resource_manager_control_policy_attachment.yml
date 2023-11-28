@@ -11,8 +11,8 @@ Properties:
 Attributes:
   id:
     To:
-      - PolicyId
-      - TargetId
+    - PolicyId
+    - TargetId
     Handler: colon_join
   policy_id:
     To: PolicyId

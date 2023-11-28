@@ -25,10 +25,10 @@ Properties:
 Attributes:
   id:
     To:
-      - AnycastId
-      - BindInstanceId
-      - BindInstanceRegionId
-      - BindInstanceType
+    - AnycastId
+    - BindInstanceId
+    - BindInstanceRegionId
+    - BindInstanceType
     Handler: colon_join
   anycast_id:
     To: AnycastId

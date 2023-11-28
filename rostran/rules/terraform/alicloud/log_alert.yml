@@ -28,19 +28,19 @@ Properties:
     To: Detail.Configuration.GroupConfiguration
     Type: Map
     Schema:
-      type:
-        To: Type
       fields:
         To: Fields
         Type: List
+      type:
+        To: Type
   join_configurations:
     To: Detail.Configuration.JoinConfigurations
     Type: List
     Schema:
-      type:
-        To: Type
       condition:
         To: Condition
+      type:
+        To: Type
   labels:
     To: Detail.Configuration.Labels
     Type: List
@@ -59,32 +59,32 @@ Properties:
     To: Detail.Configuration.NotificationList
     Type: List
     Schema:
-      type:
-        To: Type
       content:
         To: Content
+      email_list:
+        To: EmailList
+      headers:
+        To: Headers
+      method:
+        To: Method
       mobile_list:
         To: MobileList
       service_uri:
         To: ServiceUri
-      email_list:
-        To: EmailList
-      method:
-        To: Method
-      headers:
-        To: Headers
+      type:
+        To: Type
   notify_threshold:
     To: Detail.Configuration.NotifyThreshold
   policy_configuration:
     To: Detail.Configuration.PolicyConfiguration
     Type: Map
     Schema:
-      repeat_interval:
-        To: RepeatInterval
       action_policy_id:
         To: ActionPolicyId
       alert_policy_id:
         To: AlertPolicyId
+      repeat_interval:
+        To: RepeatInterval
       use_default:
         To: UseDefault
   project_name:
@@ -95,20 +95,20 @@ Properties:
     To: Detail.Configuration.Schedule
     Type: Map
     Schema:
-      type:
-        To: Type
-      interval:
-        To: Interval
-      hour:
-        To: Hour
-      day_of_week:
-        To: DayOfWeek
       cron_expression:
         To: CronExpression
+      day_of_week:
+        To: DayOfWeek
       delay:
         To: Delay
+      hour:
+        To: Hour
+      interval:
+        To: Interval
       run_immediately:
         To: RunImmediately
+      type:
+        To: Type
   schedule_interval:
     To: Detail.Configuration.Schedule.Interval
   schedule_type:

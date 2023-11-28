@@ -13,8 +13,8 @@ Properties:
 Attributes:
   id:
     To:
-      - AuthorizedUserId
-      - AuthType
+    - AuthorizedUserId
+    - AuthType
     Handler: colon_join
   auth_type:
     To: AuthType

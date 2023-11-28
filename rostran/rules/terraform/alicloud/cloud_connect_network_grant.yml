@@ -13,8 +13,8 @@ Properties:
 Attributes:
   id:
     To:
-      - CcnInstanceId
-      - CenInstanceId
+    - CcnInstanceId
+    - CenInstanceId
     Handler: colon_join
   ccn_id:
     To: CcnInstanceId

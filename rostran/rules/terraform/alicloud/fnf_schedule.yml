@@ -23,8 +23,8 @@ Properties:
 Attributes:
   id:
     To:
-      - ScheduleName
-      - FlowName
+    - ScheduleName
+    - FlowName
     Handler: colon_join
   cron_expression:
     Ignore: true

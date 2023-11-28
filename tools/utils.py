@@ -7,10 +7,9 @@ from alibabacloud_credentials.client import Client as CredClient
 from alibabacloud_ros20190910.client import Client
 from alibabacloud_ros20190910 import models as ros_models
 
-from settings import (
+from tools.settings import (
     TF_ALI_ROS_GENERATE_MAPPINGS,
     TF_ALI_ROS_PROD_MAPPINGS,
-    CF_ROS_GENERATE_MAPPINGS,
     CF_ROS_PROD_MAPPINGS,
 )
 
@@ -83,7 +82,7 @@ def print_tf_ali_ros_mapping(ros_types=None):
 
 
 def print_cf_ros_mapping(cf_types=None, ros_types=None):
-    from settings import CF_ROS_GENERATE_MAPPINGS
+    from tools.settings import CF_ROS_GENERATE_MAPPINGS
 
     if not cf_types:
         cf_types = list_cf_types()

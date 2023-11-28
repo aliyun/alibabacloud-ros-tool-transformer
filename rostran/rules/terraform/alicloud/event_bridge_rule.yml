@@ -43,8 +43,8 @@ Properties:
 Attributes:
   id:
     To:
-      - EventBusName
-      - RuleName
+    - EventBusName
+    - RuleName
     Handler: colon_join
   description:
     Ignore: true

@@ -15,8 +15,8 @@ Properties:
 Attributes:
   id:
     To:
-      - NetworkInterfaceId
-      - InstanceId
+    - NetworkInterfaceId
+    - InstanceId
     Handler: colon_join
   instance_id:
     To: InstanceId

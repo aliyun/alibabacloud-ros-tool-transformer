@@ -53,8 +53,8 @@ Properties:
 Attributes:
   id:
     To:
-      - InstanceId
-      - DomainName
+    - InstanceId
+    - DomainName
     Handler: colon_join
   cluster_type:
     To: ClusterType

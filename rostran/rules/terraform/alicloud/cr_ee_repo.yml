@@ -21,9 +21,9 @@ Properties:
 Attributes:
   id:
     To:
-      - InstanceId
-      - RepoNamespace
-      - RepoName
+    - InstanceId
+    - RepoNamespace
+    - RepoName
     Handler: colon_join
   detail:
     Ignore: true

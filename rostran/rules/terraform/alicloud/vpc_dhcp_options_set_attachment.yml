@@ -13,8 +13,8 @@ Properties:
 Attributes:
   id:
     To:
-      - VpcId
-      - DhcpOptionsSetId
+    - VpcId
+    - DhcpOptionsSetId
     Handler: colon_join
   dhcp_options_set_id:
     To: DhcpOptionsSetId

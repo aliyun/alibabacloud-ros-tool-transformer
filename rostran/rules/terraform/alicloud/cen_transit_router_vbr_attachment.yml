@@ -35,8 +35,8 @@ Properties:
 Attributes:
   id:
     To:
-      - TransitRouterId
-      - TransitRouterAttachmentId
+    - TransitRouterId
+    - TransitRouterAttachmentId
     Handler: colon_join
   auto_publish_route_enabled:
     To: AutoPublishRouteEnabled

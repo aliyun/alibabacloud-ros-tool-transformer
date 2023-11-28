@@ -19,8 +19,8 @@ Properties:
 Attributes:
   id:
     To:
-      - TopicName
-      - SubscriptionName
+    - TopicName
+    - SubscriptionName
     Handler: colon_join
   endpoint:
     Ignore: true

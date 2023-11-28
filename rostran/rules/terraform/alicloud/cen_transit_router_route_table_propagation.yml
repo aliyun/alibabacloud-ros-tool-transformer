@@ -15,8 +15,8 @@ Properties:
 Attributes:
   id:
     To:
-      - TransitRouterRouteTableId
-      - TransitRouterAttachmentId
+    - TransitRouterRouteTableId
+    - TransitRouterAttachmentId
     Handler: colon_join
   status:
     Ignore: true

@@ -25,8 +25,8 @@ Properties:
 Attributes:
   id:
     To:
-      - InstanceId
-      - AccountName
+    - InstanceId
+    - AccountName
     Handler: colon_join
   account_name:
     To: AccountName
