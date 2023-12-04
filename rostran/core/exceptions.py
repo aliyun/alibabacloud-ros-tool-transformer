@@ -111,6 +111,10 @@ class InvalidTemplateWorkspace(RosTranException):
     msg = "Invalid template workspace. {reason}."
 
 
+class InvalidYamlTemplateTag(RosTranException):
+    msg = "Invalid yaml template tag. {reason}."
+
+
 class InvalidExcelTemplate(RosTranException):
     msg = "Invalid excel template. {reason}."
 
@@ -169,3 +173,7 @@ class RuleAlreadyExist(RosTranException):
 
 class SystemNotSupport(RosTranException):
     msg = "Current system {name} is not supported."
+
+
+class CloudFormationTransformNotSupported(RosTranException):
+    msg = "CloudFormation transform is not supported."

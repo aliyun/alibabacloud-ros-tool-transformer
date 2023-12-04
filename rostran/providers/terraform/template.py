@@ -773,5 +773,4 @@ class TerraformTemplate(Template):
                 name=name,
                 value=value,
             )
-
             out_outputs.add(output)

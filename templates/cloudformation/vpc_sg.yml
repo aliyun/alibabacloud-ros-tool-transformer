@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: This template create vpc security group.
+Parameters:
+  CidrBlock:
+    Type: String
+    Default: 10.0.0.0/16
+Resources:
+  MyVpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref CidrBlock
+      EnableDnsSupport: 'false'
+      EnableDnsHostnames: 'false'
+      InstanceTenancy: dedicated
+      Tags:
+        - Key: foo
+          Value: bar
+    DeletionPolicy: Retain
+  MySg:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Create vpc security group
+      VpcId: !Ref MyVpc
+    DependsOn: MyVpc
+Outputs:
+  VpcId:
+    Description: Vpc ID
+    Value: !Ref MyVpc
+  SgId:
+    Description: SecurityGroup ID
+    Value: !GetAtt MySg.GroupId
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      Parameters:
+        - CidrBlock
+      Label:
+        default: VPC
+    ParameterLabels:
+      CidrBlock:
+        default: Vpc Cidr Block

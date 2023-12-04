@@ -1,23 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "This template create vpc security group.",
-  "Metadata": {
-    "AWS::CloudFormation::Interface": {
-      "ParameterGroups": {
-        "Parameters": [
-          "CidrBlock"
-        ],
-        "Label": {
-          "default": "VPC"
-        }
-      },
-      "ParameterLabels": {
-        "CidrBlock": {
-          "default": "Vpc Cidr Block"
-        }
-      }
-    }
-  },
   "Parameters": {
     "CidrBlock": {
       "Type": "String",
@@ -26,7 +9,6 @@
   },
   "Resources": {
     "MyVpc": {
-      "DeletionPolicy": "Retain",
       "Type": "AWS::EC2::VPC",
       "Properties": {
         "CidrBlock": {
@@ -41,17 +23,18 @@
             "Value": "bar"
           }
         ]
-      }
+      },
+      "DeletionPolicy": "Retain"
     },
     "MySg": {
-      "DependsOn": "MyVpc",
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "GroupDescription": "Create vpc security group",
         "VpcId": {
           "Ref": "MyVpc"
         }
-      }
+      },
+      "DependsOn": "MyVpc"
     }
   },
   "Outputs": {
@@ -68,6 +51,23 @@
           "MySg",
           "GroupId"
         ]
+      }
+    }
+  },
+  "Metadata": {
+    "AWS::CloudFormation::Interface": {
+      "ParameterGroups": {
+        "Parameters": [
+          "CidrBlock"
+        ],
+        "Label": {
+          "default": "VPC"
+        }
+      },
+      "ParameterLabels": {
+        "CidrBlock": {
+          "default": "Vpc Cidr Block"
+        }
       }
     }
   }

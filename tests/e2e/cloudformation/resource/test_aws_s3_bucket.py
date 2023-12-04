@@ -49,7 +49,9 @@ cf_tpl = {
                         {
                             "Action": ["sts:AssumeRole"],
                             "Effect": "Allow",
-                            "Principal": {"Service": ["s3.amazonaws.com"]},
+                            "Principal": {
+                                "Service": ["s3.amazonaws.com"]
+                            },  # todo: replace xx.amazonaws.com
                         }
                     ]
                 }

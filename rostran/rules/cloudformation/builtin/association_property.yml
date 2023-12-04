@@ -1,6 +1,7 @@
 Version: 2020-06-01
 Type: AssociationProperty
 AssociationProperty:
+  # See https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-specific-parameter-types
   AWS::EC2::AvailabilityZone::Name:
     To: ALIYUN::ECS::Instance::ZoneId
   AWS::EC2::Image::Id:
@@ -14,26 +15,32 @@ AssociationProperty:
   AWS::EC2::SecurityGroup::Id:
     To: ALIYUN::ECS::SecurityGroup::SecurityGroupId
   AWS::EC2::Subnet::Id:
-    Ignore: true
+    To: ALIYUN::ECS::VSwitch
   AWS::EC2::Volume::Id:
-    Ignore: true
+    To: ALIYUN::ECS::Disk::DiskId
   AWS::EC2::VPC::Id:
     To: ALIYUN::ECS::VPC::VPCId
   AWS::Route53::HostedZone::Id:
     Ignore: true
   List<AWS::EC2::AvailabilityZone::Name>:
     To: ALIYUN::ECS::Instance::ZoneId
+    Type: CommaDelimitedList
   List<AWS::EC2::Image::Id>:
     To: ALIYUN::ECS::Instance::ImageId
+    Type: CommaDelimitedList
   List<AWS::EC2::SecurityGroup::GroupName>:
     Ignore: true
   List<AWS::EC2::SecurityGroup::Id>:
     To: ALIYUN::ECS::SecurityGroup::SecurityGroupId
+    Type: CommaDelimitedList
   List<AWS::EC2::Subnet::Id>:
-    Ignore: true
+    To: ALIYUN::ECS::VSwitch
+    Type: CommaDelimitedList
   List<AWS::EC2::Volume::Id>:
-    Ignore: true
+    To: ALIYUN::ECS::Disk::DiskId
+    Type: CommaDelimitedList
   List<AWS::EC2::VPC::Id>:
     To: ALIYUN::ECS::VPC::VPCId
+    Type: CommaDelimitedList
   List<AWS::Route53::HostedZone::Id>:
     Ignore: true

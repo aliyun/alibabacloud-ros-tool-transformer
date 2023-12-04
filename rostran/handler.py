@@ -135,6 +135,10 @@ def replace_wrapper(old, new):
 replace_slash_to_colon = replace_wrapper("/", ":")
 
 
+def jq_to_string(data, resolved=False):
+    return [". | tostring", data]
+
+
 ##############################
 # Product Handlers
 ##############################

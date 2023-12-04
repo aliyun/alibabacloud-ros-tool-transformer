@@ -35,3 +35,8 @@ Function:
     Ignore: true
   Fn::ImportValue:
     Ignore: true
+  Fn::Length:
+    To: Fn::Length
+  Fn::ToJsonString:
+    To: Fn::Jq
+    Handler: jq_to_string
