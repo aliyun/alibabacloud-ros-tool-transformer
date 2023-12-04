@@ -90,38 +90,44 @@
 
 针对 CloudFormation 函数的转换，支持如下：
 
-| CloudFormation | ROS              |
-|----------------| ---------------- |
-| Fn::And        | Fn::And          |
-| Fn::Base64     | Fn::Base64Encode |
-| Fn::Equals     | Fn::Equals       |
-| Fn::FindInMap  | Fn::FindInMap    |
-| Fn::GetAZs     | Fn::GetAZs       |
-| Fn::GetAtt     | Fn::GetAtt       |
-| Fn::If         | Fn::If           |
-| Fn::Join       | Fn::Join         |
-| Fn::Not        | Fn::Not          |
-| Fn::Or         | Fn::Or           |
-| Fn::Select     | Fn::Select       |
-| Fn::Split      | Fn::Split        |
-| Fn::Sub        | Fn::Sub          |
-| Ref            | Ref              |
+| CloudFormation   | ROS              |
+|------------------|------------------|
+| Fn::And          | Fn::And          |
+| Fn::Base64       | Fn::Base64Encode |
+| Fn::Equals       | Fn::Equals       |
+| Fn::FindInMap    | Fn::FindInMap    |
+| Fn::GetAZs       | Fn::GetAZs       |
+| Fn::GetAtt       | Fn::GetAtt       |
+| Fn::Length       | Fn::Length       |
+| Fn::If           | Fn::If           |
+| Fn::Join         | Fn::Join         |
+| Fn::Not          | Fn::Not          |
+| Fn::Or           | Fn::Or           |
+| Fn::Select       | Fn::Select       |
+| Fn::Split        | Fn::Split        |
+| Fn::Sub          | Fn::Sub          |
+| Fn::ToJsonString | Fn::Jq           |
+| Ref              | Ref              |
 
 ## AssociationProperty
 
 针对 CloudFormation AssociationProperty 的转换，支持如下：
 
 | CloudFormation                           | ROS                                         |
-|------------------------------------------| ------------------------------------------- |
-| AWS::EC2::AvailabilityZone::Name         | ALIYUN::ECS::Instance::ZoneId               |
-| AWS::EC2::Image::Id                      | ALIYUN::ECS::Instance::ImageId              |
-| AWS::EC2::KeyPair::KeyName               | ALIYUN::ECS::KeyPair::KeyPairName           |
-| AWS::EC2::SecurityGroup::Id              | ALIYUN::ECS::SecurityGroup::SecurityGroupId |
-| AWS::EC2::VPC::Id                        | ALIYUN::ECS::VPC::VPCId                     |
-| List\<AWS::EC2::AvailabilityZone::Name\> | ALIYUN::ECS::Instance::ZoneId               |
-| List\<AWS::EC2::Image::Id\>              | ALIYUN::ECS::Instance::ImageId              |
-| List\<AWS::EC2::SecurityGroup::Id\>      | ALIYUN::ECS::SecurityGroup::SecurityGroupId |
-| List\<AWS::EC2::VPC::Id\>                | ALIYUN::ECS::VPC::VPCId                     |
+|------------------------------------------|---------------------------------------------|
+| AWS::EC2::AvailabilityZone::Name         | ALIYUN::ECS::Instance::ZoneId               | 
+| AWS::EC2::Image::Id                      | ALIYUN::ECS::Instance::ImageId              | 
+| AWS::EC2::KeyPair::KeyName               | ALIYUN::ECS::KeyPair::KeyPairName           | 
+| AWS::EC2::SecurityGroup::Id              | ALIYUN::ECS::SecurityGroup::SecurityGroupId | 
+| AWS::EC2::Subnet::Id                     | ALIYUN::ECS::VSwitch                        | 
+| AWS::EC2::VPC::Id                        | ALIYUN::ECS::VPC::VPCId                     | 
+| AWS::EC2::Volume::Id                     | ALIYUN::ECS::Disk::DiskId                   | 
+| List\<AWS::EC2::AvailabilityZone::Name\> | ALIYUN::ECS::Instance::ZoneId               | 
+| List\<AWS::EC2::Image::Id\>              | ALIYUN::ECS::Instance::ImageId              | 
+| List\<AWS::EC2::SecurityGroup::Id\>      | ALIYUN::ECS::SecurityGroup::SecurityGroupId | 
+| List\<AWS::EC2::Subnet::Id\>             | ALIYUN::ECS::VSwitch                        | 
+| List\<AWS::EC2::VPC::Id\>                | ALIYUN::ECS::VPC::VPCId                     | 
+| List\<AWS::EC2::Volume::Id\>             | ALIYUN::ECS::Disk::DiskId                   | 
 
 ## Metadata
 

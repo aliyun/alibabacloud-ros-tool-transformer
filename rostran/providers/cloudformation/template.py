@@ -9,7 +9,8 @@ from ruamel.yaml import YAML
 from rostran.core.exceptions import (
     TemplateFormatNotSupport,
     CloudFormationTransformNotSupported,
-    InvalidRuleSchema, InvalidYamlTemplateTag,
+    InvalidRuleSchema,
+    InvalidYamlTemplateTag,
 )
 from rostran.core.format import FileFormat
 from rostran.core.template import Template, RosTemplate
@@ -39,7 +40,7 @@ yaml.preserve_quotes = True
 
 def short_handler_for_getatt(val):
     if isinstance(val, str):
-        return val.split('.')
+        return val.split(".")
     return val
 
 
@@ -67,7 +68,7 @@ def short_constructor(loader, node):
         if handler:
             value = handler(value)
         return {key: value}
-    raise InvalidYamlTemplateTag(reason=f'Unknown tag: {tag}')
+    raise InvalidYamlTemplateTag(reason=f"Unknown tag: {tag}")
 
 
 yaml.constructor.add_constructor(None, short_constructor)
@@ -226,7 +227,7 @@ class CloudFormationTemplate(Template):
             out_resources.add(resource)
 
     def _transform_resource_props(
-            self, resource_type, resource_props, resource_rule_props, rule_id
+        self, resource_type, resource_props, resource_rule_props, rule_id
     ):
         final_props = {}
         for name, value in resource_props.items():
@@ -432,9 +433,9 @@ class CloudFormationTemplate(Template):
             if isinstance(final_func_value, str):
                 final_func_value = self._transform_sub_pseudo(final_func_value)
             elif (
-                    isinstance(final_func_value, list)
-                    and len(final_func_value) >= 1
-                    and isinstance(final_func_value[0], str)
+                isinstance(final_func_value, list)
+                and len(final_func_value) >= 1
+                and isinstance(final_func_value[0], str)
             ):
                 final_func_value[0] = self._transform_sub_pseudo(final_func_value[0])
 
@@ -448,8 +449,8 @@ class CloudFormationTemplate(Template):
 
     def _transform_sub_pseudo(self, value):
         for (
-                param,
-                rule_props,
+            param,
+            rule_props,
         ) in self.rule_manager.pseudo_parameters_rule.pseudo_parameters.items():
             if rule_props.get("Ignore") or not rule_props.get("To"):
                 typer.secho(
