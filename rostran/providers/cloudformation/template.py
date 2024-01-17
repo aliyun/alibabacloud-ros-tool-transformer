@@ -29,6 +29,8 @@ from rostran.core.parameters import Parameter, Parameters
 from rostran.core.metadata import MetaItem, MetaData
 from rostran.core.conditions import Condition, Conditions
 from rostran.core.mappings import Mapping, Mappings
+import rostran.handler as handler_module
+import rostran.merge_handler as merge_handler_module
 
 RULES_DIR = os.path.join(RULES_DIR, "cloudformation")
 BUILTIN_RULES = os.path.join(RULES_DIR, "builtin")
@@ -133,6 +135,7 @@ class CloudFormationTemplate(Template):
 
         for name, value in cf_params.items():
             cf_param_type = value["Type"]
+            typer.secho(f"Transforming parameter {name}<{cf_param_type}>")
             association_property = None
             param_type = "String"
             if cf_param_type in Parameter.TYPES:
@@ -143,7 +146,7 @@ class CloudFormationTemplate(Template):
                 rule = association_property_rule[cf_param_type]
                 if rule.get("Ignore") or not rule.get("To"):
                     typer.secho(
-                        f"Parameter type {cf_param_type!r} of {name!r} is not supported and will be ignored.",
+                        f"  Parameter type {cf_param_type!r} of {name!r} is not supported and will be ignored.",
                         fg="yellow",
                     )
                 else:
@@ -151,7 +154,7 @@ class CloudFormationTemplate(Template):
                     param_type = rule.get("Type") or param_type
             else:
                 typer.secho(
-                    f"Parameter type {cf_param_type!r} of {name!r} is not supported and will be ignored.",
+                    f"  Parameter type {cf_param_type!r} of {name!r} is not supported and will be ignored.",
                     fg="yellow",
                 )
 
@@ -176,14 +179,14 @@ class CloudFormationTemplate(Template):
     def _transform_conditions(self, out_conditions: Conditions):
         conditions = self.source.get("Conditions", {})
         for name, value in conditions.items():
-            value = self._transform_value(value)
+            value, _ = self._transform_value(value)
             condition = Condition(name=name, value=value)
             out_conditions.add(condition)
 
     def _transform_mappings(self, out_mappings: Mappings):
         mappings = self.source.get("Mappings", {})
         for name, value in mappings.items():
-            value = self._transform_value(value)
+            value, _ = self._transform_value(value)
             mapping = Mapping(name=name, value=value)
             out_mappings.add(mapping)
 
@@ -193,6 +196,7 @@ class CloudFormationTemplate(Template):
         for resource_id, cf_resource in cf_resources.items():
             cf_resource_type = cf_resource["Type"]
             cf_resource_props = cf_resource.get("Properties") or {}
+            typer.secho(f"Transforming resource {resource_id}<{cf_resource_type}>")
 
             # Get rule by resource type
             resource_rule: ResourceRule = self.rule_manager.resource_rules.get(
@@ -200,7 +204,7 @@ class CloudFormationTemplate(Template):
             )
             if resource_rule is None:
                 typer.secho(
-                    f"Resource type {cf_resource_type!r} is not supported and will be ignored.",
+                    f"  Resource type {cf_resource_type!r} is not supported and will be ignored.",
                     fg="yellow",
                 )
                 continue
@@ -235,7 +239,7 @@ class CloudFormationTemplate(Template):
             prop_rule = resource_rule_props.get(name)
             if prop_rule is None or prop_rule.get("Ignore"):
                 typer.secho(
-                    f"Resource property {name!r} of {resource_type!r} is not supported and will be ignored.",
+                    f"  Resource property {name!r} of {resource_type!r} is not supported and will be ignored.",
                     fg="yellow",
                 )
                 continue
@@ -245,9 +249,9 @@ class CloudFormationTemplate(Template):
             if warn_msg:
                 if not warn_msg.endswith("."):
                     warn_msg += "."
-                typer.secho(warn_msg, fg="yellow")
+                typer.secho("  " + warn_msg, fg="yellow")
 
-            transformed_value = self._transform_value(value)
+            transformed_value, resolved = self._transform_value(value)
             final_name = prop_rule.get("To")
             prop_type = prop_rule.get("Type")
             prop_schema = prop_rule.get("Schema")
@@ -278,15 +282,26 @@ class CloudFormationTemplate(Template):
 
             handler_name = prop_rule.get("Handler")
             if handler_name is not None:
-                handler_module = importlib.import_module("rostran.handler")
                 handler_func = getattr(handler_module, handler_name)
-                final_value = handler_func(final_value, False)
+                final_value = handler_func(final_value, resolved)
 
             if final_value is not None:
                 if final_name is None:
                     assert isinstance(final_value, dict)
                     final_props.update(final_value)
                 else:
+                    # If To is duplicated, merge it
+                    if final_name in final_props:
+                        merged_value = final_props[final_name]
+                        merge_handler_name = prop_rule.get("MergeHandler")
+                        if merge_handler_name is not None:
+                            merge_handler_func = getattr(
+                                merge_handler_module, merge_handler_name
+                            )
+                            final_value = merge_handler_func(
+                                final_value, merged_value, resolved
+                            )
+
                     # If To is a multi-level attribute, it needs to be converted level by level.
                     # For example, if To is RuleList.0.Url, it should be converted to
                     # final_props["RuleList"][0]["Url"] = value.
@@ -339,7 +354,7 @@ class CloudFormationTemplate(Template):
     def _transform_outputs(self, out_outputs: Outputs):
         cf_outputs = self.source.get("Outputs", {})
         for name, value in cf_outputs.items():
-            value = self._transform_value(value)
+            value, _ = self._transform_value(value)
             output = Output(
                 name=name,
                 value=value.get(Output.VALUE),
@@ -353,10 +368,11 @@ class CloudFormationTemplate(Template):
         meta_data_rule = self.rule_manager.meta_data_rule
 
         for name, value in cf_meta_data.items():
+            typer.secho(f"Transforming metadata {name}")
             rule_props = meta_data_rule.meta_data.get(name)
             if not rule_props or rule_props.get("Ignore") or not rule_props.get("To"):
                 typer.secho(
-                    f"Metadata {name!r} is not supported and will be ignored.",
+                    f"  Metadata {name!r} is not supported and will be ignored.",
                     fg="yellow",
                 )
             else:
@@ -366,8 +382,15 @@ class CloudFormationTemplate(Template):
             out_meta_data.add(meta_item)
 
     def _transform_value(self, value):
+        resolved = True
         if isinstance(value, list):
-            return [self._transform_value(v) for v in value]
+            data = []
+            for v in value:
+                v, resolved_v = self._transform_value(v)
+                if not resolved_v:
+                    resolved = False
+                data.append(v)
+            return data, resolved
         elif isinstance(value, dict):
             data = {}
             is_func = False
@@ -385,35 +408,43 @@ class CloudFormationTemplate(Template):
                 elif re.match(r"^Fn::[\s\S]+$", key):
                     is_func = True
                     typer.secho(
-                        f"Function {key!r} is not supported and will be ignored.",
+                        f"  Function {key!r} is not supported and will be ignored.",
                         fg="yellow",
                     )
                     data.update(value)
             if not is_func:
                 for k, v in value.items():
-                    val = self._transform_value(v)
+                    val, resolved_val = self._transform_value(v)
                     data[k] = val
-            return data
+                    if not resolved_val:
+                        resolved = False
+            else:
+                resolved = False
+            return data, resolved
         elif isinstance(value, str):
             pseudo_parameters_rule: PseudoParametersRule = (
                 self.rule_manager.pseudo_parameters_rule
             )
             if value in pseudo_parameters_rule.pseudo_parameters:
-                return self._transform_pseudo_parameter(
-                    value, pseudo_parameters_rule.pseudo_parameters[value]
+                return (
+                    self._transform_pseudo_parameter(
+                        value, pseudo_parameters_rule.pseudo_parameters[value]
+                    ),
+                    False,
                 )
             elif re.match(r"^AWS::[\s\S]+$", value):
                 typer.secho(
-                    f"Pseudo parameter {value!r} is not supported and will be ignored.",
+                    f"  Pseudo parameter {value!r} is not supported and will be ignored.",
                     fg="yellow",
                 )
+                resolved = False
 
-        return value
+        return value, resolved
 
     def _transform_pseudo_parameter(self, param, rule_props) -> str:
         if rule_props.get("Ignore") or not rule_props.get("To"):
             typer.secho(
-                f"Pseudo parameter {param!r} is not supported and will be ignored.",
+                f"  Pseudo parameter {param!r} is not supported and will be ignored.",
                 fg="yellow",
             )
             return param
@@ -422,13 +453,13 @@ class CloudFormationTemplate(Template):
     def _transform_function(self, func_name, func_value, rule_props) -> dict:
         if rule_props.get("Ignore") or not rule_props.get("To"):
             typer.secho(
-                f"Function {func_name!r} is not supported and will be ignored.",
+                f"  Function {func_name!r} is not supported and will be ignored.",
                 fg="yellow",
             )
             return {func_name: func_value}
 
         final_func_name = rule_props["To"]
-        final_func_value = self._transform_value(func_value)
+        final_func_value, _ = self._transform_value(func_value)
         if final_func_name == "Fn::Sub":
             if isinstance(final_func_value, str):
                 final_func_value = self._transform_sub_pseudo(final_func_value)
@@ -452,11 +483,14 @@ class CloudFormationTemplate(Template):
             param,
             rule_props,
         ) in self.rule_manager.pseudo_parameters_rule.pseudo_parameters.items():
+            param_ref = f"${{{param}}}"
+            if param_ref not in value:
+                continue
             if rule_props.get("Ignore") or not rule_props.get("To"):
                 typer.secho(
-                    f"Function Fn::Sub pseudo parameter {param!r} is not supported and will be ignored.",
+                    f"  Function Fn::Sub pseudo parameter {param!r} is not supported and will be ignored.",
                     fg="yellow",
                 )
                 continue
-            value = value.replace(f"${{{param}}}", f'${{{rule_props["To"]}}}')
+            value = value.replace(param_ref, f'${{{rule_props["To"]}}}')
         return value

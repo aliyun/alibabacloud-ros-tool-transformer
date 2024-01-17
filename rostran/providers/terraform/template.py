@@ -23,6 +23,8 @@ from rostran.core.template import Template, RosTemplate
 from rostran.core.properties import Property
 from rostran.core.resources import Resources, Resource
 from rostran.core.outputs import Outputs, Output
+import rostran.handler as handler_module
+import rostran.merge_handler as merge_handler_module
 
 
 class TerraformTemplate(Template):
@@ -570,7 +572,6 @@ class TerraformTemplate(Template):
 
             handler_name = prop_rule.get("Handler")
             if handler_name is not None:
-                handler_module = importlib.import_module("rostran.handler")
                 handler_func = getattr(handler_module, handler_name)
                 final_value = handler_func(final_value, resolved)
 
@@ -579,6 +580,18 @@ class TerraformTemplate(Template):
                     assert isinstance(final_value, dict)
                     final_props.update(final_value)
                 else:
+                    # If To is duplicated, merge it
+                    if final_name in final_props:
+                        merged_value = final_props[final_name]
+                        merge_handler_name = prop_rule.get("MergeHandler")
+                        if merge_handler_name is not None:
+                            merge_handler_func = getattr(
+                                merge_handler_module, merge_handler_name
+                            )
+                            final_value = merge_handler_func(
+                                final_value, merged_value, resolved
+                            )
+
                     # If To is a multi-level attribute, it needs to be converted level by level.
                     # For example, if To is RuleList.0.Url, it should be converted to
                     # final_props["RuleList"][0]["Url"] = value.

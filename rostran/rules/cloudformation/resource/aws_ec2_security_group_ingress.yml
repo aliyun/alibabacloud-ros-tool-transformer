@@ -5,13 +5,11 @@ ResourceType:
   To: ALIYUN::ECS::SecurityGroupIngress
 Properties:
   CidrIp:
-    Ignore: true
+    To: SourceCidrIp
   CidrIpv6:
-    Ignore: true
+    To: Ipv6SourceCidrIp
   Description:
     To: Description
-  FromPort:
-    Ignore: true
   GroupId:
     Ignore: true
   GroupName:
@@ -26,8 +24,12 @@ Properties:
     Ignore: true
   SourceSecurityGroupOwnerId:
     Ignore: true
+  FromPort:
+    To: PortRange
+    MergeHandler: insert_str
   ToPort:
-    Ignore: true
+    To: PortRange
+    MergeHandler: append_str
 Attributes:
   Id:
     Ignore: true

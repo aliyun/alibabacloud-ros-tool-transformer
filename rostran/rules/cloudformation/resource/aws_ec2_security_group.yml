@@ -22,12 +22,14 @@ Properties:
         Ignore: true
       DestinationSecurityGroupId:
         Ignore: true
-      FromPort:
-        Ignore: true
       IpProtocol:
         To: IpProtocol
+      FromPort:
+        To: PortRange
+        MergeHandler: insert_str
       ToPort:
-        Ignore: true
+        To: PortRange
+        MergeHandler: append_str
   SecurityGroupIngress:
     To: SecurityGroupIngress
     Type: List
@@ -38,20 +40,22 @@ Properties:
         To: Ipv6SourceCidrIp
       Description:
         To: Description
-      FromPort:
-        Ignore: true
       IpProtocol:
         To: IpProtocol
       SourcePrefixListId:
-        Ignore: true
+        To: SourcePrefixListId
       SourceSecurityGroupId:
         To: SourceGroupId
       SourceSecurityGroupName:
         Ignore: true
       SourceSecurityGroupOwnerId:
         To: SourceGroupOwnerId
+      FromPort:
+        To: PortRange
+        MergeHandler: insert_str
       ToPort:
-        Ignore: true
+        To: PortRange
+        MergeHandler: append_str
   Tags:
     To: Tags
     Type: List
