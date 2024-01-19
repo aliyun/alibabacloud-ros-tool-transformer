@@ -29,8 +29,8 @@ from rostran.core.parameters import Parameter, Parameters
 from rostran.core.metadata import MetaItem, MetaData
 from rostran.core.conditions import Condition, Conditions
 from rostran.core.mappings import Mapping, Mappings
-import rostran.handler as handler_module
-import rostran.merge_handler as merge_handler_module
+import rostran.handlers.basic as basic_handler_module
+import rostran.handlers.merge as merge_handler_module
 
 RULES_DIR = os.path.join(RULES_DIR, "cloudformation")
 BUILTIN_RULES = os.path.join(RULES_DIR, "builtin")
@@ -193,6 +193,7 @@ class CloudFormationTemplate(Template):
     def _transform_resources(self, out_resources: Resources):
         cf_resources = self.source.get("Resources", {})
 
+        resources_to_handle = []
         for resource_id, cf_resource in cf_resources.items():
             cf_resource_type = cf_resource["Type"]
             cf_resource_props = cf_resource.get("Properties") or {}
@@ -211,12 +212,6 @@ class CloudFormationTemplate(Template):
 
             self.rules[resource_id] = resource_rule
 
-            props = self._transform_resource_props(
-                cf_resource_type,
-                cf_resource_props,
-                resource_rule.properties,
-                resource_rule.rule_id,
-            )
             resource = Resource(
                 resource_id=resource_id,
                 resource_type=resource_rule.target_resource_type,
@@ -224,11 +219,28 @@ class CloudFormationTemplate(Template):
                 condition=cf_resource.get("Condition"),
                 deletion_policy=cf_resource.get("DeletionPolicy"),
             )
-            for k, v in props.items():
-                p = Property(k, v)
-                resource.properties.add(p)
+            if resource.type:
+                props = self._transform_resource_props(
+                    cf_resource_type,
+                    cf_resource_props,
+                    resource_rule.properties,
+                    resource_rule.rule_id,
+                )
+                for k, v in props.items():
+                    p = Property.initialize(k, v)
+                    resource.properties.add(p)
+                out_resources.add(resource)
+            else:
+                resource.type = cf_resource_type
+                for k, v in cf_resource_props.items():
+                    p = Property.initialize(k, v)
+                    resource.properties.add(p)
 
-            out_resources.add(resource)
+            if resource_rule.handler:
+                resources_to_handle.append((resource, resource_rule.handler))
+
+        for resource, handler in resources_to_handle:
+            handler(resource, out_resources)
 
     def _transform_resource_props(
         self, resource_type, resource_props, resource_rule_props, rule_id
@@ -282,7 +294,7 @@ class CloudFormationTemplate(Template):
 
             handler_name = prop_rule.get("Handler")
             if handler_name is not None:
-                handler_func = getattr(handler_module, handler_name)
+                handler_func = getattr(basic_handler_module, handler_name)
                 final_value = handler_func(final_value, resolved)
 
             if final_value is not None:
@@ -472,8 +484,7 @@ class CloudFormationTemplate(Template):
 
         handler_name = rule_props.get("Handler")
         if handler_name is not None:
-            handler_module = importlib.import_module("rostran.handler")
-            handler_func = getattr(handler_module, handler_name)
+            handler_func = getattr(basic_handler_module, handler_name)
             final_func_value = handler_func(final_func_value, False)
 
         return {final_func_name: final_func_value}

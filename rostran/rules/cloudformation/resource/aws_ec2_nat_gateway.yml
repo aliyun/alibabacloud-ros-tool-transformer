@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::VPC::NatGateway
 Properties:
   AllocationId:
-    Ignore: true
+    To: AllocationId
   ConnectivityType:
     Ignore: true
   MaxDrainDurationSeconds:
@@ -31,3 +31,4 @@ Properties:
 Attributes:
   NatGatewayId:
     To: NatGatewayId
+Handler: split_nat_gateway

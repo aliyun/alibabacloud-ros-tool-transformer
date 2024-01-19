@@ -10,6 +10,7 @@ from .exceptions import (
     RuleAlreadyExist,
 )
 from rostran.core.settings import RULES_DIR
+import rostran.handlers.resource as resource_handler_module
 
 yaml = YAML()
 
@@ -179,12 +180,14 @@ class Rule:
         RESOURCE_TYPE,
         PROPERTIES,
         ATTRIBUTES,
+        HANDLER,
     ) = (
         "Version",
         "Type",
         "ResourceType",
         "Properties",
         "Attributes",
+        "Handler",
     )
 
     SUPPORTED_VERSIONS = ("2020-06-01",)
@@ -226,12 +229,20 @@ class Rule:
 
 class ResourceRule(Rule):
     def __init__(
-        self, version, type, rule_id, properties, attributes, target_resource_type
+        self,
+        version,
+        type,
+        rule_id,
+        properties,
+        attributes,
+        target_resource_type=None,
+        handler=None,
     ):
         super().__init__(version, type, rule_id)
         self.properties = properties
         self.attributes = attributes
         self.target_resource_type = target_resource_type
+        self.handler = handler
 
     @classmethod
     def initialize_from_info(cls, path, data, version, type):
@@ -239,7 +250,7 @@ class ResourceRule(Rule):
         if not isinstance(resource_type, dict):
             InvalidRuleSchema(path=path, reason=f"{cls.RESOURCE} type should be dict")
         rule_id = resource_type["From"]
-        target_resource_type = resource_type["To"]
+        target_resource_type = resource_type.get("To")
 
         properties = data.get(cls.PROPERTIES, {})
         if not isinstance(properties, dict):
@@ -249,7 +260,19 @@ class ResourceRule(Rule):
         if not isinstance(attributes, dict):
             InvalidRuleSchema(path=path, reason=f"{cls.ATTRIBUTES} type should be dict")
 
-        return cls(version, type, rule_id, properties, attributes, target_resource_type)
+        handler_name = data.get(cls.HANDLER)
+        handler_func = (
+            getattr(resource_handler_module, handler_name) if handler_name else None
+        )
+        return cls(
+            version,
+            type,
+            rule_id,
+            properties,
+            attributes,
+            target_resource_type,
+            handler_func,
+        )
 
 
 class PseudoParametersRule(Rule):

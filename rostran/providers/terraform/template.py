@@ -23,8 +23,8 @@ from rostran.core.template import Template, RosTemplate
 from rostran.core.properties import Property
 from rostran.core.resources import Resources, Resource
 from rostran.core.outputs import Outputs, Output
-import rostran.handler as handler_module
-import rostran.merge_handler as merge_handler_module
+import rostran.handlers.basic as basic_handler_module
+import rostran.handlers.merge as merge_handler_module
 
 
 class TerraformTemplate(Template):
@@ -527,11 +527,12 @@ class TerraformTemplate(Template):
         for name, value in resource_props.items():
             # Ignore not support prop
             prop_rule = resource_rule_props.get(name)
-            if prop_rule is None or prop_rule.get("Ignore"):
-                typer.secho(
-                    f"Resource property {name!r} of {resource_type!r} is not supported and will be ignored.",
-                    fg="yellow",
-                )
+            if not prop_rule or prop_rule.get("Ignore"):
+                if not prop_rule or not prop_rule.get("NoWarning"):
+                    typer.secho(
+                        f"Resource property {name!r} of {resource_type!r} is not supported and will be ignored.",
+                        fg="yellow",
+                    )
                 continue
 
             # Warn if specify Warning
@@ -572,7 +573,7 @@ class TerraformTemplate(Template):
 
             handler_name = prop_rule.get("Handler")
             if handler_name is not None:
-                handler_func = getattr(handler_module, handler_name)
+                handler_func = getattr(basic_handler_module, handler_name)
                 final_value = handler_func(final_value, resolved)
 
             if final_value is not None:
@@ -734,8 +735,7 @@ class TerraformTemplate(Template):
 
         handler_name = attr_rule.get("Handler")
         if handler_name is not None:
-            handler_module = importlib.import_module("rostran.handler")
-            handler_func = getattr(handler_module, handler_name)
+            handler_func = getattr(basic_handler_module, handler_name)
             final_value = handler_func(final_value, False)
 
         return final_value
