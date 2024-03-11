@@ -88,7 +88,6 @@ class MetaItem:
                         reason=f"The type of value ({param_groups}) should be list",
                     )
 
-                require_label = bool(len(param_groups) > 1)
                 for i, param_group in enumerate(param_groups):
                     if not isinstance(param_group, dict):
                         raise InvalidTemplateMetaDataItem(
@@ -114,13 +113,7 @@ class MetaItem:
                                 reason=f"The type of value ({parameter}) should be str",
                             )
                     # validate Label
-                    if self.LABEL not in param_group:
-                        if require_label:
-                            raise InvalidTemplateMetaDataItem(
-                                name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}]",
-                                reason=f"{self.LABEL} is missing",
-                            )
-                    else:
+                    if self.LABEL in param_group:
                         label = param_group[self.LABEL]
                         if not isinstance(label, dict):
                             raise InvalidTemplateMetaDataItem(

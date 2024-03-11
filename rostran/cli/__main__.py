@@ -71,6 +71,12 @@ def transform(
         "keep the Terraform file content in the generated ROS template. Otherwise, it is transformed "
         "to a template using ROS syntax. This option is only available for Terraform template files.",
     ),
+
+    force: bool = typer.Option(
+        False,
+        show_default=True,
+        help="Whether to overwrite existing target file.",
+    ),
 ):
     """
     Transform AWS CloudFormation/Terraform/Excel template to ROS template.
@@ -91,7 +97,13 @@ def transform(
         elif source_path.endswith(".tf"):
             source_format = SourceTemplateFormat.Terraform
         elif source_path.endswith((".json", ".yaml", ".yml")):
-            source_format = SourceTemplateFormat.CloudFormation
+            with open(source_path, "r") as f:
+                tpl = yaml.load(f)
+            flag = tpl.get('Transform')
+            if isinstance(flag, str) and flag.startswith('Aliyun::Terraform'):
+                source_format = SourceTemplateFormat.ROS
+            else:
+                source_format = SourceTemplateFormat.CloudFormation
         else:
             raise exceptions.TemplateNotSupport(path=source_path)
 
@@ -102,18 +114,22 @@ def transform(
             target_format = TargetTemplateFormat.Yaml
         else:
             target_path = "template.json"
+        if source_format == SourceTemplateFormat.ROS:
+            target_path = 'template'
     elif target_format == TargetTemplateFormat.Auto:
         if target_path.endswith((".yaml", ".yml")):
             target_format = TargetTemplateFormat.Yaml
         elif target_path.endswith(".json"):
             target_format = TargetTemplateFormat.Json
         else:
-            raise exceptions.TemplateNotSupport(path=target_path)
+            if source_format != SourceTemplateFormat.ROS:
+                raise exceptions.TemplateNotSupport(path=target_path)
 
     target_path = os.path.abspath(target_path)
     path = Path(target_path)
-    if path.exists():
+    if path.exists() and not force:
         raise exceptions.TemplateAlreadyExist(path=target_path)
+
     if not path.parent.exists():
         raise exceptions.PathNotExist(path=path.parent)
 
@@ -139,20 +155,28 @@ def transform(
         from ..providers import CloudFormationTemplate
 
         template = CloudFormationTemplate.initialize(source_path, source_file_format)
+
+    elif source_format == SourceTemplateFormat.ROS:
+        from ..providers import WrapTerraformTemplate
+        template = WrapTerraformTemplate.initialize(source_path, source_file_format)
+
     else:
         raise exceptions.TemplateNotSupport(path=source_path)
 
     # transform template
-    ros_templates = template.transform()
-    if not isinstance(ros_templates, list):
-        ros_templates.save(target_path, target_format)
-    elif len(ros_templates) == 1:
-        ros_templates[0].save(target_path, target_format)
+    if source_format == SourceTemplateFormat.ROS:
+        template.transform(target_path)
     else:
-        for i, ros_template in enumerate(ros_templates):
-            name_parts = os.path.splitext(target_path)
-            path = f"{name_parts[0]}-{i}{name_parts[1]}"
-            ros_template.save(path, target_format)
+        ros_templates = template.transform()
+        if not isinstance(ros_templates, list):
+            ros_templates.save(target_path, target_format)
+        elif len(ros_templates) == 1:
+            ros_templates[0].save(target_path, target_format)
+        else:
+            for i, ros_template in enumerate(ros_templates):
+                name_parts = os.path.splitext(target_path)
+                path = f"{name_parts[0]}-{i}{name_parts[1]}"
+                ros_template.save(path, target_format)
 
 
 @app.command()
