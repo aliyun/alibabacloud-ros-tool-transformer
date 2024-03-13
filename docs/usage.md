@@ -33,6 +33,9 @@ The following options are supported:
 - `--compatible`: Whether to use compatible mode when transforming Terraform to ROS template. If compatible, keep the
   Terraform file content in the generated ROS template. Otherwise, it is transformed to a template using ROS syntax.
   **This option is only available for Terraform template files.**
+- `--force`: Whether a generated file can overwrite an existing file. If supported, the generated file 
+  overwrites the existing file. Otherwise, an error will be reported when existing files exist.
+
 
 > :warning: If you want to convert Terraform templates, please configure the following environment variables:
 >
