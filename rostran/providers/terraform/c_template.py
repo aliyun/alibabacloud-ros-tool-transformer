@@ -23,7 +23,17 @@ class CompatibleTerraformTemplate(Template):
         if os.path.isdir(path):
             for dirpath, dirnames, filenames in os.walk(path):
                 for filename in filenames:
-                    if filename.endswith((".tf", ".tftpl")):
+                    if filename.endswith(
+                        (
+                            ".tf",
+                            ".tftpl",
+                            ".tfvars",
+                            ".metadata",
+                            ".mappings",
+                            ".conditions",
+                            ".rules",
+                        )
+                    ):
                         filepath = os.path.join(dirpath, filename)
                         with open(filepath) as f:
                             content = f.read()
@@ -40,7 +50,7 @@ class CompatibleTerraformTemplate(Template):
         typer.secho(f"Transforming terraform template to ROS template...")
 
         template = RosTemplate()
-        template.transform = "Aliyun::Terraform-v1.2"
+        template.transform = "Aliyun::Terraform-v1.5"
         template.workspace = Workspace.initialize(self.source)
 
         typer.secho(

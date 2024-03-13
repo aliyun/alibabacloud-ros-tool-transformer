@@ -6,6 +6,7 @@ class SourceTemplateFormat(str, Enum):
     CloudFormation = "cloudformation"
     Terraform = "terraform"
     Excel = "excel"
+    ROS = 'ros'
 
 
 class TargetTemplateFormat(str, Enum):
@@ -31,7 +32,7 @@ def convert_template_to_file_format(template_format, template_path: str = None):
             return FileFormat.Excel
         elif template_format == SourceTemplateFormat.Terraform:
             return FileFormat.Terraform
-        elif template_format == SourceTemplateFormat.CloudFormation:
+        elif template_format in (SourceTemplateFormat.CloudFormation, SourceTemplateFormat.ROS):
             if template_path:
                 if template_path.endswith((".yml", ".yaml")):
                     return FileFormat.Yaml
@@ -47,4 +48,4 @@ def convert_template_to_file_format(template_format, template_path: str = None):
         elif template_format == TargetTemplateFormat.Json:
             return FileFormat.Json
 
-    raise ValueError("Unsupported template_format {template_format}")
+    raise ValueError(f"Unsupported template_format {template_format}")
