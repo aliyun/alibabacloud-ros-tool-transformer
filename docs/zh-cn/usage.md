@@ -24,6 +24,7 @@ rostran transform [OPTIONS] SOURCE_PATH
 - `--target-format`/`-T`：生成的 ROS 模板格式。取值：`auto`（默认值）| `json` | `yaml`，取值为`auto`且`--target-path`为文件路径时，生成的 ROS
   模版格式与`--target-path`文件格式相同；取值为`auto`且`--target-path`为目录时，生成的 ROS 模板名为`template.yml`。
 - `--compatible`：Terraform 转换为 ROS 模板时是否使用兼容模式。 如果兼容，则将 Terraform 文件内容保留在生成的 ROS 模板中。 否则，转换为使用 ROS 语法的模板。**此选项仅适用于 Terraform 模板文件**。
+- `--force`：是否支持生成的文件覆盖已有文件。如果支持，则将生成的文件覆盖已有文件。否则，存在已有文件时会报错。
 
 > :warning: 如果要转换 Terraform 模板，请配置如下环境变量：
 >
