@@ -1,6 +1,7 @@
 """
 Transforms, generates or formats ROS template.
 """
+
 import json
 import os
 import logging
@@ -71,7 +72,6 @@ def transform(
         "keep the Terraform file content in the generated ROS template. Otherwise, it is transformed "
         "to a template using ROS syntax. This option is only available for Terraform template files.",
     ),
-
     force: bool = typer.Option(
         False,
         show_default=True,
@@ -99,8 +99,8 @@ def transform(
         elif source_path.endswith((".json", ".yaml", ".yml")):
             with open(source_path, "r") as f:
                 tpl = yaml.load(f)
-            flag = tpl.get('Transform')
-            if isinstance(flag, str) and flag.startswith('Aliyun::Terraform'):
+            flag = tpl.get("Transform")
+            if isinstance(flag, str) and flag.startswith("Aliyun::Terraform"):
                 source_format = SourceTemplateFormat.ROS
             else:
                 source_format = SourceTemplateFormat.CloudFormation
@@ -115,7 +115,7 @@ def transform(
         else:
             target_path = "template.json"
         if source_format == SourceTemplateFormat.ROS:
-            target_path = 'template'
+            target_path = "template"
     elif target_format == TargetTemplateFormat.Auto:
         if target_path.endswith((".yaml", ".yml")):
             target_format = TargetTemplateFormat.Yaml
@@ -158,6 +158,7 @@ def transform(
 
     elif source_format == SourceTemplateFormat.ROS:
         from ..providers import WrapTerraformTemplate
+
         template = WrapTerraformTemplate.initialize(source_path, source_file_format)
 
     else:

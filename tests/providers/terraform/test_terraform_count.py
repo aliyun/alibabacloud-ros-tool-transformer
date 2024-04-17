@@ -1,7 +1,7 @@
 import os
 
-from rostran.providers import TerraformTemplate
 from tests.conf import TERRAFORM_PROVIDER_DIR
+from tests.testing import _test_tf_template
 
 TF_DIR = os.path.join(TERRAFORM_PROVIDER_DIR, "count")
 PLAN_PATH = os.path.join(TERRAFORM_PROVIDER_DIR, "count/main.tfplan")
@@ -56,7 +56,5 @@ tpl = {
 
 
 def test_template():
-    template = TerraformTemplate.initialize(TF_DIR, tf_plan_path=PLAN_PATH)
-    ros_template = template.transform()
-    d = ros_template.as_dict()
+    d = _test_tf_template(TF_DIR, PLAN_PATH)
     assert d == tpl

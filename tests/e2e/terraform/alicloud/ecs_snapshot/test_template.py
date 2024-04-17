@@ -1,6 +1,6 @@
 import os
 
-from tests.e2e.terraform.alicloud.testing import _test_template
+from tests.testing import _test_tf_template
 
 root = os.path.dirname(os.path.abspath(__file__))
 tf_plan_path = os.path.join(root, "main.tfplan")
@@ -42,7 +42,7 @@ tpl = {
             "Type": "ALIYUN::ECS::Instance",
             "Properties": {
                 "ZoneId": "cn-beijing-c",
-                "ImageId": "ubuntu_22_04_x64_20G_alibase_20230613.vhd",
+                "ImageId": "ubuntu_22_04_x64_20G_alibase_20240322.vhd",
                 "InstanceName": "terraform-example",
                 "InstanceType": "ecs.sn1.large",
                 "VSwitchId": {"Fn::GetAtt": ["alicloud_vswitch.example", "VSwitchId"]},
@@ -77,5 +77,5 @@ tpl = {
 
 
 def test_template():
-    t = _test_template(root, tf_plan_path)
+    t = _test_tf_template(root, tf_plan_path)
     assert t == tpl

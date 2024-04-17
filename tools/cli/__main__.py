@@ -1,6 +1,7 @@
 """
 ROS tool for generating and formatting rules.
 """
+
 import logging
 import os
 import traceback

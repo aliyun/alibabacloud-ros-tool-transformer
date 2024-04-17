@@ -24,7 +24,7 @@ class TemplateNotExist(RosTranException):
 class TemplateAlreadyExist(RosTranException):
     msg = (
         'Template "{path}" already exists. Please remove it or '
-        'add the \'--force\' parameter to overwrite it before transform template.'
+        "add the '--force' parameter to overwrite it before transform template."
     )
 
 
