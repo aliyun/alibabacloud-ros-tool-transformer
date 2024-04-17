@@ -1,6 +1,6 @@
 import os
 
-from tests.e2e.terraform.alicloud.testing import _test_template
+from tests.testing import _test_tf_template
 
 root = os.path.dirname(os.path.abspath(__file__))
 tf_plan_path = os.path.join(root, "main.tfplan")
@@ -23,7 +23,7 @@ tpl = {
             "Type": "ALIYUN::RDS::Account",
             "Properties": {
                 "AccountName": "tf_example",
-                "AccountPassword": "Example1234",
+                "AccountPassword": "******",
                 "DBInstanceId": {
                     "Fn::GetAtt": ["alicloud_db_instance.default", "DBInstanceId"]
                 },
@@ -39,7 +39,7 @@ tpl = {
                 "CidrBlock": "172.16.0.0/24",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]},
                 "VSwitchName": "tf_example",
-                "ZoneId": "cn-beijing-a",
+                "ZoneId": "cn-beijing-e",
             },
         },
     },
@@ -47,5 +47,5 @@ tpl = {
 
 
 def test_template():
-    t = _test_template(root, tf_plan_path)
+    t = _test_tf_template(root, tf_plan_path)
     assert t == tpl

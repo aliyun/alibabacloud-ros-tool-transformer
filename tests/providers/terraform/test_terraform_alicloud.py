@@ -1,9 +1,9 @@
 import os
 
-from rostran.providers import TerraformTemplate
 from tests.conf import TERRAFORM_PROVIDER_DIR, TERRAFORM_ALICLOUD_DIR
+from tests.testing import _test_tf_template
 
-ALICLOUD_PLAN_PATH = os.path.join(TERRAFORM_PROVIDER_DIR, "alicloud/alicloud.tfplan")
+ALICLOUD_PLAN_PATH = os.path.join(TERRAFORM_PROVIDER_DIR, "alicloud/main.tfplan")
 
 tpl = {
     "ROSTemplateFormatVersion": "2015-09-01",
@@ -11,7 +11,7 @@ tpl = {
         "alicloud_instance.myinstance": {
             "Type": "ALIYUN::ECS::Instance",
             "Properties": {
-                "ImageId": "centos_7_9_x64_20G_alibase_20230718.vhd",
+                "ImageId": "centos_7_9_x64_20G_alibase_20240321.vhd",
                 "InstanceName": "myinstance",
                 "InstanceType": "ecs.sn1.medium",
                 "SystemDiskCategory": "cloud_efficiency",
@@ -95,9 +95,5 @@ tpl = {
 
 
 def test_template():
-    template = TerraformTemplate.initialize(
-        TERRAFORM_ALICLOUD_DIR, tf_plan_path=ALICLOUD_PLAN_PATH
-    )
-    ros_template = template.transform()
-    d = ros_template.as_dict()
+    d = _test_tf_template(TERRAFORM_ALICLOUD_DIR, ALICLOUD_PLAN_PATH)
     assert d == tpl
