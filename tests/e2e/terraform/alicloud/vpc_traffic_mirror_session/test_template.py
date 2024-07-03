@@ -32,9 +32,9 @@ tpl = {
         "alicloud_instance.default": {
             "Type": "ALIYUN::ECS::Instance",
             "Properties": {
-                "ZoneId": "cn-beijing-i",
+                "ZoneId": "cn-beijing-k",
                 "HostName": "tf-example",
-                "ImageId": "ubuntu_22_04_x64_20G_alibase_20240322.vhd",
+                "ImageId": "ubuntu_20_04_x64_20G_alibase_20240530.vhd",
                 "InstanceName": "tf-example",
                 "InstanceType": "ecs.g7.large",
                 "SystemDiskCategory": "cloud_essd",
@@ -88,7 +88,7 @@ tpl = {
                 "CidrBlock": "10.4.0.0/24",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]},
                 "VSwitchName": "tf-example",
-                "ZoneId": "cn-beijing-i",
+                "ZoneId": "cn-beijing-k",
             },
         },
     },

@@ -12,7 +12,7 @@ tpl = {
             "Type": "ALIYUN::ECS::InstanceGroup",
             "Properties": {
                 "MaxAmount": 10,
-                "ImageId": "ubuntu_22_04_x64_20G_alibase_20240322.vhd",
+                "ImageId": "ubuntu_20_04_x64_20G_alibase_20240530.vhd",
                 "InstanceChargeType": "PostPaid",
                 "InstanceName": "terraform-example",
                 "InstanceType": "ecs.sn1.large",

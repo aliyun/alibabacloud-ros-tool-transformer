@@ -42,7 +42,7 @@ tpl = {
             "Type": "ALIYUN::ECS::Instance",
             "Properties": {
                 "ZoneId": "cn-beijing-c",
-                "ImageId": "ubuntu_22_04_x64_20G_alibase_20240322.vhd",
+                "ImageId": "ubuntu_24_04_x64_20G_alibase_20240508.vhd",
                 "InstanceName": "terraform-example",
                 "InstanceType": "ecs.sn1.large",
                 "VSwitchId": {"Fn::GetAtt": ["alicloud_vswitch.example", "VSwitchId"]},

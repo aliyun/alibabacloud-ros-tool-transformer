@@ -11,7 +11,7 @@ tpl = {
         "alicloud_instance.myinstance": {
             "Type": "ALIYUN::ECS::Instance",
             "Properties": {
-                "ImageId": "centos_7_9_x64_20G_alibase_20240321.vhd",
+                "ImageId": "centos_stream_8_arm64_20G_alibase_20240531.vhd",
                 "InstanceName": "myinstance",
                 "InstanceType": "ecs.sn1.medium",
                 "SystemDiskCategory": "cloud_efficiency",

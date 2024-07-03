@@ -10,6 +10,10 @@ Template Transformer is a tool for transforming and formatting.
 - Transforms **AWS CloudFormation/Terraform/Excel** template to **ROS** template.
 - Formats ROS template.
 
+## Requirements
+
+- Python 3.7+
+
 ## Installation
 
 ```bash
