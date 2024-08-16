@@ -6,8 +6,8 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ ubuntu-20.04 ]
-        python-version: [ '3.7.9', '3.8.10', '3.9.13', '3.10.11', '3.11.9', '3.12.4' ]
+        os: [ ubuntu-22.04 ]
+        python-version: [ '3.12.5' ]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out repository code
