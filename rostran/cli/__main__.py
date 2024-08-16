@@ -204,7 +204,7 @@ def format(
     """
     ps = []
     ps_set = set()
-    skip_set = set(skip)
+    skip_set = set(skip or [])
     for p in path:
         if p not in ps_set and p not in skip_set:
             ps_set.add(p)
