@@ -12,6 +12,8 @@ Properties:
     Ignore: true
   function_name:
     Ignore: true
+  parent_id:
+    Ignore: true
   status:
     Ignore: true
 Attributes:
@@ -24,6 +26,8 @@ Attributes:
   function_args:
     Ignore: true
   function_name:
+    Ignore: true
+  parent_id:
     Ignore: true
   status:
     Ignore: true

@@ -21,7 +21,7 @@ Properties:
   group_metric_rule_name:
     Ignore: true
   interval:
-    Ignore: true
+    To: Interval
   metric_name:
     To: MetricName
   namespace:

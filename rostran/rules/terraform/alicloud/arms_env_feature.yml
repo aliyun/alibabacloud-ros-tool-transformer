@@ -1,0 +1,32 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_env_feature
+  To: ALIYUN::ARMS::EnvironmentFeature
+Properties:
+  env_feature_name:
+    Ignore: true
+  environment_id:
+    To: EnvironmentId
+  feature_version:
+    To: FeatureVersion
+  namespace:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To:
+    - EnvironmentId
+    - FeatureName
+    Handler: colon_join
+  env_feature_name:
+    Ignore: true
+  environment_id:
+    To: EnvironmentId
+  feature_version:
+    Ignore: true
+  namespace:
+    Ignore: true
+  status:
+    Ignore: true

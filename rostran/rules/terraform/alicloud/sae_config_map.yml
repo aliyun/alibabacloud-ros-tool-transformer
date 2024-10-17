@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sae_config_map
+  To: ALIYUN::SAE::ConfigMap
+Properties:
+  data:
+    Ignore: true
+  description:
+    To: Description
+  name:
+    To: Name
+  namespace_id:
+    To: NamespaceId
+Attributes:
+  id:
+    To: ConfigMapId
+  data:
+    Ignore: true
+  description:
+    Ignore: true
+  name:
+    Ignore: true
+  namespace_id:
+    To: NamespaceId

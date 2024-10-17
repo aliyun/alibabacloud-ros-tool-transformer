@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_sso_user
+  To: ALIYUN::CloudSSO::User
+Properties:
+  description:
+    To: Description
+  directory_id:
+    To: DirectoryId
+  display_name:
+    To: DisplayName
+  email:
+    To: Email
+  first_name:
+    To: FirstName
+  last_name:
+    To: LastName
+  status:
+    To: Status
+  user_id:
+    Ignore: true
+  user_name:
+    To: UserName
+Attributes:
+  id:
+    Ignore: true
+  description:
+    Ignore: true
+  directory_id:
+    Ignore: true
+  display_name:
+    Ignore: true
+  email:
+    Ignore: true
+  first_name:
+    Ignore: true
+  last_name:
+    Ignore: true
+  status:
+    Ignore: true
+  user_id:
+    To: UserId
+  user_name:
+    Ignore: true

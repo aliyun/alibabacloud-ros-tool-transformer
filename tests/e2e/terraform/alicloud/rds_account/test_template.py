@@ -39,7 +39,7 @@ tpl = {
                 "CidrBlock": "172.16.0.0/24",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]},
                 "VSwitchName": "tf_example",
-                "ZoneId": "cn-beijing-f",
+                "ZoneId": "cn-beijing-c",
             },
         },
     },

@@ -14,6 +14,8 @@ Properties:
     Ignore: true
   cross_zone_enabled:
     To: CrossZoneEnabled
+  deletion_protection_config:
+    Ignore: true
   deletion_protection_enabled:
     To: DeletionProtectionConfig.Enabled
   deletion_protection_reason:
@@ -28,12 +30,16 @@ Properties:
     To: LoadBalancerName
   load_balancer_type:
     To: LoadBalancerType
+  modification_protection_config:
+    Ignore: true
   modification_protection_reason:
     To: ModificationProtectionConfig.Reason
   modification_protection_status:
     To: ModificationProtectionConfig.Status
   resource_group_id:
     To: ResourceGroupId
+  security_group_ids:
+    Ignore: true
   status:
     Ignore: true
   tags:
@@ -52,11 +58,13 @@ Properties:
       ipv6_address:
         Ignore: true
       private_ipv4_address:
-        To: PrivateIPv4Address
+        Ignore: true
       public_ipv4_address:
         Ignore: true
+      status:
+        Ignore: true
       vswitch_id:
-        To: VSwitchId
+        Ignore: true
       zone_id:
         To: ZoneId
 Attributes:
@@ -72,6 +80,8 @@ Attributes:
     Ignore: true
   cross_zone_enabled:
     Ignore: true
+  deletion_protection_config:
+    Ignore: true
   deletion_protection_enabled:
     Ignore: true
   deletion_protection_reason:
@@ -86,11 +96,15 @@ Attributes:
     Ignore: true
   load_balancer_type:
     To: LoadBalancerType
+  modification_protection_config:
+    Ignore: true
   modification_protection_reason:
     Ignore: true
   modification_protection_status:
     Ignore: true
   resource_group_id:
+    Ignore: true
+  security_group_ids:
     Ignore: true
   status:
     Ignore: true

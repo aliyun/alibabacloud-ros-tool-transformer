@@ -1,0 +1,46 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_environment
+  To: ALIYUN::ARMS::Environment
+Properties:
+  aliyun_lang:
+    Ignore: true
+  bind_resource_id:
+    To: BindResourceId
+  drop_metrics:
+    Ignore: true
+  environment_id:
+    Ignore: true
+  environment_name:
+    To: EnvironmentName
+  environment_sub_type:
+    To: EnvironmentSubType
+  environment_type:
+    To: EnvironmentType
+  managed_type:
+    To: ManagedType
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+Attributes:
+  id:
+    To: EnvironmentId
+  bind_resource_id:
+    Ignore: true
+  environment_id:
+    To: EnvironmentId
+  environment_name:
+    To: EnvironmentName
+  environment_sub_type:
+    To: EnvironmentSubType
+  environment_type:
+    To: EnvironmentType
+  managed_type:
+    To: ManagedType
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    Ignore: true

@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   connection_status:
     Ignore: true
+  create_time:
+    Ignore: true
   dry_run:
     Ignore: true
   endpoint_business_status:
@@ -16,6 +18,14 @@ Properties:
     To: EndpointDescription
   endpoint_domain:
     Ignore: true
+  endpoint_type:
+    To: EndpointType
+  policy_document:
+    Ignore: true
+  protected_enabled:
+    To: ProtectedEnabled
+  resource_group_id:
+    Ignore: true
   security_group_ids:
     Ignore: true
   service_id:
@@ -24,10 +34,15 @@ Properties:
     To: ServiceName
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
   vpc_endpoint_name:
     To: EndpointName
   vpc_id:
     To: VpcId
+  zone_private_ip_address_count:
+    To: ZonePrivateIpAddressCount
 Attributes:
   id:
     To: EndpointId
@@ -35,12 +50,20 @@ Attributes:
     To: Bandwidth
   connection_status:
     Ignore: true
+  create_time:
+    Ignore: true
   endpoint_business_status:
     Ignore: true
   endpoint_description:
     Ignore: true
   endpoint_domain:
     To: EndpointDomain
+  endpoint_type:
+    Ignore: true
+  policy_document:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
   security_group_ids:
     Ignore: true
   service_id:
@@ -49,7 +72,11 @@ Attributes:
     To: ServiceName
   status:
     Ignore: true
+  tags:
+    Ignore: true
   vpc_endpoint_name:
     To: EndpointName
   vpc_id:
     To: VpcId
+  zone_private_ip_address_count:
+    Ignore: true

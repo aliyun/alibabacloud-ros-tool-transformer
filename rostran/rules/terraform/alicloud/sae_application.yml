@@ -5,15 +5,15 @@ ResourceType:
   To: ALIYUN::SAE::Application
 Properties:
   acr_assume_role_arn:
-    Ignore: true
+    To: AcrAssumeRoleArn
   acr_instance_id:
-    Ignore: true
+    To: AcrInstanceId
   app_description:
     To: AppDescription
   app_name:
     To: AppName
   auto_config:
-    Ignore: true
+    To: AutoConfig
   auto_enable_application_scaling_rule:
     Ignore: true
   batch_wait_time:
@@ -27,7 +27,7 @@ Properties:
   command_args_v2:
     Ignore: true
   config_map_mount_desc:
-    Ignore: true
+    To: ConfigMapMountDesc
   config_map_mount_desc_v2:
     Ignore: true
   cpu:
@@ -47,7 +47,7 @@ Properties:
   envs:
     To: Envs
   image_pull_secrets:
-    Ignore: true
+    To: ImagePullSecrets
   image_url:
     To: ImageUrl
   jar_start_args:
@@ -65,7 +65,7 @@ Properties:
   memory:
     To: Memory
   micro_registration:
-    Ignore: true
+    To: MicroRegistration
   min_ready_instance_ratio:
     Ignore: true
   min_ready_instances:
@@ -81,9 +81,9 @@ Properties:
   nas_id:
     To: NasId
   oss_ak_id:
-    Ignore: true
+    To: OssAkId
   oss_ak_secret:
-    Ignore: true
+    To: OssAkSecret
   oss_mount_descs:
     Ignore: true
   oss_mount_descs_v2:
@@ -95,13 +95,13 @@ Properties:
   package_version:
     To: PackageVersion
   php:
-    Ignore: true
+    To: Php
   php_arms_config_location:
-    Ignore: true
+    To: PhpArmsConfigLocation
   php_config:
-    Ignore: true
+    To: PhpConfig
   php_config_location:
-    Ignore: true
+    To: PhpConfigLocation
   post_start:
     To: PostStart
   post_start_v2:
@@ -111,7 +111,7 @@ Properties:
   pre_stop_v2:
     Ignore: true
   programming_language:
-    Ignore: true
+    To: ProgrammingLanguage
   pvtz_discovery_svc:
     Ignore: true
   readiness:
@@ -130,11 +130,11 @@ Properties:
     To: Tags
     Handler: tags_dict_to_list
   termination_grace_period_seconds:
-    Ignore: true
+    To: TerminationGracePeriodSeconds
   timezone:
     To: Timezone
   tomcat_config:
-    Ignore: true
+    To: TomcatConfig
   tomcat_config_v2:
     Ignore: true
   update_strategy:

@@ -4,6 +4,10 @@ ResourceType:
   From: alicloud_log_etl
   To: ALIYUN::SLS::Etl
 Properties:
+  access_key_id:
+    Ignore: true
+  access_key_secret:
+    Ignore: true
   create_time:
     Ignore: true
   description:
@@ -38,6 +42,14 @@ Properties:
     Ignore: true
   from_time:
     To: Configuration.FromTime
+  kms_encrypted_access_key_id:
+    Ignore: true
+  kms_encrypted_access_key_secret:
+    Ignore: true
+  kms_encryption_access_key_id_context:
+    Ignore: true
+  kms_encryption_access_key_secret_context:
+    Ignore: true
   last_modified_time:
     Ignore: true
   logstore:

@@ -22,6 +22,9 @@ Properties:
     To: ResourceGroupId
   sync_status:
     Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
   update_time:
     Ignore: true
   user_client_ip:
@@ -43,7 +46,11 @@ Attributes:
     Ignore: true
   remark:
     Ignore: true
+  resource_group_id:
+    Ignore: true
   sync_status:
+    Ignore: true
+  tags:
     Ignore: true
   user_info:
     Ignore: true

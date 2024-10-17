@@ -16,6 +16,10 @@ Properties:
         To: Description
       destination_cidr_ip:
         To: DestinationCidrIp
+      entry_type:
+        To: EntryType
+      ip_version:
+        Ignore: true
       network_acl_entry_name:
         To: NetworkAclEntryName
       policy:
@@ -30,6 +34,10 @@ Properties:
     Schema:
       description:
         To: Description
+      entry_type:
+        To: EntryType
+      ip_version:
+        Ignore: true
       network_acl_entry_name:
         To: NetworkAclEntryName
       policy:
@@ -45,6 +53,8 @@ Properties:
   network_acl_name:
     To: NetworkAclName
   resources:
+    Ignore: true
+  source_network_acl_id:
     Ignore: true
   status:
     Ignore: true

@@ -1,0 +1,51 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_vswitch_cidr_reservation
+  To: ALIYUN::VPC::VSwitchCidrReservation
+Properties:
+  cidr_reservation_cidr:
+    Ignore: true
+  cidr_reservation_description:
+    Ignore: true
+  cidr_reservation_mask:
+    Ignore: true
+  cidr_reservation_type:
+    Ignore: true
+  create_time:
+    Ignore: true
+  ip_version:
+    To: IpVersion
+  status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_cidr_reservation_id:
+    Ignore: true
+  vswitch_cidr_reservation_name:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: VSwitchCidrReservationId
+  cidr_reservation_cidr:
+    Ignore: true
+  cidr_reservation_description:
+    Ignore: true
+  cidr_reservation_type:
+    Ignore: true
+  create_time:
+    Ignore: true
+  ip_version:
+    Ignore: true
+  status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_cidr_reservation_id:
+    Ignore: true
+  vswitch_cidr_reservation_name:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

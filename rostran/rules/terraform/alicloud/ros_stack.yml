@@ -33,6 +33,8 @@ Properties:
     Ignore: true
   stack_policy_url:
     Ignore: true
+  status:
+    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list

@@ -35,7 +35,7 @@ Properties:
   notify_level:
     Ignore: true
   rest_version:
-    Ignore: true
+    To: RestVersion
   silence_time:
     Ignore: true
   webhook:

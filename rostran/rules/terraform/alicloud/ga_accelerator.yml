@@ -7,52 +7,57 @@ Properties:
   accelerator_name:
     To: AcceleratorName
   auto_renew_duration:
-    Ignore: true
+    To: AutoRenewDuration
   auto_use_coupon:
     Ignore: true
   bandwidth_billing_type:
     To: BandwidthBillingType
   cross_border_mode:
-    Ignore: true
+    To: CrossBorderMode
   cross_border_status:
-    Ignore: true
+    To: CrossBorderStatus
   description:
-    Ignore: true
+    To: Description
   duration:
     To: Duration
   payment_type:
-    To: InstanceChargeType
+    To: PaymentType
   pricing_cycle:
     To: PricingCycle
   promotion_option_no:
-    Ignore: true
+    To: PromotionOptionNo
   renewal_status:
-    Ignore: true
+    To: RenewalStatus
+  resource_group_id:
+    To: ResourceGroupId
   spec:
     To: Spec
   status:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: AcceleratorId
   accelerator_name:
     To: AcceleratorName
   auto_renew_duration:
-    Ignore: true
+    To: AutoRenewDuration
   bandwidth_billing_type:
-    Ignore: true
+    To: BandwidthBillingType
   cross_border_mode:
-    Ignore: true
+    To: CrossBorderMode
   cross_border_status:
-    Ignore: true
+    To: CrossBorderStatus
   description:
-    Ignore: true
+    To: Description
   payment_type:
     To: PaymentType
   renewal_status:
-    Ignore: true
+    To: RenewalStatus
+  resource_group_id:
+    To: ResourceGroupId
   spec:
     To: Spec
   status:

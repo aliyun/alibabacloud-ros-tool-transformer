@@ -1,0 +1,22 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_disk_instance_attachment
+  To: ALIYUN::ENS::DiskInstanceAttachment
+Properties:
+  delete_with_instance:
+    To: DeleteWithInstance
+  disk_id:
+    To: DiskId
+  instance_id:
+    To: InstanceId
+Attributes:
+  id:
+    To:
+    - DiskId
+    - InstanceId
+    Handler: colon_join
+  disk_id:
+    To: DiskId
+  instance_id:
+    To: InstanceId

@@ -28,6 +28,8 @@ Properties:
     To: Cpu
   dns_config:
     Ignore: true
+  dns_policy:
+    Ignore: true
   eci_security_context:
     Ignore: true
   eip_bandwidth:
@@ -66,12 +68,20 @@ Properties:
     To: ResourceGroupId
   restart_policy:
     To: RestartPolicy
+  security_context:
+    Ignore: true
   security_group_id:
     To: SecurityGroupId
+  spot_price_limit:
+    To: SpotPriceLimit
+  spot_strategy:
+    To: SpotStrategy
   status:
     Ignore: true
   tags:
     Ignore: true
+  termination_grace_period_seconds:
+    To: TerminationGracePeriodSeconds
   volumes:
     Ignore: true
   vswitch_id:
@@ -87,7 +97,7 @@ Attributes:
     Ignore: true
   dns_config:
     Ignore: true
-  eci_security_context:
+  dns_policy:
     Ignore: true
   instance_type:
     Ignore: true
@@ -103,8 +113,14 @@ Attributes:
     Ignore: true
   restart_policy:
     Ignore: true
+  security_context:
+    Ignore: true
   security_group_id:
     To: SecurityGroupId
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
   status:
     Ignore: true
   tags:

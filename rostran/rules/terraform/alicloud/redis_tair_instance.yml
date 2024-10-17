@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   auto_renew_period:
     Ignore: true
+  cluster_backup_id:
+    Ignore: true
   create_time:
     Ignore: true
   effective_time:
@@ -20,6 +22,8 @@ Properties:
     To: InstanceClass
   instance_type:
     Ignore: true
+  node_type:
+    To: NodeType
   password:
     To: Password
   payment_type:
@@ -28,14 +32,29 @@ Properties:
     To: Period
   port:
     Ignore: true
+  read_only_count:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   secondary_zone_id:
     To: SecondaryZoneId
+  security_group_id:
+    To: SecurityGroupId
   shard_count:
     To: ShardCount
+  slave_read_only_count:
+    Ignore: true
+  ssl_enabled:
+    Ignore: true
   status:
     Ignore: true
+  storage_performance_level:
+    Ignore: true
+  storage_size_gb:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
   tair_instance_name:
     Ignore: true
   vpc_id:
@@ -55,6 +74,8 @@ Attributes:
     To: InstanceClass
   instance_type:
     To: InstanceType
+  node_type:
+    To: NodeType
   payment_type:
     Ignore: true
   port:
@@ -63,9 +84,19 @@ Attributes:
     To: ResourceGroupId
   secondary_zone_id:
     Ignore: true
+  security_group_id:
+    Ignore: true
   shard_count:
     Ignore: true
+  ssl_enabled:
+    Ignore: true
   status:
+    Ignore: true
+  storage_performance_level:
+    Ignore: true
+  storage_size_gb:
+    Ignore: true
+  tags:
     Ignore: true
   tair_instance_name:
     Ignore: true

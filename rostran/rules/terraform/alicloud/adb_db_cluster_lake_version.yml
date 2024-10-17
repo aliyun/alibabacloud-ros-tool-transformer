@@ -1,0 +1,103 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_adb_db_cluster_lake_version
+  To: ALIYUN::ADBLake::DBCluster
+Properties:
+  backup_set_id:
+    To: BackupSetId
+  commodity_code:
+    Ignore: true
+  compute_resource:
+    To: ComputeResource
+  connection_string:
+    Ignore: true
+  create_time:
+    Ignore: true
+  db_cluster_description:
+    Ignore: true
+  db_cluster_version:
+    Ignore: true
+  enable_default_resource_group:
+    Ignore: true
+  engine:
+    Ignore: true
+  engine_version:
+    Ignore: true
+  expire_time:
+    Ignore: true
+  expired:
+    Ignore: true
+  lock_mode:
+    Ignore: true
+  lock_reason:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  port:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  restore_to_time:
+    To: RestoreToTime
+  restore_type:
+    To: RestoreType
+  security_ips:
+    Ignore: true
+  source_db_cluster_id:
+    To: SourceDbClusterId
+  status:
+    Ignore: true
+  storage_resource:
+    To: StorageResource
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBClusterId
+  commodity_code:
+    Ignore: true
+  compute_resource:
+    Ignore: true
+  connection_string:
+    To: ConnectionString
+  create_time:
+    Ignore: true
+  db_cluster_description:
+    Ignore: true
+  db_cluster_version:
+    Ignore: true
+  engine:
+    Ignore: true
+  engine_version:
+    Ignore: true
+  expire_time:
+    Ignore: true
+  expired:
+    Ignore: true
+  lock_mode:
+    Ignore: true
+  lock_reason:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  port:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_resource:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  zone_id:
+    Ignore: true

@@ -28,18 +28,22 @@ Properties:
     To: EncryptionType
   maintain_time:
     Ignore: true
+  multi_zone_vswitch_list:
+    Ignore: true
   payment_type:
     To: PaymentType
   period:
     To: Period
   port:
     Ignore: true
+  renewal_status:
+    Ignore: true
   status:
     Ignore: true
   storage_type:
     Ignore: true
   used_time:
-    Ignore: true
+    To: UsedTime
   vpc_id:
     To: VpcId
   vswitch_id:
@@ -55,9 +59,15 @@ Attributes:
     To: ConnectionString
   db_cluster_access_white_list:
     Ignore: true
+  db_cluster_class:
+    Ignore: true
   db_cluster_description:
     Ignore: true
   db_cluster_network_type:
+    Ignore: true
+  db_cluster_version:
+    Ignore: true
+  db_node_group_count:
     Ignore: true
   db_node_storage:
     Ignore: true
@@ -67,10 +77,14 @@ Attributes:
     To: EncryptionType
   maintain_time:
     Ignore: true
+  multi_zone_vswitch_list:
+    Ignore: true
   payment_type:
     To: PaymentType
   port:
     To: Port
+  renewal_status:
+    Ignore: true
   status:
     Ignore: true
   storage_type:

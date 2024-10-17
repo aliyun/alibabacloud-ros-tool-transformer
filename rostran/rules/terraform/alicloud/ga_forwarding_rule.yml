@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_forwarding_rule
+  To: ALIYUN::GA::ForwardingRules
+Properties:
+  accelerator_id:
+    To: AcceleratorId
+  forwarding_rule_id:
+    Ignore: true
+  forwarding_rule_name:
+    Ignore: true
+  forwarding_rule_status:
+    Ignore: true
+  listener_id:
+    To: ListenerId
+  priority:
+    Ignore: true
+  rule_actions:
+    Ignore: true
+  rule_conditions:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  accelerator_id:
+    Ignore: true
+  forwarding_rule_id:
+    Ignore: true
+  forwarding_rule_name:
+    Ignore: true
+  forwarding_rule_status:
+    Ignore: true
+  listener_id:
+    Ignore: true
+  priority:
+    Ignore: true
+  rule_actions:
+    Ignore: true
+  rule_conditions:
+    Ignore: true

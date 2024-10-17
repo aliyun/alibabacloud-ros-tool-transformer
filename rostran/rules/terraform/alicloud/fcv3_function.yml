@@ -1,0 +1,84 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_fcv3_function
+  To: ALIYUN::FC3::Function
+Properties:
+  code:
+    Ignore: true
+  cpu:
+    To: Cpu
+  create_time:
+    Ignore: true
+  custom_container_config:
+    Ignore: true
+  custom_dns:
+    Ignore: true
+  custom_runtime_config:
+    Ignore: true
+  description:
+    To: Description
+  disk_size:
+    To: DiskSize
+  environment_variables:
+    To: EnvironmentVariables
+  function_name:
+    To: FunctionName
+  gpu_config:
+    Ignore: true
+  handler:
+    To: Handler
+  instance_concurrency:
+    To: InstanceConcurrency
+  instance_lifecycle_config:
+    Ignore: true
+  internet_access:
+    To: InternetAccess
+  layers:
+    To: Layers
+    Type: List
+  log_config:
+    Ignore: true
+  memory_size:
+    To: MemorySize
+  nas_config:
+    Ignore: true
+  oss_mount_config:
+    Ignore: true
+  role:
+    To: Role
+  runtime:
+    To: Runtime
+  timeout:
+    To: Timeout
+  vpc_config:
+    Ignore: true
+Attributes:
+  id:
+    To: FunctionId
+  cpu:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  disk_size:
+    Ignore: true
+  environment_variables:
+    Ignore: true
+  function_name:
+    To: FunctionName
+  handler:
+    Ignore: true
+  instance_concurrency:
+    Ignore: true
+  internet_access:
+    Ignore: true
+  memory_size:
+    Ignore: true
+  role:
+    Ignore: true
+  runtime:
+    Ignore: true
+  timeout:
+    Ignore: true

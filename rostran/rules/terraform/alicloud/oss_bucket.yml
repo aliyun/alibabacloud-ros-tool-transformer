@@ -62,6 +62,8 @@ Properties:
         To: AllowEmptyReferer
       referers:
         To: RefererList
+  resource_group_id:
+    To: ResourceGroupId
   server_side_encryption_rule:
     To: ServerSideEncryptionConfiguration
     Type: Map
@@ -74,6 +76,7 @@ Properties:
     To: StorageClass
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   transfer_acceleration:
     Ignore: true
   versioning:
@@ -106,6 +109,8 @@ Attributes:
   owner:
     Ignore: true
   redundancy_type:
+    Ignore: true
+  resource_group_id:
     Ignore: true
   server_side_encryption_rule:
     Ignore: true

@@ -1,0 +1,51 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_ascript
+  To: ALIYUN::ALB::AScript
+Properties:
+  ascript_name:
+    Ignore: true
+  enabled:
+    To: Enabled
+  ext_attribute_enabled:
+    To: ExtAttributeEnabled
+  ext_attributes:
+    To: ExtAttributes
+    Type: List
+    Schema:
+      attribute_key:
+        To: AttributeKey
+      attribute_value:
+        To: AttributeValue
+  listener_id:
+    To: ListenerId
+  load_balancer_id:
+    Ignore: true
+  position:
+    Ignore: true
+  script_content:
+    To: ScriptContent
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: AScriptId
+  ascript_name:
+    Ignore: true
+  enabled:
+    Ignore: true
+  ext_attribute_enabled:
+    Ignore: true
+  ext_attributes:
+    Ignore: true
+  listener_id:
+    Ignore: true
+  load_balancer_id:
+    Ignore: true
+  position:
+    Ignore: true
+  script_content:
+    Ignore: true
+  status:
+    Ignore: true

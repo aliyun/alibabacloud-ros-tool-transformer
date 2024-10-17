@@ -4,7 +4,15 @@ ResourceType:
   From: alicloud_ens_instance
   To: ALIYUN::ENS::Instance
 Properties:
+  amount:
+    Ignore: true
+  auto_release_time:
+    Ignore: true
   auto_renew:
+    Ignore: true
+  auto_use_coupon:
+    Ignore: true
+  billing_cycle:
     Ignore: true
   carrier:
     Ignore: true
@@ -12,10 +20,14 @@ Properties:
     Ignore: true
   ens_region_id:
     To: EnsRegionId
+  force_stop:
+    Ignore: true
   host_name:
     To: HostName
   image_id:
     To: ImageId
+  include_data_disks:
+    Ignore: true
   instance_charge_strategy:
     Ignore: true
   instance_name:
@@ -26,7 +38,13 @@ Properties:
     To: InternetChargeType
   internet_max_bandwidth_out:
     Ignore: true
+  ip_type:
+    To: IpType
+  key_pair_name:
+    To: KeyPairName
   net_district_code:
+    Ignore: true
+  net_work_id:
     Ignore: true
   password:
     To: Password
@@ -38,9 +56,9 @@ Properties:
     To: Period
   period_unit:
     Ignore: true
+  private_ip_address:
+    To: PrivateIpAddress
   public_ip_identification:
-    Ignore: true
-  quantity:
     Ignore: true
   schedule_area_level:
     Ignore: true
@@ -48,18 +66,26 @@ Properties:
     Ignore: true
   scheduling_strategy:
     Ignore: true
+  security_id:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
   status:
     Ignore: true
   system_disk:
+    Ignore: true
+  tags:
     Ignore: true
   unique_suffix:
     To: UniqueSuffix
   user_data:
     To: UserData
+  vswitch_id:
+    To: VSwitchId
 Attributes:
   id:
     To: InstanceId
-  data_disk:
+  auto_release_time:
     Ignore: true
   ens_region_id:
     To: EnsRegionId
@@ -73,9 +99,21 @@ Attributes:
     To: InstanceType
   internet_max_bandwidth_out:
     Ignore: true
+  key_pair_name:
+    To: KeyPairName
+  net_work_id:
+    Ignore: true
   payment_type:
     To: PaymentType
+  private_ip_address:
+    To: PrivateIpAddress
+  security_id:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
   status:
     Ignore: true
-  system_disk:
+  tags:
     Ignore: true
+  vswitch_id:
+    To: VSwitchId

@@ -24,10 +24,15 @@ Properties:
         Ignore: true
       weight:
         To: Weight
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: VServerGroupId
   load_balancer_id:
-    Ignore: true
+    To: LoadBalancerId
   name:
+    Ignore: true
+  tags:
     Ignore: true

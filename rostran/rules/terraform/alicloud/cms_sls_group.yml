@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_sls_group
+  To: ALIYUN::CMS::SlsGroup
+Properties:
+  sls_group_config:
+    To: SlsGroupConfig
+    Type: List
+    Schema:
+      sls_logstore:
+        To: SlsLogstore
+      sls_project:
+        To: SlsProject
+      sls_region:
+        To: SlsRegion
+      sls_user_id:
+        To: SlsUserId
+  sls_group_description:
+    To: SlsGroupDescription
+  sls_group_name:
+    To: SlsGroupName
+Attributes:
+  id:
+    To: SlsGroupName
+  sls_group_config:
+    To: SlsGroupConfig
+  sls_group_description:
+    To: SlsGroupDescription
+  sls_group_name:
+    To: SlsGroupName

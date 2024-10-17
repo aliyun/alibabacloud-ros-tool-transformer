@@ -40,6 +40,8 @@ Properties:
     Ignore: true
   kibana_port:
     Ignore: true
+  kibana_private_security_group_id:
+    Ignore: true
   kibana_private_whitelist:
     Ignore: true
   kibana_whitelist:
@@ -88,6 +90,16 @@ Properties:
     To: Version
   vswitch_id:
     To: VSwitchId
+  warm_node_amount:
+    Ignore: true
+  warm_node_disk_encrypted:
+    Ignore: true
+  warm_node_disk_size:
+    Ignore: true
+  warm_node_disk_type:
+    Ignore: true
+  warm_node_spec:
+    Ignore: true
   zone_count:
     To: ZoneCount
 Attributes:
@@ -129,6 +141,8 @@ Attributes:
     Ignore: true
   kibana_port:
     To: KibanaPort
+  kibana_private_security_group_id:
+    Ignore: true
   kibana_private_whitelist:
     Ignore: true
   kibana_whitelist:
@@ -165,5 +179,15 @@ Attributes:
     To: Version
   vswitch_id:
     To: VSwitchId
+  warm_node_amount:
+    Ignore: true
+  warm_node_disk_encrypted:
+    Ignore: true
+  warm_node_disk_size:
+    Ignore: true
+  warm_node_disk_type:
+    Ignore: true
+  warm_node_spec:
+    Ignore: true
   zone_count:
     Ignore: true

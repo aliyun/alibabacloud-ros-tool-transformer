@@ -32,6 +32,8 @@ Properties:
         To: DiskName
       snapshot_id:
         To: SnapshotId
+  deletion_protection:
+    Ignore: true
   enable:
     Ignore: true
   force_delete:
@@ -41,7 +43,11 @@ Properties:
   image_id:
     To: ImageId
   image_name:
-    Ignore: true
+    To: ImageName
+  image_options_login_as_non_root:
+    To: ImageOptionsLoginAsNonRoot
+  instance_description:
+    To: InstanceDescription
   instance_ids:
     To: InstanceId
   instance_name:
@@ -50,6 +56,8 @@ Properties:
     Ignore: true
   instance_type:
     To: InstanceType
+  instance_type_override:
+    Ignore: true
   instance_types:
     To: InstanceTypes
     Type: List
@@ -83,10 +91,15 @@ Properties:
     To: ScalingConfigurationName
   scaling_group_id:
     To: ScalingGroupId
+  security_enhancement_strategy:
+    To: SecurityEnhancementStrategy
   security_group_id:
     To: SecurityGroupId
   security_group_ids:
-    Ignore: true
+    To: SecurityGroupIds
+    Type: List
+  spot_duration:
+    To: SpotDuration
   spot_price_limit:
     Ignore: true
   spot_strategy:
@@ -98,13 +111,19 @@ Properties:
   system_disk_category:
     To: SystemDiskCategory
   system_disk_description:
-    Ignore: true
+    To: SystemDiskDescription
+  system_disk_encrypt_algorithm:
+    To: SystemDiskEncryptAlgorithm
   system_disk_encrypted:
+    To: SystemDiskEncrypted
+  system_disk_kms_key_id:
     Ignore: true
   system_disk_name:
     Ignore: true
   system_disk_performance_level:
     To: SystemDiskPerformanceLevel
+  system_disk_provisioned_iops:
+    To: SystemDiskProvisionedIops
   system_disk_size:
     To: SystemDiskSize
   tags:
@@ -120,6 +139,8 @@ Attributes:
     Ignore: true
   data_disk:
     Ignore: true
+  deletion_protection:
+    Ignore: true
   force_delete:
     Ignore: true
   host_name:
@@ -127,6 +148,10 @@ Attributes:
   image_id:
     Ignore: true
   image_name:
+    Ignore: true
+  image_options_login_as_non_root:
+    Ignore: true
+  instance_description:
     Ignore: true
   instance_name:
     Ignore: true
@@ -154,9 +179,13 @@ Attributes:
     Ignore: true
   scaling_group_id:
     To: ScalingGroupId
+  security_enhancement_strategy:
+    Ignore: true
   security_group_id:
     Ignore: true
   security_group_ids:
+    Ignore: true
+  spot_duration:
     Ignore: true
   spot_price_limit:
     Ignore: true
@@ -168,11 +197,17 @@ Attributes:
     Ignore: true
   system_disk_description:
     Ignore: true
+  system_disk_encrypt_algorithm:
+    Ignore: true
   system_disk_encrypted:
+    Ignore: true
+  system_disk_kms_key_id:
     Ignore: true
   system_disk_name:
     Ignore: true
   system_disk_performance_level:
+    Ignore: true
+  system_disk_provisioned_iops:
     Ignore: true
   system_disk_size:
     Ignore: true

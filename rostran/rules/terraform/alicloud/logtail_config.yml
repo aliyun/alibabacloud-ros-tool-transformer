@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   input_type:
     Ignore: true
+  last_modify_time:
+    Ignore: true
   log_sample:
     Ignore: true
   logstore:
@@ -24,6 +26,8 @@ Attributes:
   input_detail:
     Ignore: true
   input_type:
+    Ignore: true
+  last_modify_time:
     Ignore: true
   log_sample:
     Ignore: true

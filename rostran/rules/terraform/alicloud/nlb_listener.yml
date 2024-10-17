@@ -44,6 +44,9 @@ Properties:
     To: StartPort
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: ListenerId
@@ -84,4 +87,6 @@ Attributes:
   start_port:
     Ignore: true
   status:
+    Ignore: true
+  tags:
     Ignore: true

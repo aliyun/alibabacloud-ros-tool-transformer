@@ -32,7 +32,7 @@ Properties:
     To: VSwitchId
 Attributes:
   id:
-    Ignore: true
+    To: DBInstanceName
   cn_class:
     Ignore: true
   cn_node_count:

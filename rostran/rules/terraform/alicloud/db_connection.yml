@@ -15,7 +15,7 @@ Properties:
   ip_address:
     Ignore: true
   port:
-    Ignore: true
+    To: Port
 Attributes:
   id:
     Ignore: true

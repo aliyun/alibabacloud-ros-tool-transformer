@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alikafka_sasl_user
+  To: ALIYUN::KAFKA::SaslUser
+Properties:
+  instance_id:
+    To: InstanceId
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  password:
+    To: Password
+  type:
+    To: Type
+  username:
+    To: Username
+Attributes:
+  id:
+    To:
+    - InstanceId
+    - UserName
+    Handler: colon_join
+  instance_id:
+    To: InstanceId
+  type:
+    Ignore: true
+  username:
+    To: Username

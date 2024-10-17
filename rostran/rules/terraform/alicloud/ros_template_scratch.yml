@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ros_template_scratch
+  To: ALIYUN::ROS::TemplateScratch
+Properties:
+  description:
+    To: Description
+  execution_mode:
+    Ignore: true
+  logical_id_strategy:
+    To: LogicalIdStrategy
+  preference_parameters:
+    To: PreferenceParameters
+    Type: List
+    Schema:
+      parameter_key:
+        To: ParameterKey
+      parameter_value:
+        To: ParameterValue
+  source_resource_group:
+    Ignore: true
+  source_resources:
+    To: SourceResources
+    Type: List
+    Schema:
+      resource_id:
+        To: ResourceId
+      resource_type:
+        To: ResourceType
+  source_tag:
+    Ignore: true
+  status:
+    Ignore: true
+  template_scratch_type:
+    To: TemplateScratchType
+Attributes:
+  id:
+    To: TemplateScratchId
+  description:
+    Ignore: true
+  logical_id_strategy:
+    Ignore: true
+  preference_parameters:
+    Ignore: true
+  source_resource_group:
+    Ignore: true
+  source_resources:
+    Ignore: true
+  source_tag:
+    Ignore: true
+  status:
+    Ignore: true
+  template_scratch_type:
+    Ignore: true

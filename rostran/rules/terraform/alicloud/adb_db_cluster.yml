@@ -24,11 +24,17 @@ Properties:
     To: DBNodeStorage
   description:
     To: DBClusterDescription
+  disk_encryption:
+    Ignore: true
   disk_performance_level:
     Ignore: true
   elastic_io_resource:
     Ignore: true
   elastic_io_resource_size:
+    Ignore: true
+  enable_ssl:
+    Ignore: true
+  kms_id:
     Ignore: true
   maintain_time:
     Ignore: true
@@ -82,11 +88,17 @@ Attributes:
     Ignore: true
   description:
     Ignore: true
+  disk_encryption:
+    Ignore: true
   disk_performance_level:
     Ignore: true
   elastic_io_resource:
     Ignore: true
   elastic_io_resource_size:
+    Ignore: true
+  enable_ssl:
+    Ignore: true
+  kms_id:
     Ignore: true
   maintain_time:
     Ignore: true

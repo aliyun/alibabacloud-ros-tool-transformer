@@ -6,10 +6,16 @@ ResourceType:
 Properties:
   architecture:
     To: Architecture
+  boot_mode:
+    To: BootMode
+  create_time:
+    Ignore: true
   delete_auto_snapshot:
     Ignore: true
   description:
     To: Description
+  detection_strategy:
+    To: DetectionStrategy
   disk_device_mapping:
     To: DiskDeviceMapping
     Type: List
@@ -18,16 +24,34 @@ Properties:
         To: Device
       disk_type:
         To: DiskType
+      format:
+        Ignore: true
+      import_oss_bucket:
+        Ignore: true
+      import_oss_object:
+        Ignore: true
+      progress:
+        Ignore: true
+      remain_time:
+        Ignore: true
       size:
         To: Size
       snapshot_id:
         To: SnapshotId
+  features:
+    Ignore: true
   force:
     Ignore: true
+  image_family:
+    To: ImageFamily
   image_name:
     To: ImageName
+  image_version:
+    To: ImageVersion
   instance_id:
     To: InstanceId
+  license_type:
+    Ignore: true
   name:
     Ignore: true
   platform:
@@ -36,6 +60,8 @@ Properties:
     To: ResourceGroupId
   snapshot_id:
     To: SnapshotId
+  status:
+    Ignore: true
   tags:
     To: Tags
 Attributes:
@@ -43,17 +69,29 @@ Attributes:
     To: ImageId
   architecture:
     Ignore: true
+  boot_mode:
+    Ignore: true
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   disk_device_mapping:
     Ignore: true
+  features:
+    Ignore: true
+  image_family:
+    Ignore: true
   image_name:
+    Ignore: true
+  image_version:
     Ignore: true
   name:
     Ignore: true
   platform:
     Ignore: true
   resource_group_id:
+    Ignore: true
+  status:
     Ignore: true
   tags:
     Ignore: true

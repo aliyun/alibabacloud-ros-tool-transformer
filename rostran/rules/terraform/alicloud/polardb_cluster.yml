@@ -28,7 +28,11 @@ Properties:
     To: DBNodeClass
   db_node_count:
     Ignore: true
+  db_node_id:
+    Ignore: true
   db_node_num:
+    Ignore: true
+  db_revision_version_list:
     Ignore: true
   db_type:
     To: DBType
@@ -47,6 +51,8 @@ Properties:
   from_time_service:
     Ignore: true
   gdn_id:
+    Ignore: true
+  hot_replica_mode:
     Ignore: true
   hot_standby_cluster:
     To: HotStandbyCluster
@@ -74,6 +80,8 @@ Properties:
     Ignore: true
   port:
     Ignore: true
+  provisioned_iops:
+    To: ProvisionedIops
   proxy_class:
     To: ProxyClass
   proxy_type:
@@ -83,6 +91,10 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   role_arn:
+    Ignore: true
+  scale_ap_ro_num_max:
+    Ignore: true
+  scale_ap_ro_num_min:
     Ignore: true
   scale_max:
     To: ScaleMax
@@ -98,6 +110,8 @@ Properties:
     To: SecurityGroupIds
     Type: List
   security_ips:
+    Ignore: true
+  serverless_steady_switch:
     Ignore: true
   serverless_type:
     To: ServerlessType
@@ -116,6 +130,8 @@ Properties:
   tags:
     To: Tags
     Handler: tags_dict_to_list
+  target_db_revision_version_code:
+    Ignore: true
   tde_region:
     Ignore: true
   tde_status:
@@ -152,6 +168,8 @@ Attributes:
     Ignore: true
   db_node_id:
     Ignore: true
+  db_revision_version_list:
+    Ignore: true
   db_type:
     Ignore: true
   db_version:
@@ -164,17 +182,25 @@ Attributes:
     Ignore: true
   encryption_key:
     Ignore: true
+  hot_replica_mode:
+    Ignore: true
   maintain_time:
     Ignore: true
   pay_type:
     Ignore: true
   port:
     Ignore: true
+  provisioned_iops:
+    Ignore: true
   renewal_status:
     Ignore: true
   resource_group_id:
     Ignore: true
   role_arn:
+    Ignore: true
+  scale_ap_ro_num_max:
+    Ignore: true
+  scale_ap_ro_num_min:
     Ignore: true
   scale_max:
     Ignore: true
@@ -190,6 +216,8 @@ Attributes:
     Ignore: true
   security_ips:
     Ignore: true
+  serverless_steady_switch:
+    Ignore: true
   serverless_type:
     Ignore: true
   status:
@@ -201,6 +229,8 @@ Attributes:
   storage_type:
     Ignore: true
   tags:
+    Ignore: true
+  target_db_revision_version_code:
     Ignore: true
   tde_region:
     Ignore: true

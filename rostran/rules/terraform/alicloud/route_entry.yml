@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_route_entry
   To: ALIYUN::ECS::Route
 Properties:
+  description:
+    Ignore: true
   destination_cidrblock:
     To: DestinationCidrBlock
   name:
@@ -19,6 +21,8 @@ Properties:
 Attributes:
   id:
     To: RouteEntryId
+  description:
+    Ignore: true
   destination_cidrblock:
     Ignore: true
   name:

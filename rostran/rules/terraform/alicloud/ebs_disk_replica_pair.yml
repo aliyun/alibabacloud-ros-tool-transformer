@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::EBS::DiskReplicaPair
 Properties:
   bandwidth:
-    Ignore: true
+    To: Bandwidth
   create_time:
     Ignore: true
   description:

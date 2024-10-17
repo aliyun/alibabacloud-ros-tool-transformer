@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_instance_grant
+  To: ALIYUN::VPC::GrantInstanceToCen
+Properties:
+  cen_id:
+    To: CenId
+  cen_owner_id:
+    To: CenOwnerId
+  child_instance_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  cen_id:
+    To: CenId
+  cen_owner_id:
+    Ignore: true
+  child_instance_id:
+    Ignore: true

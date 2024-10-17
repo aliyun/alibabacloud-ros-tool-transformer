@@ -1,0 +1,74 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ddoscoo_instance
+  To: ALIYUN::DDoSPro::ProInstance
+Properties:
+  address_type:
+    To: AddressType
+  bandwidth:
+    To: Bandwidth
+    Handler: to_int
+  bandwidth_mode:
+    Ignore: true
+  base_bandwidth:
+    To: BaseBandwidth
+    Handler: to_int
+  domain_count:
+    To: DomainCount
+    Handler: to_int
+  edition_sale:
+    Ignore: true
+  function_version:
+    To: FunctionVersion
+  ip:
+    Ignore: true
+  name:
+    Ignore: true
+  normal_bandwidth:
+    Ignore: true
+  normal_qps:
+    To: NormalQps
+    Handler: to_int
+  period:
+    To: Period
+    Handler: to_int
+  port_count:
+    To: PortCount
+    Handler: to_int
+  product_plan:
+    Ignore: true
+  product_type:
+    Ignore: true
+  service_bandwidth:
+    To: ServiceBandwidth
+    Handler: to_int
+Attributes:
+  id:
+    To: InstanceId
+  address_type:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  base_bandwidth:
+    Ignore: true
+  domain_count:
+    Ignore: true
+  edition_sale:
+    Ignore: true
+  function_version:
+    Ignore: true
+  ip:
+    Ignore: true
+  name:
+    Ignore: true
+  normal_bandwidth:
+    Ignore: true
+  normal_qps:
+    Ignore: true
+  port_count:
+    Ignore: true
+  product_plan:
+    Ignore: true
+  service_bandwidth:
+    Ignore: true

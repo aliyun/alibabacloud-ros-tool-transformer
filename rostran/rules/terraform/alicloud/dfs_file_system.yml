@@ -4,16 +4,26 @@ ResourceType:
   From: alicloud_dfs_file_system
   To: ALIYUN::DFS::FileSystem
 Properties:
+  create_time:
+    Ignore: true
+  data_redundancy_type:
+    To: DataRedundancyType
+  dedicated_cluster_id:
+    Ignore: true
   description:
     To: Description
   file_system_name:
     To: FileSystemName
+  partition_number:
+    To: PartitionNumber
   protocol_type:
     To: ProtocolType
   provisioned_throughput_in_mi_bps:
     To: ProvisionedThroughputInMiBps
   space_capacity:
     To: SpaceCapacity
+  storage_set_name:
+    To: StorageSetName
   storage_type:
     To: StorageType
   throughput_mode:
@@ -23,6 +33,8 @@ Properties:
 Attributes:
   id:
     To: FileSystemId
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   file_system_name:

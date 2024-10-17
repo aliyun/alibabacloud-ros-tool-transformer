@@ -12,6 +12,7 @@ Properties:
     To: AutoSnapshotPolicyName
   repeat_weekdays:
     To: RepeatWeekdays
+    Type: List
   retention_days:
     To: RetentionDays
   status:

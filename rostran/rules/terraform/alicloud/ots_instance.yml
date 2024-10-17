@@ -12,19 +12,17 @@ Properties:
     To: ClusterType
   name:
     To: InstanceName
+  network_source_acl:
+    Ignore: true
+  network_type_acl:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
 Attributes:
   id:
     To: InstanceName
-  accessed_by:
-    Ignore: true
-  description:
-    Ignore: true
-  instance_type:
-    Ignore: true
   name:
-    Ignore: true
-  tags:
     Ignore: true

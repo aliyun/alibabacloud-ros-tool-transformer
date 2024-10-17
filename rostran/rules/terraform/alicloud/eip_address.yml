@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   address_name:
     To: Name
+  allocation_id:
+    Ignore: true
   auto_pay:
     To: AutoPay
   bandwidth:
@@ -31,6 +33,8 @@ Properties:
   log_project:
     Ignore: true
   log_store:
+    Ignore: true
+  mode:
     Ignore: true
   name:
     To: Name
@@ -61,6 +65,8 @@ Attributes:
     To: AllocationId
   address_name:
     Ignore: true
+  allocation_id:
+    To: AllocationId
   bandwidth:
     Ignore: true
   create_time:
@@ -82,6 +88,8 @@ Attributes:
   log_project:
     Ignore: true
   log_store:
+    Ignore: true
+  mode:
     Ignore: true
   name:
     Ignore: true

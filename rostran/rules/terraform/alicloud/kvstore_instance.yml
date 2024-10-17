@@ -38,6 +38,8 @@ Properties:
     Ignore: true
   dedicated_host_group_id:
     Ignore: true
+  dry_run:
+    Ignore: true
   effective_time:
     Ignore: true
   enable_backup_log:
@@ -67,6 +69,8 @@ Properties:
   instance_release_protection:
     Ignore: true
   instance_type:
+    Ignore: true
+  is_auto_upgrade_open:
     Ignore: true
   kms_encrypted_password:
     Ignore: true
@@ -100,6 +104,8 @@ Properties:
     Ignore: true
   qps:
     Ignore: true
+  read_only_count:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   restore_time:
@@ -118,6 +124,8 @@ Properties:
     Ignore: true
   shard_count:
     To: ShardCount
+  slave_read_only_count:
+    Ignore: true
   srcdb_instance_id:
     Ignore: true
   ssl_enable:
@@ -180,6 +188,8 @@ Attributes:
     Ignore: true
   instance_type:
     To: InstanceType
+  is_auto_upgrade_open:
+    Ignore: true
   maintain_end_time:
     Ignore: true
   maintain_start_time:
@@ -196,6 +206,8 @@ Attributes:
     To: PrivateIp
   qps:
     Ignore: true
+  read_only_count:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   role_arn:
@@ -211,6 +223,8 @@ Attributes:
   security_ips:
     Ignore: true
   shard_count:
+    Ignore: true
+  slave_read_only_count:
     Ignore: true
   ssl_enable:
     Ignore: true

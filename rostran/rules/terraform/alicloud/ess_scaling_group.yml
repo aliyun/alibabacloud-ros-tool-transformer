@@ -4,6 +4,12 @@ ResourceType:
   From: alicloud_ess_scaling_group
   To: ALIYUN::ESS::ScalingGroup
 Properties:
+  alb_server_group:
+    Ignore: true
+  allocation_strategy:
+    To: AllocationStrategy
+  az_balance:
+    To: AzBalance
   db_instance_ids:
     To: DBInstanceIds
   default_cooldown:
@@ -16,12 +22,20 @@ Properties:
     To: GroupType
   health_check_type:
     To: HealthCheckType
+  health_check_types:
+    Ignore: true
+  instance_id:
+    To: InstanceId
   launch_template_id:
     To: LaunchTemplateId
+  launch_template_override:
+    Ignore: true
   launch_template_version:
     To: LaunchTemplateVersion
   loadbalancer_ids:
     To: LoadBalancerIds
+  max_instance_lifetime:
+    To: MaxInstanceLifetime
   max_size:
     To: MaxSize
   min_size:
@@ -37,8 +51,14 @@ Properties:
     Type: List
   removal_policies:
     To: RemovalPolicys
+  resource_group_id:
+    To: ResourceGroupId
   scaling_group_name:
     To: ScalingGroupName
+  scaling_policy:
+    To: ScalingPolicy
+  spot_allocation_strategy:
+    To: SpotAllocationStrategy
   spot_instance_pools:
     To: SpotInstancePools
   spot_instance_remedy:
@@ -53,6 +73,12 @@ Properties:
 Attributes:
   id:
     To: ScalingGroupId
+  alb_server_group:
+    Ignore: true
+  allocation_strategy:
+    Ignore: true
+  az_balance:
+    Ignore: true
   db_instance_ids:
     Ignore: true
   default_cooldown:
@@ -65,11 +91,15 @@ Attributes:
     Ignore: true
   health_check_type:
     Ignore: true
+  health_check_types:
+    Ignore: true
   launch_template_id:
     Ignore: true
   launch_template_version:
     Ignore: true
   loadbalancer_ids:
+    Ignore: true
+  max_instance_lifetime:
     Ignore: true
   max_size:
     Ignore: true
@@ -85,8 +115,14 @@ Attributes:
     Ignore: true
   removal_policies:
     Ignore: true
+  resource_group_id:
+    Ignore: true
   scaling_group_name:
     To: ScalingGroupName
+  scaling_policy:
+    Ignore: true
+  spot_allocation_strategy:
+    Ignore: true
   spot_instance_pools:
     Ignore: true
   spot_instance_remedy:

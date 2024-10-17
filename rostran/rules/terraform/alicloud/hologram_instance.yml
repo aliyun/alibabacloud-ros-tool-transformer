@@ -1,0 +1,92 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hologram_instance
+  To: ALIYUN::Hologram::Instance
+Properties:
+  auto_pay:
+    To: AutoPay
+  cold_storage_size:
+    To: ColdStorageSize
+  cpu:
+    To: Cpu
+  create_time:
+    Ignore: true
+  duration:
+    To: Duration
+  endpoints:
+    To: Endpoints
+    Type: List
+    Schema:
+      alternative_endpoints:
+        To: AlternativeEndpoints
+      enabled:
+        To: Enabled
+      endpoint:
+        To: Endpoint
+      type:
+        To: Type
+      vpc_id:
+        To: VpcId
+      vpc_instance_id:
+        To: VpcInstanceId
+      vswitch_id:
+        Ignore: true
+  gateway_count:
+    To: GatewayCount
+  initial_databases:
+    To: InitialDatabases
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  leader_instance_id:
+    To: LeaderInstanceId
+  payment_type:
+    To: PaymentType
+  pricing_cycle:
+    To: PricingCycle
+  resource_group_id:
+    To: ResourceGroupId
+  scale_type:
+    To: ScaleType
+  status:
+    Ignore: true
+  storage_size:
+    To: StorageSize
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: InstanceId
+  cold_storage_size:
+    To: ColdStorageSize
+  cpu:
+    To: Cpu
+  create_time:
+    To: CreateTime
+  endpoints:
+    To: Endpoints
+  gateway_count:
+    To: GatewayCount
+  instance_name:
+    To: InstanceName
+  instance_type:
+    To: InstanceType
+  leader_instance_id:
+    Ignore: true
+  payment_type:
+    To: PaymentType
+  resource_group_id:
+    To: ResourceGroupId
+  status:
+    Ignore: true
+  storage_size:
+    To: StorageSize
+  tags:
+    To: Tags
+  zone_id:
+    To: ZoneId

@@ -14,6 +14,8 @@ Properties:
         To: Disabled
       name:
         To: Name
+      version:
+        To: Version
   api_audiences:
     Ignore: true
   availability_zone:
@@ -44,6 +46,14 @@ Properties:
     To: CpuPolicy
   custom_san:
     Ignore: true
+  delete_options:
+    To: DeleteOptions
+    Type: List
+    Schema:
+      delete_mode:
+        To: DeleteMode
+      resource_type:
+        To: ResourceType
   deletion_protection:
     To: DeletionProtection
   enable_rrsa:
@@ -111,8 +121,6 @@ Properties:
     Ignore: true
   rrsa_metadata:
     Ignore: true
-  runtime:
-    Ignore: true
   security_group_id:
     To: SecurityGroupId
   service_account_issuer:
@@ -168,9 +176,9 @@ Properties:
       name:
         Ignore: true
       performance_level:
-        Ignore: true
+        To: PerformanceLevel
       size:
-        Ignore: true
+        To: Size
       snapshot_id:
         Ignore: true
   worker_disk_category:
@@ -206,3 +214,9 @@ Properties:
 Attributes:
   id:
     To: ClusterId
+  control_plane_log_components:
+    Ignore: true
+  control_plane_log_project:
+    Ignore: true
+  control_plane_log_ttl:
+    Ignore: true

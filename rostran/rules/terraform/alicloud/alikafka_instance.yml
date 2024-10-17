@@ -16,18 +16,30 @@ Properties:
     To: EipMax
   end_point:
     Ignore: true
+  group_left:
+    Ignore: true
+  group_used:
+    Ignore: true
   io_max:
     To: IoMax
   io_max_spec:
     To: IoMaxSpec
+  is_partition_buy:
+    Ignore: true
   kms_key_id:
     Ignore: true
   name:
     Ignore: true
   paid_type:
     Ignore: true
+  partition_left:
+    Ignore: true
   partition_num:
     To: PartitionNum
+  partition_used:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
   security_group:
     Ignore: true
   selected_zones:
@@ -41,8 +53,14 @@ Properties:
   tags:
     To: Tags
     Handler: tags_dict_to_list
+  topic_left:
+    Ignore: true
+  topic_num_of_buy:
+    Ignore: true
   topic_quota:
     To: TopicQuota
+  topic_used:
+    Ignore: true
   vpc_id:
     Ignore: true
   vswitch_id:
@@ -64,9 +82,15 @@ Attributes:
     Ignore: true
   end_point:
     Ignore: true
+  group_left:
+    Ignore: true
+  group_used:
+    Ignore: true
   io_max:
     Ignore: true
   io_max_spec:
+    Ignore: true
+  is_partition_buy:
     Ignore: true
   kms_key_id:
     Ignore: true
@@ -74,7 +98,13 @@ Attributes:
     To: Name
   paid_type:
     Ignore: true
+  partition_left:
+    Ignore: true
   partition_num:
+    Ignore: true
+  partition_used:
+    Ignore: true
+  resource_group_id:
     Ignore: true
   security_group:
     Ignore: true
@@ -86,7 +116,13 @@ Attributes:
     Ignore: true
   tags:
     Ignore: true
+  topic_left:
+    Ignore: true
+  topic_num_of_buy:
+    Ignore: true
   topic_quota:
+    Ignore: true
+  topic_used:
     Ignore: true
   vpc_id:
     Ignore: true

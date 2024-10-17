@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_domain
+  To: ALIYUN::GA::Domain
+Properties:
+  accelerator_id:
+    To: AcceleratorIds.0
+  domain:
+    To: Domain
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: AcceleratorIds.0
+  accelerator_id:
+    Ignore: true
+  domain:
+    To: Domain
+  status:
+    Ignore: true

@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   can_upgrade:
     Ignore: true
+  cleanup_cloud_resources:
+    Ignore: true
   cluster_id:
     To: ClusterId
   config:

@@ -18,6 +18,10 @@ Properties:
     To: Description
   forwarded_for_config:
     Ignore: true
+  http_version:
+    Ignore: true
+  idle_timeout:
+    Ignore: true
   listener_type:
     Ignore: true
   name:
@@ -34,6 +38,8 @@ Properties:
     To: Protocol
   proxy_protocol:
     To: ProxyProtocol
+  request_timeout:
+    Ignore: true
   security_policy_id:
     To: SecurityPolicyId
   status:
@@ -49,6 +55,10 @@ Attributes:
     Ignore: true
   forwarded_for_config:
     Ignore: true
+  http_version:
+    Ignore: true
+  idle_timeout:
+    Ignore: true
   listener_type:
     Ignore: true
   name:
@@ -56,6 +66,8 @@ Attributes:
   protocol:
     Ignore: true
   proxy_protocol:
+    Ignore: true
+  request_timeout:
     Ignore: true
   security_policy_id:
     Ignore: true

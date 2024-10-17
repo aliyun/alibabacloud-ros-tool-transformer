@@ -56,3 +56,5 @@ Attributes:
     To: RuleName
   status:
     Ignore: true
+  targets:
+    Ignore: true

@@ -12,6 +12,8 @@ Properties:
     Ignore: true
   cluster_id:
     To: ClusterId
+  compensate_with_on_demand:
+    Ignore: true
   cpu_policy:
     Ignore: true
   data_disks:
@@ -19,6 +21,8 @@ Properties:
   deployment_set_id:
     Ignore: true
   desired_size:
+    Ignore: true
+  force_delete:
     Ignore: true
   format_disk:
     Ignore: true
@@ -50,13 +54,25 @@ Properties:
     Ignore: true
   labels:
     Ignore: true
+  login_as_non_root:
+    Ignore: true
   management:
+    Ignore: true
+  multi_az_policy:
     Ignore: true
   name:
     Ignore: true
   node_count:
     Ignore: true
   node_name_mode:
+    Ignore: true
+  node_pool_id:
+    Ignore: true
+  node_pool_name:
+    Ignore: true
+  on_demand_base_capacity:
+    Ignore: true
+  on_demand_percentage_above_base_capacity:
     Ignore: true
   password:
     Ignore: true
@@ -66,7 +82,7 @@ Properties:
     Ignore: true
   platform:
     Ignore: true
-  polardb_ids:
+  private_pool_options:
     Ignore: true
   rds_instances:
     Ignore: true
@@ -90,11 +106,21 @@ Properties:
     Ignore: true
   security_group_ids:
     Ignore: true
+  security_hardening_os:
+    Ignore: true
   soc_enabled:
+    Ignore: true
+  spot_instance_pools:
+    Ignore: true
+  spot_instance_remedy:
     Ignore: true
   spot_price_limit:
     Ignore: true
   spot_strategy:
+    Ignore: true
+  system_disk_bursting_enabled:
+    Ignore: true
+  system_disk_categories:
     Ignore: true
   system_disk_category:
     Ignore: true
@@ -106,6 +132,8 @@ Properties:
     Ignore: true
   system_disk_performance_level:
     Ignore: true
+  system_disk_provisioned_iops:
+    Ignore: true
   system_disk_size:
     Ignore: true
   system_disk_snapshot_policy_id:
@@ -114,7 +142,11 @@ Properties:
     Ignore: true
   taints:
     Ignore: true
+  tee_config:
+    Ignore: true
   unschedulable:
+    Ignore: true
+  update_nodes:
     Ignore: true
   user_data:
     Ignore: true
@@ -132,6 +164,12 @@ Attributes:
   cis_enabled:
     Ignore: true
   cluster_id:
+    Ignore: true
+  compensate_with_on_demand:
+    Ignore: true
+  cpu_policy:
+    Ignore: true
+  data_disks:
     Ignore: true
   deployment_set_id:
     Ignore: true
@@ -153,11 +191,29 @@ Attributes:
     Ignore: true
   key_name:
     Ignore: true
+  kubelet_configuration:
+    Ignore: true
+  labels:
+    Ignore: true
+  login_as_non_root:
+    Ignore: true
+  management:
+    Ignore: true
+  multi_az_policy:
+    Ignore: true
   name:
     Ignore: true
   node_count:
     Ignore: true
   node_name_mode:
+    Ignore: true
+  node_pool_id:
+    To: NodePoolId
+  node_pool_name:
+    Ignore: true
+  on_demand_base_capacity:
+    Ignore: true
+  on_demand_percentage_above_base_capacity:
     Ignore: true
   password:
     Ignore: true
@@ -167,7 +223,7 @@ Attributes:
     Ignore: true
   platform:
     Ignore: true
-  polardb_ids:
+  private_pool_options:
     Ignore: true
   rds_instances:
     Ignore: true
@@ -177,6 +233,8 @@ Attributes:
     Ignore: true
   runtime_version:
     Ignore: true
+  scaling_config:
+    Ignore: true
   scaling_group_id:
     Ignore: true
   scaling_policy:
@@ -185,9 +243,21 @@ Attributes:
     Ignore: true
   security_group_ids:
     Ignore: true
+  security_hardening_os:
+    Ignore: true
   soc_enabled:
     Ignore: true
+  spot_instance_pools:
+    Ignore: true
+  spot_instance_remedy:
+    Ignore: true
+  spot_price_limit:
+    Ignore: true
   spot_strategy:
+    Ignore: true
+  system_disk_bursting_enabled:
+    Ignore: true
+  system_disk_categories:
     Ignore: true
   system_disk_category:
     Ignore: true
@@ -199,15 +269,21 @@ Attributes:
     Ignore: true
   system_disk_performance_level:
     Ignore: true
+  system_disk_provisioned_iops:
+    Ignore: true
   system_disk_size:
     Ignore: true
   system_disk_snapshot_policy_id:
     Ignore: true
+  tags:
+    Ignore: true
+  taints:
+    Ignore: true
+  tee_config:
+    Ignore: true
   unschedulable:
     Ignore: true
   user_data:
-    Ignore: true
-  vpc_id:
     Ignore: true
   vswitch_ids:
     Ignore: true

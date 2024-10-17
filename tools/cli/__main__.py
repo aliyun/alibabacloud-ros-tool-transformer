@@ -45,11 +45,12 @@ def generate(
         raise exceptions.RosToolException(message="Please supply --ros")
     elif not any((tf, cf)):
         raise exceptions.RosToolException(message="Please supply --tf/--cf")
-    elif all((tf, cf)):
+    elif all((tf, cf)) and tf != 'all' and cf != 'all':
         raise exceptions.RosToolException(
             message="Please supply --tf or --cf, but not both"
         )
-    elif tf:
+
+    if tf:
         alicloud_local = os.getenv("TERRAFORM_PROVIDER_ALICLOUD")
         if alicloud_local:
             typer.echo(
@@ -71,7 +72,7 @@ def generate(
             generator = TerraformRuleGenerator.initialize(tf, ros, tf_filename)
             generator.generate()
             typer.echo(f"Generate Terraform rule success: {tf} -> {ros}")
-    else:
+    if cf:
         generate_mapping = CF_ROS_GENERATE_MAPPINGS if cf == "all" else {cf: ros}
         for cf, ros in generate_mapping.items():
             typer.echo(f"Generating CloudFormation rule: {cf} -> {ros}")

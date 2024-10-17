@@ -4,7 +4,11 @@ ResourceType:
   From: alicloud_dcdn_domain
   To: ALIYUN::DCDN::Domain
 Properties:
+  cert_id:
+    Ignore: true
   cert_name:
+    Ignore: true
+  cert_region:
     Ignore: true
   cert_type:
     Ignore: true
@@ -12,16 +16,20 @@ Properties:
     To: CheckUrl
   cname:
     Ignore: true
+  create_time:
+    Ignore: true
   domain_name:
     To: DomainName
-  force_set:
+  env:
+    Ignore: true
+  function_type:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  scene:
+    Ignore: true
   scope:
     To: Scope
-  security_token:
-    Ignore: true
   sources:
     To: Sources
     Type: List
@@ -52,15 +60,29 @@ Properties:
 Attributes:
   id:
     To: DomainName
+  cert_id:
+    Ignore: true
   cert_name:
+    Ignore: true
+  cert_region:
+    Ignore: true
+  cert_type:
     Ignore: true
   cname:
     To: Cname
+  create_time:
+    Ignore: true
   domain_name:
     To: DomainName
+  function_type:
+    Ignore: true
   resource_group_id:
     Ignore: true
+  scene:
+    Ignore: true
   scope:
+    Ignore: true
+  sources:
     Ignore: true
   ssl_protocol:
     Ignore: true

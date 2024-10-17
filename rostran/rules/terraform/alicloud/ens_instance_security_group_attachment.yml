@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_instance_security_group_attachment
+  To: ALIYUN::ENS::InstanceSecurityGroupAttachment
+Properties:
+  instance_id:
+    To: InstanceId
+  security_group_id:
+    To: SecurityGroupId
+Attributes:
+  id:
+    To:
+    - InstanceId
+    - SecurityGroupId
+    Handler: colon_join
+  instance_id:
+    To: InstanceId
+  security_group_id:
+    To: SecurityGroupId

@@ -12,14 +12,20 @@ Properties:
     Ignore: true
   description:
     To: Description
+  dry_run:
+    Ignore: true
   enable_ipv6:
     To: EnableIpv6
+  ipv4_ipam_pool_id:
+    Ignore: true
   ipv6_cidr_block:
     To: Ipv6CidrBlock
   ipv6_cidr_blocks:
     Ignore: true
   ipv6_isp:
     To: Ipv6Isp
+  is_default:
+    Ignore: true
   name:
     To: VpcName
   resource_group_id:
@@ -34,6 +40,10 @@ Properties:
     To: SecondaryCidrBlocks
     Type: List
   status:
+    Ignore: true
+  system_route_table_description:
+    Ignore: true
+  system_route_table_name:
     Ignore: true
   tags:
     To: Tags
@@ -53,6 +63,8 @@ Attributes:
     Ignore: true
   description:
     Ignore: true
+  enable_ipv6:
+    Ignore: true
   ipv6_cidr_block:
     Ignore: true
   ipv6_cidr_blocks:
@@ -71,9 +83,13 @@ Attributes:
     Ignore: true
   status:
     Ignore: true
+  system_route_table_description:
+    Ignore: true
+  system_route_table_name:
+    Ignore: true
   tags:
     Ignore: true
   user_cidrs:
     Ignore: true
   vpc_name:
-    Ignore: true
+    To: VpcName

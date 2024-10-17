@@ -15,7 +15,7 @@ Properties:
   cpu:
     Ignore: true
   credit_specification:
-    Ignore: true
+    To: CreditSpecification
   data_disks:
     To: DiskMappings
     Type: List
@@ -47,11 +47,15 @@ Properties:
   deletion_protection:
     To: DeletionProtection
   deployment_set_group_no:
-    Ignore: true
+    To: DeploymentSetGroupNo
   deployment_set_id:
     To: DeploymentSetId
   description:
     To: Description
+  dry_run:
+    Ignore: true
+  enable_jumbo_frame:
+    Ignore: true
   force_delete:
     Ignore: true
   host_name:
@@ -59,11 +63,11 @@ Properties:
   hpc_cluster_id:
     To: HpcClusterId
   http_endpoint:
-    Ignore: true
+    To: HttpEndpoint
   http_put_response_hop_limit:
     Ignore: true
   http_tokens:
-    Ignore: true
+    To: HttpTokens
   image_id:
     To: ImageId
   include_data_disks:
@@ -94,6 +98,12 @@ Properties:
     Ignore: true
   kms_encryption_context:
     Ignore: true
+  launch_template_id:
+    Ignore: true
+  launch_template_name:
+    Ignore: true
+  launch_template_version:
+    Ignore: true
   maintenance_action:
     Ignore: true
   maintenance_notify:
@@ -102,7 +112,13 @@ Properties:
     Ignore: true
   memory:
     Ignore: true
+  network_card_index:
+    Ignore: true
   network_interface_id:
+    Ignore: true
+  network_interface_traffic_mode:
+    Ignore: true
+  network_interfaces:
     Ignore: true
   operator_type:
     Ignore: true
@@ -121,6 +137,8 @@ Properties:
   private_ip:
     To: PrivateIpAddress
   public_ip:
+    Ignore: true
+  queue_pair_number:
     Ignore: true
   renewal_status:
     Ignore: true
@@ -179,6 +197,8 @@ Properties:
     To: UserData
   volume_tags:
     Ignore: true
+  vpc_id:
+    To: VpcId
   vswitch_id:
     To: VSwitchId
 Attributes:
@@ -203,6 +223,8 @@ Attributes:
   deployment_set_id:
     Ignore: true
   description:
+    Ignore: true
+  enable_jumbo_frame:
     Ignore: true
   host_name:
     To: HostName
@@ -242,7 +264,13 @@ Attributes:
     Ignore: true
   memory:
     Ignore: true
+  network_card_index:
+    Ignore: true
   network_interface_id:
+    Ignore: true
+  network_interface_traffic_mode:
+    Ignore: true
+  network_interfaces:
     Ignore: true
   os_name:
     Ignore: true
@@ -258,6 +286,8 @@ Attributes:
     To: PrivateIp
   public_ip:
     To: PublicIp
+  queue_pair_number:
+    Ignore: true
   renewal_status:
     Ignore: true
   resource_group_id:
@@ -305,6 +335,8 @@ Attributes:
   user_data:
     Ignore: true
   volume_tags:
+    Ignore: true
+  vpc_id:
     Ignore: true
   vswitch_id:
     Ignore: true

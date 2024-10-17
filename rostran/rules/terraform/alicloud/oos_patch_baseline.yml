@@ -6,6 +6,11 @@ ResourceType:
 Properties:
   approval_rules:
     To: ApprovalRules
+  approved_patches:
+    To: ApprovedPatches
+    Type: List
+  approved_patches_enable_non_security:
+    To: ApprovedPatchesEnableNonSecurity
   create_time:
     Ignore: true
   description:
@@ -15,14 +20,25 @@ Properties:
   patch_baseline_name:
     To: PatchBaselineName
   rejected_patches:
-    Ignore: true
+    To: RejectedPatches
+    Type: List
   rejected_patches_action:
-    Ignore: true
+    To: RejectedPatchesAction
+  resource_group_id:
+    To: ResourceGroupId
+  sources:
+    To: Sources
+    Type: List
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: PatchBaselineName
   approval_rules:
     To: ApprovalRules
+  approved_patches:
+    To: ApprovedPatches
   create_time:
     To: CreateTime
   description:
@@ -32,6 +48,12 @@ Attributes:
   patch_baseline_name:
     To: PatchBaselineName
   rejected_patches:
-    Ignore: true
+    To: RejectedPatches
   rejected_patches_action:
-    Ignore: true
+    To: RejectedPatchesAction
+  resource_group_id:
+    To: ResourceGroupId
+  sources:
+    To: Sources
+  tags:
+    To: Tags

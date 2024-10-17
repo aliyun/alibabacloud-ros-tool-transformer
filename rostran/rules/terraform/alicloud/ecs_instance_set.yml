@@ -123,7 +123,7 @@ Properties:
     To: Tags
     Handler: tags_dict_to_list
   unique_suffix:
-    Ignore: true
+    To: UniqueSuffix
   vswitch_id:
     To: VSwitchId
   zone_id:

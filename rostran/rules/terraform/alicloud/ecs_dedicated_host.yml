@@ -26,6 +26,8 @@ Properties:
     To: Description
   detail_fee:
     Ignore: true
+  dry_run:
+    Ignore: true
   expired_time:
     Ignore: true
   min_quantity:

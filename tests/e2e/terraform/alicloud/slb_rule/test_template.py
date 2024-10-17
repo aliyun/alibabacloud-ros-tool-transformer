@@ -36,6 +36,9 @@ tpl = {
                 "Bandwidth": 5,
                 "ListenerPort": 22,
                 "HealthCheck": {"Port": 20},
+                "LoadBalancerId": {
+                    "Fn::GetAtt": ["alicloud_slb_load_balancer.rule", "LoadBalancerId"]
+                },
                 "Protocol": "http",
             },
         },

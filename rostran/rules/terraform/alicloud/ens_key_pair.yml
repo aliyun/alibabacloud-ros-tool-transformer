@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_key_pair
+  To: ALIYUN::ENS::KeyPair
+Properties:
+  key_pair_name:
+    To: KeyPairName
+  version:
+    Ignore: true
+Attributes:
+  id:
+    To: KeyPairName
+  key_pair_name:
+    To: KeyPairName
+  version:
+    Ignore: true

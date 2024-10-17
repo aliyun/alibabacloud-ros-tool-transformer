@@ -6,11 +6,15 @@ ResourceType:
 Properties:
   checkpoint:
     Ignore: true
+  data_check_configure:
+    Ignore: true
   data_initialization:
     To: DataInitialization
   data_synchronization:
     Ignore: true
   db_list:
+    Ignore: true
+  dedicated_cluster_id:
     Ignore: true
   delay_notice:
     Ignore: true
@@ -30,14 +34,20 @@ Properties:
     To: DestinationEndpoint.IP
   destination_endpoint_oracle_sid:
     Ignore: true
+  destination_endpoint_owner_id:
+    Ignore: true
   destination_endpoint_password:
     To: DestinationEndpoint.Password
   destination_endpoint_port:
     To: DestinationEndpoint.Port
   destination_endpoint_region:
     Ignore: true
+  destination_endpoint_role:
+    Ignore: true
   destination_endpoint_user_name:
     To: DestinationEndpoint.UserName
+  dts_bis_label:
+    Ignore: true
   dts_instance_id:
     Ignore: true
   dts_job_name:
@@ -74,6 +84,8 @@ Properties:
     To: SourceEndpoint.Role
   source_endpoint_user_name:
     To: SourceEndpoint.UserName
+  source_endpoint_vswitch_id:
+    Ignore: true
   status:
     Ignore: true
   structure_initialization:

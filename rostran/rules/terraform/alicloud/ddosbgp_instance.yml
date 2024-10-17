@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ddosbgp_instance
+  To: ALIYUN::DDoS::OriginInstance
+Properties:
+  bandwidth:
+    Ignore: true
+  base_bandwidth:
+    Ignore: true
+  ip_count:
+    Ignore: true
+  ip_type:
+    Ignore: true
+  name:
+    Ignore: true
+  normal_bandwidth:
+    Ignore: true
+  period:
+    To: Period
+  type:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  bandwidth:
+    Ignore: true
+  base_bandwidth:
+    Ignore: true
+  ip_count:
+    Ignore: true
+  ip_type:
+    Ignore: true
+  name:
+    Ignore: true
+  normal_bandwidth:
+    Ignore: true
+  type:
+    Ignore: true

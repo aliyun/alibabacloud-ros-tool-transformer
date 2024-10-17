@@ -1,0 +1,40 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rocketmq_consumer_group
+  To: ALIYUN::ROCKETMQ5::ConsumerGroup
+Properties:
+  consume_retry_policy:
+    Ignore: true
+  consumer_group_id:
+    To: ConsumerGroupId
+  create_time:
+    Ignore: true
+  delivery_order_type:
+    To: DeliveryOrderType
+  instance_id:
+    To: InstanceId
+  remark:
+    To: Remark
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To:
+    - InstanceId
+    - ConsumerGroupId
+    Handler: colon_join
+  consume_retry_policy:
+    Ignore: true
+  consumer_group_id:
+    To: ConsumerGroupId
+  create_time:
+    Ignore: true
+  delivery_order_type:
+    To: DeliveryOrderType
+  instance_id:
+    To: InstanceId
+  remark:
+    Ignore: true
+  status:
+    Ignore: true

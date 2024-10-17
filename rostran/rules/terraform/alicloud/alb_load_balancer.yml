@@ -18,11 +18,17 @@ Properties:
     To: AddressIpVersion
   address_type:
     To: AddressType
+  bandwidth_package_id:
+    To: BandwidthPackageId
+  create_time:
+    Ignore: true
   deletion_protection_enabled:
     To: DeletionProtectionEnabled
   dns_name:
     Ignore: true
   dry_run:
+    Ignore: true
+  ipv6_address_type:
     Ignore: true
   load_balancer_billing_config:
     To: LoadBalancerBillingConfig
@@ -55,6 +61,18 @@ Properties:
     To: ZoneMappings
     Type: List
     Schema:
+      load_balancer_addresses:
+        To: LoadBalancerAddresses
+        Type: List
+        Schema:
+          address:
+            To: IntranetAddress
+          allocation_id:
+            To: AllocationId
+          eip_type:
+            To: EipType
+          ipv6_address:
+            Ignore: true
       vswitch_id:
         To: VSwitchId
       zone_id:
@@ -70,8 +88,16 @@ Attributes:
     Ignore: true
   address_type:
     To: AddressType
+  bandwidth_package_id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  deletion_protection_enabled:
+    Ignore: true
   dns_name:
     To: DNSName
+  ipv6_address_type:
+    Ignore: true
   load_balancer_billing_config:
     Ignore: true
   load_balancer_edition:

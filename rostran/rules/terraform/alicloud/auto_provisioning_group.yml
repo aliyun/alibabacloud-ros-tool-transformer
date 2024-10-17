@@ -21,13 +21,13 @@ Properties:
       instance_type:
         To: InstanceType
       max_price:
-        Ignore: true
+        To: MaxPrice
       priority:
-        Ignore: true
+        To: Priority
       vswitch_id:
         To: VSwitchId
       weighted_capacity:
-        Ignore: true
+        To: WeightedCapacity
   launch_template_id:
     To: LaunchTemplateId
   launch_template_version:

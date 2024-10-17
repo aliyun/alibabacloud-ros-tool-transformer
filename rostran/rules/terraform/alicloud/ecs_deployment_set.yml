@@ -15,7 +15,7 @@ Properties:
   on_unable_to_redeploy_failed_instance:
     To: OnUnableToRedeployFailedInstance
   strategy:
-    Ignore: true
+    To: Strategy
 Attributes:
   id:
     To: DeploymentSetId

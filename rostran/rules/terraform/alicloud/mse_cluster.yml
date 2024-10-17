@@ -29,6 +29,8 @@ Properties:
     To: MseVersion
   net_type:
     To: NetType
+  payment_type:
+    Ignore: true
   private_slb_specification:
     To: PrivateSlbSpecification
   pub_network_flow:
@@ -37,7 +39,11 @@ Properties:
     To: PubSlbSpecification
   request_pars:
     To: RequestPars
+  resource_group_id:
+    Ignore: true
   status:
+    Ignore: true
+  tags:
     Ignore: true
   vpc_id:
     To: VpcId
@@ -66,9 +72,15 @@ Attributes:
     To: MseVersion
   net_type:
     To: NetType
+  payment_type:
+    Ignore: true
   pub_network_flow:
     To: PubNetworkFlow
+  resource_group_id:
+    Ignore: true
   status:
+    Ignore: true
+  tags:
     Ignore: true
   vpc_id:
     To: VpcId

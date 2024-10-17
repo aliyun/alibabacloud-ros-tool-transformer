@@ -20,6 +20,8 @@ Properties:
     To: Description
   disk_name:
     To: DiskName
+  dry_run:
+    Ignore: true
   enable_auto_snapshot:
     Ignore: true
   encrypt_algorithm:
@@ -27,7 +29,7 @@ Properties:
   encrypted:
     To: Encrypted
   instance_id:
-    Ignore: true
+    To: InstanceId
   kms_key_id:
     Ignore: true
   name:

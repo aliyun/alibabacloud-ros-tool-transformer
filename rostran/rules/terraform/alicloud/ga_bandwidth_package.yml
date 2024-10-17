@@ -34,6 +34,8 @@ Properties:
     To: Ratio
   renewal_status:
     Ignore: true
+  resource_group_id:
+    Ignore: true
   status:
     Ignore: true
   tags:
@@ -66,6 +68,8 @@ Attributes:
   ratio:
     To: Ratio
   renewal_status:
+    Ignore: true
+  resource_group_id:
     Ignore: true
   status:
     Ignore: true

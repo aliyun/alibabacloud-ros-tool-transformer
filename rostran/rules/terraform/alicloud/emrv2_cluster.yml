@@ -50,6 +50,8 @@ Properties:
     To: ClusterType
   deploy_mode:
     To: DeployMode
+  log_collect_strategy:
+    Ignore: true
   node_attributes:
     Ignore: true
   node_groups:
@@ -59,6 +61,8 @@ Properties:
       additional_security_group_ids:
         To: AdditionalSecurityGroupIds
         Type: List
+      auto_scaling_policy:
+        Ignore: true
       cost_optimized_config:
         Ignore: true
       data_disks:
@@ -73,6 +77,8 @@ Properties:
             To: PerformanceLevel
           size:
             To: Size
+      deployment_set_strategy:
+        To: DeploymentSetStrategy
       graceful_shutdown:
         To: GracefulShutdown
       instance_types:
@@ -84,6 +90,8 @@ Properties:
         To: NodeGroupName
       node_group_type:
         To: NodeGroupType
+      node_resize_strategy:
+        To: NodeResizeStrategy
       payment_type:
         Ignore: true
       spot_bid_prices:
@@ -122,11 +130,15 @@ Attributes:
     To: ClusterId
   applications:
     Ignore: true
+  bootstrap_scripts:
+    Ignore: true
   cluster_name:
     Ignore: true
   cluster_type:
     Ignore: true
   deploy_mode:
+    Ignore: true
+  log_collect_strategy:
     Ignore: true
   node_attributes:
     Ignore: true
@@ -139,6 +151,8 @@ Attributes:
   resource_group_id:
     Ignore: true
   security_mode:
+    Ignore: true
+  subscription_config:
     Ignore: true
   tags:
     Ignore: true

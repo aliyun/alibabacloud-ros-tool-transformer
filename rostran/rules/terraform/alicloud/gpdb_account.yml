@@ -10,6 +10,10 @@ Properties:
     To: AccountName
   account_password:
     To: AccountPassword
+  account_type:
+    Ignore: true
+  database_name:
+    Ignore: true
   db_instance_id:
     Ignore: true
   status:
@@ -21,6 +25,8 @@ Attributes:
     Ignore: true
   account_name:
     To: AccountName
+  account_type:
+    Ignore: true
   db_instance_id:
     Ignore: true
   status:

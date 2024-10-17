@@ -1,0 +1,113 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_nat_firewall_control_policy
+  To: ALIYUN::CLOUDFW::NatFirewallControlPolicy
+Properties:
+  acl_action:
+    To: AclAction
+  acl_uuid:
+    Ignore: true
+  application_name_list:
+    To: ApplicationNameList
+    Type: List
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  dest_port:
+    To: DestPort
+  dest_port_group:
+    To: DestPortGroup
+  dest_port_type:
+    To: DestPortType
+  destination:
+    To: Destination
+  destination_type:
+    To: DestinationType
+  direction:
+    To: Direction
+  domain_resolve_type:
+    To: DomainResolveType
+  end_time:
+    To: EndTime
+  ip_version:
+    To: IpVersion
+  nat_gateway_id:
+    To: NatGatewayId
+  new_order:
+    To: NewOrder
+  proto:
+    To: Proto
+  release:
+    Ignore: true
+  repeat_days:
+    To: RepeatDays
+    Type: List
+  repeat_end_time:
+    To: RepeatEndTime
+  repeat_start_time:
+    To: RepeatStartTime
+  repeat_type:
+    To: RepeatType
+  source:
+    To: Source
+  source_type:
+    To: SourceType
+  start_time:
+    To: StartTime
+Attributes:
+  id:
+    To:
+    - AclUuid
+    - NatGatewayId
+    - Direction
+    Handler: colon_join
+  acl_action:
+    Ignore: true
+  acl_uuid:
+    To: AclUuid
+  application_name_list:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  dest_port:
+    Ignore: true
+  dest_port_group:
+    Ignore: true
+  dest_port_type:
+    Ignore: true
+  destination:
+    Ignore: true
+  destination_type:
+    Ignore: true
+  direction:
+    To: Direction
+  domain_resolve_type:
+    Ignore: true
+  end_time:
+    Ignore: true
+  nat_gateway_id:
+    To: NatGatewayId
+  new_order:
+    Ignore: true
+  proto:
+    Ignore: true
+  release:
+    Ignore: true
+  repeat_days:
+    Ignore: true
+  repeat_end_time:
+    Ignore: true
+  repeat_start_time:
+    Ignore: true
+  repeat_type:
+    Ignore: true
+  source:
+    Ignore: true
+  source_type:
+    Ignore: true
+  start_time:
+    Ignore: true

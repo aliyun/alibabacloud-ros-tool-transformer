@@ -13,15 +13,15 @@ Properties:
   parameters:
     To: Parameters
   repeat_mode:
-    Ignore: true
+    To: RepeatMode
   status:
     Ignore: true
   timed:
     To: Timed
   username:
-    Ignore: true
+    To: Username
   windows_password_name:
-    Ignore: true
+    To: WindowsPasswordName
 Attributes:
   id:
     To: InvokeId

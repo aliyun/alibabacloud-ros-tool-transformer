@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_basic_ip_set
+  To: ALIYUN::GA::BasicIpSet
+Properties:
+  accelerate_region_id:
+    To: AccelerateRegionId
+  accelerator_id:
+    To: AcceleratorId
+  bandwidth:
+    To: Bandwidth
+  isp_type:
+    To: IspType
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: IpSetId
+  accelerate_region_id:
+    Ignore: true
+  accelerator_id:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  isp_type:
+    Ignore: true
+  status:
+    Ignore: true

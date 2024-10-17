@@ -1,0 +1,42 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_vbr_health_check
+  To: ALIYUN::CEN::CenVbrHealthCheck
+Properties:
+  cen_id:
+    To: CenId
+  health_check_interval:
+    To: HealthCheckInterval
+  health_check_source_ip:
+    To: HealthCheckSourceIp
+  health_check_target_ip:
+    To: HealthCheckTargetIp
+  healthy_threshold:
+    To: HealthyThreshold
+  vbr_instance_id:
+    To: VbrInstanceId
+  vbr_instance_owner_id:
+    To: VbrInstanceOwnerId
+  vbr_instance_region_id:
+    To: VbrInstanceRegionId
+Attributes:
+  id:
+    To:
+    - VbrInstanceId
+    - VbrInstanceRegionId
+    Handler: colon_join
+  cen_id:
+    To: CenId
+  health_check_interval:
+    To: HealthCheckInterval
+  health_check_source_ip:
+    To: HealthCheckSourceIp
+  health_check_target_ip:
+    To: HealthCheckTargetIp
+  healthy_threshold:
+    To: HealthyThreshold
+  vbr_instance_id:
+    To: VbrInstanceId
+  vbr_instance_region_id:
+    To: VbrInstanceRegionId

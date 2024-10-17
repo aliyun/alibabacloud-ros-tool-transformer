@@ -4,11 +4,19 @@ ResourceType:
   From: alicloud_log_project
   To: ALIYUN::SLS::Project
 Properties:
+  create_time:
+    Ignore: true
   description:
     To: Description
   name:
     To: Name
   policy:
+    Ignore: true
+  project_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
     Ignore: true
   tags:
     To: Tags
@@ -16,9 +24,19 @@ Properties:
 Attributes:
   id:
     To: Name
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   name:
     To: Name
   policy:
+    Ignore: true
+  project_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
     Ignore: true

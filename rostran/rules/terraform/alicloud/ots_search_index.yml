@@ -4,6 +4,12 @@ ResourceType:
   From: alicloud_ots_search_index
   To: ALIYUN::OTS::SearchIndex
 Properties:
+  create_time:
+    Ignore: true
+  current_sync_timestamp:
+    Ignore: true
+  index_id:
+    Ignore: true
   index_name:
     To: IndexName
   instance_name:
@@ -42,18 +48,12 @@ Properties:
           sorter:
             To: Sorters
             Handler: ots_search_index_sorters
+  sync_phase:
+    Ignore: true
   table_name:
     To: TableName
   time_to_live:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
-  create_time:
-    Ignore: true
-  current_sync_timestamp:
-    Ignore: true
-  index_id:
-    Ignore: true
-  sync_phase:
     Ignore: true

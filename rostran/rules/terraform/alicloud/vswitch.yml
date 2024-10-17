@@ -15,7 +15,7 @@ Properties:
   enable_ipv6:
     Ignore: true
   ipv6_cidr_block:
-    Ignore: true
+    To: Ipv6CidrBlock
   ipv6_cidr_block_mask:
     Ignore: true
   name:

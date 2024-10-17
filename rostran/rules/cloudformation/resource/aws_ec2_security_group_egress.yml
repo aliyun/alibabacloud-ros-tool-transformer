@@ -14,13 +14,13 @@ Properties:
     Ignore: true
   DestinationSecurityGroupId:
     Ignore: true
+  FromPort:
+    To: PortRange
+    MergeHandler: insert_str
   GroupId:
     Ignore: true
   IpProtocol:
     To: IpProtocol
-  FromPort:
-    To: PortRange
-    MergeHandler: insert_str
   ToPort:
     To: PortRange
     MergeHandler: append_str

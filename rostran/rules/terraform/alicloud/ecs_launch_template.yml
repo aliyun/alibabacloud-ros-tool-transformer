@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   auto_release_time:
     To: AutoReleaseTime
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
   data_disks:
     To: DiskMappings
     Type: List
@@ -16,6 +20,8 @@ Properties:
         To: DeleteWithInstance
       description:
         To: Description
+      device:
+        Ignore: true
       encrypted:
         To: Encrypted
       name:
@@ -78,6 +84,8 @@ Properties:
     To: PasswordInherit
   period:
     To: Period
+  period_unit:
+    Ignore: true
   private_ip_address:
     To: PrivateIpAddress
   ram_role_name:
@@ -92,7 +100,7 @@ Properties:
     To: SecurityGroupIds
     Type: List
   spot_duration:
-    Ignore: true
+    To: SpotDuration
   spot_price_limit:
     To: SpotPriceLimit
   spot_strategy:
@@ -137,6 +145,10 @@ Attributes:
     To: LaunchTemplateId
   auto_release_time:
     Ignore: true
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
   deployment_set_id:
     Ignore: true
   description:
@@ -174,6 +186,8 @@ Attributes:
   password_inherit:
     Ignore: true
   period:
+    Ignore: true
+  period_unit:
     Ignore: true
   private_ip_address:
     Ignore: true

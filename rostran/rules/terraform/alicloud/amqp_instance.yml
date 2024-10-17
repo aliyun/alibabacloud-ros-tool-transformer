@@ -4,22 +4,65 @@ ResourceType:
   From: alicloud_amqp_instance
   To: ALIYUN::AMQP::Instance
 Properties:
+  auto_renew:
+    Ignore: true
+  create_time:
+    Ignore: true
   instance_name:
     To: InstanceName
   instance_type:
     To: InstanceType
-  logistics:
+  max_connections:
     Ignore: true
   max_eip_tps:
-    Ignore: true
+    To: MaxEipTps
   max_tps:
-    Ignore: true
+    To: MaxTps
   modify_type:
     Ignore: true
   payment_type:
     To: PayType
   period:
     To: Period
+  period_cycle:
+    Ignore: true
+  queue_capacity:
+    To: QueueCapacity
+  renewal_duration:
+    Ignore: true
+  renewal_duration_unit:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  serverless_charge_type:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_size:
+    To: StorageSize
+  support_eip:
+    Ignore: true
+  support_tracing:
+    Ignore: true
+  tracing_storage_time:
+    To: TracingStorageTime
+Attributes:
+  id:
+    To: InstanceId
+  create_time:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  max_connections:
+    Ignore: true
+  max_eip_tps:
+    Ignore: true
+  max_tps:
+    Ignore: true
+  payment_type:
+    Ignore: true
   queue_capacity:
     Ignore: true
   renewal_duration:
@@ -34,22 +77,7 @@ Properties:
     Ignore: true
   support_eip:
     Ignore: true
-Attributes:
-  id:
-    To: InstanceId
-  instance_name:
+  support_tracing:
     Ignore: true
-  instance_type:
-    Ignore: true
-  payment_type:
-    Ignore: true
-  renewal_duration:
-    Ignore: true
-  renewal_duration_unit:
-    Ignore: true
-  renewal_status:
-    Ignore: true
-  status:
-    Ignore: true
-  support_eip:
+  tracing_storage_time:
     Ignore: true

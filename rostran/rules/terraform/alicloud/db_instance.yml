@@ -44,6 +44,8 @@ Properties:
     Ignore: true
   db_is_ignore_case:
     Ignore: true
+  db_param_group_id:
+    Ignore: true
   db_time_zone:
     Ignore: true
   deletion_protection:
@@ -58,6 +60,8 @@ Properties:
     To: Engine
   engine_version:
     To: EngineVersion
+  force:
+    Ignore: true
   force_restart:
     Ignore: true
   fresh_white_list_readins:
@@ -80,6 +84,8 @@ Properties:
     Ignore: true
   monitoring_period:
     Ignore: true
+  node_id:
+    Ignore: true
   parameters:
     Ignore: true
   period:
@@ -87,7 +93,7 @@ Properties:
   pg_hba_conf:
     Ignore: true
   port:
-    Ignore: true
+    To: Port
   private_ip_address:
     To: PrivateIpAddress
   released_keep_policy:
@@ -127,15 +133,16 @@ Properties:
   status:
     Ignore: true
   storage_auto_scale:
-    Ignore: true
+    To: StorageAutoScale
   storage_threshold:
-    Ignore: true
+    To: StorageThreshold
   storage_upper_bound:
-    Ignore: true
+    To: StorageUpperBound
   switch_time:
     Ignore: true
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   target_minor_version:
     Ignore: true
   tcp_connection_type:
@@ -197,6 +204,8 @@ Attributes:
     Ignore: true
   db_instance_type:
     Ignore: true
+  db_param_group_id:
+    Ignore: true
   deletion_protection:
     Ignore: true
   engine:
@@ -218,6 +227,8 @@ Attributes:
   manual_ha_time:
     Ignore: true
   monitoring_period:
+    Ignore: true
+  node_id:
     Ignore: true
   period:
     Ignore: true
@@ -269,7 +280,7 @@ Attributes:
     Ignore: true
   tcp_connection_type:
     Ignore: true
-  tde_Status:
+  tde_status:
     Ignore: true
   vpc_id:
     Ignore: true

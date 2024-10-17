@@ -76,6 +76,7 @@ Properties:
     Ignore: true
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   target_minor_version:
     Ignore: true
   upgrade_db_instance_kernel_version:

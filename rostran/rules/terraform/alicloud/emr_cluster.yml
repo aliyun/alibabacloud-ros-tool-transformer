@@ -45,9 +45,9 @@ Properties:
       decommission_timeout:
         Ignore: true
       disk_capacity:
-        Ignore: true
+        To: DiskCapacity
       disk_count:
-        Ignore: true
+        To: DiskCount
       disk_type:
         To: DiskType
       enable_graceful_decommission:
@@ -63,11 +63,11 @@ Properties:
       instance_type:
         To: InstanceType
       node_count:
-        Ignore: true
+        To: NodeCount
       period:
         To: Period
       sys_disk_capacity:
-        Ignore: true
+        To: SysDiskCapacity
       sys_disk_type:
         To: SysDiskType
   is_open_public_ip:

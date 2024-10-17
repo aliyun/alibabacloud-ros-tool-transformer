@@ -8,7 +8,11 @@ Properties:
     Ignore: true
   cen_id:
     To: CenId
+  create_time:
+    Ignore: true
   dry_run:
+    Ignore: true
+  force_delete:
     Ignore: true
   payment_type:
     To: ChargeType
@@ -30,16 +34,20 @@ Properties:
     To: TransitRouterAttachmentName
   transit_router_id:
     To: TransitRouterId
+  transit_router_vpc_attachment_name:
+    Ignore: true
+  transit_router_vpc_attachment_options:
+    Ignore: true
   vpc_id:
     To: VpcId
   vpc_owner_id:
-    Ignore: true
+    To: VpcOwnerId
   zone_mappings:
     To: ZoneMappings
     Type: List
     Schema:
       vswitch_id:
-        To: VSwitchId
+        Ignore: true
       zone_id:
         To: ZoneId
 Attributes:
@@ -49,6 +57,8 @@ Attributes:
     Ignore: true
   cen_id:
     To: CenId
+  create_time:
+    Ignore: true
   payment_type:
     Ignore: true
   resource_type:
@@ -63,6 +73,12 @@ Attributes:
     To: TransitRouterAttachmentId
   transit_router_attachment_name:
     To: TransitRouterAttachmentName
+  transit_router_id:
+    To: TransitRouterId
+  transit_router_vpc_attachment_name:
+    Ignore: true
+  transit_router_vpc_attachment_options:
+    Ignore: true
   vpc_id:
     To: VpcId
   vpc_owner_id:

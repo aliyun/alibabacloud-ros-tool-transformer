@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   access_group_name:
     To: AccessGroupName
+  create_time:
+    Ignore: true
   description:
     To: Description
   network_type:
@@ -14,6 +16,8 @@ Attributes:
   id:
     To: AccessGroupId
   access_group_name:
+    Ignore: true
+  create_time:
     Ignore: true
   description:
     Ignore: true

@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_polardb_database
   To: ALIYUN::POLARDB::DBInstance
 Properties:
+  account_name:
+    To: AccountName
   character_set_name:
     To: CharacterSetName
   db_cluster_id:
@@ -14,6 +16,8 @@ Properties:
     To: DBName
 Attributes:
   id:
+    Ignore: true
+  account_name:
     Ignore: true
   character_set_name:
     Ignore: true

@@ -6,6 +6,13 @@ ResourceType:
 Properties:
   description:
     To: Description
+  instance_type:
+    Ignore: true
+  ipv4_prefix_count:
+    To: Ipv4PrefixCount
+  ipv4_prefixes:
+    To: Ipv4Prefixes
+    Type: List
   ipv6_address_count:
     To: Ipv6AddressCount
   ipv6_addresses:
@@ -17,6 +24,8 @@ Properties:
     To: NetworkInterfaceName
   network_interface_name:
     To: NetworkInterfaceName
+  network_interface_traffic_mode:
+    To: NetworkInterfaceTrafficMode
   primary_ip_address:
     To: PrimaryIpAddress
   private_ip:
@@ -52,6 +61,12 @@ Attributes:
     To: NetworkInterfaceId
   description:
     Ignore: true
+  instance_type:
+    Ignore: true
+  ipv4_prefix_count:
+    Ignore: true
+  ipv4_prefixes:
+    Ignore: true
   ipv6_address_count:
     Ignore: true
   ipv6_addresses:
@@ -61,6 +76,8 @@ Attributes:
   name:
     Ignore: true
   network_interface_name:
+    Ignore: true
+  network_interface_traffic_mode:
     Ignore: true
   primary_ip_address:
     Ignore: true

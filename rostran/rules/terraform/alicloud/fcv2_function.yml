@@ -1,0 +1,112 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_fcv2_function
+  To: ALIYUN::FC::Function
+Properties:
+  ca_port:
+    Ignore: true
+  code:
+    Ignore: true
+  code_checksum:
+    Ignore: true
+  cpu:
+    To: Cpu
+  create_time:
+    Ignore: true
+  custom_container_config:
+    Ignore: true
+  custom_dns:
+    Ignore: true
+  custom_health_check_config:
+    Ignore: true
+  custom_runtime_config:
+    Ignore: true
+  description:
+    To: Description
+  disk_size:
+    To: DiskSize
+  environment_variables:
+    To: EnvironmentVariables
+  function_name:
+    To: FunctionName
+  gpu_memory_size:
+    To: GpuMemorySize
+  handler:
+    To: Handler
+  initialization_timeout:
+    To: InitializationTimeout
+  initializer:
+    To: Initializer
+  instance_concurrency:
+    To: InstanceConcurrency
+  instance_lifecycle_config:
+    Ignore: true
+  instance_type:
+    To: InstanceType
+  layers:
+    Ignore: true
+  memory_size:
+    To: MemorySize
+  runtime:
+    To: Runtime
+  service_name:
+    To: ServiceName
+  timeout:
+    To: Timeout
+Attributes:
+  id:
+    To:
+    - ServiceName
+    - FunctionName
+    Handler: colon_join
+  ca_port:
+    Ignore: true
+  code:
+    Ignore: true
+  code_checksum:
+    Ignore: true
+  cpu:
+    Ignore: true
+  create_time:
+    Ignore: true
+  custom_container_config:
+    Ignore: true
+  custom_dns:
+    Ignore: true
+  custom_health_check_config:
+    Ignore: true
+  custom_runtime_config:
+    Ignore: true
+  description:
+    Ignore: true
+  disk_size:
+    Ignore: true
+  environment_variables:
+    Ignore: true
+  function_name:
+    To: FunctionName
+  gpu_memory_size:
+    Ignore: true
+  handler:
+    Ignore: true
+  initialization_timeout:
+    Ignore: true
+  initializer:
+    Ignore: true
+  instance_concurrency:
+    Ignore: true
+  instance_lifecycle_config:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  layers:
+    Ignore: true
+  memory_size:
+    Ignore: true
+  runtime:
+    Ignore: true
+  service_name:
+    To: ServiceName
+  timeout:
+    Ignore: true

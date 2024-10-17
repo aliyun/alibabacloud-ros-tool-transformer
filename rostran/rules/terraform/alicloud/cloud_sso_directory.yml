@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_sso_directory
+  To: ALIYUN::CloudSSO::Directory
+Properties:
+  directory_name:
+    To: DirectoryName
+  mfa_authentication_status:
+    Ignore: true
+  saml_identity_provider_configuration:
+    Ignore: true
+  scim_synchronization_status:
+    Ignore: true
+Attributes:
+  id:
+    To: DirectoryId
+  directory_name:
+    Ignore: true
+  mfa_authentication_status:
+    Ignore: true
+  saml_identity_provider_configuration:
+    Ignore: true
+  scim_synchronization_status:
+    Ignore: true

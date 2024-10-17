@@ -1,0 +1,87 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_virtual_border_router
+  To: ALIYUN::VPC::VirtualBorderRouter
+Properties:
+  associated_physical_connections:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  circuit_code:
+    To: CircuitCode
+  description:
+    To: Description
+  detect_multiplier:
+    Ignore: true
+  enable_ipv6:
+    Ignore: true
+  include_cross_account_vbr:
+    Ignore: true
+  local_gateway_ip:
+    To: LocalGatewayIp
+  local_ipv6_gateway_ip:
+    Ignore: true
+  min_rx_interval:
+    Ignore: true
+  min_tx_interval:
+    Ignore: true
+  peer_gateway_ip:
+    To: PeerGatewayIp
+  peer_ipv6_gateway_ip:
+    Ignore: true
+  peering_ipv6_subnet_mask:
+    Ignore: true
+  peering_subnet_mask:
+    To: PeeringSubnetMask
+  physical_connection_id:
+    To: PhysicalConnectionId
+  route_table_id:
+    Ignore: true
+  status:
+    Ignore: true
+  vbr_owner_id:
+    Ignore: true
+  virtual_border_router_name:
+    Ignore: true
+  vlan_id:
+    To: VlanId
+Attributes:
+  id:
+    To: VbrId
+  bandwidth:
+    Ignore: true
+  circuit_code:
+    Ignore: true
+  description:
+    Ignore: true
+  detect_multiplier:
+    Ignore: true
+  enable_ipv6:
+    Ignore: true
+  local_gateway_ip:
+    Ignore: true
+  local_ipv6_gateway_ip:
+    Ignore: true
+  min_rx_interval:
+    Ignore: true
+  min_tx_interval:
+    Ignore: true
+  peer_gateway_ip:
+    Ignore: true
+  peer_ipv6_gateway_ip:
+    Ignore: true
+  peering_ipv6_subnet_mask:
+    Ignore: true
+  peering_subnet_mask:
+    Ignore: true
+  physical_connection_id:
+    Ignore: true
+  route_table_id:
+    To: RouteTableId
+  status:
+    Ignore: true
+  virtual_border_router_name:
+    Ignore: true
+  vlan_id:
+    Ignore: true

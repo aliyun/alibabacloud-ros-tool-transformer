@@ -274,7 +274,7 @@ class TerraformRuleGenerator(BaseRuleGenerator):
         return ros_key
 
     def _get_init_attrs_rule(self):
-        return ({"id": {"To": "# todo"}},)
+        return {"id": {"To": "# todo"}}
 
 
 class CloudFormationRuleGenerator(BaseRuleGenerator):

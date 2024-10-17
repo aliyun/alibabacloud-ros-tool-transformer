@@ -25,7 +25,7 @@ Properties:
   direction:
     To: Direction
   ip_version:
-    Ignore: true
+    To: IpVersion
   lang:
     Ignore: true
   proto:
@@ -60,6 +60,8 @@ Attributes:
   destination_type:
     Ignore: true
   direction:
+    Ignore: true
+  ip_version:
     Ignore: true
   proto:
     Ignore: true

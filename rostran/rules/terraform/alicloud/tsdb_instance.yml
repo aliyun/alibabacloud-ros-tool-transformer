@@ -17,7 +17,7 @@ Properties:
   instance_class:
     To: InstanceClass
   instance_storage:
-    Ignore: true
+    To: InstanceStorage
   payment_type:
     To: PayType
   status:

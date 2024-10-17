@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_api_gateway_group
   To: ALIYUN::ApiGateway::Group
 Properties:
+  base_path:
+    To: BasePath
   description:
     To: Description
   instance_id:
@@ -17,6 +19,8 @@ Properties:
 Attributes:
   id:
     To: GroupId
+  base_path:
+    Ignore: true
   description:
     Ignore: true
   instance_id:

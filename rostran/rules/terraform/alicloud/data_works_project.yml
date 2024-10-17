@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_data_works_project
+  To: ALIYUN::DataWorks::Project
+Properties:
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  display_name:
+    Ignore: true
+  project_mode:
+    To: ProjectMode
+  project_name:
+    To: ProjectName
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: ProjectId
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  display_name:
+    Ignore: true
+  project_mode:
+    Ignore: true
+  project_name:
+    Ignore: true
+  status:
+    Ignore: true

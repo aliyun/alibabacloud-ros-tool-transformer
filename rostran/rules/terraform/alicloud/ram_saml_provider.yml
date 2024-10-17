@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_ram_saml_provider
   To: ALIYUN::RAM::SAMLProvider
 Properties:
+  arn:
+    Ignore: true
   description:
     To: Description
   encodedsaml_metadata_document:

@@ -1,0 +1,107 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_log_oss_export
+  To: ALIYUN::SLS::OssExport
+Properties:
+  bucket:
+    Ignore: true
+  buffer_interval:
+    Ignore: true
+  buffer_size:
+    Ignore: true
+  compress_type:
+    Ignore: true
+  config_columns:
+    Ignore: true
+  content_type:
+    Ignore: true
+  csv_config_columns:
+    Ignore: true
+  csv_config_delimiter:
+    Ignore: true
+  csv_config_escape:
+    Ignore: true
+  csv_config_header:
+    Ignore: true
+  csv_config_linefeed:
+    Ignore: true
+  csv_config_null:
+    Ignore: true
+  csv_config_quote:
+    Ignore: true
+  display_name:
+    To: DisplayName
+  export_name:
+    To: ExportName
+  from_time:
+    Ignore: true
+  json_enable_tag:
+    Ignore: true
+  log_read_role_arn:
+    Ignore: true
+  logstore_name:
+    Ignore: true
+  path_format:
+    Ignore: true
+  prefix:
+    Ignore: true
+  project_name:
+    To: ProjectName
+  role_arn:
+    Ignore: true
+  suffix:
+    Ignore: true
+  time_zone:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  bucket:
+    Ignore: true
+  buffer_interval:
+    Ignore: true
+  buffer_size:
+    Ignore: true
+  compress_type:
+    Ignore: true
+  config_columns:
+    Ignore: true
+  content_type:
+    Ignore: true
+  csv_config_columns:
+    Ignore: true
+  csv_config_delimiter:
+    Ignore: true
+  csv_config_header:
+    Ignore: true
+  csv_config_linefeed:
+    Ignore: true
+  csv_config_null:
+    Ignore: true
+  csv_config_quote:
+    Ignore: true
+  display_name:
+    Ignore: true
+  export_name:
+    To: ExportName
+  from_time:
+    Ignore: true
+  json_enable_tag:
+    Ignore: true
+  log_read_role_arn:
+    Ignore: true
+  logstore_name:
+    Ignore: true
+  path_format:
+    Ignore: true
+  prefix:
+    Ignore: true
+  project_name:
+    To: ProjectName
+  role_arn:
+    Ignore: true
+  suffix:
+    Ignore: true
+  time_zone:
+    Ignore: true

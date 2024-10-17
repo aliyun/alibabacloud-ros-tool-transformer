@@ -1,0 +1,347 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ess_eci_scaling_configuration
+  To: ALIYUN::ESS::EciScalingConfiguration
+Properties:
+  acr_registry_infos:
+    To: AcrRegistryInfos
+    Type: List
+    Schema:
+      domains:
+        To: Domains
+        Type: List
+      instance_id:
+        To: InstanceId
+      instance_name:
+        To: InstanceName
+      region_id:
+        To: RegionId
+  active:
+    Ignore: true
+  active_deadline_seconds:
+    To: ActiveDeadlineSeconds
+  auto_create_eip:
+    To: AutoCreateEip
+  auto_match_image_cache:
+    To: AutoMatchImageCache
+  container_group_name:
+    To: ContainerGroupName
+  containers:
+    To: Containers
+    Type: List
+    Schema:
+      args:
+        To: Args
+        Type: List
+      commands:
+        To: Commands
+        Type: List
+      cpu:
+        To: Cpu
+      environment_vars:
+        To: EnvironmentVars
+        Type: List
+        Schema:
+          field_ref_field_path:
+            Ignore: true
+          key:
+            To: Key
+          value:
+            To: Value
+      gpu:
+        To: Gpu
+      image:
+        To: Image
+      image_pull_policy:
+        To: ImagePullPolicy
+      lifecycle_pre_stop_handler_execs:
+        Ignore: true
+      liveness_probe_exec_commands:
+        To: LivenessProbeExecCommands
+        Type: List
+      liveness_probe_failure_threshold:
+        To: LivenessProbeFailureThreshold
+      liveness_probe_http_get_path:
+        To: LivenessProbeHttpGetPath
+      liveness_probe_http_get_port:
+        To: LivenessProbeHttpGetPort
+      liveness_probe_http_get_scheme:
+        To: LivenessProbeHttpGetScheme
+      liveness_probe_initial_delay_seconds:
+        To: LivenessProbeInitialDelaySeconds
+      liveness_probe_period_seconds:
+        To: LivenessProbePeriodSeconds
+      liveness_probe_success_threshold:
+        To: LivenessProbeSuccessThreshold
+      liveness_probe_tcp_socket_port:
+        To: LivenessProbeTcpSocketPort
+      liveness_probe_timeout_seconds:
+        To: LivenessProbeTimeoutSeconds
+      memory:
+        To: Memory
+      name:
+        To: Name
+      ports:
+        To: Ports
+        Type: List
+        Schema:
+          port:
+            To: Port
+          protocol:
+            To: Protocol
+      readiness_probe_exec_commands:
+        To: ReadinessProbeExecCommands
+        Type: List
+      readiness_probe_failure_threshold:
+        To: ReadinessProbeFailureThreshold
+      readiness_probe_http_get_path:
+        To: ReadinessProbeHttpGetPath
+      readiness_probe_http_get_port:
+        To: ReadinessProbeHttpGetPort
+      readiness_probe_http_get_scheme:
+        To: ReadinessProbeHttpGetScheme
+      readiness_probe_initial_delay_seconds:
+        To: ReadinessProbeInitialDelaySeconds
+      readiness_probe_period_seconds:
+        To: ReadinessProbePeriodSeconds
+      readiness_probe_success_threshold:
+        To: ReadinessProbeSuccessThreshold
+      readiness_probe_tcp_socket_port:
+        To: ReadinessProbeTcpSocketPort
+      readiness_probe_timeout_seconds:
+        To: ReadinessProbeTimeoutSeconds
+      security_context_capability_adds:
+        Ignore: true
+      security_context_read_only_root_file_system:
+        Ignore: true
+      security_context_run_as_user:
+        To: SecurityContextRunAsUser
+      volume_mounts:
+        To: VolumeMounts
+        Type: List
+        Schema:
+          mount_path:
+            To: MountPath
+          name:
+            To: Name
+          read_only:
+            To: ReadOnly
+      working_dir:
+        To: WorkingDir
+  cpu:
+    To: Cpu
+  cpu_options_core:
+    To: CpuOptionsCore
+  cpu_options_threads_per_core:
+    To: CpuOptionsThreadsPerCore
+  description:
+    Ignore: true
+  dns_policy:
+    To: DnsPolicy
+  egress_bandwidth:
+    To: EgressBandwidth
+  eip_bandwidth:
+    To: EipBandwidth
+  enable_sls:
+    Ignore: true
+  ephemeral_storage:
+    To: EphemeralStorage
+  force_delete:
+    Ignore: true
+  host_aliases:
+    To: HostAliases
+    Type: List
+    Schema:
+      hostnames:
+        To: Hostnames
+        Type: List
+      ip:
+        To: Ip
+  host_name:
+    To: HostName
+  image_registry_credentials:
+    To: ImageRegistryCredentials
+    Type: List
+    Schema:
+      password:
+        To: Password
+      server:
+        To: Server
+      username:
+        Ignore: true
+  image_snapshot_id:
+    To: ImageSnapshotId
+  ingress_bandwidth:
+    To: IngressBandwidth
+  init_containers:
+    To: InitContainers
+    Type: List
+    Schema:
+      args:
+        To: Args
+        Type: List
+      commands:
+        To: Commands
+        Type: List
+      cpu:
+        To: Cpu
+      environment_vars:
+        Ignore: true
+      gpu:
+        To: Gpu
+      image:
+        To: Image
+      image_pull_policy:
+        To: ImagePullPolicy
+      memory:
+        To: Memory
+      name:
+        To: Name
+      ports:
+        Ignore: true
+      security_context_capability_adds:
+        Ignore: true
+      security_context_read_only_root_file_system:
+        Ignore: true
+      security_context_run_as_user:
+        To: SecurityContextRunAsUser
+      volume_mounts:
+        Ignore: true
+      working_dir:
+        To: WorkingDir
+  instance_types:
+    To: InstanceTypes
+    Type: List
+  ipv6_address_count:
+    To: Ipv6AddressCount
+  load_balancer_weight:
+    To: LoadBalancerWeight
+  memory:
+    To: Memory
+  ram_role_name:
+    To: RamRoleName
+  resource_group_id:
+    To: ResourceGroupId
+  restart_policy:
+    To: RestartPolicy
+  scaling_configuration_name:
+    To: ScalingConfigurationName
+  scaling_group_id:
+    To: ScalingGroupId
+  security_group_id:
+    To: SecurityGroupId
+  spot_price_limit:
+    To: SpotPriceLimit
+  spot_strategy:
+    To: SpotStrategy
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  termination_grace_period_seconds:
+    To: TerminationGracePeriodSeconds
+  volumes:
+    To: Volumes
+    Type: List
+    Schema:
+      config_file_volume_config_file_to_paths:
+        To: ConfigFileVolumeConfigFileToPaths
+        Type: List
+        Schema:
+          content:
+            To: Content
+          path:
+            To: Path
+      disk_volume_disk_id:
+        To: DiskVolumeDiskId
+      disk_volume_disk_size:
+        To: DiskVolumeDiskSize
+      disk_volume_fs_type:
+        Ignore: true
+      flex_volume_driver:
+        To: FlexVolumeDriver
+      flex_volume_fs_type:
+        To: FlexVolumeFsType
+      flex_volume_options:
+        To: FlexVolumeOptions
+      name:
+        To: Name
+      nfs_volume_path:
+        Ignore: true
+      nfs_volume_read_only:
+        Ignore: true
+      nfs_volume_server:
+        Ignore: true
+      type:
+        To: Type
+Attributes:
+  id:
+    To: ScalingConfigurationId
+  acr_registry_infos:
+    Ignore: true
+  active:
+    Ignore: true
+  active_deadline_seconds:
+    Ignore: true
+  auto_create_eip:
+    Ignore: true
+  auto_match_image_cache:
+    Ignore: true
+  container_group_name:
+    Ignore: true
+  cpu:
+    Ignore: true
+  cpu_options_core:
+    Ignore: true
+  cpu_options_threads_per_core:
+    Ignore: true
+  description:
+    Ignore: true
+  dns_policy:
+    Ignore: true
+  egress_bandwidth:
+    Ignore: true
+  eip_bandwidth:
+    Ignore: true
+  enable_sls:
+    Ignore: true
+  ephemeral_storage:
+    Ignore: true
+  force_delete:
+    Ignore: true
+  host_name:
+    Ignore: true
+  image_registry_credentials:
+    Ignore: true
+  image_snapshot_id:
+    Ignore: true
+  ingress_bandwidth:
+    Ignore: true
+  instance_types:
+    Ignore: true
+  ipv6_address_count:
+    Ignore: true
+  load_balancer_weight:
+    Ignore: true
+  memory:
+    Ignore: true
+  ram_role_name:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  restart_policy:
+    Ignore: true
+  scaling_configuration_name:
+    Ignore: true
+  scaling_group_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  tags:
+    Ignore: true
+  termination_grace_period_seconds:
+    Ignore: true

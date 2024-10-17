@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ram_login_profile
+  To: ALIYUN::RAM::LoginProfile
+Properties:
+  mfa_bind_required:
+    Ignore: true
+  password:
+    To: Password
+  password_reset_required:
+    To: PasswordResetRequired
+  user_name:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  mfa_bind_required:
+    Ignore: true
+  password_reset_required:
+    Ignore: true
+  user_name:
+    Ignore: true

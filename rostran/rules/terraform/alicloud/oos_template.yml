@@ -22,6 +22,7 @@ Properties:
     Ignore: true
   tags:
     To: Tags
+    Handler: tags_dict_to_list
   template_format:
     Ignore: true
   template_id:

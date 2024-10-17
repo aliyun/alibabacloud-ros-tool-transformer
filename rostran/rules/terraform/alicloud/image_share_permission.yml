@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_image_share_permission
+  To: ALIYUN::ECS::ImageSharePermission
+Properties:
+  account_id:
+    Ignore: true
+  image_id:
+    To: ImageId
+Attributes:
+  id:
+    Ignore: true
+  account_id:
+    Ignore: true
+  image_id:
+    To: ImageId

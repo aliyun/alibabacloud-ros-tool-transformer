@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_maxcompute_project
+  To: ALIYUN::MaxCompute::Project
+Properties:
+  comment:
+    To: Comment
+  create_time:
+    Ignore: true
+  default_quota:
+    To: DefaultQuota
+  ip_white_list:
+    Ignore: true
+  is_logical:
+    Ignore: true
+  owner:
+    Ignore: true
+  product_type:
+    Ignore: true
+  project_name:
+    Ignore: true
+  properties:
+    Ignore: true
+  security_properties:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  type:
+    Ignore: true
+Attributes:
+  id:
+    To: ProjectName
+  comment:
+    Ignore: true
+  create_time:
+    Ignore: true
+  default_quota:
+    Ignore: true
+  ip_white_list:
+    Ignore: true
+  owner:
+    Ignore: true
+  project_name:
+    Ignore: true
+  properties:
+    Ignore: true
+  security_properties:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  type:
+    Ignore: true

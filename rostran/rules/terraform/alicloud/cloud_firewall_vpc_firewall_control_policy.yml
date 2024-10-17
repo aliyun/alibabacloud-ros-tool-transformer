@@ -35,13 +35,13 @@ Properties:
   lang:
     To: Lang
   member_uid:
-    Ignore: true
+    To: MemberUid
   order:
     Ignore: true
   proto:
     To: Proto
   release:
-    Ignore: true
+    To: Release
   source:
     To: Source
   source_group_cidrs:

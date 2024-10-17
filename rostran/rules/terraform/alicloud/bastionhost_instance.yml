@@ -1,0 +1,71 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_bastionhost_instance
+  To: ALIYUN::BastionHost::Instance
+Properties:
+  ad_auth_server:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  description:
+    Ignore: true
+  enable_public_access:
+    Ignore: true
+  ldap_auth_server:
+    Ignore: true
+  license_code:
+    Ignore: true
+  period:
+    To: Period
+  plan_code:
+    Ignore: true
+  public_white_list:
+    Ignore: true
+  renew_period:
+    Ignore: true
+  renewal_period_unit:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  security_group_ids:
+    Ignore: true
+  storage:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  ad_auth_server:
+    Ignore: true
+  description:
+    Ignore: true
+  enable_public_access:
+    Ignore: true
+  ldap_auth_server:
+    Ignore: true
+  license_code:
+    Ignore: true
+  plan_code:
+    Ignore: true
+  public_white_list:
+    Ignore: true
+  renew_period:
+    Ignore: true
+  renewal_period_unit:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_group_ids:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

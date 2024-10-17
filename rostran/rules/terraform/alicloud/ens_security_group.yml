@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_security_group
+  To: ALIYUN::ENS::SecurityGroup
+Properties:
+  description:
+    To: Description
+  security_group_name:
+    To: SecurityGroupName
+Attributes:
+  id:
+    To: SecurityGroupId
+  description:
+    Ignore: true
+  security_group_name:
+    Ignore: true

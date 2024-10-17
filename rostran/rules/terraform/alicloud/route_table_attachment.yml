@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   route_table_id:
     To: RouteTableId
+  status:
+    Ignore: true
   vswitch_id:
     To: VSwitchId
 Attributes:
@@ -15,5 +17,7 @@ Attributes:
     - VSwitchId
   route_table_id:
     To: RouteTableId
+  status:
+    Ignore: true
   vswitch_id:
     To: VSwitchId

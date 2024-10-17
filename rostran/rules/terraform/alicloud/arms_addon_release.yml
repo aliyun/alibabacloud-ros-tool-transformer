@@ -1,0 +1,40 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_addon_release
+  To: ALIYUN::ARMS::AddonRelease
+Properties:
+  addon_name:
+    Ignore: true
+  addon_release_name:
+    Ignore: true
+  addon_version:
+    To: AddonVersion
+  aliyun_lang:
+    Ignore: true
+  create_time:
+    Ignore: true
+  environment_id:
+    To: EnvironmentId
+  values:
+    Ignore: true
+Attributes:
+  id:
+    To:
+    - EnvironmentId
+    - ReleaseName
+    Handler: colon_join
+  addon_name:
+    Ignore: true
+  addon_release_name:
+    Ignore: true
+  addon_version:
+    Ignore: true
+  aliyun_lang:
+    Ignore: true
+  create_time:
+    Ignore: true
+  environment_id:
+    To: EnvironmentId
+  values:
+    Ignore: true

@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_sso_access_configuration
+  To: ALIYUN::CloudSSO::AccessConfiguration
+Properties:
+  access_configuration_id:
+    Ignore: true
+  access_configuration_name:
+    To: AccessConfigurationName
+  description:
+    To: Description
+  directory_id:
+    To: DirectoryId
+  force_remove_permission_policies:
+    Ignore: true
+  permission_policies:
+    Ignore: true
+  relay_state:
+    To: RelayState
+  session_duration:
+    To: SessionDuration
+Attributes:
+  id:
+    Ignore: true
+  access_configuration_id:
+    To: AccessConfigurationId
+  access_configuration_name:
+    Ignore: true
+  description:
+    Ignore: true
+  directory_id:
+    Ignore: true
+  permission_policies:
+    Ignore: true
+  relay_state:
+    Ignore: true
+  session_duration:
+    Ignore: true

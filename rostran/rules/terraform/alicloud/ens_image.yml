@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_image
+  To: ALIYUN::ENS::Image
+Properties:
+  create_time:
+    Ignore: true
+  delete_after_image_upload:
+    Ignore: true
+  image_name:
+    To: ImageName
+  instance_id:
+    To: InstanceId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: ImageId
+  create_time:
+    To: CreateTime
+  image_name:
+    To: ImageName
+  instance_id:
+    To: InstanceId
+  status:
+    Ignore: true

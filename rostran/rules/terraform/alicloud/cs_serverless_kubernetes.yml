@@ -14,6 +14,8 @@ Properties:
         To: Disabled
       name:
         To: Name
+      version:
+        Ignore: true
   client_cert:
     Ignore: true
   client_key:
@@ -23,6 +25,10 @@ Properties:
   cluster_spec:
     Ignore: true
   create_v2_cluster:
+    Ignore: true
+  custom_san:
+    Ignore: true
+  delete_options:
     Ignore: true
   deletion_protection:
     Ignore: true
@@ -79,7 +85,13 @@ Attributes:
     To: ClusterId
   cluster_spec:
     Ignore: true
+  custom_san:
+    Ignore: true
   deletion_protection:
+    Ignore: true
+  enable_rrsa:
+    Ignore: true
+  endpoint_public_access_enabled:
     Ignore: true
   load_balancer_spec:
     Ignore: true
@@ -93,11 +105,13 @@ Attributes:
     Ignore: true
   security_group_id:
     Ignore: true
+  service_cidr:
+    Ignore: true
+  timezone:
+    Ignore: true
   version:
     Ignore: true
   vpc_id:
-    Ignore: true
-  vswitch_id:
     Ignore: true
   vswitch_ids:
     Ignore: true

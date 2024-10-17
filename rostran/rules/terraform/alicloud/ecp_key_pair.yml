@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecp_key_pair
+  To: ALIYUN::CloudPhone::KeyPair
+Properties:
+  key_pair_name:
+    To: KeyPairName
+  public_key_body:
+    To: PublicKeyBody
+Attributes:
+  id:
+    To: KeyPairName
+  key_pair_name:
+    To: KeyPairName

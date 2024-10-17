@@ -10,6 +10,9 @@ Properties:
     To: Ipv6SourceCidrIp
   Description:
     To: Description
+  FromPort:
+    To: PortRange
+    MergeHandler: insert_str
   GroupId:
     Ignore: true
   GroupName:
@@ -24,9 +27,6 @@ Properties:
     Ignore: true
   SourceSecurityGroupOwnerId:
     Ignore: true
-  FromPort:
-    To: PortRange
-    MergeHandler: insert_str
   ToPort:
     To: PortRange
     MergeHandler: append_str

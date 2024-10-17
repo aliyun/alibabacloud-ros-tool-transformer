@@ -1,5 +1,6 @@
 import json
 import os
+import time
 from subprocess import run
 from tempfile import NamedTemporaryFile
 
@@ -7,6 +8,7 @@ import requests
 import jsonref
 from alibabacloud_ros20190910 import models as ros_models
 from alibabacloud_ros20190910.client import Client as RosClient
+from Tea.exceptions import TeaException
 
 from tools import exceptions
 
@@ -19,8 +21,17 @@ class RosResource:
 
     def fetch(self):
         req = ros_models.GetResourceTypeRequest(self.resource_type)
-        resp = self.client.get_resource_type(req)
-        self._rt_info = resp.body
+        resp = None
+        for i in range(4):
+            try:
+                resp = self.client.get_resource_type(req)
+                break
+            except TeaException as e:
+                if e.code != 'Throttling.User' or i == 3:
+                    raise e
+                time.sleep(10)
+        if resp:
+            self._rt_info = resp.body
 
     @property
     def rt_info(self) -> ros_models.GetResourceTypeResponseBody:

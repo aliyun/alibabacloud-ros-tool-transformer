@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_cms_event_rule
   To: ALIYUN::CMS::EventRule
 Properties:
+  contact_parameters:
+    Ignore: true
   description:
     To: Description
   event_pattern:
@@ -23,26 +25,48 @@ Properties:
         To: Product
       sql_filter:
         Ignore: true
+  fc_parameters:
+    Ignore: true
   group_id:
     To: GroupId
+  mns_parameters:
+    Ignore: true
+  open_api_parameters:
+    Ignore: true
   rule_name:
     To: RuleName
   silence_time:
     Ignore: true
+  sls_parameters:
+    Ignore: true
   status:
+    Ignore: true
+  webhook_parameters:
     Ignore: true
 Attributes:
   id:
+    Ignore: true
+  contact_parameters:
     Ignore: true
   description:
     Ignore: true
   event_pattern:
     Ignore: true
+  fc_parameters:
+    Ignore: true
   group_id:
+    Ignore: true
+  mns_parameters:
+    Ignore: true
+  open_api_parameters:
     Ignore: true
   rule_name:
     Ignore: true
   silence_time:
     Ignore: true
+  sls_parameters:
+    Ignore: true
   status:
+    Ignore: true
+  webhook_parameters:
     Ignore: true

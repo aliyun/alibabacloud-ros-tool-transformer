@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_alert
+  To: ALIYUN::SLS::Alert
+Properties:
+  alert_name:
+    Ignore: true
+  configuration:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  display_name:
+    Ignore: true
+  project_name:
+    Ignore: true
+  schedule:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  alert_name:
+    To: Name
+  configuration:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  display_name:
+    Ignore: true
+  project_name:
+    Ignore: true
+  schedule:
+    Ignore: true
+  status:
+    Ignore: true

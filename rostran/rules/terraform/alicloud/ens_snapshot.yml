@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_snapshot
+  To: ALIYUN::ENS::Snapshot
+Properties:
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  disk_id:
+    To: DiskId
+  ens_region_id:
+    To: EnsRegionId
+  snapshot_name:
+    To: SnapshotName
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: SnapShotId
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  disk_id:
+    Ignore: true
+  ens_region_id:
+    Ignore: true
+  snapshot_name:
+    Ignore: true
+  status:
+    Ignore: true

@@ -1,0 +1,40 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dms_enterprise_user
+  To: ALIYUN::DMS::User
+Properties:
+  max_execute_count:
+    Ignore: true
+  max_result_count:
+    Ignore: true
+  mobile:
+    To: Mobile
+  nick_name:
+    Ignore: true
+  role_names:
+    To: RoleNames
+    Type: List
+  status:
+    To: Status
+  tid:
+    To: Tid
+  uid:
+    To: Uid
+  user_name:
+    To: UserName
+Attributes:
+  id:
+    To: UserId
+  mobile:
+    To: Mobile
+  nick_name:
+    Ignore: true
+  role_names:
+    To: RoleNames
+  status:
+    Ignore: true
+  uid:
+    To: Uid
+  user_name:
+    To: UserName

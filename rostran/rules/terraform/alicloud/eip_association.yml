@@ -12,6 +12,8 @@ Properties:
     To: InstanceId
   instance_type:
     Ignore: true
+  mode:
+    To: Mode
   private_ip_address:
     To: PrivateIpAddress
   vpc_id:
@@ -24,6 +26,10 @@ Attributes:
   instance_id:
     Ignore: true
   instance_type:
+    Ignore: true
+  mode:
+    Ignore: true
+  private_ip_address:
     Ignore: true
   vpc_id:
     Ignore: true

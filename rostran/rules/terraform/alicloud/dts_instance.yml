@@ -1,0 +1,83 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dts_instance
+  To: ALIYUN::DTS::Instance
+Properties:
+  auto_pay:
+    To: AutoPay
+  auto_start:
+    To: AutoStart
+  compute_unit:
+    To: ComputeUnit
+  create_time:
+    Ignore: true
+  database_count:
+    To: DatabaseCount
+  destination_endpoint_engine_name:
+    To: DestinationEndpointEngineName
+  destination_region:
+    To: DestinationRegion
+  dts_instance_id:
+    Ignore: true
+  du:
+    To: Du
+  fee_type:
+    To: FeeType
+  instance_class:
+    To: InstanceClass
+  instance_name:
+    Ignore: true
+  job_id:
+    To: JobId
+  payment_type:
+    Ignore: true
+  period:
+    To: Period
+  resource_group_id:
+    To: ResourceGroupId
+  source_endpoint_engine_name:
+    To: SourceEndpointEngineName
+  source_region:
+    To: SourceRegion
+  status:
+    Ignore: true
+  sync_architecture:
+    To: SyncArchitecture
+  synchronization_direction:
+    Ignore: true
+  tags:
+    Ignore: true
+  type:
+    To: Type
+  used_time:
+    To: UsedTime
+Attributes:
+  id:
+    To: InstanceId
+  create_time:
+    Ignore: true
+  destination_endpoint_engine_name:
+    Ignore: true
+  destination_region:
+    Ignore: true
+  dts_instance_id:
+    Ignore: true
+  instance_class:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  source_endpoint_engine_name:
+    Ignore: true
+  source_region:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  type:
+    Ignore: true

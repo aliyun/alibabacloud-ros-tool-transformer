@@ -1,0 +1,36 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_nlb_security_policy
+  To: ALIYUN::NLB::SecurityPolicy
+Properties:
+  ciphers:
+    To: Ciphers
+    Type: List
+  resource_group_id:
+    To: ResourceGroupId
+  security_policy_name:
+    To: SecurityPolicyName
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  tls_versions:
+    To: TlsVersions
+    Type: List
+Attributes:
+  id:
+    To: SecurityPolicyId
+  ciphers:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_policy_name:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true
+  tls_versions:
+    Ignore: true

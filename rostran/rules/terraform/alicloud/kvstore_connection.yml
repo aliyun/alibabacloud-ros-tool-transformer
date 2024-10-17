@@ -11,7 +11,7 @@ Properties:
   instance_id:
     To: InstanceId
   port:
-    Ignore: true
+    To: Port
 Attributes:
   id:
     Ignore: true

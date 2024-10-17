@@ -17,3 +17,5 @@ Attributes:
     Ignore: true
   description:
     Ignore: true
+  status:
+    Ignore: true

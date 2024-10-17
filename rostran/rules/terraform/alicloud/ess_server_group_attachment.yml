@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ess_server_group_attachment
+  To: ALIYUN::ESS::ServerGroupAttachment
+Properties:
+  force_attach:
+    To: ForceAttach
+  port:
+    Ignore: true
+  scaling_group_id:
+    To: ScalingGroupId
+  server_group_id:
+    Ignore: true
+  type:
+    Ignore: true
+  weight:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  port:
+    Ignore: true
+  scaling_group_id:
+    Ignore: true
+  server_group_id:
+    Ignore: true
+  type:
+    Ignore: true
+  weight:
+    Ignore: true

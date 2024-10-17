@@ -65,7 +65,7 @@ Properties:
   listener_forward:
     Ignore: true
   load_balancer_id:
-    Ignore: true
+    To: LoadBalancerId
   master_slave_server_group_id:
     To: MasterSlaveServerGroupId
   persistence_timeout:
@@ -73,7 +73,7 @@ Properties:
   protocol:
     To: Protocol
   proxy_protocol_v2_enabled:
-    Ignore: true
+    To: ProxyProtocolV2Enabled
   request_timeout:
     To: RequestTimeout
   scheduler:

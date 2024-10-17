@@ -45,7 +45,7 @@ Properties:
   instance_name:
     To: InstanceName
   instance_storage:
-    Ignore: true
+    To: InstanceStorage
   ip_white_list:
     Ignore: true
   log_disk_category:

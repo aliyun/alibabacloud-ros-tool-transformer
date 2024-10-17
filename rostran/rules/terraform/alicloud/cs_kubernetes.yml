@@ -14,6 +14,8 @@ Properties:
         To: Disabled
       name:
         To: Name
+      version:
+        Ignore: true
   api_audiences:
     Ignore: true
   availability_zone:
@@ -36,6 +38,14 @@ Properties:
     To: CpuPolicy
   custom_san:
     Ignore: true
+  delete_options:
+    To: DeleteOptions
+    Type: List
+    Schema:
+      delete_mode:
+        To: DeleteMode
+      resource_type:
+        To: ResourceType
   deletion_protection:
     To: DeletionProtection
   enable_ssh:
@@ -63,9 +73,9 @@ Properties:
   log_config:
     Ignore: true
   master_auto_renew:
-    Ignore: true
+    To: MasterAutoRenew
   master_auto_renew_period:
-    Ignore: true
+    To: MasterAutoRenewPeriod
   master_disk_category:
     Ignore: true
   master_disk_performance_level:
@@ -75,7 +85,7 @@ Properties:
   master_disk_snapshot_policy_id:
     Ignore: true
   master_instance_charge_type:
-    Ignore: true
+    To: MasterInstanceChargeType
   master_instance_type:
     Ignore: true
   master_instance_types:
@@ -124,8 +134,6 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   retain_resources:
-    Ignore: true
-  runtime:
     Ignore: true
   security_group_id:
     To: SecurityGroupId
@@ -186,7 +194,7 @@ Properties:
       performance_level:
         Ignore: true
       size:
-        Ignore: true
+        To: Size
       snapshot_id:
         Ignore: true
   worker_disk_category:
@@ -228,15 +236,47 @@ Attributes:
     Ignore: true
   connections:
     Ignore: true
+  custom_san:
+    Ignore: true
   deletion_protection:
     Ignore: true
+  enable_rrsa:
+    Ignore: true
+  enable_ssh:
+    Ignore: true
+  image_id:
+    Ignore: true
   install_cloud_monitor:
+    Ignore: true
+  is_enterprise_security_group:
+    Ignore: true
+  key_name:
     Ignore: true
   load_balancer_spec:
     Ignore: true
   maintenance_window:
     Ignore: true
+  master_auto_renew:
+    Ignore: true
+  master_auto_renew_period:
+    Ignore: true
+  master_disk_category:
+    Ignore: true
+  master_disk_performance_level:
+    Ignore: true
+  master_disk_size:
+    Ignore: true
+  master_disk_snapshot_policy_id:
+    Ignore: true
+  master_instance_charge_type:
+    Ignore: true
+  master_instance_types:
+    Ignore: true
   master_nodes:
+    Ignore: true
+  master_period:
+    Ignore: true
+  master_period_unit:
     Ignore: true
   master_vswitch_ids:
     Ignore: true
@@ -244,9 +284,17 @@ Attributes:
     Ignore: true
   nat_gateway_id:
     Ignore: true
+  node_cidr_mask:
+    Ignore: true
+  node_name_mode:
+    Ignore: true
   os_type:
     Ignore: true
   platform:
+    Ignore: true
+  pod_cidr:
+    Ignore: true
+  pod_vswitch_ids:
     Ignore: true
   proxy_mode:
     Ignore: true
@@ -255,6 +303,8 @@ Attributes:
   rrsa_metadata:
     Ignore: true
   security_group_id:
+    Ignore: true
+  service_cidr:
     Ignore: true
   slb_id:
     Ignore: true
@@ -268,19 +318,17 @@ Attributes:
     Ignore: true
   vpc_id:
     Ignore: true
-  worker_auto_renew:
+  worker_disk_category:
     Ignore: true
-  worker_auto_renew_period:
+  worker_disk_size:
     Ignore: true
   worker_instance_charge_type:
+    Ignore: true
+  worker_instance_types:
     Ignore: true
   worker_nodes:
     Ignore: true
   worker_number:
-    Ignore: true
-  worker_period:
-    Ignore: true
-  worker_period_unit:
     Ignore: true
   worker_ram_role_name:
     To: WorkerRamRoleName

@@ -1,0 +1,36 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rocketmq_topic
+  To: ALIYUN::ROCKETMQ5::Topic
+Properties:
+  create_time:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  message_type:
+    To: MessageType
+  remark:
+    To: Remark
+  status:
+    Ignore: true
+  topic_name:
+    To: TopicName
+Attributes:
+  id:
+    To:
+    - InstanceId
+    - TopicName
+    Handler: colon_join
+  create_time:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  message_type:
+    To: MessageType
+  remark:
+    Ignore: true
+  status:
+    Ignore: true
+  topic_name:
+    To: TopicName

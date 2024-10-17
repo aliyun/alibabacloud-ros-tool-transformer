@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_message_service_queue
   To: ALIYUN::MNS::Queue
 Properties:
+  create_time:
+    Ignore: true
   delay_seconds:
     To: DelaySeconds
   logging_enabled:
@@ -21,6 +23,8 @@ Properties:
 Attributes:
   id:
     To: QueueName
+  create_time:
+    Ignore: true
   delay_seconds:
     Ignore: true
   logging_enabled:

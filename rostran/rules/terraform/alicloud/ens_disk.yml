@@ -1,0 +1,50 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_disk
+  To: ALIYUN::ENS::Disk
+Properties:
+  category:
+    To: Category
+  create_time:
+    Ignore: true
+  disk_name:
+    To: DiskName
+  encrypted:
+    To: Encrypted
+  ens_region_id:
+    To: EnsRegionId
+  kms_key_id:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  size:
+    To: Size
+    Handler: to_int
+  snapshot_id:
+    To: SnapshotId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: DiskId
+  category:
+    Ignore: true
+  create_time:
+    Ignore: true
+  disk_name:
+    Ignore: true
+  encrypted:
+    Ignore: true
+  ens_region_id:
+    Ignore: true
+  kms_key_id:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  size:
+    Ignore: true
+  snapshot_id:
+    Ignore: true
+  status:
+    Ignore: true

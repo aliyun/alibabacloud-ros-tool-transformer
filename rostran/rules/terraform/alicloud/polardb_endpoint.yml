@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   auto_add_new_nodes:
     To: AutoAddNewNodes
+  connection_prefix:
+    Ignore: true
   db_cluster_id:
     To: DBClusterId
   db_endpoint_description:
@@ -21,6 +23,8 @@ Properties:
   nodes:
     To: Nodes
     Type: List
+  port:
+    Ignore: true
   read_write_mode:
     To: ReadWriteMode
   ssl_auto_rotate:
@@ -38,6 +42,8 @@ Attributes:
     Ignore: true
   auto_add_new_nodes:
     Ignore: true
+  connection_prefix:
+    Ignore: true
   db_cluster_id:
     Ignore: true
   db_endpoint_description:
@@ -48,7 +54,7 @@ Attributes:
     Ignore: true
   nodes:
     Ignore: true
-  read_write_mode:
+  port:
     Ignore: true
-  ssl_certificate_url:
+  read_write_mode:
     Ignore: true

@@ -8,6 +8,8 @@ Properties:
     To: AdjustmentType
   adjustment_value:
     To: AdjustmentValue
+  alarm_dimension:
+    Ignore: true
   ari:
     Ignore: true
   cooldown:
@@ -16,8 +18,24 @@ Properties:
     To: DisableScaleIn
   estimated_instance_warmup:
     To: EstimatedInstanceWarmup
+  initial_max_size:
+    To: InitialMaxSize
   metric_name:
     To: MetricName
+  min_adjustment_magnitude:
+    To: MinAdjustmentMagnitude
+  predictive_scaling_mode:
+    To: PredictiveScalingMode
+  predictive_task_buffer_time:
+    To: PredictiveTaskBufferTime
+  predictive_value_behavior:
+    To: PredictiveValueBehavior
+  predictive_value_buffer:
+    To: PredictiveValueBuffer
+  scale_in_evaluation_count:
+    To: ScaleInEvaluationCount
+  scale_out_evaluation_count:
+    To: ScaleOutEvaluationCount
   scaling_group_id:
     To: ScalingGroupId
   scaling_rule_name:
@@ -29,9 +47,9 @@ Properties:
     Type: List
     Schema:
       metric_interval_lower_bound:
-        Ignore: true
+        To: MetricIntervalLowerBound
       metric_interval_upper_bound:
-        Ignore: true
+        To: MetricIntervalUpperBound
       scaling_adjustment:
         To: ScalingAdjustment
   target_value:
@@ -43,6 +61,8 @@ Attributes:
     Ignore: true
   adjustment_value:
     Ignore: true
+  alarm_dimension:
+    Ignore: true
   ari:
     Ignore: true
   cooldown:
@@ -51,7 +71,23 @@ Attributes:
     Ignore: true
   estimated_instance_warmup:
     Ignore: true
+  initial_max_size:
+    Ignore: true
   metric_name:
+    Ignore: true
+  min_adjustment_magnitude:
+    Ignore: true
+  predictive_scaling_mode:
+    Ignore: true
+  predictive_task_buffer_time:
+    Ignore: true
+  predictive_value_behavior:
+    Ignore: true
+  predictive_value_buffer:
+    Ignore: true
+  scale_in_evaluation_count:
+    Ignore: true
+  scale_out_evaluation_count:
     Ignore: true
   scaling_group_id:
     Ignore: true

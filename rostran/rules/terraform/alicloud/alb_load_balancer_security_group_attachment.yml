@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alb_load_balancer_security_group_attachment
+  To: ALIYUN::ALB::SecurityGroupAttachment
+Properties:
+  load_balancer_id:
+    To: LoadBalancerId
+  security_group_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  load_balancer_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true

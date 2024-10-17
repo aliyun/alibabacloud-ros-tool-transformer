@@ -40,8 +40,12 @@ Properties:
     Ignore: true
   maintain_start_time:
     Ignore: true
+  master_cu:
+    Ignore: true
   master_node_num:
     To: MasterNodeNum
+  parameters:
+    Ignore: true
   payment_type:
     To: PayType
   period:
@@ -51,6 +55,8 @@ Properties:
   private_ip_address:
     To: PrivateIpAddress
   resource_group_id:
+    Ignore: true
+  resource_management_mode:
     Ignore: true
   security_ip_list:
     Ignore: true
@@ -108,14 +114,22 @@ Attributes:
     Ignore: true
   maintain_start_time:
     Ignore: true
+  master_cu:
+    Ignore: true
   master_node_num:
     Ignore: true
   node_num:
+    Ignore: true
+  parameters:
     Ignore: true
   payment_type:
     Ignore: true
   port:
     To: Port
+  resource_group_id:
+    Ignore: true
+  resource_management_mode:
+    Ignore: true
   seg_node_num:
     Ignore: true
   ssl_enabled:

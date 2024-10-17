@@ -6,8 +6,12 @@ ResourceType:
 Properties:
   address_ip_version:
     Ignore: true
+  any_port_enabled:
+    To: AnyPortEnabled
   connection_drain:
     Ignore: true
+  connection_drain_enabled:
+    To: ConnectionDrainEnabled
   connection_drain_timeout:
     To: ConnectionDrainTimeout
   health_check:
@@ -27,7 +31,8 @@ Properties:
   status:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Handler: tags_dict_to_list
   vpc_id:
     To: VpcId
 Attributes:
@@ -35,7 +40,11 @@ Attributes:
     To: ServerGroupId
   address_ip_version:
     Ignore: true
+  any_port_enabled:
+    Ignore: true
   connection_drain:
+    Ignore: true
+  connection_drain_enabled:
     Ignore: true
   connection_drain_timeout:
     Ignore: true

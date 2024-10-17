@@ -24,13 +24,13 @@ tpl = {
                         "VSwitchId": {
                             "Fn::GetAtt": ["alicloud_vswitch.default1", "VSwitchId"]
                         },
-                        "ZoneId": "cn-beijing-g",
+                        "ZoneId": "cn-beijing-f",
                     },
                     {
                         "VSwitchId": {
                             "Fn::GetAtt": ["alicloud_vswitch.default2", "VSwitchId"]
                         },
-                        "ZoneId": "cn-beijing-h",
+                        "ZoneId": "cn-beijing-g",
                     },
                 ],
                 "ModificationProtectionConfig": {"Status": "NonProtection"},
@@ -46,7 +46,7 @@ tpl = {
                 "CidrBlock": "10.4.1.0/24",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]},
                 "VSwitchName": "tf_example_1",
-                "ZoneId": "cn-beijing-g",
+                "ZoneId": "cn-beijing-f",
             },
         },
         "alicloud_vswitch.default2": {
@@ -55,7 +55,7 @@ tpl = {
                 "CidrBlock": "10.4.2.0/24",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]},
                 "VSwitchName": "tf_example_2",
-                "ZoneId": "cn-beijing-h",
+                "ZoneId": "cn-beijing-g",
             },
         },
     },

@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_vpc_traffic_mirror_session
   To: ALIYUN::VPC::TrafficMirrorSession
 Properties:
+  dry_run:
+    Ignore: true
   enabled:
     To: Enabled
   packet_length:

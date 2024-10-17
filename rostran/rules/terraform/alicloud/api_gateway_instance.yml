@@ -1,0 +1,81 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_api_gateway_instance
+  To: ALIYUN::ApiGateway::Instance
+Properties:
+  connect_cidr_blocks:
+    Ignore: true
+  create_time:
+    Ignore: true
+  delete_vpc_ip_block:
+    Ignore: true
+  duration:
+    To: Duration
+  egress_ipv6_enable:
+    Ignore: true
+  https_policy:
+    To: HttpsPolicy
+  instance_cidr:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  instance_spec:
+    To: InstanceSpec
+  instance_type:
+    Ignore: true
+  ipv6_enabled:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  pricing_cycle:
+    To: PricingCycle
+  status:
+    Ignore: true
+  support_ipv6:
+    Ignore: true
+  to_connect_vpc_ip_block:
+    Ignore: true
+  user_vpc_id:
+    Ignore: true
+  vpc_slb_intranet_enable:
+    Ignore: true
+  zone_id:
+    To: ZoneId
+  zone_vswitch_security_group:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  connect_cidr_blocks:
+    Ignore: true
+  create_time:
+    Ignore: true
+  egress_ipv6_enable:
+    To: EgressIpv6Enable
+  https_policy:
+    Ignore: true
+  instance_cidr:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  instance_spec:
+    Ignore: true
+  instance_type:
+    To: InstanceType
+  ipv6_enabled:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  status:
+    Ignore: true
+  support_ipv6:
+    To: SupportIpv6
+  user_vpc_id:
+    Ignore: true
+  vpc_slb_intranet_enable:
+    To: VpcSlbIntranetEnable
+  zone_id:
+    Ignore: true
+  zone_vswitch_security_group:
+    Ignore: true

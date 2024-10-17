@@ -8,18 +8,33 @@ Properties:
     To: AutoAcceptEnabled
   connect_bandwidth:
     To: ConnectBandwidth
+  create_time:
+    Ignore: true
   dry_run:
     Ignore: true
   payer:
     To: Payer
+  resource_group_id:
+    To: ResourceGroupId
   service_business_status:
     Ignore: true
   service_description:
     To: ServiceDescription
   service_domain:
     Ignore: true
+  service_resource_type:
+    To: ServiceResourceType
+  service_support_ipv6:
+    Ignore: true
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+  vpc_endpoint_service_name:
+    Ignore: true
+  zone_affinity_enabled:
+    To: ZoneAffinityEnabled
 Attributes:
   id:
     To: ServiceId
@@ -27,11 +42,27 @@ Attributes:
     Ignore: true
   connect_bandwidth:
     Ignore: true
+  create_time:
+    Ignore: true
+  payer:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
   service_business_status:
     Ignore: true
   service_description:
     To: ServiceDescription
   service_domain:
     To: ServiceDomain
+  service_resource_type:
+    Ignore: true
+  service_support_ipv6:
+    Ignore: true
   status:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_endpoint_service_name:
+    Ignore: true
+  zone_affinity_enabled:
     Ignore: true

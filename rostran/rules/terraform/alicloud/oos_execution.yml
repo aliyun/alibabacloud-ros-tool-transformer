@@ -9,7 +9,7 @@ Properties:
   create_date:
     Ignore: true
   description:
-    Ignore: true
+    To: Description
   end_date:
     Ignore: true
   executed_by:
@@ -17,7 +17,7 @@ Properties:
   is_parent:
     Ignore: true
   loop_mode:
-    Ignore: true
+    To: LoopMode
   mode:
     To: Mode
   outputs:
@@ -37,7 +37,7 @@ Properties:
   status_message:
     Ignore: true
   template_content:
-    Ignore: true
+    To: TemplateContent
   template_id:
     Ignore: true
   template_name:

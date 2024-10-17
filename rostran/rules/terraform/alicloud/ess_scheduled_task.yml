@@ -7,15 +7,15 @@ Properties:
   description:
     To: Description
   desired_capacity:
-    Ignore: true
+    To: DesiredCapacity
   launch_expiration_time:
     To: LaunchExpirationTime
   launch_time:
     To: LaunchTime
   max_value:
-    Ignore: true
+    To: MaxValue
   min_value:
-    Ignore: true
+    To: MinValue
   recurrence_end_time:
     To: RecurrenceEndTime
   recurrence_type:
@@ -23,7 +23,7 @@ Properties:
   recurrence_value:
     To: RecurrenceValue
   scaling_group_id:
-    Ignore: true
+    To: ScalingGroupId
   scheduled_action:
     To: ScheduledAction
   scheduled_task_name:

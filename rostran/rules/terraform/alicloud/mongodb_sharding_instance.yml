@@ -38,6 +38,8 @@ Properties:
     To: Period
   protocol_type:
     To: ProtocolType
+  provisioned_iops:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   retention_period:
@@ -56,6 +58,8 @@ Properties:
         To: Storage
   storage_engine:
     To: StorageEngine
+  storage_type:
+    To: StorageType
   tags:
     To: Tags
     Handler: tags_dict_to_list
@@ -90,6 +94,8 @@ Attributes:
     Ignore: true
   protocol_type:
     Ignore: true
+  provisioned_iops:
+    Ignore: true
   resource_group_id:
     Ignore: true
   retention_period:
@@ -102,9 +108,11 @@ Attributes:
     Ignore: true
   storage_engine:
     Ignore: true
+  storage_type:
+    Ignore: true
   tags:
     Ignore: true
-  tde_Status:
+  tde_status:
     Ignore: true
   vpc_id:
     Ignore: true

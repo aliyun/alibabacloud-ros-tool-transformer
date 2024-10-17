@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   dhcp_options_set_id:
     To: DhcpOptionsSetId
+  dry_run:
+    Ignore: true
   status:
     Ignore: true
   vpc_id:

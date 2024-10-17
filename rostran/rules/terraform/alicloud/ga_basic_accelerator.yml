@@ -1,0 +1,56 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_basic_accelerator
+  To: ALIYUN::GA::BasicAccelerator
+Properties:
+  auto_pay:
+    To: AutoPay
+  auto_renew:
+    To: AutoRenew
+  auto_renew_duration:
+    To: AutoRenewDuration
+  auto_use_coupon:
+    To: AutoUseCoupon
+  bandwidth_billing_type:
+    To: BandwidthBillingType
+  basic_accelerator_name:
+    Ignore: true
+  cross_border_status:
+    Ignore: true
+  description:
+    Ignore: true
+  duration:
+    To: Duration
+  payment_type:
+    Ignore: true
+  pricing_cycle:
+    To: PricingCycle
+  promotion_option_no:
+    To: PromotionOptionNo
+  resource_group_id:
+    To: ResourceGroupId
+  status:
+    Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
+Attributes:
+  id:
+    To: AcceleratorId
+  bandwidth_billing_type:
+    Ignore: true
+  basic_accelerator_name:
+    Ignore: true
+  cross_border_status:
+    Ignore: true
+  description:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  status:
+    Ignore: true
+  tags:
+    Ignore: true

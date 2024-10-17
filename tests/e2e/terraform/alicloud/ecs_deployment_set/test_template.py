@@ -13,6 +13,7 @@ tpl = {
             "Properties": {
                 "DeploymentSetName": "example_value",
                 "Description": "example_value",
+                "Strategy": "Availability",
             },
         }
     },

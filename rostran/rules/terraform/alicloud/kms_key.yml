@@ -38,6 +38,8 @@ Properties:
     Ignore: true
   pending_window_in_days:
     To: PendingWindowInDays
+  policy:
+    Ignore: true
   primary_key_version:
     Ignore: true
   protection_level:
@@ -65,6 +67,8 @@ Attributes:
     Ignore: true
   dkms_instance_id:
     Ignore: true
+  is_enabled:
+    Ignore: true
   key_spec:
     Ignore: true
   key_state:
@@ -78,6 +82,8 @@ Attributes:
   next_rotation_date:
     Ignore: true
   origin:
+    Ignore: true
+  policy:
     Ignore: true
   primary_key_version:
     Ignore: true

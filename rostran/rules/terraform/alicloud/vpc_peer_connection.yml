@@ -18,6 +18,8 @@ Properties:
     To: Description
   dry_run:
     Ignore: true
+  force_delete:
+    Ignore: true
   peer_connection_name:
     To: Name
   resource_group_id:

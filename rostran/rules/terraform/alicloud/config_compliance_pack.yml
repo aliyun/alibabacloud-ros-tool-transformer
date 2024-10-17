@@ -9,7 +9,11 @@ Properties:
   compliance_pack_template_id:
     To: CompliancePackTemplateId
   config_rule_ids:
-    Ignore: true
+    To: ConfigRuleIds
+    Type: List
+    Schema:
+      config_rule_id:
+        To: ConfigRuleId
   config_rules:
     To: ConfigRules
     Type: List

@@ -22,12 +22,18 @@ Properties:
         To: Type
       weight:
         To: Weight
+  endpoint_group_ip_list:
+    Ignore: true
   endpoint_group_region:
     To: EndpointGroupRegion
   endpoint_group_type:
     To: EndpointGroupType
+  endpoint_protocol_version:
+    Ignore: true
   endpoint_request_protocol:
     To: EndpointRequestProtocol
+  health_check_enabled:
+    To: HealthCheckEnabled
   health_check_interval_seconds:
     To: HealthCheckIntervalSeconds
   health_check_path:
@@ -57,11 +63,17 @@ Attributes:
     Ignore: true
   description:
     Ignore: true
+  endpoint_group_ip_list:
+    Ignore: true
   endpoint_group_region:
     Ignore: true
   endpoint_group_type:
     Ignore: true
+  endpoint_protocol_version:
+    Ignore: true
   endpoint_request_protocol:
+    Ignore: true
+  health_check_enabled:
     Ignore: true
   health_check_interval_seconds:
     Ignore: true

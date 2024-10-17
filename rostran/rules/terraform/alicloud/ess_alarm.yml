@@ -14,10 +14,16 @@ Properties:
     To: Description
   dimensions:
     To: Dimensions
+  effective:
+    Ignore: true
   enable:
     Ignore: true
   evaluation_count:
     To: EvaluationCount
+  expressions:
+    Ignore: true
+  expressions_logic_operator:
+    Ignore: true
   metric_name:
     To: MetricName
   metric_type:
@@ -45,9 +51,15 @@ Attributes:
     Ignore: true
   description:
     Ignore: true
+  effective:
+    Ignore: true
   enable:
     Ignore: true
   evaluation_count:
+    Ignore: true
+  expressions:
+    Ignore: true
+  expressions_logic_operator:
     Ignore: true
   metric_name:
     Ignore: true

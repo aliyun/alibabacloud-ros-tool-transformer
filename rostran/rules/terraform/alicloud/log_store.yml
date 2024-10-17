@@ -8,19 +8,29 @@ Properties:
     To: AppendMeta
   auto_split:
     To: AutoSplit
+  create_time:
+    Ignore: true
   enable_web_tracking:
     To: EnableTracking
   encrypt_conf:
     Ignore: true
   hot_ttl:
     Ignore: true
+  infrequent_access_ttl:
+    Ignore: true
+  logstore_name:
+    To: LogstoreName
   max_split_shard_count:
     To: MaxSplitShard
-  mode:
+  metering_mode:
     Ignore: true
+  mode:
+    To: Mode
   name:
     To: LogstoreName
   project:
+    To: ProjectName
+  project_name:
     To: ProjectName
   retention_period:
     To: TTL
@@ -37,11 +47,19 @@ Attributes:
     Ignore: true
   auto_split:
     Ignore: true
+  create_time:
+    Ignore: true
   enable_web_tracking:
     Ignore: true
   hot_ttl:
     Ignore: true
+  infrequent_access_ttl:
+    Ignore: true
+  logstore_name:
+    To: LogstoreName
   max_split_shard_count:
+    Ignore: true
+  metering_mode:
     Ignore: true
   mode:
     Ignore: true
@@ -49,6 +67,8 @@ Attributes:
     To: LogstoreName
   project:
     Ignore: true
+  project_name:
+    To: ProjectName
   retention_period:
     Ignore: true
   shard_count:

@@ -1,0 +1,79 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_kms_instance
+  To: ALIYUN::KMS::Instance
+Properties:
+  bind_vpcs:
+    Ignore: true
+  ca_certificate_chain_pem:
+    Ignore: true
+  create_time:
+    Ignore: true
+  force_delete_without_backup:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  key_num:
+    To: KeyNum
+  log:
+    Ignore: true
+  log_storage:
+    To: LogStorage
+  payment_type:
+    Ignore: true
+  period:
+    To: Period
+  product_version:
+    To: ProductVersion
+  renew_period:
+    To: RenewPeriod
+  renew_status:
+    To: RenewStatus
+  secret_num:
+    To: SecretNum
+  spec:
+    To: Spec
+  status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vpc_num:
+    To: VpcNum
+  vswitch_ids:
+    Ignore: true
+  zone_ids:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  bind_vpcs:
+    Ignore: true
+  ca_certificate_chain_pem:
+    Ignore: true
+  create_time:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  instance_name:
+    Ignore: true
+  key_num:
+    Ignore: true
+  log:
+    Ignore: true
+  log_storage:
+    Ignore: true
+  secret_num:
+    Ignore: true
+  spec:
+    Ignore: true
+  status:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vpc_num:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true
+  zone_ids:
+    Ignore: true

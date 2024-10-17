@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_api_gateway_plugin
   To: ALIYUN::ApiGateway::Plugin
 Properties:
+  create_time:
+    Ignore: true
   description:
     To: Description
   plugin_data:
@@ -18,6 +20,8 @@ Properties:
 Attributes:
   id:
     To: PluginId
+  create_time:
+    Ignore: true
   description:
     To: Description
   plugin_data:

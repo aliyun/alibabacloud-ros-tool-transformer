@@ -7,7 +7,7 @@ Properties:
   auto_delete_state:
     To: AutoDeleteState
   auto_expire_state:
-    Ignore: true
+    To: AutoExpireState
   dead_letter_exchange:
     To: DeadLetterExchange
   dead_letter_routing_key:
@@ -17,7 +17,7 @@ Properties:
   instance_id:
     To: InstanceId
   max_length:
-    Ignore: true
+    To: MaxLength
   maximum_priority:
     To: MaximumPriority
   message_ttl:

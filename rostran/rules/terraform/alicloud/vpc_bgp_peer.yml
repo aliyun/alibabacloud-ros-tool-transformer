@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   bgp_group_id:
     To: BgpGroupId
+  bgp_peer_name:
+    Ignore: true
   enable_bfd:
     To: EnableBfd
   ip_version:
@@ -22,6 +24,8 @@ Attributes:
   bfd_multi_hop:
     Ignore: true
   bgp_group_id:
+    Ignore: true
+  bgp_peer_name:
     Ignore: true
   enable_bfd:
     Ignore: true

@@ -30,6 +30,9 @@ Properties:
     To: Role
   service_id:
     Ignore: true
+  tags:
+    To: Tags
+    Handler: tags_dict_to_list
   tracing_config:
     Ignore: true
   version:
@@ -59,5 +62,7 @@ Attributes:
     To: Role
   service_id:
     To: ServiceId
+  tags:
+    To: Tags
   version:
     Ignore: true

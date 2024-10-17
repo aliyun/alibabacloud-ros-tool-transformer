@@ -8,6 +8,8 @@ Properties:
     To: AccessGroupId
   access_rule_id:
     Ignore: true
+  create_time:
+    Ignore: true
   description:
     To: Description
   network_segment:
@@ -23,6 +25,8 @@ Attributes:
     Ignore: true
   access_rule_id:
     To: AccessRuleId
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   network_segment:

@@ -14,6 +14,10 @@ Properties:
     To: CenBandwidthPackageId
   cen_id:
     To: CenId
+  create_time:
+    Ignore: true
+  default_link_type:
+    Ignore: true
   dry_run:
     Ignore: true
   peer_transit_router_id:
@@ -49,6 +53,10 @@ Attributes:
     To: CenBandwidthPackageId
   cen_id:
     To: CenId
+  create_time:
+    Ignore: true
+  default_link_type:
+    Ignore: true
   peer_transit_router_id:
     To: PeerTransitRouterId
   peer_transit_router_region_id:

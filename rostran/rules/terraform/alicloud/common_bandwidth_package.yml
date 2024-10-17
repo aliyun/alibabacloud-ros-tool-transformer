@@ -11,7 +11,7 @@ Properties:
   create_time:
     Ignore: true
   deletion_protection:
-    Ignore: true
+    To: DeletionProtection
   description:
     To: Description
   force:

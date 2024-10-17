@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_kvstore_audit_log_config
+  To: ALIYUN::REDIS::AuditLogConfig
+Properties:
+  create_time:
+    Ignore: true
+  db_audit:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  retention:
+    To: Retention
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  create_time:
+    Ignore: true
+  db_audit:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  retention:
+    Ignore: true
+  status:
+    Ignore: true

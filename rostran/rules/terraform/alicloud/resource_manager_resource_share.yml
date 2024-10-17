@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   resource_share_name:
     To: ResourceShareName
+  resource_share_owner:
+    Ignore: true
+  status:
+    Ignore: true
 Attributes:
   id:
     To: ResourceShareId

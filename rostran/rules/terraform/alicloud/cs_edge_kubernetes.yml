@@ -14,6 +14,8 @@ Properties:
         To: Disabled
       name:
         To: Name
+      version:
+        Ignore: true
   availability_zone:
     Ignore: true
   certificate_authority:
@@ -105,7 +107,7 @@ Properties:
       performance_level:
         Ignore: true
       size:
-        Ignore: true
+        To: Size
       snapshot_id:
         Ignore: true
   worker_disk_category:

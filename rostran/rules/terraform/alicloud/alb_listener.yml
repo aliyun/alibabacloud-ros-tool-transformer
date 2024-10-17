@@ -48,6 +48,8 @@ Properties:
     To: SecurityPolicyId
   status:
     Ignore: true
+  tags:
+    Ignore: true
   x_forwarded_for_config:
     Ignore: true
   xforwarded_for_config:
@@ -86,6 +88,8 @@ Attributes:
   security_policy_id:
     Ignore: true
   status:
+    Ignore: true
+  tags:
     Ignore: true
   x_forwarded_for_config:
     Ignore: true

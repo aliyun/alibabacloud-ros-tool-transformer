@@ -1,0 +1,65 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sae_ingress
+  To: ALIYUN::SAE::Ingress
+Properties:
+  cert_id:
+    To: CertId
+  cert_ids:
+    Ignore: true
+  default_rule:
+    Ignore: true
+  description:
+    To: Description
+  listener_port:
+    To: ListenerPort
+  listener_protocol:
+    To: ListenerProtocol
+  load_balance_type:
+    To: LoadBalanceType
+  namespace_id:
+    To: NamespaceId
+  rules:
+    To: Rules
+    Type: List
+    Schema:
+      app_id:
+        To: AppId
+      app_name:
+        Ignore: true
+      backend_protocol:
+        To: BackendProtocol
+      container_port:
+        To: ContainerPort
+      domain:
+        To: Domain
+      path:
+        To: Path
+      rewrite_path:
+        To: RewritePath
+  slb_id:
+    To: SlbId
+Attributes:
+  id:
+    To: IngressId
+  cert_id:
+    Ignore: true
+  cert_ids:
+    Ignore: true
+  default_rule:
+    Ignore: true
+  description:
+    Ignore: true
+  listener_port:
+    Ignore: true
+  listener_protocol:
+    Ignore: true
+  load_balance_type:
+    Ignore: true
+  namespace_id:
+    Ignore: true
+  rules:
+    Ignore: true
+  slb_id:
+    Ignore: true

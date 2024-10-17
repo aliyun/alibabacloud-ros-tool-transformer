@@ -38,10 +38,6 @@ Attributes:
     Ignore: true
   disk_id:
     Ignore: true
-  instant_access:
-    Ignore: true
-  instant_access_retention_days:
-    Ignore: true
   name:
     Ignore: true
   resource_group_id:

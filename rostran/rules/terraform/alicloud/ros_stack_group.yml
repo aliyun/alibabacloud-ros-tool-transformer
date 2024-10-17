@@ -21,8 +21,12 @@ Properties:
     Handler: ros_parameters
   region_ids:
     Ignore: true
+  stack_group_id:
+    Ignore: true
   stack_group_name:
     To: StackGroupName
+  status:
+    Ignore: true
   template_body:
     To: TemplateBody
     Handler: json_load

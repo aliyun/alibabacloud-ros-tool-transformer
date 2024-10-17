@@ -9,7 +9,7 @@ Properties:
   cen_id:
     To: CenId
   cen_owner_id:
-    Ignore: true
+    To: CenOwnerId
   cidr_block:
     To: CidrBlock
   desktop_access_type:

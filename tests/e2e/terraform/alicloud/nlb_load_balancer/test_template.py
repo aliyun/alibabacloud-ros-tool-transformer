@@ -27,18 +27,8 @@ tpl = {
                 ],
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]},
                 "ZoneMappings": [
-                    {
-                        "VSwitchId": {
-                            "Fn::GetAtt": ["alicloud_vswitch.default1", "VSwitchId"]
-                        },
-                        "ZoneId": "cn-beijing-h",
-                    },
-                    {
-                        "VSwitchId": {
-                            "Fn::GetAtt": ["alicloud_vswitch.default2", "VSwitchId"]
-                        },
-                        "ZoneId": "cn-beijing-l",
-                    },
+                    {"ZoneId": "cn-beijing-h"},
+                    {"ZoneId": "cn-beijing-l"},
                 ],
             },
         },

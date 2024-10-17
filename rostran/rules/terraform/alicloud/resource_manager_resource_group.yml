@@ -18,6 +18,8 @@ Properties:
     To: Name
   status:
     Ignore: true
+  tags:
+    Ignore: true
 Attributes:
   id:
     To: Id
@@ -27,7 +29,11 @@ Attributes:
     To: DisplayName
   name:
     To: Name
+  region_statuses:
+    To: RegionStatuses
   resource_group_name:
     To: Name
   status:
+    Ignore: true
+  tags:
     Ignore: true

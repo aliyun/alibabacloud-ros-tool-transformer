@@ -41,6 +41,12 @@ tpl = {
                     "UnhealthyThreshold": 8,
                 },
                 "IdleTimeout": 30,
+                "LoadBalancerId": {
+                    "Fn::GetAtt": [
+                        "alicloud_slb_load_balancer.listener",
+                        "LoadBalancerId",
+                    ]
+                },
                 "Protocol": "http",
                 "RequestTimeout": 80,
             },

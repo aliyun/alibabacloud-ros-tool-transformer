@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ens_vswitch
+  To: ALIYUN::ENS::VSwitch
+Properties:
+  cidr_block:
+    To: CidrBlock
+  create_time:
+    Ignore: true
+  description:
+    To: Description
+  ens_region_id:
+    To: EnsRegionId
+  network_id:
+    To: NetworkId
+  status:
+    Ignore: true
+  vswitch_name:
+    To: VSwitchName
+Attributes:
+  id:
+    To: VSwitchId
+  cidr_block:
+    Ignore: true
+  create_time:
+    Ignore: true
+  description:
+    Ignore: true
+  ens_region_id:
+    Ignore: true
+  network_id:
+    Ignore: true
+  status:
+    Ignore: true
+  vswitch_name:
+    Ignore: true

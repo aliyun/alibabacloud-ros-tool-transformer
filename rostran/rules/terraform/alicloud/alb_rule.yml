@@ -28,6 +28,8 @@ Properties:
         To: Order
       redirect_config:
         Ignore: true
+      remove_header_config:
+        Ignore: true
       rewrite_config:
         Ignore: true
       traffic_limit_config:
@@ -51,6 +53,10 @@ Properties:
       path_config:
         Ignore: true
       query_string_config:
+        Ignore: true
+      response_header_config:
+        Ignore: true
+      response_status_code_config:
         Ignore: true
       source_ip_config:
         Ignore: true

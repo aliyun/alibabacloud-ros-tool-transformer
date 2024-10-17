@@ -59,6 +59,19 @@ def to_boolean(data, resolved=False):
     return bool(data)
 
 
+def to_int(data, resolved=False):
+    """
+    Convert data to integer.
+    """
+    if data is None or not resolved:
+        return None
+
+    try:
+        return int(data)
+    except ValueError:
+        return data
+
+
 def kv_list_to_map(kv_list, k_name, v_name):
     """
     Convert a list containing dictionaries with key-value pairs into a dictionary.

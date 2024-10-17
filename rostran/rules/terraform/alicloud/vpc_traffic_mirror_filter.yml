@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_vpc_traffic_mirror_filter
   To: ALIYUN::VPC::TrafficMirrorFilter
 Properties:
+  dry_run:
+    Ignore: true
   egress_rules:
     To: EgressRules
     Type: List

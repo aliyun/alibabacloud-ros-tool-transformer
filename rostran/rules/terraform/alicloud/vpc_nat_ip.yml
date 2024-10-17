@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_vpc_nat_ip
   To: ALIYUN::VPC::NatIp
 Properties:
+  dry_run:
+    Ignore: true
   nat_gateway_id:
     To: NatGatewayId
   nat_ip:

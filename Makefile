@@ -20,6 +20,9 @@ init:
 	pip install -r requirements-dev.txt
 	pre-commit install
 
+test:
+	pytest tests
+
 check:
 	pre-commit run --all-files
 

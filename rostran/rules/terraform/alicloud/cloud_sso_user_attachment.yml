@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_sso_user_attachment
+  To: ALIYUN::CloudSSO::UserToGroupAddition
+Properties:
+  directory_id:
+    To: DirectoryId
+  group_id:
+    To: GroupId
+  user_id:
+    To: UserId
+Attributes:
+  id:
+    Ignore: true
+  directory_id:
+    Ignore: true
+  group_id:
+    Ignore: true
+  user_id:
+    Ignore: true

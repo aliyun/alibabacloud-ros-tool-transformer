@@ -4,16 +4,22 @@ ResourceType:
   From: alicloud_vpn_connection
   To: ALIYUN::VPC::VpnConnection
 Properties:
+  auto_config_route:
+    To: AutoConfigRoute
   bgp_config:
+    Ignore: true
+  create_time:
     Ignore: true
   customer_gateway_id:
     To: CustomerGatewayId
   effect_immediately:
     To: EffectImmediately
   enable_dpd:
-    Ignore: true
+    To: EnableDpd
   enable_nat_traversal:
-    Ignore: true
+    To: EnableNatTraversal
+  enable_tunnels_bgp:
+    To: EnableTunnelsBgp
   health_check_config:
     Ignore: true
   ike_config:
@@ -53,9 +59,45 @@ Properties:
     To: LocalSubnet
   name:
     To: Name
+  network_type:
+    Ignore: true
   remote_subnet:
     To: RemoteSubnet
+  resource_group_id:
+    Ignore: true
   status:
+    Ignore: true
+  tags:
+    Ignore: true
+  tunnel_options_specification:
+    To: TunnelOptionsSpecification
+    Type: List
+    Schema:
+      customer_gateway_id:
+        To: CustomerGatewayId
+      enable_dpd:
+        To: EnableDpd
+      enable_nat_traversal:
+        To: EnableNatTraversal
+      internet_ip:
+        Ignore: true
+      role:
+        To: Role
+      state:
+        Ignore: true
+      status:
+        Ignore: true
+      tunnel_bgp_config:
+        Ignore: true
+      tunnel_id:
+        Ignore: true
+      tunnel_ike_config:
+        Ignore: true
+      tunnel_ipsec_config:
+        Ignore: true
+      zone_no:
+        Ignore: true
+  vpn_connection_name:
     Ignore: true
   vpn_gateway_id:
     To: VpnGatewayId
@@ -64,6 +106,8 @@ Attributes:
     To: VpnConnectionId
   bgp_config:
     Ignore: true
+  create_time:
+    Ignore: true
   customer_gateway_id:
     Ignore: true
   effect_immediately:
@@ -71,6 +115,8 @@ Attributes:
   enable_dpd:
     Ignore: true
   enable_nat_traversal:
+    Ignore: true
+  enable_tunnels_bgp:
     Ignore: true
   health_check_config:
     Ignore: true
@@ -84,7 +130,15 @@ Attributes:
     Ignore: true
   remote_subnet:
     Ignore: true
+  resource_group_id:
+    Ignore: true
   status:
     To: Status
+  tags:
+    Ignore: true
+  tunnel_options_specification:
+    Ignore: true
+  vpn_connection_name:
+    Ignore: true
   vpn_gateway_id:
     Ignore: true

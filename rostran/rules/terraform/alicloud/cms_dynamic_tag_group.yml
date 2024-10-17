@@ -27,6 +27,8 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  contact_group_list:
+    Ignore: true
   match_express:
     Ignore: true
   match_express_filter_relation:

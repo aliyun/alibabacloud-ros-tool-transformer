@@ -8,6 +8,8 @@ Properties:
     To: AccessGroupName
   access_group_type:
     To: AccessGroupType
+  create_time:
+    Ignore: true
   description:
     To: Description
   file_system_type:
@@ -22,6 +24,8 @@ Attributes:
   access_group_name:
     To: AccessGroupName
   access_group_type:
+    Ignore: true
+  create_time:
     Ignore: true
   description:
     Ignore: true

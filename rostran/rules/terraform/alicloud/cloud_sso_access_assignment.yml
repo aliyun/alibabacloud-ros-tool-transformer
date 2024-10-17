@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_sso_access_assignment
+  To: ALIYUN::CloudSSO::AccessAssignment
+Properties:
+  access_configuration_id:
+    To: AccessConfigurationId
+  deprovision_strategy:
+    Ignore: true
+  directory_id:
+    To: DirectoryId
+  principal_id:
+    To: PrincipalId
+  principal_type:
+    To: PrincipalType
+  target_id:
+    To: TargetId
+  target_type:
+    To: TargetType
+Attributes:
+  id:
+    Ignore: true
+  access_configuration_id:
+    Ignore: true
+  directory_id:
+    Ignore: true
+  principal_id:
+    Ignore: true
+  principal_type:
+    Ignore: true
+  target_id:
+    Ignore: true
+  target_type:
+    Ignore: true
