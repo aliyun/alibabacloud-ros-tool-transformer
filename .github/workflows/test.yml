@@ -20,7 +20,7 @@ jobs:
         run: |
           pip install -U pip
           python -m pip install -r requirements-dev.txt
-          python -m pip install libterraform==0.7.0
+          python -m pip install libterraform==0.8.0
       - name: Run tests
         run: |
           pytest tests
