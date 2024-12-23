@@ -31,8 +31,13 @@ The following options are supported:
   the `--target-path` file format. When the value is `auto` and `--target-path` is a directory, the generated ROS
   template is named `template.yml`.
 - `--compatible`: Whether to use compatible mode when transforming Terraform to ROS template. If compatible, keep the
-  Terraform file content in the generated ROS template. Otherwise, it is transformed to a template using ROS syntax.
+  Terraform file content in the generated ROS template, files only ending with `.tf`, `.tftpl`, `.tfvars`, `.metadata`, 
+  `.mappings`, `.conditions`, `.rules` are retained by default, `--extra-files` supports more files. 
+  Otherwise, it is transformed to a template using ROS syntax.
   **This option is only available for Terraform template files.**
+- `--extra-files`: Specify additional files to retain when converting Terraform to ROS templates using compatibility 
+  mode, `*` means retain all files. By default, only files ending with `.tf`, `.tftpl`, `.tfvars`, `.metadata`, 
+  `.mappings`, `.conditions`, `.rules` will be retained during conversion. Use this parameter to retain more files.
 - `--force`: Whether a generated file can overwrite an existing file. If supported, the generated file 
   overwrites the existing file. Otherwise, an error will be reported when existing files exist.
 

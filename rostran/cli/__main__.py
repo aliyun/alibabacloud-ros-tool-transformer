@@ -77,6 +77,13 @@ def transform(
         show_default=True,
         help="Whether to overwrite existing target file.",
     ),
+    extra_files: List[str] = typer.Option(
+            None,
+            show_default=True,
+            help="Add extra files, which supporting the specification of multiple files with fuzzy matching, "
+            "when transforming Terraform to ROS template in compatible mode. "
+            "This option is only available for Terraform template files in compatible mode.",
+        ),
 ):
     """
     Transform AWS CloudFormation/Terraform/Excel template to ROS template.
@@ -145,7 +152,7 @@ def transform(
             from ..providers import CompatibleTerraformTemplate
 
             template = CompatibleTerraformTemplate.initialize(
-                source_path, source_file_format
+                source_path, source_file_format, extra_files
             )
         else:
             from ..providers import TerraformTemplate

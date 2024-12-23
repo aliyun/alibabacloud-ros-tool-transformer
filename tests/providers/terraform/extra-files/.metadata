@@ -1,0 +1,3 @@
+ALIYUN::ROS::Interface:
+  TemplateTags:
+    - acs:rostran:test:test
