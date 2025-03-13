@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GPDB::Account
+  To: alicloud_gpdb_account
+Properties:
+  AccountDescription:
+    To: account_description
+  AccountName:
+    To: account_name
+  AccountPassword:
+    To: account_password
+  DBInstanceId:
+    Ignore: true
+Attributes:
+  AccountName:
+    To: account_name
+  DBInstanceId:
+    Ignore: true

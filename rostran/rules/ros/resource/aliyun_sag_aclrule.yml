@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::ACLRule
+  To: alicloud_sag_acl_rule
+Properties:
+  AclId:
+    To: acl_id
+  Description:
+    To: description
+  DestCidr:
+    To: dest_cidr
+  DestPortRange:
+    To: dest_port_range
+  Direction:
+    To: direction
+  IpProtocol:
+    To: ip_protocol
+  Policy:
+    To: policy
+  Priority:
+    To: priority
+  SourceCidr:
+    To: source_cidr
+  SourcePortRange:
+    To: source_port_range
+  DpiGroupIds:
+    Ignore: true
+  DpiSignatureIds:
+    Ignore: true
+  Type:
+    Ignore: true
+  Name:
+    Ignore: true
+Attributes:
+  AcrId:
+    To: id

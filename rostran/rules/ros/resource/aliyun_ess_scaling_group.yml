@@ -1,0 +1,86 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESS::ScalingGroup
+  To: alicloud_ess_scaling_group
+Properties:
+  AllocationStrategy:
+    To: allocation_strategy
+  AzBalance:
+    To: az_balance
+  DBInstanceIds:
+    To: db_instance_ids
+  DefaultCooldown:
+    To: default_cooldown
+  DesiredCapacity:
+    To: desired_capacity
+  GroupDeletionProtection:
+    To: group_deletion_protection
+  GroupType:
+    To: group_type
+  HealthCheckType:
+    To: health_check_type
+  InstanceId:
+    To: instance_id
+  LaunchTemplateId:
+    To: launch_template_id
+  LaunchTemplateVersion:
+    To: launch_template_version
+  LoadBalancerIds:
+    To: loadbalancer_ids
+  MaxInstanceLifetime:
+    To: max_instance_lifetime
+  MaxSize:
+    To: max_size
+  MinSize:
+    To: min_size
+  MultiAZPolicy:
+    To: multi_az_policy
+  OnDemandBaseCapacity:
+    To: on_demand_base_capacity
+  OnDemandPercentageAboveBaseCapacity:
+    To: on_demand_percentage_above_base_capacity
+  ProtectedInstances:
+    To: protected_instances
+  RemovalPolicys:
+    To: removal_policies
+  ResourceGroupId:
+    To: resource_group_id
+  ScalingGroupName:
+    To: scaling_group_name
+  ScalingPolicy:
+    To: scaling_policy
+  SpotAllocationStrategy:
+    To: spot_allocation_strategy
+  SpotInstancePools:
+    To: spot_instance_pools
+  SpotInstanceRemedy:
+    To: spot_instance_remedy
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VSwitchId:
+    To: vswitch_id
+  VSwitchIds:
+    To: vswitch_ids
+  ServerGroups:
+    Ignore: true
+  LaunchTemplateOverrides:
+    Ignore: true
+  StandbyInstances:
+    Ignore: true
+  NotificationConfigurations:
+    Ignore: true
+  ContainerGroupId:
+    Ignore: true
+  CompensateWithOnDemand:
+    Ignore: true
+  CustomPolicyARN:
+    Ignore: true
+Attributes:
+  ScalingGroupId:
+    To: id
+  ScalingGroupName:
+    To: scaling_group_name
+  Arn:
+    Ignore: true

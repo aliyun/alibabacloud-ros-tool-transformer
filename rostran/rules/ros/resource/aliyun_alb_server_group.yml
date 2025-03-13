@@ -1,0 +1,44 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ALB::ServerGroup
+  To: alicloud_alb_server_group
+Properties:
+  Protocol:
+    To: protocol
+  ResourceGroupId:
+    To: resource_group_id
+  Scheduler:
+    To: scheduler
+  ServerGroupName:
+    To: server_group_name
+  ServerGroupType:
+    To: server_group_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  Ipv6Enabled:
+    Ignore: true
+  CrossZoneEnabled:
+    Ignore: true
+  SlowStartConfig:
+    Ignore: true
+  UchConfig:
+    Ignore: true
+  ServiceName:
+    Ignore: true
+  HealthCheckConfig:
+    Ignore: true
+  UpstreamKeepaliveEnabled:
+    Ignore: true
+  StickySessionConfig:
+    Ignore: true
+  ConnectionDrainConfig:
+    Ignore: true
+Attributes:
+  ServerGroupId:
+    To: id
+  Arn:
+    Ignore: true

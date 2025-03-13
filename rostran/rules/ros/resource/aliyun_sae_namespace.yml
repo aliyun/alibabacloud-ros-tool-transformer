@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAE::Namespace
+  To: alicloud_sae_namespace
+Properties:
+  NamespaceDescription:
+    To: namespace_description
+  NamespaceId:
+    To: namespace_id
+  NamespaceName:
+    To: namespace_name
+Attributes:
+  NamespaceId:
+    To: id
+  NamespaceId$$0:
+    To: namespace_id

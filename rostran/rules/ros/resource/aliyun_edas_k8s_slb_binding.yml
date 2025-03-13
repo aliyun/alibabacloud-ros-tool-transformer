@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EDAS::K8sSlbBinding
+  To: alicloud_edas_k8s_slb_attachment
+Properties:
+  AppId:
+    To: app_id
+  ClusterId:
+    Ignore: true
+  Specification:
+    Ignore: true
+  Type:
+    Ignore: true
+  Scheduler:
+    Ignore: true
+  LoadBalancerId:
+    Ignore: true
+  ServicePortInfos:
+    Ignore: true
+Attributes:
+  AppId:
+    To: app_id
+  LoadBalancerId:
+    Ignore: true
+  Address:
+    Ignore: true
+  ChangeOrderId:
+    Ignore: true
+  LoadBalancerName:
+    Ignore: true

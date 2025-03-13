@@ -1,0 +1,90 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GPDB::DBInstance
+  To: alicloud_gpdb_instance
+Properties:
+  ZoneId:
+    To: availability_zone
+  CreateSampleData:
+    To: create_sample_data
+  DBInstanceCategory:
+    To: db_instance_category
+  DBInstanceClass:
+    To: db_instance_class
+  DBInstanceMode:
+    To: db_instance_mode
+  DBInstanceDescription:
+    To: description
+  EncryptionKey:
+    To: encryption_key
+  EncryptionType:
+    To: encryption_type
+  EngineVersion:
+    To: engine_version
+  PayType:
+    To: instance_charge_type
+  DBInstanceGroupCount:
+    To: instance_group_count
+  InstanceSpec:
+    To: instance_spec
+  MasterNodeNum:
+    To: master_node_num
+  PayType$$0:
+    To: payment_type
+  Period:
+    To: period
+  PrivateIpAddress:
+    To: private_ip_address
+  SegNodeNum:
+    To: seg_node_num
+  SegStorageType:
+    To: seg_storage_type
+  StorageSize:
+    To: storage_size
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VectorConfigurationStatus:
+    To: vector_configuration_status
+  VPCId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId$$0:
+    To: zone_id
+  StandbyZoneId:
+    Ignore: true
+  DeployMode:
+    Ignore: true
+  ServerlessMode:
+    Ignore: true
+  ServerlessResource:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  StandbyVSwitchId:
+    Ignore: true
+  AINodeSpecInfos:
+    Ignore: true
+  ProdType:
+    Ignore: true
+  MasterCU:
+    Ignore: true
+  SecurityIPList:
+    Ignore: true
+  IdleTime:
+    Ignore: true
+  SegDiskPerformanceLevel:
+    Ignore: true
+Attributes:
+  DBInstanceId:
+    To: id
+  ConnectionString:
+    To: connection_string
+  Port:
+    To: port
+  OrderId:
+    Ignore: true
+  Arn:
+    Ignore: true

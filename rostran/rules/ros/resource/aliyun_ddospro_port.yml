@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DDoSPro::Port
+  To: alicloud_ddoscoo_port
+Properties:
+  BackendPort:
+    To: backend_port
+  FrontendPort:
+    To: frontend_port
+  FrontendProtocol:
+    To: frontend_protocol
+  InstanceId:
+    To: instance_id
+  RealServers:
+    To: real_servers
+Attributes:
+  FrontendPort:
+    To: frontend_port

@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Config::AggregateCompliancePack
+  To: alicloud_config_aggregate_compliance_pack
+Properties:
+  AggregatorId:
+    To: aggregator_id
+  CompliancePackTemplateId:
+    To: compliance_pack_template_id
+  ConfigRules:
+    To: config_rules
+    Type: List
+    Schema:
+      ConfigRuleParameters:
+        To: config_rule_parameters
+        Type: List
+        Schema:
+          ParameterName:
+            To: parameter_name
+          ParameterValue:
+            To: parameter_value
+      ManagedRuleIdentifier:
+        To: managed_rule_identifier
+      RiskLevel:
+        Ignore: true
+      ConfigRuleName:
+        Ignore: true
+      Description:
+        Ignore: true
+      ConfigRuleId:
+        Ignore: true
+  Description:
+    To: description
+  RiskLevel:
+    To: risk_level
+  TagValueScope:
+    Ignore: true
+  ResourceIdsScope:
+    Ignore: true
+  DefaultEnable:
+    Ignore: true
+  ExcludeResourceGroupIdsScope:
+    Ignore: true
+  TagKeyScope:
+    Ignore: true
+  ResourceGroupIdsScope:
+    Ignore: true
+  TemplateContent:
+    Ignore: true
+  ExcludeResourceIdsScope:
+    Ignore: true
+  CompliancePackName:
+    Ignore: true
+  RegionIdsScope:
+    Ignore: true
+  ExcludeRegionIdsScope:
+    Ignore: true
+Attributes:
+  CompliancePackId:
+    Ignore: true

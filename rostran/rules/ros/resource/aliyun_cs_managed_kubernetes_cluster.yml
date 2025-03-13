@@ -1,0 +1,125 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CS::ManagedKubernetesCluster
+  To: alicloud_cs_managed_kubernetes
+Properties:
+  Addons:
+    To: addons
+    Type: List
+    Schema:
+      Config:
+        To: config
+      Disabled:
+        To: disabled
+      Name:
+        To: name
+      Version:
+        To: version
+  ClusterSpec:
+    To: cluster_spec
+  DeleteOptions:
+    To: delete_options
+    Type: List
+    Schema:
+      DeleteMode:
+        To: delete_mode
+      ResourceType:
+        To: resource_type
+  DeletionProtection:
+    To: deletion_protection
+  EncryptionProviderKey:
+    To: encryption_provider_key
+  CloudMonitorFlags:
+    To: install_cloud_monitor
+  IsEnterpriseSecurityGroup:
+    To: is_enterprise_security_group
+  KeyPair:
+    To: key_name
+  LoadBalancerSpec:
+    To: load_balancer_spec
+  Name:
+    To: name
+  NodeCidrMask:
+    To: node_cidr_mask
+  NodeNameMode:
+    To: node_name_mode
+  OsType:
+    To: os_type
+  LoginPassword:
+    To: password
+  Platform:
+    To: platform
+  PodVswitchIds:
+    To: pod_vswitch_ids
+  ProxyMode:
+    To: proxy_mode
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityGroupId:
+    To: security_group_id
+  ServiceCidr:
+    To: service_cidr
+  UserData:
+    To: user_data
+  KubernetesVersion:
+    To: version
+  VpcId:
+    To: vpc_id
+  SocEnabled:
+    Ignore: true
+  Tags:
+    Ignore: true
+  KeepInstanceName:
+    Ignore: true
+  EndpointPublicAccess:
+    Ignore: true
+  ControlPlaneLogProject:
+    Ignore: true
+  ContainerCidr:
+    Ignore: true
+  SnatEntry:
+    Ignore: true
+  Runtime:
+    Ignore: true
+  TimeoutMins:
+    Ignore: true
+  ControlPlaneLogTtl:
+    Ignore: true
+  ZoneIds:
+    Ignore: true
+  MaintenanceWindow:
+    Ignore: true
+  ControlPlaneLogComponents:
+    Ignore: true
+  SecurityHardeningOs:
+    Ignore: true
+  Taint:
+    Ignore: true
+  NodePools:
+    Ignore: true
+  FormatDisk:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  Nodes:
+    Ignore: true
+  IngressSLBId:
+    Ignore: true
+  ScalingConfigurationId:
+    Ignore: true
+  ScalingGroupId:
+    Ignore: true
+  PrivateUserKubConfig:
+    Ignore: true
+  TaskId:
+    Ignore: true
+  APIServerSLBId:
+    Ignore: true
+  DefaultUserKubeConfig:
+    Ignore: true
+  WorkerRamRoleName:
+    Ignore: true
+  ScalingRuleId:
+    Ignore: true

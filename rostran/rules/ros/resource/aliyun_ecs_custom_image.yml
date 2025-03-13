@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::CustomImage
+  To: alicloud_image
+Properties:
+  Architecture:
+    To: architecture
+  BootMode:
+    To: boot_mode
+  Description:
+    To: description
+  DetectionStrategy:
+    To: detection_strategy
+  DiskDeviceMapping:
+    To: disk_device_mapping
+    Type: List
+    Schema:
+      Device:
+        To: device
+      DiskType:
+        To: disk_type
+      Size:
+        To: size
+      SnapshotId:
+        To: snapshot_id
+  ImageFamily:
+    To: image_family
+  ImageName:
+    To: image_name
+  ImageVersion:
+    To: image_version
+  InstanceId:
+    To: instance_id
+  Platform:
+    To: platform
+  ResourceGroupId:
+    To: resource_group_id
+  SnapshotId:
+    To: snapshot_id
+  Tag:
+    Ignore: true
+  SourceRegionId:
+    Ignore: true
+Attributes:
+  ImageId:
+    To: id
+  SourceRegionId:
+    Ignore: true

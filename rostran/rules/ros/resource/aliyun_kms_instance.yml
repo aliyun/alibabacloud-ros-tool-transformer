@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::KMS::Instance
+  To: alicloud_kms_instance
+Properties:
+  KeyNum:
+    To: key_num
+  LogStorage:
+    To: log_storage
+  Period:
+    To: period
+  ProductVersion:
+    To: product_version
+  RenewPeriod:
+    To: renew_period
+  RenewStatus:
+    To: renew_status
+  SecretNum:
+    To: secret_num
+  Spec:
+    To: spec
+  VpcNum:
+    To: vpc_num
+  Connection:
+    Ignore: true
+  InstanceChargeType:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  Log:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  InstanceId$$0:
+    To: instance_id

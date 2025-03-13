@@ -1,0 +1,84 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ComputeNest::ServiceInstance
+  To: alicloud_compute_nest_service_instance
+Properties:
+  EnableInstanceOps:
+    To: enable_instance_ops
+  EnableUserPrometheus:
+    To: enable_user_prometheus
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TemplateName:
+    To: template_name
+  PredefinedParameterName:
+    Ignore: true
+  SpecificationCode:
+    Ignore: true
+  Commodity:
+    Ignore: true
+  Service:
+    Ignore: true
+  ContactGroup:
+    Ignore: true
+  OperationName:
+    Ignore: true
+  Name:
+    Ignore: true
+  MarketInstanceId:
+    Ignore: true
+  Parameters:
+    Ignore: true
+Attributes:
+  ServiceInstanceId:
+    To: id
+  EnableInstanceOps:
+    To: enable_instance_ops
+  EnableUserPrometheus:
+    To: enable_user_prometheus
+  ResourceGroupId:
+    To: resource_group_id
+  ServiceInstanceId$$0:
+    To: service_id
+  Name:
+    To: service_instance_name
+  Tags:
+    To: tags
+  TemplateName:
+    To: template_name
+  PredefinedParameterName:
+    Ignore: true
+  Components:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  Outputs:
+    Ignore: true
+  Service:
+    Ignore: true
+  StatusDetail:
+    Ignore: true
+  Progress:
+    Ignore: true
+  Source:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  NetworkConfig:
+    Ignore: true
+  UserId:
+    Ignore: true
+  LicenseEndTime:
+    Ignore: true
+  Parameters:
+    Ignore: true
+  IsOperated:
+    Ignore: true
+  ServiceType:
+    Ignore: true
+  SupplierUid:
+    Ignore: true

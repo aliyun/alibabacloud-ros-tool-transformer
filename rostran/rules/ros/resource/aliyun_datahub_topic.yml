@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DATAHUB::Topic
+  To: alicloud_datahub_topic
+Properties:
+  Comment:
+    To: comment
+  Lifecycle:
+    To: life_cycle
+  TopicName:
+    To: name
+  ProjectName:
+    To: project_name
+  RecordSchema:
+    To: record_schema
+  RecordType:
+    To: record_type
+  ShardCount:
+    To: shard_count
+Attributes:
+  TopicName:
+    To: name
+  ProjectName:
+    To: project_name

@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLS::Dashboard
+  To: alicloud_log_dashboard
+Properties:
+  DashboardName:
+    To: dashboard_name
+  DisplayName:
+    To: display_name
+  ProjectName:
+    To: project_name
+  Description:
+    Ignore: true
+  Charts:
+    Ignore: true
+Attributes:
+  DashboardName:
+    To: id
+  DashboardName$$0:
+    To: dashboard_name
+  DisplayName:
+    To: display_name

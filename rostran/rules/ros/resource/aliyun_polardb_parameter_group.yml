@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::POLARDB::ParameterGroup
+  To: alicloud_polardb_parameter_group
+Properties:
+  DbType:
+    To: db_type
+  DbVersion:
+    To: db_version
+  ParameterGroupDesc:
+    To: description
+  ParameterGroupName:
+    To: name
+  Parameters:
+    To: parameters
+    Type: List
+    Schema:
+      ParamName:
+        To: param_name
+      ParamValue:
+        To: param_value
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  ParameterGroupId:
+    To: id
+  DbType:
+    To: db_type
+  DbVersion:
+    To: db_version
+  ParameterGroupDesc:
+    To: description
+  ParameterGroupName:
+    To: name
+  Parameters:
+    To: parameters
+  ForceRestart:
+    Ignore: true
+  ParameterGroupType:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  ParameterCounts:
+    Ignore: true

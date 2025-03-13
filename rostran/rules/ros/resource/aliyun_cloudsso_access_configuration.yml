@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudSSO::AccessConfiguration
+  To: alicloud_cloud_sso_access_configuration
+Properties:
+  AccessConfigurationName:
+    To: access_configuration_name
+  Description:
+    To: description
+  DirectoryId:
+    To: directory_id
+  RelayState:
+    To: relay_state
+  SessionDuration:
+    To: session_duration
+Attributes:
+  AccessConfigurationId:
+    To: access_configuration_id

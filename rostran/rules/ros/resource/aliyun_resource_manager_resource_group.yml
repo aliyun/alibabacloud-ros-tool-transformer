@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::ResourceGroup
+  To: alicloud_resource_manager_resource_group
+Properties:
+  DisplayName:
+    To: display_name
+  Name:
+    To: name
+  Name$$0:
+    To: resource_group_name
+Attributes:
+  Id:
+    To: id
+  AccountId:
+    To: account_id
+  DisplayName:
+    To: display_name
+  Name:
+    To: name
+  RegionStatuses:
+    To: region_statuses
+  Name$$0:
+    To: resource_group_name

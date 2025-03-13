@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OTS::Instance
+  To: alicloud_ots_instance
+Properties:
+  Network:
+    To: accessed_by
+  Description:
+    To: description
+  ClusterType:
+    To: instance_type
+  InstanceName:
+    To: name
+  Tags:
+    To: tags
+    Handler: handle_tags
+Attributes:
+  InstanceName:
+    To: id
+  VpcEndpoint:
+    Ignore: true
+  PrivateEndpoint:
+    Ignore: true
+  PublicEndpoint:
+    Ignore: true

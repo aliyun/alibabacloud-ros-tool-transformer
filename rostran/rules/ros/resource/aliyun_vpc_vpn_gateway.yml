@@ -1,0 +1,62 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::VpnGateway
+  To: alicloud_vpn_gateway
+Properties:
+  AutoPay:
+    To: auto_pay
+  Bandwidth:
+    To: bandwidth
+  Description:
+    To: description
+  EnableIpsec:
+    To: enable_ipsec
+  EnableSsl:
+    To: enable_ssl
+  InstanceChargeType:
+    To: instance_charge_type
+  Name:
+    To: name
+  NetworkType:
+    To: network_type
+  Period:
+    To: period
+  SslConnections:
+    To: ssl_connections
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  VpnType:
+    To: vpn_type
+  VSwitchId:
+    To: vswitch_id
+  DisasterRecoveryVSwitchId:
+    Ignore: true
+Attributes:
+  VpnGatewayId:
+    To: id
+  DisasterRecoveryInternetIp:
+    To: disaster_recovery_internet_ip
+  InternetIp:
+    To: internet_ip
+  SslVpnInternetIp:
+    To: ssl_vpn_internet_ip
+  VpcId:
+    To: vpc_id
+  VpnType:
+    To: vpn_type
+  VSwitchId:
+    To: vswitch_id
+  Arn:
+    Ignore: true
+  SslMaxConnections:
+    Ignore: true
+  OrderId:
+    Ignore: true
+  Spec:
+    Ignore: true
+  DisasterRecoveryVSwitchId:
+    Ignore: true

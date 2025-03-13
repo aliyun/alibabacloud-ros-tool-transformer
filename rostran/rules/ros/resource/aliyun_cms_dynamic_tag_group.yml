@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CMS::DynamicTagGroup
+  To: alicloud_cms_dynamic_tag_group
+Properties:
+  ContactGroupList:
+    To: contact_group_list
+  MatchExpress:
+    To: match_express
+    Type: List
+    Schema:
+      TagValue:
+        To: tag_value
+      TagValueMatchFunction:
+        To: tag_value_match_function
+  MatchExpressFilterRelation:
+    To: match_express_filter_relation
+  TagKey:
+    To: tag_key
+  TemplateIdList:
+    To: template_id_list
+  EnableInstallAgent:
+    Ignore: true
+  EnableSubscribeEvent:
+    Ignore: true
+Attributes:
+  TagKey:
+    To: tag_key
+  DynamicTagRuleId:
+    Ignore: true

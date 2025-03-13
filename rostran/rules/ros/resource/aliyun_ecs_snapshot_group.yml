@@ -1,0 +1,24 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::SnapshotGroup
+  To: alicloud_ecs_snapshot_group
+Properties:
+  Description:
+    To: description
+  InstanceId:
+    To: instance_id
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  DiskIds:
+    Ignore: true
+  Name:
+    Ignore: true
+  ExcludeDiskIds:
+    Ignore: true
+Attributes:
+  SnapshotGroupId:
+    To: id

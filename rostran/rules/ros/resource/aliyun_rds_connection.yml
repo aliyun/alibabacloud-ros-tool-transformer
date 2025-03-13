@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RDS::Connection
+  To: alicloud_db_connection
+Properties:
+  BabelfishPort:
+    To: babelfish_port
+  Port:
+    To: port
+  ConnectionStringPrefix:
+    Ignore: true
+  DBInstanceId:
+    Ignore: true
+  GeneralGroupName:
+    Ignore: true
+Attributes:
+  BabelfishPort:
+    To: babelfish_port
+  ConnectionString:
+    To: connection_string
+  DBInstanceId:
+    To: instance_id
+  Port:
+    To: port

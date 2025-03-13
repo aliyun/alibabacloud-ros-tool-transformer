@@ -1,0 +1,91 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ENS::Instance
+  To: alicloud_ens_instance
+Properties:
+  EnsRegionId:
+    To: ens_region_id
+  HostName:
+    To: host_name
+  ImageId:
+    To: image_id
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  InternetChargeType:
+    To: internet_charge_type
+  IpType:
+    To: ip_type
+  KeyPairName:
+    To: key_pair_name
+  Password:
+    To: password
+  PaymentType:
+    To: payment_type
+  Period:
+    To: period
+  PrivateIpAddress:
+    To: private_ip_address
+  UniqueSuffix:
+    To: unique_suffix
+  UserData:
+    To: user_data
+  VSwitchId:
+    To: vswitch_id
+  AutoRenew:
+    Ignore: true
+  Quantity:
+    Ignore: true
+  DataDiskSize:
+    Ignore: true
+  SystemDiskSize:
+    Ignore: true
+  AutoRenewPeriod:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  EnsRegionId:
+    To: ens_region_id
+  HostName:
+    To: host_name
+  ImageId:
+    To: image_id
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  KeyPairName:
+    To: key_pair_name
+  PaymentType:
+    To: payment_type
+  PrivateIpAddress:
+    To: private_ip_address
+  VSwitchId:
+    To: vswitch_id
+  IpType:
+    Ignore: true
+  UserData:
+    Ignore: true
+  UniqueSuffix:
+    Ignore: true
+  InternetChargeType:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  Quantity:
+    Ignore: true
+  PrivateIps:
+    Ignore: true
+  DataDiskSize:
+    Ignore: true
+  SystemDiskSize:
+    Ignore: true
+  PublicIps:
+    Ignore: true
+  Period:
+    Ignore: true
+  AutoRenewPeriod:
+    Ignore: true

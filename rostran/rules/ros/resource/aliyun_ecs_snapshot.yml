@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::Snapshot
+  To: alicloud_ecs_snapshot
+Properties:
+  Description:
+    To: description
+  DiskId:
+    To: disk_id
+  InstantAccess:
+    To: instant_access
+  InstantAccessRetentionDays:
+    To: instant_access_retention_days
+  ResourceGroupId:
+    To: resource_group_id
+  RetentionDays:
+    To: retention_days
+  SnapshotName:
+    To: snapshot_name
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Timeout:
+    Ignore: true
+Attributes:
+  SnapshotId:
+    To: id
+  Arn:
+    Ignore: true

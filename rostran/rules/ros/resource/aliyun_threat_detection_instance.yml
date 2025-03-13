@@ -1,0 +1,117 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::Instance
+  To: alicloud_threat_detection_instance
+Properties:
+  BuyNumber:
+    To: buy_number
+  ContainerImageScan:
+    To: container_image_scan
+  ContainerImageScanNew:
+    To: container_image_scan_new
+  Honeypot:
+    To: honeypot
+  HoneypotSwitch:
+    To: honeypot_switch
+  ModifyType:
+    To: modify_type
+  PaymentType:
+    To: payment_type
+  Period:
+    To: period
+  RaspCount:
+    To: rasp_count
+  RenewPeriod:
+    To: renew_period
+  RenewalPeriodUnit:
+    To: renewal_period_unit
+  RenewalStatus:
+    To: renewal_status
+  SasAntiRansomware:
+    To: sas_anti_ransomware
+  SasCspm:
+    To: sas_cspm
+  SasCspmSwitch:
+    To: sas_cspm_switch
+  SasSdk:
+    To: sas_sdk
+  SasSdkSwitch:
+    To: sas_sdk_switch
+  SasSlsStorage:
+    To: sas_sls_storage
+  SasWebguardBoolean:
+    To: sas_webguard_boolean
+  SasWebguardOrderNum:
+    To: sas_webguard_order_num
+  ThreatAnalysis:
+    To: threat_analysis
+  ThreatAnalysisSwitch:
+    To: threat_analysis_switch
+  VCore:
+    To: v_core
+  VersionCode:
+    To: version_code
+  VulCount:
+    To: vul_count
+  VulSwitch:
+    To: vul_switch
+  SasSc:
+    Ignore: true
+  ProductType:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  BuyNumber:
+    To: buy_number
+  ContainerImageScan:
+    To: container_image_scan
+  ContainerImageScanNew:
+    To: container_image_scan_new
+  CreateTime:
+    To: create_time
+  Honeypot:
+    To: honeypot
+  HoneypotSwitch:
+    To: honeypot_switch
+  PaymentType:
+    To: payment_type
+  RaspCount:
+    To: rasp_count
+  RenewPeriod:
+    To: renew_period
+  RenewalPeriodUnit:
+    To: renewal_period_unit
+  RenewalStatus:
+    To: renewal_status
+  SasAntiRansomware:
+    To: sas_anti_ransomware
+  SasCspm:
+    To: sas_cspm
+  SasCspmSwitch:
+    To: sas_cspm_switch
+  SasSc:
+    To: sas_sc
+  SasSdk:
+    To: sas_sdk
+  SasSdkSwitch:
+    To: sas_sdk_switch
+  SasSlsStorage:
+    To: sas_sls_storage
+  SasWebguardBoolean:
+    To: sas_webguard_boolean
+  SasWebguardOrderNum:
+    To: sas_webguard_order_num
+  ThreatAnalysis:
+    To: threat_analysis
+  ThreatAnalysisSwitch:
+    To: threat_analysis_switch
+  VCore:
+    To: v_core
+  VersionCode:
+    To: version_code
+  VulCount:
+    To: vul_count
+  VulSwitch:
+    To: vul_switch

@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::AMQP::Queue
+  To: alicloud_amqp_queue
+Properties:
+  AutoDeleteState:
+    To: auto_delete_state
+  AutoExpireState:
+    To: auto_expire_state
+  DeadLetterExchange:
+    To: dead_letter_exchange
+  DeadLetterRoutingKey:
+    To: dead_letter_routing_key
+  ExclusiveState:
+    To: exclusive_state
+  InstanceId:
+    To: instance_id
+  MaxLength:
+    To: max_length
+  MaximumPriority:
+    To: maximum_priority
+  QueueName:
+    To: queue_name
+  MessageTTL:
+    Ignore: true
+  VirtualHost:
+    Ignore: true
+Attributes:
+  QueueName:
+    To: queue_name

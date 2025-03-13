@@ -4,6 +4,8 @@ from rostran.core.settings import RULES_DIR
 
 TF_RULES_DIR = os.path.join(RULES_DIR, "terraform")
 TF_ALI_RULES_DIR = os.path.join(TF_RULES_DIR, "alicloud")
+ROS_RULES_DIR = os.path.join(RULES_DIR, "ros")
+ROS_RESOURCE_RULES_DIR = os.path.join(ROS_RULES_DIR, "resource")
 CF_RULES_DIR = os.path.join(RULES_DIR, "cloudformation")
 CF_RESOURCE_RULES_DIR = os.path.join(CF_RULES_DIR, "resource")
 
@@ -2324,4 +2326,11 @@ CF_ROS_GENERATE_MAPPINGS = {
     # "AWS::XRay::Group": "",
     # "AWS::XRay::ResourcePolicy": "",
     # "AWS::XRay::SamplingRule": "",
+}
+
+TF_ALI_DEPRECATED_PROPERTIES = {
+    "alicloud_vswitch": [
+        "name",
+        "availability_zone"
+    ]
 }

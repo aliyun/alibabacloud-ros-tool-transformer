@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::AMQP::VirtualHost
+  To: alicloud_amqp_virtual_host
+Properties:
+  InstanceId:
+    To: instance_id
+  VirtualHost:
+    Ignore: true
+Attributes:
+  VirtualHost:
+    To: virtual_host_name

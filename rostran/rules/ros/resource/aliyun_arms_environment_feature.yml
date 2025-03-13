@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ARMS::EnvironmentFeature
+  To: alicloud_arms_env_feature
+Properties:
+  EnvironmentId:
+    To: environment_id
+  FeatureVersion:
+    To: feature_version
+  Config:
+    Ignore: true
+  FeatureName:
+    Ignore: true
+Attributes:
+  EnvironmentId:
+    To: environment_id
+  FeatureStatus:
+    Ignore: true
+  Feature:
+    Ignore: true
+  FeatureName:
+    Ignore: true

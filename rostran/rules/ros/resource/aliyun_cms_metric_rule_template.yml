@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CMS::MetricRuleTemplate
+  To: alicloud_cms_metric_rule_template
+Properties:
+  AlertTemplates:
+    To: alert_templates
+    Type: List
+    Schema:
+      Category:
+        To: category
+      MetricName:
+        To: metric_name
+      Namespace:
+        To: namespace
+      RuleName:
+        To: rule_name
+      Webhook:
+        To: webhook
+      Escalations:
+        Ignore: true
+      Period:
+        Ignore: true
+      Selector:
+        Ignore: true
+  Description:
+    To: description
+  RestVersion:
+    To: rest_version
+  Name:
+    Ignore: true
+  TemplateId:
+    Ignore: true
+Attributes:
+  Id:
+    To: id

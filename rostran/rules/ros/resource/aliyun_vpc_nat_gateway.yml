@@ -1,0 +1,52 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::NatGateway
+  To: alicloud_nat_gateway
+Properties:
+  DeletionProtection:
+    To: deletion_protection
+  Description:
+    To: description
+  EipBindMode:
+    To: eip_bind_mode
+  InstanceChargeType:
+    To: instance_charge_type
+  InternetChargeType:
+    To: internet_charge_type
+  NatGatewayName:
+    To: name
+  NatGatewayName$$0:
+    To: nat_gateway_name
+  NatType:
+    To: nat_type
+  NetworkType:
+    To: network_type
+  InstanceChargeType$$0:
+    To: payment_type
+  Duration:
+    To: period
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  AutoPay:
+    Ignore: true
+  SecurityProtectionEnabled:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  PricingCycle:
+    Ignore: true
+  IcmpReplyEnabled:
+    Ignore: true
+Attributes:
+  NatGatewayId:
+    To: id
+  SNatTableId:
+    Ignore: true
+  ForwardTableId:
+    Ignore: true

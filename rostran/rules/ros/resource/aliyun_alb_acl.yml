@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ALB::Acl
+  To: alicloud_alb_acl
+Properties:
+  AclEntries:
+    To: acl_entries
+    Type: List
+    Schema:
+      Description:
+        To: description
+      Entry:
+        To: entry
+  AclName:
+    To: acl_name
+  ResourceGroupId:
+    To: resource_group_id
+Attributes:
+  AclId:
+    To: id

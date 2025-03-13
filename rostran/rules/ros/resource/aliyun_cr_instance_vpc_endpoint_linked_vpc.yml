@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CR::InstanceVpcEndpointLinkedVpc
+  To: alicloud_cr_vpc_endpoint_linked_vpc
+Properties:
+  InstanceId:
+    To: instance_id
+  ModuleName:
+    To: module_name
+  VpcId:
+    To: vpc_id
+  VswitchId:
+    To: vswitch_id
+  EnableCreateDNSRecordInPvzt:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: instance_id
+  VpcId:
+    To: vpc_id
+  VswitchId:
+    To: vswitch_id

@@ -1,0 +1,16 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::POLARDB::AccountPrivilege
+  To: alicloud_polardb_account_privilege
+Properties:
+  AccountName:
+    To: account_name
+  AccountPrivilege:
+    To: account_privilege
+  DBClusterId:
+    To: db_cluster_id
+  DBName:
+    To: db_names
+    Handler: select_first
+Attributes: {}

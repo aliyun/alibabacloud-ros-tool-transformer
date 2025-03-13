@@ -1,0 +1,149 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EHPC::Cluster
+  To: alicloud_ehpc_cluster
+Properties:
+  AccountType:
+    To: account_type
+  AdditionalVolumes:
+    To: additional_volumes
+    Type: List
+    Schema:
+      JobQueue:
+        To: job_queue
+      LocalDirectory:
+        To: local_directory
+      Location:
+        To: location
+      RemoteDirectory:
+        To: remote_directory
+      VolumeId:
+        To: volume_id
+      VolumeMountpoint:
+        To: volume_mountpoint
+      VolumeProtocol:
+        To: volume_protocol
+      VolumeType:
+        To: volume_type
+  Application:
+    To: application
+    Type: List
+    Schema:
+      Tag:
+        To: tag
+  AutoRenew:
+    To: auto_renew
+  AutoRenewPeriod:
+    To: auto_renew_period
+  ClientVersion:
+    To: client_version
+  ComputeEnableHt:
+    To: compute_enable_ht
+  ComputeSpotPriceLimit:
+    To: compute_spot_price_limit
+  ComputeSpotStrategy:
+    To: compute_spot_strategy
+  DeployMode:
+    To: deploy_mode
+  Description:
+    To: description
+  EcsChargeType:
+    To: ecs_charge_type
+  EhpcVersion:
+    To: ehpc_version
+  HaEnable:
+    To: ha_enable
+  ImageId:
+    To: image_id
+  ImageOwnerAlias:
+    To: image_owner_alias
+  InputFileUrl:
+    To: input_file_url
+  IsComputeEss:
+    To: is_compute_ess
+  JobQueue:
+    To: job_queue
+  KeyPairName:
+    To: key_pair_name
+  OsTag:
+    To: os_tag
+  Password:
+    To: password
+  Period:
+    To: period
+  PeriodUnit:
+    To: period_unit
+  PostInstallScript:
+    To: post_install_script
+    Type: List
+    Schema:
+      Args:
+        To: args
+      Url:
+        To: url
+  RamNodeTypes:
+    To: ram_node_types
+  RamRoleName:
+    To: ram_role_name
+  RemoteDirectory:
+    To: remote_directory
+  RemoteVisEnable:
+    To: remote_vis_enable
+  ResourceGroupId:
+    To: resource_group_id
+  SccClusterId:
+    To: scc_cluster_id
+  SchedulerType:
+    To: scheduler_type
+  SecurityGroupId:
+    To: security_group_id
+  SecurityGroupName:
+    To: security_group_name
+  SystemDiskLevel:
+    To: system_disk_level
+  SystemDiskSize:
+    To: system_disk_size
+  SystemDiskType:
+    To: system_disk_type
+  VolumeId:
+    To: volume_id
+  VolumeMountpoint:
+    To: volume_mountpoint
+  VolumeProtocol:
+    To: volume_protocol
+  VolumeType:
+    To: volume_type
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  WithoutElasticIp:
+    To: without_elastic_ip
+  ZoneId:
+    To: zone_id
+  Name:
+    Ignore: true
+  EcsOrderManagerInstanceType:
+    Ignore: true
+  EcsOrderLoginCount:
+    Ignore: true
+  EcsOrderLoginInstanceType:
+    Ignore: true
+  EcsOrderComputeCount:
+    Ignore: true
+  EcsOrderComputeInstanceType:
+    Ignore: true
+  NetworkInterfaceTrafficMode:
+    Ignore: true
+  EcsOrderManagerCount:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  Name:
+    To: cluster_name
+  SecurityGroupId:
+    To: security_group_id
+  EcsInfo:
+    Ignore: true

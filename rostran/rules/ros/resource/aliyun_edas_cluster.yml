@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EDAS::Cluster
+  To: alicloud_edas_cluster
+Properties:
+  ClusterName:
+    To: cluster_name
+  ClusterType:
+    To: cluster_type
+  LogicalRegionId:
+    To: logical_region_id
+  NetworkMode:
+    To: network_mode
+  VpcId:
+    To: vpc_id
+  OversoldFactor:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  ClusterName:
+    To: cluster_name
+  ClusterType:
+    To: cluster_type
+  IaasProvider:
+    Ignore: true

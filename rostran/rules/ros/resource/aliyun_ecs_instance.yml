@@ -1,0 +1,151 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::Instance
+  To: alicloud_instance
+Properties:
+  AllocatePublicIP:
+    To: allocate_public_ip
+    Ignore: true
+  AutoRenewPeriod:
+    To: auto_renew_period
+  ZoneId:
+    To: availability_zone
+  CreditSpecification:
+    To: credit_specification
+  DiskMappings:
+    To: data_disks
+    Type: List
+    Schema:
+      Category:
+        To: category
+      Description:
+        To: description
+      Device:
+        To: device
+      DiskName:
+        To: name
+      PerformanceLevel:
+        To: performance_level
+      Size:
+        To: size
+      SnapshotId:
+        To: snapshot_id
+  DedicatedHostId:
+    To: dedicated_host_id
+  DeletionProtection:
+    To: deletion_protection
+  DeploymentSetGroupNo:
+    To: deployment_set_group_no
+  DeploymentSetId:
+    To: deployment_set_id
+  Description:
+    To: description
+  HostName:
+    To: host_name
+  HpcClusterId:
+    To: hpc_cluster_id
+  HttpEndpoint:
+    To: http_endpoint
+  HttpTokens:
+    To: http_tokens
+  ImageId:
+    To: image_id
+  InstanceChargeType:
+    To: instance_charge_type
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  InternetChargeType:
+    To: internet_charge_type
+  InternetMaxBandwidthOut:
+    To: internet_max_bandwidth_out
+  IoOptimized:
+    To: io_optimized
+    Ignore: true
+  KeyPairName:
+    To: key_name
+  Password:
+    To: password
+  Period:
+    To: period
+  PeriodUnit:
+    To: period_unit
+  PrivateIpAddress:
+    To: private_ip
+  ResourceGroupId:
+    To: resource_group_id
+  RamRoleName:
+    To: role_name
+  SecurityEnhancementStrategy:
+    To: security_enhancement_strategy
+  SecurityGroupId:
+    To: security_groups
+    Handler: select_first
+  SpotDuration:
+    To: spot_duration
+  SpotPriceLimit:
+    To: spot_price_limit
+  SpotStrategy:
+    To: spot_strategy
+  SystemDiskCategory:
+    To: system_disk_category
+  SystemDiskDescription:
+    To: system_disk_description
+  SystemDiskPerformanceLevel:
+    To: system_disk_performance_level
+  SystemDiskSize:
+    To: system_disk_size
+  Tags:
+    To: tags
+    Handler: handle_tags
+  UserData:
+    To: user_data
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  StorageSetPartitionNumber:
+    Ignore: true
+  SpotInterruptionBehavior:
+    Ignore: true
+  SystemDiskDiskName:
+    Ignore: true
+  Tenancy:
+    Ignore: true
+  PasswordInherit:
+    Ignore: true
+  ImageFamily:
+    Ignore: true
+  StorageSetId:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  SecurityGroupIds:
+    To: security_groups
+  PrivatePoolOptions:
+    Ignore: true
+  ZoneIds:
+    Ignore: true
+  UseAdditionalService:
+    Ignore: true
+  Affinity:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  ZoneId:
+    To: availability_zone
+  HostName:
+    To: host_name
+  PrivateIp:
+    To: private_ip
+  PublicIp:
+    To: public_ip
+  InnerIp:
+    Ignore: true
+  PrimaryNetworkInterfaceId:
+    Ignore: true
+  SecurityGroupIds:
+    Ignore: true

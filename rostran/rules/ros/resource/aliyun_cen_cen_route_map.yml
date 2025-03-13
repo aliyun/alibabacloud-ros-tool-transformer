@@ -1,0 +1,65 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::CenRouteMap
+  To: alicloud_cen_route_map
+Properties:
+  AsPathMatchMode:
+    To: as_path_match_mode
+  CenId:
+    To: cen_id
+  CenRegionId:
+    To: cen_region_id
+  CidrMatchMode:
+    To: cidr_match_mode
+  CommunityMatchMode:
+    To: community_match_mode
+  CommunityOperateMode:
+    To: community_operate_mode
+  Description:
+    To: description
+  DestinationChildInstanceTypes:
+    To: destination_child_instance_types
+  DestinationCidrBlocks:
+    To: destination_cidr_blocks
+  DestinationInstanceIds:
+    To: destination_instance_ids
+  DestinationInstanceIdsReverseMatch:
+    To: destination_instance_ids_reverse_match
+  DestinationRouteTableIds:
+    To: destination_route_table_ids
+  MapResult:
+    To: map_result
+  MatchAsns:
+    To: match_asns
+  MatchCommunitySet:
+    To: match_community_set
+  NextPriority:
+    To: next_priority
+  OperateCommunitySet:
+    To: operate_community_set
+  Preference:
+    To: preference
+  PrependAsPath:
+    To: prepend_as_path
+  Priority:
+    To: priority
+  RouteTypes:
+    To: route_types
+  SourceChildInstanceTypes:
+    To: source_child_instance_types
+  SourceInstanceIds:
+    To: source_instance_ids
+  SourceInstanceIdsReverseMatch:
+    To: source_instance_ids_reverse_match
+  SourceRegionIds:
+    To: source_region_ids
+  SourceRouteTableIds:
+    To: source_route_table_ids
+  TransmitDirection:
+    To: transmit_direction
+Attributes:
+  RouteMapId:
+    To: id
+  RouteMapId$$0:
+    To: route_map_id

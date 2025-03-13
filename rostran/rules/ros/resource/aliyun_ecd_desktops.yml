@@ -1,0 +1,56 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECD::Desktops
+  To: alicloud_ecd_desktop
+Properties:
+  Amount:
+    To: amount
+  AutoPay:
+    To: auto_pay
+  AutoRenew:
+    To: auto_renew
+  BundleId:
+    To: bundle_id
+  DesktopName:
+    To: desktop_name
+  OfficeSiteId:
+    To: office_site_id
+  ChargeType:
+    To: payment_type
+  Period:
+    To: period
+  PeriodUnit:
+    To: period_unit
+  PolicyGroupId:
+    To: policy_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  UserAssignMode:
+    To: user_assign_mode
+  UserName:
+    Ignore: true
+  PromotionId:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  EndUserId:
+    Ignore: true
+  VolumeEncryptionKey:
+    Ignore: true
+  VolumeEncryptionEnabled:
+    Ignore: true
+  Hostname:
+    Ignore: true
+  GroupId:
+    Ignore: true
+  DirectoryId:
+    Ignore: true
+  DesktopNameSuffix:
+    Ignore: true
+Attributes:
+  DesktopId:
+    To: id
+  OrderId:
+    Ignore: true

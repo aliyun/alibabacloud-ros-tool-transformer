@@ -1,0 +1,24 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::Template
+  To: alicloud_oos_template
+Properties:
+  Content:
+    To: content
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TemplateName:
+    To: template_name
+Attributes:
+  TemplateName:
+    To: id
+  TemplateId:
+    To: template_id
+  TemplateName$$0:
+    To: template_name
+  ExecutionPolicy:
+    Ignore: true

@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::VpnAttachment
+  To: alicloud_vpn_gateway_vpn_attachment
+Properties:
+  CustomerGatewayId:
+    To: customer_gateway_id
+  EffectImmediately:
+    To: effect_immediately
+  EnableDpd:
+    To: enable_dpd
+  EnableNatTraversal:
+    To: enable_nat_traversal
+  LocalSubnet:
+    To: local_subnet
+  NetworkType:
+    To: network_type
+  RemoteSubnet:
+    To: remote_subnet
+  IpsecConfig:
+    Ignore: true
+  HealthCheckConfig:
+    Ignore: true
+  AutoConfigRoute:
+    Ignore: true
+  BgpConfig:
+    Ignore: true
+  RemoteCaCert:
+    Ignore: true
+  Name:
+    Ignore: true
+  IkeConfig:
+    Ignore: true
+Attributes:
+  VpnAttachmentId:
+    To: id
+  InternetIp:
+    To: internet_ip
+  PeerVpnAttachmentConfig:
+    Ignore: true

@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::TransitRouter
+  To: alicloud_cen_transit_router
+Properties:
+  CenId:
+    To: cen_id
+  TransitRouterDescription:
+    To: transit_router_description
+  TransitRouterName:
+    To: transit_router_name
+Attributes:
+  TransitRouterId:
+    To: id
+  CenId:
+    To: cen_id
+  TransitRouterDescription:
+    To: transit_router_description
+  TransitRouterId$$0:
+    To: transit_router_id
+  TransitRouterName:
+    To: transit_router_name
+  Type:
+    To: type
+  AliUid:
+    Ignore: true
+  SystemTransitRouterRouteTableId:
+    Ignore: true

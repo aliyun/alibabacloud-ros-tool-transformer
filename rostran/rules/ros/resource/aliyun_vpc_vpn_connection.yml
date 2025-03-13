@@ -1,0 +1,83 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::VpnConnection
+  To: alicloud_vpn_connection
+Properties:
+  AutoConfigRoute:
+    To: auto_config_route
+  CustomerGatewayId:
+    To: customer_gateway_id
+  EffectImmediately:
+    To: effect_immediately
+  EnableDpd:
+    To: enable_dpd
+  EnableNatTraversal:
+    To: enable_nat_traversal
+  EnableTunnelsBgp:
+    To: enable_tunnels_bgp
+  IkeConfig:
+    To: ike_config
+    Type: Map
+    Schema:
+      IkeAuthAlg:
+        To: ike_auth_alg
+      IkeEncAlg:
+        To: ike_enc_alg
+      IkeLifetime:
+        To: ike_lifetime
+      IkeMode:
+        To: ike_mode
+      IkePfs:
+        To: ike_pfs
+      IkeVersion:
+        To: ike_version
+      Psk:
+        To: psk
+      LocalId:
+        Ignore: true
+      RemoteId:
+        Ignore: true
+  IpsecConfig:
+    To: ipsec_config
+  LocalSubnet:
+    To: local_subnet
+  Name:
+    To: name
+  RemoteSubnet:
+    To: remote_subnet
+  TunnelOptionsSpecification:
+    To: tunnel_options_specification
+    Type: List
+    Schema:
+      CustomerGatewayId:
+        To: customer_gateway_id
+      EnableDpd:
+        To: enable_dpd
+      EnableNatTraversal:
+        To: enable_nat_traversal
+      Role:
+        To: role
+      TunnelBgpConfig:
+        Ignore: true
+      RemoteCaCertificate:
+        Ignore: true
+      TunnelIpsecConfig:
+        Ignore: true
+      TunnelIkeConfig:
+        Ignore: true
+  VpnGatewayId:
+    To: vpn_gateway_id
+  RemoteCaCertificate:
+    Ignore: true
+  BgpConfig:
+    Ignore: true
+  HealthCheckConfig:
+    Ignore: true
+Attributes:
+  VpnConnectionId:
+    To: id
+  Status:
+    To: status
+  PeerVpnConnectionConfig:
+    Ignore: true

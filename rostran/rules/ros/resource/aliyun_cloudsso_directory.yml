@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudSSO::Directory
+  To: alicloud_cloud_sso_directory
+Properties:
+  DirectoryName:
+    To: directory_name
+Attributes:
+  DirectoryId:
+    To: id

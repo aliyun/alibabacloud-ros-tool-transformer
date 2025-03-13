@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::CopyImage
+  To: alicloud_image_copy
+Properties:
+  Encrypted:
+    To: encrypted
+  DestinationImageName:
+    To: image_name
+  KMSKeyId:
+    To: kms_key_id
+  ImageId:
+    To: source_image_id
+  SourceRegionId:
+    To: source_region_id
+  Tag:
+    To: tags
+  ResourceGroupId:
+    Ignore: true
+  DestinationRegionId:
+    Ignore: true
+  AllowCopyInSameRegion:
+    Ignore: true
+  DestinationDescription:
+    Ignore: true
+Attributes:
+  ImageId:
+    To: id
+  DestinationRegionId:
+    Ignore: true
+  SourceRegionId:
+    Ignore: true

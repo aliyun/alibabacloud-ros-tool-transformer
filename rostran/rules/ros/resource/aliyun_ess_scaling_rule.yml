@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESS::ScalingRule
+  To: alicloud_ess_scaling_rule
+Properties:
+  AdjustmentType:
+    To: adjustment_type
+  AdjustmentValue:
+    To: adjustment_value
+  Cooldown:
+    To: cooldown
+  DisableScaleIn:
+    To: disable_scale_in
+  EstimatedInstanceWarmup:
+    To: estimated_instance_warmup
+  InitialMaxSize:
+    To: initial_max_size
+  MetricName:
+    To: metric_name
+  MinAdjustmentMagnitude:
+    To: min_adjustment_magnitude
+  PredictiveScalingMode:
+    To: predictive_scaling_mode
+  PredictiveTaskBufferTime:
+    To: predictive_task_buffer_time
+  PredictiveValueBehavior:
+    To: predictive_value_behavior
+  PredictiveValueBuffer:
+    To: predictive_value_buffer
+  ScaleInEvaluationCount:
+    To: scale_in_evaluation_count
+  ScaleOutEvaluationCount:
+    To: scale_out_evaluation_count
+  ScalingGroupId:
+    To: scaling_group_id
+  ScalingRuleName:
+    To: scaling_rule_name
+  ScalingRuleType:
+    To: scaling_rule_type
+  StepAdjustment:
+    To: step_adjustment
+    Type: List
+    Schema:
+      MetricIntervalLowerBound:
+        To: metric_interval_lower_bound
+      MetricIntervalUpperBound:
+        To: metric_interval_upper_bound
+      ScalingAdjustment:
+        To: scaling_adjustment
+  TargetValue:
+    To: target_value
+Attributes:
+  ScalingRuleId:
+    To: id
+  ScalingRuleAri:
+    Ignore: true

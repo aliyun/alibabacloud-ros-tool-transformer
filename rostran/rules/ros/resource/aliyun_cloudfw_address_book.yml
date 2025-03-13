@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CLOUDFW::AddressBook
+  To: alicloud_cloud_firewall_address_book
+Properties:
+  AddressList:
+    To: address_list
+    Handler: comma_join
+  AutoAddTagEcs:
+    To: auto_add_tag_ecs
+    Handler: to_boolean
+  Description:
+    To: description
+  TagList:
+    To: ecs_tags
+    Type: List
+    Schema:
+      TagKey:
+        To: tag_key
+      TagValue:
+        To: tag_value
+  GroupName:
+    To: group_name
+  GroupType:
+    To: group_type
+  TagRelation:
+    To: tag_relation
+  RegionId:
+    Ignore: true
+Attributes:
+  GroupUuid:
+    To: id

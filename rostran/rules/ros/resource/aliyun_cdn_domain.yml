@@ -1,0 +1,34 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CDN::Domain
+  To: alicloud_cdn_domain_new
+Properties:
+  CdnType:
+    To: cdn_type
+  CheckUrl:
+    To: check_url
+  DomainName:
+    To: domain_name
+  ResourceGroupId:
+    To: resource_group_id
+  Scope:
+    To: scope
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Sources:
+    Ignore: true
+  TopLevelDomain:
+    Ignore: true
+  OriginServers:
+    Ignore: true
+Attributes:
+  DomainName:
+    To: id
+  Cname:
+    To: cname
+  DomainName$$0:
+    To: domain_name
+  Arn:
+    Ignore: true

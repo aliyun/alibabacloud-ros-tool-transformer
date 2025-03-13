@@ -1,0 +1,101 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ClickHouse::DBCluster
+  To: alicloud_click_house_db_cluster
+Properties:
+  Category:
+    To: category
+  EncryptionKey:
+    To: encryption_key
+  EncryptionType:
+    To: encryption_type
+  PaymentType:
+    To: payment_type
+  Period:
+    To: period
+  UsedTime:
+    To: used_time
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  DBClusterVersion:
+    Ignore: true
+  DBClusterDescription:
+    Ignore: true
+  DbNodeStorageType:
+    Ignore: true
+  DBClusterNetworkType:
+    Ignore: true
+  DBNodeStorage:
+    Ignore: true
+  DBNodeCount:
+    Ignore: true
+  DBClusterType:
+    Ignore: true
+Attributes:
+  DBClusterId:
+    To: id
+  Category:
+    To: category
+  ConnectionString:
+    To: connection_string
+  EncryptionKey:
+    To: encryption_key
+  EncryptionType:
+    To: encryption_type
+  PaymentType:
+    To: payment_type
+  Port:
+    To: port
+  StorageType:
+    To: storage_type
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  LockMode:
+    Ignore: true
+  IsExpired:
+    Ignore: true
+  DBClusterNetworkType:
+    Ignore: true
+  Period:
+    Ignore: true
+  DbNodeStorageType:
+    Ignore: true
+  AliUid:
+    Ignore: true
+  PublicPort:
+    Ignore: true
+  DBNodeStorage:
+    Ignore: true
+  DBClusterVersion:
+    Ignore: true
+  VpcCloudInstanceId:
+    Ignore: true
+  DBNodeCount:
+    Ignore: true
+  DBClusterType:
+    Ignore: true
+  Engine:
+    Ignore: true
+  EngineVersion:
+    Ignore: true
+  PublicConnectionString:
+    Ignore: true
+  Bid:
+    Ignore: true
+  CommodityCode:
+    Ignore: true
+  LockReason:
+    Ignore: true
+  DBNodeClass:
+    Ignore: true
+  DBClusterDescription:
+    Ignore: true

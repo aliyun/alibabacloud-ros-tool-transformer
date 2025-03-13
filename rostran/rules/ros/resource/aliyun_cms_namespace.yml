@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CMS::Namespace
+  To: alicloud_cms_namespace
+Properties:
+  Description:
+    To: description
+  Namespace:
+    To: namespace
+  Specification:
+    To: specification
+Attributes:
+  Namespace:
+    To: id
+  Description:
+    To: description
+  Namespace$$0:
+    To: namespace
+  Specification:
+    To: specification
+  CreateTime:
+    Ignore: true
+  ModifyTime:
+    Ignore: true

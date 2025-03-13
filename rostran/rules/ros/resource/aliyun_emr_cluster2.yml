@@ -1,0 +1,122 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EMR::Cluster2
+  To: alicloud_emrv2_cluster
+Properties:
+  ApplicationConfigs:
+    To: application_configs
+    Type: List
+    Schema:
+      ApplicationName:
+        To: application_name
+      ConfigFileName:
+        To: config_file_name
+      ConfigItemKey:
+        To: config_item_key
+      ConfigItemValue:
+        To: config_item_value
+      ConfigScope:
+        To: config_scope
+      NodeGroupId:
+        To: node_group_id
+      NodeGroupName:
+        To: node_group_name
+  BootstrapScripts:
+    To: bootstrap_scripts
+    Type: List
+    Schema:
+      ExecutionFailStrategy:
+        To: execution_fail_strategy
+      ExecutionMoment:
+        To: execution_moment
+      Priority:
+        To: priority
+      ScriptArgs:
+        To: script_args
+      ScriptName:
+        To: script_name
+      ScriptPath:
+        To: script_path
+      NodeSelector:
+        Ignore: true
+  ClusterName:
+    To: cluster_name
+  ClusterType:
+    To: cluster_type
+  DeployMode:
+    To: deploy_mode
+  NodeGroups:
+    To: node_groups
+    Type: List
+    Schema:
+      AdditionalSecurityGroupIds:
+        To: additional_security_group_ids
+      DataDisks:
+        To: data_disks
+        Type: List
+        Schema:
+          Category:
+            To: category
+          Count:
+            To: count
+          PerformanceLevel:
+            To: performance_level
+          Size:
+            To: size
+      DeploymentSetStrategy:
+        To: deployment_set_strategy
+      GracefulShutdown:
+        To: graceful_shutdown
+      InstanceTypes:
+        To: instance_types
+      NodeCount:
+        To: node_count
+      NodeGroupName:
+        To: node_group_name
+      NodeGroupType:
+        To: node_group_type
+      NodeResizeStrategy:
+        To: node_resize_strategy
+      SpotBidPrices:
+        To: spot_bid_prices
+        Type: List
+        Schema:
+          BidPrice:
+            To: bid_price
+          InstanceType:
+            To: instance_type
+      SpotInstanceRemedy:
+        To: spot_instance_remedy
+      WithPublicIp:
+        To: with_public_ip
+      SystemDisk:
+        Ignore: true
+      SpotStrategy:
+        Ignore: true
+      VSwitchIds:
+        Ignore: true
+      CostOptimizedConfig:
+        Ignore: true
+  PaymentType:
+    To: payment_type
+  ReleaseVersion:
+    To: release_version
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityMode:
+    To: security_mode
+  Tags:
+    To: tags
+    Handler: handle_tags
+  NodeAttributes:
+    Ignore: true
+  SubscriptionConfig:
+    Ignore: true
+  Applications:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  ApplicationLinks:
+    Ignore: true

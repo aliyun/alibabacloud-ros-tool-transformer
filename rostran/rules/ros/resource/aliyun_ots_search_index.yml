@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OTS::SearchIndex
+  To: alicloud_ots_search_index
+Properties:
+  IndexName:
+    To: index_name
+  InstanceName:
+    To: instance_name
+  TableName:
+    To: table_name
+  IndexSort:
+    Ignore: true
+  FieldSchemas:
+    Ignore: true
+  IndexSetting:
+    Ignore: true
+Attributes:
+  IndexName:
+    Ignore: true

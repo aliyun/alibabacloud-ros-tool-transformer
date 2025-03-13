@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::NetworkInterfacePermission
+  To: alicloud_ecs_network_interface_permission
+Properties:
+  AccountId:
+    To: account_id
+  NetworkInterfaceId:
+    To: network_interface_id
+  Permission:
+    To: permission
+Attributes:
+  NetworkInterfacePermissionId:
+    To: id

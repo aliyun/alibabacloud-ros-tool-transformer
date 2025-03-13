@@ -17,7 +17,7 @@ Properties:
   source_exchange:
     To: SourceExchange
   virtual_host_name:
-    Ignore: true
+    Ignore: VirtualHost
 Attributes:
   id:
     Ignore: true

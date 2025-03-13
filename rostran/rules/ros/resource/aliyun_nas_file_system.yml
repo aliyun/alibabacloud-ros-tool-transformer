@@ -1,0 +1,40 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NAS::FileSystem
+  To: alicloud_nas_file_system
+Properties:
+  Capacity:
+    To: capacity
+  Description:
+    To: description
+  EncryptType:
+    To: encrypt_type
+  FileSystemType:
+    To: file_system_type
+  ProtocolType:
+    To: protocol_type
+  StorageType:
+    To: storage_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  Duration:
+    Ignore: true
+  Bandwidth:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  SnapshotId:
+    Ignore: true
+  ChargeType:
+    Ignore: true
+Attributes:
+  FileSystemId:
+    To: id

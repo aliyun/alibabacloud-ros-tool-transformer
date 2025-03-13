@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::AccessKey
+  To: alicloud_ram_access_key
+Properties:
+  UserName:
+    To: user_name
+Attributes:
+  AccessKeyId:
+    To: id
+  Status:
+    To: status
+  AccessKeySecret:
+    Ignore: true

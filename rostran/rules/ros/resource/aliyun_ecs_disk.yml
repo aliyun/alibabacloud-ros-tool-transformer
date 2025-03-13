@@ -1,0 +1,52 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::Disk
+  To: alicloud_ecs_disk
+Properties:
+  ZoneId:
+    To: availability_zone
+  DeleteAutoSnapshot:
+    To: delete_auto_snapshot
+  Description:
+    To: description
+  DiskName:
+    To: disk_name
+  Encrypted:
+    To: encrypted
+  InstanceId:
+    To: instance_id
+  PerformanceLevel:
+    To: performance_level
+  ResourceGroupId:
+    To: resource_group_id
+  Size:
+    To: size
+  SnapshotId:
+    To: snapshot_id
+  StorageSetId:
+    To: storage_set_id
+  StorageSetPartitionNumber:
+    To: storage_set_partition_number
+  Tags:
+    To: tags
+    Handler: handle_tags
+  ZoneId$$0:
+    To: zone_id
+  DiskCategory:
+    Ignore: true
+  KMSKeyId:
+    Ignore: true
+  ProvisionedIops:
+    Ignore: true
+  AutoSnapshotPolicyId:
+    Ignore: true
+  BurstingEnabled:
+    Ignore: true
+  MultiAttach:
+    Ignore: true
+Attributes:
+  DiskId:
+    To: id
+  Status:
+    To: status

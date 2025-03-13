@@ -1,0 +1,43 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::TSDB::HiTSDBInstance
+  To: alicloud_tsdb_instance
+Properties:
+  DiskCategory:
+    To: disk_category
+  Duration:
+    To: duration
+  InstanceAlias:
+    To: instance_alias
+  InstanceClass:
+    To: instance_class
+  InstanceStorage:
+    To: instance_storage
+  PayType:
+    To: payment_type
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  PricingCycle:
+    Ignore: true
+  VPCId:
+    Ignore: true
+  SecurityIpList:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  EngineType:
+    To: engine_type
+  ConnectionString:
+    Ignore: true
+  ReverseVpcPort:
+    Ignore: true
+  OrderId:
+    Ignore: true
+  ReverseVpcIp:
+    Ignore: true
+  PublicConnectionString:
+    Ignore: true

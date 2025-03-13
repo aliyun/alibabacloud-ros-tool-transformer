@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ALB::HealthCheckTemplate
+  To: alicloud_alb_health_check_template
+Properties:
+  HealthCheckCodes:
+    To: health_check_codes
+  HealthCheckConnectPort:
+    To: health_check_connect_port
+  HealthCheckHost:
+    To: health_check_host
+  HealthCheckInterval:
+    To: health_check_interval
+  HealthCheckMethod:
+    To: health_check_method
+  HealthCheckPath:
+    To: health_check_path
+  HealthCheckProtocol:
+    To: health_check_protocol
+  HealthCheckTemplateName:
+    To: health_check_template_name
+  HealthCheckTimeout:
+    To: health_check_timeout
+  HealthyThreshold:
+    To: healthy_threshold
+  UnhealthyThreshold:
+    To: unhealthy_threshold
+Attributes:
+  HealthCheckTemplateId:
+    To: id

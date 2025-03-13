@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NAS::AccessGroup
+  To: alicloud_nas_access_group
+Properties:
+  AccessGroupName:
+    To: access_group_name
+  AccessGroupType:
+    To: access_group_type
+  Description:
+    To: description
+  FileSystemType:
+    To: file_system_type
+  AccessGroupName$$0:
+    To: name
+  AccessGroupType$$0:
+    To: type
+Attributes:
+  AccessGroupName:
+    To: id
+  AccessGroupName$$0:
+    To: access_group_name

@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::AnycastEIPAssociation
+  To: alicloud_eipanycast_anycast_eip_address_attachment
+Properties:
+  AnycastId:
+    To: anycast_id
+  BindInstanceId:
+    To: bind_instance_id
+  BindInstanceRegionId:
+    To: bind_instance_region_id
+  BindInstanceType:
+    To: bind_instance_type
+Attributes:
+  AnycastId:
+    To: anycast_id
+  BindInstanceId:
+    To: bind_instance_id
+  BindInstanceRegionId:
+    To: bind_instance_region_id
+  BindInstanceType:
+    To: bind_instance_type

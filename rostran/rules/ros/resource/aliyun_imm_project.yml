@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::IMM::Project
+  To: alicloud_imm_project
+Properties:
+  Project:
+    To: project
+  ServiceRole:
+    To: service_role
+Attributes:
+  Project:
+    To: id
+  Project$$0:
+    To: project

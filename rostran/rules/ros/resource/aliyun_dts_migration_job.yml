@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DTS::MigrationJob
+  To: alicloud_dts_migration_job
+Properties:
+  MigrationJobName:
+    To: dts_job_name
+  MigrationJobClass:
+    To: instance_class
+  SourceEndpoint:
+    Ignore: true
+  DestinationEndpoint:
+    Ignore: true
+  MigrationMode:
+    Ignore: true
+  MigrationObject:
+    Ignore: true
+Attributes:
+  MigrationJobId:
+    To: id

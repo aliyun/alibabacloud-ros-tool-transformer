@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::CenBandwidthLimit
+  To: alicloud_cen_bandwidth_limit
+Properties:
+  BandwidthLimit:
+    To: bandwidth_limit
+  CenId:
+    To: instance_id
+  OppositeRegionId:
+    Ignore: true
+  LocalRegionId:
+    Ignore: true
+  BandwidthType:
+    Ignore: true
+Attributes: {}

@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::CenInstanceAttachment
+  To: alicloud_cen_instance_attachment
+Properties:
+  ChildInstanceId:
+    To: child_instance_id
+  ChildInstanceOwnerId:
+    To: child_instance_owner_id
+  ChildInstanceRegionId:
+    To: child_instance_region_id
+  ChildInstanceType:
+    To: child_instance_type
+  CenId:
+    To: instance_id
+Attributes: {}

@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CR::InstanceEndpointAclPolicy
+  To: alicloud_cr_endpoint_acl_policy
+Properties:
+  Comment:
+    To: description
+  EndpointType:
+    To: endpoint_type
+  Entry:
+    To: entry
+  InstanceId:
+    To: instance_id
+  ModuleName:
+    To: module_name
+  RegionId:
+    Ignore: true
+Attributes:
+  Entry:
+    To: entry
+  InstanceId:
+    To: instance_id

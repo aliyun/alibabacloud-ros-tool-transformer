@@ -1,0 +1,54 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RDS::ReadOnlyDBInstance
+  To: alicloud_db_readonly_instance
+Properties:
+  AutoRenew:
+    To: auto_renew
+  DeletionProtection:
+    To: deletion_protection
+  EngineVersion:
+    To: engine_version
+  DBInstanceDescription:
+    To: instance_name
+  DBInstanceStorage:
+    To: instance_storage
+  DBInstanceClass:
+    To: instance_type
+  DBInstanceId:
+    To: master_db_instance_id
+  Period:
+    To: period
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  Category:
+    Ignore: true
+  PeriodType:
+    Ignore: true
+  PrivateIpAddress:
+    Ignore: true
+  VPCId:
+    Ignore: true
+  PayType:
+    Ignore: true
+  DedicatedHostGroupId:
+    Ignore: true
+  DBInstanceStorageType:
+    Ignore: true
+  TargetDedicatedHostIdForMaster:
+    Ignore: true
+Attributes:
+  DBInstanceId:
+    To: id
+  ConnectionString:
+    To: connection_string
+  Port:
+    To: port

@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ApiGateway::Group
+  To: alicloud_api_gateway_group
+Properties:
+  BasePath:
+    To: base_path
+  Description:
+    To: description
+  InstanceId:
+    To: instance_id
+  GroupName:
+    To: name
+  Tags:
+    Ignore: true
+  VpcIntranetEnable:
+    Ignore: true
+  PassthroughHeaders:
+    Ignore: true
+  InternetEnable:
+    Ignore: true
+Attributes:
+  GroupId:
+    To: id
+  SubDomain:
+    To: sub_domain
+  Tags:
+    Ignore: true

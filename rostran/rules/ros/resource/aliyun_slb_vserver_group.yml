@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::VServerGroup
+  To: alicloud_slb_server_group
+Properties:
+  LoadBalancerId:
+    To: load_balancer_id
+  VServerGroupName:
+    To: name
+  BackendServers:
+    To: servers
+    Type: List
+    Schema:
+      Port:
+        To: port
+      ServerId:
+        To: server_ids
+        Handler: select_first
+      Weight:
+        To: weight
+      Description:
+        Ignore: true
+      Type:
+        Ignore: true
+      ServerIp:
+        Ignore: true
+  Tags:
+    To: tags
+    Handler: handle_tags
+Attributes:
+  VServerGroupId:
+    To: id
+  LoadBalancerId:
+    To: load_balancer_id
+  Arn:
+    Ignore: true
+  BackendServers:
+    Ignore: true

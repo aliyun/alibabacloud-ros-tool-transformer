@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ENS::KeyPair
+  To: alicloud_ens_key_pair
+Properties:
+  KeyPairName:
+    To: key_pair_name
+  PublicKeyBody:
+    Ignore: true
+Attributes:
+  KeyPairName:
+    To: id
+  KeyPairName$$0:
+    To: key_pair_name
+  PrivateKeyBody:
+    Ignore: true
+  KeyPairFingerPrint:
+    Ignore: true

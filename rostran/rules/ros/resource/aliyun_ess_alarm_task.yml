@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESS::AlarmTask
+  To: alicloud_ess_alarm
+Properties:
+  AlarmAction:
+    To: alarm_actions
+  GroupId:
+    To: cloud_monitor_group_id
+  ComparisonOperator:
+    To: comparison_operator
+  Description:
+    To: description
+  Dimensions:
+    To: dimensions
+  EvaluationCount:
+    To: evaluation_count
+  MetricName:
+    To: metric_name
+  MetricType:
+    To: metric_type
+  Name:
+    To: name
+  Period:
+    To: period
+  ScalingGroupId:
+    To: scaling_group_id
+  Statistics:
+    To: statistics
+  Threshold:
+    To: threshold
+Attributes:
+  AlarmTaskId:
+    To: id

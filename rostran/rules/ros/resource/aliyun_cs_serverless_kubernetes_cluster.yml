@@ -1,0 +1,67 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CS::ServerlessKubernetesCluster
+  To: alicloud_cs_serverless_kubernetes
+Properties:
+  Addons:
+    To: addons
+    Type: List
+    Schema:
+      Config:
+        To: config
+      Disabled:
+        To: disabled
+      Name:
+        To: name
+  Name:
+    To: name
+  NatGateway:
+    To: new_nat_gateway
+  PrivateZone:
+    To: private_zone
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityGroupId:
+    To: security_group_id
+  ServiceCidr:
+    To: service_cidr
+  Tags:
+    To: tags
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  VSwitchId$$0:
+    To: vswitch_ids
+  ZoneId:
+    To: zone_id
+  KubernetesVersion:
+    Ignore: true
+  EndpointPublicAccess:
+    Ignore: true
+  VSwitchIds:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  Nodes:
+    Ignore: true
+  IngressSLBId:
+    Ignore: true
+  ScalingConfigurationId:
+    Ignore: true
+  ScalingGroupId:
+    Ignore: true
+  PrivateUserKubConfig:
+    Ignore: true
+  TaskId:
+    Ignore: true
+  APIServerSLBId:
+    Ignore: true
+  DefaultUserKubeConfig:
+    Ignore: true
+  WorkerRamRoleName:
+    Ignore: true
+  ScalingRuleId:
+    Ignore: true

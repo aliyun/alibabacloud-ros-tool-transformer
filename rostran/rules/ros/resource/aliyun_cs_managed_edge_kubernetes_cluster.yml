@@ -1,0 +1,79 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CS::ManagedEdgeKubernetesCluster
+  To: alicloud_cs_edge_kubernetes
+Properties:
+  Addons:
+    To: addons
+    Type: List
+    Schema:
+      Config:
+        To: config
+      Disabled:
+        To: disabled
+      Name:
+        To: name
+  ClusterSpec:
+    To: cluster_spec
+  DeletionProtection:
+    To: deletion_protection
+  IsEnterpriseSecurityGroup:
+    To: is_enterprise_security_group
+  Name:
+    To: name
+  NodeCidrMask:
+    To: node_cidr_mask
+  ProxyMode:
+    To: proxy_mode
+  ResourceGroupId:
+    To: resource_group_id
+  ServiceCidr:
+    To: service_cidr
+  VpcId:
+    To: vpc_id
+  Tags:
+    Ignore: true
+  LoginPassword:
+    Ignore: true
+  EndpointPublicAccess:
+    Ignore: true
+  Profile:
+    Ignore: true
+  ContainerCidr:
+    Ignore: true
+  CloudMonitorFlags:
+    Ignore: true
+  SnatEntry:
+    Ignore: true
+  TimeoutMins:
+    Ignore: true
+  MaintenanceWindow:
+    Ignore: true
+  KeyPair:
+    Ignore: true
+  ZoneIds:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  Nodes:
+    Ignore: true
+  IngressSLBId:
+    Ignore: true
+  ScalingConfigurationId:
+    Ignore: true
+  ScalingGroupId:
+    Ignore: true
+  PrivateUserKubConfig:
+    Ignore: true
+  TaskId:
+    Ignore: true
+  APIServerSLBId:
+    Ignore: true
+  DefaultUserKubeConfig:
+    Ignore: true
+  WorkerRamRoleName:
+    Ignore: true
+  ScalingRuleId:
+    Ignore: true

@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::HaVip
+  To: alicloud_vpc_ha_vip
+Properties:
+  Description:
+    To: description
+  Name:
+    To: ha_vip_name
+  Name$$0:
+    To: havip_name
+  IpAddress:
+    To: ip_address
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VSwitchId:
+    To: vswitch_id
+Attributes:
+  HaVipId:
+    To: id
+  HaVipId$$0:
+    To: ha_vip_id
+  IpAddress:
+    To: ip_address
+  Arn:
+    Ignore: true

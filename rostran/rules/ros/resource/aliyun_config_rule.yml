@@ -1,0 +1,71 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Config::Rule
+  To: alicloud_config_rule
+Properties:
+  ConfigRuleTriggerTypes:
+    To: config_rule_trigger_types
+  Description:
+    To: description
+  ExcludeResourceIdsScope:
+    To: exclude_resource_ids_scope
+  InputParameters:
+    To: input_parameters
+  MaximumExecutionFrequency:
+    To: maximum_execution_frequency
+  RegionIdsScope:
+    To: region_ids_scope
+  ResourceGroupIdsScope:
+    To: resource_group_ids_scope
+  ResourceTypesScope:
+    To: resource_types_scope
+  RiskLevel:
+    To: risk_level
+  RuleName:
+    To: rule_name
+  SourceIdentifier:
+    To: source_identifier
+  SourceOwner:
+    To: source_owner
+  TagKeyScope:
+    To: tag_key_scope
+  TagValueScope:
+    To: tag_value_scope
+  TagKeyLogicScope:
+    Ignore: true
+Attributes:
+  ConfigRuleArn:
+    To: config_rule_arn
+  ConfigRuleId:
+    To: config_rule_id
+  ConfigRuleTriggerTypes:
+    To: config_rule_trigger_types
+  Description:
+    To: description
+  EventSource:
+    To: event_source
+  ExcludeResourceIdsScope:
+    To: exclude_resource_ids_scope
+  InputParameters:
+    To: input_parameters
+  MaximumExecutionFrequency:
+    To: maximum_execution_frequency
+  RegionIdsScope:
+    To: region_ids_scope
+  ResourceGroupIdsScope:
+    To: resource_group_ids_scope
+  ResourceTypesScope:
+    To: resource_types_scope
+  RiskLevel:
+    To: risk_level
+  RuleName:
+    To: rule_name
+  SourceIdentifier:
+    To: source_identifier
+  SourceOwner:
+    To: source_owner
+  TagKeyScope:
+    To: tag_key_scope
+  TagValueScope:
+    To: tag_value_scope

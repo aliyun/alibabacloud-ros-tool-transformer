@@ -1,0 +1,81 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::Vault
+  To: alicloud_hbr_vault
+Properties:
+  Description:
+    To: description
+  EncryptType:
+    To: encrypt_type
+  KmsKeyId:
+    To: kms_key_id
+  RedundancyType:
+    To: redundancy_type
+  VaultName:
+    To: vault_name
+  VaultStorageClass:
+    To: vault_storage_class
+  VaultType:
+    To: vault_type
+  ResourceGroupId:
+    Ignore: true
+  Tags:
+    Ignore: true
+Attributes:
+  VaultId:
+    To: id
+  Description:
+    To: description
+  VaultName:
+    To: vault_name
+  VaultStorageClass:
+    To: vault_storage_class
+  VaultType:
+    To: vault_type
+  ResourceGroupId:
+    Ignore: true
+  UpdatedTime:
+    Ignore: true
+  ReplicationProgress:
+    Ignore: true
+  ReplicationSourceVaultId:
+    Ignore: true
+  TrialInfo:
+    Ignore: true
+  Replication:
+    Ignore: true
+  IndexLevel:
+    Ignore: true
+  BytesDone:
+    Ignore: true
+  SearchEnabled:
+    Ignore: true
+  BackupPlanStatistics:
+    Ignore: true
+  RedundancyType:
+    Ignore: true
+  Tags:
+    Ignore: true
+  VaultStatusMessage:
+    Ignore: true
+  IndexAvailable:
+    Ignore: true
+  ReplicationSourceRegionId:
+    Ignore: true
+  PaymentType:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  IndexUpdateTime:
+    Ignore: true
+  LatestReplicationTime:
+    Ignore: true
+  SourceTypes:
+    Ignore: true
+  Dedup:
+    Ignore: true
+  StorageSize:
+    Ignore: true
+  Retention:
+    Ignore: true

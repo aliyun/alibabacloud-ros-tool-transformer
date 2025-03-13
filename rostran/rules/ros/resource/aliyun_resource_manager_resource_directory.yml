@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::ResourceDirectory
+  To: alicloud_resource_manager_resource_directory
+Properties: {}
+Attributes:
+  ResourceDirectoryId:
+    To: id
+  MasterAccountId:
+    To: master_account_id
+  MasterAccountName:
+    To: master_account_name
+  RootFolderId:
+    To: root_folder_id

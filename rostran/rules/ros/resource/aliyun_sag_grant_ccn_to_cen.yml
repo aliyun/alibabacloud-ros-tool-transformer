@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::GrantCcnToCen
+  To: alicloud_cloud_connect_network_grant
+Properties:
+  CenUid:
+    To: cen_uid
+  CenInstanceId:
+    Ignore: true
+  CcnInstanceId:
+    Ignore: true
+Attributes:
+  CcnInstanceId:
+    To: ccn_id
+  CenInstanceId:
+    To: cen_id

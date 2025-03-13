@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OTS::Table
+  To: alicloud_ots_table
+Properties:
+  DeviationCellVersionInSec:
+    To: deviation_cell_version_in_sec
+  InstanceName:
+    To: instance_name
+  MaxVersions:
+    To: max_version
+  PrimaryKey:
+    To: primary_key
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Type:
+        To: type
+  TableName:
+    To: table_name
+  TimeToLive:
+    To: time_to_live
+  SecondaryIndices:
+    Ignore: true
+  ReservedThroughput:
+    Ignore: true
+  Columns:
+    Ignore: true
+Attributes:
+  TableName:
+    To: table_name

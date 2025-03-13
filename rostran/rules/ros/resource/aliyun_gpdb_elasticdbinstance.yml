@@ -1,0 +1,58 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GPDB::ElasticDBInstance
+  To: alicloud_gpdb_elastic_instance
+Properties:
+  EncryptionKey:
+    To: encryption_key
+  EncryptionType:
+    To: encryption_type
+  EngineVersion:
+    To: engine_version
+  InstanceSpec:
+    To: instance_spec
+  Period:
+    To: payment_duration
+  PeriodUnit:
+    To: payment_duration_unit
+  PayType:
+    To: payment_type
+  SegNodeNum:
+    To: seg_node_num
+  SegStorageType:
+    To: seg_storage_type
+  StorageSize:
+    To: storage_size
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  DBInstanceMode:
+    Ignore: true
+  VPCId:
+    Ignore: true
+  DBInstanceDescription:
+    Ignore: true
+  MasterNodeNum:
+    Ignore: true
+  DBInstanceCategory:
+    Ignore: true
+  SecurityIPList:
+    Ignore: true
+  PrivateIpAddress:
+    Ignore: true
+Attributes:
+  DBInstanceId:
+    To: id
+  ConnectionString:
+    To: connection_string
+  Port:
+    To: port
+  OrderId:
+    Ignore: true
+  Arn:
+    Ignore: true

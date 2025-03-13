@@ -1,0 +1,294 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESS::EciScalingConfiguration
+  To: alicloud_ess_eci_scaling_configuration
+Properties:
+  AcrRegistryInfos:
+    To: acr_registry_infos
+    Type: List
+    Schema:
+      Domains:
+        To: domains
+      InstanceId:
+        To: instance_id
+      InstanceName:
+        To: instance_name
+      RegionId:
+        To: region_id
+  ActiveDeadlineSeconds:
+    To: active_deadline_seconds
+  AutoCreateEip:
+    To: auto_create_eip
+  AutoMatchImageCache:
+    To: auto_match_image_cache
+  ContainerGroupName:
+    To: container_group_name
+  Containers:
+    To: containers
+    Type: List
+    Schema:
+      Args:
+        To: args
+      Commands:
+        To: commands
+      Cpu:
+        To: cpu
+      EnvironmentVars:
+        To: environment_vars
+        Type: List
+        Schema:
+          Key:
+            To: key
+          Value:
+            To: value
+      Gpu:
+        To: gpu
+      Image:
+        To: image
+      ImagePullPolicy:
+        To: image_pull_policy
+      LivenessProbeExecCommands:
+        To: liveness_probe_exec_commands
+      LivenessProbeFailureThreshold:
+        To: liveness_probe_failure_threshold
+      LivenessProbeHttpGetPath:
+        To: liveness_probe_http_get_path
+      LivenessProbeHttpGetPort:
+        To: liveness_probe_http_get_port
+      LivenessProbeHttpGetScheme:
+        To: liveness_probe_http_get_scheme
+      LivenessProbeInitialDelaySeconds:
+        To: liveness_probe_initial_delay_seconds
+      LivenessProbePeriodSeconds:
+        To: liveness_probe_period_seconds
+      LivenessProbeSuccessThreshold:
+        To: liveness_probe_success_threshold
+      LivenessProbeTcpSocketPort:
+        To: liveness_probe_tcp_socket_port
+      LivenessProbeTimeoutSeconds:
+        To: liveness_probe_timeout_seconds
+      Memory:
+        To: memory
+      Name:
+        To: name
+      Ports:
+        To: ports
+        Type: List
+        Schema:
+          Port:
+            To: port
+          Protocol:
+            To: protocol
+      ReadinessProbeExecCommands:
+        To: readiness_probe_exec_commands
+      ReadinessProbeFailureThreshold:
+        To: readiness_probe_failure_threshold
+      ReadinessProbeHttpGetPath:
+        To: readiness_probe_http_get_path
+      ReadinessProbeHttpGetPort:
+        To: readiness_probe_http_get_port
+      ReadinessProbeHttpGetScheme:
+        To: readiness_probe_http_get_scheme
+      ReadinessProbeInitialDelaySeconds:
+        To: readiness_probe_initial_delay_seconds
+      ReadinessProbePeriodSeconds:
+        To: readiness_probe_period_seconds
+      ReadinessProbeSuccessThreshold:
+        To: readiness_probe_success_threshold
+      ReadinessProbeTcpSocketPort:
+        To: readiness_probe_tcp_socket_port
+      ReadinessProbeTimeoutSeconds:
+        To: readiness_probe_timeout_seconds
+      SecurityContextRunAsUser:
+        To: security_context_run_as_user
+      VolumeMounts:
+        To: volume_mounts
+        Type: List
+        Schema:
+          MountPath:
+            To: mount_path
+          Name:
+            To: name
+          ReadOnly:
+            To: read_only
+          MountPropagation:
+            Ignore: true
+          SubPath:
+            Ignore: true
+      WorkingDir:
+        To: working_dir
+      Stdin:
+        Ignore: true
+      SecurityContextCapabilitiesAdd:
+        Ignore: true
+      Tty:
+        Ignore: true
+      StdinOnce:
+        Ignore: true
+  Cpu:
+    To: cpu
+  CpuOptionsCore:
+    To: cpu_options_core
+  CpuOptionsThreadsPerCore:
+    To: cpu_options_threads_per_core
+  DnsPolicy:
+    To: dns_policy
+  EgressBandwidth:
+    To: egress_bandwidth
+  EipBandwidth:
+    To: eip_bandwidth
+  EphemeralStorage:
+    To: ephemeral_storage
+  HostAliases:
+    To: host_aliases
+    Type: List
+    Schema:
+      Hostnames:
+        To: hostnames
+      Ip:
+        To: ip
+  HostName:
+    To: host_name
+  ImageRegistryCredentials:
+    To: image_registry_credentials
+    Type: List
+    Schema:
+      Password:
+        To: password
+      Server:
+        To: server
+      UserName:
+        Ignore: true
+  ImageSnapshotId:
+    To: image_snapshot_id
+  IngressBandwidth:
+    To: ingress_bandwidth
+  InitContainers:
+    To: init_containers
+    Type: List
+    Schema:
+      Args:
+        To: args
+      Commands:
+        To: commands
+      Cpu:
+        To: cpu
+      Gpu:
+        To: gpu
+      Image:
+        To: image
+      ImagePullPolicy:
+        To: image_pull_policy
+      Memory:
+        To: memory
+      Name:
+        To: name
+      SecurityContextRunAsUser:
+        To: security_context_run_as_user
+      WorkingDir:
+        To: working_dir
+      InitContainerVolumeMounts:
+        Ignore: true
+      SecurityContextCapabilitiesAdd:
+        Ignore: true
+      InitContainerEnvironmentVars:
+        Ignore: true
+  InstanceTypes:
+    To: instance_types
+  Ipv6AddressCount:
+    To: ipv6_address_count
+  LoadBalancerWeight:
+    To: load_balancer_weight
+  Memory:
+    To: memory
+  RamRoleName:
+    To: ram_role_name
+  ResourceGroupId:
+    To: resource_group_id
+  RestartPolicy:
+    To: restart_policy
+  ScalingConfigurationName:
+    To: scaling_configuration_name
+  ScalingGroupId:
+    To: scaling_group_id
+  SecurityGroupId:
+    To: security_group_id
+  SpotPriceLimit:
+    To: spot_price_limit
+  SpotStrategy:
+    To: spot_strategy
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TerminationGracePeriodSeconds:
+    To: termination_grace_period_seconds
+  Volumes:
+    To: volumes
+    Type: List
+    Schema:
+      ConfigFileVolumeConfigFileToPaths:
+        To: config_file_volume_config_file_to_paths
+        Type: List
+        Schema:
+          Content:
+            To: content
+          Path:
+            To: path
+          Mode:
+            Ignore: true
+      DiskVolumeDiskId:
+        To: disk_volume_disk_id
+      DiskVolumeDiskSize:
+        To: disk_volume_disk_size
+      FlexVolumeDriver:
+        To: flex_volume_driver
+      FlexVolumeFsType:
+        To: flex_volume_fs_type
+      FlexVolumeOptions:
+        To: flex_volume_options
+      Name:
+        To: name
+      Type:
+        To: type
+      NFSVolumeServer:
+        Ignore: true
+      EmptyDirVolumeSizeLimit:
+        Ignore: true
+      HostPathVolumePath:
+        Ignore: true
+      EmptyDirVolumeMedium:
+        Ignore: true
+      HostPathVolumeType:
+        Ignore: true
+      NFSVolumeReadOnly:
+        Ignore: true
+      ConfigFileVolumeDefaultMode:
+        Ignore: true
+      NFSVolumePath:
+        Ignore: true
+  DnsConfigSearches:
+    Ignore: true
+  DnsConfigOptions:
+    Ignore: true
+  DnsConfigNameServers:
+    Ignore: true
+  DataCacheBurstingEnabled:
+    Ignore: true
+  DataCacheProvisionedIops:
+    Ignore: true
+  InstanceFamilyLevel:
+    Ignore: true
+  DataCacheBucket:
+    Ignore: true
+  CostOptimization:
+    Ignore: true
+  NtpServers:
+    Ignore: true
+  DataCachePL:
+    Ignore: true
+  SecurityContextSysctls:
+    Ignore: true
+Attributes:
+  ScalingConfigurationId:
+    To: id

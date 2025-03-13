@@ -1,0 +1,66 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OSS::Bucket
+  To: alicloud_oss_bucket
+Properties:
+  AccessControl:
+    To: acl
+  BucketName:
+    To: bucket
+  DeletionForce:
+    To: force_destroy
+  LoggingConfiguration:
+    To: logging
+    Type: Map
+    Schema:
+      TargetBucket:
+        To: target_bucket
+      TargetPrefix:
+        To: target_prefix
+  Policy:
+    To: policy
+  RedundancyType:
+    To: redundancy_type
+  RefererConfiguration:
+    To: referer_config
+    Type: Map
+    Schema:
+      AllowEmptyReferer:
+        To: allow_empty
+      RefererList:
+        To: referers
+  ResourceGroupId:
+    To: resource_group_id
+  ServerSideEncryptionConfiguration:
+    To: server_side_encryption_rule
+    Type: Map
+    Schema:
+      KMSMasterKeyID:
+        To: kms_master_key_id
+      SSEAlgorithm:
+        To: sse_algorithm
+  StorageClass:
+    To: storage_class
+  Tags:
+    To: tags
+    Handler: handle_tags
+  WebsiteConfigurationV2:
+    Ignore: true
+  LifecycleConfiguration:
+    Ignore: true
+  EnableOssHdfsService:
+    Ignore: true
+  CORSConfiguration:
+    Ignore: true
+  VersioningConfiguration:
+    Ignore: true
+Attributes:
+  Name:
+    To: id
+  InternalDomainName:
+    Ignore: true
+  Arn:
+    Ignore: true
+  DomainName:
+    Ignore: true

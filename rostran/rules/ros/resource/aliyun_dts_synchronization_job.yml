@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DTS::SynchronizationJob
+  To: alicloud_dts_synchronization_job
+Properties:
+  DataInitialization:
+    To: data_initialization
+  SynchronizationJobClass:
+    To: instance_class
+  StructureInitialization:
+    To: structure_initialization
+  DestinationEndpoint:
+    Ignore: true
+  Topology:
+    Ignore: true
+  SourceRegion:
+    Ignore: true
+  PayType:
+    Ignore: true
+  NetworkType:
+    Ignore: true
+  SourceEndpoint:
+    Ignore: true
+  SynchronizationObjects:
+    Ignore: true
+  DestRegion:
+    Ignore: true
+  UsedTime:
+    Ignore: true
+  Period:
+    Ignore: true
+Attributes:
+  SynchronizationJobId:
+    To: id

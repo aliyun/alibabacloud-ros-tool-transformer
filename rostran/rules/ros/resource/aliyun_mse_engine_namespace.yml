@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MSE::EngineNamespace
+  To: alicloud_mse_engine_namespace
+Properties:
+  InstanceId:
+    To: instance_id
+  Name:
+    Ignore: true
+  Desc:
+    Ignore: true
+  Id:
+    Ignore: true
+Attributes:
+  NamespaceId:
+    To: id
+  NamespaceId$$0:
+    To: namespace_id

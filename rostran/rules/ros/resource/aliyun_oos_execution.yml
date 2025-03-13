@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::Execution
+  To: alicloud_oos_execution
+Properties:
+  Description:
+    To: description
+  LoopMode:
+    To: loop_mode
+  Mode:
+    To: mode
+  Parameters:
+    To: parameters
+  ParentExecutionId:
+    To: parent_execution_id
+  SafetyCheck:
+    To: safety_check
+  TemplateContent:
+    To: template_content
+  TemplateName:
+    To: template_name
+  TemplateVersion:
+    To: template_version
+  ResourceGroupId:
+    Ignore: true
+  ResourceOptions:
+    Ignore: true
+  Tags:
+    Ignore: true
+  TemplateURL:
+    Ignore: true
+Attributes:
+  ExecutionId:
+    To: id
+  Counters:
+    To: counters
+  Outputs:
+    To: outputs
+  Status:
+    To: status
+  StatusMessage:
+    To: status_message
+  WindowsCurlCli:
+    Ignore: true
+  PowerShellCurlCli:
+    Ignore: true
+  CurlCli:
+    Ignore: true

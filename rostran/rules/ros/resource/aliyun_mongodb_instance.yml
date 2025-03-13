@@ -1,0 +1,80 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MONGODB::Instance
+  To: alicloud_mongodb_instance
+Properties:
+  AccountPassword:
+    To: account_password
+  AutoRenew:
+    To: auto_renew
+  DBInstanceClass:
+    To: db_instance_storage
+  EngineVersion:
+    To: engine_version
+  HiddenZoneId:
+    To: hidden_zone_id
+  ChargeType:
+    To: instance_charge_type
+  DBInstanceDescription:
+    To: name
+  Period:
+    To: period
+  ReadonlyReplicas:
+    To: readonly_replicas
+  ReplicationFactor:
+    To: replication_factor
+  ResourceGroupId:
+    To: resource_group_id
+  SecondaryZoneId:
+    To: secondary_zone_id
+  SecurityGroupId:
+    To: security_group_id
+  SecurityIPArray:
+    To: security_ip_list
+  StorageEngine:
+    To: storage_engine
+  StorageType:
+    To: storage_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  VpcPasswordFree:
+    Ignore: true
+  BusinessInfo:
+    Ignore: true
+  CouponNo:
+    Ignore: true
+  DatabaseNames:
+    Ignore: true
+  BackupId:
+    Ignore: true
+  SrcDBInstanceId:
+    Ignore: true
+  DBInstanceStorage:
+    Ignore: true
+  PrivateConnections:
+    Ignore: true
+  RestoreTime:
+    Ignore: true
+  TDEStatus:
+    Ignore: true
+Attributes:
+  DBInstanceId:
+    To: id
+  ReplicaSetName:
+    To: replica_set_name
+  OrderId:
+    Ignore: true
+  DBInstanceStatus:
+    Ignore: true
+  Arn:
+    Ignore: true
+  ConnectionURI:
+    Ignore: true

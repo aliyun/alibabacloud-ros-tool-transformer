@@ -1,0 +1,42 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NLB::ServerGroup
+  To: alicloud_nlb_server_group
+Properties:
+  AnyPortEnabled:
+    To: any_port_enabled
+  ConnectionDrainEnabled:
+    To: connection_drain_enabled
+  ConnectionDrainTimeout:
+    To: connection_drain_timeout
+  PreserveClientIpEnabled:
+    To: preserve_client_ip_enabled
+  Protocol:
+    To: protocol
+  ResourceGroupId:
+    To: resource_group_id
+  Scheduler:
+    To: scheduler
+  ServerGroupName:
+    To: server_group_name
+  ServerGroupType:
+    To: server_group_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  PersistenceEnabled:
+    Ignore: true
+  PersistenceTimeout:
+    Ignore: true
+  HealthCheckConfig:
+    Ignore: true
+  Servers:
+    Ignore: true
+  AddressIPVersion:
+    Ignore: true
+Attributes:
+  ServerGroupId:
+    To: id

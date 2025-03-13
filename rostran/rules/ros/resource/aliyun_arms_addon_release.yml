@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ARMS::AddonRelease
+  To: alicloud_arms_addon_release
+Properties:
+  AddonVersion:
+    To: addon_version
+  EnvironmentId:
+    To: environment_id
+  ReleaseName:
+    Ignore: true
+  Name:
+    Ignore: true
+  Values:
+    Ignore: true
+Attributes:
+  EnvironmentId:
+    To: environment_id
+  Config:
+    Ignore: true
+  ReleaseName:
+    Ignore: true
+  Release:
+    Ignore: true

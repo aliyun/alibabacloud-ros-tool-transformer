@@ -1,0 +1,128 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Parameters:
+  Name:
+    Type: String
+    Default: demo
+  AvailabilityZoneId:
+    AssociationProperty: ALIYUN::ECS::ZoneId
+    Type: String
+    Description: 可用区ID
+    Label:
+      zh-cn: 交换机可用区
+      en: VSwitch Availability Zone
+  InstanceType:
+    Type: String
+    Required: true
+  Category:
+    Type: String
+  Password:
+    Type: String
+    NoEcho: true
+  Tags:
+    Type: Json
+  MaxAmount:
+    Type: Number
+    Default: 1
+  AllocatePublicIP:
+    Type: Boolean
+    Default: false
+Resources:
+  MyDemoVpc:
+    Type: ALIYUN::ECS::VPC
+    Properties:
+      VpcName:
+        Ref: Name
+      CidrBlock: 192.168.0.0/16
+      Description: Test description
+      Tags:
+        - Key: key1
+          Value: value1
+        - Key: key2
+          Value: value2
+  MyVSwitch:
+    Type: ALIYUN::ECS::VSwitch
+    Properties:
+      VSwitchName: !Ref Name
+      VpcId: !Ref MyDemoVpc
+      CidrBlock: 192.168.0.0/24
+      ZoneId: !Ref AvailabilityZoneId
+  SecurityGroup:
+    Type: ALIYUN::ECS::SecurityGroup
+    Properties:
+      VpcId:
+        Ref: MyDemoVpc
+      Description: 'my demo sg'
+      SecurityGroupName: 'DemoSG'
+      Tags:
+        - Key: key1
+          Value: value1
+      SecurityGroupType: enterprise
+  MyEcs:
+    Type: ALIYUN::ECS::Instance
+    Properties:
+      VpcId:
+        Fn::GetAtt:
+          - MyDemoVpc
+          - VpcId
+      RamRoleName: role-test
+      IoOptimized: optimized
+      InternetChargeType: PayByTraffic
+      SecurityGroupIds:
+        - Ref: SecurityGroup
+      ImageId: ubuntu
+      InstanceType:
+        Ref: InstanceType
+      Password:
+        Ref: Password
+      AllocatePublicIP: true
+      InternetMaxBandwidthOut: 10
+      DiskMappings:
+        - Category: cloud_essd
+          Size: 40
+        - Category:
+            Ref: Category
+          Size: 40
+      SystemDiskCategory: cloud_essd
+      Tags:
+        Ref: Tags
+      ZoneId:
+        Ref: AvailabilityZoneId
+      VSwitchId:
+        Ref: MyVSwitch
+  MyEcs2:
+    Type: ALIYUN::ECS::InstanceGroup
+    Properties:
+      MaxAmount:
+        Ref: MaxAmount
+      InstanceType:
+        Ref: InstanceType
+      ImageId: Ubuntu
+      SecurityGroupIds:
+        - Fn::GetAtt:
+          - SecurityGroup
+          - SecurityGroupId
+      Password:
+        Ref: Password
+      AllocatePublicIP:
+        Ref: AllocatePublicIP
+      DiskMappings:
+        - Category: cloud_essd
+          Size: 40
+      InternetMaxBandwidthOut: 3
+      SystemDiskCategory: cloud_essd
+      VSwitchId:
+        Ref: MyVSwitch
+Outputs:
+  VpcId:
+    Value: !Ref MyDemoVpc
+    Description: The id of MyDemoVpc
+  VSwitchId:
+    Value: !Ref MyVSwitch
+  VpcName:
+    Value: !GetAtt MyDemoVpc.VpcName
+  CidrBlock:
+    Value:
+      Fn::GetAtt:
+        - MyVSwitch
+        - CidrBlock
+    Description: The cidr block of vswitch.

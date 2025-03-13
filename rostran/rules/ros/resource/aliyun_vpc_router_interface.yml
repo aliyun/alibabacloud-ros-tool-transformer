@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::RouterInterface
+  To: alicloud_router_interface
+Properties:
+  AccessPointId:
+    To: access_point_id
+  Description:
+    To: description
+  HealthCheckSourceIp:
+    To: health_check_source_ip
+  HealthCheckTargetIp:
+    To: health_check_target_ip
+  InstanceChargeType:
+    To: instance_charge_type
+  Name:
+    To: name
+  OppositeAccessPointId:
+    To: opposite_access_point_id
+  OppositeInterfaceId:
+    To: opposite_interface_id
+  OppositeInterfaceOwnerId:
+    To: opposite_interface_owner_id
+  OppositeRegionId:
+    To: opposite_region
+  OppositeRouterId:
+    To: opposite_router_id
+  OppositeRouterType:
+    To: opposite_router_type
+  Period:
+    To: period
+  Role:
+    To: role
+  RouterId:
+    To: router_id
+  RouterType:
+    To: router_type
+  Spec:
+    To: specification
+  PricingCycle:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+Attributes:
+  RouterInterfaceId:
+    To: id

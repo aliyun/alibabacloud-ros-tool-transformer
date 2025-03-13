@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ENS::Network
+  To: alicloud_ens_network
+Properties:
+  CidrBlock:
+    To: cidr_block
+  Description:
+    To: description
+  EnsRegionId:
+    To: ens_region_id
+  NetworkName:
+    To: network_name
+Attributes:
+  NetworkId:
+    To: id

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudPhone::KeyPair
+  To: alicloud_ecp_key_pair
+Properties:
+  KeyPairName:
+    To: key_pair_name
+  PublicKeyBody:
+    To: public_key_body
+Attributes:
+  KeyPairName:
+    To: id
+  KeyPairName$$0:
+    To: key_pair_name
+  CreateTime:
+    Ignore: true
+  KeyPairFingerPrint:
+    Ignore: true

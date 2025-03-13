@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ROS::StackInstances
+  To: alicloud_ros_stack_instance
+Properties:
+  OperationDescription:
+    To: operation_description
+  OperationPreferences:
+    To: operation_preferences
+    Handler: json_load
+  ParameterOverrides:
+    To: parameter_overrides
+    Handler: ros_parameters
+  RetainStacks:
+    To: retain_stacks
+  StackGroupName:
+    To: stack_group_name
+  TimeoutInMinutes:
+    To: timeout_in_minutes
+  AccountIds:
+    Ignore: true
+  DisableRollback:
+    Ignore: true
+  RegionIds:
+    Ignore: true
+  DeploymentTargets:
+    Ignore: true
+Attributes:
+  LastOperationId:
+    Ignore: true
+  Stacks:
+    Ignore: true

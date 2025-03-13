@@ -1,0 +1,36 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GA::Acl
+  To: alicloud_ga_acl
+Properties:
+  AclEntries:
+    To: acl_entries
+    Type: List
+    Schema:
+      Entry:
+        To: entry
+      EntryDescription:
+        To: entry_description
+  AclName:
+    To: acl_name
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  AddressIPVersion:
+    Ignore: true
+Attributes:
+  AclId:
+    To: id
+  AclName:
+    To: acl_name
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+  AddressIPVersion:
+    Ignore: true
+  AclEntries:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RDS::Account
+  To: alicloud_rds_account
+Properties:
+  AccountDescription:
+    To: account_description
+  AccountName:
+    To: account_name
+  AccountPassword:
+    To: account_password
+  AccountType:
+    To: account_type
+  DBInstanceId:
+    To: db_instance_id
+Attributes:
+  AccountName:
+    To: account_name

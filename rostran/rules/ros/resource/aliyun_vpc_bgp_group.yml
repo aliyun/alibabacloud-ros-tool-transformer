@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::BgpGroup
+  To: alicloud_vpc_bgp_group
+Properties:
+  AuthKey:
+    To: auth_key
+  Name:
+    To: bgp_group_name
+  Description:
+    To: description
+  IsFakeAsn:
+    To: is_fake_asn
+  LocalAsn:
+    To: local_asn
+  PeerAsn:
+    To: peer_asn
+  RouterId:
+    To: router_id
+  RouteQuota:
+    Ignore: true
+  IpVersion:
+    Ignore: true
+Attributes:
+  BgpGroupId:
+    To: id
+  Name:
+    To: bgp_group_name

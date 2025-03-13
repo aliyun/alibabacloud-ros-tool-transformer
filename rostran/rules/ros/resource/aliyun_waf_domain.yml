@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::WAF::Domain
+  To: alicloud_waf_domain
+Properties:
+  ClusterType:
+    To: cluster_type
+  ConnectionTime:
+    To: connection_time
+  DomainName:
+    To: domain_name
+  Http2Port:
+    To: http2_port
+  HttpPort:
+    To: http_port
+  HttpToUserIp:
+    To: http_to_user_ip
+  HttpsPort:
+    To: https_port
+  HttpsRedirect:
+    To: https_redirect
+  InstanceId:
+    To: instance_id
+  IsAccessProduct:
+    To: is_access_product
+  LoadBalancing:
+    To: load_balancing
+  LogHeaders:
+    To: log_headers
+    Type: List
+    Schema:
+      V:
+        Ignore: true
+      K:
+        Ignore: true
+  ReadTime:
+    To: read_time
+  ResourceGroupId:
+    To: resource_group_id
+  SourceIps:
+    To: source_ips
+  WriteTime:
+    To: write_time
+Attributes:
+  ClusterType:
+    To: cluster_type
+  Cname:
+    To: cname
+  DomainName:
+    To: domain_name
+  Http2Port:
+    To: http2_port
+  HttpPort:
+    To: http_port
+  HttpToUserIp:
+    To: http_to_user_ip
+  HttpsPort:
+    To: https_port
+  HttpsRedirect:
+    To: https_redirect
+  InstanceId:
+    To: instance_id
+  IsAccessProduct:
+    To: is_access_product
+  LoadBalancing:
+    To: load_balancing
+  ResourceGroupId:
+    To: resource_group_id
+  SourceIps:
+    To: source_ips
+  LogHeaders:
+    Ignore: true
+  Version:
+    Ignore: true

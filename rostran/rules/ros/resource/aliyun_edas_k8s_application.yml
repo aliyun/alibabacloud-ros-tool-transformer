@@ -1,0 +1,113 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EDAS::K8sApplication
+  To: alicloud_edas_k8s_application
+Properties:
+  ClusterId:
+    To: cluster_id
+  Command:
+    To: command
+  EdasContainerVersion:
+    To: edas_container_version
+  ImageUrl:
+    To: image_url
+  InternetSlbId:
+    To: internet_slb_id
+  InternetSlbPort:
+    To: internet_slb_port
+  InternetSlbProtocol:
+    To: internet_slb_protocol
+  InternetTargetPort:
+    To: internet_target_port
+  LimitMem:
+    To: limit_mem
+  LogicalRegionId:
+    To: logical_region_id
+  Namespace:
+    To: namespace
+  NasId:
+    To: nas_id
+  PackageType:
+    To: package_type
+  PackageUrl:
+    To: package_url
+  PackageVersion:
+    To: package_version
+  Replicas:
+    To: replicas
+  RequestsMem:
+    To: requests_mem
+  WebContainer:
+    To: web_container
+  DeployAcrossNodes:
+    Ignore: true
+  IntranetSlbProtocol:
+    Ignore: true
+  MountDescs:
+    Ignore: true
+  RepoId:
+    Ignore: true
+  PreStop:
+    Ignore: true
+  ApplicationDescription:
+    Ignore: true
+  Liveness:
+    Ignore: true
+  JDK:
+    Ignore: true
+  Readiness:
+    Ignore: true
+  IntranetSlbId:
+    Ignore: true
+  SlsConfigs:
+    Ignore: true
+  RequestsCpu:
+    Ignore: true
+  UriEncoding:
+    Ignore: true
+  AppName:
+    Ignore: true
+  EnableAhas:
+    Ignore: true
+  IntranetSlbPort:
+    Ignore: true
+  LimitCpu:
+    Ignore: true
+  Envs:
+    Ignore: true
+  UseBodyEncoding:
+    Ignore: true
+  IntranetTargetPort:
+    Ignore: true
+  CommandArgs:
+    Ignore: true
+  IsMultilingualApp:
+    Ignore: true
+  DeployAcrossZones:
+    Ignore: true
+  JavaStartUpConfig:
+    Ignore: true
+  RuntimeClassName:
+    Ignore: true
+  Timeout:
+    Ignore: true
+  StorageType:
+    Ignore: true
+  PostStart:
+    Ignore: true
+  WebContainerConfig:
+    Ignore: true
+  LocalVolume:
+    Ignore: true
+Attributes:
+  AppId:
+    To: id
+  AppName:
+    To: application_name
+  ClusterId:
+    To: cluster_id
+  CsClusterId:
+    Ignore: true
+  ChangeOrderId:
+    Ignore: true

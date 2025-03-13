@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::ForwardEntry
+  To: alicloud_forward_entry
+Properties:
+  ExternalIp:
+    To: external_ip
+  ExternalPort:
+    To: external_port
+  ForwardEntryName:
+    To: forward_entry_name
+  ForwardTableId:
+    To: forward_table_id
+  InternalIp:
+    To: internal_ip
+  InternalPort:
+    To: internal_port
+  IpProtocol:
+    To: ip_protocol
+  PortBreak:
+    To: port_break
+Attributes:
+  ForwardEntryId:
+    To: id
+  ForwardEntryId$$0:
+    To: forward_entry_id

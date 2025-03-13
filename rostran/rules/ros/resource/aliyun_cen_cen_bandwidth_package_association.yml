@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::CenBandwidthPackageAssociation
+  To: alicloud_cen_bandwidth_package_attachment
+Properties:
+  CenBandwidthPackageId:
+    To: bandwidth_package_id
+  CenId:
+    To: instance_id
+Attributes: {}

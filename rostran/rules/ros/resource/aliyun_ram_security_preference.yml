@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::SecurityPreference
+  To: alicloud_ram_security_preference
+Properties:
+  AllowUserToChangePassword:
+    To: allow_user_to_change_password
+  AllowUserToManageAccessKeys:
+    To: allow_user_to_manage_access_keys
+  AllowUserToManageMFADevices:
+    To: allow_user_to_manage_mfa_devices
+  EnableSaveMFATicket:
+    To: enforce_mfa_for_login
+  LoginNetworkMasks:
+    To: login_network_masks
+  LoginSessionDuration:
+    To: login_session_duration
+  AllowUserToManagePublicKeys:
+    Ignore: true
+Attributes:
+  AllowUserToChangePassword:
+    To: allow_user_to_change_password
+  AllowUserToManageAccessKeys:
+    To: allow_user_to_manage_access_keys
+  AllowUserToManageMFADevices:
+    To: allow_user_to_manage_mfa_devices
+  EnableSaveMFATicket:
+    To: enable_save_mfa_ticket
+  LoginNetworkMasks:
+    To: login_network_masks
+  LoginSessionDuration:
+    To: login_session_duration
+  AllowUserToManagePublicKeys:
+    Ignore: true

@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ADBLake::DBCluster
+  To: alicloud_adb_db_cluster_lake_version
+Properties:
+  BackupSetId:
+    To: backup_set_id
+  ComputeResource:
+    To: compute_resource
+  ResourceGroupId:
+    To: resource_group_id
+  RestoreToTime:
+    To: restore_to_time
+  RestoreType:
+    To: restore_type
+  SourceDbClusterId:
+    To: source_db_cluster_id
+  StorageResource:
+    To: storage_resource
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  DBClusterVersion:
+    Ignore: true
+  Tags:
+    Ignore: true
+  DBClusterDescription:
+    Ignore: true
+  PeriodType:
+    Ignore: true
+  KmsId:
+    Ignore: true
+  VPCId:
+    Ignore: true
+  ProductForm:
+    Ignore: true
+  EnableDefaultResourcePool:
+    Ignore: true
+  PayType:
+    Ignore: true
+  DBClusterNetworkType:
+    Ignore: true
+  DiskEncryption:
+    Ignore: true
+  ReservedNodeSize:
+    Ignore: true
+  ReservedNodeCount:
+    Ignore: true
+  Period:
+    Ignore: true
+  CloneSourceRegionId:
+    Ignore: true
+Attributes:
+  DBClusterId:
+    To: id
+  ConnectionString:
+    To: connection_string
+  OrderId:
+    Ignore: true

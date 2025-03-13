@@ -1,0 +1,34 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ROCKETMQ::Instance
+  To: alicloud_ons_instance
+Properties:
+  InstanceName:
+    To: instance_name
+  Remark:
+    To: remark
+  Tags:
+    To: tags
+    Handler: handle_tags
+  DeletionForce:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  InstanceName$$0:
+    To: name
+  HttpInternalEndpoint:
+    Ignore: true
+  HttpInternetEndpoint:
+    Ignore: true
+  Arn:
+    Ignore: true
+  HttpInternetSecureEndpoint:
+    Ignore: true
+  TcpEndpoint:
+    Ignore: true

@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::WAF::Instance
+  To: alicloud_waf_instance
+Properties:
+  BigScreen:
+    To: big_screen
+  ExclusiveIpPackage:
+    To: exclusive_ip_package
+  ExtBandwidth:
+    To: ext_bandwidth
+  ExtDomainPackage:
+    To: ext_domain_package
+  LogStorage:
+    To: log_storage
+  LogTime:
+    To: log_time
+  PackageCode:
+    To: package_code
+  Period:
+    To: period
+  PrefessionalService:
+    To: prefessional_service
+  RenewPeriod:
+    To: renew_period
+  RenewalStatus:
+    To: renewal_status
+  SubscriptionType:
+    To: subscription_type
+  WafLog:
+    To: waf_log
+Attributes:
+  InstanceId:
+    To: id
+  SubscriptionType:
+    To: subscription_type
+  RemainDay:
+    Ignore: true
+  InDebt:
+    Ignore: true
+  Trial:
+    Ignore: true
+  EndDate:
+    Ignore: true

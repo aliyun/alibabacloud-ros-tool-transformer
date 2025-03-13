@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CDDC::DedicatedHostGroup
+  To: alicloud_cddc_dedicated_host_group
+Properties:
+  AllocationPolicy:
+    To: allocation_policy
+  CpuAllocationRatio:
+    To: cpu_allocation_ratio
+  DedicatedHostGroupDesc:
+    To: dedicated_host_group_desc
+  DiskAllocationRatio:
+    To: disk_allocation_ratio
+  Engine:
+    To: engine
+  HostReplacePolicy:
+    To: host_replace_policy
+  MemAllocationRatio:
+    To: mem_allocation_ratio
+  VpcId:
+    To: vpc_id
+  OpenPermission:
+    Ignore: true
+Attributes:
+  DedicatedHostGroupId:
+    To: id
+  AllocationPolicy:
+    To: allocation_policy
+  CpuAllocationRatio:
+    To: cpu_allocation_ratio
+  DedicatedHostGroupDesc:
+    To: dedicated_host_group_desc
+  DiskAllocationRatio:
+    To: disk_allocation_ratio
+  Engine:
+    To: engine
+  HostReplacePolicy:
+    To: host_replace_policy
+  MemAllocationRatio:
+    To: mem_allocation_ratio
+  OpenPermission:
+    To: open_permission
+  VpcId:
+    To: vpc_id
+  DiskUsedAmount:
+    Ignore: true
+  MemUsedAmount:
+    Ignore: true
+  Text:
+    Ignore: true
+  DiskUtility:
+    Ignore: true
+  DiskAllocateRation:
+    Ignore: true
+  CpuAllocatedAmount:
+    Ignore: true
+  CpuAllocateRation:
+    Ignore: true
+  HostNumber:
+    Ignore: true
+  InstanceNumber:
+    Ignore: true
+  MemUtility:
+    Ignore: true
+  DiskAllocatedAmount:
+    Ignore: true
+  MemAllocateRation:
+    Ignore: true
+  MemAllocatedAmount:
+    Ignore: true
+  DeployType:
+    Ignore: true
+  BastionInstanceId:
+    Ignore: true

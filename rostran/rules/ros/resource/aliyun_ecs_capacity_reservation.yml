@@ -1,0 +1,28 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::CapacityReservation
+  To: alicloud_ecs_capacity_reservation
+Properties:
+  Description:
+    To: description
+  EndTime:
+    To: end_time
+  EndTimeType:
+    To: end_time_type
+  InstanceAmount:
+    To: instance_amount
+  InstanceType:
+    To: instance_type
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  PrivatePoolOptions:
+    Ignore: true
+  ZoneId:
+    Ignore: true
+Attributes:
+  PrivatePoolOptionsId:
+    To: id

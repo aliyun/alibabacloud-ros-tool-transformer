@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECD::SimpleOfficeSite
+  To: alicloud_ecd_simple_office_site
+Properties:
+  Bandwidth:
+    To: bandwidth
+  CenId:
+    To: cen_id
+  CenOwnerId:
+    To: cen_owner_id
+  CidrBlock:
+    To: cidr_block
+  DesktopAccessType:
+    To: desktop_access_type
+  EnableAdminAccess:
+    To: enable_admin_access
+  EnableInternetAccess:
+    To: enable_internet_access
+  OfficeSiteName:
+    To: office_site_name
+  VpcType:
+    Ignore: true
+  VSwitchId:
+    Ignore: true
+  VerifyCode:
+    Ignore: true
+  NeedVerifyZeroDevice:
+    Ignore: true
+  CloudBoxOfficeSite:
+    Ignore: true
+Attributes:
+  OfficeSiteId:
+    To: id

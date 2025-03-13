@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ARMS::AlertContact
+  To: alicloud_arms_alert_contact
+Properties:
+  DingRobotWebhookUrl:
+    To: ding_robot_webhook_url
+  Email:
+    To: email
+  PhoneNum:
+    To: phone_num
+  SystemNoc:
+    To: system_noc
+  ProxyUserId:
+    Ignore: true
+  RegionId:
+    Ignore: true
+  ContactName:
+    Ignore: true
+Attributes:
+  ContactId:
+    To: id

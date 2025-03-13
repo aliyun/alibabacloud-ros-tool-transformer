@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::KAFKA::SaslUser
+  To: alicloud_alikafka_sasl_user
+Properties:
+  InstanceId:
+    To: instance_id
+  Password:
+    To: password
+  Type:
+    To: type
+  Username:
+    To: username
+  Mechanism:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: instance_id
+  Username:
+    To: username

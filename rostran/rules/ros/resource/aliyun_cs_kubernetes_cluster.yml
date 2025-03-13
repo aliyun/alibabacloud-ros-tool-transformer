@@ -1,0 +1,157 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CS::KubernetesCluster
+  To: alicloud_cs_kubernetes
+Properties:
+  Addons:
+    To: addons
+    Type: List
+    Schema:
+      Config:
+        To: config
+      Disabled:
+        To: disabled
+      Name:
+        To: name
+  CpuPolicy:
+    To: cpu_policy
+  DeleteOptions:
+    To: delete_options
+    Type: List
+    Schema:
+      DeleteMode:
+        To: delete_mode
+      ResourceType:
+        To: resource_type
+  DeletionProtection:
+    To: deletion_protection
+  SshFlags:
+    To: enable_ssh
+  CloudMonitorFlags:
+    To: install_cloud_monitor
+  IsEnterpriseSecurityGroup:
+    To: is_enterprise_security_group
+  KeyPair:
+    To: key_name
+  LoadBalancerSpec:
+    To: load_balancer_spec
+  MasterAutoRenew:
+    To: master_auto_renew
+  MasterAutoRenewPeriod:
+    To: master_auto_renew_period
+  MasterInstanceChargeType:
+    To: master_instance_charge_type
+  MasterInstanceTypes:
+    To: master_instance_types
+  MasterVSwitchIds:
+    To: master_vswitch_ids
+  Name:
+    To: name
+  NodeCidrMask:
+    To: node_cidr_mask
+  NodeNameMode:
+    To: node_name_mode
+  NodePortRange:
+    To: node_port_range
+  OsType:
+    To: os_type
+  LoginPassword:
+    To: password
+  Platform:
+    To: platform
+  PodVswitchIds:
+    To: pod_vswitch_ids
+  ProxyMode:
+    To: proxy_mode
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityGroupId:
+    To: security_group_id
+  ServiceCidr:
+    To: service_cidr
+  UserCa:
+    To: user_ca
+  UserData:
+    To: user_data
+  KubernetesVersion:
+    To: version
+  VpcId:
+    To: vpc_id
+  SocEnabled:
+    Ignore: true
+  KeepInstanceName:
+    Ignore: true
+  MasterZoneIds:
+    Ignore: true
+  SnatEntry:
+    Ignore: true
+  ControlPlaneLogComponents:
+    Ignore: true
+  FormatDisk:
+    Ignore: true
+  Tags:
+    Ignore: true
+  WorkerSystemDiskSnapshotPolicyId:
+    Ignore: true
+  MasterDataDisks:
+    Ignore: true
+  Runtime:
+    Ignore: true
+  ControlPlaneLogTtl:
+    Ignore: true
+  MasterCount:
+    Ignore: true
+  MaintenanceWindow:
+    Ignore: true
+  SecurityHardeningOs:
+    Ignore: true
+  TimeZone:
+    Ignore: true
+  MasterSystemDiskSnapshotPolicyId:
+    Ignore: true
+  EndpointPublicAccess:
+    Ignore: true
+  ControlPlaneLogProject:
+    Ignore: true
+  ContainerCidr:
+    Ignore: true
+  MasterSystemDiskSize:
+    Ignore: true
+  MasterDataDisk:
+    Ignore: true
+  MasterSystemDiskPerformanceLevel:
+    Ignore: true
+  TimeoutMins:
+    Ignore: true
+  WorkerZoneIds:
+    Ignore: true
+  Taint:
+    Ignore: true
+  NodePools:
+    Ignore: true
+  MasterSystemDiskCategory:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  WorkerRamRoleName:
+    To: worker_ram_role_name
+  Nodes:
+    Ignore: true
+  IngressSLBId:
+    Ignore: true
+  ScalingConfigurationId:
+    Ignore: true
+  ScalingGroupId:
+    Ignore: true
+  PrivateUserKubConfig:
+    Ignore: true
+  TaskId:
+    Ignore: true
+  APIServerSLBId:
+    Ignore: true
+  DefaultUserKubeConfig:
+    Ignore: true
+  ScalingRuleId:
+    Ignore: true

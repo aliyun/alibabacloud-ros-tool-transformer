@@ -1,0 +1,101 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECI::ContainerGroup
+  To: alicloud_eci_container_group
+Properties:
+  AcrRegistryInfo:
+    To: acr_registry_info
+    Type: List
+    Schema:
+      InstanceId:
+        To: instance_id
+      InstanceName:
+        To: instance_name
+      RegionId:
+        To: region_id
+      Domain:
+        Ignore: true
+  AutoMatchImageCache:
+    To: auto_match_image_cache
+  ContainerGroupName:
+    To: container_group_name
+  Cpu:
+    To: cpu
+  EipInstanceId:
+    To: eip_instance_id
+  ImageRegistryCredential:
+    To: image_registry_credential
+    Type: List
+    Schema:
+      Password:
+        To: password
+      Server:
+        To: server
+      UserName:
+        To: user_name
+  InstanceType:
+    To: instance_type
+  Memory:
+    To: memory
+  RamRoleName:
+    To: ram_role_name
+  ResourceGroupId:
+    To: resource_group_id
+  RestartPolicy:
+    To: restart_policy
+  SecurityGroupId:
+    To: security_group_id
+  SpotPriceLimit:
+    To: spot_price_limit
+  SpotStrategy:
+    To: spot_strategy
+  TerminationGracePeriodSeconds:
+    To: termination_grace_period_seconds
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  Container:
+    Ignore: true
+  HostAliase:
+    Ignore: true
+  InitContainer:
+    Ignore: true
+  DnsConfig:
+    Ignore: true
+  SecurityContextSysctl:
+    Ignore: true
+  Tag:
+    Ignore: true
+  Volume:
+    Ignore: true
+  ImageSnapshotId:
+    Ignore: true
+  ActiveDeadlineSeconds:
+    Ignore: true
+  SlsEnable:
+    Ignore: true
+  Ipv6AddressCount:
+    Ignore: true
+Attributes:
+  ContainerGroupId:
+    To: id
+  ContainerGroupName:
+    To: container_group_name
+  InternetIp:
+    To: internet_ip
+  IntranetIp:
+    To: intranet_ip
+  SecurityGroupId:
+    To: security_group_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  EniInstanceId:
+    Ignore: true
+  Ipv6Address:
+    Ignore: true
+  RegionId:
+    Ignore: true

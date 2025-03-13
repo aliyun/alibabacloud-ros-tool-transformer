@@ -1,0 +1,51 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GA::EndpointGroup
+  To: alicloud_ga_endpoint_group
+Properties:
+  AcceleratorId:
+    To: accelerator_id
+  Description:
+    To: description
+  EndpointConfigurations:
+    To: endpoint_configurations
+    Type: List
+    Schema:
+      EnableProxyProtocol:
+        To: enable_proxy_protocol
+      Endpoint:
+        To: endpoint
+      Type:
+        To: type
+      Weight:
+        To: weight
+      EnableClientIPPreservation:
+        Ignore: true
+  EndpointGroupRegion:
+    To: endpoint_group_region
+  EndpointGroupType:
+    To: endpoint_group_type
+  EndpointRequestProtocol:
+    To: endpoint_request_protocol
+  HealthCheckEnabled:
+    To: health_check_enabled
+  HealthCheckIntervalSeconds:
+    To: health_check_interval_seconds
+  HealthCheckPath:
+    To: health_check_path
+  HealthCheckPort:
+    To: health_check_port
+  HealthCheckProtocol:
+    To: health_check_protocol
+  ListenerId:
+    To: listener_id
+  Name:
+    To: name
+  ThresholdCount:
+    To: threshold_count
+  TrafficPercentage:
+    To: traffic_percentage
+Attributes:
+  EndpointGroupId:
+    To: id

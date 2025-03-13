@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::SNatEntry
+  To: alicloud_snat_entry
+Properties:
+  SnatEntryName:
+    To: snat_entry_name
+  SNatIp:
+    To: snat_ip
+  SNatTableId:
+    To: snat_table_id
+  SourceVSwitchId:
+    To: source_vswitch_id
+  SourceCIDR:
+    Ignore: true
+Attributes:
+  SNatEntryId:
+    To: id

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECD::NetworkPackage
+  To: alicloud_ecd_network_package
+Properties:
+  Bandwidth:
+    To: bandwidth
+  InternetChargeType:
+    To: internet_charge_type
+  OfficeSiteId:
+    To: office_site_id
+  PromotionId:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+  PayType:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  Period:
+    Ignore: true
+Attributes:
+  NetworkPackageId:
+    To: id

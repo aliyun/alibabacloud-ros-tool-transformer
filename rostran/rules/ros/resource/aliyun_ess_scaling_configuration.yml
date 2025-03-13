@@ -1,0 +1,157 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESS::ScalingConfiguration
+  To: alicloud_ess_scaling_configuration
+Properties:
+  CreditSpecification:
+    To: credit_specification
+  DiskMappings:
+    To: data_disk
+    Type: List
+    Schema:
+      Size:
+        To: Size
+      AutoSnapshotPolicyId:
+        To: auto_snapshot_policy_id
+      Category:
+        To: category
+      Description:
+        To: description
+      Device:
+        To: device
+      Encrypted:
+        To: encrypted
+      KMSKeyId:
+        To: kms_key_id
+      DiskName:
+        To: name
+      SnapshotId:
+        To: snapshot_id
+      BurstingEnabled:
+        Ignore: true
+      PerformanceLevel:
+        Ignore: true
+      Categories:
+        Ignore: true
+      ProvisionedIops:
+        Ignore: true
+      DeleteWithInstance:
+        Ignore: true
+  HostName:
+    To: host_name
+  ImageId:
+    To: image_id
+  ImageName:
+    To: image_name
+  ImageOptionsLoginAsNonRoot:
+    To: image_options_login_as_non_root
+  InstanceDescription:
+    To: instance_description
+  InstanceId:
+    To: instance_ids
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  InstanceTypes:
+    To: instance_types
+  InternetChargeType:
+    To: internet_charge_type
+  InternetMaxBandwidthIn:
+    To: internet_max_bandwidth_in
+  InternetMaxBandwidthOut:
+    To: internet_max_bandwidth_out
+  IoOptimized:
+    To: io_optimized
+  KeyPairName:
+    To: key_name
+  Password:
+    To: password
+  PasswordInherit:
+    To: password_inherit
+  ResourceGroupId:
+    To: resource_group_id
+  RamRoleName:
+    To: role_name
+  ScalingConfigurationName:
+    To: scaling_configuration_name
+  ScalingGroupId:
+    To: scaling_group_id
+  SecurityEnhancementStrategy:
+    To: security_enhancement_strategy
+  SecurityGroupId:
+    To: security_group_id
+  SecurityGroupIds:
+    To: security_group_ids
+  SpotDuration:
+    To: spot_duration
+  SpotStrategy:
+    To: spot_strategy
+  SystemDiskAutoSnapshotPolicyId:
+    To: system_disk_auto_snapshot_policy_id
+  SystemDiskCategory:
+    To: system_disk_category
+  SystemDiskDescription:
+    To: system_disk_description
+  SystemDiskEncryptAlgorithm:
+    To: system_disk_encrypt_algorithm
+  SystemDiskEncrypted:
+    To: system_disk_encrypted
+  SystemDiskPerformanceLevel:
+    To: system_disk_performance_level
+  SystemDiskProvisionedIops:
+    To: system_disk_provisioned_iops
+  SystemDiskSize:
+    To: system_disk_size
+  TagList:
+    To: tags
+  UserData:
+    To: user_data
+  SystemDiskCategories:
+    Ignore: true
+  DeploymentSetId:
+    Ignore: true
+  PrivatePoolOptions:
+    Ignore: true
+  Tenancy:
+    Ignore: true
+  LoadBalancerWeight:
+    Ignore: true
+  SystemDiskKMSKeyId:
+    Ignore: true
+  Cpu:
+    Ignore: true
+  ZoneId:
+    Ignore: true
+  SpotPriceLimitForInstanceType:
+    Ignore: true
+  Ipv6AddressCount:
+    Ignore: true
+  InstanceTypeOverrides:
+    Ignore: true
+  HpcClusterId:
+    Ignore: true
+  Memory:
+    Ignore: true
+  SpotInterruptionBehavior:
+    Ignore: true
+  DedicatedHostId:
+    Ignore: true
+  SystemDiskBurstingEnabled:
+    Ignore: true
+  Affinity:
+    Ignore: true
+  SpotPriceLimit:
+    Ignore: true
+  ImageFamily:
+    Ignore: true
+  SystemDiskDiskName:
+    Ignore: true
+  InstancePatternInfos:
+    Ignore: true
+Attributes:
+  ScalingConfigurationId:
+    To: id
+  ScalingGroupId:
+    To: scaling_group_id

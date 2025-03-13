@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::IOT::DeviceGroup
+  To: alicloud_iot_device_group
+Properties:
+  GroupDesc:
+    To: group_desc
+  GroupName:
+    To: group_name
+  IotInstanceId:
+    To: iot_instance_id
+  SuperGroupId:
+    To: super_group_id
+Attributes:
+  GroupId:
+    To: id
+  IotInstanceId:
+    Ignore: true

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MaxCompute::Project
+  To: alicloud_maxcompute_project
+Properties:
+  Comment:
+    To: comment
+  DefaultQuota:
+    To: default_quota
+  Name:
+    Ignore: true
+  IpWhiteList:
+    Ignore: true
+  ChargeType:
+    Ignore: true
+  Properties:
+    Ignore: true
+Attributes:
+  Name:
+    Ignore: true

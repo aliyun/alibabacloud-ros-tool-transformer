@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::RamAccountAlias
+  To: alicloud_ram_account_alias
+Properties:
+  AccountAlias:
+    To: account_alias
+Attributes:
+  AccountAlias:
+    To: id
+  AccountAlias$$0:
+    To: account_alias

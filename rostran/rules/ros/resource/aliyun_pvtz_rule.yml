@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PVTZ::Rule
+  To: alicloud_pvtz_rule
+Properties:
+  EndpointId:
+    To: endpoint_id
+  RuleName:
+    To: rule_name
+  Type:
+    To: type
+  ZoneName:
+    To: zone_name
+  ForwardIp:
+    Ignore: true
+Attributes:
+  EndpointId:
+    To: endpoint_id
+  RuleName:
+    To: rule_name
+  Type:
+    To: type
+  ZoneName:
+    To: zone_name
+  ForwardIp:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  Vpcs:
+    Ignore: true
+  EndpointName:
+    Ignore: true

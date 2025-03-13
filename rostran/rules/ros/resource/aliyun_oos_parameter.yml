@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::Parameter
+  To: alicloud_oos_parameter
+Properties:
+  Constraints:
+    To: constraints
+  Description:
+    To: description
+  Name:
+    To: parameter_name
+  ResourceGroupId:
+    To: resource_group_id
+  Type:
+    To: type
+  Value:
+    To: value
+Attributes:
+  Name:
+    To: id
+  Name$$0:
+    To: parameter_name
+  Value:
+    To: value

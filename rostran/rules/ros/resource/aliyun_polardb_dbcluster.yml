@@ -1,0 +1,148 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::POLARDB::DBCluster
+  To: alicloud_polardb_cluster
+Properties:
+  AutoRenewPeriod:
+    To: auto_renew_period
+  BackupRetentionPolicyOnClusterDeletion:
+    To: backup_retention_policy_on_cluster_deletion
+  CloneDataPoint:
+    To: clone_data_point
+  CreationCategory:
+    To: creation_category
+  CreationOption:
+    To: creation_option
+  DBNodeClass:
+    To: db_node_class
+  DBType:
+    To: db_type
+  DBVersion:
+    To: db_version
+  DefaultTimeZone:
+    To: default_time_zone
+  DBClusterDescription:
+    To: description
+  HotStandbyCluster:
+    To: hot_standby_cluster
+  LoosePolarLogBin:
+    To: loose_polar_log_bin
+  LowerCaseTableNames:
+    To: lower_case_table_names
+  MaintainTime:
+    To: maintain_time
+  ParameterGroupId:
+    To: parameter_group_id
+  PayType:
+    To: pay_type
+  Period:
+    To: period
+  ProvisionedIops:
+    To: provisioned_iops
+  ProxyClass:
+    To: proxy_class
+  ProxyType:
+    To: proxy_type
+  RenewalStatus:
+    To: renewal_status
+  ResourceGroupId:
+    To: resource_group_id
+  ScaleMax:
+    To: scale_max
+  ScaleMin:
+    To: scale_min
+  ScaleRoNumMax:
+    To: scale_ro_num_max
+  ScaleRoNumMin:
+    To: scale_ro_num_min
+  SecurityGroupIds:
+    To: security_group_ids
+  ServerlessType:
+    To: serverless_type
+  SourceResourceId:
+    To: source_resource_id
+  StoragePayType:
+    To: storage_pay_type
+  StorageSpace:
+    To: storage_space
+  StorageType:
+    To: storage_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  SSLEnabled:
+    Ignore: true
+  LooseXEngine:
+    Ignore: true
+  DeletionProtection:
+    Ignore: true
+  DBMinorVersion:
+    Ignore: true
+  LooseXEngineUseMemoryPct:
+    Ignore: true
+  Architecture:
+    Ignore: true
+  StorageUpperBound:
+    Ignore: true
+  ClusterNetworkType:
+    Ignore: true
+  ColdStorageOption:
+    Ignore: true
+  GDNId:
+    Ignore: true
+  TDEStatus:
+    Ignore: true
+  DBClusterParameters:
+    Ignore: true
+  StorageAutoScale:
+    Ignore: true
+  StandbyAZ:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  AllowShutDown:
+    Ignore: true
+  SecurityIPList:
+    Ignore: true
+  StrictConsistency:
+    Ignore: true
+  DBNodeNum:
+    Ignore: true
+  RestartMasterNode:
+    Ignore: true
+Attributes:
+  PrimaryEndpointIds:
+    Ignore: true
+  ClusterEndpointId:
+    Ignore: true
+  PrimaryConnectionStrings:
+    Ignore: true
+  CustomConnectionStrings:
+    Ignore: true
+  ColdStorageInstanceId:
+    Ignore: true
+  ClusterConnectionString:
+    Ignore: true
+  DBClusterId:
+    Ignore: true
+  Arn:
+    Ignore: true
+  CustomEndpointIds:
+    Ignore: true
+  PrimaryEndpointId:
+    Ignore: true
+  OrderId:
+    Ignore: true
+  DBClusterDescription:
+    Ignore: true
+  DBNodeIds:
+    Ignore: true
+  PrimaryConnectionString:
+    Ignore: true

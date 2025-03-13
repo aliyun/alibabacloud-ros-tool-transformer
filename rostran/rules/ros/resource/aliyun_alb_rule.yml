@@ -1,0 +1,69 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ALB::Rule
+  To: alicloud_alb_rule
+Properties:
+  Direction:
+    To: direction
+  ListenerId:
+    To: listener_id
+  Priority:
+    To: priority
+  RuleActions:
+    To: rule_actions
+    Type: List
+    Schema:
+      Order:
+        To: order
+      Type:
+        To: type
+      RedirectConfig:
+        Ignore: true
+      RewriteConfig:
+        Ignore: true
+      TrafficMirrorConfig:
+        Ignore: true
+      ForwardGroupConfig:
+        Ignore: true
+      InsertHeaderConfig:
+        Ignore: true
+      FixedResponseConfig:
+        Ignore: true
+      CorsConfig:
+        Ignore: true
+      RemoveHeaderConfig:
+        Ignore: true
+      TrafficLimitConfig:
+        Ignore: true
+  RuleConditions:
+    To: rule_conditions
+    Type: List
+    Schema:
+      Type:
+        To: type
+      QueryStringConfig:
+        Ignore: true
+      HeaderConfig:
+        Ignore: true
+      CookieConfig:
+        Ignore: true
+      MethodConfig:
+        Ignore: true
+      ResponseHeaderConfig:
+        Ignore: true
+      HostConfig:
+        Ignore: true
+      PathConfig:
+        Ignore: true
+      SourceIpConfig:
+        Ignore: true
+      ResponseStatusCodeConfig:
+        Ignore: true
+  RuleName:
+    To: rule_name
+Attributes:
+  RuleId:
+    To: id
+  ListenerId:
+    Ignore: true

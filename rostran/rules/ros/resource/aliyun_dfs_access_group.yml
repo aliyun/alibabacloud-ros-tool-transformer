@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DFS::AccessGroup
+  To: alicloud_dfs_access_group
+Properties:
+  AccessGroupName:
+    To: access_group_name
+  Description:
+    To: description
+  NetworkType:
+    To: network_type
+Attributes:
+  AccessGroupId:
+    To: id

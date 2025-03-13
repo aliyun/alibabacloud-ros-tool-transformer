@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MNS::Queue
+  To: alicloud_message_service_queue
+Properties:
+  DelaySeconds:
+    To: delay_seconds
+  LoggingEnabled:
+    To: logging_enabled
+  MaximumMessageSize:
+    To: maximum_message_size
+  MessageRetentionPeriod:
+    To: message_retention_period
+  PollingWaitSeconds:
+    To: polling_wait_seconds
+  QueueName:
+    To: queue_name
+  VisibilityTimeout:
+    To: visibility_timeout
+Attributes:
+  QueueName:
+    To: id
+  QueueName$$0:
+    To: queue_name
+  ARN.WithSlash:
+    Ignore: true
+  QueueUrl:
+    Ignore: true

@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::ACL
+  To: alicloud_sag_acl
+Properties:
+  Name:
+    To: name
+Attributes:
+  AclId:
+    To: id

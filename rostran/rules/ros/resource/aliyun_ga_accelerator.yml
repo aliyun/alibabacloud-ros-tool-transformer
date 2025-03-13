@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GA::Accelerator
+  To: alicloud_ga_accelerator
+Properties:
+  AcceleratorName:
+    To: accelerator_name
+  BandwidthBillingType:
+    To: bandwidth_billing_type
+  Duration:
+    To: duration
+  PricingCycle:
+    To: pricing_cycle
+  ResourceGroupId:
+    To: resource_group_id
+  Spec:
+    To: spec
+  AutoPay:
+    Ignore: true
+  EnableCrossBorder:
+    Ignore: true
+  InstanceChargeType:
+    Ignore: true
+  IpSetConfig:
+    Ignore: true
+  AutoUseCoupon:
+    Ignore: true
+Attributes:
+  AcceleratorId:
+    To: id
+  AcceleratorName:
+    To: accelerator_name
+  PaymentType:
+    To: payment_type
+  Spec:
+    To: spec
+  AutoPay:
+    Ignore: true
+  DnsName:
+    Ignore: true
+  Duration:
+    Ignore: true
+  OrderId:
+    Ignore: true
+  PricingCycle:
+    Ignore: true
+  AutoUseCoupon:
+    Ignore: true

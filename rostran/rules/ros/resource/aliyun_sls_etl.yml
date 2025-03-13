@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLS::Etl
+  To: alicloud_log_etl
+Properties:
+  Description:
+    To: description
+  DisplayName:
+    To: display_name
+  Name:
+    To: etl_name
+  ProjectName:
+    To: project
+  Schedule:
+    Ignore: true
+  Configuration:
+    Ignore: true
+Attributes:
+  Name:
+    To: etl_name

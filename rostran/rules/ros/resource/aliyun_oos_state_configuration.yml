@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::StateConfiguration
+  To: alicloud_oos_state_configuration
+Properties:
+  ConfigureMode:
+    To: configure_mode
+  Description:
+    To: description
+  Parameters:
+    To: parameters
+  ResourceGroupId:
+    To: resource_group_id
+  ScheduleExpression:
+    To: schedule_expression
+  ScheduleType:
+    To: schedule_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Targets:
+    To: targets
+  TemplateName:
+    To: template_name
+  TemplateVersion:
+    To: template_version
+Attributes:
+  StateConfigurationId:
+    To: id

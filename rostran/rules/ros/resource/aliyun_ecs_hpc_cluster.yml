@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::HpcCluster
+  To: alicloud_ecs_hpc_cluster
+Properties:
+  Description:
+    To: description
+  Name:
+    To: name
+Attributes:
+  HpcClusterId:
+    To: id
+  Name:
+    To: name

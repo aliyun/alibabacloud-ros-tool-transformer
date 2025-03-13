@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::PolicyAttachment
+  To: alicloud_resource_manager_policy_attachment
+Properties:
+  PolicyName:
+    To: policy_name
+  PolicyType:
+    To: policy_type
+  PrincipalName:
+    To: principal_name
+  PrincipalType:
+    To: principal_type
+  ResourceGroupId:
+    To: resource_group_id
+Attributes:
+  PolicyName:
+    To: policy_name
+  PolicyType:
+    To: policy_type
+  PrincipalName:
+    To: principal_name
+  PrincipalType:
+    To: principal_type
+  ResourceGroupId:
+    To: resource_group_id
+  AttachDate:
+    Ignore: true
+  Description:
+    Ignore: true

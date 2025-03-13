@@ -1,0 +1,133 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ApiGateway::Api
+  To: alicloud_api_gateway_api
+Properties:
+  AuthType:
+    To: auth_type
+  ConstParameters:
+    To: constant_parameters
+    Type: List
+    Schema:
+      Description:
+        To: description
+      Location:
+        Ignore: true
+      ServiceParameterName:
+        Ignore: true
+      ConstValue:
+        Ignore: true
+  Description:
+    To: description
+  ForceNonceCheck:
+    To: force_nonce_check
+  GroupId:
+    To: group_id
+  ApiName:
+    To: name
+  RequestConfig:
+    To: request_config
+    Type: Map
+    Schema:
+      BodyFormat:
+        To: body_format
+      RequestHttpMethod:
+        To: method
+      RequestMode:
+        To: mode
+      RequestPath:
+        To: path
+      RequestProtocol:
+        To: protocol
+      PostBodyDescription:
+        Ignore: true
+  RequestParameters:
+    To: request_parameters
+    Type: List
+    Schema:
+      DefaultValue:
+        To: default_value
+      Description:
+        To: description
+      Location:
+        To: in
+      ApiParameterName:
+        To: name
+      Required:
+        To: required
+      ParameterType:
+        To: type
+      JsonScheme:
+        Ignore: true
+      MaxValue:
+        Ignore: true
+      DocShow:
+        Ignore: true
+      MinValue:
+        Ignore: true
+      MinLength:
+        Ignore: true
+      MaxLength:
+        Ignore: true
+      EnumValue:
+        Ignore: true
+      DemoValue:
+        Ignore: true
+      DocOrder:
+        Ignore: true
+      RegularExpression:
+        Ignore: true
+  SystemParameters:
+    To: system_parameters
+    Type: List
+    Schema:
+      Location:
+        To: in
+      ParameterName:
+        To: name
+      ServiceParameterName:
+        To: name_service
+      Description:
+        Ignore: true
+      DemoValue:
+        Ignore: true
+  Tags:
+    Ignore: true
+  DisableInternet:
+    Ignore: true
+  ServiceConfig:
+    Ignore: true
+  ErrorCodeSamples:
+    Ignore: true
+  AppCodeAuthType:
+    Ignore: true
+  ResultDescriptions:
+    Ignore: true
+  Visibility:
+    Ignore: true
+  ServiceParameters:
+    Ignore: true
+  ResultBodyModel:
+    Ignore: true
+  FailResultSample:
+    Ignore: true
+  ServiceParametersMap:
+    Ignore: true
+  OpenIdConnectConfig:
+    Ignore: true
+  WebSocketApiType:
+    Ignore: true
+  AllowSignatureMethod:
+    Ignore: true
+  ResultType:
+    Ignore: true
+  ResultSample:
+    Ignore: true
+Attributes:
+  ApiId:
+    To: id
+  ApiId$$0:
+    To: api_id
+  Arn:
+    Ignore: true

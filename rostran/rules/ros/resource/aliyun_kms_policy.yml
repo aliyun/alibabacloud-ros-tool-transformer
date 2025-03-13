@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::KMS::Policy
+  To: alicloud_kms_policy
+Properties:
+  Description:
+    To: description
+  KmsInstanceId:
+    To: kms_instance_id
+  Permissions:
+    To: permissions
+  PolicyName:
+    To: policy_name
+  Resources:
+    To: resources
+  AccessControlRules:
+    Ignore: true
+Attributes:
+  AccessControlRules:
+    To: access_control_rules
+  Description:
+    To: description
+  KmsInstanceId:
+    To: kms_instance_id
+  Permissions:
+    To: permissions
+  PolicyName:
+    To: policy_name
+  Resources:
+    To: resources

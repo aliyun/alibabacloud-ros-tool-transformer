@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PVTZ::UserVpcAuthorization
+  To: alicloud_pvtz_user_vpc_authorization
+Properties:
+  AuthChannel:
+    To: auth_channel
+  AuthType:
+    To: auth_type
+  AuthorizedUserId:
+    To: authorized_user_id
+  AuthCode:
+    Ignore: true
+  IgnoreDeletionForbidden:
+    Ignore: true
+Attributes:
+  AuthType:
+    To: auth_type
+  AuthorizedUserId:
+    To: authorized_user_id

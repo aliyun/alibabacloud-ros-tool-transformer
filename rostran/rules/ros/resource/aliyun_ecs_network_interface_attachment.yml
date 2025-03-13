@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::NetworkInterfaceAttachment
+  To: alicloud_ecs_network_interface_attachment
+Properties:
+  InstanceId:
+    To: instance_id
+  NetworkInterfaceId:
+    To: network_interface_id
+  TrunkNetworkInstanceId:
+    To: trunk_network_instance_id
+  EcsRestartOption:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: instance_id
+  NetworkInterfaceId:
+    To: network_interface_id
+  TrunkNetworkInstanceId:
+    To: trunk_network_instance_id

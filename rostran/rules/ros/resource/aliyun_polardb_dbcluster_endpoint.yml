@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::POLARDB::DBClusterEndpoint
+  To: alicloud_polardb_endpoint
+Properties:
+  AutoAddNewNodes:
+    To: auto_add_new_nodes
+  DBClusterId:
+    To: db_cluster_id
+  EndpointConfig:
+    To: endpoint_config
+  EndpointType:
+    To: endpoint_type
+  Nodes:
+    To: nodes
+  ReadWriteMode:
+    To: read_write_mode
+Attributes:
+  DBEndpointId:
+    Ignore: true
+  ConnectionString:
+    Ignore: true
+  Addresses:
+    Ignore: true

@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CR::Instance
+  To: alicloud_cr_ee_instance
+Properties:
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  Period:
+    To: period
+  RenewPeriod:
+    To: renew_period
+  RenewalStatus:
+    To: renewal_status
+  InstanceStorageName:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  ImageScanner:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  CreateTime:
+    To: created_time
+  InstanceName:
+    To: instance_name
+  InstanceSpecification:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  ModifiedTime:
+    Ignore: true

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CS::ClusterNodePool
+  To: alicloud_cs_kubernetes_node_pool
+Properties:
+  ClusterId:
+    To: cluster_id
+  AutoScaling:
+    Ignore: true
+  Count:
+    Ignore: true
+  ScalingGroup:
+    Ignore: true
+  KubernetesConfig:
+    Ignore: true
+  Management:
+    Ignore: true
+  NodePoolInfo:
+    Ignore: true
+  TeeConfig:
+    Ignore: true
+Attributes:
+  NodePoolId:
+    To: id
+  NodePoolId$$0:
+    To: node_pool_id

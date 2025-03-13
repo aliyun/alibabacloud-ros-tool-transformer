@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudSSO::Group
+  To: alicloud_cloud_sso_group
+Properties:
+  Description:
+    To: description
+  DirectoryId:
+    To: directory_id
+  GroupName:
+    To: group_name
+Attributes:
+  GroupId:
+    To: group_id

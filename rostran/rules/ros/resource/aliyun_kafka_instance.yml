@@ -1,0 +1,56 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::KAFKA::Instance
+  To: alicloud_alikafka_instance
+Properties:
+  DeployType:
+    To: deploy_type
+  DiskSize:
+    To: disk_size
+  DiskType:
+    To: disk_type
+  EipMax:
+    To: eip_max
+  IoMax:
+    To: io_max
+  IoMaxSpec:
+    To: io_max_spec
+  PartitionNum:
+    To: partition_num
+  SpecType:
+    To: spec_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TopicQuota:
+    To: topic_quota
+  ServerlessConfig:
+    Ignore: true
+  PayType:
+    Ignore: true
+  OpenConnector:
+    Ignore: true
+  DeployOption:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  Name:
+    To: name
+  Endpoint:
+    Ignore: true
+  DomainEndpoint:
+    Ignore: true
+  SslEndpoint:
+    Ignore: true
+  SslDomainEndpoint:
+    Ignore: true
+  Arn:
+    Ignore: true
+  SaslDomainEndpoint:
+    Ignore: true
+  OrderId:
+    Ignore: true

@@ -1,0 +1,34 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::AutoSnapshotPolicy
+  To: alicloud_ecs_auto_snapshot_policy
+Properties:
+  AutoSnapshotPolicyName:
+    To: name
+  RepeatWeekdays:
+    To: repeat_weekdays
+  RetentionDays:
+    To: retention_days
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TimePoints:
+    To: time_points
+  TargetCopyRegions:
+    Ignore: true
+  CopyEncryptionConfiguration:
+    Ignore: true
+  EnableCrossRegionCopy:
+    Ignore: true
+  CopiedSnapshotsRetentionDays:
+    Ignore: true
+  DiskIds:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  AutoSnapshotPolicyId:
+    To: id
+  Arn:
+    Ignore: true

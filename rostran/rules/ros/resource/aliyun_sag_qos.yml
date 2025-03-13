@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::Qos
+  To: alicloud_sag_qos
+Properties:
+  QosName:
+    To: name
+  QosDescription:
+    Ignore: true
+Attributes:
+  QosId:
+    To: id

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLS::OssExport
+  To: alicloud_log_oss_export
+Properties:
+  DisplayName:
+    To: display_name
+  ExportName:
+    To: export_name
+  ProjectName:
+    To: project_name
+  Configuration:
+    Ignore: true
+  Description:
+    Ignore: true
+Attributes:
+  ExportName:
+    To: export_name
+  ProjectName:
+    To: project_name

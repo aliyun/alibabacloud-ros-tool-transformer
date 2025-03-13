@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DDoSPro::SchedulerRule
+  To: alicloud_ddoscoo_scheduler_rule
+Properties:
+  Param:
+    To: param
+  ResourceGroupId:
+    To: resource_group_id
+  RuleName:
+    To: rule_name
+  RuleType:
+    To: rule_type
+  Rules:
+    To: rules
+Attributes:
+  RuleName:
+    To: id
+  RuleName$$0:
+    To: rule_name

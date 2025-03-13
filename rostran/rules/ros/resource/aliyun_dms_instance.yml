@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DMS::Instance
+  To: alicloud_dms_enterprise_instance
+Properties:
+  DataLinkName:
+    To: data_link_name
+  DatabasePassword:
+    To: database_password
+  DatabaseUser:
+    To: database_user
+  DbaUid:
+    To: dba_uid
+  DdlOnline:
+    To: ddl_online
+  EcsInstanceId:
+    To: ecs_instance_id
+  EcsRegion:
+    To: ecs_region
+  EnvType:
+    To: env_type
+  ExportTimeout:
+    To: export_timeout
+  Host:
+    To: host
+  InstanceAlias:
+    To: instance_alias
+  InstanceSource:
+    To: instance_source
+  InstanceType:
+    To: instance_type
+  NetworkType:
+    To: network_type
+  Port:
+    To: port
+  QueryTimeout:
+    To: query_timeout
+  SafeRule:
+    To: safe_rule
+  Sid:
+    To: sid
+  Tid:
+    To: tid
+  UseDsql:
+    To: use_dsql
+  VpcId:
+    To: vpc_id
+Attributes:
+  InstanceId:
+    To: id
+  Host:
+    To: host
+  InstanceId$$0:
+    To: instance_id
+  Port:
+    To: port
