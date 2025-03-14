@@ -9,6 +9,8 @@
     - [Transform ROS-Wrapped Terraform Template to Terraform Template](example-ros-tf.md)
     - [Transform CloudFormation Template to ROS Template](example-cf.md)
     - [Transform Excel Template to ROS Template](example-excel.md)
+    - [Transform ROS to Terraform](example-ros2tf.md)
 * [Supported Types](supported-types.md)
     - [Terraform](supported-types-tf.md)
     - [CloudFormation](supported-types-cf.md)
+    - [ROS to Terraform](supported-types-ros2tf.md)

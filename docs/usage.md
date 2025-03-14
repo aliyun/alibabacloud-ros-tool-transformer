@@ -12,24 +12,25 @@ rostran transform [OPTIONS] SOURCE_PATH
 
 #### SOURCE_PATH
 
-[Required] The path of the source template file, which can be a template file in Excel, Terraform, or AWS CloudFormation
-format.
+[Required] The path of the source template file, which can be a template file in Excel, Terraform, AWS CloudFormation 
+or AlibabaCloud ROS format.
 
 #### OPTIONS
 
 The following options are supported:
 
 - `--source-format`/`-S`: The format of the source template file, valid values: `auto` (default value) | `terraform`
-  | `excel`| `cloudformation`, the source file format is determined by the suffix of `SOURCE_PATH` by default.
-- `--target-path`/`-t`: The file path of the generated ROS template. Default to current directory. If the path is a
-  directory, the generated file name is a ROS template of `template` in this directory. If the path is a file (must be
+  | `excel`| `cloudformation` | `ros` |`rosTerraform`, the source file format is determined by the suffix of `SOURCE_PATH` by default.
+- `--target-path`/`-t`: The file path of the generated template. Default to current directory. If the path is a
+  directory, the generated file name is a ROS template of `template` in this directory or Terraform files with file 
+  names `main.tf`, `variables.tf`, `outputs.tf`, etc. If the path is a file (must be
   in json or yaml format), a ROS template with the specified file name will be generated, and there is no need to
   specify ` --target-format` option.
 - `--target-format`/`-T`: The generated ROS template format. Valid value: `auto` (default value) | `json` | `yaml`. When
-  the
-  value is `auto` and `--target-path` is the file path, the generated ROS The template format is the same as
+  the value is `auto` and `--target-path` is the file path, the generated ROS The template format is the same as
   the `--target-path` file format. When the value is `auto` and `--target-path` is a directory, the generated ROS
-  template is named `template.yml`.
+  template is named `template.yml`. If it is a ROS template to a Terraform template, the secondary parameters will not 
+  take effect.
 - `--compatible`: Whether to use compatible mode when transforming Terraform to ROS template. If compatible, keep the
   Terraform file content in the generated ROS template, files only ending with `.tf`, `.tftpl`, `.tfvars`, `.metadata`, 
   `.mappings`, `.conditions`, `.rules` are retained by default, `--extra-files` supports more files. 
