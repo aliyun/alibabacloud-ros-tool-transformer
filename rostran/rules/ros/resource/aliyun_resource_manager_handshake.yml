@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::Handshake
+  To: alicloud_resource_manager_handshake
+Properties:
+  Note:
+    To: note
+  TargetEntity:
+    To: target_entity
+  TargetType:
+    To: target_type
+Attributes:
+  HandshakeId:
+    To: id
+  MasterAccountId:
+    To: master_account_id
+  MasterAccountName:
+    To: master_account_name
+  Note:
+    To: note
+  ResourceDirectoryId:
+    To: resource_directory_id
+  TargetEntity:
+    To: target_entity
+  TargetType:
+    To: target_type

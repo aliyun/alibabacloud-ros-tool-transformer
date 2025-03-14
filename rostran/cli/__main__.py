@@ -42,7 +42,7 @@ def transform(
     source_path: str = typer.Argument(
         ...,
         help="The path of the source template file, which can be a template file in Excel, Terraform, "
-        "or AWS CloudFormation format.",
+        "AWS CloudFormation or AlibabaCloud ROS format.",
     ),
     source_format: SourceTemplateFormat = typer.Option(
         SourceTemplateFormat.Auto,
@@ -56,14 +56,14 @@ def transform(
         None,
         "--target-path",
         "-t",
-        help="The file path of the generated ROS template. Default to current directory.",
+        help="The file path of the generated ROS or Terraform template. Default to current directory.",
     ),
     target_format: TargetTemplateFormat = typer.Option(
         TargetTemplateFormat.Auto,
         "--target-format",
         "-T",
         show_default=False,
-        help="The generated ROS template format. [default: auto]",
+        help="The generated template format. [default: auto]",
     ),
     compatible: bool = typer.Option(
         False,
@@ -88,26 +88,39 @@ def transform(
     """
     Transform AWS CloudFormation/Terraform/Excel template to ROS template.
 
-    SOURCE represents AWS CloudFormation/Terraform/Excel template file path which will be transformed from.
-    If file extension is ".json/.yml/.yaml", it will be automatically regarded as AWS CloudFormation template.
+    SOURCE represents AWS CloudFormation/Terraform/Excel/ROS template file path which will be transformed from.
+    If file extension is ".json/.yml/.yaml", it will be automatically regarded as AWS CloudFormation or ROS template.
     If file extension is ".xlsx", it will be automatically regarded as Excel template.
 
-    TARGET represents ROS template file path which will be transformed to. If not supplied, "template.yml" will be used.
+    TARGET represents ROS or Terraform template file path which will be transformed to.
+           If not supplied, "template.yml" will be used for ROS, "terraform/alibabacloud" will be used for Terraform.
     """
     # handle source template
     if not Path(source_path).exists():
         raise exceptions.TemplateNotExist(path=source_path)
 
+    tpl = None
     if source_format == SourceTemplateFormat.Auto:
         if source_path.endswith(".xlsx"):
             source_format = SourceTemplateFormat.Excel
         elif source_path.endswith(".tf"):
             source_format = SourceTemplateFormat.Terraform
         elif source_path.endswith((".json", ".yaml", ".yml")):
-            with open(source_path, "r") as f:
-                tpl = yaml.load(f)
-            flag = tpl.get("Transform")
-            if isinstance(flag, str) and flag.startswith("Aliyun::Terraform"):
+            try:
+                from rostran.providers.ros.yaml_util import yaml
+                with open(source_path, "r") as f:
+                    tpl = yaml.load(f)
+            except YAMLError:
+                raise exceptions.InvalidTemplate(path=source_path)
+            ros_flag = tpl.get('ROSTemplateFormatVersion') == '2015-09-01'
+            ros_tf = tpl.get("Transform")
+            ros_tf_flag = False
+            if isinstance(ros_tf, str) and ros_tf.startswith(("Aliyun::Terraform", "Aliyun::OpenTofu")):
+                ros_tf_flag = True
+
+            if ros_flag and ros_tf_flag:
+                source_format = SourceTemplateFormat.ROSTerraform
+            elif ros_flag and not ros_tf_flag:
                 source_format = SourceTemplateFormat.ROS
             else:
                 source_format = SourceTemplateFormat.CloudFormation
@@ -116,12 +129,17 @@ def transform(
 
     # handle target template
     if not target_path:
-        if target_format in (TargetTemplateFormat.Auto, TargetTemplateFormat.Yaml):
+        if target_format == TargetTemplateFormat.Auto and source_format == SourceTemplateFormat.ROS:
+            target_format = TargetTemplateFormat.Terraform
+            target_path = "terraform/alicloud"
+        elif target_format == TargetTemplateFormat.Terraform:
+            target_path = "terraform/alicloud"
+        elif target_format in (TargetTemplateFormat.Auto, TargetTemplateFormat.Yaml):
             target_path = "template.yml"
             target_format = TargetTemplateFormat.Yaml
         else:
             target_path = "template.json"
-        if source_format == SourceTemplateFormat.ROS:
+        if source_format == SourceTemplateFormat.ROSTerraform:
             target_path = "template"
     elif target_format == TargetTemplateFormat.Auto:
         if target_path.endswith((".yaml", ".yml")):
@@ -129,7 +147,7 @@ def transform(
         elif target_path.endswith(".json"):
             target_format = TargetTemplateFormat.Json
         else:
-            if source_format != SourceTemplateFormat.ROS:
+            if source_format not in (SourceTemplateFormat.ROS, SourceTemplateFormat.ROSTerraform):
                 raise exceptions.TemplateNotSupport(path=target_path)
 
     target_path = os.path.abspath(target_path)
@@ -163,16 +181,29 @@ def transform(
 
         template = CloudFormationTemplate.initialize(source_path, source_file_format)
 
-    elif source_format == SourceTemplateFormat.ROS:
+    elif source_format == SourceTemplateFormat.ROSTerraform:
         from ..providers import WrapTerraformTemplate
 
         template = WrapTerraformTemplate.initialize(source_path, source_file_format)
+
+    elif source_format == SourceTemplateFormat.ROS:
+        from rostran.providers.ros.template import ROS2TerraformTemplate
+        from rostran.providers.ros.yaml_util import yaml
+        if tpl is None:
+            if not source_path or not source_path.endswith((".json", ".yaml", ".yml")):
+                raise exceptions.TemplateNotSupport(path=source_path)
+            try:
+                with open(source_path, "r") as f:
+                    tpl = yaml.load(f)
+            except YAMLError:
+                raise exceptions.TemplateNotSupport(path=source_path)
+        template = ROS2TerraformTemplate.initialize(tpl)
 
     else:
         raise exceptions.TemplateNotSupport(path=source_path)
 
     # transform template
-    if source_format == SourceTemplateFormat.ROS:
+    if source_format in (SourceTemplateFormat.ROSTerraform, SourceTemplateFormat.ROS):
         template.transform(target_path)
     else:
         ros_templates = template.transform()

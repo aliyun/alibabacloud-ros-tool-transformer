@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::User
+  To: alicloud_ram_user
+Properties:
+  Comments:
+    To: comments
+  DisplayName:
+    To: display_name
+  Email:
+    To: email
+  MobilePhone:
+    To: mobile
+  UserName:
+    To: name
+  LoginProfile:
+    Ignore: true
+  PolicyAttachments:
+    Ignore: true
+  Policies:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  Groups:
+    Ignore: true
+Attributes:
+  UserId:
+    To: id
+  UserName:
+    Ignore: true
+  LastLoginDate:
+    Ignore: true
+  CreateDate:
+    Ignore: true

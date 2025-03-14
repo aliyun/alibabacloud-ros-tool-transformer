@@ -1,0 +1,150 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EMR::Cluster
+  To: alicloud_emr_cluster
+Properties:
+  BootstrapAction:
+    To: bootstrap_action
+    Type: List
+    Schema:
+      Arg:
+        To: arg
+      Name:
+        To: name
+      Path:
+        To: path
+  ChargeType:
+    To: charge_type
+  ClusterType:
+    To: cluster_type
+  DepositType:
+    To: deposit_type
+  EasEnable:
+    To: eas_enable
+  EmrVer:
+    To: emr_ver
+  HighAvailabilityEnable:
+    To: high_availability_enable
+  HostGroup:
+    To: host_group
+    Type: List
+    Schema:
+      AutoRenew:
+        To: auto_renew
+      ChargeType:
+        To: charge_type
+      DiskCapacity:
+        To: disk_capacity
+      DiskCount:
+        To: disk_count
+      DiskType:
+        To: disk_type
+      GpuDriver:
+        To: gpu_driver
+      HostGroupName:
+        To: host_group_name
+      HostGroupType:
+        To: host_group_type
+      InstanceType:
+        To: instance_type
+      NodeCount:
+        To: node_count
+      Period:
+        To: period
+      SysDiskCapacity:
+        To: sys_disk_capacity
+      SysDiskType:
+        To: sys_disk_type
+      ClusterId:
+        Ignore: true
+      HostPassword:
+        Ignore: true
+      VSwitchId:
+        Ignore: true
+      Comment:
+        Ignore: true
+      CreateType:
+        Ignore: true
+      HostKeyPairName:
+        Ignore: true
+      HostGroupId:
+        Ignore: true
+  IsOpenPublicIp:
+    To: is_open_public_ip
+  KeyPairName:
+    To: key_pair_name
+  MasterPwd:
+    To: master_pwd
+  MetaStoreType:
+    To: meta_store_type
+  Name:
+    To: name
+  OptionSoftWareList:
+    To: option_software_list
+  Period:
+    To: period
+  RelatedClusterId:
+    To: related_cluster_id
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityGroupId:
+    To: security_group_id
+  SshEnable:
+    To: ssh_enable
+  Tags:
+    To: tags
+    Handler: handle_tags
+  UseLocalMetaDb:
+    To: use_local_metadb
+  UserDefinedEmrEcsRole:
+    To: user_defined_emr_ecs_role
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  IoOptimized:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  UseCustomHiveMetaDB:
+    Ignore: true
+  Configurations:
+    Ignore: true
+  MetaStoreConf:
+    Ignore: true
+  Config:
+    Ignore: true
+  SecurityGroupName:
+    Ignore: true
+  InitCustomHiveMetaDB:
+    Ignore: true
+  InstanceGeneration:
+    Ignore: true
+  ClickHouseConf:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  WhiteListType:
+    Ignore: true
+  MachineType:
+    Ignore: true
+  NetType:
+    Ignore: true
+  UserInfo:
+    Ignore: true
+  AuthorizeContent:
+    Ignore: true
+  LogPath:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  HostGroups:
+    Ignore: true
+  MasterNodePubIps:
+    Ignore: true
+  Arn:
+    Ignore: true
+  MasterNodeInnerIps:
+    Ignore: true

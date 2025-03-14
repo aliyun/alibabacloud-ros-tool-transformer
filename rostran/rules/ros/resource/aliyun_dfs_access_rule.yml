@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DFS::AccessRule
+  To: alicloud_dfs_access_rule
+Properties:
+  AccessGroupId:
+    To: access_group_id
+  Description:
+    To: description
+  NetworkSegment:
+    To: network_segment
+  Priority:
+    To: priority
+  RWAccessType:
+    Ignore: true
+Attributes:
+  AccessRuleId:
+    To: id
+  AccessRuleId$$0:
+    To: access_rule_id

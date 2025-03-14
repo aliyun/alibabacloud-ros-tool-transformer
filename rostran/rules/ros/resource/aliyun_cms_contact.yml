@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CMS::Contact
+  To: alicloud_cms_alarm_contact
+Properties:
+  Describe:
+    To: describe
+  Channels:
+    Ignore: true
+  ContactName:
+    Ignore: true
+Attributes:
+  ContactName:
+    To: id

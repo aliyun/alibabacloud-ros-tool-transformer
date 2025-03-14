@@ -1,0 +1,93 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::AutoProvisioningGroup
+  To: alicloud_auto_provisioning_group
+Properties:
+  AutoProvisioningGroupName:
+    To: auto_provisioning_group_name
+  AutoProvisioningGroupType:
+    To: auto_provisioning_group_type
+  DefaultTargetCapacityType:
+    To: default_target_capacity_type
+  Description:
+    To: description
+  ExcessCapacityTerminationPolicy:
+    To: excess_capacity_termination_policy
+  LaunchTemplateConfig:
+    To: launch_template_config
+    Type: List
+    Schema:
+      InstanceType:
+        To: instance_type
+      MaxPrice:
+        To: max_price
+      Priority:
+        To: priority
+      VSwitchId:
+        To: vswitch_id
+      WeightedCapacity:
+        To: weighted_capacity
+      Memories:
+        Ignore: true
+      ExcludedInstanceTypes:
+        Ignore: true
+      BurstablePerformance:
+        Ignore: true
+      Cores:
+        Ignore: true
+      ImageId:
+        Ignore: true
+      InstanceFamilyLevel:
+        Ignore: true
+      Architectures:
+        Ignore: true
+  LaunchTemplateId:
+    To: launch_template_id
+  LaunchTemplateVersion:
+    To: launch_template_version
+  MaxSpotPrice:
+    To: max_spot_price
+  PayAsYouGoAllocationStrategy:
+    To: pay_as_you_go_allocation_strategy
+  PayAsYouGoTargetCapacity:
+    To: pay_as_you_go_target_capacity
+  SpotAllocationStrategy:
+    To: spot_allocation_strategy
+  SpotInstanceInterruptionBehavior:
+    To: spot_instance_interruption_behavior
+  SpotInstancePoolsToUseCount:
+    To: spot_instance_pools_to_use_count
+  SpotTargetCapacity:
+    To: spot_target_capacity
+  TerminateInstances:
+    To: terminate_instances
+  TerminateInstancesWithExpiration:
+    To: terminate_instances_with_expiration
+  TotalTargetCapacity:
+    To: total_target_capacity
+  ValidFrom:
+    To: valid_from
+  ValidUntil:
+    To: valid_until
+  LaunchConfiguration:
+    Ignore: true
+  ResourcePoolOptions:
+    Ignore: true
+  CheckExecutionStatus:
+    Ignore: true
+  SystemDiskConfig:
+    Ignore: true
+  DataDiskConfig:
+    Ignore: true
+  MinTargetCapacity:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  AutoProvisioningGroupId:
+    To: id
+  AutoProvisioningGroupId$$0:
+    To: auto_provisioning_group_id
+  AutoProvisioningGroupName:
+    To: auto_provisioning_group_name

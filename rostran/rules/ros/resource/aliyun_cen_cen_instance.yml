@@ -1,0 +1,22 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::CenInstance
+  To: alicloud_cen_instance
+Properties:
+  Description:
+    To: description
+  Name:
+    To: name
+  ProtectionLevel:
+    To: protection_level
+  Tags:
+    To: tags
+    Handler: handle_tags
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  CenId:
+    To: id
+  Arn:
+    Ignore: true

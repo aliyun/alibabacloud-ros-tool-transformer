@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::AMQP::Instance
+  To: alicloud_amqp_instance
+Properties:
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  MaxEipTps:
+    To: max_eip_tps
+  MaxTps:
+    To: max_tps
+  PayType:
+    To: payment_type
+  Period:
+    To: period
+  QueueCapacity:
+    To: queue_capacity
+  StorageSize:
+    To: storage_size
+  TracingStorageTime:
+    To: tracing_storage_time
+  SupportTracing:
+    Ignore: true
+  OrderNum:
+    Ignore: true
+  SupportEip:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  ClassicEndpoint:
+    Ignore: true
+  PublicEndpoint:
+    Ignore: true
+  PrivateEndpoint:
+    Ignore: true

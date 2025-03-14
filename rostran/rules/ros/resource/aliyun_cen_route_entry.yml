@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::RouteEntry
+  To: alicloud_cen_route_entry
+Properties:
+  ChildInstanceRouteTableId:
+    Ignore: true
+  DestinationCidrBlock:
+    Ignore: true
+  CenId:
+    Ignore: true
+  ChildInstanceId:
+    Ignore: true
+  ChildInstanceType:
+    Ignore: true
+  ChildInstanceRegionId:
+    Ignore: true
+Attributes: {}

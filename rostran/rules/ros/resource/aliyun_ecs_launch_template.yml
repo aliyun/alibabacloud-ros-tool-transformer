@@ -1,0 +1,138 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::LaunchTemplate
+  To: alicloud_ecs_launch_template
+Properties:
+  AutoReleaseTime:
+    To: auto_release_time
+  DiskMappings:
+    To: data_disks
+    Type: List
+    Schema:
+      Category:
+        To: category
+      DeleteWithInstance:
+        To: delete_with_instance
+      Description:
+        To: description
+      Encrypted:
+        To: encrypted
+      PerformanceLevel:
+        To: performance_level
+      Size:
+        To: size
+      SnapshotId:
+        To: snapshot_id
+      DiskName:
+        Ignore: true
+  DeploymentSetId:
+    To: deployment_set_id
+  Description:
+    To: description
+  HostName:
+    To: host_name
+  ImageId:
+    To: image_id
+  ImageOwnerAlias:
+    To: image_owner_alias
+  InstanceChargeType:
+    To: instance_charge_type
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  InternetChargeType:
+    To: internet_charge_type
+  InternetMaxBandwidthOut:
+    To: internet_max_bandwidth_out
+  IoOptimized:
+    To: io_optimized
+  KeyPairName:
+    To: key_pair_name
+  LaunchTemplateName:
+    To: launch_template_name
+  NetworkInterfaces:
+    To: network_interfaces
+    Type: List
+    Schema:
+      Description:
+        To: description
+      SecurityGroupId:
+        To: security_group_id
+      VSwitchId:
+        To: vswitch_id
+      PrimaryIpAddress:
+        Ignore: true
+      NetworkInterfaceName:
+        Ignore: true
+  NetworkType:
+    To: network_type
+  PasswordInherit:
+    To: password_inherit
+  Period:
+    To: period
+  PrivateIpAddress:
+    To: private_ip_address
+  RamRoleName:
+    To: ram_role_name
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityEnhancementStrategy:
+    To: security_enhancement_strategy
+  SecurityGroupId:
+    To: security_group_id
+  SecurityGroupIds:
+    To: security_group_ids
+  SpotDuration:
+    To: spot_duration
+  SpotPriceLimit:
+    To: spot_price_limit
+  SpotStrategy:
+    To: spot_strategy
+  SystemDiskCategory:
+    To: system_disk_category
+  SystemDiskDescription:
+    To: system_disk_description
+  SystemDiskSize:
+    To: system_disk_size
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TemplateResourceGroupId:
+    To: template_resource_group_id
+  TemplateTags:
+    To: template_tags
+    Type: List
+    Schema:
+      Key:
+        To: Key
+      Value:
+        To: Value
+  UserData:
+    To: user_data
+  UserData$$0:
+    To: userdata
+  VersionDescription:
+    To: version_description
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  SystemDiskDiskName:
+    Ignore: true
+  SystemDiskDeleteWithInstance:
+    Ignore: true
+  Ipv6AddressCount:
+    Ignore: true
+  SystemDiskPerformanceLevel:
+    Ignore: true
+Attributes:
+  LaunchTemplateId:
+    To: id
+  LaunchTemplateName:
+    To: launch_template_name
+  LatestVersionNumber:
+    Ignore: true
+  DefaultVersionNumber:
+    Ignore: true

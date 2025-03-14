@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GA::BasicAccelerateIp
+  To: alicloud_ga_basic_accelerate_ip
+Properties:
+  AcceleratorId:
+    To: accelerator_id
+  IpSetId:
+    To: ip_set_id
+Attributes:
+  AccelerateIpId:
+    To: id

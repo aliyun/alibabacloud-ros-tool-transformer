@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::TransitRouterVpcAttachment
+  To: alicloud_cen_transit_router_vpc_attachment
+Properties:
+  CenId:
+    To: cen_id
+  ChargeType:
+    To: payment_type
+  RouteTableAssociationEnabled:
+    To: route_table_association_enabled
+  RouteTablePropagationEnabled:
+    To: route_table_propagation_enabled
+  TransitRouterAttachmentDescription:
+    To: transit_router_attachment_description
+  TransitRouterAttachmentName:
+    To: transit_router_attachment_name
+  TransitRouterId:
+    To: transit_router_id
+  VpcId:
+    To: vpc_id
+  VpcOwnerId:
+    To: vpc_owner_id
+  ZoneMappings:
+    To: zone_mappings
+    Type: List
+    Schema:
+      ZoneId:
+        To: zone_id
+      VSwitchId:
+        Ignore: true
+  DeletionForce:
+    Ignore: true
+  AutoCreateVpcRoute:
+    Ignore: true
+Attributes:
+  CenId:
+    To: cen_id
+  ResourceType:
+    To: resource_type
+  TransitRouterAttachmentDescription:
+    To: transit_router_attachment_description
+  TransitRouterAttachmentId:
+    To: transit_router_attachment_id
+  TransitRouterAttachmentName:
+    To: transit_router_attachment_name
+  TransitRouterId:
+    To: transit_router_id
+  VpcId:
+    To: vpc_id
+  VpcOwnerId:
+    To: vpc_owner_id
+  ClientToken:
+    Ignore: true

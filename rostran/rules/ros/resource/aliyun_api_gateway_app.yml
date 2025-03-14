@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ApiGateway::App
+  To: alicloud_api_gateway_app
+Properties:
+  Description:
+    To: description
+  AppName:
+    To: name
+  Tags:
+    To: tags
+    Handler: handle_tags
+  AppCode:
+    Ignore: true
+  AppSecret:
+    Ignore: true
+  AppKey:
+    Ignore: true
+Attributes:
+  AppId:
+    To: id
+  Tags:
+    To: tags
+  AppCode:
+    Ignore: true
+  AppSecret:
+    Ignore: true
+  AppKey:
+    Ignore: true

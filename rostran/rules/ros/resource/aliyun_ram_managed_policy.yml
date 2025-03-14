@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::ManagedPolicy
+  To: alicloud_ram_policy
+Properties:
+  Description:
+    To: description
+  PolicyDocument:
+    To: document
+    Handler: json_load
+  PolicyName:
+    To: name
+  PolicyDocument$$0:
+    To: policy_document
+    Handler: json_load
+  PolicyName$$0:
+    To: policy_name
+  PolicyDocumentUnchecked:
+    Ignore: true
+  Users:
+    Ignore: true
+  Groups:
+    Ignore: true
+  Roles:
+    Ignore: true
+  IgnoreExisting:
+    Ignore: true
+Attributes:
+  PolicyName:
+    To: id
+  PolicyName$$0:
+    To: policy_name

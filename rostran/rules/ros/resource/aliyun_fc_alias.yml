@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC::Alias
+  To: alicloud_fc_alias
+Properties:
+  AliasName:
+    To: alias_name
+  Description:
+    To: description
+  ServiceName:
+    To: service_name
+  VersionId:
+    Ignore: true
+  AdditionalWeight:
+    Ignore: true
+  AdditionalVersion:
+    Ignore: true
+Attributes:
+  AliasName:
+    To: alias_name
+  ServiceName:
+    To: service_name
+  VersionId:
+    Ignore: true

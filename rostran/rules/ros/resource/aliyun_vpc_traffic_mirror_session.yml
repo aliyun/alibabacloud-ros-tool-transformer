@@ -1,0 +1,34 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::TrafficMirrorSession
+  To: alicloud_vpc_traffic_mirror_session
+Properties:
+  Enabled:
+    To: enabled
+  PacketLength:
+    To: packet_length
+  Priority:
+    To: priority
+  ResourceGroupId:
+    To: resource_group_id
+  Tag:
+    To: tags
+    Handler: handle_tags
+  TrafficMirrorFilterId:
+    To: traffic_mirror_filter_id
+  TrafficMirrorSessionDescription:
+    To: traffic_mirror_session_description
+  TrafficMirrorSessionName:
+    To: traffic_mirror_session_name
+  TrafficMirrorSourceIds:
+    To: traffic_mirror_source_ids
+  TrafficMirrorTargetId:
+    To: traffic_mirror_target_id
+  TrafficMirrorTargetType:
+    To: traffic_mirror_target_type
+  VirtualNetworkId:
+    To: virtual_network_id
+Attributes:
+  TrafficMirrorSessionId:
+    To: id

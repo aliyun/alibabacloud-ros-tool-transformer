@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECD::Bundle
+  To: alicloud_ecd_bundle
+Properties:
+  BundleName:
+    To: bundle_name
+  Description:
+    To: description
+  DesktopType:
+    To: desktop_type
+  ImageId:
+    To: image_id
+  Language:
+    To: language
+  RootDiskPerformanceLevel:
+    To: root_disk_performance_level
+  RootDiskSizeGib:
+    To: root_disk_size_gib
+  UserDiskPerformanceLevel:
+    To: user_disk_performance_level
+  UserDiskSizeGib:
+    To: user_disk_size_gib
+Attributes:
+  BundleId:
+    To: id

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::AMQP::Binding
+  To: alicloud_amqp_binding
+Properties:
+  Argument:
+    To: argument
+  BindingKey:
+    To: binding_key
+  BindingType:
+    To: binding_type
+  DestinationName:
+    To: destination_name
+  InstanceId:
+    To: instance_id
+  SourceExchange:
+    To: source_exchange
+  VirtualHost:
+    To: virtual_host_name
+Attributes: {}

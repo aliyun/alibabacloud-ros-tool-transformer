@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::REDIS::Connection
+  To: alicloud_kvstore_connection
+Properties:
+  ConnectionStringPrefix:
+    To: connection_string_prefix
+  InstanceId:
+    To: instance_id
+  Port:
+    To: port
+  ConnectionType:
+    Ignore: true
+Attributes:
+  ConnectionString:
+    To: connection_string

@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DMS::User
+  To: alicloud_dms_enterprise_user
+Properties:
+  Mobile:
+    To: mobile
+  RoleNames:
+    To: role_names
+  Status:
+    To: status
+  Tid:
+    To: tid
+  Uid:
+    To: uid
+  UserName:
+    To: user_name
+Attributes:
+  UserId:
+    To: id
+  Mobile:
+    To: mobile
+  RoleNames:
+    To: role_names
+  Uid:
+    To: uid
+  UserName:
+    To: user_name
+  RoleIds:
+    Ignore: true
+  ParentUid:
+    Ignore: true

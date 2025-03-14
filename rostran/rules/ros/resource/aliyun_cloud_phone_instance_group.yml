@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudPhone::InstanceGroup
+  To: alicloud_ecp_instance
+Properties:
+  AutoPay:
+    To: auto_pay
+  AutoRenew:
+    To: auto_renew
+  Description:
+    To: description
+  EipBandwidth:
+    To: eip_bandwidth
+  ImageId:
+    To: image_id
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  KeyPairName:
+    To: key_pair_name
+  ChargeType:
+    To: payment_type
+  Period:
+    To: period
+  PeriodUnit:
+    To: period_unit
+  Resolution:
+    To: resolution
+  SecurityGroupId:
+    To: security_group_id
+  VncPassword:
+    To: vnc_password
+  VSwitchId:
+    To: vswitch_id
+  Amount:
+    Ignore: true
+  Tag:
+    Ignore: true
+Attributes:
+  TradePrice:
+    Ignore: true
+  InstanceIds:
+    Ignore: true
+  PrivateIps:
+    Ignore: true
+  OrderId:
+    Ignore: true

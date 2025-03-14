@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::KMS::NetworkRule
+  To: alicloud_kms_network_rule
+Properties:
+  Description:
+    To: description
+  NetworkRuleName:
+    To: network_rule_name
+  SourcePrivateIp:
+    To: source_private_ip
+Attributes:
+  Description:
+    To: description
+  SourcePrivateIp:
+    To: source_private_ip

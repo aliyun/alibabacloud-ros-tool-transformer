@@ -1,0 +1,59 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CLOUDFW::NatFirewallControlPolicy
+  To: alicloud_cloud_firewall_nat_firewall_control_policy
+Properties:
+  AclAction:
+    To: acl_action
+  ApplicationNameList:
+    To: application_name_list
+  Description:
+    To: description
+  DestPort:
+    To: dest_port
+  DestPortGroup:
+    To: dest_port_group
+  DestPortType:
+    To: dest_port_type
+  Destination:
+    To: destination
+  DestinationType:
+    To: destination_type
+  Direction:
+    To: direction
+  DomainResolveType:
+    To: domain_resolve_type
+  EndTime:
+    To: end_time
+  IpVersion:
+    To: ip_version
+  NatGatewayId:
+    To: nat_gateway_id
+  NewOrder:
+    To: new_order
+  Proto:
+    To: proto
+  RepeatDays:
+    To: repeat_days
+  RepeatEndTime:
+    To: repeat_end_time
+  RepeatStartTime:
+    To: repeat_start_time
+  RepeatType:
+    To: repeat_type
+  Source:
+    To: source
+  SourceType:
+    To: source_type
+  StartTime:
+    To: start_time
+  Release:
+    Ignore: true
+Attributes:
+  AclUuid:
+    To: acl_uuid
+  Direction:
+    To: direction
+  NatGatewayId:
+    To: nat_gateway_id

@@ -1,0 +1,36 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::VPC
+  To: alicloud_vpc
+Properties:
+  CidrBlock:
+    To: cidr_block
+  Description:
+    To: description
+  EnableIpv6:
+    To: enable_ipv6
+  Ipv6CidrBlock:
+    To: ipv6_cidr_block
+  Ipv6Isp:
+    To: ipv6_isp
+  ResourceGroupId:
+    To: resource_group_id
+  SecondaryCidrBlocks:
+    To: secondary_cidr_blocks
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcName:
+    To: vpc_name
+  UserCidr:
+    Ignore: true
+Attributes:
+  VpcId:
+    To: id
+  RouteTableId:
+    To: route_table_id
+  VpcName:
+    To: vpc_name
+  VRouterId:
+    Ignore: true

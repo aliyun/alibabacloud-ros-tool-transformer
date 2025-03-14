@@ -1,0 +1,108 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Hologram::Instance
+  To: alicloud_hologram_instance
+Properties:
+  AutoPay:
+    To: auto_pay
+  ColdStorageSize:
+    To: cold_storage_size
+  Cpu:
+    To: cpu
+  Duration:
+    To: duration
+  Endpoints:
+    To: endpoints
+    Type: List
+    Schema:
+      AlternativeEndpoints:
+        To: alternative_endpoints
+      Enabled:
+        To: enabled
+      Endpoint:
+        To: endpoint
+      Type:
+        To: type
+      VpcId:
+        To: vpc_id
+      VpcInstanceId:
+        To: vpc_instance_id
+      VSwitchId:
+        Ignore: true
+  GatewayCount:
+    To: gateway_count
+  InitialDatabases:
+    To: initial_databases
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  LeaderInstanceId:
+    To: leader_instance_id
+  PaymentType:
+    To: payment_type
+  PricingCycle:
+    To: pricing_cycle
+  ResourceGroupId:
+    To: resource_group_id
+  ScaleType:
+    To: scale_type
+  StorageSize:
+    To: storage_size
+  Tags:
+    To: tags
+    Handler: handle_tags
+  ZoneId:
+    To: zone_id
+  ProductCode:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  ColdStorageSize:
+    To: cold_storage_size
+  Cpu:
+    To: cpu
+  CreateTime:
+    To: create_time
+  Endpoints:
+    To: endpoints
+  GatewayCount:
+    To: gateway_count
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  PaymentType:
+    To: payment_type
+  ResourceGroupId:
+    To: resource_group_id
+  StorageSize:
+    To: storage_size
+  Tags:
+    To: tags
+  ZoneId:
+    To: zone_id
+  CommodityCode:
+    Ignore: true
+  AutoRenewal:
+    Ignore: true
+  GatewayMemory:
+    Ignore: true
+  GatewayCpu:
+    Ignore: true
+  Version:
+    Ignore: true
+  ComputeNodeCount:
+    Ignore: true
+  InstanceOwner:
+    Ignore: true
+  ExpirationTime:
+    Ignore: true
+  EnableHiveAccess:
+    Ignore: true
+  SuspendReason:
+    Ignore: true
+  Memory:
+    Ignore: true

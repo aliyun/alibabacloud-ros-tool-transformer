@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EAIS::Instance
+  To: alicloud_eais_instance
+Properties:
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  SecurityGroupId:
+    To: security_group_id
+  VSwitchId:
+    To: vswitch_id
+  ResourceGroupId:
+    Ignore: true
+  PaymentType:
+    Ignore: true
+  EnvironmentVar:
+    Ignore: true
+  CreateWithNotebook:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  ZoneId:
+    Ignore: true
+  JupyterUrl:
+    Ignore: true
+  SecurityGroupId:
+    Ignore: true
+  VSwitchId:
+    Ignore: true
+  ClientInstanceType:
+    Ignore: true
+  ClientInstanceName:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  ClientInstanceId:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true

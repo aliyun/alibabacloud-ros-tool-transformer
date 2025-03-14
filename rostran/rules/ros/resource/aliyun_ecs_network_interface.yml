@@ -1,0 +1,70 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::NetworkInterface
+  To: alicloud_ecs_network_interface
+Properties:
+  Description:
+    To: description
+  Ipv4PrefixCount:
+    To: ipv4_prefix_count
+  Ipv4Prefixes:
+    To: ipv4_prefixes
+  Ipv6AddressCount:
+    To: ipv6_address_count
+  Ipv6Addresses:
+    To: ipv6_addresses
+  NetworkInterfaceName:
+    To: name
+  NetworkInterfaceName$$0:
+    To: network_interface_name
+  NetworkInterfaceTrafficMode:
+    To: network_interface_traffic_mode
+  PrimaryIpAddress:
+    To: primary_ip_address
+  PrivateIpAddresses:
+    To: private_ip_addresses
+  PrivateIpAddresses$$0:
+    To: private_ips
+  SecondaryPrivateIpAddressCount:
+    To: private_ips_count
+  QueueNumber:
+    To: queue_number
+  ResourceGroupId:
+    To: resource_group_id
+  SecondaryPrivateIpAddressCount$$0:
+    To: secondary_private_ip_address_count
+  SecurityGroupIds:
+    To: security_group_ids
+  SecurityGroupIds$$0:
+    To: security_groups
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VSwitchId:
+    To: vswitch_id
+  Ipv6Prefixes:
+    Ignore: true
+  SecurityGroupId:
+    Ignore: true
+  DeleteOnRelease:
+    Ignore: true
+  RxQueueSize:
+    Ignore: true
+  TxQueueSize:
+    Ignore: true
+  Ipv6PrefixCount:
+    Ignore: true
+Attributes:
+  NetworkInterfaceId:
+    To: id
+  MacAddress:
+    To: mac
+  PrivateIpAddress:
+    To: private_ip
+  PrivateIpAddress$$0:
+    To: private_ips
+  Arn:
+    Ignore: true
+  SecondaryPrivateIpAddresses:
+    Ignore: true

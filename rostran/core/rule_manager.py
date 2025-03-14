@@ -19,6 +19,7 @@ class RuleClassifier:
     TerraformAliCloud = "terraform/alicloud"
     TerraformAWS = "terraform/aws"
     CloudFormation = "cloudformation"
+    ROS = "ros"
 
 
 class RuleManager:

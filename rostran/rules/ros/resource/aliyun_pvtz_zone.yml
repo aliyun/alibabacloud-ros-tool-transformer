@@ -1,0 +1,34 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PVTZ::Zone
+  To: alicloud_pvtz_zone
+Properties:
+  ZoneName:
+    To: name
+  ProxyPattern:
+    To: proxy_pattern
+  Remark:
+    To: remark
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  ZoneName$$0:
+    To: zone_name
+  DnsGroup:
+    Ignore: true
+  IgnoredStackTagKeys:
+    Ignore: true
+Attributes:
+  ZoneId:
+    To: id
+  ZoneName:
+    To: zone_name
+  ZoneTag:
+    Ignore: true
+  ZoneType:
+    Ignore: true
+  Arn:
+    Ignore: true

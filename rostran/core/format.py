@@ -6,6 +6,7 @@ class SourceTemplateFormat(str, Enum):
     CloudFormation = "cloudformation"
     Terraform = "terraform"
     Excel = "excel"
+    ROSTerraform = "rosTerraform"
     ROS = "ros"
 
 
@@ -13,6 +14,7 @@ class TargetTemplateFormat(str, Enum):
     Auto = "auto"
     Json = "json"
     Yaml = "yaml"
+    Terraform = "tf"
 
 
 class GeneratorFileFormat(str, Enum):
@@ -34,7 +36,8 @@ def convert_template_to_file_format(template_format, template_path: str = None):
             return FileFormat.Terraform
         elif template_format in (
             SourceTemplateFormat.CloudFormation,
-            SourceTemplateFormat.ROS,
+            SourceTemplateFormat.ROSTerraform,
+            SourceTemplateFormat.ROS
         ):
             if template_path:
                 if template_path.endswith((".yml", ".yaml")):

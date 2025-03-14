@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::DefaultPatchBaseline
+  To: alicloud_oos_default_patch_baseline
+Properties:
+  PatchBaselineName:
+    To: patch_baseline_name
+Attributes:
+  PatchBaselineId:
+    To: id
+  PatchBaselineId$$0:
+    To: patch_baseline_id
+  PatchBaselineName:
+    To: patch_baseline_name
+  ApprovalRules:
+    Ignore: true
+  UpdatedBy:
+    Ignore: true
+  ShareType:
+    Ignore: true
+  Description:
+    Ignore: true
+  CreatedBy:
+    Ignore: true
+  CreatedDate:
+    Ignore: true
+  UpdatedDate:
+    Ignore: true
+  OperationSystem:
+    Ignore: true

@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FNF::Flow
+  To: alicloud_fnf_flow
+Properties:
+  Definition:
+    To: definition
+  Description:
+    To: description
+  Name:
+    To: name
+  RoleArn:
+    To: role_arn
+  RequestId:
+    Ignore: true
+  ExecutionMode:
+    Ignore: true
+  ExternalStorageLocation:
+    Ignore: true
+Attributes:
+  Name:
+    To: id
+  Id:
+    To: flow_id
+  LastModifiedTime:
+    To: last_modified_time
+  Name$$0:
+    To: name
+  CreatedTime:
+    Ignore: true

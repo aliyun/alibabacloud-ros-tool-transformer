@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Config::Aggregator
+  To: alicloud_config_aggregator
+Properties:
+  AggregatorAccounts:
+    To: aggregator_accounts
+    Type: List
+    Schema:
+      AccountId:
+        To: account_id
+      AccountName:
+        To: account_name
+      AccountType:
+        To: account_type
+  AggregatorName:
+    To: aggregator_name
+  AggregatorType:
+    To: aggregator_type
+  Description:
+    To: description
+  FolderId:
+    Ignore: true
+Attributes:
+  AggregatorId:
+    To: id

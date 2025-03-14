@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::MasterSlaveServerGroup
+  To: alicloud_slb_master_slave_server_group
+Properties:
+  LoadBalancerId:
+    To: load_balancer_id
+  MasterSlaveServerGroupName:
+    To: name
+  MasterSlaveBackendServers:
+    To: servers
+    Type: List
+    Schema:
+      Port:
+        To: port
+      ServerId:
+        To: server_ids
+        Handler: select_first
+      ServerType:
+        To: server_type
+      Weight:
+        To: weight
+      Type:
+        Ignore: true
+      ServerIp:
+        Ignore: true
+Attributes:
+  MasterSlaveServerGroupId:
+    To: id

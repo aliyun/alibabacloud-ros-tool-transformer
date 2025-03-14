@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::HaVipAssociation
+  To: alicloud_havip_attachment
+Properties:
+  HaVipId:
+    To: ha_vip_id
+  InstanceId:
+    To: instance_id
+  InstanceType:
+    To: instance_type
+Attributes: {}

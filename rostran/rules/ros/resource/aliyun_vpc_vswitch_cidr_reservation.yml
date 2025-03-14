@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::VSwitchCidrReservation
+  To: alicloud_vpc_vswitch_cidr_reservation
+Properties:
+  IpVersion:
+    To: ip_version
+  VSwitchId:
+    To: vswitch_id
+  VSwitchCidrReservationCidr:
+    Ignore: true
+  VSwitchCidrReservationDescription:
+    Ignore: true
+  Tags:
+    Ignore: true
+  VSwitchCidrReservationType:
+    Ignore: true
+  VSwitchCidrReservationMask:
+    Ignore: true
+  VSwitchCidrReservationName:
+    Ignore: true
+Attributes:
+  VSwitchCidrReservationId:
+    To: id

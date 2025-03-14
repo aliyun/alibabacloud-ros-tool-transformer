@@ -1,0 +1,54 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::EIP
+  To: alicloud_eip_address
+Properties:
+  Name:
+    To: address_name
+  AutoPay:
+    To: auto_pay
+  Bandwidth:
+    To: bandwidth
+  DeletionProtection:
+    To: deletion_protection
+  Description:
+    To: description
+  InstanceChargeType:
+    To: instance_charge_type
+  InternetChargeType:
+    To: internet_charge_type
+  Isp:
+    To: isp
+  Name$$0:
+    To: name
+  Netmode:
+    To: netmode
+  InstanceChargeType$$0:
+    To: payment_type
+  Period:
+    To: period
+  PricingCycle:
+    To: pricing_cycle
+  PublicIpAddressPoolId:
+    To: public_ip_address_pool_id
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityProtectionTypes:
+    To: security_protection_types
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Zone:
+    To: zone
+Attributes:
+  AllocationId:
+    To: id
+  AllocationId$$0:
+    To: allocation_id
+  Isp:
+    To: isp
+  EipAddress:
+    Ignore: true
+  OrderId:
+    Ignore: true

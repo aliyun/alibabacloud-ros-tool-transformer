@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::QosCar
+  To: alicloud_sag_qos_car
+Properties:
+  Description:
+    To: description
+  LimitType:
+    To: limit_type
+  MaxBandwidthAbs:
+    To: max_bandwidth_abs
+  MaxBandwidthPercent:
+    To: max_bandwidth_percent
+  MinBandwidthAbs:
+    To: min_bandwidth_abs
+  MinBandwidthPercent:
+    To: min_bandwidth_percent
+  Name:
+    To: name
+  PercentSourceType:
+    To: percent_source_type
+  Priority:
+    To: priority
+  QosId:
+    To: qos_id
+Attributes:
+  QosCarId:
+    To: id

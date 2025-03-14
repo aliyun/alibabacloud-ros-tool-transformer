@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GA::BandwidthPackage
+  To: alicloud_ga_bandwidth_package
+Properties:
+  AutoPay:
+    To: auto_pay
+  Bandwidth:
+    To: bandwidth
+  BandwidthType:
+    To: bandwidth_type
+  BillingType:
+    To: billing_type
+  Duration:
+    To: duration
+  Ratio:
+    To: ratio
+  Type:
+    To: type
+  PricingCycle:
+    Ignore: true
+  CbnGeographicRegionIdA:
+    Ignore: true
+  CbnGeographicRegionIdB:
+    Ignore: true
+  ChargeType:
+    Ignore: true
+  AutoUseCoupon:
+    Ignore: true
+Attributes:
+  BandwidthPackageId:
+    To: id
+  AutoUseCoupon:
+    To: auto_use_coupon
+  Bandwidth:
+    To: bandwidth
+  BandwidthPackageName:
+    To: bandwidth_package_name
+  BandwidthType:
+    To: bandwidth_type
+  BillingType:
+    To: billing_type
+  CbnGeographicRegionIdA:
+    To: cbn_geographic_region_ida
+  CbnGeographicRegionIdB:
+    To: cbn_geographic_region_idb
+  PaymentType:
+    To: payment_type
+  Ratio:
+    To: ratio
+  Type:
+    To: type
+  AutoPay:
+    Ignore: true
+  ChargeType:
+    Ignore: true

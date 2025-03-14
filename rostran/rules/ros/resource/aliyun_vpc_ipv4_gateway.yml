@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::Ipv4Gateway
+  To: alicloud_vpc_ipv4_gateway
+Properties:
+  Ipv4GatewayDescription:
+    To: ipv4_gateway_description
+  Ipv4GatewayName:
+    To: ipv4_gateway_name
+  VpcId:
+    To: vpc_id
+Attributes:
+  Ipv4GatewayId:
+    To: id
+  CreateTime:
+    To: create_time
+  Ipv4GatewayDescription:
+    To: ipv4_gateway_description
+  Ipv4GatewayId$$0:
+    To: ipv4_gateway_id
+  Ipv4GatewayName:
+    To: ipv4_gateway_name
+  Ipv4GatewayRouteTableId:
+    To: ipv4_gateway_route_table_id
+  VpcId:
+    To: vpc_id

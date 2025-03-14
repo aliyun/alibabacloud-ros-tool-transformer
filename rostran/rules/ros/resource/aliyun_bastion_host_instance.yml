@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::BastionHost::Instance
+  To: alicloud_bastionhost_instance
+Properties:
+  Period:
+    To: period
+  ResourceGroupId:
+    To: resource_group_id
+  ExtraBandwidth:
+    Ignore: true
+  Plan:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  ExtendedStoragePlans:
+    Ignore: true
+  Version:
+    Ignore: true
+  StartInstanceParam:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id

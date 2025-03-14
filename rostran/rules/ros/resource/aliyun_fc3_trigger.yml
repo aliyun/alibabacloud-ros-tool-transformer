@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC3::Trigger
+  To: alicloud_fcv3_trigger
+Properties:
+  Description:
+    To: description
+  FunctionName:
+    To: function_name
+  InvocationRole:
+    To: invocation_role
+  Qualifier:
+    To: qualifier
+  SourceArn:
+    To: source_arn
+  TriggerName:
+    To: trigger_name
+  TriggerType:
+    To: trigger_type
+  TriggerConfig:
+    Ignore: true
+Attributes:
+  TriggerId:
+    To: id
+  FunctionName:
+    To: function_name
+  TriggerName:
+    To: trigger_name
+  UrlInternet:
+    Ignore: true
+  UrlIntranet:
+    Ignore: true

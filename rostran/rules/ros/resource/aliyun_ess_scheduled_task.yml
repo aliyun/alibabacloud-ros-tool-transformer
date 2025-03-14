@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESS::ScheduledTask
+  To: alicloud_ess_scheduled_task
+Properties:
+  Description:
+    To: description
+  DesiredCapacity:
+    To: desired_capacity
+  LaunchExpirationTime:
+    To: launch_expiration_time
+  LaunchTime:
+    To: launch_time
+  MaxValue:
+    To: max_value
+  MinValue:
+    To: min_value
+  RecurrenceEndTime:
+    To: recurrence_end_time
+  RecurrenceType:
+    To: recurrence_type
+  RecurrenceValue:
+    To: recurrence_value
+  ScalingGroupId:
+    To: scaling_group_id
+  ScheduledAction:
+    To: scheduled_action
+  ScheduledTaskName:
+    To: scheduled_task_name
+  TaskEnabled:
+    To: task_enabled
+Attributes:
+  ScheduledTaskId:
+    To: id

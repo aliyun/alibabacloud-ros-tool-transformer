@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RDS::DBInstanceParameterGroup
+  To: alicloud_rds_parameter_group
+Properties:
+  Parameters:
+    Ignore: true
+  DBInstanceId:
+    Ignore: true
+  Forcerestart:
+    Ignore: true
+Attributes: {}

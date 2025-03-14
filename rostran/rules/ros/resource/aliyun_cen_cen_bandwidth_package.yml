@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::CenBandwidthPackage
+  To: alicloud_cen_bandwidth_package
+Properties:
+  Bandwidth:
+    To: bandwidth
+  BandwidthPackageChargeType:
+    To: charge_type
+  Description:
+    To: description
+  GeographicRegionAId:
+    To: geographic_region_a_id
+  GeographicRegionBId:
+    To: geographic_region_b_id
+  Name:
+    To: name
+  BandwidthPackageChargeType$$0:
+    To: payment_type
+  Period:
+    To: period
+  Tags:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  PricingCycle:
+    Ignore: true
+  AutoRenewDuration:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  CenBandwidthPackageId:
+    To: id
+  Arn:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::POLARDB::DBClusterEndpointAddress
+  To: alicloud_polardb_endpoint_address
+Properties:
+  ConnectionStringPrefix:
+    To: connection_prefix
+  DBClusterId:
+    To: db_cluster_id
+  DBEndpointId:
+    To: db_endpoint_id
+  NetType:
+    To: net_type
+Attributes:
+  ConnectionString:
+    To: connection_string
+  Address:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::PrefixList
+  To: alicloud_ecs_prefix_list
+Properties:
+  AddressFamily:
+    To: address_family
+  Description:
+    To: description
+  Entries:
+    To: entry
+  MaxEntries:
+    To: max_entries
+  PrefixListName:
+    To: prefix_list_name
+Attributes:
+  PrefixListId:
+    To: id

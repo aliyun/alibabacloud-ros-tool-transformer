@@ -1,0 +1,48 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::DedicatedHost
+  To: alicloud_ecs_dedicated_host
+Properties:
+  ActionOnMaintenance:
+    To: action_on_maintenance
+  AutoPlacement:
+    To: auto_placement
+  AutoReleaseTime:
+    To: auto_release_time
+  AutoRenew:
+    To: auto_renew
+  AutoRenewPeriod:
+    To: auto_renew_period
+  DedicatedHostName:
+    To: dedicated_host_name
+  DedicatedHostType:
+    To: dedicated_host_type
+  Description:
+    To: description
+  ResourceGroupId:
+    To: resource_group_id
+  PeriodUnit:
+    To: sale_cycle
+  Tags:
+    To: tags
+    Handler: handle_tags
+  ZoneId:
+    To: zone_id
+  NetworkAttributesSlbUdpTimeout:
+    Ignore: true
+  Quantity:
+    Ignore: true
+  Period:
+    Ignore: true
+  ChargeType:
+    Ignore: true
+  NetworkAttributesUdpTimeout:
+    Ignore: true
+Attributes:
+  DedicatedHostIds:
+    To: id
+  Arn:
+    Ignore: true
+  OrderId:
+    Ignore: true

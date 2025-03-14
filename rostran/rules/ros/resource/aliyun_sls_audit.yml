@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLS::Audit
+  To: alicloud_log_audit
+Properties:
+  DisplayName:
+    To: display_name
+  MultiAccount:
+    To: multi_account
+  VariableMap:
+    To: variable_map
+Attributes:
+  DisplayName:
+    To: id
+  DisplayName$$0:
+    To: display_name

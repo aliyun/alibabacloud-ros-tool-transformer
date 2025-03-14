@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::LoginProfile
+  To: alicloud_ram_login_profile
+Properties:
+  Password:
+    To: password
+  PasswordResetRequired:
+    To: password_reset_required
+  UserPrincipalName:
+    Ignore: true
+  Status:
+    Ignore: true
+  MFABindRequired:
+    Ignore: true
+  GenerateRandomPassword:
+    Ignore: true
+Attributes:
+  Password:
+    Ignore: true

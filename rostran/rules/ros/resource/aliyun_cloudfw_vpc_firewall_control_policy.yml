@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CLOUDFW::VpcFirewallControlPolicy
+  To: alicloud_cloud_firewall_vpc_firewall_control_policy
+Properties:
+  AclAction:
+    To: acl_action
+  ApplicationName:
+    To: application_name
+  Description:
+    To: description
+  DestPort:
+    To: dest_port
+  DestPortGroup:
+    To: dest_port_group
+  DestPortType:
+    To: dest_port_type
+  Destination:
+    To: destination
+  DestinationType:
+    To: destination_type
+  Lang:
+    To: lang
+  MemberUid:
+    To: member_uid
+  Proto:
+    To: proto
+  Release:
+    To: release
+  Source:
+    To: source
+  SourceType:
+    To: source_type
+  VpcFirewallId:
+    To: vpc_firewall_id
+  EndTime:
+    Ignore: true
+  RepeatStartTime:
+    Ignore: true
+  RepeatDays:
+    Ignore: true
+  RepeatType:
+    Ignore: true
+  StartTime:
+    Ignore: true
+  RegionId:
+    Ignore: true
+  ApplicationNameList:
+    Ignore: true
+  RepeatEndTime:
+    Ignore: true
+  NewOrder:
+    Ignore: true
+Attributes:
+  AclUuid:
+    To: acl_uuid

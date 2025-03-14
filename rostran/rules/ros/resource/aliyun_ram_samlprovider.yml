@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::SAMLProvider
+  To: alicloud_ram_saml_provider
+Properties:
+  Description:
+    To: description
+  SAMLMetadataDocument:
+    To: encodedsaml_metadata_document
+  SAMLProviderName:
+    To: saml_provider_name
+  SAMLMetadataDocumentURL:
+    Ignore: true
+  EncodedSAMLMetadataDocument:
+    Ignore: true
+Attributes:
+  SAMLProviderName:
+    To: id
+  Arn:
+    To: arn
+  SAMLProviderName$$0:
+    To: saml_provider_name

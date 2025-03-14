@@ -1,0 +1,50 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ARMS::Environment
+  To: alicloud_arms_environment
+Properties:
+  BindResourceId:
+    To: bind_resource_id
+  EnvironmentName:
+    To: environment_name
+  EnvironmentSubType:
+    To: environment_sub_type
+  EnvironmentType:
+    To: environment_type
+  ManagedType:
+    To: managed_type
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  GrafanaWorkspaceId:
+    Ignore: true
+  PrometheusInstanceId:
+    Ignore: true
+  FeePackage:
+    Ignore: true
+  DeletePromInstance:
+    Ignore: true
+Attributes:
+  EnvironmentId:
+    To: id
+  EnvironmentId$$0:
+    To: environment_id
+  EnvironmentName:
+    To: environment_name
+  EnvironmentSubType:
+    To: environment_sub_type
+  EnvironmentType:
+    To: environment_type
+  ManagedType:
+    To: managed_type
+  ResourceGroupId:
+    To: resource_group_id
+  GrafanaWorkspaceId:
+    Ignore: true
+  PrometheusInstanceId:
+    Ignore: true
+  FeePackage:
+    Ignore: true

@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::NatIp
+  To: alicloud_vpc_nat_ip
+Properties:
+  NatGatewayId:
+    To: nat_gateway_id
+  NatIp:
+    To: nat_ip
+  NatIpCidr:
+    To: nat_ip_cidr
+  NatIpCidrId:
+    To: nat_ip_cidr_id
+  NatIpDescription:
+    To: nat_ip_description
+  NatIpName:
+    To: nat_ip_name
+Attributes:
+  NatIpId:
+    To: id
+  NatIp:
+    To: nat_ip
+  NatIpId$$0:
+    To: nat_ip_id

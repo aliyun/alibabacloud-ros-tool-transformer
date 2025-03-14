@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ALB::Listener
+  To: alicloud_alb_listener
+Properties:
+  Certificates:
+    To: certificates
+    Type: List
+    Schema:
+      CertificateId:
+        To: certificate_id
+  DefaultActions:
+    To: default_actions
+    Type: List
+    Schema:
+      Type:
+        To: type
+      ForwardGroupConfig:
+        Ignore: true
+  GzipEnabled:
+    To: gzip_enabled
+  Http2Enabled:
+    To: http2_enabled
+  IdleTimeout:
+    To: idle_timeout
+  ListenerDescription:
+    To: listener_description
+  ListenerPort:
+    To: listener_port
+  ListenerProtocol:
+    To: listener_protocol
+  LoadBalancerId:
+    To: load_balancer_id
+  RequestTimeout:
+    To: request_timeout
+  SecurityPolicyId:
+    To: security_policy_id
+  CaCertificates:
+    Ignore: true
+  XForwardedForConfig:
+    Ignore: true
+  QuicConfig:
+    Ignore: true
+  CaEnabled:
+    Ignore: true
+  ListenerStatus:
+    Ignore: true
+  LogConfig:
+    Ignore: true
+Attributes:
+  ListenerId:
+    To: id
+  LoadBalancerId:
+    Ignore: true

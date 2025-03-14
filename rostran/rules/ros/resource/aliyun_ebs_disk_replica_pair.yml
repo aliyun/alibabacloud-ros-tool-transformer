@@ -1,0 +1,63 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EBS::DiskReplicaPair
+  To: alicloud_ebs_disk_replica_pair
+Properties:
+  Bandwidth:
+    To: bandwidth
+  Description:
+    To: description
+  DestinationDiskId:
+    To: destination_disk_id
+  DestinationRegionId:
+    To: destination_region_id
+  DestinationZoneId:
+    To: destination_zone_id
+  DiskId:
+    To: disk_id
+  PaymentType:
+    To: payment_type
+  Period:
+    To: period
+  PeriodUnit:
+    To: period_unit
+  ResourceGroupId:
+    To: resource_group_id
+  SourceZoneId:
+    To: source_zone_id
+  Tags:
+    Ignore: true
+  DiskReplicaPairName:
+    Ignore: true
+  RPO:
+    Ignore: true
+Attributes:
+  ReplicaPairId:
+    To: id
+  Bandwidth:
+    To: bandwidth
+  CreateTime:
+    To: create_time
+  Description:
+    To: description
+  DestinationDiskId:
+    To: destination_disk_id
+  DestinationRegionId:
+    To: destination_region_id
+  DestinationZoneId:
+    To: destination_zone_id
+  DiskId:
+    To: disk_id
+  PaymentType:
+    To: payment_type
+  ResourceGroupId:
+    To: resource_group_id
+  RPO:
+    To: rpo
+  SourceZoneId:
+    To: source_zone_id
+  Tags:
+    Ignore: true
+  DiskReplicaPairName:
+    Ignore: true

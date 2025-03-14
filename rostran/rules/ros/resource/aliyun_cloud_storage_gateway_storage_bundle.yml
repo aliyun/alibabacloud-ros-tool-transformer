@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudStorageGateway::StorageBundle
+  To: alicloud_cloud_storage_gateway_storage_bundle
+Properties:
+  Description:
+    To: description
+  StorageBundleName:
+    To: storage_bundle_name
+Attributes:
+  StorageBundleId:
+    To: id
+  Description:
+    To: description
+  StorageBundleName:
+    To: storage_bundle_name
+  CreateTime:
+    Ignore: true

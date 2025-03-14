@@ -14,6 +14,7 @@ from tools.settings import (
     TF_ALI_RULES_DIR,
     CF_ROS_PROP_MAPPINGS,
     CF_RESOURCE_RULES_DIR,
+    ROS_RESOURCE_RULES_DIR, TF_ALI_DEPRECATED_PROPERTIES
 )
 from tools.resource import RosResource, TerraformResource, CloudFormationResource
 from tools.utils import snake_to_camel, camel_to_snake
@@ -35,11 +36,14 @@ class BaseRuleGenerator:
 
     def __init__(
         self,
-        from_resource: Union[TerraformResource, CloudFormationResource],
-        ros_resource: RosResource,
+        from_resource: Union[TerraformResource, CloudFormationResource, RosResource],
+        to_resource: Union[TerraformResource, RosResource],
+        ros2tf: bool = False
+
     ):
         self.from_resource = from_resource
-        self.ros_resource = ros_resource
+        self.to_resource = to_resource
+        self.ros2tf = ros2tf
 
     def generate(self):
         path = self._get_rule_path()
@@ -88,18 +92,18 @@ class BaseRuleGenerator:
             "Type": "Resource",
             "ResourceType": {
                 "From": self.from_resource.resource_type,
-                "To": self.ros_resource.resource_type,
+                "To": self.to_resource.resource_type,
             },
         }
         props_rule = self._generate_properties_rule(
-            self.from_resource.properties(), self.ros_resource.properties()
+            self.from_resource.properties(), self.to_resource.properties()
         )
         if props_rule:
             rule["Properties"] = props_rule
 
         attrs_rule = self._generate_attributes_rule(
             self.from_resource.attributes(),
-            self.ros_resource.attributes(),
+            self.to_resource.attributes(),
         )
         if attrs_rule:
             rule["Attributes"] = attrs_rule
@@ -231,7 +235,7 @@ class TerraformRuleGenerator(BaseRuleGenerator):
     def initialize(
         cls,
         from_resource_type: str,
-        ros_resource_type: str,
+        to_resource_type: str,
         from_resource_filename: str = None,
     ):
         if not from_resource_type.startswith("alicloud_"):
@@ -245,16 +249,15 @@ class TerraformRuleGenerator(BaseRuleGenerator):
                 message="Command `asty` not found. Please run `go install github.com/asty-org/asty`"
             )
 
-        from_resource = TerraformResource(from_resource_type, from_resource_filename)
+        tf_resource = TerraformResource(from_resource_type, from_resource_filename)
 
         ros_config = open_api_models.Config(
             credential=CredClient(),
             endpoint="ros.aliyuncs.com",
         )
         ros_client = Client(ros_config)
-        ros_resource = RosResource(ros_client, ros_resource_type)
-
-        return cls(from_resource, ros_resource)
+        ros_resource = RosResource(ros_client, to_resource_type)
+        return cls(tf_resource, ros_resource)
 
     def _get_rule_path(self):
         name = self.from_resource.resource_type.replace("alicloud_", "")
@@ -317,3 +320,117 @@ class CloudFormationRuleGenerator(BaseRuleGenerator):
                 ros_key = CF_ROS_PROP_MAPPINGS.get("*", {}).get(from_prop_path)
 
         return ros_key
+
+
+class ROS2TerraformRuleGenerator(BaseRuleGenerator):
+
+    @classmethod
+    def initialize(
+        cls,
+        from_resource_type: str,
+        to_resource_type: str
+    ):
+        tf_resource = TerraformResource(to_resource_type)
+        ros_config = open_api_models.Config(
+            credential=CredClient(),
+            endpoint="ros.aliyuncs.com",
+        )
+        ros_client = Client(ros_config)
+        ros_resource = RosResource(ros_client, from_resource_type)
+        return cls(ros_resource, tf_resource)
+
+    def _get_rule_section(self, tf_rule_section, ros_res_section):
+        rule_section = {}
+        for key, value in tf_rule_section.items():
+            if value.get("Ignore"):
+                continue
+            schema_key = value.get("To")
+            tf_deprecated_props = TF_ALI_DEPRECATED_PROPERTIES.get(self.to_resource.resource_type)
+            if tf_deprecated_props and key in tf_deprecated_props:
+                continue
+            if not isinstance(schema_key, str):
+                continue
+            if not schema_key or schema_key not in ros_res_section:
+                continue
+
+            schema_value = {"To": key}
+            if schema_key not in rule_section:
+                rule_section[schema_key] = schema_value
+            else:
+                rule_section[f"{schema_key}$$0"] = schema_value
+
+            handler = value.get("Handler")
+            if handler:
+                if handler == "tags_dict_to_list":
+                    handler = "handle_tags"
+                schema_value["Handler"] = handler
+
+            schema = value.get("Schema")
+            if not schema:
+                continue
+            schema_type = value.get("Type")
+            if not schema_type:
+                continue
+            schema_value["Type"] = schema_type
+
+            if schema_type == "Map":
+                try:
+                    ros_res_schema = ros_res_section[schema_key]["Schema"]
+                except KeyError:
+                    continue
+            elif schema_type == "List":
+                try:
+                    ros_res_schema = ros_res_section[schema_key]["Schema"]["*"]["Schema"]
+                except KeyError:
+                    continue
+            else:
+                continue
+            new_schema = self._get_rule_section(schema, ros_res_schema)
+            schema_value["Schema"] = new_schema
+
+        extra_keys = set(ros_res_section.keys()) - set(rule_section.keys())
+        for ros_extra_key in extra_keys:
+            rule_section[ros_extra_key] = {"Ignore": True}
+
+        return rule_section
+
+    def _generate_from_tf_rule(self, tf_rule):
+        for section in ["Properties", "Attributes"]:
+            ros_res_section = getattr(self.to_resource, section.lower(), {})
+            tf_rule_section = tf_rule.get(section, {}) or {}
+            rule_section = self._get_rule_section(tf_rule_section, ros_res_section)
+            tf_rule[section] = rule_section
+        return tf_rule
+
+    def generate(self):
+        rule = {
+            "Version": "2020-06-01",
+            "Type": "Resource",
+            "ResourceType": {
+                "From": self.from_resource.resource_type,
+                "To": self.to_resource.resource_type,
+            },
+        }
+
+        name = self.to_resource.resource_type.replace("alicloud_", "")
+        tf_rule_path = os.path.join(TF_ALI_RULES_DIR, f"{name}.yml")
+        path = self._get_rule_path()
+
+        if os.path.exists(path):
+            return
+        if os.path.exists(tf_rule_path):
+            with open(tf_rule_path, "r") as f:
+                tf_rule = yaml.safe_load(f)
+            for section in ["Properties", "Attributes"]:
+                ros_res_section = getattr(self.from_resource, section.lower())()
+                tf_rule_section = tf_rule.get(section, {}) or {}
+                rule[section] = self._get_rule_section(tf_rule_section, ros_res_section)
+
+            with open(path, "w") as f:
+                content = yaml.safe_dump(rule, sort_keys=False)
+                f.write(content)
+
+    def _get_rule_path(self):
+        name = camel_to_snake(self.from_resource.resource_type.replace("::", "_"))
+        path = os.path.join(ROS_RESOURCE_RULES_DIR, f"{name}.yml")
+        return path

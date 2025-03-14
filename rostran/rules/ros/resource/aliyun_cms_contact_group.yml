@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CMS::ContactGroup
+  To: alicloud_cms_alarm_contact_group
+Properties:
+  Describe:
+    To: describe
+  ContactGroupName:
+    Ignore: true
+  ContactNames:
+    Ignore: true
+Attributes:
+  ContactGroupName:
+    To: id

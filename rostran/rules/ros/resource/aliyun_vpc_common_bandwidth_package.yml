@@ -1,0 +1,32 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::CommonBandwidthPackage
+  To: alicloud_common_bandwidth_package
+Properties:
+  Bandwidth:
+    To: bandwidth
+  DeletionProtection:
+    To: deletion_protection
+  Description:
+    To: description
+  InternetChargeType:
+    To: internet_charge_type
+  ISP:
+    To: isp
+  Name:
+    To: name
+  Ratio:
+    To: ratio
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Zone:
+    To: zone
+Attributes:
+  BandwidthPackageId:
+    To: id
+  Arn:
+    Ignore: true

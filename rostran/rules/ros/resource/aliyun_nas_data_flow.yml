@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NAS::DataFlow
+  To: alicloud_nas_data_flow
+Properties:
+  Description:
+    To: description
+  FileSystemId:
+    To: file_system_id
+  FsetId:
+    To: fset_id
+  SourceSecurityType:
+    To: source_security_type
+  SourceStorage:
+    To: source_storage
+  Throughput:
+    To: throughput
+  AutoRefreshPolicy:
+    Ignore: true
+  AutoRefreshInterval:
+    Ignore: true
+  AutoRefreshs:
+    Ignore: true
+Attributes:
+  DataFlowId:
+    To: id
+  DataFlowId$$0:
+    To: data_flow_id
+  FileSystemId:
+    To: file_system_id

@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GA::IpSets
+  To: alicloud_ga_ip_set
+Properties:
+  AcceleratorId:
+    To: accelerator_id
+  AccelerateRegion:
+    Ignore: true
+Attributes:
+  AccelerateRegionIds:
+    Ignore: true
+  IpSetIds:
+    Ignore: true
+  IpVersions:
+    Ignore: true

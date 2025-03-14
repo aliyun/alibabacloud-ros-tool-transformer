@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::Group
+  To: alicloud_ram_group
+Properties:
+  Comments:
+    To: comments
+  GroupName:
+    To: name
+  Policies:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  IgnoreExisting:
+    Ignore: true
+  PolicyAttachments:
+    Ignore: true
+Attributes:
+  GroupName:
+    To: id

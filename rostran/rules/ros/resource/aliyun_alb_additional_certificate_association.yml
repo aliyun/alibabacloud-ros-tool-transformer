@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ALB::AdditionalCertificateAssociation
+  To: alicloud_alb_listener_additional_certificate_attachment
+Properties:
+  ListenerId:
+    To: listener_id
+  Certificates:
+    Ignore: true
+Attributes:
+  ListenerId:
+    To: listener_id

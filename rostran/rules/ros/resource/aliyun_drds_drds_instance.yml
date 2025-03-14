@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DRDS::DrdsInstance
+  To: alicloud_drds_instance
+Properties:
+  Description:
+    To: description
+  InstanceSeries:
+    To: instance_series
+  Specification:
+    To: specification
+  VpcId:
+    To: vpc_id
+  VswitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  Tags:
+    Ignore: true
+  Type:
+    Ignore: true
+  MySQLVersion:
+    Ignore: true
+  IsAutoRenew:
+    Ignore: true
+  PricingCycle:
+    Ignore: true
+  Duration:
+    Ignore: true
+  PayType:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  DrdsInstanceId:
+    To: id
+  IntranetEndpoint:
+    Ignore: true
+  Arn:
+    Ignore: true
+  InternetEndpoint:
+    Ignore: true
+  OrderId:
+    Ignore: true

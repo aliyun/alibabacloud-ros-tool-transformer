@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EDAS::Application
+  To: alicloud_edas_application
+Properties:
+  ApplicationName:
+    To: application_name
+  BuildPackId:
+    To: build_pack_id
+  ClusterId:
+    To: cluster_id
+  Description:
+    To: descriotion
+  EcuInfo:
+    To: ecu_info
+  HealthCheckURL:
+    To: health_check_url
+  LogicalRegionId:
+    To: logical_region_id
+  PackageType:
+    To: package_type
+  Deployment:
+    Ignore: true
+  ComponentIds:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  AppId:
+    To: id
+  Port:
+    Ignore: true

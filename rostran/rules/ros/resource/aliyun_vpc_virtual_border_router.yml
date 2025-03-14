@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::VirtualBorderRouter
+  To: alicloud_express_connect_virtual_border_router
+Properties:
+  CircuitCode:
+    To: circuit_code
+  Description:
+    To: description
+  LocalGatewayIp:
+    To: local_gateway_ip
+  PeerGatewayIp:
+    To: peer_gateway_ip
+  PeeringSubnetMask:
+    To: peering_subnet_mask
+  PhysicalConnectionId:
+    To: physical_connection_id
+  VlanId:
+    To: vlan_id
+  Name:
+    Ignore: true
+Attributes:
+  VbrId:
+    To: id
+  RouteTableId:
+    To: route_table_id
+  Name:
+    Ignore: true
+  VlanInterfaceId:
+    Ignore: true

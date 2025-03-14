@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::BackendServerToVServerGroupAddition
+  To: alicloud_slb_server_group_server_attachment
+Properties:
+  VServerGroupId:
+    To: server_group_id
+  BackendServers:
+    Ignore: true
+Attributes:
+  VServerGroupId:
+    To: server_group_id

@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::Invocation
+  To: alicloud_ecs_invocation
+Properties:
+  CommandId:
+    To: command_id
+  Frequency:
+    To: frequency
+  InstanceIds:
+    To: instance_id
+  Parameters:
+    To: parameters
+  RepeatMode:
+    To: repeat_mode
+  Username:
+    To: username
+  WindowsPasswordName:
+    To: windows_password_name
+  Tags:
+    Ignore: true
+  ContainerId:
+    Ignore: true
+  Sync:
+    Ignore: true
+  Timeout:
+    Ignore: true
+  CommandName:
+    Ignore: true
+  ContainerName:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  InvokeId:
+    To: id
+  InvokeInstances:
+    Ignore: true
+  InvokeResults:
+    Ignore: true

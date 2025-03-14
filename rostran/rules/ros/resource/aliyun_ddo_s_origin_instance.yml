@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DDoS::OriginInstance
+  To: alicloud_ddosbgp_instance
+Properties:
+  Period:
+    To: period
+  Tags:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  ProtectionMode:
+    Ignore: true
+  NetworkProtocol:
+    Ignore: true
+  Edition:
+    Ignore: true
+  IpAddresses:
+    Ignore: true
+  EnableLog:
+    Ignore: true
+  ChargeType:
+    Ignore: true
+  CleanBandwidth:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  Arn:
+    Ignore: true

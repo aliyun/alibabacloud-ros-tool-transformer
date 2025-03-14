@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ROS::StackGroup
+  To: alicloud_ros_stack_group
+Properties:
+  AdministrationRoleName:
+    To: administration_role_name
+  Description:
+    To: description
+  ExecutionRoleName:
+    To: execution_role_name
+  Parameters:
+    To: parameters
+    Handler: ros_parameters
+  StackGroupName:
+    To: stack_group_name
+  TemplateBody:
+    To: template_body
+    Handler: json_load
+  TemplateURL:
+    To: template_url
+  TemplateVersion:
+    To: template_version
+  ResourceGroupId:
+    Ignore: true
+  DynamicTemplateBody:
+    Ignore: true
+  AutoDeployment:
+    Ignore: true
+  TemplateId:
+    Ignore: true
+  PermissionModel:
+    Ignore: true
+Attributes:
+  StackGroupId:
+    To: stack_group_id

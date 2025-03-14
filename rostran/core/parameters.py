@@ -248,8 +248,9 @@ class Parameters(dict):
                     for param_group in param_groups:
                         parameters = param_group[MetaItem.PARAMETERS]
                         for parameter in parameters:
-                            key_scores[parameter] = score
-                            score += 1
+                            if isinstance(parameter, str):
+                                key_scores[parameter] = score
+                                score += 1
                 if key_scores:
                     keys = sorted_data(keys, scores=key_scores)
 

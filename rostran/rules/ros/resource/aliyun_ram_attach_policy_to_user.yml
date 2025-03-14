@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::AttachPolicyToUser
+  To: alicloud_ram_user_policy_attachment
+Properties:
+  PolicyName:
+    To: policy_name
+  PolicyType:
+    To: policy_type
+  UserName:
+    To: user_name
+Attributes: {}

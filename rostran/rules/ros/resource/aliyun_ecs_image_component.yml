@@ -1,0 +1,24 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::ImageComponent
+  To: alicloud_ecs_image_component
+Properties:
+  ComponentType:
+    To: component_type
+  Content:
+    To: content
+  Description:
+    To: description
+  ResourceGroupId:
+    To: resource_group_id
+  SystemType:
+    To: system_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Name:
+    Ignore: true
+Attributes:
+  ImageComponentId:
+    To: id

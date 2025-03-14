@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::BackupClients
+  To: alicloud_hbr_ecs_backup_client
+Properties:
+  InstanceIds:
+    Ignore: true
+  Tags:
+    Ignore: true
+Attributes:
+  InstanceIds:
+    Ignore: true
+  ClientIds:
+    Ignore: true
+  Arn:
+    Ignore: true

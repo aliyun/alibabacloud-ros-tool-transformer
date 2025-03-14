@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Lindorm::Instance
+  To: alicloud_lindorm_instance
+Properties:
+  ColdStorage:
+    To: cold_storage
+  CoreSpec:
+    To: core_spec
+  DiskCategory:
+    To: disk_category
+  Period:
+    To: duration
+  FilestoreNum:
+    To: file_engine_node_count
+  FilestoreSpec:
+    To: file_engine_specification
+  InstanceName:
+    To: instance_name
+  InstanceStorage:
+    To: instance_storage
+  InstanceChargeType:
+    To: payment_type
+  PeriodUnit:
+    To: pricing_cycle
+  ResourceGroupId:
+    To: resource_group_id
+  SolrNum:
+    To: search_engine_node_count
+  SolrSpec:
+    To: search_engine_specification
+  StreamNum:
+    To: stream_engine_node_count
+  StreamSpec:
+    To: stream_engine_specification
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  LindormNum:
+    Ignore: true
+  LindormSpec:
+    Ignore: true
+  SecurityIpList:
+    Ignore: true
+  TsdbSpec:
+    Ignore: true
+  DeletionProtection:
+    Ignore: true
+  TsdbNum:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  AuthInfos:
+    Ignore: true
+  JdbcUrlList:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::ResourceShare
+  To: alicloud_resource_manager_resource_share
+Properties:
+  ResourceShareName:
+    To: resource_share_name
+  PermissionNames:
+    Ignore: true
+  Resources:
+    Ignore: true
+  Targets:
+    Ignore: true
+  AllowExternalTargets:
+    Ignore: true
+Attributes:
+  ResourceShareId:
+    To: id

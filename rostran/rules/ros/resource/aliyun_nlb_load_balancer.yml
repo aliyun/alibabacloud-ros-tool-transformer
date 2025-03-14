@@ -1,0 +1,66 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NLB::LoadBalancer
+  To: alicloud_nlb_load_balancer
+Properties:
+  AddressIpVersion:
+    To: address_ip_version
+  AddressType:
+    To: address_type
+  BandwidthPackageId:
+    To: bandwidth_package_id
+  CrossZoneEnabled:
+    To: cross_zone_enabled
+  LoadBalancerName:
+    To: load_balancer_name
+  LoadBalancerType:
+    To: load_balancer_type
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  ZoneMappings:
+    To: zone_mappings
+    Type: List
+    Schema:
+      AllocationId:
+        To: allocation_id
+      ZoneId:
+        To: zone_id
+      EipType:
+        Ignore: true
+      PrivateIPv4Address:
+        Ignore: true
+      LoadBalancerAddresses:
+        Ignore: true
+      VSwitchId:
+        Ignore: true
+  ModificationProtectionConfig:
+    Ignore: true
+  LoadBalancerBillingConfig:
+    Ignore: true
+  TrafficAffinityEnabled:
+    Ignore: true
+  DeletionProtectionConfig:
+    Ignore: true
+Attributes:
+  LoadBalancerId:
+    To: id
+  AddressIpVersion:
+    To: address_ip_version
+  AddressType:
+    To: address_type
+  DNSName:
+    To: dns_name
+  LoadBalancerType:
+    To: load_balancer_type
+  VpcId:
+    To: vpc_id
+  ZoneMappings:
+    To: zone_mappings
+  Arn:
+    Ignore: true

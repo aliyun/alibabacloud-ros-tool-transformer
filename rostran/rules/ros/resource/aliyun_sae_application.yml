@@ -1,0 +1,136 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAE::Application
+  To: alicloud_sae_application
+Properties:
+  AcrAssumeRoleArn:
+    To: acr_assume_role_arn
+  AcrInstanceId:
+    To: acr_instance_id
+  AppDescription:
+    To: app_description
+  AppName:
+    To: app_name
+  AutoConfig:
+    To: auto_config
+  Command:
+    To: command
+  CommandArgs:
+    To: command_args
+  ConfigMapMountDesc:
+    To: config_map_mount_desc
+  Cpu:
+    To: cpu
+  CustomHostAlias:
+    To: custom_host_alias
+  Deploy:
+    To: deploy
+  EdasContainerVersion:
+    To: edas_container_version
+  Envs:
+    To: envs
+  ImagePullSecrets:
+    To: image_pull_secrets
+  ImageUrl:
+    To: image_url
+  JarStartArgs:
+    To: jar_start_args
+  JarStartOptions:
+    To: jar_start_options
+  Jdk:
+    To: jdk
+  Liveness:
+    To: liveness
+  Memory:
+    To: memory
+  MicroRegistration:
+    To: micro_registration
+  MountDesc:
+    To: mount_desc
+  MountHost:
+    To: mount_host
+  NamespaceId:
+    To: namespace_id
+  NasId:
+    To: nas_id
+  OssAkId:
+    To: oss_ak_id
+  OssAkSecret:
+    To: oss_ak_secret
+  PackageType:
+    To: package_type
+  PackageUrl:
+    To: package_url
+  PackageVersion:
+    To: package_version
+  Php:
+    To: php
+  PhpArmsConfigLocation:
+    To: php_arms_config_location
+  PhpConfig:
+    To: php_config
+  PhpConfigLocation:
+    To: php_config_location
+  PostStart:
+    To: post_start
+  PreStop:
+    To: pre_stop
+  ProgrammingLanguage:
+    To: programming_language
+  Readiness:
+    To: readiness
+  Replicas:
+    To: replicas
+  SecurityGroupId:
+    To: security_group_id
+  SlsConfigs:
+    To: sls_configs
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TerminationGracePeriodSeconds:
+    To: termination_grace_period_seconds
+  Timezone:
+    To: timezone
+  TomcatConfig:
+    To: tomcat_config
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  WarStartOptions:
+    To: war_start_options
+  WebContainer:
+    To: web_container
+  SaeVersion:
+    Ignore: true
+  PvtzDiscoverySvc:
+    Ignore: true
+  Python:
+    Ignore: true
+  NasConfigs:
+    Ignore: true
+  PythonModules:
+    Ignore: true
+  BaseAppId:
+    Ignore: true
+  MicroRegistrationConfig:
+    Ignore: true
+  KafkaConfigs:
+    Ignore: true
+  AssociateEip:
+    Ignore: true
+  AppSource:
+    Ignore: true
+  ServiceTags:
+    Ignore: true
+  EnableEbpf:
+    Ignore: true
+  OssMountDescs:
+    Ignore: true
+Attributes:
+  AppId:
+    To: id
+  ChangeOrderId:
+    Ignore: true

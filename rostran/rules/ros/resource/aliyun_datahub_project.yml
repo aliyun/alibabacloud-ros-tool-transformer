@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DATAHUB::Project
+  To: alicloud_datahub_project
+Properties:
+  Comment:
+    To: comment
+  ProjectName:
+    To: name
+Attributes:
+  ProjectName:
+    To: id

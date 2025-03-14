@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DNS::DomainRecord
+  To: alicloud_dns_record
+Properties:
+  RR:
+    To: host_record
+  DomainName:
+    To: name
+  Priority:
+    To: priority
+  Type:
+    To: type
+  Value:
+    To: value
+  Line:
+    Ignore: true
+  TTL:
+    Ignore: true
+Attributes:
+  RecordId:
+    To: id

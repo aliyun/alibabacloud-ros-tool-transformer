@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::Account
+  To: alicloud_resource_manager_account
+Properties:
+  DisplayName:
+    To: display_name
+  FolderId:
+    To: folder_id
+  PayerAccountId:
+    To: payer_account_id
+  DeleteAccount:
+    Ignore: true
+Attributes:
+  AccountId:
+    To: id
+  DisplayName:
+    To: display_name
+  FolderId:
+    To: folder_id
+  JoinMethod:
+    To: join_method
+  ResourceDirectoryId:
+    To: resource_directory_id
+  Type:
+    To: type

@@ -1,0 +1,128 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::REDIS::Instance
+  To: alicloud_kvstore_instance
+Properties:
+  ZoneId:
+    To: availability_zone
+  EngineVersion:
+    To: engine_version
+  InstanceClass:
+    To: instance_class
+  InstanceName:
+    To: instance_name
+  NodeType:
+    To: node_type
+  Password:
+    To: password
+  ChargeType:
+    To: payment_type
+  Period:
+    To: period
+  ResourceGroupId:
+    To: resource_group_id
+  SecondaryZoneId:
+    To: secondary_zone_id
+  SecurityGroupId:
+    To: security_group_id
+  ShardCount:
+    To: shard_count
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcPasswordFree:
+    To: vpc_auth_mode
+  VSwitchId:
+    To: vswitch_id
+  ZoneId$$0:
+    To: zone_id
+  TairConfig:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  SSLEnabled:
+    Ignore: true
+  EvictionPolicy:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  AutoRenewDuration:
+    Ignore: true
+  DeletionProtection:
+    Ignore: true
+  ProductType:
+    Ignore: true
+  InstanceMaintainTime:
+    Ignore: true
+  Connections:
+    Ignore: true
+  BackupPolicy:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  ZoneId:
+    To: availability_zone
+  Bandwidth:
+    To: bandwidth
+  Capacity:
+    To: capacity
+  ConnectionDomain:
+    To: connection_domain
+  EngineVersion:
+    To: engine_version
+  InstanceClass:
+    To: instance_class
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  NodeType:
+    To: node_type
+  PrivateIp:
+    To: private_ip
+  ResourceGroupId:
+    To: resource_group_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId$$0:
+    To: zone_id
+  ClassicInnerConnectionString:
+    Ignore: true
+  Connections:
+    Ignore: true
+  PublicConnectionString:
+    Ignore: true
+  QPS:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  VpcPrivateConnectionPort:
+    Ignore: true
+  VpcPrivateConnectionString:
+    Ignore: true
+  DirectConnectionString:
+    Ignore: true
+  DirectConnectionPort:
+    Ignore: true
+  PublicConnectionPort:
+    Ignore: true
+  PackageType:
+    Ignore: true
+  ClassicInnerConnectionPort:
+    Ignore: true
+  HasRenewChangeOrder:
+    Ignore: true
+  ArchitectureType:
+    Ignore: true
+  OrderId:
+    Ignore: true
+  Port:
+    Ignore: true
+  NetworkType:
+    Ignore: true
+  ChargeType:
+    Ignore: true

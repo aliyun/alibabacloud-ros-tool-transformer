@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::Listener
+  To: alicloud_slb_listener
+Properties:
+  AclId:
+    To: acl_id
+  AclStatus:
+    To: acl_status
+  AclType:
+    To: acl_type
+  BackendServerPort:
+    To: backend_port
+  Bandwidth:
+    To: bandwidth
+  CACertificateId:
+    To: ca_certificate_id
+  Description:
+    To: description
+  EnableHttp2:
+    To: enable_http2
+  ListenerPort:
+    To: frontend_port
+  Gzip:
+    To: gzip
+  IdleTimeout:
+    To: idle_timeout
+  LoadBalancerId:
+    To: load_balancer_id
+  MasterSlaveServerGroupId:
+    To: master_slave_server_group_id
+  Protocol:
+    To: protocol
+  ProxyProtocolV2Enabled:
+    To: proxy_protocol_v2_enabled
+  RequestTimeout:
+    To: request_timeout
+  Scheduler:
+    To: scheduler
+  ServerCertificateId:
+    To: server_certificate_id
+  VServerGroupId:
+    To: server_group_id
+  ServerCertificateId$$0:
+    To: ssl_certificate_id
+  TLSCipherPolicy:
+    To: tls_cipher_policy
+  AclIds:
+    Ignore: true
+  ConnectionDrainTimeout:
+    Ignore: true
+  ConnectionDrain:
+    Ignore: true
+  FullNatEnabled:
+    Ignore: true
+  HttpConfig:
+    Ignore: true
+  Tags:
+    Ignore: true
+  HealthCheck:
+    Ignore: true
+  StartListener:
+    Ignore: true
+  PortRange:
+    Ignore: true
+  Persistence:
+    Ignore: true
+Attributes:
+  LoadBalancerId:
+    To: load_balancer_id
+  ListenerPortsAndProtocol:
+    Ignore: true
+  Arn:
+    Ignore: true

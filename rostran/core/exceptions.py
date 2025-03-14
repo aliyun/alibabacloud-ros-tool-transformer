@@ -36,6 +36,10 @@ class TemplateFormatNotSupport(RosTranException):
     msg = 'Template "{path}"(format: {format}) is not supported.'
 
 
+class InvalidTemplate(RosTranException):
+    msg = "Invalid template. {reason}."
+
+
 class InvalidTemplateFormat(RosTranException):
     msg = 'Template "{path}"(format: {format}) is not valid.'
 
@@ -178,3 +182,7 @@ class SystemNotSupport(RosTranException):
 
 class CloudFormationTransformNotSupported(RosTranException):
     msg = "CloudFormation transform is not supported."
+
+
+class InvalidTargetPath(RosTranException):
+    msg = "Target path {target_path} is invalid, {reason}"

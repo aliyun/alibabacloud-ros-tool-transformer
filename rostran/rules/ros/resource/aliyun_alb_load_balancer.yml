@@ -1,0 +1,92 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ALB::LoadBalancer
+  To: alicloud_alb_load_balancer
+Properties:
+  AccessLogConfig:
+    To: access_log_config
+    Type: Map
+    Schema:
+      LogProject:
+        To: log_project
+      LogStore:
+        To: log_store
+      Enable:
+        Ignore: true
+  AddressAllocatedMode:
+    To: address_allocated_mode
+  AddressIpVersion:
+    To: address_ip_version
+  AddressType:
+    To: address_type
+  BandwidthPackageId:
+    To: bandwidth_package_id
+  DeletionProtectionEnabled:
+    To: deletion_protection_enabled
+  LoadBalancerBillingConfig:
+    To: load_balancer_billing_config
+    Type: Map
+    Schema:
+      PayType:
+        To: pay_type
+  LoadBalancerEdition:
+    To: load_balancer_edition
+  LoadBalancerName:
+    To: load_balancer_name
+  ModificationProtectionConfig:
+    To: modification_protection_config
+    Type: Map
+    Schema:
+      Reason:
+        To: reason
+      Status:
+        To: status
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  ZoneMappings:
+    To: zone_mappings
+    Type: List
+    Schema:
+      LoadBalancerAddresses:
+        To: load_balancer_addresses
+        Type: List
+        Schema:
+          IntranetAddress:
+            To: address
+          AllocationId:
+            To: allocation_id
+          EipType:
+            To: eip_type
+      VSwitchId:
+        To: vswitch_id
+      ZoneId:
+        To: zone_id
+      EipType:
+        Ignore: true
+      IntranetAddress:
+        Ignore: true
+      AllocationId:
+        Ignore: true
+  SecurityGroupIds:
+    Ignore: true
+Attributes:
+  LoadBalancerId:
+    To: id
+  AddressType:
+    To: address_type
+  DNSName:
+    To: dns_name
+  LoadBalancerEdition:
+    To: load_balancer_edition
+  VpcId:
+    To: vpc_id
+  ZoneMappings:
+    To: zone_mappings
+  Arn:
+    Ignore: true

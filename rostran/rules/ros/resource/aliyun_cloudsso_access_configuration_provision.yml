@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudSSO::AccessConfigurationProvision
+  To: alicloud_cloud_sso_access_configuration_provisioning
+Properties:
+  AccessConfigurationId:
+    To: access_configuration_id
+  DirectoryId:
+    To: directory_id
+  TargetId:
+    To: target_id
+  TargetType:
+    To: target_type
+Attributes: {}

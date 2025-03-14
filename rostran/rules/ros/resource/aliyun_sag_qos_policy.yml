@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::QosPolicy
+  To: alicloud_sag_qos_policy
+Properties:
+  Description:
+    To: description
+  DestCidr:
+    To: dest_cidr
+  DestPortRange:
+    To: dest_port_range
+  EndTime:
+    To: end_time
+  IpProtocol:
+    To: ip_protocol
+  Name:
+    To: name
+  Priority:
+    To: priority
+  QosId:
+    To: qos_id
+  SourceCidr:
+    To: source_cidr
+  SourcePortRange:
+    To: source_port_range
+  StartTime:
+    To: start_time
+  DpiGroupIds:
+    Ignore: true
+  DpiSignatureIds:
+    Ignore: true
+Attributes:
+  QosPolicyId:
+    To: id

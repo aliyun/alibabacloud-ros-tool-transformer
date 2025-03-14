@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GA::BasicEndpointGroup
+  To: alicloud_ga_basic_endpoint_group
+Properties:
+  AcceleratorId:
+    To: accelerator_id
+  Description:
+    To: description
+  EndpointAddress:
+    To: endpoint_address
+  EndpointGroupRegion:
+    To: endpoint_group_region
+  EndpointSubAddress:
+    To: endpoint_sub_address
+  EndpointType:
+    To: endpoint_type
+  Name:
+    Ignore: true
+Attributes:
+  EndpointGroupId:
+    To: id

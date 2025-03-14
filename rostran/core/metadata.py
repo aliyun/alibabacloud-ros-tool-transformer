@@ -13,9 +13,11 @@ class MetaItem:
     LABEL_KEYS = (DEFAULT, EN, ZH_CN) = ("default", "en", "zh-cn")
     TEMPLATE_TAGS = "TemplateTags"
 
+    GROUP_TYPE = "GroupType"
+
     PREDEFINED_PARAMETERS_KEY_SCORES = {NAME: 0, PARAMETERS: 1}
     ROS_INTERFACE_KEY_SCORES = {PARAMETER_GROUPS: 0, TEMPLATE_TAGS: 1}
-    PARAMETER_GROUP_KEY_SCORES = {PARAMETERS: 0, LABEL: 1}
+    PARAMETER_GROUP_KEY_SCORES = {GROUP_TYPE: 0, PARAMETERS: 1, LABEL: 2}
 
     def __init__(self, type: str, value: dict):
         self.type = type
@@ -107,6 +109,8 @@ class MetaItem:
                             reason=f"The type of value ({parameters}) should be list",
                         )
                     for j, parameter in enumerate(parameters):
+                        if isinstance(parameter, dict):
+                            continue
                         if not isinstance(parameter, str):
                             raise InvalidTemplateMetaDataItem(
                                 name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.PARAMETERS}[{j}]",

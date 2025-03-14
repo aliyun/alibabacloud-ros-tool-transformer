@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::EIPAssociation
+  To: alicloud_eip_association
+Properties:
+  AllocationId:
+    To: allocation_id
+  InstanceId:
+    To: instance_id
+  Mode:
+    To: mode
+  PrivateIpAddress:
+    To: private_ip_address
+Attributes:
+  AllocationId:
+    To: allocation_id
+  EipAddress:
+    Ignore: true

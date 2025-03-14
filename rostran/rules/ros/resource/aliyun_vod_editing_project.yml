@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VOD::EditingProject
+  To: alicloud_vod_editing_project
+Properties:
+  EditingProjectName:
+    To: editing_project_name
+  Timeline:
+    To: timeline
+  Title:
+    To: title
+Attributes:
+  EditingProjectId:
+    To: id
+  EditingProjectName:
+    To: editing_project_name
+  Timeline:
+    To: timeline
+  Title:
+    To: title
+  CreateTime:
+    Ignore: true
+  ModifiedTime:
+    Ignore: true

@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::TransitRouterRouteEntry
+  To: alicloud_cen_transit_router_route_entry
+Properties:
+  TransitRouterRouteEntryDescription:
+    To: transit_router_route_entry_description
+  TransitRouterRouteEntryDestinationCidrBlock:
+    To: transit_router_route_entry_destination_cidr_block
+  TransitRouterRouteEntryName:
+    To: transit_router_route_entry_name
+  TransitRouterRouteEntryNextHopId:
+    To: transit_router_route_entry_next_hop_id
+  TransitRouterRouteEntryNextHopType:
+    To: transit_router_route_entry_next_hop_type
+  TransitRouterRouteTableId:
+    To: transit_router_route_table_id
+Attributes:
+  TransitRouterRouteEntryId:
+    To: id
+  TransitRouterRouteEntryDescription:
+    To: transit_router_route_entry_description
+  TransitRouterRouteEntryDestinationCidrBlock:
+    To: transit_router_route_entry_destination_cidr_block
+  TransitRouterRouteEntryId$$0:
+    To: transit_router_route_entry_id
+  TransitRouterRouteEntryName:
+    To: transit_router_route_entry_name
+  TransitRouterRouteEntryNextHopId:
+    To: transit_router_route_entry_next_hop_id
+  TransitRouterRouteEntryNextHopType:
+    To: transit_router_route_entry_next_hop_type
+  TransitRouterRouteTableId:
+    To: transit_router_route_table_id
+  TransitRouterRouteEntryType:
+    Ignore: true

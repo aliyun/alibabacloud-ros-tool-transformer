@@ -1,0 +1,32 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::Certificate
+  To: alicloud_slb_ca_certificate
+Properties:
+  Certificate:
+    To: ca_certificate
+  CertificateName:
+    To: ca_certificate_name
+  CertificateName$$0:
+    To: name
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  CertificateType:
+    Ignore: true
+  AliCloudCertificateId:
+    Ignore: true
+  PrivateKey:
+    Ignore: true
+  AliCloudCertificateName:
+    Ignore: true
+Attributes:
+  CertificateId:
+    To: id
+  Fingerprint:
+    Ignore: true
+  Arn:
+    Ignore: true

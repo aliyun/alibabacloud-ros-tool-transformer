@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::IpsecServer
+  To: alicloud_vpn_ipsec_server
+Properties:
+  ClientIpPool:
+    To: client_ip_pool
+  EffectImmediately:
+    To: effect_immediately
+  IkeConfig:
+    To: ike_config
+    Type: Map
+    Schema:
+      IkeAuthAlg:
+        To: ike_auth_alg
+      IkeEncAlg:
+        To: ike_enc_alg
+      IkeLifetime:
+        To: ike_lifetime
+      IkeMode:
+        To: ike_mode
+      IkePfs:
+        To: ike_pfs
+      IkeVersion:
+        To: ike_version
+      LocalId:
+        To: local_id
+      RemoteId:
+        To: remote_id
+  IpsecConfig:
+    To: ipsec_config
+    Type: Map
+    Schema:
+      IpsecAuthAlg:
+        To: ipsec_auth_alg
+      IpsecEncAlg:
+        To: ipsec_enc_alg
+      IpsecLifetime:
+        To: ipsec_lifetime
+      IpsecPfs:
+        To: ipsec_pfs
+  IpsecServerName:
+    To: ipsec_server_name
+  LocalSubnet:
+    To: local_subnet
+  Psk:
+    To: psk
+  PskEnabled:
+    To: psk_enabled
+  VpnGatewayId:
+    To: vpn_gateway_id
+Attributes:
+  IpsecServerId:
+    To: id
+  IpsecServerName:
+    To: ipsec_server_name

@@ -1,0 +1,24 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::CenRouteService
+  To: alicloud_cen_route_service
+Properties:
+  AccessRegionId:
+    To: access_region_id
+  CenId:
+    To: cen_id
+  Description:
+    To: description
+  Host:
+    To: host
+  HostRegionId:
+    To: host_region_id
+  HostVpcId:
+    To: host_vpc_id
+  ConflictIgnore:
+    Ignore: true
+Attributes:
+  Id:
+    To: id
+    Handler: replace_slash_to_colon

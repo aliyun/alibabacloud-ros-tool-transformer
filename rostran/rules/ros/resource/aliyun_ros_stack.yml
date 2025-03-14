@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ROS::Stack
+  To: alicloud_ros_stack
+Properties:
+  Parameters:
+    To: parameters
+    Handler: ros_parameters
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TemplateBody:
+    To: template_body
+    Handler: json_load
+  TemplateURL:
+    To: template_url
+  TemplateVersion:
+    To: template_version
+  TimeoutMins:
+    To: timeout_in_minutes
+  ResourceGroupId:
+    Ignore: true
+  TemplateId:
+    Ignore: true
+Attributes: {}

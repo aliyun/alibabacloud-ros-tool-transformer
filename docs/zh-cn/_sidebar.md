@@ -9,7 +9,9 @@
     - [ROS 封装的 Terraform 模板转 Terraform 模版](/zh-cn/example-ros-tf.md)
     - [AWS CloudFormation 模板转 ROS 模板](/zh-cn/example-cf.md)
     - [Excel 模板转 ROS 模板](/zh-cn/example-excel.md)
+    - [ROS 模板转 Terraform 模板](/zh-cn/example-ros2tf.md)
 
 * [支持类型](zh-cn/supported-types.md)
     - [Terraform](/zh-cn/supported-types-tf.md)
     - [CloudFormation](/zh-cn/supported-types-cf.md)
+    - [ROS转Terraform](/zh-cn/supported-types-ros2tf.md)

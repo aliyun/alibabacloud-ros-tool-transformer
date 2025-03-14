@@ -1,0 +1,32 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DNS::Domain
+  To: alicloud_alidns_domain
+Properties:
+  DomainName:
+    To: domain_name
+  GroupId:
+    To: group_id
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+Attributes:
+  DomainName:
+    To: id
+  DnsServers:
+    To: dns_servers
+  DomainId:
+    To: domain_id
+  DomainName$$0:
+    To: domain_name
+  GroupId:
+    To: group_id
+  GroupName:
+    To: group_name
+  PunyCode:
+    To: puny_code
+  Arn:
+    Ignore: true

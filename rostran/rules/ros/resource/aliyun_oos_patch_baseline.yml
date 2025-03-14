@@ -1,0 +1,68 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::PatchBaseline
+  To: alicloud_oos_patch_baseline
+Properties:
+  ApprovalRules:
+    To: approval_rules
+  ApprovedPatches:
+    To: approved_patches
+  ApprovedPatchesEnableNonSecurity:
+    To: approved_patches_enable_non_security
+  Description:
+    To: description
+  OperationSystem:
+    To: operation_system
+  PatchBaselineName:
+    To: patch_baseline_name
+  RejectedPatches:
+    To: rejected_patches
+  RejectedPatchesAction:
+    To: rejected_patches_action
+  ResourceGroupId:
+    To: resource_group_id
+  Sources:
+    To: sources
+  Tags:
+    To: tags
+    Handler: handle_tags
+Attributes:
+  PatchBaselineName:
+    To: id
+  ApprovalRules:
+    To: approval_rules
+  ApprovedPatches:
+    To: approved_patches
+  CreateTime:
+    To: create_time
+  Description:
+    To: description
+  OperationSystem:
+    To: operation_system
+  PatchBaselineName$$0:
+    To: patch_baseline_name
+  RejectedPatches:
+    To: rejected_patches
+  RejectedPatchesAction:
+    To: rejected_patches_action
+  ResourceGroupId:
+    To: resource_group_id
+  Sources:
+    To: sources
+  Tags:
+    To: tags
+  ApprovedPatchesEnableNonSecurity:
+    Ignore: true
+  UpdatedBy:
+    Ignore: true
+  ShareType:
+    Ignore: true
+  PatchBaselineId:
+    Ignore: true
+  CreatedBy:
+    Ignore: true
+  IsDefault:
+    Ignore: true
+  UpdatedDate:
+    Ignore: true

@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CR::Repository
+  To: alicloud_cr_repo
+Properties:
+  Detail:
+    To: detail
+  RepoName:
+    To: name
+  RepoNamespace:
+    To: namespace
+  RepoType:
+    To: repo_type
+  Summary:
+    To: summary
+  TagImmutability:
+    Ignore: true
+  InstanceId:
+    Ignore: true
+  RepoSource:
+    Ignore: true
+Attributes:
+  RepoName:
+    To: name
+  RepoNamespace:
+    To: namespace
+  RepoType:
+    To: repo_type
+  RepoId:
+    Ignore: true
+  InstanceId:
+    Ignore: true

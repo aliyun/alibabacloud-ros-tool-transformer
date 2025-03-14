@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ApiGateway::Instance
+  To: alicloud_api_gateway_instance
+Properties:
+  Duration:
+    To: duration
+  HttpsPolicy:
+    To: https_policy
+  InstanceName:
+    To: instance_name
+  InstanceSpec:
+    To: instance_spec
+  PricingCycle:
+    To: pricing_cycle
+  ZoneId:
+    To: zone_id
+  Tags:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  ChargeType:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  EgressIpv6Enable:
+    To: egress_ipv6_enable
+  InstanceType:
+    To: instance_type
+  SupportIpv6:
+    To: support_ipv6
+  VpcSlbIntranetEnable:
+    To: vpc_slb_intranet_enable
+  VpcEgressAddress:
+    Ignore: true
+  InternetEgressAddress:
+    Ignore: true
+  VpcIntranetEnable:
+    Ignore: true
+  Arn:
+    Ignore: true

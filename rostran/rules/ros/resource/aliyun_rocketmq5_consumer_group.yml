@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ROCKETMQ5::ConsumerGroup
+  To: alicloud_rocketmq_consumer_group
+Properties:
+  ConsumerGroupId:
+    To: consumer_group_id
+  DeliveryOrderType:
+    To: delivery_order_type
+  InstanceId:
+    To: instance_id
+  Remark:
+    To: remark
+  ConsumeRetryPolicy:
+    Ignore: true
+Attributes:
+  ConsumerGroupId:
+    To: consumer_group_id
+  DeliveryOrderType:
+    To: delivery_order_type
+  InstanceId:
+    To: instance_id

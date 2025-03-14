@@ -1,0 +1,54 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NLB::Listener
+  To: alicloud_nlb_listener
+Properties:
+  AlpnEnabled:
+    To: alpn_enabled
+  AlpnPolicy:
+    To: alpn_policy
+  CaCertificateIds:
+    To: ca_certificate_ids
+  CaEnabled:
+    To: ca_enabled
+  CertificateIds:
+    To: certificate_ids
+  Cps:
+    To: cps
+  EndPort:
+    To: end_port
+  IdleTimeout:
+    To: idle_timeout
+  ListenerDescription:
+    To: listener_description
+  ListenerPort:
+    To: listener_port
+  ListenerProtocol:
+    To: listener_protocol
+  LoadBalancerId:
+    To: load_balancer_id
+  Mss:
+    To: mss
+  ProxyProtocolEnabled:
+    To: proxy_protocol_enabled
+  SecSensorEnabled:
+    To: sec_sensor_enabled
+  SecurityPolicyId:
+    To: security_policy_id
+  ServerGroupId:
+    To: server_group_id
+  StartPort:
+    To: start_port
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Enable:
+    Ignore: true
+  ProxyProtocolV2Config:
+    Ignore: true
+Attributes:
+  ListenerId:
+    To: id
+  ListenerPort:
+    To: listener_port

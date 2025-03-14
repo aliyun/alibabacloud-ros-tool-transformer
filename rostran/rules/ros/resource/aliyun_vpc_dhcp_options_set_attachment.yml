@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::DhcpOptionsSetAttachment
+  To: alicloud_vpc_dhcp_options_set_attachment
+Properties:
+  DhcpOptionsSetId:
+    To: dhcp_options_set_id
+  VpcId:
+    To: vpc_id
+Attributes:
+  DhcpOptionsSetId:
+    To: dhcp_options_set_id
+  VpcId:
+    To: vpc_id

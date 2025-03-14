@@ -1,0 +1,44 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PrivateLink::VpcEndpointService
+  To: alicloud_privatelink_vpc_endpoint_service
+Properties:
+  AutoAcceptEnabled:
+    To: auto_accept_connection
+  ConnectBandwidth:
+    To: connect_bandwidth
+  Payer:
+    To: payer
+  ResourceGroupId:
+    To: resource_group_id
+  ServiceDescription:
+    To: service_description
+  ServiceResourceType:
+    To: service_resource_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  ZoneAffinityEnabled:
+    To: zone_affinity_enabled
+  User:
+    Ignore: true
+  Resource:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+Attributes:
+  ServiceId:
+    To: id
+  ServiceDescription:
+    To: service_description
+  ServiceDomain:
+    To: service_domain
+  MaxBandwidth:
+    Ignore: true
+  ServiceName:
+    Ignore: true
+  MinBandwidth:
+    Ignore: true
+  Arn:
+    Ignore: true

@@ -1,0 +1,107 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MSE::Cluster
+  To: alicloud_mse_cluster
+Properties:
+  AclEntryList:
+    To: acl_entry_list
+  ClusterAliasName:
+    To: cluster_alias_name
+  ClusterSpecification:
+    To: cluster_specification
+  ClusterType:
+    To: cluster_type
+  ClusterVersion:
+    To: cluster_version
+  ConnectionType:
+    To: connection_type
+  DiskType:
+    To: disk_type
+  InstanceCount:
+    To: instance_count
+  MseVersion:
+    To: mse_version
+  NetType:
+    To: net_type
+  PrivateSlbSpecification:
+    To: private_slb_specification
+  PubNetworkFlow:
+    To: pub_network_flow
+  PubSlbSpecification:
+    To: pub_slb_specification
+  RequestPars:
+    To: request_pars
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  AcceptLanguage:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id
+  AppVersion:
+    To: app_version
+  ClusterAliasName:
+    To: cluster_alias_name
+  ClusterId$$0:
+    To: cluster_id
+  ClusterSpecification:
+    To: cluster_specification
+  ClusterType:
+    To: cluster_type
+  ClusterVersion:
+    To: cluster_version
+  ConnectionType:
+    To: connection_type
+  InstanceCount:
+    To: instance_count
+  MseVersion:
+    To: mse_version
+  NetType:
+    To: net_type
+  PubNetworkFlow:
+    To: pub_network_flow
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  PayInfo:
+    Ignore: true
+  InstanceId:
+    Ignore: true
+  MCPEnabled:
+    Ignore: true
+  InternetAddress:
+    Ignore: true
+  IntranetPort:
+    Ignore: true
+  ClusterName:
+    Ignore: true
+  Cpu:
+    Ignore: true
+  InternetPort:
+    Ignore: true
+  MemoryCapacity:
+    Ignore: true
+  IntranetAddress:
+    Ignore: true
+  HealthStatus:
+    Ignore: true
+  InternetDomain:
+    Ignore: true
+  ConfigAuthEnabled:
+    Ignore: true
+  AclEntryList:
+    Ignore: true
+  IntranetDomain:
+    Ignore: true
+  ConfigSecretEnabled:
+    Ignore: true
+  AclId:
+    Ignore: true
+  DiskType:
+    Ignore: true
+  DiskCapacity:
+    Ignore: true

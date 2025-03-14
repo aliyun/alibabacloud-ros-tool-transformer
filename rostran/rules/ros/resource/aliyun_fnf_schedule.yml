@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FNF::Schedule
+  To: alicloud_fnf_schedule
+Properties:
+  CronExpression:
+    To: cron_expression
+  Description:
+    To: description
+  Enable:
+    To: enable
+  FlowName:
+    To: flow_name
+  Payload:
+    To: payload
+  ScheduleName:
+    To: schedule_name
+Attributes:
+  FlowName:
+    To: flow_name
+  ScheduleId:
+    To: schedule_id
+  ScheduleName:
+    To: schedule_name

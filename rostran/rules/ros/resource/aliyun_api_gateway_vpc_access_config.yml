@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ApiGateway::VpcAccessConfig
+  To: alicloud_api_gateway_vpc_access
+Properties:
+  InstanceId:
+    To: instance_id
+  Name:
+    To: name
+  Port:
+    To: port
+  VpcId:
+    To: vpc_id
+Attributes: {}

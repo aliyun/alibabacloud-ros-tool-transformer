@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::DeploymentSet
+  To: alicloud_ecs_deployment_set
+Properties:
+  DeploymentSetName:
+    To: deployment_set_name
+  Description:
+    To: description
+  OnUnableToRedeployFailedInstance:
+    To: on_unable_to_redeploy_failed_instance
+  Strategy:
+    To: strategy
+  GroupCount:
+    Ignore: true
+Attributes:
+  DeploymentSetId:
+    To: id

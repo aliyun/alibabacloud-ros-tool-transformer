@@ -1,0 +1,28 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::AccessControl
+  To: alicloud_slb_acl
+Properties:
+  AclEntries:
+    To: entry_list
+    Type: List
+    Schema:
+      Comment:
+        To: comment
+      Entry:
+        To: entry
+  AddressIPVersion:
+    To: ip_version
+  AclName:
+    To: name
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+Attributes:
+  AclId:
+    To: id
+  Arn:
+    Ignore: true

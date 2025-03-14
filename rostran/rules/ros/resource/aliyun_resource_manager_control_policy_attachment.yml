@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::ControlPolicyAttachment
+  To: alicloud_resource_manager_control_policy_attachment
+Properties:
+  PolicyId:
+    To: policy_id
+  TargetId:
+    To: target_id
+Attributes:
+  PolicyId:
+    To: policy_id
+  TargetId:
+    To: target_id
+  AttachDate:
+    Ignore: true
+  Description:
+    Ignore: true
+  PolicyType:
+    Ignore: true
+  PolicyName:
+    Ignore: true

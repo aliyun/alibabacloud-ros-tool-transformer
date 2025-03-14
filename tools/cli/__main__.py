@@ -10,7 +10,7 @@ import typer
 
 from tools import exceptions
 from tools.formatter import RuleFormatter
-from tools.generator import TerraformRuleGenerator, CloudFormationRuleGenerator
+from tools.generator import TerraformRuleGenerator, CloudFormationRuleGenerator, ROS2TerraformRuleGenerator
 from tools.settings import TF_ALI_ROS_GENERATE_MAPPINGS, CF_ROS_GENERATE_MAPPINGS
 
 from tools.settings import TF_ALI_RULES_DIR, CF_RESOURCE_RULES_DIR
@@ -33,14 +33,28 @@ def generate(
         "",
         help="The resource type of Cloud Formation. 'all' represents all types of resources.",
     ),
+
+    ros2tf: bool = typer.Option(
+        False,
+        '--ros2tf',
+        '-R',
+        help="Generate rules from Terraform to ROS.",
+    ),
 ):
     """
     Generate rules from Terraform/CloudFormation to ROS.
+    Generate rules from ROS to Terraform (the value of --cf will be ignored) if ros2tf is set.
     By default, rules are generated from Terraform to ROS.
     """
     if not any((ros, tf, cf)):
         ros = tf = cf = "all"
 
+    if ros2tf:
+        cf = None
+        if not ros:
+            ros = 'all'
+        if not tf:
+            tf = 'all'
     if not ros:
         raise exceptions.RosToolException(message="Please supply --ros")
     elif not any((tf, cf)):
@@ -63,15 +77,36 @@ def generate(
                 f"The rule generator will use the alicloud provider on github as the source to parse."
             )
 
-        generate_mapping = TF_ALI_ROS_GENERATE_MAPPINGS if tf == "all" else {tf: ros}
+        if tf == 'all' and ros == 'all':
+            generate_mapping = TF_ALI_ROS_GENERATE_MAPPINGS
+        elif tf == 'all' and ros != 'all':
+            generate_mapping = {t: r for t, r in TF_ALI_ROS_GENERATE_MAPPINGS.items() if r == ros}
+        else:
+            r = TF_ALI_ROS_GENERATE_MAPPINGS.get(tf)
+            if not r:
+                raise exceptions.RosToolException(
+                    message=f"The resource type {tf} is not supported."
+                )
+            generate_mapping = {tf: r}
+
         for tf, ros in generate_mapping.items():
             tf_filename = None
             if isinstance(ros, (list, tuple)):
                 tf_filename, ros = ros
-            typer.echo(f"Generating Terraform rule: {tf} -> {ros}")
-            generator = TerraformRuleGenerator.initialize(tf, ros, tf_filename)
+            msg = "Generating Terraform rule: {} -> {}".format
+            if ros2tf:
+                typer.echo(msg(ros, tf))
+                generator = ROS2TerraformRuleGenerator.initialize(ros, tf)
+            else:
+                typer.echo(msg(tf, ros))
+                generator = TerraformRuleGenerator.initialize(tf, ros, tf_filename)
+
             generator.generate()
-            typer.echo(f"Generate Terraform rule success: {tf} -> {ros}")
+            msg = "Generate Terraform rule success: {} -> {}".format
+            if ros2tf:
+                typer.echo(msg(ros, tf))
+            else:
+                typer.echo(msg(tf, ros))
     if cf:
         generate_mapping = CF_ROS_GENERATE_MAPPINGS if cf == "all" else {cf: ros}
         for cf, ros in generate_mapping.items():

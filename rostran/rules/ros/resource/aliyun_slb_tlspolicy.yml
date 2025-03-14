@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::TLSPolicy
+  To: alicloud_slb_tls_cipher_policy
+Properties:
+  Ciphers:
+    To: ciphers
+  TlsVersions:
+    To: tls_versions
+  TLSPolicyName:
+    Ignore: true
+Attributes:
+  Ciphers:
+    To: ciphers
+  TlsVersions:
+    To: tls_versions
+  InstanceId:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  TLSPolicyName:
+    Ignore: true

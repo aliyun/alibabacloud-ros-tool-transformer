@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::TransitRouterRouteTablePropagation
+  To: alicloud_cen_transit_router_route_table_propagation
+Properties:
+  TransitRouterAttachmentId:
+    To: transit_router_attachment_id
+  TransitRouterRouteTableId:
+    To: transit_router_route_table_id
+Attributes:
+  TransitRouterAttachmentId:
+    To: transit_router_attachment_id
+  TransitRouterRouteTableId:
+    To: transit_router_route_table_id
+  ResourceType:
+    Ignore: true
+  ResourceId:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::Route
+  To: alicloud_route_entry
+Properties:
+  DestinationCidrBlock:
+    To: destination_cidrblock
+  NextHopId:
+    To: nexthop_id
+  NextHopType:
+    To: nexthop_type
+  RouteTableId:
+    To: route_table_id
+  NextHopList:
+    Ignore: true
+Attributes:
+  RouteEntryId:
+    To: id

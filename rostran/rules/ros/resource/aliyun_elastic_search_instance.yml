@@ -1,0 +1,74 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ElasticSearch::Instance
+  To: alicloud_elasticsearch_instance
+Properties:
+  Description:
+    To: description
+  EnablePublic:
+    To: enable_public
+  InstanceChargeType:
+    To: instance_charge_type
+  KibanaWhitelist:
+    To: kibana_whitelist
+  Password:
+    To: password
+  Period:
+    To: period
+  PrivateWhitelist:
+    To: private_whitelist
+  PublicWhitelist:
+    To: public_whitelist
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Version:
+    To: version
+  VSwitchId:
+    To: vswitch_id
+  ZoneCount:
+    To: zone_count
+  ZoneId:
+    Ignore: true
+  InstanceCategory:
+    Ignore: true
+  MasterNode:
+    Ignore: true
+  YMLConfig:
+    Ignore: true
+  DataNode:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  KibanaNode:
+    Ignore: true
+  EnableKibanaPrivate:
+    Ignore: true
+  EnableKibanaPublic:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  Domain:
+    To: domain
+  InstanceChargeType:
+    To: instance_charge_type
+  KibanaDomain:
+    To: kibana_domain
+  KibanaPort:
+    To: kibana_port
+  Port:
+    To: port
+  PublicDomain:
+    To: public_domain
+  Status:
+    To: status
+  Version:
+    To: version
+  VSwitchId:
+    To: vswitch_id
+  Arn:
+    Ignore: true

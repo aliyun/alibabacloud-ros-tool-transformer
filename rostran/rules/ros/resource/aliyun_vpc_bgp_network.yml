@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::BgpNetwork
+  To: alicloud_vpc_bgp_network
+Properties:
+  DstCidrBlock:
+    To: dst_cidr_block
+  RouterId:
+    To: router_id
+Attributes:
+  RouterId:
+    To: id
+  DstCidrBlock:
+    To: dst_cidr_block
+  RouterId$$0:
+    To: router_id

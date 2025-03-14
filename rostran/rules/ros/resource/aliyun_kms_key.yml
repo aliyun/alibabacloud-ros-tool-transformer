@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::KMS::Key
+  To: alicloud_kms_key
+Properties:
+  EnableAutomaticRotation:
+    To: automatic_rotation
+  PendingWindowInDays:
+    To: deletion_window_in_days
+  Description:
+    To: description
+  Enable:
+    To: is_enabled
+  KeySpec:
+    To: key_spec
+  Enable$$0:
+    To: key_state
+  KeyUsage:
+    To: key_usage
+  PendingWindowInDays$$0:
+    To: pending_window_in_days
+  ProtectionLevel:
+    To: protection_level
+  RotationInterval:
+    To: rotation_interval
+  DeletionProtection:
+    Ignore: true
+  Policy:
+    Ignore: true
+  DKMSInstanceId:
+    Ignore: true
+Attributes:
+  KeyId:
+    To: id

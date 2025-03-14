@@ -1,0 +1,28 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ApiGateway::Plugin
+  To: alicloud_api_gateway_plugin
+Properties:
+  Description:
+    To: description
+  PluginData:
+    To: plugin_data
+  PluginName:
+    To: plugin_name
+  PluginType:
+    To: plugin_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+Attributes:
+  PluginId:
+    To: id
+  Description:
+    To: description
+  PluginData:
+    To: plugin_data
+  PluginName:
+    To: plugin_name
+  PluginType:
+    To: plugin_type

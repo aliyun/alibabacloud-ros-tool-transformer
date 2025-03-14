@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::SecurityGroupIngress
+  To: alicloud_security_group_rule
+Properties:
+  Description:
+    To: description
+  IpProtocol:
+    To: ip_protocol
+  NicType:
+    To: nic_type
+  Policy:
+    To: policy
+  PortRange:
+    To: port_range
+  Priority:
+    To: priority
+  SecurityGroupId:
+    To: security_group_id
+  Ipv6SourceCidrIp:
+    Ignore: true
+  SourcePrefixListId:
+    Ignore: true
+  SourceCidrIp:
+    Ignore: true
+  SourcePortRange:
+    Ignore: true
+  SourceGroupId:
+    Ignore: true
+  SourceGroupOwnerId:
+    Ignore: true
+Attributes: {}

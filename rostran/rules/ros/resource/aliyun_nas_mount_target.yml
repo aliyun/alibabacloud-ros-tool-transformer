@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NAS::MountTarget
+  To: alicloud_nas_mount_target
+Properties:
+  AccessGroupName:
+    To: access_group_name
+  FileSystemId:
+    To: file_system_id
+  NetworkType:
+    To: network_type
+  SecurityGroupId:
+    To: security_group_id
+  Status:
+    To: status
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  EnableIpv6:
+    Ignore: true
+Attributes:
+  MountTargetDomain:
+    To: id
+  MountTargetDomain$$0:
+    To: mount_target_domain

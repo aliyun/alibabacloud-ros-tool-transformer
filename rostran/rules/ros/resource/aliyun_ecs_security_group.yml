@@ -1,0 +1,28 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::SecurityGroup
+  To: alicloud_security_group
+Properties:
+  Description:
+    To: description
+  SecurityGroupName:
+    To: security_group_name
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityGroupType:
+    To: security_group_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  SecurityGroupEgress:
+    Ignore: true
+  SecurityGroupIngress:
+    Ignore: true
+Attributes:
+  SecurityGroupId:
+    To: id
+  SecurityGroupName:
+    Ignore: true

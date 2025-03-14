@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ROCKETMQ5::Instance
+  To: alicloud_rocketmq_instance
+Properties:
+  AutoRenew:
+    To: auto_renew
+  AutoRenewPeriod:
+    To: auto_renew_period
+  InstanceName:
+    To: instance_name
+  PaymentType:
+    To: payment_type
+  Period:
+    To: period
+  PeriodUnit:
+    To: period_unit
+  Remark:
+    To: remark
+  ResourceGroupId:
+    To: resource_group_id
+  SeriesCode:
+    To: series_code
+  SubSeriesCode:
+    To: sub_series_code
+  ProductInfo:
+    Ignore: true
+  InternetInfo:
+    Ignore: true
+  VpcInfo:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  InstanceName:
+    To: instance_name
+  InternetEndpoint:
+    Ignore: true
+  VpcEndpoint:
+    Ignore: true

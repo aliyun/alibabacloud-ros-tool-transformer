@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DirectMail::Domain
+  To: alicloud_direct_mail_domain
+Properties:
+  DomainName:
+    To: domain_name
+Attributes:
+  DomainId:
+    To: id
+  DomainName:
+    To: domain_name
+  SpfAuthStatus:
+    Ignore: true
+  IcpStatus:
+    Ignore: true
+  MxAuthStatus:
+    Ignore: true
+  CnameConfirmStatus:
+    Ignore: true
+  DnsMx:
+    Ignore: true
+  DnsSpf:
+    Ignore: true
+  DomainType:
+    Ignore: true
+  CnameAuthStatus:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  CnameRecord:
+    Ignore: true
+  TlDomainName:
+    Ignore: true
+  MxRecord:
+    Ignore: true
+  DefaultDomain:
+    Ignore: true
+  SpfRecord:
+    Ignore: true
+  TracefRecord:
+    Ignore: true
+  DnsTxt:
+    Ignore: true

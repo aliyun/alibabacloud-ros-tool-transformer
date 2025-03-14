@@ -1,0 +1,74 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MONGODB::ShardingInstance
+  To: alicloud_mongodb_sharding_instance
+Properties:
+  AccountPassword:
+    To: account_password
+  AutoRenew:
+    To: auto_renew
+  EngineVersion:
+    To: engine_version
+  ChargeType:
+    To: instance_charge_type
+  Mongos:
+    To: mongo_list
+    Type: List
+    Schema:
+      Class:
+        To: node_class
+  DBInstanceDescription:
+    To: name
+  Period:
+    To: period
+  ProtocolType:
+    To: protocol_type
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityIPArray:
+    To: security_ip_list
+  ReplicaSet:
+    To: shard_list
+    Type: List
+    Schema:
+      Class:
+        To: node_class
+      Storage:
+        To: node_storage
+      ReadonlyReplicas:
+        Ignore: true
+  StorageEngine:
+    To: storage_engine
+  StorageType:
+    To: storage_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  SrcDBInstanceId:
+    Ignore: true
+  ConfigServer:
+    Ignore: true
+  SecondaryZoneId:
+    Ignore: true
+  HiddenZoneId:
+    Ignore: true
+  RestoreTime:
+    Ignore: true
+  TDEStatus:
+    Ignore: true
+Attributes:
+  DBInstanceId:
+    To: id
+  OrderId:
+    Ignore: true
+  DBInstanceStatus:
+    Ignore: true
+  Arn:
+    Ignore: true

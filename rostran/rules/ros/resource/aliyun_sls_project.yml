@@ -1,0 +1,22 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLS::Project
+  To: alicloud_log_project
+Properties:
+  Description:
+    To: description
+  Name:
+    To: name
+  Tags:
+    To: tags
+    Handler: handle_tags
+  ResourceGroupId:
+    Ignore: true
+  DataRedundancyType:
+    Ignore: true
+Attributes:
+  Name:
+    To: id
+  Name$$0:
+    To: name

@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ADB::Account
+  To: alicloud_adb_account
+Properties:
+  AccountDescription:
+    To: account_description
+  AccountName:
+    To: account_name
+  AccountPassword:
+    To: account_password
+  AccountType:
+    To: account_type
+  DBClusterId:
+    Ignore: true
+Attributes:
+  AccountName:
+    To: account_name
+  DBClusterId:
+    To: db_cluster_id
+  AccountType:
+    Ignore: true

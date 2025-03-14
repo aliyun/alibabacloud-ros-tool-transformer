@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::AntiBruteForceRule
+  To: alicloud_threat_detection_anti_brute_force_rule
+Properties:
+  AntiBruteForceRuleName:
+    To: anti_brute_force_rule_name
+  DefaultRule:
+    To: default_rule
+  FailCount:
+    To: fail_count
+  ForbiddenTime:
+    To: forbidden_time
+  Span:
+    To: span
+  UuidList:
+    To: uuid_list
+Attributes:
+  AntiBruteForceRuleId:
+    To: id
+  AntiBruteForceRuleId$$0:
+    To: anti_brute_force_rule_id
+  AntiBruteForceRuleName:
+    To: anti_brute_force_rule_name
+  DefaultRule:
+    To: default_rule
+  FailCount:
+    To: fail_count
+  ForbiddenTime:
+    To: forbidden_time
+  Span:
+    To: span
+  UuidList:
+    To: uuid_list

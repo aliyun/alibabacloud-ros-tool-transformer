@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::Rule
+  To: alicloud_slb_rule
+Properties:
+  ListenerPort:
+    To: frontend_port
+  LoadBalancerId:
+    To: load_balancer_id
+  ListenerProtocol:
+    Ignore: true
+  RuleList:
+    Ignore: true
+Attributes:
+  Rules:
+    Ignore: true

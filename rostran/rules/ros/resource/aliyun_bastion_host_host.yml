@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::BastionHost::Host
+  To: alicloud_bastionhost_host
+Properties:
+  ActiveAddressType:
+    To: active_address_type
+  Comment:
+    To: comment
+  HostName:
+    To: host_name
+  HostPrivateAddress:
+    To: host_private_address
+  HostPublicAddress:
+    To: host_public_address
+  InstanceId:
+    To: instance_id
+  InstanceRegionId:
+    To: instance_region_id
+  Source:
+    To: source
+  SourceInstanceId:
+    To: source_instance_id
+  OSType:
+    Ignore: true
+Attributes:
+  HostId:
+    To: id
+  HostId$$0:
+    To: host_id

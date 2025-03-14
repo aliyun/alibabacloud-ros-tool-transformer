@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::RestoreJob
+  To: alicloud_hbr_restore_job
+Properties:
+  RestoreType:
+    To: restore_type
+  SnapshotId:
+    To: snapshot_id
+  SourceType:
+    To: source_type
+  TargetClientId:
+    To: target_client_id
+  TargetInstanceId:
+    To: target_instance_id
+  TargetPath:
+    To: target_path
+  VaultId:
+    To: vault_id
+  SourceClientId:
+    Ignore: true
+  SourceInstanceId:
+    Ignore: true
+Attributes:
+  RestoreId:
+    To: id
+  RestoreType:
+    To: restore_type
+  SourceType:
+    To: source_type
+  Status:
+    To: status
+  ErrorMessage:
+    Ignore: true

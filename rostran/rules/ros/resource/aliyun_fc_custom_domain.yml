@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC::CustomDomain
+  To: alicloud_fc_custom_domain
+Properties:
+  ApiVersion:
+    To: api_version
+  DomainName:
+    To: domain_name
+  Protocol:
+    To: protocol
+  RouteConfig:
+    Ignore: true
+  CertConfig:
+    Ignore: true
+Attributes:
+  DomainName:
+    To: id
+  DomainName$$0:
+    To: domain_name
+  Domain:
+    Ignore: true

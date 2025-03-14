@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ARMS::ManagedPrometheus
+  To: alicloud_arms_prometheus
+Properties:
+  ClusterId:
+    To: cluster_id
+  ClusterName:
+    To: cluster_name
+  ClusterType:
+    To: cluster_type
+  GrafanaInstanceId:
+    To: grafana_instance_id
+  SecurityGroupId:
+    To: security_group_id
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+Attributes:
+  ClusterType:
+    To: cluster_type
+  VpcId:
+    To: vpc_id

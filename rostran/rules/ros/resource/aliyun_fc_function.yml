@@ -1,0 +1,67 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC::Function
+  To: alicloud_fc_function
+Properties:
+  Description:
+    To: description
+  EnvironmentVariables:
+    To: environment_variables
+  Handler:
+    To: handler
+  InitializationTimeout:
+    To: initialization_timeout
+  Initializer:
+    To: initializer
+  InstanceConcurrency:
+    To: instance_concurrency
+  InstanceType:
+    To: instance_type
+  MemorySize:
+    To: memory_size
+  FunctionName:
+    To: name
+  FunctionName$$0:
+    To: name_prefix
+  Runtime:
+    To: runtime
+  ServiceName:
+    To: service
+  Timeout:
+    To: timeout
+  Cpu:
+    Ignore: true
+  CustomHealthCheckConfig:
+    Ignore: true
+  CAPort:
+    Ignore: true
+  AsyncConfiguration:
+    Ignore: true
+  DiskSize:
+    Ignore: true
+  InstanceLifecycleConfig:
+    Ignore: true
+  CustomContainerConfig:
+    Ignore: true
+  CustomRuntimeConfig:
+    Ignore: true
+  CustomDNS:
+    Ignore: true
+  GpuMemorySize:
+    Ignore: true
+  Code:
+    Ignore: true
+  InstanceSoftConcurrency:
+    Ignore: true
+Attributes:
+  FunctionId:
+    To: function_id
+  FunctionName:
+    Ignore: true
+  ServiceName:
+    Ignore: true
+  ARN:
+    Ignore: true
+  ServiceId:
+    Ignore: true

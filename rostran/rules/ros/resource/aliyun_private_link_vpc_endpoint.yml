@@ -1,0 +1,48 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PrivateLink::VpcEndpoint
+  To: alicloud_privatelink_vpc_endpoint
+Properties:
+  EndpointDescription:
+    To: endpoint_description
+  EndpointType:
+    To: endpoint_type
+  ProtectedEnabled:
+    To: protected_enabled
+  ServiceId:
+    To: service_id
+  ServiceName:
+    To: service_name
+  Tags:
+    To: tags
+    Handler: handle_tags
+  EndpointName:
+    To: vpc_endpoint_name
+  VpcId:
+    To: vpc_id
+  ZonePrivateIpAddressCount:
+    To: zone_private_ip_address_count
+  SecurityGroupId:
+    Ignore: true
+  Zone:
+    Ignore: true
+Attributes:
+  EndpointId:
+    To: id
+  Bandwidth:
+    To: bandwidth
+  EndpointDomain:
+    To: endpoint_domain
+  ServiceId:
+    To: service_id
+  ServiceName:
+    To: service_name
+  EndpointName:
+    To: vpc_endpoint_name
+  VpcId:
+    To: vpc_id
+  ZoneDomains:
+    Ignore: true
+  Arn:
+    Ignore: true

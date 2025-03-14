@@ -1,0 +1,42 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DCDN::Domain
+  To: alicloud_dcdn_domain
+Properties:
+  CheckUrl:
+    To: check_url
+  DomainName:
+    To: domain_name
+  ResourceGroupId:
+    To: resource_group_id
+  Scope:
+    To: scope
+  Sources:
+    To: sources
+    Type: List
+    Schema:
+      Content:
+        To: content
+      Port:
+        To: port
+      Priority:
+        To: priority
+      Type:
+        To: type
+      Weight:
+        To: weight
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TopLevelDomain:
+    To: top_level_domain
+Attributes:
+  DomainName:
+    To: id
+  Cname:
+    To: cname
+  DomainName$$0:
+    To: domain_name
+  Arn:
+    Ignore: true

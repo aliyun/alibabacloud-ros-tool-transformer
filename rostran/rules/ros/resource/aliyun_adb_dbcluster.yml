@@ -1,0 +1,54 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ADB::DBCluster
+  To: alicloud_adb_db_cluster
+Properties:
+  ComputeResource:
+    To: compute_resource
+  DBClusterCategory:
+    To: db_cluster_category
+  DBClusterClass:
+    To: db_cluster_class
+  DBClusterVersion:
+    To: db_cluster_version
+  DBNodeGroupCount:
+    To: db_node_count
+  DBNodeStorage:
+    To: db_node_storage
+  DBClusterDescription:
+    To: description
+  Mode:
+    To: mode
+  PayType:
+    To: pay_type
+  PayType$$0:
+    To: payment_type
+  Period:
+    To: period
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VPCId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  ExecutorCount:
+    Ignore: true
+  ElasticIOResource:
+    Ignore: true
+  PeriodType:
+    Ignore: true
+Attributes:
+  DBClusterId:
+    To: id
+  ConnectionString:
+    To: connection_string
+  Arn:
+    Ignore: true
+  OrderId:
+    Ignore: true

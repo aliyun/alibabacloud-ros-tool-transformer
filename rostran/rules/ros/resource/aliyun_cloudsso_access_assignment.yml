@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudSSO::AccessAssignment
+  To: alicloud_cloud_sso_access_assignment
+Properties:
+  AccessConfigurationId:
+    To: access_configuration_id
+  DirectoryId:
+    To: directory_id
+  PrincipalId:
+    To: principal_id
+  PrincipalType:
+    To: principal_type
+  TargetId:
+    To: target_id
+  TargetType:
+    To: target_type
+Attributes: {}

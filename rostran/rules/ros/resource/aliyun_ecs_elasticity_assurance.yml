@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::ElasticityAssurance
+  To: alicloud_ecs_elasticity_assurance
+Properties:
+  Description:
+    To: description
+  InstanceAmount:
+    To: instance_amount
+  Period:
+    To: period
+  PeriodUnit:
+    To: period_unit
+  ResourceGroupId:
+    To: resource_group_id
+  StartTime:
+    To: start_time
+  Tags:
+    To: tags
+    Handler: handle_tags
+  PrivatePoolOptions:
+    Ignore: true
+  ZoneId:
+    Ignore: true
+  InstanceTypes:
+    Ignore: true
+Attributes:
+  PrivatePoolOptionsId:
+    To: id

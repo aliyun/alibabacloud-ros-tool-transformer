@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::ImagePipeline
+  To: alicloud_ecs_image_pipeline
+Properties:
+  AddAccount:
+    To: add_account
+  BaseImage:
+    To: base_image
+  BaseImageType:
+    To: base_image_type
+  BuildContent:
+    To: build_content
+  DeleteInstanceOnFailure:
+    To: delete_instance_on_failure
+  Description:
+    To: description
+  ImageName:
+    To: image_name
+  InstanceType:
+    To: instance_type
+  InternetMaxBandwidthOut:
+    To: internet_max_bandwidth_out
+  Name:
+    To: name
+  ResourceGroupId:
+    To: resource_group_id
+  SystemDiskSize:
+    To: system_disk_size
+  ToRegionId:
+    To: to_region_id
+  VSwitchId:
+    To: vswitch_id
+  Tags:
+    Ignore: true
+  ExecutePipeline:
+    Ignore: true
+Attributes:
+  ImagePipelineId:
+    To: id

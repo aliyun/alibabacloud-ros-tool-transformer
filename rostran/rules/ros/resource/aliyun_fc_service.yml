@@ -1,0 +1,72 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC::Service
+  To: alicloud_fc_service
+Properties:
+  Description:
+    To: description
+  InternetAccess:
+    To: internet_access
+  LogConfig:
+    To: log_config
+    Type: Map
+    Schema:
+      Logstore:
+        To: logstore
+      Project:
+        To: project
+      LogBeginRule:
+        Ignore: true
+      EnableRequestMetrics:
+        Ignore: true
+  ServiceName:
+    To: name
+  ServiceName$$0:
+    To: name_prefix
+  Role:
+    To: role
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcConfig:
+    To: vpc_config
+    Type: Map
+    Schema:
+      SecurityGroupId:
+        To: security_group_id
+      VpcId:
+        To: vpc_id
+      VSwitchIds:
+        Ignore: true
+      ZoneId:
+        Ignore: true
+  TracingConfig:
+    Ignore: true
+  NasConfig:
+    Ignore: true
+  VpcBindings:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  OssMountConfig:
+    Ignore: true
+Attributes:
+  ServiceId:
+    To: id
+  InternetAccess:
+    To: internet_access
+  Role:
+    To: role
+  ServiceId$$0:
+    To: service_id
+  Tags:
+    To: tags
+  VpcId:
+    Ignore: true
+  ServiceName:
+    Ignore: true
+  Logstore:
+    Ignore: true
+  LogProject:
+    Ignore: true

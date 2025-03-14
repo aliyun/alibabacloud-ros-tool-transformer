@@ -1,0 +1,28 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::RouteTable
+  To: alicloud_route_table
+Properties:
+  Description:
+    To: description
+  RouteTableName:
+    To: name
+  RouteTableName$$0:
+    To: route_table_name
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
+Attributes:
+  RouteTableId:
+    To: id
+  RouteTableName:
+    To: route_table_name
+  VpcId:
+    To: vpc_id
+  RouteTableType:
+    Ignore: true
+  VSwitchIds:
+    Ignore: true

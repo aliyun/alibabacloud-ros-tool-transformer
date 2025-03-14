@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::BgpPeer
+  To: alicloud_vpc_bgp_peer
+Properties:
+  BgpGroupId:
+    To: bgp_group_id
+  EnableBfd:
+    To: enable_bfd
+  PeerIpAddress:
+    To: peer_ip_address
+Attributes:
+  BgpPeerId:
+    To: id

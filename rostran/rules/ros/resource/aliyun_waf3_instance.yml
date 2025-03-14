@@ -1,0 +1,53 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::WAF3::Instance
+  To: alicloud_wafv3_instance
+Properties:
+  BotAppProtection:
+    Ignore: true
+  Region:
+    Ignore: true
+  ElasticQps:
+    Ignore: true
+  IntelligentLoadBalancing:
+    Ignore: true
+  ExclusiveIPAddress:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+  PayType:
+    Ignore: true
+  WafVersion:
+    Ignore: true
+  ApiSecurity:
+    Ignore: true
+  Period:
+    Ignore: true
+  AdditionalProtectionNodes:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  BotWebProtection:
+    Ignore: true
+  LogService:
+    Ignore: true
+  IgnoreExisting:
+    Ignore: true
+  DomainsExtension:
+    Ignore: true
+  FraudDetection:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  QpsExtension:
+    Ignore: true
+  TrafficBillingProtectionThreshold:
+    Ignore: true
+  LogStorage:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  InstanceId$$0:
+    To: instance_id

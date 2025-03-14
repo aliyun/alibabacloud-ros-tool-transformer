@@ -1,0 +1,22 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLB::BackendServerAttachment
+  To: alicloud_slb_attachment
+Properties:
+  BackendServerList:
+    To: instance_ids
+  LoadBalancerId:
+    To: load_balancer_id
+  BackendServerWeightList:
+    To: weight
+    Handler: select_first
+  BackendServers:
+    Ignore: true
+Attributes:
+  LoadBalancerId:
+    To: id
+  BackendServers:
+    To: backend_servers
+  LoadBalancerId$$0:
+    To: load_balancer_id

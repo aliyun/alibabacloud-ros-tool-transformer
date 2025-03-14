@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::AMQP::Exchange
+  To: alicloud_amqp_exchange
+Properties:
+  AlternateExchange:
+    To: alternate_exchange
+  AutoDeleteState:
+    To: auto_delete_state
+  ExchangeName:
+    To: exchange_name
+  ExchangeType:
+    To: exchange_type
+  InstanceId:
+    To: instance_id
+  Internal:
+    To: internal
+  XDelayedType:
+    Ignore: true
+  VirtualHost:
+    Ignore: true
+Attributes:
+  ExchangeName:
+    To: exchange_name
