@@ -1,4 +1,3 @@
-import json
 from abc import abstractmethod
 from typing import Any, Dict, List, Optional, Tuple, Union
 from dataclasses import dataclass
@@ -28,6 +27,9 @@ class LiteralType(TerraformType):
 
     def render(self, _=0):
         return self.value
+
+    def ref_render(self):
+        return f"${{{self.value}}}"
 
 
 @dataclass(frozen=True)
@@ -98,6 +100,14 @@ class JsonType(TerraformType):
 
         return result
 
+@dataclass
+class ListOneLineType(TerraformType):
+    value: list
+
+    def render(self, _: int = 0) -> str:
+        result = [i.render() if isinstance(i, TerraformType) else i for i in self.value]
+        return f"[{', '.join(result)}]"
+
 
 @dataclass
 class CommentType(TerraformType):
@@ -109,7 +119,7 @@ class CommentType(TerraformType):
         return "\n".join(text)
 
 
-def convert_to_tf_type(value: Any, type_: Optional[str] = None) -> TerraformType:
+def convert_to_tf_type(value: Any, type_: Optional[str] = None) -> Optional[TerraformType]:
     if isinstance(value, TerraformType):
         return value
     if type_ is None:
@@ -135,6 +145,8 @@ def convert_to_tf_type(value: Any, type_: Optional[str] = None) -> TerraformType
         return NullType()
     elif type_ in ("json", "dict", "list"):
         return JsonType(value)
+    elif type_ == "list_one_line":
+        return ListOneLineType(value)
     elif type_ == "comment":
         return CommentType(value)
     elif type_:

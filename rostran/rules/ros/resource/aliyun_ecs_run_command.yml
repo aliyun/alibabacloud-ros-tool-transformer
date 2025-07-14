@@ -1,0 +1,66 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::RunCommand
+  To: alicloud_ecs_command,alicloud_ecs_invocation
+  BuiltInProperties:
+    alicloud_ecs_invocation.command_id:
+      Value: alicloud_ecs_command.id
+      ValueType: ResolveAttribute
+Properties:
+  CommandContent:
+    To: alicloud_ecs_command.command_content
+    Handler: handle_base64_encode
+  ContainerId:
+    Ignore: true
+  ContainerName:
+    Ignore: true
+  ContentEncoding:
+    Ignore: true
+  Description:
+    To: alicloud_ecs_command.description
+  EnableParameter:
+    To: alicloud_ecs_command.enable_parameter
+  Frequency:
+    To: alicloud_ecs_invocation.frequency
+  InstanceIds:
+    To: alicloud_ecs_invocation.instance_id
+  KeepCommand:
+    Ignore: true
+  Launcher:
+    Ignore: true
+  Name:
+    To: alicloud_ecs_command.name
+    Handler: handle_required_string
+    Required: true
+  Parameters:
+    To: alicloud_ecs_invocation.parameters
+  RepeatMode:
+    To: alicloud_ecs_invocation.repeat_mode
+  ResourceGroupId:
+    Ignore: true
+  RunAgainOn:
+    Ignore: true
+  Sync:
+    Ignore: true
+  Tags:
+    Ignore: true
+  Timeout:
+    To: alicloud_ecs_command.timeout
+  Type:
+    To: alicloud_ecs_command.type
+  Username:
+    To: alicloud_ecs_invocation.user_name
+  WindowsPasswordName:
+    To: alicloud_ecs_invocation.windows_password_name
+  WorkingDir:
+    To: alicloud_ecs_command.working_dir
+Attributes:
+  CommandId:
+    To: alicloud_ecs_command.id
+  InvokeId:
+    To: alicloud_ecs_invocation.id
+  InvokeInstances:
+    Ignore: true
+  InvokeResults:
+    Ignore: true

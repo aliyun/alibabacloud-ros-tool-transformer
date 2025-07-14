@@ -28,7 +28,7 @@ Attributes:
   UserId:
     To: id
   UserName:
-    Ignore: true
+    To: name
   LastLoginDate:
     Ignore: true
   CreateDate:

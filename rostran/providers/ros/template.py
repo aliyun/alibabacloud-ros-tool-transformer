@@ -10,6 +10,7 @@ import json
 from Tea.exceptions import TeaException
 from alibabacloud_credentials.exceptions import CredentialException
 from alibabacloud_tea_util.models import RuntimeOptions
+from collections import defaultdict
 from libterraform import TerraformCommand
 from libterraform.exceptions import TerraformCommandError
 from ruamel import yaml
@@ -71,6 +72,14 @@ class WrapTerraformTemplate(Template):
         )
 
 
+class ResourcesInProperty:
+
+    def __init__(self, resource_rule: ResourceRule, resources: dict, from_res_name: str):
+        self.resource_rule = resource_rule
+        self.resources = resources
+        self.from_res_name = from_res_name
+
+
 class ROS2TerraformTemplate(Template):
     (
         ROS_TEMPLATE_FORMAT_VERSION,
@@ -123,6 +132,10 @@ class ROS2TerraformTemplate(Template):
         self.resources_with_count = []
         self.tf_parameters = {}
         self._check_resources()
+        self.uid = uuid.uuid4().hex
+        self.data_for_pseudo_param = {}
+        self.tf_region_parameter = None
+        self.resources_from_properties: List[ResourcesInProperty] = []
 
     def _check_resources(self):
         for name, value in self.resources.items():
@@ -171,6 +184,17 @@ class ROS2TerraformTemplate(Template):
             )
             raise InvalidTemplate(reason=f'{e}')
 
+    def _transform_for_pseudo_param(self, tf_vars, tf_resources):
+        if not tf_resources:
+            tf_resources = []
+        if not tf_vars:
+            tf_vars = []
+        if self.data_for_pseudo_param:
+            tf_resources[:0] = [item for item in self.data_for_pseudo_param.values()]
+
+        if self.tf_region_parameter:
+            tf_vars.append(self.tf_region_parameter)
+
     def transform(self, target_path: str = None, single_file: bool = False):
         """
         transform ros to Terraform
@@ -191,7 +215,10 @@ class ROS2TerraformTemplate(Template):
         conditions = self._transform_conditions()
         parameters = self._transform_parameters()
         resources = self._transform_resources()
+        res_in_properties = self._transform_resource_in_properties()
+        resources = resources + res_in_properties
         outputs = self._transform_outputs()
+        self._transform_for_pseudo_param(parameters, resources)
         if single_file:
             file_path = (output_dir / "main.tf").resolve()
             with file_path.open("w", encoding="utf-8") as f:
@@ -237,7 +264,7 @@ class ROS2TerraformTemplate(Template):
                 f"Resource type {ros_res_type!r} is not supported and will be ignored.",
                 fg="yellow",
             )
-            return
+            return None
         return resource_rule
 
     def resolve_values(self, data: Any, tf_type: bool = True) -> Any:
@@ -283,6 +310,9 @@ class ROS2TerraformTemplate(Template):
             if param_default:
                 if param_type in ("String", "Number", "Boolean"):
                     tf_value["default"] = tf.convert_to_tf_type(param_default, param_type.lower())
+                elif param_type == "CommaDelimitedList" and isinstance(param_default, str):
+                    tf_value["default"] = tf.ListOneLineType(
+                        [tf.convert_to_tf_type(n) for n in param_default.split(",")])
                 else:
                     tf_value["default"] = self.resolve_values(param_default)
 
@@ -311,12 +341,25 @@ class ROS2TerraformTemplate(Template):
             tf_conditions.append(tf.Locals(tf_value))
         return tf_conditions
 
+    def _handled_value(self, tf_argument, schema_value, tf_arg_name, orig_value):
+        handler = schema_value.get("Handler")
+        if handler:
+            handler_func = getattr(functions, handler, None)
+            if callable(handler_func):
+                if isinstance(tf_arg_name, list):
+                    for n in tf_arg_name:
+                        tf_argument[n] = handler_func(self, self.resolve_values(orig_value))
+                else:
+                    tf_argument[tf_arg_name] = handler_func(self, self.resolve_values(orig_value))
+                return True
+
     def _get_tf_argument(
         self,
         res_type: str,
         values: Any,
         schema: dict,
-        prop_name: str = None
+        prop_name: str = None,
+        res_name: str = None
     ):
         if isinstance(values, dict):
             tf_argument = {}
@@ -332,23 +375,39 @@ class ROS2TerraformTemplate(Template):
                     continue
                 schema_value = schema[name] or {}
                 tf_arg_name = schema_value.get("To")
+                new_res_schema = schema_value.get("ToResources")
+                if new_res_schema:
+                    new_res_rule = ResourceRule.initialize_from_info(
+                        'builtIn',
+                        new_res_schema,
+                        ResourceRule.SUPPORTED_VERSIONS[0],
+                        ResourceRule.RESOURCE
+                    )
+                    new_prop = value if isinstance(value, list) else [value]
+                    new_resources = {}
+                    for i, p in enumerate(new_prop):
+                        if not isinstance(p, dict):
+                            continue
+                        new_res_name = f"{res_name}_{name}_{i}_{uuid.uuid4().hex[:8]}"
+                        new_resources[new_res_name] = {"Type": f"{res_type}.{name}", "Properties": p}
+                        res_in_property = ResourcesInProperty(
+                            resource_rule=new_res_rule,
+                            resources=new_resources,
+                            from_res_name=res_name
+                        )
+                        self.resources_from_properties.append(res_in_property)
+                    continue
+
                 if schema_value.get("Ignore") or not tf_arg_name:
                     typer.secho(msg, fg="yellow")
                     continue
 
-                handler = schema_value.get("Handler")
-                if handler:
-                    handler_func = getattr(functions, handler, None)
-                    if callable(handler_func):
-                        if isinstance(tf_arg_name, list):
-                            for n in tf_arg_name:
-                                tf_argument[n] = handler_func(self, value)
-                        else:
-                            tf_argument[tf_arg_name] = handler_func(self, value)
-                        continue
+                handled_value = self._handled_value(tf_argument, schema_value, tf_arg_name, value)
+                if handled_value:
+                    continue
 
                 sub_schema = schema_value.get("Schema")
-                sub_args = self._get_tf_argument(res_type, value, sub_schema, name)
+                sub_args = self._get_tf_argument(res_type, value, sub_schema, name, res_name)
                 if sub_schema:
                     if isinstance(sub_args, list):
                         for i, item in enumerate(sub_args):
@@ -366,20 +425,33 @@ class ROS2TerraformTemplate(Template):
                             tf_argument[n] = sub_args
                     else:
                         tf_argument[tf_arg_name] = sub_args
+
+            for name, schema_value in schema.items():
+                if not schema_value.get("Required"):
+                    continue
+                tf_arg_name = schema_value.get("To")
+                if not tf_arg_name or tf_arg_name in tf_argument:
+                    continue
+                self._handled_value(tf_argument, schema_value, tf_arg_name, values.get(name))
+
             return tf_argument
         elif isinstance(values, list):
             if len(values) == 1 and not schema:
-                return self._get_tf_argument(res_type, values[0], schema, prop_name)
-            return [self._get_tf_argument(res_type, item, schema, prop_name) for item in values]
+                return self._get_tf_argument(res_type, values[0], schema, prop_name, res_name)
+            return tf.JsonType([self._get_tf_argument(res_type, item, schema, prop_name, res_name) for item in values])
         else:
             return self.resolve_values(values)
 
-    def _transform_resources(self) -> List[tf.Resource]:
+    def _transform_resources(self, resources_in_property: ResourcesInProperty = None) -> List[tf.Resource]:
         tf_resources = []
-        for name, res in self.resources.items():
+        resources = resources_in_property.resources if resources_in_property else self.resources
+        for name, res in resources.items():
             tf_name = camel_to_snake(name)
             ros_res_type = res.get("Type")
-            resource_rule = self.get_resource_rule(ros_res_type)
+            if resources_in_property:
+                resource_rule = resources_in_property.resource_rule
+            else:
+                resource_rule = self.get_resource_rule(ros_res_type)
             if not resource_rule:
                 typer.secho(
                     f"Resource type {ros_res_type!r} is not supported and will be ignored.",
@@ -387,43 +459,91 @@ class ROS2TerraformTemplate(Template):
                 )
                 continue
 
-            tf_res_type = resource_rule.target_resource_type
             properties = res.get("Properties")
             resolved_props = self.resolve_values(properties, False) or {}
-            tf_argument = self._get_tf_argument(ros_res_type, resolved_props, resource_rule.properties)
+            tf_argument = self._get_tf_argument(ros_res_type, resolved_props, resource_rule.properties, res_name=name)
             if isinstance(tf_argument, tf.JsonType):
                 tf_argument = tf_argument.value
 
-            condition = res.get("Condition")
-            count = res.get("Count")
-            if count:
-                tf_argument["count"] = self.resolve_values(count)
+            tf_res_type = resource_rule.target_resource_type
+            tf_res_items = []
+            built_in_properties = resource_rule.built_in_properties or {}
 
-            if condition:
-                tf_count = tf_argument.get("count") if tf_argument.get("count") is not None else 1
-                tf_argument["count"] = tf.LiteralType(f"local.{condition} ? {tf_count} : 0")
+            def get_built_in_prop_value(built_in_value_schema):
+                value_type = built_in_value_schema.get("ValueType")
+                ret = built_in_value_schema.get("Value")
+                if value_type and value_type == "ResolveAttribute":
+                    t_type, expr = ret.split(".", 1)
+                    if resources_in_property:
+                        n = camel_to_snake(resources_in_property.from_res_name)
+                    else:
+                        n = f"{tf_name}_{t_type}"
+                    return tf.LiteralType(f"{t_type}.{n}.{expr}")
+                return tf.QuotedString(ret)
 
-            depends_on = res.get("DependsOn")
-            if depends_on:
-                if isinstance(depends_on, str):
-                    depends_on = [depends_on]
-                tf_depends_on = []
-                for depend in depends_on:
-                    depend_res_type = self.resources[depend]['Type']
-                    depend_resource_rule = self.get_resource_rule(depend_res_type)
-                    if not depend_resource_rule:
-                        typer.secho(
-                            f"Resource type {depend_res_type!r} is not supported and will be ignored.",
-                            fg="yellow",
-                        )
+            if ',' in tf_res_type:
+                built_in_res_args = defaultdict(dict)
+                for prop_name, value_schema in built_in_properties.items():
+                    if '.' not in prop_name:
                         continue
-                    tf_depend = f"{depend_resource_rule.target_resource_type}.{camel_to_snake(depend)}"
-                    tf_depends_on.append(tf.LiteralType(tf_depend))
-                tf_argument["depends_on"] = tf.JsonType(tf_depends_on)
+                    res_type_key, prop_name = prop_name.split(".")
+                    built_in_res_args[res_type_key].update({prop_name: get_built_in_prop_value(value_schema)})
 
-            resource = tf.Resource(tf_name, tf_res_type, tf_argument)
-            tf_resources.append(resource)
+                for tf_type in tf_res_type.split(","):
+                    tf_args = {}
+                    for key, value in tf_argument.items():
+                        if '.' not in key or not key.startswith(tf_type):
+                            continue
+                        tf_args[key[(len(tf_type) + 1):]] = value
+                    built_in_args = built_in_res_args.get(tf_type)
+                    if built_in_args:
+                        tf_args.update(built_in_args)
+                    tf_res_items.append((f"{tf_name}_{tf_type}", tf_type, tf_args))
+            else:
+                for prop_name, value_schema in built_in_properties.items():
+                    tf_argument[prop_name] = get_built_in_prop_value(value_schema)
+                tf_res_items.append((tf_name, tf_res_type, tf_argument))
+
+            for tf_name, tf_type, tf_args in tf_res_items:
+                condition = res.get("Condition")
+                count = res.get("Count")
+                if count:
+                    tf_args["count"] = self.resolve_values(count)
+                if condition:
+                    tf_count = tf_args.get("count") if tf_args.get("count") is not None else 1
+                    tf_args["count"] = tf.LiteralType(f"local.{condition} ? {tf_count} : 0")
+
+                depends_on = res.get("DependsOn")
+                if depends_on:
+                    if isinstance(depends_on, str):
+                        depends_on = [depends_on]
+                    tf_depends_on = []
+                    for depend in depends_on:
+                        depend_res_type = self.resources[depend]['Type']
+                        depend_resource_rule = self.get_resource_rule(depend_res_type)
+                        if not depend_resource_rule:
+                            typer.secho(
+                                f"Resource type {depend_res_type!r} is not supported and will be ignored.",
+                                fg="yellow",
+                            )
+                            continue
+                        tf_depend = f"{depend_resource_rule.target_resource_type}.{camel_to_snake(depend)}"
+                        tf_depends_on.append(tf.LiteralType(tf_depend))
+                    tf_args["depends_on"] = tf.JsonType(tf_depends_on)
+
+                resource = tf.Resource(tf_name, tf_type, tf_args)
+                tf_resources.append(resource)
         return tf_resources
+
+    def _transform_resource_in_properties(self) -> List[tf.Resource]:
+        if not self.resources_from_properties:
+            return []
+        result = []
+        for resource_in_property in self.resources_from_properties:
+            ret = self._transform_resources(resource_in_property)
+            result.extend(ret)
+        return result
+
 
     def _transform_outputs(self) -> List[tf.Output]:
         tf_outputs = []

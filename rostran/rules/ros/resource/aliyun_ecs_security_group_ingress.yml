@@ -3,6 +3,8 @@ Type: Resource
 ResourceType:
   From: ALIYUN::ECS::SecurityGroupIngress
   To: alicloud_security_group_rule
+  BuiltInProperties:
+    type: ingress
 Properties:
   Description:
     To: description
@@ -19,15 +21,15 @@ Properties:
   SecurityGroupId:
     To: security_group_id
   Ipv6SourceCidrIp:
-    Ignore: true
+    To: ipv6_cidr_ip
   SourcePrefixListId:
-    Ignore: true
+    To: prefix_list_id
   SourceCidrIp:
-    Ignore: true
+    To: cidr_ip
   SourcePortRange:
-    Ignore: true
+    To: port_range
   SourceGroupId:
-    Ignore: true
+    To: source_security_group_id
   SourceGroupOwnerId:
-    Ignore: true
+    To: source_group_owner_account
 Attributes: {}

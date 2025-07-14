@@ -8,33 +8,7 @@ from rostran.providers.ros.yaml_util import yaml
 
 
 RESULT_PATH = os.path.abspath("terraform/alicloud")
-
-
-class TestROS2TF:
-
-    def __enter__(self):
-        if not os.path.exists(RESULT_PATH):
-            os.makedirs(RESULT_PATH, exist_ok=True)
-        else:
-            for filename in os.listdir(RESULT_PATH):
-                if filename.endswith('.tf'):
-                    file_path = os.path.join(RESULT_PATH, filename)
-                    os.unlink(file_path)
-        tf = TerraformCommand(RESULT_PATH)
-        tf_flag = os.path.join(RESULT_PATH, ".terraform")
-        tf_flag2 = os.path.join(RESULT_PATH, ".terraform.lock.hcl")
-        if not os.path.exists(tf_flag) or not os.path.exists(tf_flag2):
-            tf.init(check=True)
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        tf = TerraformCommand(RESULT_PATH)
-        try:
-            tf.validate(check=True)
-            print("terraform validate success!")
-        except TerraformCommandError as ex:
-            print("terraform validate failed!")
-            print(ex.stdout)
-            raise ex
+ROS_TEMPLATE_DIR = os.path.abspath("ros_templates")
 
 
 tpl = '''
@@ -171,7 +145,6 @@ Outputs:
     Description: The cidr block of vswitch.
 '''
 
-
 tpl_with_resources = '''
 ROSTemplateFormatVersion: '2015-09-01'
 Parameters:
@@ -223,6 +196,123 @@ Outputs:
       Ref: Vpc3
 '''
 
+pseudo_parameter_tpl = """
+ROSTemplateFormatVersion: '2015-09-01'
+Parameters:
+  Names:
+    Type: CommaDelimitedList
+    Default: name1,name2
+Resources:
+  Vpc:
+    Type: ALIYUN::ECS::VPC
+    Properties:
+      VpcName:
+        Fn::Select:
+          - 0
+          - Ref: Names
+  EcsInstance:
+    Type: ALIYUN::ECS::InstanceGroup
+    Properties:
+      MaxAmount: 1
+      SystemDiskCategory: 
+        Ref: ALIYUN::NoValue
+      VpcId:
+        Fn::GetAtt:
+          - Vpc
+          - VpcId
+      SecurityGroupIds: 
+        - sg-ssss1
+        - sg-ssss2
+      ImageId: 
+        Ref: ALIYUN::Region
+      VSwitchId: vsw-xxxx
+      InstanceType: ecs.xxx
+      InternetMaxBandwidthOut: 5
+      ZoneId: xx
+      Description:
+        Fn::Sub: "${ALIYUN::StackName}-${ALIYUN::StackId}-${ALIYUN::Region}-${ALIYUN::AccountId}-${ALIYUN::TenantId}-${ALIYUN::ResourceGroupId}-${ALIYUN::NoValue}"
+"""
+
+run_command_tpl = """
+ROSTemplateFormatVersion: '2015-09-01'
+Parameters:
+  BaiLianApiKey:
+    Type: String
+Resources:
+  InstanceRunCommand:
+    Type: ALIYUN::ECS::RunCommand
+    Properties:
+      InstanceIds: 
+        - i-xxxx1
+        - i-xxxx2
+      CommandContent:
+        Fn::Sub:
+          - |
+            #!/bin/bash
+            cat << EOF >> ~/.bash_profile
+            export ROS_DEPLOY=true
+            export BAILIAN_API_KEY=${ApiKey}
+            EOF
+            source ~/.bash_profile
+            curl -fsSL https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/install-script/ai-security/install.sh | bash
+          - ApiKey:
+              Fn::Jq:
+                - First
+                - .Key
+                - Ref: BaiLianApiKey
+      Type: RunShellScript
+      Timeout: '2400'
+      Sync: true
+"""
+
+security_group_tpl = """
+ROSTemplateFormatVersion: '2015-09-01'
+Parameters:
+  CommonName:
+    Type: String
+    Default: HZ
+Resources:
+  SecurityGroup:
+    Type: ALIYUN::ECS::SecurityGroup
+    Properties:
+      SecurityGroupIngress:
+        - Priority: 100
+          PortRange: 80/80
+          NicType: internet
+          SourceCidrIp: 0.0.0.0/0
+          IpProtocol: tcp
+      VpcId: vpc-xxxx
+      SecurityGroupName:
+        Fn::Sub: SG_${CommonName}
+"""
+
+
+class TestROS2TF:
+
+    def __enter__(self):
+        if not os.path.exists(RESULT_PATH):
+            os.makedirs(RESULT_PATH, exist_ok=True)
+        else:
+            for filename in os.listdir(RESULT_PATH):
+                if filename.endswith('.tf'):
+                    file_path = os.path.join(RESULT_PATH, filename)
+                    os.unlink(file_path)
+        tf = TerraformCommand(RESULT_PATH)
+        tf_flag = os.path.join(RESULT_PATH, ".terraform")
+        tf_flag2 = os.path.join(RESULT_PATH, ".terraform.lock.hcl")
+        if not os.path.exists(tf_flag) or not os.path.exists(tf_flag2):
+            tf.init(check=True)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        tf = TerraformCommand(RESULT_PATH)
+        try:
+            tf.validate(check=True)
+            print("terraform validate success!")
+        except TerraformCommandError as ex:
+            print("terraform validate failed!")
+            print(ex.stdout)
+            raise ex
+
 
 def _test_tpl():
     source = yaml.load(tpl)
@@ -237,3 +327,26 @@ def _test_tpl_with_conditions():
     with TestROS2TF():
         template.transform()
 
+
+def _test_solution_245():
+    with open(f"{ROS_TEMPLATE_DIR}/technical_solution_245.yaml", 'r') as f:
+        content = yaml.load(f)
+    template = ROS2TerraformTemplate.initialize(content)
+    template.transform()
+
+
+def _test_tpl_pseudo_parameter():
+    source = yaml.load(pseudo_parameter_tpl)
+    template = ROS2TerraformTemplate.initialize(source)
+    template.transform()
+
+
+def _test_run_command():
+    source = yaml.load(run_command_tpl)
+    template = ROS2TerraformTemplate.initialize(source)
+    template.transform()
+
+def _test_security_group_tpl():
+    source = yaml.load(security_group_tpl)
+    template = ROS2TerraformTemplate.initialize(source)
+    template.transform()

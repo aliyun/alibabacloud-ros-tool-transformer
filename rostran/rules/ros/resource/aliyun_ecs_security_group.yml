@@ -20,7 +20,41 @@ Properties:
   SecurityGroupEgress:
     Ignore: true
   SecurityGroupIngress:
-    Ignore: true
+    ToResources:
+      ResourceType:
+        From: ALIYUN::ECS::SecurityGroup.SecurityGroupIngress
+        To: alicloud_security_group_rule
+        BuiltInProperties:
+          security_group_id:
+            Value: alicloud_security_group.id
+            ValueType: ResolveAttribute
+          type:
+            Value: ingress
+      Properties:
+        Description:
+          To: description
+        IpProtocol:
+          To: ip_protocol
+        NicType:
+          To: nic_type
+        Policy:
+          To: policy
+        PortRange:
+          To: port_range
+        Priority:
+          To: priority
+        Ipv6SourceCidrIp:
+          To: ipv6_cidr_ip
+        SourcePrefixListId:
+          To: prefix_list_id
+        SourceCidrIp:
+          To: cidr_ip
+        SourcePortRange:
+          To: port_range
+        SourceGroupId:
+          To: source_security_group_id
+        SourceGroupOwnerId:
+          To: source_group_owner_account
 Attributes:
   SecurityGroupId:
     To: id
