@@ -238,12 +238,14 @@ class ResourceRule(Rule):
         attributes,
         target_resource_type=None,
         handler=None,
+        built_in_properties=None
     ):
         super().__init__(version, type, rule_id)
         self.properties = properties
         self.attributes = attributes
         self.target_resource_type = target_resource_type
         self.handler = handler
+        self.built_in_properties = built_in_properties
 
     @classmethod
     def initialize_from_info(cls, path, data, version, type):
@@ -252,6 +254,7 @@ class ResourceRule(Rule):
             InvalidRuleSchema(path=path, reason=f"{cls.RESOURCE} type should be dict")
         rule_id = resource_type["From"]
         target_resource_type = resource_type.get("To")
+        built_in_properties = resource_type.get("BuiltInProperties")
 
         properties = data.get(cls.PROPERTIES, {})
         if not isinstance(properties, dict):
@@ -273,6 +276,7 @@ class ResourceRule(Rule):
             attributes,
             target_resource_type,
             handler_func,
+            built_in_properties
         )
 
 

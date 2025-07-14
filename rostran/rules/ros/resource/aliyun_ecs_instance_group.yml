@@ -150,7 +150,8 @@ Properties:
   ZoneId:
     To: zone_id
   SecurityGroupId:
-    Ignore: true
+    To: security_group_ids
+    Handler: handle_one_line_list
   PrivateIpAddress:
     Ignore: true
   SystemDiskBurstingEnabled:
