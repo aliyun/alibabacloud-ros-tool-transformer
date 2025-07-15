@@ -329,7 +329,7 @@ def _test_tpl_with_conditions():
 
 
 def _test_solution_245():
-    with open(f"{ROS_TEMPLATE_DIR}/technical_solution_245.yaml", 'r') as f:
+    with open(f"{ROS_TEMPLATE_DIR}/technical_solution.yml", 'r') as f:
         content = yaml.load(f)
     template = ROS2TerraformTemplate.initialize(content)
     template.transform()
