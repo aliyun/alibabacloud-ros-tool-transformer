@@ -8,6 +8,8 @@ Properties:
     To: AutoPublishRouteEnabled
   cen_id:
     To: CenId
+  charge_type:
+    Ignore: true
   status:
     Ignore: true
   tags:
@@ -29,6 +31,10 @@ Attributes:
   id:
     To: TransitRouterAttachmentId
   auto_publish_route_enabled:
+    Ignore: true
+  create_time:
+    Ignore: true
+  region_id:
     Ignore: true
   status:
     Ignore: true

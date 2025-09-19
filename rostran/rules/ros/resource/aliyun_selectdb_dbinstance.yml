@@ -1,0 +1,44 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SELECTDB::DBInstance
+  To: alicloud_selectdb_db_instance
+Properties:
+  AccountPassword:
+    To: admin_pass
+  CacheSize:
+    To: cache_size
+  DBInstanceClass:
+    To: db_instance_class
+  DBInstanceDescription:
+    To: db_instance_description
+  SecurityIPList:
+    To: desired_security_ip_lists
+    Type: List
+  EngineVersion:
+    To: engine_minor_version
+  ChargeType:
+    To: payment_type
+  Period:
+    To: period
+  UsedTime:
+    To: period_time
+  Tags:
+    To: tags
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  ConnectionString:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  Engine:
+    Ignore: true
+Attributes:
+  DBInstanceId:
+    To: id
+  VpcConnectionString:
+    Ignore: true

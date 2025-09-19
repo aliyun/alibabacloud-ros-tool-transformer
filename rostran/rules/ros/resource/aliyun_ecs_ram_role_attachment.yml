@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ECS::RamRoleAttachment
+  To: alicloud_ram_role_attachment
+Properties:
+  InstanceIds:
+    To: instance_ids
+  RamRoleName:
+    To: role_name
+  Policy:
+    Ignore: true
+Attributes:
+  RamRoleName:
+    Ignore: true
+  InstanceIds:
+    Ignore: true

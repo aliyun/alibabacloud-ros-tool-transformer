@@ -4,10 +4,24 @@ ResourceType:
   From: alicloud_alb_server_group
   To: ALIYUN::ALB::ServerGroup
 Properties:
+  connection_drain_config:
+    To: ConnectionDrainConfig
+    Type: Map
+    Schema:
+      connection_drain_enabled:
+        To: ConnectionDrainEnabled
+      connection_drain_timeout:
+        To: ConnectionDrainTimeout
+  cross_zone_enabled:
+    To: CrossZoneEnabled
   dry_run:
     Ignore: true
   health_check_config:
     Ignore: true
+  health_check_template_id:
+    Ignore: true
+  ipv6_enabled:
+    To: Ipv6Enabled
   protocol:
     To: Protocol
   resource_group_id:
@@ -20,6 +34,16 @@ Properties:
     To: ServerGroupType
   servers:
     Ignore: true
+  service_name:
+    To: ServiceName
+  slow_start_config:
+    To: SlowStartConfig
+    Type: Map
+    Schema:
+      slow_start_duration:
+        To: SlowStartDuration
+      slow_start_enabled:
+        To: SlowStartEnabled
   status:
     Ignore: true
   sticky_session_config:
@@ -27,11 +51,23 @@ Properties:
   tags:
     To: Tags
     Handler: tags_dict_to_list
+  uch_config:
+    To: UchConfig
+    Type: Map
+    Schema:
+      type:
+        To: Type
+      value:
+        To: Value
+  upstream_keepalive_enabled:
+    To: UpstreamKeepaliveEnabled
   vpc_id:
     To: VpcId
 Attributes:
   id:
     To: ServerGroupId
+  create_time:
+    Ignore: true
   health_check_config:
     Ignore: true
   protocol:

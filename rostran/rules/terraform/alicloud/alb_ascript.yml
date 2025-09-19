@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   ascript_name:
     Ignore: true
+  dry_run:
+    Ignore: true
   enabled:
     To: Enabled
   ext_attribute_enabled:

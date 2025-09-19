@@ -30,6 +30,8 @@ Properties:
     To: RenewPeriod
   renew_status:
     To: RenewStatus
+  renewal_period_unit:
+    To: PeriodUnit
   secret_num:
     To: SecretNum
   spec:
@@ -52,6 +54,8 @@ Attributes:
   ca_certificate_chain_pem:
     Ignore: true
   create_time:
+    Ignore: true
+  end_date:
     Ignore: true
   instance_id:
     To: InstanceId

@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ebs_solution_instance
+  To: ALIYUN::EBS::DiskReplicaPair
+Properties:
+  description:
+    To: Description
+  parameters:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  solution_id:
+    Ignore: true
+  solution_instance_name:
+    To: DiskReplicaPairName
+Attributes:
+  id:
+    To: ReplicaPairId
+  create_time:
+    To: CreateTime
+  status:
+    Ignore: true

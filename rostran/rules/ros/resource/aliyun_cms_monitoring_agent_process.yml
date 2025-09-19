@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CMS::MonitoringAgentProcess
+  To: alicloud_cloud_monitor_service_group_monitoring_agent_process
+Properties:
+  ProcessName:
+    To: process_name
+  ProcessUser:
+    Ignore: true
+  InstanceId:
+    Ignore: true
+Attributes:
+  Id:
+    Ignore: true

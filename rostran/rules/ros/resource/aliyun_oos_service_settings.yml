@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::ServiceSettings
+  To: alicloud_oos_service_setting
+Properties:
+  DeliveryOssBucketName:
+    To: delivery_oss_bucket_name
+  DeliveryOssEnabled:
+    To: delivery_oss_enabled
+  DeliveryOssKeyPrefix:
+    To: delivery_oss_key_prefix
+  DeliverySlsEnabled:
+    To: delivery_sls_enabled
+  DeliverySlsProjectName:
+    To: delivery_sls_project_name
+  RdcEnterpriseId:
+    Ignore: true
+Attributes: {}

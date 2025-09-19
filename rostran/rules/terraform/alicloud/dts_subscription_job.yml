@@ -1,0 +1,87 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dts_subscription_job
+  To: ALIYUN::DTS::SubscriptionJob2
+Properties:
+  checkpoint:
+    To: Checkpoint
+  compute_unit:
+    Ignore: true
+  database_count:
+    Ignore: true
+  db_list:
+    To: DbList
+  delay_notice:
+    To: DelayNotice
+  delay_phone:
+    To: DelayPhone
+  delay_rule_time:
+    To: DelayRuleTime
+  destination_endpoint_engine_name:
+    Ignore: true
+  destination_region:
+    Ignore: true
+  dts_instance_id:
+    To: DtsInstanceId
+  dts_job_name:
+    To: DtsJobName
+  error_notice:
+    To: ErrorNotice
+  error_phone:
+    To: ErrorPhone
+  instance_class:
+    Ignore: true
+  payment_duration:
+    Ignore: true
+  payment_duration_unit:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  reserve:
+    To: Reserve
+  source_endpoint_database_name:
+    Ignore: true
+  source_endpoint_engine_name:
+    Ignore: true
+  source_endpoint_instance_id:
+    Ignore: true
+  source_endpoint_instance_type:
+    Ignore: true
+  source_endpoint_ip:
+    Ignore: true
+  source_endpoint_oracle_sid:
+    Ignore: true
+  source_endpoint_owner_id:
+    Ignore: true
+  source_endpoint_password:
+    Ignore: true
+  source_endpoint_port:
+    Ignore: true
+  source_endpoint_region:
+    Ignore: true
+  source_endpoint_role:
+    Ignore: true
+  source_endpoint_user_name:
+    Ignore: true
+  status:
+    To: Status
+  subscription_data_type_ddl:
+    Ignore: true
+  subscription_data_type_dml:
+    Ignore: true
+  subscription_instance_network_type:
+    Ignore: true
+  subscription_instance_vpc_id:
+    Ignore: true
+  subscription_instance_vswitch_id:
+    Ignore: true
+  sync_architecture:
+    Ignore: true
+  synchronization_direction:
+    Ignore: true
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

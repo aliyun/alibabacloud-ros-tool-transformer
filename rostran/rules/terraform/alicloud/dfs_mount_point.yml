@@ -39,6 +39,8 @@ Attributes:
     To: MountPointId
   network_type:
     Ignore: true
+  region_id:
+    Ignore: true
   status:
     Ignore: true
   vpc_id:

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::VcoRouteEntry
+  To: alicloud_vpn_gateway_vco_route
+Properties:
+  NextHop:
+    To: next_hop
+  RouteDest:
+    To: route_dest
+  VpnConnectionId:
+    To: vpn_connection_id
+  Weight:
+    To: weight
+  Description:
+    Ignore: true
+Attributes:
+  VpnConnectionId:
+    Ignore: true

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_custom_scene_policy
+  To: ALIYUN::ESA::CustomScenePolicy
+Properties:
+  create_time:
+    To: CreateTime
+  custom_scene_policy_name:
+    To: CustomScenePolicyName
+  end_time:
+    To: EndTime
+  site_ids:
+    To: Objects
+  status:
+    Ignore: true
+  template:
+    To: Template
+Attributes:
+  id:
+    To: PolicyId

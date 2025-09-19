@@ -22,6 +22,8 @@ Properties:
     To: EnableTunnelsBgp
   health_check_config:
     Ignore: true
+  ike_auth_alg:
+    Ignore: true
   ike_config:
     To: IkeConfig
     Type: Map
@@ -44,6 +46,18 @@ Properties:
         To: IkeVersion
       psk:
         To: Psk
+  ike_enc_alg:
+    Ignore: true
+  ike_lifetime:
+    Ignore: true
+  ike_mode:
+    Ignore: true
+  ike_pfs:
+    Ignore: true
+  ike_version:
+    Ignore: true
+  ipsec_auth_alg:
+    Ignore: true
   ipsec_config:
     To: IpsecConfig
     Schema:
@@ -55,11 +69,27 @@ Properties:
         To: IpsecLifetime
       ipsec_pfs:
         To: IpsecPfs
+  ipsec_enc_alg:
+    Ignore: true
+  ipsec_lifetime:
+    Ignore: true
+  ipsec_pfs:
+    Ignore: true
+  local_asn:
+    Ignore: true
+  local_bgp_ip:
+    Ignore: true
+  local_id:
+    Ignore: true
   local_subnet:
     To: LocalSubnet
   name:
     To: Name
   network_type:
+    Ignore: true
+  psk:
+    Ignore: true
+  remote_id:
     Ignore: true
   remote_subnet:
     To: RemoteSubnet
@@ -68,6 +98,8 @@ Properties:
   status:
     Ignore: true
   tags:
+    Ignore: true
+  tunnel_cidr:
     Ignore: true
   tunnel_options_specification:
     To: TunnelOptionsSpecification

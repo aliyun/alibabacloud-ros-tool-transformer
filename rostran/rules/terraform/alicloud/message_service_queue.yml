@@ -8,6 +8,16 @@ Properties:
     Ignore: true
   delay_seconds:
     To: DelaySeconds
+  dlq_policy:
+    To: DlqPolicy
+    Type: Map
+    Schema:
+      dead_letter_target_queue:
+        To: DeadLetterTargetQueue
+      enabled:
+        To: Enabled
+      max_receive_count:
+        To: MaxReceiveCount
   logging_enabled:
     To: LoggingEnabled
   maximum_message_size:
@@ -18,6 +28,9 @@ Properties:
     To: PollingWaitSeconds
   queue_name:
     To: QueueName
+  tags:
+    To: Tags
+    Type: List
   visibility_timeout:
     To: VisibilityTimeout
 Attributes:

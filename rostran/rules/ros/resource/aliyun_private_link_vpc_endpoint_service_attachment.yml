@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PrivateLink::VpcEndpointServiceAttachment
+  To: alicloud_privatelink_vpc_endpoint_connection
+Properties:
+  ResourceId:
+    To: endpoint_id
+  ServiceId:
+    To: service_id
+  ResourceType:
+    Ignore: true
+  ZoneId:
+    Ignore: true
+Attributes:
+  ResourceId:
+    Ignore: true
+  ResourceType:
+    Ignore: true
+  ServiceId:
+    Ignore: true

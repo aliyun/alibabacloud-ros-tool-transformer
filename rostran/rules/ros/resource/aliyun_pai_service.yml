@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PAI::Service
+  To: alicloud_pai_service
+Properties:
+  Develop:
+    To: develop
+  ServiceConfig:
+    To: service_config
+  Labels:
+    To: tags
+Attributes:
+  CreateTime:
+    To: create_time
+  TotalInstance:
+    Ignore: true
+  Namespace:
+    Ignore: true
+  Image:
+    Ignore: true
+  AccessToken:
+    Ignore: true
+  InternetEndpoint:
+    Ignore: true
+  ServiceConfig:
+    Ignore: true
+  Message:
+    Ignore: true
+  SafetyLock:
+    Ignore: true
+  PendingInstance:
+    Ignore: true
+  Cpu:
+    Ignore: true
+  Role:
+    Ignore: true
+  CurrentVersion:
+    Ignore: true
+  ResourceAlias:
+    Ignore: true
+  IntranetEndpoint:
+    Ignore: true
+  Weight:
+    Ignore: true
+  Reason:
+    Ignore: true
+  ServiceGroup:
+    Ignore: true
+  Memory:
+    Ignore: true
+  Resource:
+    Ignore: true
+  RoleAttrs:
+    Ignore: true
+  ServiceUid:
+    Ignore: true
+  ExtraData:
+    Ignore: true
+  Labels:
+    Ignore: true
+  LatestVersion:
+    Ignore: true
+  ParentUid:
+    Ignore: true
+  RunningInstance:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  Gpu:
+    Ignore: true
+  ServiceName:
+    Ignore: true
+  CallerUid:
+    Ignore: true

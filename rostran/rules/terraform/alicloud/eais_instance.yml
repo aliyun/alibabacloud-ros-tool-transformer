@@ -4,24 +4,44 @@ ResourceType:
   From: alicloud_eais_instance
   To: ALIYUN::EAIS::Instance
 Properties:
+  category:
+    Ignore: true
+  environment_var:
+    To: EnvironmentVar
+    Type: List
+    Schema:
+      key:
+        To: Key
+      value:
+        To: Value
   force:
+    Ignore: true
+  image:
     Ignore: true
   instance_name:
     To: InstanceName
   instance_type:
     To: InstanceType
+  resource_group_id:
+    To: ResourceGroupId
   security_group_id:
     To: SecurityGroupId
   status:
+    Ignore: true
+  tags:
     Ignore: true
   vswitch_id:
     To: VSwitchId
 Attributes:
   id:
     To: InstanceId
+  create_time:
+    To: CreateTime
   instance_name:
     To: InstanceName
   instance_type:
     To: InstanceType
+  region_id:
+    To: ZoneId
   status:
     Ignore: true

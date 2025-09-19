@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dts_job_monitor_rule
+  To: ALIYUN::DTS::MigrationJob2
+Properties:
+  delay_rule_time:
+    To: DelayRuleTime
+  dts_job_id:
+    To: DtsJobId
+  phone:
+    To: ErrorPhone
+  state:
+    To: ErrorNotice
+  type:
+    To: ErrorNotice
+Attributes:
+  id:
+    To: DtsJobId

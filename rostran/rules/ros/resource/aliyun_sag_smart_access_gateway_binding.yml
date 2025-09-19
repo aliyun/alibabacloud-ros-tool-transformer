@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::SmartAccessGatewayBinding
+  To: alicloud_cloud_connect_network_attachment
+Properties:
+  CcnId:
+    To: ccn_id
+  SmartAGId:
+    To: sag_id
+Attributes:
+  SmartAGId:
+    Ignore: true

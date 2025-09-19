@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pai_service
+  To: ALIYUN::PAI::Service
+Properties:
+  develop:
+    To: Develop
+  service_config:
+    To: ServiceConfig
+  status:
+    Ignore: true
+  tags:
+    To: Labels
+  workspace_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime
+  region_id:
+    Ignore: true

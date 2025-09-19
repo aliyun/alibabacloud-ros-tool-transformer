@@ -27,6 +27,10 @@ Attributes:
     To: TransitRouterId
   cen_id:
     To: CenId
+  create_time:
+    Ignore: true
+  region_id:
+    Ignore: true
   status:
     Ignore: true
   support_multicast:

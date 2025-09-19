@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ots_secondary_index
+  To: ALIYUN::OTS::SearchIndex
+Properties:
+  defined_columns:
+    Ignore: true
+  include_base_data:
+    Ignore: true
+  index_name:
+    To: IndexName
+  index_type:
+    Ignore: true
+  instance_name:
+    To: InstanceName
+  primary_keys:
+    Ignore: true
+  table_name:
+    To: TableName
+Attributes:
+  id:
+    Ignore: true

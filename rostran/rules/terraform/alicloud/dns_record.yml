@@ -25,6 +25,8 @@ Properties:
 Attributes:
   id:
     To: RecordId
+  Locked:
+    Ignore: true
   host_record:
     Ignore: true
   locked:

@@ -129,6 +129,8 @@ Properties:
             To: ReadOnly
       working_dir:
         To: WorkingDir
+  cost_optimization:
+    To: CostOptimization
   cpu:
     To: Cpu
   cpu_options_core:
@@ -137,6 +139,14 @@ Properties:
     To: CpuOptionsThreadsPerCore
   description:
     Ignore: true
+  dns_config_options:
+    To: DnsConfigOptions
+    Type: List
+    Schema:
+      name:
+        To: Name
+      value:
+        To: Value
   dns_policy:
     To: DnsPolicy
   egress_bandwidth:
@@ -210,6 +220,8 @@ Properties:
         Ignore: true
       working_dir:
         To: WorkingDir
+  instance_family_level:
+    To: InstanceFamilyLevel
   instance_types:
     To: InstanceTypes
     Type: List
@@ -229,6 +241,14 @@ Properties:
     To: ScalingConfigurationName
   scaling_group_id:
     To: ScalingGroupId
+  security_context_sysctls:
+    To: SecurityContextSysctls
+    Type: List
+    Schema:
+      name:
+        To: Name
+      value:
+        To: Value
   security_group_id:
     To: SecurityGroupId
   spot_price_limit:

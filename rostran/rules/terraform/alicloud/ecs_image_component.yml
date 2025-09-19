@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   component_type:
     To: ComponentType
+  component_version:
+    Ignore: true
   content:
     To: Content
   create_time:

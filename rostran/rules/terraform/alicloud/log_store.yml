@@ -6,8 +6,12 @@ ResourceType:
 Properties:
   append_meta:
     To: AppendMeta
+  arn:
+    Ignore: true
   auto_split:
     To: AutoSplit
+  cmk_key_id:
+    Ignore: true
   create_time:
     Ignore: true
   enable_web_tracking:
@@ -32,6 +36,8 @@ Properties:
     To: ProjectName
   project_name:
     To: ProjectName
+  region_id:
+    Ignore: true
   retention_period:
     To: TTL
   shard_count:

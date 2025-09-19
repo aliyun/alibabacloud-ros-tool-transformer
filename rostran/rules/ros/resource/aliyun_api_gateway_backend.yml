@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ApiGateway::Backend
+  To: alicloud_api_gateway_backend
+Properties:
+  BackendName:
+    To: backend_name
+  BackendType:
+    To: backend_type
+  Description:
+    To: description
+  Tags:
+    Ignore: true
+Attributes:
+  BackendId:
+    To: id

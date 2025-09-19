@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PAI::Experiment
+  To: alicloud_pai_workspace_experiment
+Properties:
+  Accessibility:
+    To: accessibility
+  ArtifactUri:
+    To: artifact_uri
+  ExperimentName:
+    To: experiment_name
+  WorkspaceId:
+    To: workspace_id
+Attributes:
+  CreateTime:
+    To: create_time
+  ArtifactUri:
+    Ignore: true
+  OwnerId:
+    Ignore: true
+  ExperimentName:
+    Ignore: true
+  ExperimentId:
+    Ignore: true
+  TensorboardLogUri:
+    Ignore: true
+  Labels:
+    Ignore: true
+  GmtModifiedTime:
+    Ignore: true
+  Accessibility:
+    Ignore: true
+  UserId:
+    Ignore: true
+  WorkspaceId:
+    Ignore: true

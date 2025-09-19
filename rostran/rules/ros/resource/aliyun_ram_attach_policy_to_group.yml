@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::AttachPolicyToGroup
+  To: alicloud_ram_group_policy_attachment
+Properties:
+  GroupName:
+    To: group_name
+  PolicyName:
+    To: policy_name
+  PolicyType:
+    To: policy_type
+Attributes:
+  PolicyName:
+    Ignore: true
+  GroupName:
+    Ignore: true

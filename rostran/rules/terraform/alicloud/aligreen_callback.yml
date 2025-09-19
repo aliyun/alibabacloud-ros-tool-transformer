@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_aligreen_callback
+  To: ALIYUN::Aligreen::Callback
+Properties:
+  callback_name:
+    To: CallbackName
+  callback_suggestions:
+    To: CallbackSuggestions
+    Type: List
+  callback_types:
+    To: CallbackTypes
+    Type: List
+  callback_url:
+    To: CallbackUrl
+  crypt_type:
+    To: CryptType
+Attributes:
+  id:
+    To: CallbackId
+  create_time:
+    Ignore: true

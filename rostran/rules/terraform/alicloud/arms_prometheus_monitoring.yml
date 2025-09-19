@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_prometheus_monitoring
+  To: ALIYUN::ARMS::ManagedPrometheus
+Properties:
+  cluster_id:
+    To: ClusterId
+  config_yaml:
+    Ignore: true
+  status:
+    Ignore: true
+  type:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  monitoring_name:
+    Ignore: true

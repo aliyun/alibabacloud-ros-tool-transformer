@@ -8,14 +8,25 @@ Properties:
     Ignore: true
   description:
     Ignore: true
+  dev_environment_enabled:
+    Ignore: true
+  dev_role_disabled:
+    To: DisableDevelopment
   display_name:
+    Ignore: true
+  pai_task_enabled:
     Ignore: true
   project_mode:
     To: ProjectMode
   project_name:
     To: ProjectName
+  resource_group_id:
+    To: ResourceGroupId
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: ProjectId

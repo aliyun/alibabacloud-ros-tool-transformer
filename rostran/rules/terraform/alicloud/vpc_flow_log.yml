@@ -16,6 +16,8 @@ Properties:
     Ignore: true
   flow_log_name:
     To: FlowLogName
+  ip_version:
+    Ignore: true
   log_store_name:
     To: LogStoreName
   project_name:
@@ -53,6 +55,8 @@ Attributes:
     To: LogStoreName
   project_name:
     To: ProjectName
+  region_id:
+    Ignore: true
   resource_group_id:
     Ignore: true
   resource_id:

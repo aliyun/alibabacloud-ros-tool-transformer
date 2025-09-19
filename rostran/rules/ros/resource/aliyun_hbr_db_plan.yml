@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::DbPlan
+  To: alicloud_hbr_hana_backup_plan
+Properties:
+  InstanceUuid:
+    To: cluster_id
+  Source:
+    To: database_name
+  DbPlanName:
+    To: plan_name
+  FullPlan:
+    To: schedule
+  VaultId:
+    To: vault_id
+  IncPlan:
+    Ignore: true
+  CumulativePlan:
+    Ignore: true
+  MaxRetrySeconds:
+    Ignore: true
+  Options:
+    Ignore: true
+  HostUuid:
+    Ignore: true
+  MaxRateLimit:
+    Ignore: true
+  SourceType:
+    Ignore: true
+  ContinuousPlan:
+    Ignore: true
+  LogPlan:
+    Ignore: true
+Attributes:
+  PlanId:
+    To: plan_id
+  LogUuid:
+    Ignore: true
+  DbPlanName:
+    Ignore: true
+  InstanceUuid:
+    Ignore: true
+  FullPlan:
+    Ignore: true
+  MaxRetrySeconds:
+    Ignore: true
+  Options:
+    Ignore: true
+  ContinuousUuid:
+    Ignore: true
+  SourceType:
+    Ignore: true
+  LogPlan:
+    Ignore: true
+  VaultId:
+    Ignore: true
+  IncUuid:
+    Ignore: true
+  IncPlan:
+    Ignore: true
+  CumulativePlan:
+    Ignore: true
+  FullUuid:
+    Ignore: true
+  MaxRateLimit:
+    Ignore: true
+  HostUuid:
+    Ignore: true
+  Target:
+    Ignore: true
+  CumulativeUuid:
+    Ignore: true
+  ContinuousPlan:
+    Ignore: true

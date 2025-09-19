@@ -33,6 +33,8 @@ Attributes:
     Ignore: true
   priority:
     Ignore: true
+  region_id:
+    Ignore: true
   rw_access_type:
     Ignore: true
   source_cidr_ip:

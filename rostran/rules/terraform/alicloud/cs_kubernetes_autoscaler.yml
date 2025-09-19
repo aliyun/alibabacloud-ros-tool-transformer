@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cs_kubernetes_autoscaler
+  To: ALIYUN::CS::ClusterNodePool
+Properties:
+  cluster_id:
+    To: ClusterId
+  nodepools:
+    To: ScalingGroup
+    Type: Map
+    Schema:
+      id:
+        Ignore: true
+      labels:
+        Ignore: true
+      taints:
+        Ignore: true
+  utilization:
+    Ignore: true

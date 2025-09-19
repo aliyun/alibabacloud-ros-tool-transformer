@@ -1,0 +1,43 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_realtime_compute_vvp_instance
+  To: ALIYUN::Flink::Instance
+Properties:
+  bucket:
+    To: Bucket
+  duration:
+    To: Duration
+  payment_type:
+    To: ChargeType
+  pricing_cycle:
+    To: PricingCycle
+  resource_group_id:
+    Ignore: true
+  resource_spec:
+    To: ResourceSpec
+    Type: Map
+    Schema:
+      cpu:
+        To: Cpu
+      memory_gb:
+        To: MemoryGB
+  storage:
+    Ignore: true
+  tags:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_ids:
+    To: VSwitchIds
+  vvp_instance_name:
+    To: InstanceName
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: InstanceId
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

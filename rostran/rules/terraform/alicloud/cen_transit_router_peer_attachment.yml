@@ -32,6 +32,9 @@ Properties:
     Ignore: true
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Type: List
   transit_router_attachment_description:
     To: TransitRouterAttachmentDescription
   transit_router_attachment_id:
@@ -40,6 +43,8 @@ Properties:
     To: TransitRouterAttachmentName
   transit_router_id:
     To: TransitRouterId
+  transit_router_peer_attachment_name:
+    To: TransitRouterAttachmentName
 Attributes:
   id:
     Ignore: true
@@ -61,6 +66,8 @@ Attributes:
     To: PeerTransitRouterId
   peer_transit_router_region_id:
     To: PeerTransitRouterRegionId
+  region_id:
+    Ignore: true
   resource_type:
     To: ResourceType
   status:

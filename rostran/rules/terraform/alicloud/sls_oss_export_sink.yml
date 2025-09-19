@@ -1,0 +1,64 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_oss_export_sink
+  To: ALIYUN::SLS::OssExport
+Properties:
+  bucket:
+    Ignore: true
+  buffer_interval:
+    Ignore: true
+  buffer_size:
+    Ignore: true
+  compression_type:
+    Ignore: true
+  configuration:
+    To: Configuration
+    Type: Map
+    Schema:
+      from_time:
+        To: FromTime
+      logstore:
+        To: Logstore
+      role_arn:
+        To: RoleArn
+      sink:
+        To: Sink
+        Type: Map
+      to_time:
+        To: ToTime
+  content_detail:
+    Ignore: true
+  content_type:
+    Ignore: true
+  delay_seconds:
+    Ignore: true
+  description:
+    To: Description
+  display_name:
+    To: DisplayName
+  endpoint:
+    Ignore: true
+  job_name:
+    To: ExportName
+  path_format:
+    Ignore: true
+  path_format_type:
+    Ignore: true
+  prefix:
+    Ignore: true
+  project:
+    To: ProjectName
+  role_arn:
+    Ignore: true
+  suffix:
+    Ignore: true
+  time_zone:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

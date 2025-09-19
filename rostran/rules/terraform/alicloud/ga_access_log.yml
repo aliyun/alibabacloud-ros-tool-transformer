@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_access_log
+  To: ALIYUN::GA::LogStoreToEndpointGroupAttachment
+Properties:
+  accelerator_id:
+    To: AcceleratorId
+  endpoint_group_id:
+    To: EndpointGroupIds
+    Type: List
+  listener_id:
+    To: ListenerId
+  sls_log_store_name:
+    To: SlsLogStoreName
+  sls_project_name:
+    To: SlsProjectName
+  sls_region_id:
+    To: SlsRegionId

@@ -1,0 +1,43 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbr_ecs_backup_plan
+  To: ALIYUN::HBR::DbPlan
+Properties:
+  backup_type:
+    Ignore: true
+  cross_account_role_name:
+    Ignore: true
+  cross_account_type:
+    Ignore: true
+  cross_account_user_id:
+    Ignore: true
+  detail:
+    Ignore: true
+  disabled:
+    Ignore: true
+  ecs_backup_plan_name:
+    To: DbPlanName
+  exclude:
+    Ignore: true
+  include:
+    Ignore: true
+  instance_id:
+    To: InstanceUuid
+  options:
+    To: Options
+  path:
+    Ignore: true
+  retention:
+    Ignore: true
+  schedule:
+    To: FullPlan
+  speed_limit:
+    Ignore: true
+  update_paths:
+    Ignore: true
+  vault_id:
+    To: VaultId
+Attributes:
+  id:
+    Ignore: true

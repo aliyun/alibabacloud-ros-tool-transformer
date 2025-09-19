@@ -24,6 +24,8 @@ Properties:
     To: Detail.Configuration.Condition
   dashboard:
     To: Detail.Configuration.Dashboard
+  email_list:
+    Ignore: true
   group_configuration:
     To: Detail.Configuration.GroupConfiguration
     Type: Map
@@ -49,6 +51,8 @@ Properties:
         To: Key
       value:
         To: Value
+  mobile_list:
+    Ignore: true
   mute_until:
     To: Detail.Configuration.MuteUntil
   no_data_fire:

@@ -14,8 +14,12 @@ Properties:
     To: GroupName
   sub_domain:
     Ignore: true
+  user_log_config:
+    Ignore: true
   vpc_domain:
     Ignore: true
+  vpc_intranet_enable:
+    To: VpcIntranetEnable
 Attributes:
   id:
     To: GroupId

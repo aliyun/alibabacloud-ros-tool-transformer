@@ -6,6 +6,12 @@ ResourceType:
 Properties:
   app_id:
     To: AppId
+  cert_id:
+    Ignore: true
+  loadbalancer_protocol:
+    Ignore: true
+  service_port:
+    Ignore: true
   slb_configs:
     Ignore: true
 Attributes:

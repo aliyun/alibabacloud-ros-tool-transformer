@@ -21,9 +21,13 @@ Properties:
 Attributes:
   id:
     To: AccessKeyId
+  create_time:
+    Ignore: true
   encrypted_secret:
     Ignore: true
   key_fingerprint:
     Ignore: true
+  secret:
+    To: AccessKeySecret
   status:
     To: Status

@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   instance_id:
     To: InstanceId
+  max_send_tps:
+    Ignore: true
   message_type:
     To: MessageType
   remark:
@@ -28,6 +30,8 @@ Attributes:
     To: InstanceId
   message_type:
     To: MessageType
+  region_id:
+    Ignore: true
   remark:
     Ignore: true
   status:

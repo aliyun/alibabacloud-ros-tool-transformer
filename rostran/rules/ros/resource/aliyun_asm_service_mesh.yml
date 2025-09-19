@@ -1,0 +1,143 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ASM::ServiceMesh
+  To: alicloud_service_mesh_service_mesh
+Properties:
+  GuestCluster:
+    To: cluster_ids
+  CustomizedPrometheus:
+    To: customized_prometheus
+  Edition:
+    To: edition
+  OpaEnabled:
+    To: enabled
+  PrometheusUrl:
+    To: prometheus_url
+  Name:
+    To: service_mesh_name
+  TraceSampling:
+    To: trace_sampling
+  ApiServerPublicEip:
+    Ignore: true
+  MSEEnabled:
+    Ignore: true
+  ExistingCaCert:
+    Ignore: true
+  GatewayAPIEnabled:
+    Ignore: true
+  ConfigSourceNacosID:
+    Ignore: true
+  ExistingCaType:
+    Ignore: true
+  CertChain:
+    Ignore: true
+  ExcludeOutboundPorts:
+    Ignore: true
+  AccessLogEnabled:
+    Ignore: true
+  LocalityLoadBalancing:
+    Ignore: true
+  Period:
+    Ignore: true
+  DNSProxyingEnabled:
+    Ignore: true
+  PilotLoadBalancerSpec:
+    Ignore: true
+  PilotPublicEip:
+    Ignore: true
+  ClusterSpec:
+    Ignore: true
+  Proxy:
+    Ignore: true
+  ControlPlaneLogProject:
+    Ignore: true
+  ExcludeInboundPorts:
+    Ignore: true
+  AccessLogProject:
+    Ignore: true
+  ExistingCaKey:
+    Ignore: true
+  MultiBufferEnabled:
+    Ignore: true
+  UseExistingCA:
+    Ignore: true
+  AccessLogFormat:
+    Ignore: true
+  DubboFilterEnabled:
+    Ignore: true
+  PlaygroundScene:
+    Ignore: true
+  ControlPlaneLogEnabled:
+    Ignore: true
+  MysqlFilterEnabled:
+    Ignore: true
+  KialiEnabled:
+    Ignore: true
+  AutoRenewPeriod:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  OutboundTrafficPolicy:
+    Ignore: true
+  ExcludeIPRanges:
+    Ignore: true
+  Telemetry:
+    Ignore: true
+  MultiBufferPollDelay:
+    Ignore: true
+  EnableAmbient:
+    Ignore: true
+  CustomizedZipkin:
+    Ignore: true
+  ConfigSourceEnabled:
+    Ignore: true
+  AccessLogServiceHost:
+    Ignore: true
+  WebAssemblyFilterEnabled:
+    Ignore: true
+  VSwitches:
+    Ignore: true
+  EnableACMG:
+    Ignore: true
+  CRAggregationEnabled:
+    Ignore: true
+  ExistingRootCaCert:
+    Ignore: true
+  IncludeIPRanges:
+    Ignore: true
+  EnableSDSServer:
+    Ignore: true
+  AuditProject:
+    Ignore: true
+  Tracing:
+    Ignore: true
+  LocalityLBConf:
+    Ignore: true
+  ExistingRootCaKey:
+    Ignore: true
+  ChargeType:
+    Ignore: true
+  EnableAudit:
+    Ignore: true
+  AccessLogServicePort:
+    Ignore: true
+  IstioVersion:
+    Ignore: true
+  AccessLogFile:
+    Ignore: true
+  FilterGatewayClusterConfig:
+    Ignore: true
+  AccessLogServiceEnabled:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  EnableCRHistory:
+    Ignore: true
+  ApiServerLoadBalancerSpec:
+    Ignore: true
+  OPA:
+    Ignore: true
+Attributes:
+  ServiceMeshId:
+    To: id

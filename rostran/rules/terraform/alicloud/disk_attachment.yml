@@ -11,6 +11,8 @@ Properties:
   instance_id:
     To: InstanceId
 Attributes:
+  id:
+    Ignore: true
   device_name:
     To: Device
   disk_id:

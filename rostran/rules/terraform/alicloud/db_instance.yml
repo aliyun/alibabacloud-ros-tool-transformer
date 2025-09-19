@@ -16,6 +16,8 @@ Properties:
     Ignore: true
   babelfish_port:
     Ignore: true
+  bursting_enabled:
+    To: BurstingEnabled
   ca_type:
     Ignore: true
   category:
@@ -28,6 +30,8 @@ Properties:
     Ignore: true
   client_crl_enabled:
     Ignore: true
+  cold_data_enabled:
+    To: ColdDataEnabled
   connection_string:
     Ignore: true
   connection_string_prefix:
@@ -86,6 +90,8 @@ Properties:
     Ignore: true
   node_id:
     Ignore: true
+  optimized_writes:
+    Ignore: true
   parameters:
     Ignore: true
   period:
@@ -96,6 +102,8 @@ Properties:
     To: Port
   private_ip_address:
     To: PrivateIpAddress
+  recovery_model:
+    Ignore: true
   released_keep_policy:
     To: ReleasedKeepPolicy
   replication_acl:
@@ -147,7 +155,11 @@ Properties:
     Ignore: true
   tcp_connection_type:
     Ignore: true
+  tde_encryption_key:
+    Ignore: true
   tde_status:
+    Ignore: true
+  template_id_list:
     Ignore: true
   upgrade_db_instance_kernel_version:
     Ignore: true
@@ -281,6 +293,8 @@ Attributes:
   tcp_connection_type:
     Ignore: true
   tde_status:
+    Ignore: true
+  templates:
     Ignore: true
   vpc_id:
     Ignore: true

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_kms_client_key
+  To: ALIYUN::KMS::Key
+Properties:
+  aap_name:
+    Ignore: true
+  not_after:
+    Ignore: true
+  not_before:
+    Ignore: true
+  password:
+    Ignore: true
+  private_key_data_file:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true

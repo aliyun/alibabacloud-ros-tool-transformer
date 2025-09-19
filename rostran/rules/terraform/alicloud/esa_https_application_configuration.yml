@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_https_application_configuration
+  To: ALIYUN::ESA::HttpsApplicationConfiguration
+Properties:
+  alt_svc:
+    To: AltSvc
+  alt_svc_clear:
+    To: AltSvcClear
+  alt_svc_ma:
+    To: AltSvcMa
+  alt_svc_persist:
+    To: AltSvcPersist
+  hsts:
+    To: Hsts
+  hsts_include_subdomains:
+    To: HstsIncludeSubdomains
+  hsts_max_age:
+    To: HstsMaxAge
+  hsts_preload:
+    To: HstsPreload
+  https_force:
+    To: HttpsForce
+  https_force_code:
+    To: HttpsForceCode
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

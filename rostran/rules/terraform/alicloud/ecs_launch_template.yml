@@ -32,6 +32,8 @@ Properties:
         To: Size
       snapshot_id:
         To: SnapshotId
+  default_version_number:
+    Ignore: true
   deployment_set_id:
     To: DeploymentSetId
   description:
@@ -40,8 +42,16 @@ Properties:
     Ignore: true
   host_name:
     To: HostName
+  http_endpoint:
+    Ignore: true
+  http_put_response_hop_limit:
+    Ignore: true
+  http_tokens:
+    Ignore: true
   image_id:
     To: ImageId
+  image_options:
+    Ignore: true
   image_owner_alias:
     To: ImageOwnerAlias
   instance_charge_type:
@@ -128,6 +138,8 @@ Properties:
         To: Key
       Value:
         To: Value
+  update_default_version_number:
+    Ignore: true
   user_data:
     To: UserData
   userdata:
@@ -177,6 +189,8 @@ Attributes:
     Ignore: true
   key_pair_name:
     Ignore: true
+  latest_version_number:
+    To: LatestVersionNumber
   launch_template_name:
     To: LaunchTemplateName
   name:

@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_public_ip_address_pool
+  To: ALIYUN::VPC::PublicIpAddressPool
+Properties:
+  biz_type:
+    To: BizType
+  description:
+    To: Description
+  isp:
+    To: Isp
+  public_ip_address_pool_name:
+    To: Name
+  resource_group_id:
+    To: ResourceGroupId
+  security_protection_types:
+    To: SecurityProtectionTypes
+    Type: List
+  tags:
+    To: Tags
+    Type: List
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  ip_address_remaining:
+    Ignore: true
+  public_ip_address_pool_id:
+    To: PublicIpAddressPoolId
+  status:
+    Ignore: true
+  total_ip_num:
+    Ignore: true
+  used_ip_num:
+    Ignore: true

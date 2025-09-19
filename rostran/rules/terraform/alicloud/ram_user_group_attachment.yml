@@ -1,0 +1,10 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ram_user_group_attachment
+  To: ALIYUN::RAM::UserToGroupAddition
+Properties:
+  group_name:
+    To: GroupName
+  user_name:
+    To: Users

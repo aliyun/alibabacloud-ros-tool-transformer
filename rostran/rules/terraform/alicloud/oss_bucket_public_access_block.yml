@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_public_access_block
+  To: ALIYUN::OSS::Bucket
+Properties:
+  block_public_access:
+    To: BlockPublicAccess
+  bucket:
+    To: BucketName
+Attributes:
+  id:
+    To: Name

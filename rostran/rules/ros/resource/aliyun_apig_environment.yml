@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::APIG::Environment
+  To: alicloud_apig_environment
+Properties:
+  Description:
+    To: description
+  EnvironmentName:
+    To: environment_name
+  GatewayId:
+    To: gateway_id
+Attributes:
+  EnvironmentId:
+    To: id
+  EnvironmentName:
+    Ignore: true
+  GatewayId:
+    Ignore: true
+  Description:
+    Ignore: true

@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_vpc_firewall_cen
+  To: ALIYUN::CLOUDFW::VpcFirewallCen
+Properties:
+  cen_id:
+    To: CenId
+  lang:
+    Ignore: true
+  local_vpc:
+    Ignore: true
+  member_uid:
+    To: MemberUid
+  status:
+    To: FirewallSwitch
+  vpc_firewall_name:
+    To: VpcFirewallName
+  vpc_region:
+    To: VpcRegion
+Attributes:
+  id:
+    Ignore: true
+  connect_type:
+    Ignore: true
+  local_vpc:
+    Ignore: true
+  vpc_firewall_id:
+    To: VpcFirewallId

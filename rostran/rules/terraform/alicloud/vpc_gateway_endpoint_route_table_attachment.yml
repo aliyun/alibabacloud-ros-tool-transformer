@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_gateway_endpoint_route_table_attachment
+  To: ALIYUN::VPC::RouteTableWithGatewayAssociation
+Properties:
+  gateway_endpoint_id:
+    To: GatewayId
+  route_table_id:
+    To: RouteTableId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

@@ -18,7 +18,11 @@ Properties:
     Ignore: true
   db_cluster_version:
     Ignore: true
+  disk_encryption:
+    To: DiskEncryption
   enable_default_resource_group:
+    Ignore: true
+  enable_ssl:
     Ignore: true
   engine:
     Ignore: true
@@ -28,20 +32,36 @@ Properties:
     Ignore: true
   expired:
     Ignore: true
+  kms_id:
+    To: KmsId
   lock_mode:
     Ignore: true
   lock_reason:
     Ignore: true
   payment_type:
     Ignore: true
+  period:
+    To: Period
   port:
     Ignore: true
+  product_form:
+    To: ProductForm
+  product_version:
+    To: ProductVersion
+  reserved_node_count:
+    To: ReservedNodeCount
+  reserved_node_size:
+    To: ReservedNodeSize
   resource_group_id:
     To: ResourceGroupId
   restore_to_time:
     To: RestoreToTime
   restore_type:
     To: RestoreType
+  secondary_vswitch_id:
+    To: SecondaryVSwitchId
+  secondary_zone_id:
+    To: SecondaryZoneId
   security_ips:
     Ignore: true
   source_db_cluster_id:

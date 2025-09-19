@@ -8,12 +8,16 @@ Properties:
     To: Comments
   force:
     Ignore: true
+  group_name:
+    To: GroupName
   name:
     To: GroupName
 Attributes:
   id:
     To: GroupName
   comments:
+    Ignore: true
+  create_time:
     Ignore: true
   name:
     Ignore: true

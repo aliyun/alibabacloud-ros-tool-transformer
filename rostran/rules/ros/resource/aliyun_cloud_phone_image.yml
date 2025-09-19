@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudPhone::Image
+  To: alicloud_cloud_phone_image
+Properties:
+  ImageName:
+    To: image_name
+  InstanceId:
+    To: instance_id
+  Description:
+    Ignore: true
+Attributes:
+  ImageId:
+    Ignore: true
+  IsSelfShared:
+    Ignore: true
+  OsNameEn:
+    Ignore: true
+  Platform:
+    Ignore: true
+  ImageCategory:
+    Ignore: true
+  Description:
+    Ignore: true
+  OsName:
+    Ignore: true
+  Progress:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  Usage:
+    Ignore: true
+  OsType:
+    Ignore: true
+  ImageName:
+    Ignore: true

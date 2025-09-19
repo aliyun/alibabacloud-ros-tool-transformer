@@ -20,10 +20,20 @@ Properties:
     To: AddressType
   internet_charge_type:
     To: InternetChargeType
+  load_balancer_name:
+    To: LoadBalancerName
+  load_balancer_spec:
+    To: LoadBalancerSpec
   master_zone_id:
     To: MasterZoneId
+  modification_protection_reason:
+    To: ModificationProtectionReason
+  modification_protection_status:
+    To: ModificationProtectionStatus
   name:
     To: LoadBalancerName
+  payment_type:
+    Ignore: true
   period:
     To: Duration
   resource_group_id:
@@ -32,6 +42,8 @@ Properties:
     To: SlaveZoneId
   specification:
     To: LoadBalancerSpec
+  status:
+    Ignore: true
   tags:
     To: Tags
   vswitch_id:

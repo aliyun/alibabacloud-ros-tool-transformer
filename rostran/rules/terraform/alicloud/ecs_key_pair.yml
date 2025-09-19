@@ -24,6 +24,8 @@ Properties:
 Attributes:
   id:
     To: KeyPairName
+  create_time:
+    Ignore: true
   finger_print:
     Ignore: true
   key_name:

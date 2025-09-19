@@ -25,6 +25,8 @@ Attributes:
     To: Id
   account_id:
     To: AccountId
+  create_date:
+    Ignore: true
   display_name:
     To: DisplayName
   name:

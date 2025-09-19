@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::IpamScope
+  To: alicloud_vpc_ipam_ipam_scope
+Properties:
+  IpamId:
+    To: ipam_id
+  IpamScopeDescription:
+    To: ipam_scope_description
+  IpamScopeName:
+    To: ipam_scope_name
+  IpamScopeType:
+    To: ipam_scope_type
+  Tags:
+    To: tags
+Attributes:
+  IpamScopeId:
+    To: id
+  CreateTime:
+    To: create_time
+  IpamScopeDescription:
+    Ignore: true
+  IpamId:
+    Ignore: true
+  Tags:
+    Ignore: true
+  IpamScopeType:
+    Ignore: true
+  IpamScopeName:
+    Ignore: true

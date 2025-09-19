@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_rocketmq_instance
   To: ALIYUN::ROCKETMQ5::Instance
 Properties:
+  acl_info:
+    Ignore: true
   auto_renew:
     To: AutoRenew
   auto_renew_period:
@@ -14,8 +16,18 @@ Properties:
     Ignore: true
   create_time:
     Ignore: true
+  flow_out_bandwidth:
+    Ignore: true
+  flow_out_type:
+    Ignore: true
   instance_name:
     To: InstanceName
+  internet_spec:
+    Ignore: true
+  ip_whitelist:
+    Ignore: true
+  ip_whitelists:
+    Ignore: true
   network_info:
     Ignore: true
   payment_type:
@@ -30,6 +42,8 @@ Properties:
     To: Remark
   resource_group_id:
     To: ResourceGroupId
+  security_group_ids:
+    Ignore: true
   series_code:
     To: SeriesCode
   service_code:
@@ -41,6 +55,12 @@ Properties:
   sub_series_code:
     To: SubSeriesCode
   tags:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+  vswitches:
     Ignore: true
 Attributes:
   id:
@@ -57,7 +77,13 @@ Attributes:
     Ignore: true
   instance_name:
     To: InstanceName
+  network_info:
+    Ignore: true
   payment_type:
+    Ignore: true
+  product_info:
+    Ignore: true
+  region_id:
     Ignore: true
   remark:
     Ignore: true
@@ -66,6 +92,8 @@ Attributes:
   series_code:
     Ignore: true
   service_code:
+    Ignore: true
+  software:
     Ignore: true
   status:
     Ignore: true

@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_acl_attachment
+  To: ALIYUN::GA::AclsListenerAssociation
+Properties:
+  acl_id:
+    To: AclIds
+    Type: List
+  acl_type:
+    To: AclType
+  dry_run:
+    Ignore: true
+  listener_id:
+    To: ListenerId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

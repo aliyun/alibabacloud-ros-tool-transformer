@@ -43,6 +43,8 @@ Attributes:
     Ignore: true
   provisioned_throughput_in_mi_bps:
     Ignore: true
+  region_id:
+    Ignore: true
   space_capacity:
     Ignore: true
   storage_type:

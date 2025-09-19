@@ -32,6 +32,16 @@ Properties:
     To: LoadBalancerId
   mss:
     To: Mss
+  proxy_protocol_config:
+    To: ProxyProtocolV2Config
+    Type: Map
+    Schema:
+      proxy_protocol_config_private_link_ep_id_enabled:
+        To: Ppv2PrivateLinkEpIdEnabled
+      proxy_protocol_config_private_link_eps_id_enabled:
+        To: Ppv2PrivateLinkEpsIdEnabled
+      proxy_protocol_config_vpc_id_enabled:
+        To: Ppv2VpcIdEnabled
   proxy_protocol_enabled:
     To: ProxyProtocolEnabled
   sec_sensor_enabled:
@@ -77,6 +87,8 @@ Attributes:
   mss:
     Ignore: true
   proxy_protocol_enabled:
+    Ignore: true
+  region_id:
     Ignore: true
   sec_sensor_enabled:
     Ignore: true

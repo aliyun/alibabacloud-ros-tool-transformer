@@ -18,6 +18,8 @@ Properties:
     To: Ipv6CidrBlock
   ipv6_cidr_block_mask:
     Ignore: true
+  is_default:
+    Ignore: true
   name:
     To: VSwitchName
   status:

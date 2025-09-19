@@ -13,10 +13,22 @@ class RuleFormatter:
     PROPS_ORDER = ("To", "Type", "Schema")
     ATTRS_ORDER = ("id",)
 
-    def __init__(self, rule_dir):
+    def __init__(self, rule_dir=None):
         self.rule_dir = rule_dir
 
+    def format_rule(self, rule):
+        ordered_rule = self._format_data(rule, self.TOP_ORDER)
+        rule_props = ordered_rule.get("Properties")
+        if rule_props:
+            ordered_rule["Properties"] = self._format_properties(rule_props)
+        rule_attrs = ordered_rule.get("Attributes")
+        if rule_attrs:
+            ordered_rule["Attributes"] = self._format_data(rule_attrs, self.ATTRS_ORDER)
+        return ordered_rule
+
     def format(self):
+        if not self.rule_dir:
+            raise ValueError("rule_dir is required")
         for filename in os.listdir(self.rule_dir):
             if not filename.endswith((".yml", ".yaml")):
                 continue
@@ -24,17 +36,7 @@ class RuleFormatter:
             path = os.path.join(self.rule_dir, filename)
             with open(path, "r") as f:
                 rule = yaml.safe_load(f)
-
-            ordered_rule = self._format_data(rule, self.TOP_ORDER)
-            rule_props = ordered_rule.get("Properties")
-            if rule_props:
-                ordered_rule["Properties"] = self._format_properties(rule_props)
-            rule_attrs = ordered_rule.get("Attributes")
-            if rule_attrs:
-                ordered_rule["Attributes"] = self._format_data(
-                    rule_attrs, self.ATTRS_ORDER
-                )
-
+            ordered_rule = self.format_rule(rule)
             with open(path, "w") as f:
                 f.write(yaml.safe_dump(ordered_rule, sort_keys=False))
 

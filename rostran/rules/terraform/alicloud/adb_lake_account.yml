@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_adb_lake_account
+  To: ALIYUN::ADBLake::Account
+Properties:
+  account_description:
+    To: AccountDescription
+  account_name:
+    To: AccountName
+  account_password:
+    To: AccountPassword
+  account_privileges:
+    Ignore: true
+  account_type:
+    To: AccountType
+  column:
+    Ignore: true
+  database:
+    Ignore: true
+  db_cluster_id:
+    To: DBClusterId
+  table:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

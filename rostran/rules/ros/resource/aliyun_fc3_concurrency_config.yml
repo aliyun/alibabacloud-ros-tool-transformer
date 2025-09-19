@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC3::ConcurrencyConfig
+  To: alicloud_fcv3_concurrency_config
+Properties:
+  FunctionName:
+    To: function_name
+  ReservedConcurrency:
+    To: reserved_concurrency
+Attributes: {}

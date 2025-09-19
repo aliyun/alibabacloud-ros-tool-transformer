@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_click_house_enterprise_db_cluster
+  To: ALIYUN::ClickHouse::DBCluster
+Properties:
+  multi_zones:
+    Ignore: true
+  scale_max:
+    Ignore: true
+  scale_min:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBClusterId
+  create_time:
+    Ignore: true
+  region_id:
+    Ignore: true
+  status:
+    Ignore: true

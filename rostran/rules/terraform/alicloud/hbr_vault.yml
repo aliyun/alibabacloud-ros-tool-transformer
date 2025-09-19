@@ -12,23 +12,34 @@ Properties:
     To: KmsKeyId
   redundancy_type:
     To: RedundancyType
+  resource_group_id:
+    To: ResourceGroupId
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Type: List
   vault_name:
     To: VaultName
   vault_storage_class:
     To: VaultStorageClass
   vault_type:
     To: VaultType
+  worm_enabled:
+    Ignore: true
 Attributes:
   id:
     To: VaultId
+  create_time:
+    To: CreateTime
   description:
     To: Description
   encrypt_type:
     Ignore: true
   kms_key_id:
     Ignore: true
+  region_id:
+    To: ReplicationSourceRegionId
   status:
     Ignore: true
   vault_name:

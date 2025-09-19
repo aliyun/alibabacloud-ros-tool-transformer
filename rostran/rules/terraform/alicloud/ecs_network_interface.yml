@@ -49,6 +49,8 @@ Properties:
   security_groups:
     To: SecurityGroupIds
     Type: List
+  source_dest_check:
+    Ignore: true
   status:
     Ignore: true
   tags:

@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_video_surveillance_system_group
+  To: ALIYUN::VS::Group
+Properties:
+  callback:
+    To: Callback
+  description:
+    To: Description
+  enabled:
+    To: Enabled
+  group_name:
+    To: Name
+  in_protocol:
+    To: InProtocol
+  out_protocol:
+    To: OutProtocol
+  play_domain:
+    To: PlayDomain
+  push_domain:
+    To: PushDomain
+Attributes:
+  id:
+    To: Id
+  capture_image:
+    Ignore: true
+  capture_interval:
+    Ignore: true
+  capture_oss_bucket:
+    Ignore: true
+  capture_oss_path:
+    Ignore: true
+  capture_video:
+    Ignore: true
+  lazy_pull:
+    Ignore: true
+  status:
+    Ignore: true

@@ -34,11 +34,15 @@ Attributes:
     To: SnapshotId
   category:
     Ignore: true
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   disk_id:
     Ignore: true
   name:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

@@ -1,0 +1,81 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cddc_dedicated_propre_host
+  To: ALIYUN::CDDC::DedicatedHost
+Properties:
+  auto_pay:
+    Ignore: true
+  auto_renew:
+    To: AutoRenew
+  dedicated_host_group_id:
+    To: DedicatedHostGroupId
+  ecs_class_list:
+    To: HostClass
+    Schema:
+      data_disk_performance_level:
+        Ignore: true
+      disk_capacity:
+        Ignore: true
+      disk_count:
+        Ignore: true
+      disk_type:
+        Ignore: true
+      instance_type:
+        Ignore: true
+      sys_disk_capacity:
+        Ignore: true
+      sys_disk_type:
+        Ignore: true
+      system_disk_performance_level:
+        Ignore: true
+  ecs_deployment_set_id:
+    Ignore: true
+  ecs_host_name:
+    To: HostName
+  ecs_instance_name:
+    Ignore: true
+  ecs_unique_suffix:
+    Ignore: true
+  ecs_zone_id:
+    To: ZoneId
+  engine:
+    Ignore: true
+  image_id:
+    Ignore: true
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  key_pair_name:
+    Ignore: true
+  os_password:
+    To: OsPassword
+  password_inherit:
+    Ignore: true
+  payment_type:
+    To: PaymentType
+  period:
+    To: Period
+  period_type:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  security_group_id:
+    Ignore: true
+  tags:
+    To: Tags
+    Type: List
+  user_data:
+    Ignore: true
+  user_data_encoded:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    Ignore: true
+  ecs_instance_id:
+    To: DedicatedHostId

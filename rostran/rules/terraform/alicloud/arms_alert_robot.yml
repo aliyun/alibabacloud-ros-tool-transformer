@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_alert_robot
+  To: ALIYUN::ARMS::AlertContact
+Properties:
+  alert_robot_name:
+    To: ContactName
+  daily_noc:
+    Ignore: true
+  daily_noc_time:
+    Ignore: true
+  robot_addr:
+    To: DingRobotWebhookUrl
+  robot_type:
+    Ignore: true
+Attributes:
+  id:
+    To: ContactId

@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbr_hana_backup_plan
+  To: ALIYUN::HBR::DbPlan
+Properties:
+  backup_prefix:
+    Ignore: true
+  backup_type:
+    Ignore: true
+  cluster_id:
+    To: InstanceUuid
+  database_name:
+    To: Source
+    Type: Map
+  plan_name:
+    To: DbPlanName
+  resource_group_id:
+    Ignore: true
+  schedule:
+    To: FullPlan
+  status:
+    Ignore: true
+  vault_id:
+    To: VaultId
+Attributes:
+  id:
+    Ignore: true
+  plan_id:
+    To: PlanId

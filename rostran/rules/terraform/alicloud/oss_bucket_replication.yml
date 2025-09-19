@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_replication
+  To: ALIYUN::OSS::BucketReplication
+Properties:
+  action:
+    Ignore: true
+  bucket:
+    To: BucketName
+  destination:
+    Ignore: true
+  encryption_configuration:
+    Ignore: true
+  historical_object_replication:
+    Ignore: true
+  prefix_set:
+    Ignore: true
+  progress:
+    Ignore: true
+  source_selection_criteria:
+    Ignore: true
+  status:
+    Ignore: true
+  sync_role:
+    Ignore: true

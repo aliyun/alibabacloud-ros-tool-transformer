@@ -22,6 +22,8 @@ Properties:
     To: BandwidthPackageId
   create_time:
     Ignore: true
+  deletion_protection_config:
+    Ignore: true
   deletion_protection_enabled:
     To: DeletionProtectionEnabled
   dns_name:
@@ -92,6 +94,8 @@ Attributes:
     Ignore: true
   create_time:
     Ignore: true
+  deletion_protection_config:
+    Ignore: true
   deletion_protection_enabled:
     Ignore: true
   dns_name:
@@ -105,6 +109,8 @@ Attributes:
   load_balancer_name:
     Ignore: true
   modification_protection_config:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

@@ -1,0 +1,42 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_config_aggregate_config_rule
+  To: ALIYUN::Config::AggregateCompliancePack
+Properties:
+  aggregate_config_rule_name:
+    Ignore: true
+  aggregator_id:
+    To: AggregatorId
+  config_rule_trigger_types:
+    Ignore: true
+  description:
+    To: Description
+  exclude_resource_ids_scope:
+    To: ExcludeResourceIdsScope
+    Type: List
+  input_parameters:
+    Ignore: true
+  maximum_execution_frequency:
+    Ignore: true
+  region_ids_scope:
+    To: RegionIdsScope
+    Type: List
+  resource_group_ids_scope:
+    To: ResourceGroupIdsScope
+    Type: List
+  resource_types_scope:
+    Ignore: true
+  risk_level:
+    To: RiskLevel
+  status:
+    Ignore: true
+  tag_key_scope:
+    To: TagKeyScope
+  tag_value_scope:
+    To: TagValueScope
+Attributes:
+  id:
+    Ignore: true
+  config_rule_id:
+    Ignore: true

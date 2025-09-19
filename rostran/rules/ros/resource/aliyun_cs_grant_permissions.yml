@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CS::GrantPermissions
+  To: alicloud_cs_kubernetes_permissions
+Properties:
+  Permissions:
+    To: permissions
+    Type: List
+    Schema:
+      ClusterId:
+        To: cluster
+      IsCustom:
+        To: is_custom
+      IsRamRole:
+        To: is_ram_role
+      Namespace:
+        To: namespace
+      RoleName:
+        To: role_name
+      RoleType:
+        To: role_type
+  UserId:
+    To: uid
+Attributes: {}

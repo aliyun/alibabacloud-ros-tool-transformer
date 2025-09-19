@@ -34,6 +34,8 @@ Properties:
         To: Effect
       resource:
         To: Resource
+  tags:
+    Ignore: true
   type:
     Ignore: true
   version:
@@ -44,6 +46,8 @@ Attributes:
   id:
     To: PolicyName
   attachment_count:
+    Ignore: true
+  create_time:
     Ignore: true
   default_version:
     Ignore: true

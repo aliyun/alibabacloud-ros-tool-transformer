@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pvtz_zone_attachment
+  To: ALIYUN::PVTZ::ZoneVpcBinder
+Properties:
+  lang:
+    Ignore: true
+  user_client_ip:
+    Ignore: true
+  vpc_ids:
+    Ignore: true
+  vpcs:
+    To: Vpcs
+    Type: List
+    Schema:
+      region_id:
+        To: RegionId
+      vpc_id:
+        To: VpcId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: ZoneId

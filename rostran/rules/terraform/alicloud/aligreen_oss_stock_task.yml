@@ -1,0 +1,78 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_aligreen_oss_stock_task
+  To: ALIYUN::Aligreen::OssStockTask
+Properties:
+  audio_antispam_freeze_config:
+    To: AudioAntispamFreezeConfig
+  audio_auto_freeze_opened:
+    To: AudioAutoFreezeOpened
+  audio_max_size:
+    To: AudioMaxSize
+  audio_opened:
+    To: AudioOpened
+  audio_scan_limit:
+    To: AudioScanLimit
+  audio_scenes:
+    To: AudioScenes
+    Type: List
+  auto_freeze_type:
+    To: AutoFreezeType
+  biz_type:
+    To: BizType
+  buckets:
+    To: Buckets
+  callback_id:
+    To: CallbackId
+  end_date:
+    To: EndDate
+  image_ad_freeze_config:
+    To: ImageAdFreezeConfig
+  image_auto_freeze_opened:
+    To: ImageAutoFreezeOpened
+  image_live_freeze_config:
+    To: ImageLiveFreezeConfig
+  image_opened:
+    To: ImageOpened
+  image_porn_freeze_config:
+    To: ImagePornFreezeConfig
+  image_scan_limit:
+    To: ImageScanLimit
+  image_scenes:
+    To: ImageScenes
+    Type: List
+  image_terrorism_freeze_config:
+    To: ImageTerrorismFreezeConfig
+  scan_image_no_file_type:
+    To: ScanImageNoFileType
+  start_date:
+    To: StartDate
+  video_ad_freeze_config:
+    To: VideoAdFreezeConfig
+  video_auto_freeze_opened:
+    To: VideoAutoFreezeOpened
+  video_frame_interval:
+    To: VideoFrameInterval
+  video_live_freeze_config:
+    To: VideoLiveFreezeConfig
+  video_max_frames:
+    To: VideoMaxFrames
+  video_max_size:
+    To: VideoMaxSize
+  video_opened:
+    To: VideoOpened
+  video_porn_freeze_config:
+    To: VideoPornFreezeConfig
+  video_scan_limit:
+    To: VideoScanLimit
+  video_scenes:
+    To: VideoScenes
+    Type: List
+  video_terrorism_freeze_config:
+    To: VideoTerrorismFreezeConfig
+  video_voice_antispam_freeze_config:
+    To: VideoVoiceAntispamFreezeConfig
+Attributes:
+  id:
+    Ignore: true

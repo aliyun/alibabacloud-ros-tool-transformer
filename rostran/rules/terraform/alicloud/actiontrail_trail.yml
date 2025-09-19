@@ -8,6 +8,10 @@ Properties:
     To: EventRW
   is_organization_trail:
     Ignore: true
+  max_compute_project_arn:
+    Ignore: true
+  max_compute_write_role_arn:
+    Ignore: true
   mns_topic_arn:
     Ignore: true
   name:
@@ -33,6 +37,8 @@ Properties:
 Attributes:
   id:
     To: Name
+  create_time:
+    Ignore: true
   event_rw:
     Ignore: true
   is_organization_trail:
@@ -44,6 +50,8 @@ Attributes:
   oss_key_prefix:
     Ignore: true
   oss_write_role_arn:
+    Ignore: true
+  region_id:
     Ignore: true
   sls_project_arn:
     Ignore: true

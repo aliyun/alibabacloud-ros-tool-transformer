@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pai_workspace_code_source
+  To: ALIYUN::PAI::CodeSource
+Properties:
+  accessibility:
+    To: Accessibility
+  code_branch:
+    To: CodeBranch
+  code_commit:
+    To: CodeCommit
+  code_repo:
+    To: CodeRepo
+  code_repo_access_token:
+    To: CodeRepoAccessToken
+  code_repo_user_name:
+    To: CodeRepoUserName
+  description:
+    To: Description
+  display_name:
+    To: DisplayName
+  mount_path:
+    To: MountPath
+  workspace_id:
+    To: WorkspaceId
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime

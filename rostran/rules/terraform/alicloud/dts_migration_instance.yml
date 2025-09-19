@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dts_migration_instance
+  To: ALIYUN::DTS::Instance
+Properties:
+  compute_unit:
+    To: ComputeUnit
+  database_count:
+    To: DatabaseCount
+  destination_endpoint_engine_name:
+    To: DestinationEndpointEngineName
+  destination_endpoint_region:
+    To: DestinationRegion
+  instance_class:
+    To: InstanceClass
+  payment_type:
+    To: PayType
+  source_endpoint_engine_name:
+    To: SourceEndpointEngineName
+  source_endpoint_region:
+    To: SourceRegion
+  sync_architecture:
+    To: SyncArchitecture
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId
+  dts_instance_id:
+    To: InstanceId
+  status:
+    Ignore: true

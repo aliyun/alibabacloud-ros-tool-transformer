@@ -1,0 +1,48 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mongodb_serverless_instance
+  To: ALIYUN::MONGODB::Instance
+Properties:
+  account_password:
+    To: AccountPassword
+  auto_renew:
+    To: AutoRenew
+  capacity_unit:
+    Ignore: true
+  db_instance_description:
+    To: DBInstanceDescription
+  db_instance_storage:
+    To: DBInstanceStorage
+  engine:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
+  period:
+    To: Period
+  period_price_type:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  security_ip_groups:
+    To: SecurityIPArray
+  storage_engine:
+    To: StorageEngine
+  tags:
+    To: Tags
+    Type: List
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    To: DBInstanceStatus

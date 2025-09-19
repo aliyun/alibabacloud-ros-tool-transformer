@@ -18,6 +18,10 @@ Properties:
         To: Version
   api_audiences:
     Ignore: true
+  audit_log_config:
+    Ignore: true
+  auto_mode:
+    Ignore: true
   availability_zone:
     Ignore: true
   certificate_authority:
@@ -100,6 +104,8 @@ Properties:
     To: NodeNameMode
   node_port_range:
     Ignore: true
+  operation_policy:
+    Ignore: true
   os_type:
     To: OsType
   password:
@@ -111,6 +117,8 @@ Properties:
   pod_vswitch_ids:
     To: PodVswitchIds
     Type: List
+  profile:
+    Ignore: true
   proxy_mode:
     To: ProxyMode
   rds_instances:
@@ -121,12 +129,16 @@ Properties:
     Ignore: true
   rrsa_metadata:
     Ignore: true
+  runtime:
+    Ignore: true
   security_group_id:
     To: SecurityGroupId
   service_account_issuer:
     Ignore: true
   service_cidr:
     To: ServiceCidr
+  skip_set_certificate_authority:
+    Ignore: true
   slb_id:
     Ignore: true
   slb_internet:
@@ -214,9 +226,29 @@ Properties:
 Attributes:
   id:
     To: ClusterId
+  certificate_authority:
+    Ignore: true
+  connections:
+    Ignore: true
   control_plane_log_components:
     Ignore: true
   control_plane_log_project:
     Ignore: true
   control_plane_log_ttl:
     Ignore: true
+  nat_gateway_id:
+    Ignore: true
+  rrsa_metadata:
+    Ignore: true
+  slb_id:
+    To: APIServerSLBId
+  slb_internet:
+    Ignore: true
+  slb_intranet:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  worker_nodes:
+    Ignore: true
+  worker_ram_role_name:
+    To: WorkerRamRoleName

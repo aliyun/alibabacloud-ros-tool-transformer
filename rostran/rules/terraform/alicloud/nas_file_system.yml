@@ -12,10 +12,26 @@ Properties:
     To: EncryptType
   file_system_type:
     To: FileSystemType
+  keytab:
+    Ignore: true
+  keytab_md5:
+    Ignore: true
   kms_key_id:
+    Ignore: true
+  nfs_acl:
+    Ignore: true
+  options:
     Ignore: true
   protocol_type:
     To: ProtocolType
+  recycle_bin:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  smb_acl:
+    Ignore: true
+  snapshot_id:
+    To: SnapshotId
   storage_type:
     To: StorageType
   tags:
@@ -32,6 +48,8 @@ Attributes:
     To: FileSystemId
   capacity:
     Ignore: true
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   encrypt_type:
@@ -41,6 +59,12 @@ Attributes:
   kms_key_id:
     Ignore: true
   protocol_type:
+    Ignore: true
+  recycle_bin:
+    Ignore: true
+  region_id:
+    Ignore: true
+  status:
     Ignore: true
   storage_type:
     Ignore: true

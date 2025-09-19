@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   auto_renew_period:
     Ignore: true
+  auto_upgrade_kubelet:
+    Ignore: true
   cis_enabled:
     Ignore: true
   cluster_id:
@@ -21,6 +23,10 @@ Properties:
   deployment_set_id:
     Ignore: true
   desired_size:
+    Ignore: true
+  eflo_node_group:
+    Ignore: true
+  endpoint:
     Ignore: true
   force_delete:
     Ignore: true
@@ -54,6 +60,8 @@ Properties:
     Ignore: true
   labels:
     Ignore: true
+  limits:
+    Ignore: true
   login_as_non_root:
     Ignore: true
   management:
@@ -70,6 +78,8 @@ Properties:
     Ignore: true
   node_pool_name:
     Ignore: true
+  numa_node:
+    Ignore: true
   on_demand_base_capacity:
     Ignore: true
   on_demand_percentage_above_base_capacity:
@@ -82,11 +92,17 @@ Properties:
     Ignore: true
   platform:
     Ignore: true
+  pre_user_data:
+    Ignore: true
   private_pool_options:
+    Ignore: true
+  ram_role_name:
     Ignore: true
   rds_instances:
     Ignore: true
   resource_group_id:
+    Ignore: true
+  restart_node:
     Ignore: true
   rolling_policy:
     Ignore: true
@@ -95,6 +111,8 @@ Properties:
   runtime_name:
     Ignore: true
   runtime_version:
+    Ignore: true
+  sampling_rate_per_million:
     Ignore: true
   scaling_config:
     Ignore: true
@@ -144,6 +162,8 @@ Properties:
     Ignore: true
   tee_config:
     Ignore: true
+  type:
+    Ignore: true
   unschedulable:
     Ignore: true
   update_nodes:
@@ -153,6 +173,8 @@ Properties:
   vpc_id:
     Ignore: true
   vswitch_ids:
+    Ignore: true
+  vul_level:
     Ignore: true
 Attributes:
   id:

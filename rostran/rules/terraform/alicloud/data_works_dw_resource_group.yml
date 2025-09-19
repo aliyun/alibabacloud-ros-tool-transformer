@@ -1,0 +1,36 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_data_works_dw_resource_group
+  To: ALIYUN::DataWorks::ResourceGroup
+Properties:
+  auto_renew:
+    To: AutoRenewEnabled
+  default_vpc_id:
+    To: VpcId
+  default_vswitch_id:
+    To: VSwitchId
+  payment_duration:
+    To: PaymentDuration
+  payment_duration_unit:
+    To: PaymentDurationUnit
+  payment_type:
+    To: PaymentType
+  remark:
+    To: Remark
+  resource_group_id:
+    Ignore: true
+  resource_group_name:
+    To: Name
+  specification:
+    To: Spec
+  tags:
+    To: Tags
+    Type: List
+Attributes:
+  id:
+    To: Id
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

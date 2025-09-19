@@ -10,6 +10,10 @@ Properties:
     Ignore: true
   arch_version:
     Ignore: true
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
   cold_storage:
     To: ColdStorage
   core_num:

@@ -25,6 +25,8 @@ Properties:
     To: SnapshotId
   status:
     Ignore: true
+  tags:
+    Ignore: true
 Attributes:
   id:
     To: DiskId

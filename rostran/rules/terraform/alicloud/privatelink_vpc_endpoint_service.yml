@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_privatelink_vpc_endpoint_service
   To: ALIYUN::PrivateLink::VpcEndpointService
 Properties:
+  address_ip_version:
+    Ignore: true
   auto_accept_connection:
     To: AutoAcceptEnabled
   connect_bandwidth:
@@ -45,6 +47,8 @@ Attributes:
   create_time:
     Ignore: true
   payer:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

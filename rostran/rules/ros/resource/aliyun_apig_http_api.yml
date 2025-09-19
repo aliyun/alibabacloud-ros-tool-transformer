@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::APIG::HttpApi
+  To: alicloud_apig_http_api
+Properties:
+  BasePath:
+    To: base_path
+  Description:
+    To: description
+  HttpApiName:
+    To: http_api_name
+  Protocols:
+    To: protocols
+  Type:
+    To: type
+Attributes:
+  HttpApiId:
+    To: id
+  Protocols:
+    Ignore: true
+  Description:
+    Ignore: true
+  HttpApiName:
+    Ignore: true
+  Environments:
+    Ignore: true
+  BasePath:
+    Ignore: true
+  Type:
+    Ignore: true

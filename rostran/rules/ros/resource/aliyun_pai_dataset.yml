@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PAI::Dataset
+  To: alicloud_pai_workspace_dataset
+Properties:
+  Accessibility:
+    To: accessibility
+  DataSourceType:
+    To: data_source_type
+  DataType:
+    To: data_type
+  DatasetName:
+    To: dataset_name
+  Description:
+    To: description
+  Options:
+    To: options
+  Property:
+    To: property
+  SourceId:
+    To: source_id
+  SourceType:
+    To: source_type
+  Uri:
+    To: uri
+  WorkspaceId:
+    To: workspace_id
+Attributes:
+  DatasetId:
+    To: id
+  CreateTime:
+    To: create_time
+  SourceId:
+    Ignore: true
+  Uri:
+    Ignore: true
+  DatasetName:
+    Ignore: true
+  Options:
+    Ignore: true
+  GmtModifiedTime:
+    Ignore: true
+  SourceType:
+    Ignore: true
+  UserId:
+    Ignore: true
+  WorkspaceId:
+    Ignore: true
+  DataSourceType:
+    Ignore: true
+  OwnerId:
+    Ignore: true
+  DataType:
+    Ignore: true
+  Description:
+    Ignore: true
+  Property:
+    Ignore: true
+  Accessibility:
+    Ignore: true

@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   category:
     To: Category
+  comparison_operator:
+    Ignore: true
   contact_groups:
     Ignore: true
   dimensions:
@@ -34,9 +36,15 @@ Properties:
     To: RuleId
   silence_time:
     To: SilenceTime
+  statistics:
+    Ignore: true
   status:
     Ignore: true
   targets:
+    Ignore: true
+  threshold:
+    Ignore: true
+  times:
     Ignore: true
   webhook:
     To: Webhook

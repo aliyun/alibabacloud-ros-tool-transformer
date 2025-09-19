@@ -16,6 +16,12 @@ Properties:
     Ignore: true
   https_policy:
     To: HttpsPolicy
+  ingress_vpc_id:
+    Ignore: true
+  ingress_vpc_owner_id:
+    Ignore: true
+  ingress_vswitch_id:
+    Ignore: true
   instance_cidr:
     Ignore: true
   instance_name:
@@ -30,6 +36,8 @@ Properties:
     Ignore: true
   pricing_cycle:
     To: PricingCycle
+  skip_wait_switch:
+    Ignore: true
   status:
     Ignore: true
   support_ipv6:

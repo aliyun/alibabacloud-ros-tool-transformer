@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DataWorks::Project
+  To: alicloud_data_works_project
+Properties:
+  DisableDevelopment:
+    To: dev_role_disabled
+  ProjectMode:
+    To: project_mode
+  ProjectName:
+    To: project_name
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+  ProjectIdentifier:
+    Ignore: true
+  IsAllowDownload:
+    Ignore: true
+  ProjectDescription:
+    Ignore: true
+Attributes:
+  ProjectIdentifier:
+    Ignore: true
+  TablePrivacyMode:
+    Ignore: true
+  ResidentArea:
+    Ignore: true
+  SchedulerMaxRetryTimes:
+    Ignore: true
+  EnvTypes:
+    Ignore: true
+  SchedulerRetryInterval:
+    Ignore: true
+  Id:
+    Ignore: true
+  IsDefault:
+    Ignore: true
+  ProtectedMode:
+    Ignore: true

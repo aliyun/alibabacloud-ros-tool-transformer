@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cr_chart_namespace
+  To: ALIYUN::CR::Namespace
+Properties:
+  auto_create_repo:
+    To: AutoCreate
+  default_repo_type:
+    To: DefaultVisibility
+  instance_id:
+    To: InstanceId
+  namespace_name:
+    To: Namespace
+Attributes:
+  id:
+    Ignore: true

@@ -10,16 +10,28 @@ Properties:
     To: Description
   flow_log_name:
     To: FlowLogName
+  interval:
+    Ignore: true
+  log_format_string:
+    Ignore: true
   log_store_name:
     To: LogStoreName
   project_name:
     To: ProjectName
   status:
     Ignore: true
+  tags:
+    Ignore: true
+  transit_router_attachment_id:
+    Ignore: true
+  transit_router_id:
+    Ignore: true
 Attributes:
   id:
     To: FlowLogId
   cen_id:
+    Ignore: true
+  create_time:
     Ignore: true
   description:
     To: Description
@@ -29,5 +41,7 @@ Attributes:
     To: LogStoreName
   project_name:
     To: ProjectName
+  region_id:
+    Ignore: true
   status:
     Ignore: true

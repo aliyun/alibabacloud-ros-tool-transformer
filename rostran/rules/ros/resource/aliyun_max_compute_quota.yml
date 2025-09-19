@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MaxCompute::Quota
+  To: alicloud_max_compute_quota
+Properties:
+  Specification:
+    To: commodity_code
+  QuotaNickname:
+    To: part_nick_name
+  PayType:
+    To: payment_type
+  PeriodUnit:
+    Ignore: true
+  CU:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+  Period:
+    Ignore: true
+  Tunnel:
+    Ignore: true
+Attributes:
+  DefaultSubQuotaNickname:
+    Ignore: true
+  Nickname:
+    Ignore: true

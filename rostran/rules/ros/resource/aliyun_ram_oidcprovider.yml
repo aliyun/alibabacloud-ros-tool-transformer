@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RAM::OIDCProvider
+  To: alicloud_ims_oidc_provider
+Properties:
+  ClientIds:
+    To: client_ids
+  Description:
+    To: description
+  Fingerprints:
+    To: fingerprints
+  IssuanceLimitTime:
+    To: issuance_limit_time
+  IssuerUrl:
+    To: issuer_url
+  OIDCProviderName:
+    To: oidc_provider_name
+Attributes:
+  OIDCProviderName:
+    Ignore: true

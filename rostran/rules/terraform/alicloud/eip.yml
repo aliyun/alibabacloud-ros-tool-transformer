@@ -4,8 +4,12 @@ ResourceType:
   From: alicloud_eip
   To: ALIYUN::VPC::EIP
 Properties:
+  address_name:
+    To: Name
   bandwidth:
     To: Bandwidth
+  deletion_protection:
+    To: DeletionProtection
   description:
     To: Description
   instance_charge_type:
@@ -16,6 +20,8 @@ Properties:
     To: Isp
   name:
     To: Name
+  payment_type:
+    To: InstanceChargeType
   period:
     To: Period
   resource_group_id:

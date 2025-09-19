@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_instance_cluster_attachment
+  To: ALIYUN::EDAS::ClusterMember
+Properties:
+  cluster_id:
+    To: ClusterId
+  instance_ids:
+    To: InstanceIds
+    Type: List
+Attributes:
+  id:
+    Ignore: true
+  cluster_member_ids:
+    To: ClusterMemberIds
+  ecu_map:
+    To: EcuIds
+  status_map:
+    Ignore: true

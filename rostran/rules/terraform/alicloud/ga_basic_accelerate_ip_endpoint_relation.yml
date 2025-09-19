@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_basic_accelerate_ip_endpoint_relation
+  To: ALIYUN::GA::BasicAcceleratorIpEndpointRelation
+Properties:
+  accelerate_ip_id:
+    To: AccelerateIpId
+  accelerator_id:
+    To: AcceleratorId
+  endpoint_id:
+    To: EndpointId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

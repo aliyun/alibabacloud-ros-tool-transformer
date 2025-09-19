@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EBS::DedicatedBlockStorageCluster
+  To: alicloud_ebs_dedicated_block_storage_cluster
+Properties:
+  DbscName:
+    To: dedicated_block_storage_cluster_name
+  Capacity:
+    To: total_capacity
+  Type:
+    To: type
+  Azone:
+    To: zone_id
+  Period:
+    Ignore: true
+  Tag:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  DedicatedBlockStorageClusterId:
+    To: dedicated_block_storage_cluster_id

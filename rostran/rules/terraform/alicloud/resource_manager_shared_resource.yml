@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_shared_resource
+  To: ALIYUN::ResourceManager::ResourceShareAssociation
+Properties:
+  resource_id:
+    Ignore: true
+  resource_share_id:
+    To: ResourceShareId
+  resource_type:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

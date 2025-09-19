@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_privatelink_vpc_endpoint
   To: ALIYUN::PrivateLink::VpcEndpoint
 Properties:
+  address_ip_version:
+    Ignore: true
   bandwidth:
     Ignore: true
   connection_status:
@@ -61,6 +63,8 @@ Attributes:
   endpoint_type:
     Ignore: true
   policy_document:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

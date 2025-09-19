@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_ipv4_cidr_block
+  To: ALIYUN::VPC::VpcCidrBlockAssociation
+Properties:
+  ipv4_ipam_pool_id:
+    To: IpamPoolId
+  secondary_cidr_block:
+    To: SecondaryCidrBlock
+  secondary_cidr_mask:
+    To: SecondaryCidrMask
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    Ignore: true
+  region_id:
+    Ignore: true

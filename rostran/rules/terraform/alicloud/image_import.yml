@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_image_import
+  To: ALIYUN::ECS::CustomImage
+Properties:
+  architecture:
+    To: Architecture
+  boot_mode:
+    To: BootMode
+  description:
+    To: Description
+  disk_device_mapping:
+    Ignore: true
+  image_name:
+    To: ImageName
+  license_type:
+    Ignore: true
+  os_type:
+    Ignore: true
+  platform:
+    To: Platform
+Attributes:
+  id:
+    Ignore: true

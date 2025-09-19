@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAE::ApplicationScalingRule
+  To: alicloud_sae_application_scaling_rule
+Properties:
+  AppId:
+    To: app_id
+  MinReadyInstanceRatio:
+    To: min_ready_instance_ratio
+  MinReadyInstances:
+    To: min_ready_instances
+  ScalingRuleEnable:
+    To: scaling_rule_enable
+  ScalingRuleMetric:
+    To: scaling_rule_metric
+    Type: Map
+    Schema:
+      MaxReplicas:
+        To: max_replicas
+      Metrics:
+        To: metrics
+      MinReplicas:
+        To: min_replicas
+      ScaleDownRules:
+        To: scale_down_rules
+      ScaleUpRules:
+        To: scale_up_rules
+  ScalingRuleName:
+    To: scaling_rule_name
+  ScalingRuleTimer:
+    To: scaling_rule_timer
+    Type: Map
+    Schema:
+      BeginDate:
+        To: begin_date
+      EndDate:
+        To: end_date
+      Period:
+        To: period
+      Schedules:
+        To: schedules
+  ScalingRuleType:
+    To: scaling_rule_type
+Attributes:
+  ScalingRuleName:
+    To: id

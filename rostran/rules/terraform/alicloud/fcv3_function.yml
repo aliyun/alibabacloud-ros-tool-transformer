@@ -30,10 +30,14 @@ Properties:
     To: Handler
   instance_concurrency:
     To: InstanceConcurrency
+  instance_isolation_mode:
+    Ignore: true
   instance_lifecycle_config:
     Ignore: true
   internet_access:
     To: InternetAccess
+  invocation_restriction:
+    Ignore: true
   layers:
     To: Layers
     Type: List
@@ -49,6 +53,13 @@ Properties:
     To: Role
   runtime:
     To: Runtime
+  session_affinity:
+    Ignore: true
+  session_affinity_config:
+    Ignore: true
+  tags:
+    To: Tags
+    Type: List
   timeout:
     To: Timeout
   vpc_config:
@@ -56,9 +67,13 @@ Properties:
 Attributes:
   id:
     To: FunctionId
+  code_size:
+    Ignore: true
   cpu:
     Ignore: true
   create_time:
+    Ignore: true
+  custom_container_config:
     Ignore: true
   description:
     Ignore: true
@@ -66,6 +81,10 @@ Attributes:
     Ignore: true
   environment_variables:
     Ignore: true
+  function_arn:
+    To: ARN
+  function_id:
+    To: FunctionId
   function_name:
     To: FunctionName
   handler:
@@ -74,11 +93,29 @@ Attributes:
     Ignore: true
   internet_access:
     Ignore: true
+  invocation_restriction:
+    Ignore: true
+  last_modified_time:
+    Ignore: true
+  last_update_status:
+    Ignore: true
+  last_update_status_reason:
+    Ignore: true
+  last_update_status_reason_code:
+    Ignore: true
   memory_size:
     Ignore: true
   role:
     Ignore: true
   runtime:
     Ignore: true
+  state:
+    Ignore: true
+  state_reason:
+    Ignore: true
+  state_reason_code:
+    Ignore: true
   timeout:
+    Ignore: true
+  tracing_config:
     Ignore: true

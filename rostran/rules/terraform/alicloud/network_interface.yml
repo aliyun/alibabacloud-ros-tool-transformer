@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_network_interface
+  To: ALIYUN::ECS::NetworkInterface
+Properties:
+  description:
+    To: Description
+  name:
+    To: NetworkInterfaceName
+  private_ip:
+    To: PrimaryIpAddress
+  private_ips_count:
+    To: SecondaryPrivateIpAddressCount
+  resource_group_id:
+    To: ResourceGroupId
+  security_groups:
+    To: SecurityGroupIds
+    Type: List
+  tags:
+    To: Tags
+    Type: List
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: NetworkInterfaceId
+  mac:
+    To: MacAddress

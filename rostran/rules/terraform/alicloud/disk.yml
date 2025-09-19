@@ -22,6 +22,8 @@ Properties:
     Ignore: true
   name:
     To: DiskName
+  performance_level:
+    To: PerformanceLevel
   resource_group_id:
     To: ResourceGroupId
   size:

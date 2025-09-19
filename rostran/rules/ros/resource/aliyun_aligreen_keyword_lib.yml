@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Aligreen::KeywordLib
+  To: alicloud_aligreen_keyword_lib
+Properties:
+  BizTypes:
+    To: biz_types
+  Category:
+    To: category
+  Enable:
+    To: enable
+  KeywordLibName:
+    To: keyword_lib_name
+  Language:
+    To: language
+  LibType:
+    To: lib_type
+  MatchMode:
+    To: match_mode
+  ResourceType:
+    To: resource_type
+Attributes:
+  KeywordLibId:
+    Ignore: true
+  Category:
+    Ignore: true
+  Enable:
+    Ignore: true
+  ResourceType:
+    Ignore: true
+  BizTypes:
+    Ignore: true
+  LibType:
+    Ignore: true
+  MatchMode:
+    Ignore: true
+  Language:
+    Ignore: true
+  KeywordLibName:
+    Ignore: true

@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_nat_gateway
   To: ALIYUN::VPC::NatGateway
 Properties:
+  access_mode:
+    Ignore: true
   bandwidth_package_ids:
     Ignore: true
   bandwidth_packages:
@@ -20,6 +22,8 @@ Properties:
     Ignore: true
   forward_table_ids:
     Ignore: true
+  icmp_reply_enabled:
+    To: IcmpReplyEnabled
   instance_charge_type:
     To: InstanceChargeType
   internet_charge_type:
@@ -36,6 +40,8 @@ Properties:
     To: InstanceChargeType
   period:
     To: Duration
+  private_link_enabled:
+    Ignore: true
   snat_table_ids:
     Ignore: true
   spec:

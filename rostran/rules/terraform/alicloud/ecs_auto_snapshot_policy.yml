@@ -4,8 +4,18 @@ ResourceType:
   From: alicloud_ecs_auto_snapshot_policy
   To: ALIYUN::ECS::AutoSnapshotPolicy
 Properties:
+  auto_snapshot_policy_name:
+    To: AutoSnapshotPolicyName
   copied_snapshots_retention_days:
     Ignore: true
+  copy_encryption_configuration:
+    To: CopyEncryptionConfiguration
+    Type: Map
+    Schema:
+      encrypted:
+        To: Encrypted
+      kms_key_id:
+        To: KMSKeyId
   enable_cross_region_copy:
     Ignore: true
   name:
@@ -13,6 +23,8 @@ Properties:
   repeat_weekdays:
     To: RepeatWeekdays
     Type: List
+  resource_group_id:
+    To: ResourceGroupId
   retention_days:
     To: RetentionDays
   status:
@@ -30,9 +42,13 @@ Attributes:
     To: AutoSnapshotPolicyId
   copied_snapshots_retention_days:
     Ignore: true
+  create_time:
+    Ignore: true
   enable_cross_region_copy:
     Ignore: true
   name:
+    Ignore: true
+  region_id:
     Ignore: true
   repeat_weekdays:
     Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cr_chart_repository
+  To: ALIYUN::CR::Repository
+Properties:
+  instance_id:
+    To: InstanceId
+  repo_name:
+    To: RepoName
+  repo_namespace_name:
+    To: RepoNamespace
+  repo_type:
+    To: RepoType
+  summary:
+    To: Summary
+Attributes:
+  id:
+    To: RepoId
