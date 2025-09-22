@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_phone_instance
+  To: ALIYUN::CloudPhone::InstanceGroup
+Properties:
+  android_instance_group_id:
+    Ignore: true
+  android_instance_name:
+    To: InstanceName
+Attributes:
+  id:
+    Ignore: true

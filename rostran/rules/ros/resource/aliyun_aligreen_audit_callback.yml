@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Aligreen::AuditCallback
+  To: alicloud_aligreen_audit_callback
+Properties:
+  AuditCallbackName:
+    To: audit_callback_name
+  CallbackSuggestions:
+    To: callback_suggestions
+  CallbackTypes:
+    To: callback_types
+  CryptType:
+    To: crypt_type
+  Url:
+    To: url
+Attributes:
+  AuditCallbackName:
+    Ignore: true
+  CallbackTypes:
+    Ignore: true
+  Url:
+    Ignore: true
+  CallbackSuggestions:
+    Ignore: true
+  CryptType:
+    Ignore: true

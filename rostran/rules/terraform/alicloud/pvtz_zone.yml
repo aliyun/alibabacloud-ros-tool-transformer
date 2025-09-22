@@ -36,6 +36,8 @@ Properties:
 Attributes:
   id:
     To: ZoneId
+  creation_time:
+    Ignore: true
   is_ptr:
     Ignore: true
   name:
@@ -51,6 +53,8 @@ Attributes:
   sync_status:
     Ignore: true
   tags:
+    Ignore: true
+  update_time:
     Ignore: true
   user_info:
     Ignore: true

@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_governance_baseline
+  To: ALIYUN::Config::CompliancePack
+Properties:
+  baseline_items:
+    Ignore: true
+  baseline_name:
+    To: CompliancePackName
+  description:
+    To: Description
+Attributes:
+  id:
+    Ignore: true

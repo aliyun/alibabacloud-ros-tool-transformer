@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   availability_zone:
     To: ZoneId
+  bursting_enabled:
+    To: BurstingEnabled
   category:
     Ignore: true
   dedicated_block_storage_cluster_id:
@@ -32,12 +34,16 @@ Properties:
     To: InstanceId
   kms_key_id:
     Ignore: true
+  multi_attach:
+    To: MultiAttach
   name:
     Ignore: true
   payment_type:
     Ignore: true
   performance_level:
     To: PerformanceLevel
+  provisioned_iops:
+    To: ProvisionedIops
   resource_group_id:
     To: ResourceGroupId
   size:
@@ -64,6 +70,8 @@ Attributes:
     Ignore: true
   category:
     Ignore: true
+  create_time:
+    Ignore: true
   delete_auto_snapshot:
     Ignore: true
   delete_with_instance:
@@ -85,6 +93,8 @@ Attributes:
   payment_type:
     Ignore: true
   performance_level:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

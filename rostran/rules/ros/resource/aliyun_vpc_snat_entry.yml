@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::SnatEntry
+  To: alicloud_snat_entry
+Properties:
+  SnatEntryName:
+    To: snat_entry_name
+  EipAffinity:
+    Ignore: true
+  SnatTableId:
+    Ignore: true
+  SnatIp:
+    Ignore: true
+  SourceVSwitchIds:
+    Ignore: true
+  SourceCIDR:
+    Ignore: true
+Attributes:
+  SnatEntryIds:
+    Ignore: true

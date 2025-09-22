@@ -33,7 +33,11 @@ Attributes:
     Ignore: true
   function_name:
     To: FunctionName
+  http_trigger:
+    Ignore: true
   invocation_role:
+    Ignore: true
+  last_modified_time:
     Ignore: true
   qualifier:
     Ignore: true
@@ -41,8 +45,12 @@ Attributes:
     Ignore: true
   status:
     Ignore: true
+  target_arn:
+    Ignore: true
   trigger_config:
     Ignore: true
+  trigger_id:
+    To: TriggerId
   trigger_name:
     To: TriggerName
   trigger_type:

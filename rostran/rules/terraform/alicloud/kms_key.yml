@@ -14,6 +14,10 @@ Properties:
     Ignore: true
   delete_date:
     Ignore: true
+  deletion_protection:
+    To: DeletionProtection
+  deletion_protection_description:
+    Ignore: true
   deletion_window_in_days:
     To: PendingWindowInDays
   description:

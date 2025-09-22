@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::KvNamespace
+  To: alicloud_esa_kv_namespace
+Properties:
+  Description:
+    To: description
+  KvNamespace:
+    To: kv_namespace
+Attributes:
+  NamespaceId:
+    To: id
+  KvCapacity:
+    Ignore: true
+  KvCapacityUsed:
+    Ignore: true
+  Description:
+    Ignore: true
+  KvCapacityUsedString:
+    Ignore: true
+  KvNamespace:
+    Ignore: true
+  KvCapacityString:
+    Ignore: true

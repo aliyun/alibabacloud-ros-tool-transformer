@@ -23,6 +23,8 @@ Properties:
     To: FunctionVersion
   ip:
     Ignore: true
+  modify_type:
+    Ignore: true
   name:
     Ignore: true
   normal_bandwidth:
@@ -43,6 +45,9 @@ Properties:
   service_bandwidth:
     To: ServiceBandwidth
     Handler: to_int
+  tags:
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: InstanceId
@@ -51,6 +56,8 @@ Attributes:
   bandwidth:
     Ignore: true
   base_bandwidth:
+    Ignore: true
+  create_time:
     Ignore: true
   domain_count:
     Ignore: true
@@ -71,4 +78,6 @@ Attributes:
   product_plan:
     Ignore: true
   service_bandwidth:
+    Ignore: true
+  status:
     Ignore: true

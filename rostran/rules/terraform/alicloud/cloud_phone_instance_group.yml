@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_phone_instance_group
+  To: ALIYUN::CloudPhone::InstanceGroup
+Properties:
+  amount:
+    To: Amount
+  auto_pay:
+    To: AutoPay
+  auto_renew:
+    To: AutoRenew
+  charge_type:
+    To: ChargeType
+  gpu_acceleration:
+    Ignore: true
+  image_id:
+    To: ImageId
+  instance_group_name:
+    To: InstanceName
+  instance_group_spec:
+    Ignore: true
+  number_of_instances:
+    Ignore: true
+  office_site_id:
+    To: VSwitchId
+  period:
+    To: Period
+  period_unit:
+    To: PeriodUnit
+  policy_group_id:
+    Ignore: true
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

@@ -6,10 +6,14 @@ ResourceType:
 Properties:
   allow_user_to_change_password:
     To: AllowUserToChangePassword
+  allow_user_to_login_with_passkey:
+    Ignore: true
   allow_user_to_manage_access_keys:
     To: AllowUserToManageAccessKeys
   allow_user_to_manage_mfa_devices:
     To: AllowUserToManageMFADevices
+  allow_user_to_manage_personal_ding_talk:
+    Ignore: true
   enable_save_mfa_ticket:
     Ignore: true
   enforce_mfa_for_login:
@@ -18,6 +22,12 @@ Properties:
     To: LoginNetworkMasks
   login_session_duration:
     To: LoginSessionDuration
+  mfa_operation_for_login:
+    Ignore: true
+  operation_for_risk_login:
+    Ignore: true
+  verification_types:
+    Ignore: true
 Attributes:
   id:
     Ignore: true

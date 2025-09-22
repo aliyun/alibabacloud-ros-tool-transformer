@@ -1,0 +1,91 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_router_interface
+  To: ALIYUN::VPC::RouterInterface
+Properties:
+  access_point_id:
+    To: AccessPointId
+  auto_pay:
+    To: AutoPay
+  delete_health_check_ip:
+    Ignore: true
+  description:
+    To: Description
+  hc_rate:
+    Ignore: true
+  hc_threshold:
+    Ignore: true
+  health_check_source_ip:
+    To: HealthCheckSourceIp
+  health_check_target_ip:
+    To: HealthCheckTargetIp
+  opposite_access_point_id:
+    To: OppositeAccessPointId
+  opposite_interface_id:
+    To: OppositeInterfaceId
+  opposite_interface_owner_id:
+    To: OppositeInterfaceOwnerId
+  opposite_region_id:
+    To: OppositeRegionId
+  opposite_router_id:
+    To: OppositeRouterId
+  opposite_router_type:
+    To: OppositeRouterType
+  payment_type:
+    To: InstanceChargeType
+  period:
+    To: Period
+  pricing_cycle:
+    To: PricingCycle
+  role:
+    To: Role
+  router_id:
+    To: RouterId
+  router_interface_id:
+    Ignore: true
+  router_interface_name:
+    To: Name
+  router_type:
+    To: RouterType
+  spec:
+    To: Spec
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: RouterInterfaceId
+  bandwidth:
+    Ignore: true
+  business_status:
+    Ignore: true
+  connected_time:
+    Ignore: true
+  create_time:
+    Ignore: true
+  cross_border:
+    Ignore: true
+  end_time:
+    Ignore: true
+  has_reservation_data:
+    Ignore: true
+  opposite_bandwidth:
+    Ignore: true
+  opposite_interface_business_status:
+    Ignore: true
+  opposite_interface_spec:
+    Ignore: true
+  opposite_interface_status:
+    Ignore: true
+  opposite_vpc_instance_id:
+    Ignore: true
+  reservation_active_time:
+    Ignore: true
+  reservation_bandwidth:
+    Ignore: true
+  reservation_internet_charge_type:
+    Ignore: true
+  reservation_order_type:
+    Ignore: true
+  vpc_instance_id:
+    Ignore: true

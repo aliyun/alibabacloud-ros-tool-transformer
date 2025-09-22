@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_backup_policy
+  To: ALIYUN::GPDB::DBInstance
+Properties:
+  backup_retention_period:
+    Ignore: true
+  db_instance_id:
+    Ignore: true
+  enable_recovery_point:
+    Ignore: true
+  preferred_backup_period:
+    Ignore: true
+  preferred_backup_time:
+    Ignore: true
+  recovery_point_period:
+    Ignore: true
+Attributes:
+  id:
+    To: DBInstanceId

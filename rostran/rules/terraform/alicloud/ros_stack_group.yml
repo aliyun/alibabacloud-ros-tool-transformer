@@ -8,6 +8,16 @@ Properties:
     Ignore: true
   administration_role_name:
     To: AdministrationRoleName
+  auto_deployment:
+    To: AutoDeployment
+    Type: Map
+    Schema:
+      enabled:
+        To: Enabled
+      retain_stacks_on_account_removal:
+        To: RetainStacksOnAccountRemoval
+  capabilities:
+    Ignore: true
   description:
     To: Description
   execution_role_name:
@@ -19,17 +29,25 @@ Properties:
   parameters:
     To: Parameters
     Handler: ros_parameters
+  permission_model:
+    To: PermissionModel
   region_ids:
     Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
   stack_group_id:
     Ignore: true
   stack_group_name:
     To: StackGroupName
   status:
     Ignore: true
+  tags:
+    Ignore: true
   template_body:
     To: TemplateBody
     Handler: json_load
+  template_id:
+    To: TemplateId
   template_url:
     To: TemplateURL
   template_version:

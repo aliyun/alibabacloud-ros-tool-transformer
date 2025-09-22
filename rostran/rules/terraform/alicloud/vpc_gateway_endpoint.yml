@@ -1,0 +1,30 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_gateway_endpoint
+  To: ALIYUN::VPC::VpcGatewayEndpoint
+Properties:
+  gateway_endpoint_descrption:
+    To: EndpointDescription
+  gateway_endpoint_name:
+    To: EndpointName
+  policy_document:
+    To: PolicyDocument
+  resource_group_id:
+    To: ResourceGroupId
+  route_tables:
+    Ignore: true
+  service_name:
+    To: ServiceName
+  tags:
+    To: Tags
+    Type: List
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

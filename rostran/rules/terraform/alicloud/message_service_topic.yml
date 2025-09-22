@@ -4,15 +4,22 @@ ResourceType:
   From: alicloud_message_service_topic
   To: ALIYUN::MNS::Topic
 Properties:
+  enable_logging:
+    To: LoggingEnabled
   logging_enabled:
     To: LoggingEnabled
   max_message_size:
     Ignore: true
+  tags:
+    To: Tags
+    Type: List
   topic_name:
     To: TopicName
 Attributes:
   id:
     To: TopicName
+  create_time:
+    Ignore: true
   logging_enabled:
     Ignore: true
   max_message_size:

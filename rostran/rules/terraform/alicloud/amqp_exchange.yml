@@ -18,10 +18,14 @@ Properties:
     To: Internal
   virtual_host_name:
     Ignore: true
+  x_delayed_type:
+    To: XDelayedType
 Attributes:
   id:
     Ignore: true
   auto_delete_state:
+    Ignore: true
+  create_time:
     Ignore: true
   exchange_name:
     To: ExchangeName

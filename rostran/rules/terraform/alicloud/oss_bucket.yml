@@ -24,13 +24,23 @@ Properties:
         To: ExposeHeader
       max_age_seconds:
         To: MaxAgeSeconds
+  created_before_date:
+    Ignore: true
   creation_date:
+    Ignore: true
+  date:
+    Ignore: true
+  days:
+    Ignore: true
+  expired_object_delete_marker:
     Ignore: true
   extranet_endpoint:
     Ignore: true
   force_destroy:
     To: DeletionForce
   intranet_endpoint:
+    Ignore: true
+  is_access_time:
     Ignore: true
   lifecycle_rule:
     Ignore: true
@@ -48,10 +58,16 @@ Properties:
         To: TargetPrefix
   logging_isenable:
     Ignore: true
+  object_size_greater_than:
+    Ignore: true
+  object_size_less_than:
+    Ignore: true
   owner:
     Ignore: true
   policy:
     To: Policy
+  prefix:
+    Ignore: true
   redundancy_type:
     To: RedundancyType
   referer_config:
@@ -64,6 +80,8 @@ Properties:
         To: RefererList
   resource_group_id:
     To: ResourceGroupId
+  return_to_std_when_visit:
+    Ignore: true
   server_side_encryption_rule:
     To: ServerSideEncryptionConfiguration
     Type: Map
@@ -74,6 +92,8 @@ Properties:
         To: SSEAlgorithm
   storage_class:
     To: StorageClass
+  tag:
+    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list

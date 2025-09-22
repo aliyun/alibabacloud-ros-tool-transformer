@@ -1,0 +1,79 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_fcv3_custom_domain
+  To: ALIYUN::FC3::CustomDomain
+Properties:
+  auth_config:
+    To: AuthConfig
+    Type: Map
+    Schema:
+      auth_info:
+        To: AuthInfo
+      auth_type:
+        To: AuthType
+  cert_config:
+    To: CertConfig
+    Type: Map
+    Schema:
+      cert_name:
+        To: CertName
+      certificate:
+        To: Certificate
+      private_key:
+        To: PrivateKey
+  custom_domain_name:
+    To: DomainName
+  function_name:
+    Ignore: true
+  match:
+    Ignore: true
+  methods:
+    Ignore: true
+  path:
+    Ignore: true
+  protocol:
+    To: Protocol
+  qualifier:
+    Ignore: true
+  replacement:
+    Ignore: true
+  rewrite_config:
+    Ignore: true
+  route_config:
+    To: RouteConfig
+    Type: Map
+    Schema:
+      routes:
+        To: Routes
+        Type: List
+  tls_config:
+    To: TlsConfig
+    Type: Map
+    Schema:
+      cipher_suites:
+        To: CipherSuites
+        Type: List
+      max_version:
+        To: MaxVersion
+      min_version:
+        To: MinVersion
+  waf_config:
+    To: WafConfig
+    Type: Map
+    Schema:
+      enable_waf:
+        To: EnableWAF
+Attributes:
+  id:
+    Ignore: true
+  account_id:
+    Ignore: true
+  api_version:
+    Ignore: true
+  create_time:
+    Ignore: true
+  last_modified_time:
+    Ignore: true
+  subdomain_count:
+    Ignore: true

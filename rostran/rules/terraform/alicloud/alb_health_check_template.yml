@@ -29,6 +29,10 @@ Properties:
     To: HealthCheckTimeout
   healthy_threshold:
     To: HealthyThreshold
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true
   unhealthy_threshold:
     To: UnhealthyThreshold
 Attributes:

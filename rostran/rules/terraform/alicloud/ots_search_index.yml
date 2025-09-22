@@ -4,9 +4,19 @@ ResourceType:
   From: alicloud_ots_search_index
   To: ALIYUN::OTS::SearchIndex
 Properties:
+  analyzer:
+    Ignore: true
   create_time:
     Ignore: true
   current_sync_timestamp:
+    Ignore: true
+  enable_sort_and_agg:
+    Ignore: true
+  field_name:
+    Ignore: true
+  field_type:
+    Ignore: true
+  index:
     Ignore: true
   index_id:
     Ignore: true
@@ -14,6 +24,10 @@ Properties:
     To: IndexName
   instance_name:
     To: InstanceName
+  is_array:
+    Ignore: true
+  routing_fields:
+    Ignore: true
   schema:
     Type: Map
     Schema:
@@ -48,6 +62,10 @@ Properties:
           sorter:
             To: Sorters
             Handler: ots_search_index_sorters
+  sorter:
+    Ignore: true
+  store:
+    Ignore: true
   sync_phase:
     Ignore: true
   table_name:
@@ -56,4 +74,12 @@ Properties:
     Ignore: true
 Attributes:
   id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  current_sync_timestamp:
+    Ignore: true
+  index_id:
+    Ignore: true
+  sync_phase:
     Ignore: true

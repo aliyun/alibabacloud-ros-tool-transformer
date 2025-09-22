@@ -6,12 +6,16 @@ ResourceType:
 Properties:
   abandon_able_check_id:
     Ignore: true
+  abandonable_check_id:
+    Ignore: true
   account_name_prefix:
     Ignore: true
   display_name:
     To: DisplayName
   folder_id:
     To: FolderId
+  force_delete:
+    To: DeleteAccount
   join_method:
     Ignore: true
   join_time:
@@ -20,6 +24,8 @@ Properties:
     Ignore: true
   payer_account_id:
     To: PayerAccountId
+  resell_account_type:
+    Ignore: true
   resource_directory_id:
     Ignore: true
   status:

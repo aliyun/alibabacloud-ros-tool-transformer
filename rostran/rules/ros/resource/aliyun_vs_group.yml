@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VS::Group
+  To: alicloud_video_surveillance_system_group
+Properties:
+  Callback:
+    To: callback
+  Description:
+    To: description
+  Enabled:
+    To: enabled
+  Name:
+    To: group_name
+  InProtocol:
+    To: in_protocol
+  OutProtocol:
+    To: out_protocol
+  PlayDomain:
+    To: play_domain
+  PushDomain:
+    To: push_domain
+  Region:
+    Ignore: true
+  App:
+    Ignore: true
+  LazyPull:
+    Ignore: true
+Attributes:
+  Id:
+    To: id
+  GbIp:
+    Ignore: true
+  GbId:
+    Ignore: true
+  GbPort:
+    Ignore: true

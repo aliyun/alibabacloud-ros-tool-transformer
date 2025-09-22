@@ -70,6 +70,8 @@ Properties:
     To: HttpTokens
   image_id:
     To: ImageId
+  image_options:
+    Ignore: true
   include_data_disks:
     Ignore: true
   instance_charge_type:
@@ -128,6 +130,8 @@ Properties:
     Ignore: true
   password:
     To: Password
+  password_inherit:
+    To: PasswordInherit
   period:
     To: Period
   period_unit:
@@ -136,6 +140,10 @@ Properties:
     Ignore: true
   private_ip:
     To: PrivateIpAddress
+  private_pool_options_id:
+    Ignore: true
+  private_pool_options_match_criteria:
+    Ignore: true
   public_ip:
     Ignore: true
   queue_pair_number:
@@ -170,6 +178,8 @@ Properties:
     Ignore: true
   system_disk_auto_snapshot_policy_id:
     Ignore: true
+  system_disk_bursting_enabled:
+    Ignore: true
   system_disk_category:
     To: SystemDiskCategory
   system_disk_description:
@@ -186,6 +196,8 @@ Properties:
     Ignore: true
   system_disk_performance_level:
     To: SystemDiskPerformanceLevel
+  system_disk_provisioned_iops:
+    Ignore: true
   system_disk_size:
     To: SystemDiskSize
   system_disk_storage_cluster_id:
@@ -212,6 +224,8 @@ Attributes:
     To: ZoneId
   cpu:
     Ignore: true
+  create_time:
+    Ignore: true
   credit_specification:
     Ignore: true
   dedicated_host_id:
@@ -225,6 +239,8 @@ Attributes:
   description:
     Ignore: true
   enable_jumbo_frame:
+    Ignore: true
+  expired_time:
     Ignore: true
   host_name:
     To: HostName
@@ -303,6 +319,8 @@ Attributes:
   spot_price_limit:
     Ignore: true
   spot_strategy:
+    Ignore: true
+  start_time:
     Ignore: true
   status:
     Ignore: true

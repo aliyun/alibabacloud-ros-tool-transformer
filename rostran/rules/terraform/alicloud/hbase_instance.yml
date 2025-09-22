@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbase_instance
+  To: ALIYUN::HBase::Cluster
+Properties:
+  account:
+    Ignore: true
+  auto_renew:
+    To: AutoRenewPeriod
+  cold_storage_size:
+    To: ColdStorageSize
+  core_disk_size:
+    To: DiskSize
+  core_instance_type:
+    To: CoreInstanceType
+  deletion_protection:
+    To: DeletionProtection
+  duration:
+    To: Period
+  engine:
+    To: Engine
+  engine_version:
+    To: EngineVersion
+  immediate_delete_flag:
+    Ignore: true
+  ip_white:
+    To: SecurityIPList
+  master_instance_type:
+    To: MasterInstanceType
+  name:
+    To: ClusterName
+  password:
+    Ignore: true
+  pay_type:
+    To: PayType
+  security_groups:
+    Ignore: true
+  slb_conn_addrs:
+    Ignore: true
+  tags:
+    Ignore: true
+  ui_proxy_conn_addrs:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zk_conn_addrs:
+    Ignore: true
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: ClusterId
+  master_instance_quantity:
+    Ignore: true

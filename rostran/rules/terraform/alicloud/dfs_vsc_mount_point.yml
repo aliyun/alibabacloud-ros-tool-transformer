@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dfs_vsc_mount_point
+  To: ALIYUN::DFS::MountPoint
+Properties:
+  alias_prefix:
+    Ignore: true
+  description:
+    To: Description
+  file_system_id:
+    To: FileSystemId
+Attributes:
+  id:
+    Ignore: true
+  instances:
+    Ignore: true
+  mount_point_id:
+    To: MountPointId

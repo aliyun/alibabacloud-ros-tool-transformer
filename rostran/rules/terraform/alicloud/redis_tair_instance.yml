@@ -8,8 +8,13 @@ Properties:
     Ignore: true
   auto_renew_period:
     Ignore: true
+  backup_id:
+    Ignore: true
   cluster_backup_id:
     Ignore: true
+  connection_string_prefix:
+    To: Connections
+    Type: Map
   create_time:
     Ignore: true
   effective_time:
@@ -18,12 +23,30 @@ Properties:
     To: EngineVersion
   force_upgrade:
     Ignore: true
+  global_instance_id:
+    Ignore: true
   instance_class:
     To: InstanceClass
   instance_type:
     Ignore: true
+  intranet_bandwidth:
+    Ignore: true
+  modify_mode:
+    Ignore: true
   node_type:
     To: NodeType
+  param_no_loose_sentinel_enabled:
+    Ignore: true
+  param_no_loose_sentinel_password_free_access:
+    Ignore: true
+  param_no_loose_sentinel_password_free_commands:
+    Ignore: true
+  param_repl_mode:
+    Ignore: true
+  param_semisync_repl_timeout:
+    Ignore: true
+  param_sentinel_compat_enable:
+    Ignore: true
   password:
     To: Password
   payment_type:
@@ -34,15 +57,23 @@ Properties:
     Ignore: true
   read_only_count:
     Ignore: true
+  recover_config_mode:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   secondary_zone_id:
     To: SecondaryZoneId
   security_group_id:
     To: SecurityGroupId
+  security_ip_group_name:
+    Ignore: true
+  security_ips:
+    Ignore: true
   shard_count:
     To: ShardCount
   slave_read_only_count:
+    Ignore: true
+  src_db_instance_id:
     Ignore: true
   ssl_enabled:
     Ignore: true
@@ -57,6 +88,8 @@ Properties:
     Handler: tags_dict_to_list
   tair_instance_name:
     Ignore: true
+  vpc_auth_mode:
+    To: VpcPasswordFree
   vpc_id:
     To: VpcId
   vswitch_id:
@@ -66,6 +99,10 @@ Properties:
 Attributes:
   id:
     To: InstanceId
+  architecture_type:
+    To: ArchitectureType
+  connection_domain:
+    To: ConnectionDomain
   create_time:
     Ignore: true
   engine_version:
@@ -74,12 +111,18 @@ Attributes:
     To: InstanceClass
   instance_type:
     To: InstanceType
+  max_connections:
+    Ignore: true
+  network_type:
+    To: NetworkType
   node_type:
     To: NodeType
   payment_type:
     Ignore: true
   port:
     To: Port
+  region_id:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   secondary_zone_id:
@@ -98,6 +141,8 @@ Attributes:
     Ignore: true
   tags:
     Ignore: true
+  tair_instance_id:
+    To: InstanceId
   tair_instance_name:
     Ignore: true
   vpc_id:

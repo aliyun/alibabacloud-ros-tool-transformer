@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_api_gateway_backend
+  To: ALIYUN::ApiGateway::Backend
+Properties:
+  backend_name:
+    To: BackendName
+  backend_type:
+    To: BackendType
+  create_event_bridge_service_linked_role:
+    Ignore: true
+  description:
+    To: Description
+Attributes:
+  id:
+    To: BackendId

@@ -1,0 +1,101 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RDS::DBInstanceClone
+  To: alicloud_rds_clone_db_instance
+Properties:
+  BackupId:
+    To: backup_id
+  BackupType:
+    To: backup_type
+  Category:
+    To: category
+  ConnectionStringPrefix:
+    To: connection_string_prefix
+  DBInstanceClass:
+    To: db_instance_class
+  DBInstanceDescription:
+    To: db_instance_description
+  DBInstanceStorage:
+    To: db_instance_storage
+  DBInstanceStorageType:
+    To: db_instance_storage_type
+  DbNames:
+    To: db_names
+  DedicatedHostGroupId:
+    To: dedicated_host_group_id
+  InstanceNetworkType:
+    To: instance_network_type
+  MaintainTime:
+    To: maintain_time
+  MasterUserPassword:
+    To: password
+  PayType:
+    To: payment_type
+  PeriodType:
+    To: period
+  Port:
+    To: port
+  PrivateIpAddress:
+    To: private_ip_address
+  RestoreTable:
+    To: restore_table
+  RestoreTime:
+    To: restore_time
+  SecurityIPList:
+    To: security_ips
+  DBInstanceId:
+    To: source_db_instance_id
+  SSLSetting:
+    To: ssl_enabled
+  TableMeta:
+    To: table_meta
+  Period:
+    To: used_time
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  SlaveZoneIds:
+    To: zone_id_slave_a
+  MasterUserType:
+    Ignore: true
+  AllocatePublicConnection:
+    Ignore: true
+  Tags:
+    Ignore: true
+  DBMappings:
+    Ignore: true
+  MasterUsername:
+    Ignore: true
+  TimeoutInMinutes:
+    Ignore: true
+  PreferredBackupTime:
+    Ignore: true
+  PreferredBackupPeriod:
+    Ignore: true
+  SQLCollectorStatus:
+    Ignore: true
+  SecurityGroupId:
+    Ignore: true
+  BackupRetentionPeriod:
+    Ignore: true
+  ConnectionStringType:
+    Ignore: true
+Attributes:
+  PublicConnectionString:
+    To: connection_string
+  InnerIPAddress:
+    Ignore: true
+  DBInstanceId:
+    Ignore: true
+  PublicPort:
+    Ignore: true
+  InnerPort:
+    Ignore: true
+  PublicIPAddress:
+    Ignore: true
+  InnerConnectionString:
+    Ignore: true

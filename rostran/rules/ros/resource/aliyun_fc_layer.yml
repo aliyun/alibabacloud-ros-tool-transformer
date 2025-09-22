@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC::Layer
+  To: alicloud_fc_layer_version
+Properties:
+  CompatibleRuntime:
+    To: compatible_runtime
+  Description:
+    To: description
+  LayerName:
+    To: layer_name
+  Code:
+    Ignore: true
+Attributes:
+  Arn:
+    To: arn
+  Version:
+    To: version
+  LayerName:
+    Ignore: true

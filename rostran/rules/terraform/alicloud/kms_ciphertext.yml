@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_kms_ciphertext
+  To: ALIYUN::KMS::Secret
+Properties:
+  encryption_context:
+    To: ExtendedConfig
+  key_id:
+    To: EncryptionKeyId
+  plaintext:
+    To: SecretData
+Attributes:
+  ciphertext_blob:
+    Ignore: true

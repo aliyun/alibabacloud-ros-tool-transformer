@@ -4,6 +4,14 @@ ResourceType:
   From: alicloud_message_service_subscription
   To: ALIYUN::MNS::Subscription
 Properties:
+  dlq_policy:
+    To: DlqPolicy
+    Type: Map
+    Schema:
+      dead_letter_target_queue:
+        To: DeadLetterTargetQueue
+      enabled:
+        To: Enabled
   endpoint:
     To: Endpoint
   filter_tag:
@@ -21,6 +29,8 @@ Properties:
 Attributes:
   id:
     To: SubscriptionName
+  create_time:
+    Ignore: true
   endpoint:
     Ignore: true
   filter_tag:

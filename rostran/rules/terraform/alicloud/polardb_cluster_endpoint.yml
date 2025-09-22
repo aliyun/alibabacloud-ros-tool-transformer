@@ -1,0 +1,42 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_polardb_cluster_endpoint
+  To: ALIYUN::POLARDB::DBClusterEndpoint
+Properties:
+  auto_add_new_nodes:
+    To: AutoAddNewNodes
+  connection_prefix:
+    Ignore: true
+  db_cluster_id:
+    To: DBClusterId
+  db_endpoint_description:
+    Ignore: true
+  endpoint_config:
+    To: EndpointConfig
+    Type: Map
+  net_type:
+    Ignore: true
+  nodes:
+    To: Nodes
+  port:
+    Ignore: true
+  read_write_mode:
+    To: ReadWriteMode
+  ssl_auto_rotate:
+    Ignore: true
+  ssl_enabled:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  db_endpoint_id:
+    To: DBEndpointId
+  endpoint_type:
+    Ignore: true
+  ssl_certificate_url:
+    Ignore: true
+  ssl_connection_string:
+    Ignore: true
+  ssl_expire_time:
+    Ignore: true

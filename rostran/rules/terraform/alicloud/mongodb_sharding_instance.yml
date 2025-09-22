@@ -8,14 +8,22 @@ Properties:
     To: AccountPassword
   auto_renew:
     To: AutoRenew
+  backup_interval:
+    Ignore: true
   backup_period:
+    Ignore: true
+  backup_retention_policy_on_cluster_deletion:
     Ignore: true
   backup_time:
     Ignore: true
   config_server_list:
     Ignore: true
+  db_instance_release_protection:
+    Ignore: true
   engine_version:
     To: EngineVersion
+  hidden_zone_id:
+    To: HiddenZoneId
   instance_charge_type:
     To: ChargeType
   kms_encrypted_password:
@@ -44,6 +52,8 @@ Properties:
     To: ResourceGroupId
   retention_period:
     Ignore: true
+  secondary_zone_id:
+    To: SecondaryZoneId
   security_group_id:
     Ignore: true
   security_ip_list:
@@ -56,6 +66,8 @@ Properties:
         To: Class
       node_storage:
         To: Storage
+  snapshot_backup_type:
+    Ignore: true
   storage_engine:
     To: StorageEngine
   storage_type:

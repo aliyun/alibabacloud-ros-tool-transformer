@@ -20,6 +20,8 @@ Properties:
     Ignore: true
   force_delete:
     Ignore: true
+  link_type:
+    Ignore: true
   peer_connection_name:
     To: Name
   resource_group_id:
@@ -46,6 +48,8 @@ Attributes:
   description:
     Ignore: true
   peer_connection_name:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

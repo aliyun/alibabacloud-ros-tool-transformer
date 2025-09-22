@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Aligreen::ImageLib
+  To: alicloud_aligreen_image_lib
+Properties:
+  BizTypes:
+    To: biz_types
+  Category:
+    To: category
+  Enable:
+    To: enable
+  ImageLibName:
+    To: image_lib_name
+  Scene:
+    To: scene
+Attributes:
+  ImageLibId:
+    To: id
+  Category:
+    Ignore: true
+  ImageLibName:
+    Ignore: true
+  Scene:
+    Ignore: true
+  Enable:
+    Ignore: true
+  BizTypes:
+    Ignore: true

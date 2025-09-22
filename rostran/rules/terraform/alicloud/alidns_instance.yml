@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alidns_instance
+  To: ALIYUN::DNS::Instance
+Properties:
+  dns_security:
+    To: DNSSecurity
+  domain_numbers:
+    To: DomainNumbers
+  payment_type:
+    Ignore: true
+  period:
+    To: Period
+  renew_period:
+    Ignore: true
+  renewal_status:
+    To: RenewalStatus
+  version_code:
+    To: Version
+Attributes:
+  id:
+    To: InstanceId
+  version_name:
+    Ignore: true

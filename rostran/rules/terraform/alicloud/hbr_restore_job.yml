@@ -18,6 +18,8 @@ Properties:
     Ignore: true
   ots_detail:
     Ignore: true
+  overwrite_existing:
+    Ignore: true
   restore_job_id:
     Ignore: true
   restore_type:

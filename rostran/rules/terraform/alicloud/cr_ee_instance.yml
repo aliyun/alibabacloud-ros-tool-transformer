@@ -8,8 +8,12 @@ Properties:
     Ignore: true
   custom_oss_bucket:
     Ignore: true
+  default_oss_bucket:
+    Ignore: true
   end_time:
     Ignore: true
+  image_scanner:
+    To: ImageScanner
   instance_name:
     To: InstanceName
   instance_type:
@@ -28,20 +32,28 @@ Properties:
     To: RenewPeriod
   renewal_status:
     To: RenewalStatus
+  resource_group_id:
+    To: ResourceGroupId
   status:
     Ignore: true
 Attributes:
   id:
     To: InstanceId
+  create_time:
+    To: CreateTime
   created_time:
     To: CreateTime
   end_time:
+    Ignore: true
+  instance_endpoints:
     Ignore: true
   instance_name:
     To: InstanceName
   instance_type:
     Ignore: true
   payment_type:
+    Ignore: true
+  region_id:
     Ignore: true
   renew_period:
     Ignore: true

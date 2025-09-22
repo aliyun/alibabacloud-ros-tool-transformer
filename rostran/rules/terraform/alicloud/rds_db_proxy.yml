@@ -1,0 +1,44 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_db_proxy
+  To: ALIYUN::RDS::DBProxy
+Properties:
+  db_proxy_connect_string_port:
+    Ignore: true
+  db_proxy_connection_prefix:
+    Ignore: true
+  db_proxy_endpoint_read_write_mode:
+    Ignore: true
+  db_proxy_features:
+    Ignore: true
+  db_proxy_instance_num:
+    To: DBProxyInstanceNum
+  db_proxy_instance_type:
+    To: DBProxyInstanceType
+  db_proxy_ssl_enabled:
+    Ignore: true
+  effective_specific_time:
+    Ignore: true
+  effective_time:
+    Ignore: true
+  instance_id:
+    To: DBInstanceId
+  instance_network_type:
+    Ignore: true
+  read_only_instance_distribution_type:
+    Ignore: true
+  read_only_instance_max_delay_time:
+    Ignore: true
+  read_only_instance_weight:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  switch_time:
+    Ignore: true
+  upgrade_time:
+    Ignore: true
+  vpc_id:
+    To: VPCId
+  vswitch_id:
+    To: VSwitchId

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_router_tr_association
+  To: ALIYUN::CEN::TransitRouterVbrAttachment
+Properties:
+  allowed_prefixes:
+    Ignore: true
+  association_region_id:
+    Ignore: true
+  cen_id:
+    To: CenId
+  ecr_id:
+    To: VbrId
+  transit_router_id:
+    To: TransitRouterId
+  transit_router_owner_id:
+    To: VbrOwnerId
+Attributes:
+  id:
+    Ignore: true
+  association_id:
+    To: TransitRouterAttachmentId
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

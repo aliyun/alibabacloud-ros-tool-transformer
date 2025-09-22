@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_alb_load_balancer_security_group_attachment
   To: ALIYUN::ALB::SecurityGroupAttachment
 Properties:
+  dry_run:
+    Ignore: true
   load_balancer_id:
     To: LoadBalancerId
   security_group_id:

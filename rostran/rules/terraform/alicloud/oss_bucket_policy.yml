@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_policy
+  To: ALIYUN::OSS::Bucket
+Properties:
+  bucket:
+    To: BucketName
+  policy:
+    To: Policy
+Attributes:
+  id:
+    To: Name

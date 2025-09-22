@@ -4,22 +4,40 @@ ResourceType:
   From: alicloud_cloud_sso_directory
   To: ALIYUN::CloudSSO::Directory
 Properties:
+  directory_global_access_status:
+    Ignore: true
   directory_name:
     To: DirectoryName
+  login_preference:
+    Ignore: true
+  mfa_authentication_setting_info:
+    Ignore: true
   mfa_authentication_status:
+    Ignore: true
+  password_policy:
     Ignore: true
   saml_identity_provider_configuration:
     Ignore: true
+  saml_service_provider:
+    Ignore: true
   scim_synchronization_status:
+    Ignore: true
+  user_provisioning_configuration:
     Ignore: true
 Attributes:
   id:
     To: DirectoryId
+  create_time:
+    Ignore: true
   directory_name:
     Ignore: true
   mfa_authentication_status:
     Ignore: true
+  password_policy:
+    Ignore: true
   saml_identity_provider_configuration:
+    Ignore: true
+  saml_service_provider:
     Ignore: true
   scim_synchronization_status:
     Ignore: true

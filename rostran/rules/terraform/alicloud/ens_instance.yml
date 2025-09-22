@@ -87,6 +87,8 @@ Attributes:
     To: InstanceId
   auto_release_time:
     Ignore: true
+  data_disk:
+    Ignore: true
   ens_region_id:
     To: EnsRegionId
   host_name:

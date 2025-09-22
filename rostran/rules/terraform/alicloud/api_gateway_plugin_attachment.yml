@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_api_gateway_plugin_attachment
+  To: ALIYUN::ApiGateway::PluginAttachment
+Properties:
+  api_id:
+    To: ApiId
+  group_id:
+    Ignore: true
+  plugin_id:
+    To: PluginId
+  stage_name:
+    To: StageName
+Attributes:
+  id:
+    Ignore: true

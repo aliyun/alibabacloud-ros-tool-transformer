@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pai_workspace_datasetversion
+  To: ALIYUN::PAI::DatasetVersion
+Properties:
+  data_count:
+    To: DataCount
+  data_size:
+    To: DataSize
+  data_source_type:
+    To: DataSourceType
+  dataset_id:
+    To: DatasetId
+  description:
+    To: Description
+  labels:
+    To: Labels
+    Type: List
+    Schema:
+      key:
+        To: Key
+      value:
+        To: Value
+  options:
+    To: Options
+  property:
+    To: Property
+  source_id:
+    To: SourceId
+  source_type:
+    To: SourceType
+  uri:
+    To: Uri
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  version_name:
+    To: VersionName

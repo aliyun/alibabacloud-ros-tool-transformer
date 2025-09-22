@@ -1,0 +1,12 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_log_alert_resource
+  To: ALIYUN::SLS::Alert
+Properties:
+  lang:
+    Ignore: true
+  project:
+    To: Project
+  type:
+    Ignore: true

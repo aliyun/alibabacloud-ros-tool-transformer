@@ -14,6 +14,8 @@ Properties:
     To: EnableDpd
   enable_nat_traversal:
     To: EnableNatTraversal
+  enable_tunnels_bgp:
+    Ignore: true
   health_check_config:
     Ignore: true
   ike_config:
@@ -22,13 +24,25 @@ Properties:
     Ignore: true
   ipsec_config:
     Ignore: true
+  local_asn:
+    Ignore: true
+  local_bgp_ip:
+    Ignore: true
   local_subnet:
     To: LocalSubnet
   network_type:
     To: NetworkType
   remote_subnet:
     To: RemoteSubnet
+  resource_group_id:
+    Ignore: true
   status:
+    Ignore: true
+  tags:
+    Ignore: true
+  tunnel_cidr:
+    Ignore: true
+  tunnel_options_specification:
     Ignore: true
   vpn_attachment_name:
     Ignore: true
@@ -36,6 +50,8 @@ Attributes:
   id:
     To: VpnAttachmentId
   bgp_config:
+    Ignore: true
+  create_time:
     Ignore: true
   customer_gateway_id:
     Ignore: true
@@ -60,6 +76,8 @@ Attributes:
   remote_subnet:
     Ignore: true
   status:
+    Ignore: true
+  tunnel_options_specification:
     Ignore: true
   vpn_attachment_name:
     Ignore: true

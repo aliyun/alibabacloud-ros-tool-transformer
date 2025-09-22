@@ -1,0 +1,73 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DTS::SynchronizationJob2
+  To: alicloud_dts_synchronization_job
+Properties:
+  DataInitialization:
+    To: data_initialization
+  StructureInitialization:
+    To: structure_initialization
+  Status:
+    Ignore: true
+  MinDu:
+    Ignore: true
+  ErrorPhone:
+    Ignore: true
+  DisasterRecoveryJob:
+    Ignore: true
+  DataCheckConfigure:
+    Ignore: true
+  SrcSecondaryVswId:
+    Ignore: true
+  DestSecondaryVswId:
+    Ignore: true
+  DelayRuleTime:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  FileOssUrl:
+    Ignore: true
+  DtsJobId:
+    Ignore: true
+  DtsBisLabel:
+    Ignore: true
+  DbList:
+    Ignore: true
+  ErrorNotice:
+    Ignore: true
+  MaxDu:
+    Ignore: true
+  DataSynchronization:
+    Ignore: true
+  SynchronizationDirection:
+    Ignore: true
+  DelayPhone:
+    Ignore: true
+  DestinationEndpoint:
+    Ignore: true
+  DestPrimaryVswId:
+    Ignore: true
+  SrcPrimaryVswId:
+    Ignore: true
+  DtsJobName:
+    Ignore: true
+  DelayNotice:
+    Ignore: true
+  SourceEndpoint:
+    Ignore: true
+  Reserve:
+    Ignore: true
+  Checkpoint:
+    Ignore: true
+  DedicatedClusterId:
+    Ignore: true
+  DtsInstanceId:
+    Ignore: true
+Attributes:
+  DtsJobName:
+    Ignore: true
+  DtsJobId:
+    Ignore: true
+  DtsInstanceId:
+    Ignore: true

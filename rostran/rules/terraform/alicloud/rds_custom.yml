@@ -1,0 +1,84 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_custom
+  To: ALIYUN::RDS::DBInstance
+Properties:
+  amount:
+    Ignore: true
+  auto_pay:
+    Ignore: true
+  auto_renew:
+    To: AutoRenew
+  create_extra_param:
+    Ignore: true
+  create_mode:
+    Ignore: true
+  data_disk:
+    To: DBInstanceStorage
+    Schema:
+      category:
+        Ignore: true
+      performance_level:
+        Ignore: true
+      size:
+        Ignore: true
+  deployment_set_id:
+    Ignore: true
+  description:
+    To: DBInstanceDescription
+  direction:
+    Ignore: true
+  dry_run:
+    Ignore: true
+  force:
+    Ignore: true
+  force_stop:
+    Ignore: true
+  host_name:
+    Ignore: true
+  image_id:
+    Ignore: true
+  instance_charge_type:
+    To: PayType
+  instance_type:
+    To: DBInstanceClass
+  internet_charge_type:
+    Ignore: true
+  internet_max_bandwidth_out:
+    Ignore: true
+  io_optimized:
+    Ignore: true
+  key_pair_name:
+    Ignore: true
+  password:
+    To: MasterUserPassword
+  period:
+    To: Period
+  period_unit:
+    To: PeriodType
+  resource_group_id:
+    To: ResourceGroupId
+  security_enhancement_strategy:
+    Ignore: true
+  security_group_ids:
+    To: SecurityGroupId
+  spot_strategy:
+    Ignore: true
+  status:
+    Ignore: true
+  support_case:
+    Ignore: true
+  system_disk:
+    Ignore: true
+  tags:
+    To: Tags
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBInstanceId
+  region_id:
+    Ignore: true

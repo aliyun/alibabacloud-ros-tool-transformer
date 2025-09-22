@@ -45,6 +45,8 @@ Properties:
     Ignore: true
   tags:
     Ignore: true
+  version_code:
+    To: ClusterVersion
   vpc_id:
     To: VpcId
   vswitch_id:

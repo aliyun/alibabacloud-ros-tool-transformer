@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_governance_account
+  To: ALIYUN::ResourceManager::Account
+Properties:
+  account_id:
+    Ignore: true
+  account_name_prefix:
+    Ignore: true
+  account_tags:
+    Ignore: true
+  baseline_id:
+    Ignore: true
+  default_domain_name:
+    Ignore: true
+  display_name:
+    To: DisplayName
+  folder_id:
+    To: FolderId
+  payer_account_id:
+    To: PayerAccountId
+Attributes:
+  id:
+    To: AccountId
+  status:
+    Ignore: true

@@ -84,6 +84,8 @@ Attributes:
     Ignore: true
   environment_variables:
     Ignore: true
+  function_arn:
+    To: ARN
   function_name:
     To: FunctionName
   gpu_memory_size:

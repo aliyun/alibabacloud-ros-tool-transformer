@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_max_compute_quota
+  To: ALIYUN::MaxCompute::Quota
+Properties:
+  commodity_code:
+    To: Specification
+  commodity_data:
+    Ignore: true
+  enable_priority:
+    Ignore: true
+  force_reserved_min:
+    Ignore: true
+  max_cu:
+    Ignore: true
+  min_cu:
+    Ignore: true
+  part_nick_name:
+    To: QuotaNickname
+  payment_type:
+    To: PayType
+  scheduler_type:
+    Ignore: true
+  single_job_cu_limit:
+    Ignore: true
+  sub_quota_info_list:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PAI::Workspace
+  To: alicloud_pai_workspace_workspace
+Properties:
+  Description:
+    To: description
+  DisplayName:
+    To: display_name
+  EnvTypes:
+    To: env_types
+  WorkspaceName:
+    To: workspace_name
+Attributes:
+  WorkspaceId:
+    To: id
+  Users:
+    Ignore: true
+  AdminNames:
+    Ignore: true
+  Creator:
+    Ignore: true
+  WorkspaceName:
+    Ignore: true
+  Description:
+    Ignore: true
+  Owner:
+    Ignore: true
+  EnvTypes:
+    Ignore: true
+  DisplayName:
+    Ignore: true
+  ExtraInfos:
+    Ignore: true

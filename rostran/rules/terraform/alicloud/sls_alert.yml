@@ -4,21 +4,85 @@ ResourceType:
   From: alicloud_sls_alert
   To: ALIYUN::SLS::Alert
 Properties:
+  action_policy_id:
+    Ignore: true
   alert_name:
+    Ignore: true
+  alert_policy_id:
+    Ignore: true
+  annotations:
+    Ignore: true
+  chart_title:
+    Ignore: true
+  condition:
     Ignore: true
   configuration:
     Ignore: true
+  count_condition:
+    Ignore: true
   create_time:
+    Ignore: true
+  dashboard_id:
     Ignore: true
   description:
     Ignore: true
   display_name:
     Ignore: true
+  enabled:
+    Ignore: true
+  end:
+    Ignore: true
+  endpoint:
+    Ignore: true
+  eval_condition:
+    Ignore: true
+  event_store:
+    Ignore: true
+  fields:
+    Ignore: true
+  key:
+    Ignore: true
+  lang:
+    Ignore: true
+  power_sql_mode:
+    Ignore: true
+  project:
+    Ignore: true
   project_name:
+    Ignore: true
+  query:
+    Ignore: true
+  region:
+    Ignore: true
+  repeat_interval:
+    Ignore: true
+  role_arn:
     Ignore: true
   schedule:
     Ignore: true
+  severity:
+    Ignore: true
+  start:
+    Ignore: true
   status:
+    Ignore: true
+  store:
+    Ignore: true
+  store_type:
+    Ignore: true
+  template_id:
+    Ignore: true
+  time_span_type:
+    Ignore: true
+  tokens:
+    Ignore: true
+  type:
+    Ignore: true
+  ui:
+    Ignore: true
+  value:
+    Ignore: true
+  version:
     Ignore: true
 Attributes:
   id:

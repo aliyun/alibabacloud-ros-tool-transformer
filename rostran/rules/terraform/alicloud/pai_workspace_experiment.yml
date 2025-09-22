@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pai_workspace_experiment
+  To: ALIYUN::PAI::Experiment
+Properties:
+  accessibility:
+    To: Accessibility
+  artifact_uri:
+    To: ArtifactUri
+  experiment_name:
+    To: ExperimentName
+  workspace_id:
+    To: WorkspaceId
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime

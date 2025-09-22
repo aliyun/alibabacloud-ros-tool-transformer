@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_tag_policy_attachment
+  To: ALIYUN::ResourceManager::PolicyAttachment
+Properties:
+  policy_id:
+    To: PolicyName
+  target_id:
+    To: PrincipalName
+  target_type:
+    To: PrincipalType
+Attributes:
+  id:
+    Ignore: true

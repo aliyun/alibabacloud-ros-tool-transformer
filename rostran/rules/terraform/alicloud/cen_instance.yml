@@ -12,6 +12,8 @@ Properties:
     To: Name
   protection_level:
     To: ProtectionLevel
+  resource_group_id:
+    To: ResourceGroupId
   status:
     Ignore: true
   tags:
@@ -21,6 +23,8 @@ Attributes:
   id:
     To: CenId
   cen_instance_name:
+    Ignore: true
+  create_time:
     Ignore: true
   description:
     Ignore: true

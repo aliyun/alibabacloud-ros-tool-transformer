@@ -1,0 +1,119 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GraphDatabase::DbInstance
+  To: alicloud_graph_database_db_instance
+Properties:
+  DbInstanceCategory:
+    To: db_instance_category
+  DbInstanceDescription:
+    To: db_instance_description
+  DBInstanceIPArray:
+    To: db_instance_ip_array
+    Type: List
+    Schema:
+      DbInstanceIpArrayName:
+        To: db_instance_ip_array_name
+      SecurityIps:
+        To: security_ips
+  DbInstanceNetworkType:
+    To: db_instance_network_type
+  DbInstanceStorageType:
+    To: db_instance_storage_type
+  DbNodeClass:
+    To: db_node_class
+  DbNodeStorage:
+    To: db_node_storage
+  DbVersion:
+    To: db_version
+  PaymentType:
+    To: payment_type
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  Tags:
+    Ignore: true
+  MaintainTime:
+    Ignore: true
+  CreateType:
+    Ignore: true
+  BackupSetId:
+    Ignore: true
+  SourceDbInstanceId:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  EcsSecurityGroupRelations:
+    Ignore: true
+  RestoreType:
+    Ignore: true
+Attributes:
+  DbInstanceId:
+    To: id
+  ConnectionString:
+    To: connection_string
+  Port:
+    To: port
+  LockReason:
+    To: status
+  DbNodeCount:
+    Ignore: true
+  MaintainTime:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  PublicPort:
+    Ignore: true
+  DbInstanceDescription:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  DbInstanceCategory:
+    Ignore: true
+  DBInstanceIPArray:
+    Ignore: true
+  DbNodeStorage:
+    Ignore: true
+  Tags:
+    Ignore: true
+  DbInstanceMemory:
+    Ignore: true
+  DbInstanceType:
+    Ignore: true
+  LockMode:
+    Ignore: true
+  CurrentMinorVersion:
+    Ignore: true
+  DbNodeClass:
+    Ignore: true
+  EcsSecurityGroupRelations:
+    Ignore: true
+  DbInstanceCpu:
+    Ignore: true
+  ExpireTime:
+    Ignore: true
+  DbInstanceStorageType:
+    Ignore: true
+  LatestMinorVersion:
+    Ignore: true
+  VSwitchId:
+    Ignore: true
+  DbVersion:
+    Ignore: true
+  Expired:
+    Ignore: true
+  ReadOnlyDbInstanceIds:
+    Ignore: true
+  ZoneId:
+    Ignore: true
+  PublicConnectionString:
+    Ignore: true
+  DbInstanceNetworkType:
+    Ignore: true
+  PaymentType:
+    Ignore: true

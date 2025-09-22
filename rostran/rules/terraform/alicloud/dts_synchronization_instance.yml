@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dts_synchronization_instance
+  To: ALIYUN::DTS::Instance
+Properties:
+  auto_pay:
+    To: AutoPay
+  auto_start:
+    To: AutoStart
+  compute_unit:
+    To: ComputeUnit
+  database_count:
+    To: DatabaseCount
+  destination_endpoint_engine_name:
+    To: DestinationEndpointEngineName
+  destination_endpoint_region:
+    To: DestinationRegion
+  instance_class:
+    To: InstanceClass
+  payment_duration:
+    To: UsedTime
+  payment_duration_unit:
+    To: Period
+  payment_type:
+    To: PayType
+  quantity:
+    Ignore: true
+  source_endpoint_engine_name:
+    To: SourceEndpointEngineName
+  source_endpoint_region:
+    To: SourceRegion
+  sync_architecture:
+    To: SyncArchitecture
+Attributes:
+  id:
+    To: InstanceId
+  status:
+    Ignore: true

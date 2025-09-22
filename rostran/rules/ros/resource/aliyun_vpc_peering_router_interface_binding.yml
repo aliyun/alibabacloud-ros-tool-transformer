@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::PeeringRouterInterfaceBinding
+  To: alicloud_express_connect_router_vpc_association
+Properties:
+  OppositeRouterId:
+    To: ecr_id
+  OppositeInterfaceId:
+    To: vpc_id
+  OppositeInterfaceOwnerId:
+    To: vpc_owner_id
+  RouterInterfaceId:
+    Ignore: true
+Attributes:
+  RouterInterfaceId:
+    Ignore: true

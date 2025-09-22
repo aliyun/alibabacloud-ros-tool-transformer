@@ -1,0 +1,84 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_selectdb_db_instance
+  To: ALIYUN::SELECTDB::DBInstance
+Properties:
+  admin_pass:
+    To: AccountPassword
+  cache_size:
+    To: CacheSize
+  db_instance_class:
+    To: DBInstanceClass
+  db_instance_description:
+    To: DBInstanceDescription
+  desired_security_ip_lists:
+    To: SecurityIPList
+    Type: List
+    Schema:
+      group_name:
+        Ignore: true
+      security_ip_list:
+        Ignore: true
+  enable_public_network:
+    Ignore: true
+  engine_minor_version:
+    To: EngineVersion
+  payment_type:
+    To: ChargeType
+  period:
+    To: Period
+  period_time:
+    To: UsedTime
+  tags:
+    To: Tags
+    Type: List
+  upgraded_engine_minor_version:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBInstanceId
+  cache_size_postpaid:
+    Ignore: true
+  cache_size_prepaid:
+    Ignore: true
+  cluster_count_postpaid:
+    Ignore: true
+  cluster_count_prepaid:
+    Ignore: true
+  cpu_postpaid:
+    Ignore: true
+  cpu_prepaid:
+    Ignore: true
+  engine:
+    Ignore: true
+  gmt_created:
+    Ignore: true
+  gmt_expired:
+    Ignore: true
+  gmt_modified:
+    Ignore: true
+  instance_net_infos:
+    Ignore: true
+  lock_mode:
+    Ignore: true
+  lock_reason:
+    Ignore: true
+  memory_postpaid:
+    Ignore: true
+  memory_prepaid:
+    Ignore: true
+  region_id:
+    Ignore: true
+  security_ip_lists:
+    Ignore: true
+  status:
+    Ignore: true
+  sub_domain:
+    Ignore: true

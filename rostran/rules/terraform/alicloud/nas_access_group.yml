@@ -33,5 +33,7 @@ Attributes:
     Ignore: true
   name:
     Ignore: true
+  region_id:
+    Ignore: true
   type:
     Ignore: true

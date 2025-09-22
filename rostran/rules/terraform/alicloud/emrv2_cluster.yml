@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_emrv2_cluster
   To: ALIYUN::EMR::Cluster2
 Properties:
+  ack_instance_id:
+    Ignore: true
   application_configs:
     To: ApplicationConfigs
     Type: List
@@ -26,6 +28,16 @@ Properties:
         To: NodeGroupName
   applications:
     Ignore: true
+  auto_pay_order:
+    Ignore: true
+  auto_renew:
+    Ignore: true
+  auto_renew_duration:
+    Ignore: true
+  auto_renew_duration_unit:
+    Ignore: true
+  bid_price:
+    Ignore: true
   bootstrap_scripts:
     To: BootstrapScripts
     Type: List
@@ -44,15 +56,63 @@ Properties:
         To: ScriptName
       script_path:
         To: ScriptPath
+  category:
+    Ignore: true
   cluster_name:
     To: ClusterName
   cluster_type:
     To: ClusterType
+  condition_logic_operator:
+    Ignore: true
+  conditions:
+    Ignore: true
+  constraints:
+    Ignore: true
+  cool_down_interval:
+    Ignore: true
+  count:
+    Ignore: true
+  custom_annotations:
+    Ignore: true
+  custom_labels:
+    Ignore: true
+  deletion_protection:
+    Ignore: true
   deploy_mode:
     To: DeployMode
+  end_time:
+    Ignore: true
+  evaluation_count:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  key:
+    Ignore: true
+  launch_expiration_time:
+    Ignore: true
+  launch_time:
+    Ignore: true
+  limit_cpu:
+    Ignore: true
+  limit_memory:
+    Ignore: true
   log_collect_strategy:
     Ignore: true
+  match_criteria:
+    Ignore: true
+  namespace:
+    Ignore: true
+  node_affinity:
+    Ignore: true
   node_attributes:
+    Ignore: true
+  node_group_ids:
+    Ignore: true
+  node_group_name:
+    Ignore: true
+  node_group_names:
+    Ignore: true
+  node_group_types:
     Ignore: true
   node_groups:
     To: NodeGroups
@@ -112,19 +172,73 @@ Properties:
         Ignore: true
       with_public_ip:
         To: WithPublicIp
+  node_names:
+    Ignore: true
+  node_select_type:
+    Ignore: true
+  node_selectors:
+    Ignore: true
+  on_demand_base_capacity:
+    Ignore: true
+  on_demand_percentage_above_base_capacity:
+    Ignore: true
+  payment_duration:
+    Ignore: true
+  payment_duration_unit:
+    Ignore: true
   payment_type:
     To: PaymentType
+  performance_level:
+    Ignore: true
+  pod_affinity:
+    Ignore: true
+  pod_anti_affinity:
+    Ignore: true
+  pre_start_command:
+    Ignore: true
+  private_pool_ids:
+    Ignore: true
+  pvcs:
+    Ignore: true
+  recurrence_type:
+    Ignore: true
+  recurrence_value:
+    Ignore: true
   release_version:
     To: ReleaseVersion
+  request_cpu:
+    Ignore: true
+  request_memory:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  scaling_rules:
+    Ignore: true
   security_mode:
     To: SecurityMode
+  size:
+    Ignore: true
+  spot_instance_pools:
+    Ignore: true
+  start_time:
+    Ignore: true
   subscription_config:
     Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
+  time_constraints:
+    Ignore: true
+  time_window:
+    Ignore: true
+  tolerations:
+    Ignore: true
+  value:
+    Ignore: true
+  volume_mounts:
+    Ignore: true
+  volumes:
+    Ignore: true
 Attributes:
   id:
     To: ClusterId

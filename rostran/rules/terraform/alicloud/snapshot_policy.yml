@@ -1,0 +1,18 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_snapshot_policy
+  To: ALIYUN::ECS::AutoSnapshotPolicy
+Properties:
+  name:
+    To: AutoSnapshotPolicyName
+  repeat_weekdays:
+    To: RepeatWeekdays
+    Type: List
+  retention_days:
+    To: RetentionDays
+  time_points:
+    To: TimePoints
+Attributes:
+  id:
+    To: AutoSnapshotPolicyId

@@ -10,6 +10,8 @@ Properties:
     To: AddressType
   bandwidth_package_id:
     To: BandwidthPackageId
+  cps:
+    Ignore: true
   create_time:
     Ignore: true
   cross_zone_enabled:
@@ -36,6 +38,9 @@ Properties:
     To: ModificationProtectionConfig.Reason
   modification_protection_status:
     To: ModificationProtectionConfig.Status
+  payment_type:
+    To: LoadBalancerBillingConfig
+    Type: Map
   resource_group_id:
     To: ResourceGroupId
   security_group_ids:
@@ -101,6 +106,8 @@ Attributes:
   modification_protection_reason:
     Ignore: true
   modification_protection_status:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

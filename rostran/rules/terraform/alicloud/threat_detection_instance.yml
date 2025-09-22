@@ -22,6 +22,10 @@ Properties:
     To: PaymentType
   period:
     To: Period
+  post_paid_flag:
+    Ignore: true
+  post_pay_module_switch:
+    Ignore: true
   rasp_count:
     To: RaspCount
   renew_period:
@@ -50,10 +54,18 @@ Properties:
     To: SasWebguardOrderNum
   status:
     Ignore: true
+  subscription_type:
+    Ignore: true
   threat_analysis:
     To: ThreatAnalysis
+  threat_analysis_flow:
+    Ignore: true
+  threat_analysis_sls_storage:
+    Ignore: true
   threat_analysis_switch:
     To: ThreatAnalysisSwitch
+  threat_analysis_switch1:
+    Ignore: true
   v_core:
     To: VCore
   version_code:

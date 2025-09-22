@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_graph_database_db_instance
+  To: ALIYUN::GraphDatabase::DbInstance
+Properties:
+  db_instance_category:
+    To: DbInstanceCategory
+  db_instance_description:
+    To: DbInstanceDescription
+  db_instance_ip_array:
+    To: DBInstanceIPArray
+    Type: List
+    Schema:
+      db_instance_ip_array_attribute:
+        Ignore: true
+      db_instance_ip_array_name:
+        To: DbInstanceIpArrayName
+      security_ips:
+        To: SecurityIps
+  db_instance_network_type:
+    To: DbInstanceNetworkType
+  db_instance_storage_type:
+    To: DbInstanceStorageType
+  db_node_class:
+    To: DbNodeClass
+  db_node_storage:
+    To: DbNodeStorage
+  db_version:
+    To: DbVersion
+  payment_type:
+    To: PaymentType
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DbInstanceId
+  connection_string:
+    To: ConnectionString
+  port:
+    To: Port
+  status:
+    To: LockReason

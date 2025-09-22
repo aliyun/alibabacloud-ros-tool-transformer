@@ -54,6 +54,8 @@ Attributes:
     Ignore: true
   protocol:
     Ignore: true
+  region_id:
+    Ignore: true
   resource_group_id:
     Ignore: true
   scheduler:

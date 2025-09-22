@@ -20,6 +20,10 @@ Properties:
     Ignore: true
   rule_conditions:
     Ignore: true
+  server_group_tuples:
+    Ignore: true
+  values:
+    Ignore: true
 Attributes:
   id:
     Ignore: true

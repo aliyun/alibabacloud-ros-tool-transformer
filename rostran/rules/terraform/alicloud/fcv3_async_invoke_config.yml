@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_fcv3_async_invoke_config
+  To: ALIYUN::FC3::ConcurrencyConfig
+Properties:
+  async_task:
+    Ignore: true
+  destination:
+    Ignore: true
+  destination_config:
+    Ignore: true
+  function_name:
+    To: FunctionName
+  max_async_event_age_in_seconds:
+    Ignore: true
+  max_async_retry_attempts:
+    Ignore: true
+  qualifier:
+    Ignore: true

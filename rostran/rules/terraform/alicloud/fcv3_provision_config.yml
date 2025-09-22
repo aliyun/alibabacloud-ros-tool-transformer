@@ -1,0 +1,52 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_fcv3_provision_config
+  To: ALIYUN::FC3::ProvisionConfig
+Properties:
+  always_allocate_cpu:
+    To: AlwaysAllocateCPU
+  always_allocate_gpu:
+    To: AlwaysAllocateGPU
+  function_name:
+    To: FunctionName
+  qualifier:
+    To: Qualifier
+  scheduled_actions:
+    To: ScheduledActions
+    Type: List
+    Schema:
+      end_time:
+        To: EndTime
+      name:
+        To: Name
+      schedule_expression:
+        To: ScheduleExpression
+      start_time:
+        To: StartTime
+      target:
+        To: Target
+      time_zone:
+        To: TimeZone
+  target:
+    To: DefaultTarget
+  target_tracking_policies:
+    To: TargetTrackingPolicies
+    Type: List
+    Schema:
+      end_time:
+        To: EndTime
+      max_capacity:
+        To: MaxCapacity
+      metric_target:
+        To: MetricTarget
+      metric_type:
+        To: MetricType
+      min_capacity:
+        To: MinCapacity
+      name:
+        To: Name
+      start_time:
+        To: StartTime
+      time_zone:
+        To: TimeZone

@@ -10,6 +10,16 @@ Properties:
     Ignore: true
   acl_config:
     Ignore: true
+  acl_id:
+    Ignore: true
+  ca_certificates:
+    To: CaCertificates
+    Type: List
+    Schema:
+      certificate_id:
+        To: CertificateId
+  ca_enabled:
+    To: CaEnabled
   certificates:
     To: Certificates
     Type: List
@@ -46,6 +56,8 @@ Properties:
     To: RequestTimeout
   security_policy_id:
     To: SecurityPolicyId
+  server_group_tuples:
+    Ignore: true
   status:
     Ignore: true
   tags:

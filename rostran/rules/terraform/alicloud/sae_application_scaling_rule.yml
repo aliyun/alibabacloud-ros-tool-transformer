@@ -1,0 +1,77 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sae_application_scaling_rule
+  To: ALIYUN::SAE::ApplicationScalingRule
+Properties:
+  app_id:
+    To: AppId
+  at_time:
+    Ignore: true
+  disabled:
+    Ignore: true
+  max_replicas:
+    Ignore: true
+  metric_target_average_utilization:
+    Ignore: true
+  metric_type:
+    Ignore: true
+  min_ready_instance_ratio:
+    To: MinReadyInstanceRatio
+  min_ready_instances:
+    To: MinReadyInstances
+  min_replicas:
+    Ignore: true
+  scaling_rule_enable:
+    To: ScalingRuleEnable
+  scaling_rule_metric:
+    To: ScalingRuleMetric
+    Type: Map
+    Schema:
+      max_replicas:
+        To: MaxReplicas
+      metrics:
+        To: Metrics
+        Type: List
+      min_replicas:
+        To: MinReplicas
+      scale_down_rules:
+        To: ScaleDownRules
+        Type: Map
+      scale_up_rules:
+        To: ScaleUpRules
+        Type: Map
+  scaling_rule_name:
+    To: ScalingRuleName
+  scaling_rule_timer:
+    To: ScalingRuleTimer
+    Type: Map
+    Schema:
+      begin_date:
+        To: BeginDate
+      end_date:
+        To: EndDate
+      period:
+        To: Period
+      schedules:
+        To: Schedules
+        Type: List
+  scaling_rule_type:
+    To: ScalingRuleType
+  slb_id:
+    Ignore: true
+  slb_log_store:
+    Ignore: true
+  slb_project:
+    Ignore: true
+  stabilization_window_seconds:
+    Ignore: true
+  step:
+    Ignore: true
+  target_replicas:
+    Ignore: true
+  vport:
+    Ignore: true
+Attributes:
+  id:
+    To: ScalingRuleName

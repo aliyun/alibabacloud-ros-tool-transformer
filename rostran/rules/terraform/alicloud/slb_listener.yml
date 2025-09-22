@@ -6,6 +6,9 @@ ResourceType:
 Properties:
   acl_id:
     To: AclId
+  acl_ids:
+    To: AclIds
+    Type: List
   acl_status:
     To: AclStatus
   acl_type:

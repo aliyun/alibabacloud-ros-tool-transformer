@@ -15,6 +15,8 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  create_time:
+    Ignore: true
   mfa_bind_required:
     Ignore: true
   password_reset_required:

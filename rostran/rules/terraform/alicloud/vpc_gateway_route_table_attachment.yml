@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_gateway_route_table_attachment
+  To: ALIYUN::VPC::RouteTableWithGatewayAssociation
+Properties:
+  dry_run:
+    Ignore: true
+  ipv4_gateway_id:
+    To: GatewayId
+  route_table_id:
+    To: RouteTableId
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

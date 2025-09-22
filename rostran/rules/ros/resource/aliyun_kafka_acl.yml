@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::KAFKA::Acl
+  To: alicloud_alikafka_sasl_acl
+Properties:
+  AclOperationTypes:
+    To: acl_operation_type
+  AclResourceName:
+    To: acl_resource_name
+  AclResourcePatternType:
+    To: acl_resource_pattern_type
+  AclResourceType:
+    To: acl_resource_type
+  InstanceId:
+    To: instance_id
+  Username:
+    To: username
+  AclPermissionType:
+    Ignore: true
+  Host:
+    Ignore: true
+Attributes:
+  Username:
+    Ignore: true
+  InstanceId:
+    Ignore: true
+  AclResourceType:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pai_workspace_run
+  To: ALIYUN::PAI::Run
+Properties:
+  experiment_id:
+    To: ExperimentId
+  run_name:
+    To: RunName
+  source_id:
+    To: SourceId
+  source_type:
+    To: SourceType
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime

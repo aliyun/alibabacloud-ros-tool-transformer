@@ -1,0 +1,52 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_etl
+  To: ALIYUN::SLS::Etl
+Properties:
+  configuration:
+    To: Configuration
+    Type: Map
+    Schema:
+      from_time:
+        To: FromTime
+      lang:
+        Ignore: true
+      logstore:
+        To: Logstore
+      parameters:
+        To: Parameters
+      role_arn:
+        To: RoleArn
+      script:
+        To: Script
+      sink:
+        To: Sinks
+        Type: List
+      to_time:
+        To: ToTime
+  datasets:
+    Ignore: true
+  description:
+    To: Description
+  display_name:
+    To: DisplayName
+  endpoint:
+    Ignore: true
+  job_name:
+    To: Name
+  logstore:
+    Ignore: true
+  name:
+    Ignore: true
+  project:
+    To: ProjectName
+  role_arn:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

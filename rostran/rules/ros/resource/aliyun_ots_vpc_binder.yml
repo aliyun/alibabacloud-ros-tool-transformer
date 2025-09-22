@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OTS::VpcBinder
+  To: alicloud_ots_instance_attachment
+Properties:
+  InstanceName:
+    To: instance_name
+  Vpcs:
+    To: vpc_name
+  Vpcs$$0:
+    To: vswitch_id
+Attributes:
+  Endpoints:
+    Ignore: true
+  Domains:
+    Ignore: true

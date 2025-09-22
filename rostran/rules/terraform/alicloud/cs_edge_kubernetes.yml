@@ -74,6 +74,8 @@ Properties:
     Ignore: true
   service_cidr:
     To: ServiceCidr
+  skip_set_certificate_authority:
+    Ignore: true
   slb_internet:
     Ignore: true
   slb_internet_enabled:
@@ -135,3 +137,19 @@ Properties:
 Attributes:
   id:
     To: ClusterId
+  certificate_authority:
+    Ignore: true
+  connections:
+    Ignore: true
+  nat_gateway_id:
+    Ignore: true
+  slb_internet:
+    To: APIServerSLBId
+  slb_intranet:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  worker_nodes:
+    To: Nodes
+  worker_ram_role_name:
+    To: WorkerRamRoleName

@@ -6,6 +6,9 @@ ResourceType:
 Properties:
   arn:
     Ignore: true
+  assume_role_policy_document:
+    To: AssumeRolePolicyDocument
+    Type: Map
   description:
     To: Description
   document:
@@ -20,7 +23,11 @@ Properties:
     Ignore: true
   role_id:
     Ignore: true
+  role_name:
+    To: RoleName
   services:
+    Ignore: true
+  tags:
     Ignore: true
   version:
     Ignore: true
@@ -29,6 +36,8 @@ Attributes:
     To: RoleName
   arn:
     To: Arn
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   document:

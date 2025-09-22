@@ -4,6 +4,14 @@ ResourceType:
   From: alicloud_log_store_index
   To: ALIYUN::SLS::Index
 Properties:
+  alias:
+    Ignore: true
+  case_sensitive:
+    Ignore: true
+  doc_value:
+    Ignore: true
+  enable_analytics:
+    Ignore: true
   field_search:
     To: KeyIndices
     Type: List
@@ -44,10 +52,20 @@ Properties:
         To: IncludeChinese
       token:
         Ignore: true
+  include_chinese:
+    Ignore: true
+  json_keys:
+    Ignore: true
   logstore:
     To: LogstoreName
+  name:
+    Ignore: true
   project:
     To: ProjectName
+  token:
+    Ignore: true
+  type:
+    Ignore: true
 Attributes:
   id:
     Ignore: true

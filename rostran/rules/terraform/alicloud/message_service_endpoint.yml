@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_message_service_endpoint
+  To: ALIYUN::MNS::Queue
+Properties:
+  endpoint_enabled:
+    Ignore: true
+  endpoint_type:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

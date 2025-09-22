@@ -61,6 +61,8 @@ Attributes:
     Ignore: true
   environment_variables:
     Ignore: true
+  function_arn:
+    To: ARN
   function_id:
     To: FunctionId
   handler:

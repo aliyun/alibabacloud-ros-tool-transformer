@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_compression_rule
+  To: ALIYUN::ESA::CompressionRule
+Properties:
+  brotli:
+    To: Brotli
+  gzip:
+    To: Gzip
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+  zstd:
+    To: Zstd
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

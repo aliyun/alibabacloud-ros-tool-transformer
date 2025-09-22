@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAG::AppUser
+  To: alicloud_sag_client_user
+Properties:
+  Bandwidth:
+    To: bandwidth
+  ClientIp:
+    To: client_ip
+  Password:
+    To: password
+  SmartAGId:
+    To: sag_id
+  UserMail:
+    To: user_mail
+  UserName:
+    To: user_name
+  Disable:
+    Ignore: true
+Attributes:
+  SmartAGId:
+    Ignore: true
+  UserName:
+    Ignore: true

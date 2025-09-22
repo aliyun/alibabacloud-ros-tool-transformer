@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Aligreen::BizType
+  To: alicloud_aligreen_biz_type
+Properties:
+  BizTypeImport:
+    To: biz_type_import
+  BizTypeName:
+    To: biz_type_name
+  CiteTemplate:
+    To: cite_template
+  Description:
+    To: description
+  IndustryInfo:
+    To: industry_info
+Attributes:
+  CiteTemplate:
+    Ignore: true
+  BizTypeName:
+    Ignore: true
+  IndustryInfo:
+    Ignore: true
+  Description:
+    Ignore: true

@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   config:
     Ignore: true
+  confluent_config:
+    Ignore: true
+  default_topic_partition_num:
+    Ignore: true
   deploy_type:
     To: DeployType
   disk_size:
@@ -14,11 +18,17 @@ Properties:
     To: DiskType
   eip_max:
     To: EipMax
+  enable_auto_group:
+    Ignore: true
+  enable_auto_topic:
+    Ignore: true
   end_point:
     Ignore: true
   group_left:
     Ignore: true
   group_used:
+    Ignore: true
+  instance_type:
     Ignore: true
   io_max:
     To: IoMax
@@ -38,12 +48,22 @@ Properties:
     To: PartitionNum
   partition_used:
     Ignore: true
+  password:
+    Ignore: true
   resource_group_id:
     Ignore: true
   security_group:
     Ignore: true
   selected_zones:
     Ignore: true
+  serverless_config:
+    To: ServerlessConfig
+    Type: Map
+    Schema:
+      reserved_publish_capacity:
+        To: ReservedPublishCapacity
+      reserved_subscribe_capacity:
+        To: ReservedSubscribeCapacity
   service_version:
     Ignore: true
   spec_type:
@@ -65,6 +85,8 @@ Properties:
     Ignore: true
   vswitch_id:
     Ignore: true
+  vswitch_ids:
+    Ignore: true
   zone_id:
     Ignore: true
 Attributes:
@@ -78,6 +100,8 @@ Attributes:
     Ignore: true
   disk_type:
     Ignore: true
+  domain_endpoint:
+    To: DomainEndpoint
   eip_max:
     Ignore: true
   end_point:
@@ -106,12 +130,18 @@ Attributes:
     Ignore: true
   resource_group_id:
     Ignore: true
+  sasl_domain_endpoint:
+    To: SaslDomainEndpoint
   security_group:
     Ignore: true
   service_version:
     Ignore: true
   spec_type:
     Ignore: true
+  ssl_domain_endpoint:
+    To: SslDomainEndpoint
+  ssl_endpoint:
+    To: SslEndpoint
   status:
     Ignore: true
   tags:

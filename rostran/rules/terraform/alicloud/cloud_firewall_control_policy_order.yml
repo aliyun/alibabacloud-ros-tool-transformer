@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_control_policy_order
+  To: ALIYUN::CLOUDFW::ControlPolicy
+Properties:
+  acl_uuid:
+    Ignore: true
+  direction:
+    To: Direction
+  order:
+    To: NewOrder
+Attributes:
+  id:
+    Ignore: true

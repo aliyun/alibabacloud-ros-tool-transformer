@@ -1,0 +1,141 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::Aligreen::OssStockTask
+  To: alicloud_aligreen_oss_stock_task
+Properties:
+  AudioAntispamFreezeConfig:
+    To: audio_antispam_freeze_config
+  AudioAutoFreezeOpened:
+    To: audio_auto_freeze_opened
+  AudioMaxSize:
+    To: audio_max_size
+  AudioOpened:
+    To: audio_opened
+  AudioScanLimit:
+    To: audio_scan_limit
+  AudioScenes:
+    To: audio_scenes
+  AutoFreezeType:
+    To: auto_freeze_type
+  BizType:
+    To: biz_type
+  Buckets:
+    To: buckets
+  CallbackId:
+    To: callback_id
+  EndDate:
+    To: end_date
+  ImageAdFreezeConfig:
+    To: image_ad_freeze_config
+  ImageAutoFreezeOpened:
+    To: image_auto_freeze_opened
+  ImageLiveFreezeConfig:
+    To: image_live_freeze_config
+  ImageOpened:
+    To: image_opened
+  ImagePornFreezeConfig:
+    To: image_porn_freeze_config
+  ImageScanLimit:
+    To: image_scan_limit
+  ImageScenes:
+    To: image_scenes
+  ImageTerrorismFreezeConfig:
+    To: image_terrorism_freeze_config
+  ScanImageNoFileType:
+    To: scan_image_no_file_type
+  StartDate:
+    To: start_date
+  VideoAdFreezeConfig:
+    To: video_ad_freeze_config
+  VideoAutoFreezeOpened:
+    To: video_auto_freeze_opened
+  VideoFrameInterval:
+    To: video_frame_interval
+  VideoLiveFreezeConfig:
+    To: video_live_freeze_config
+  VideoMaxFrames:
+    To: video_max_frames
+  VideoMaxSize:
+    To: video_max_size
+  VideoOpened:
+    To: video_opened
+  VideoPornFreezeConfig:
+    To: video_porn_freeze_config
+  VideoScanLimit:
+    To: video_scan_limit
+  VideoScenes:
+    To: video_scenes
+  VideoTerrorismFreezeConfig:
+    To: video_terrorism_freeze_config
+  VideoVoiceAntispamFreezeConfig:
+    To: video_voice_antispam_freeze_config
+  OssStockTaskName:
+    Ignore: true
+Attributes:
+  CallbackId:
+    Ignore: true
+  ImageAutoFreezeOpened:
+    Ignore: true
+  AudioOpened:
+    Ignore: true
+  BizType:
+    Ignore: true
+  AudioAutoFreezeOpened:
+    Ignore: true
+  ImageScenes:
+    Ignore: true
+  VideoMaxSize:
+    Ignore: true
+  VideoFrameInterval:
+    Ignore: true
+  Buckets:
+    Ignore: true
+  VideoScenes:
+    Ignore: true
+  ImageAdFreezeConfig:
+    Ignore: true
+  ImageTerrorismFreezeConfig:
+    Ignore: true
+  AudioAntispamFreezeConfig:
+    Ignore: true
+  EndDate:
+    Ignore: true
+  VideoPornFreezeConfig:
+    Ignore: true
+  ImageLiveFreezeConfig:
+    Ignore: true
+  StartDate:
+    Ignore: true
+  ImagePornFreezeConfig:
+    Ignore: true
+  ImageScanLimit:
+    Ignore: true
+  VideoTerrorismFreezeConfig:
+    Ignore: true
+  VideoOpened:
+    Ignore: true
+  AudioScenes:
+    Ignore: true
+  VideoLiveFreezeConfig:
+    Ignore: true
+  VideoAdFreezeConfig:
+    Ignore: true
+  ImageOpened:
+    Ignore: true
+  AudioScanLimit:
+    Ignore: true
+  ScanImageNoFileType:
+    Ignore: true
+  AudioMaxSize:
+    Ignore: true
+  VideoAutoFreezeOpened:
+    Ignore: true
+  VideoVoiceAntispamFreezeConfig:
+    Ignore: true
+  AutoFreezeType:
+    Ignore: true
+  VideoScanLimit:
+    Ignore: true
+  VideoMaxFrames:
+    Ignore: true

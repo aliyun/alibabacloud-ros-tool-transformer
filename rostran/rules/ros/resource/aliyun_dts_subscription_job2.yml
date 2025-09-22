@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DTS::SubscriptionJob2
+  To: alicloud_dts_subscription_job
+Properties:
+  Checkpoint:
+    To: checkpoint
+  DbList:
+    To: db_list
+  DelayNotice:
+    To: delay_notice
+  DelayPhone:
+    To: delay_phone
+  DelayRuleTime:
+    To: delay_rule_time
+  DtsInstanceId:
+    To: dts_instance_id
+  DtsJobName:
+    To: dts_job_name
+  ErrorNotice:
+    To: error_notice
+  ErrorPhone:
+    To: error_phone
+  Reserve:
+    To: reserve
+  Status:
+    To: status
+  MaxDu:
+    Ignore: true
+  MinDu:
+    Ignore: true
+  SubscriptionDataType:
+    Ignore: true
+  SubscriptionInstance:
+    Ignore: true
+  SrcSecondaryVswId:
+    Ignore: true
+  DestPrimaryVswId:
+    Ignore: true
+  SrcPrimaryVswId:
+    Ignore: true
+  SourceEndpoint:
+    Ignore: true
+  DestSecondaryVswId:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  DtsJobId:
+    Ignore: true
+  DtsBisLabel:
+    Ignore: true
+  DedicatedClusterId:
+    Ignore: true
+Attributes:
+  DtsJobName:
+    Ignore: true
+  DtsJobId:
+    Ignore: true
+  DtsInstanceId:
+    Ignore: true

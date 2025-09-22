@@ -58,3 +58,7 @@ Attributes:
     Ignore: true
   read_write_mode:
     Ignore: true
+  ssl_connection_string:
+    Ignore: true
+  ssl_expire_time:
+    Ignore: true

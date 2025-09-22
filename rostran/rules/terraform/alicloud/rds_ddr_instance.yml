@@ -1,0 +1,145 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_ddr_instance
+  To: ALIYUN::RDS::DBInstance
+Properties:
+  acl:
+    Ignore: true
+  auto_renew:
+    To: AutoRenew
+  auto_renew_period:
+    Ignore: true
+  auto_upgrade_minor_version:
+    To: AutoUpgradeMinorVersion
+  backup_set_id:
+    Ignore: true
+  ca_type:
+    Ignore: true
+  client_ca_cert:
+    Ignore: true
+  client_ca_enabled:
+    Ignore: true
+  client_cert_revocation_list:
+    Ignore: true
+  client_crl_enabled:
+    Ignore: true
+  connection_string_prefix:
+    To: ConnectionStringPrefix
+  db_instance_ip_array_attribute:
+    Ignore: true
+  db_instance_ip_array_name:
+    Ignore: true
+  db_instance_storage_type:
+    To: DBInstanceStorageType
+  deletion_protection:
+    To: DeletionProtection
+  effective_time:
+    Ignore: true
+  encryption_key:
+    To: EncryptionKey
+  engine:
+    To: Engine
+  engine_version:
+    To: EngineVersion
+  force_restart:
+    Ignore: true
+  fresh_white_list_readins:
+    Ignore: true
+  ha_config:
+    Ignore: true
+  instance_name:
+    To: DBInstanceDescription
+  instance_storage:
+    To: DBInstanceStorage
+  instance_type:
+    To: DBInstanceClass
+  maintain_time:
+    To: MaintainTime
+  manual_ha_time:
+    Ignore: true
+  modify_mode:
+    Ignore: true
+  monitoring_period:
+    Ignore: true
+  parameters:
+    Ignore: true
+  payment_type:
+    To: PayType
+  period:
+    To: Period
+  pg_hba_conf:
+    Ignore: true
+  port:
+    To: Port
+  private_ip_address:
+    To: PrivateIpAddress
+  released_keep_policy:
+    To: ReleasedKeepPolicy
+  replication_acl:
+    Ignore: true
+  restore_time:
+    Ignore: true
+  restore_type:
+    Ignore: true
+  security_group_ids:
+    To: SecurityGroupId
+  security_ip_mode:
+    Ignore: true
+  security_ip_type:
+    Ignore: true
+  security_ips:
+    To: SecurityIPList
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  source_db_instance_name:
+    Ignore: true
+  source_region:
+    Ignore: true
+  sql_collector_config_value:
+    Ignore: true
+  sql_collector_status:
+    To: SQLCollectorStatus
+  ssl_action:
+    To: SSLSetting
+  storage_auto_scale:
+    To: StorageAutoScale
+  storage_threshold:
+    To: StorageThreshold
+  storage_upper_bound:
+    To: StorageUpperBound
+  switch_time:
+    Ignore: true
+  tags:
+    To: Tags
+  target_minor_version:
+    Ignore: true
+  tcp_connection_type:
+    Ignore: true
+  tde_status:
+    Ignore: true
+  upgrade_db_instance_kernel_version:
+    Ignore: true
+  upgrade_time:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  whitelist_network_type:
+    Ignore: true
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBInstanceId
+  category:
+    Ignore: true
+  connection_string:
+    To: InnerConnectionString
+  ssl_status:
+    Ignore: true
+  zone_id_slave_a:
+    Ignore: true

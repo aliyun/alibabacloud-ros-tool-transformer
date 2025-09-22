@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OSS::BucketReplication
+  To: alicloud_oss_bucket_replication
+Properties:
+  BucketName:
+    To: bucket
+  ReplicationConfiguration:
+    Ignore: true
+Attributes: {}

@@ -14,14 +14,24 @@ Properties:
     Ignore: true
   cooldown:
     To: Cooldown
+  dimension_key:
+    Ignore: true
+  dimension_value:
+    Ignore: true
   disable_scale_in:
     To: DisableScaleIn
   estimated_instance_warmup:
     To: EstimatedInstanceWarmup
+  hybrid_metrics:
+    Ignore: true
+  hybrid_monitor_namespace:
+    Ignore: true
   initial_max_size:
     To: InitialMaxSize
   metric_name:
     To: MetricName
+  metric_type:
+    Ignore: true
   min_adjustment_magnitude:
     To: MinAdjustmentMagnitude
   predictive_scaling_mode:

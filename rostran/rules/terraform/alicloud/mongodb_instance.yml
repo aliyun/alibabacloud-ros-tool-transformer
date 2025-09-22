@@ -14,11 +14,15 @@ Properties:
     Ignore: true
   backup_retention_period:
     Ignore: true
+  backup_retention_policy_on_cluster_deletion:
+    Ignore: true
   backup_time:
     Ignore: true
   cloud_disk_encryption_key:
     Ignore: true
   db_instance_class:
+    Ignore: true
+  db_instance_release_protection:
     Ignore: true
   db_instance_storage:
     To: DBInstanceClass
@@ -34,6 +38,8 @@ Properties:
     Ignore: true
   engine_version:
     To: EngineVersion
+  global_security_group_list:
+    Ignore: true
   hidden_zone_id:
     To: HiddenZoneId
   instance_charge_type:

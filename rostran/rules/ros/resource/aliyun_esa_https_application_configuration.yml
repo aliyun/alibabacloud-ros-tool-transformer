@@ -1,0 +1,87 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::HttpsApplicationConfiguration
+  To: alicloud_esa_https_application_configuration
+Properties:
+  AltSvc:
+    To: alt_svc
+  AltSvcClear:
+    To: alt_svc_clear
+  AltSvcMa:
+    To: alt_svc_ma
+  AltSvcPersist:
+    To: alt_svc_persist
+  Hsts:
+    To: hsts
+  HstsIncludeSubdomains:
+    To: hsts_include_subdomains
+  HstsMaxAge:
+    To: hsts_max_age
+  HstsPreload:
+    To: hsts_preload
+  HttpsForce:
+    To: https_force
+  HttpsForceCode:
+    To: https_force_code
+  Rule:
+    To: rule
+  RuleEnable:
+    To: rule_enable
+  RuleName:
+    To: rule_name
+  SiteId:
+    To: site_id
+  SiteVersion:
+    To: site_version
+  HttpsSniVerify:
+    Ignore: true
+  HttpsSniWhitelist:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  PaymentType:
+    Ignore: true
+  HttpsNoSniDeny:
+    Ignore: true
+Attributes:
+  ConfigId:
+    To: config_id
+  SiteVersion:
+    Ignore: true
+  HstsMaxAge:
+    Ignore: true
+  AltSvcMa:
+    Ignore: true
+  HstsIncludeSubdomains:
+    Ignore: true
+  ConfigType:
+    Ignore: true
+  Rule:
+    Ignore: true
+  AltSvcPersist:
+    Ignore: true
+  HstsPreload:
+    Ignore: true
+  HttpsSniWhitelist:
+    Ignore: true
+  HttpsForce:
+    Ignore: true
+  HttpsNoSniDeny:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  Hsts:
+    Ignore: true
+  AltSvc:
+    Ignore: true
+  HttpsSniVerify:
+    Ignore: true
+  HttpsForceCode:
+    Ignore: true
+  AltSvcClear:
+    Ignore: true
+  RuleName:
+    Ignore: true
+  Sequence:
+    Ignore: true

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MSE::NacosConfig
+  To: alicloud_mse_nacos_config
+Properties:
+  AppName:
+    To: app_name
+  Content:
+    To: content
+  DataId:
+    To: data_id
+  Desc:
+    To: desc
+  Group:
+    To: group
+  InstanceId:
+    To: instance_id
+  NamespaceId:
+    To: namespace_id
+  Tags:
+    To: tags
+  Type:
+    To: type
+  BetaIps:
+    Ignore: true
+Attributes: {}

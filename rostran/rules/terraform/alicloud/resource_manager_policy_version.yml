@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_policy_version
+  To: ALIYUN::RAM::ManagedPolicy
+Properties:
+  create_date:
+    Ignore: true
+  is_default_version:
+    Ignore: true
+  policy_document:
+    To: PolicyDocument
+    Type: Map
+  policy_name:
+    To: PolicyName
+  version_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

@@ -1,0 +1,77 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::EdgeContainerApp
+  To: alicloud_esa_edge_container_app
+Properties:
+  EdgeContainerAppName:
+    To: edge_container_app_name
+  HealthCheckSuccTimes:
+    To: health_check_fail_times
+  HealthCheckHost:
+    To: health_check_host
+  HealthCheckHttpCode:
+    To: health_check_http_code
+  HealthCheckInterval:
+    To: health_check_interval
+  HealthCheckMethod:
+    To: health_check_method
+  HealthCheckPort:
+    To: health_check_port
+  HealthCheckFailTimes:
+    To: health_check_succ_times
+  HealthCheckTimeout:
+    To: health_check_timeout
+  HealthCheckType:
+    To: health_check_type
+  HealthCheckUri:
+    To: health_check_uri
+  Remarks:
+    To: remarks
+  ServicePort:
+    To: service_port
+  TargetPort:
+    To: target_port
+Attributes:
+  CreateTime:
+    To: create_time
+  AppStatus:
+    To: status
+  DomainName:
+    Ignore: true
+  HealthCheckSuccTimes:
+    Ignore: true
+  HealthCheckType:
+    Ignore: true
+  ServicePort:
+    Ignore: true
+  HealthCheckFailTimes:
+    Ignore: true
+  EdgeContainerAppName:
+    Ignore: true
+  HealthCheckMethod:
+    Ignore: true
+  TargetPort:
+    Ignore: true
+  HealthCheckInterval:
+    Ignore: true
+  QuicCid:
+    Ignore: true
+  HealthCheckHttpCode:
+    Ignore: true
+  HealthCheckTimeout:
+    Ignore: true
+  HealthCheckPort:
+    Ignore: true
+  VersionCount:
+    Ignore: true
+  HealthCheckHost:
+    Ignore: true
+  GatewayType:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  HealthCheckUri:
+    Ignore: true
+  Remarks:
+    Ignore: true

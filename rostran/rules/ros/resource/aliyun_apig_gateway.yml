@@ -1,0 +1,91 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::APIG::Gateway
+  To: alicloud_apig_gateway
+Properties:
+  GatewayName:
+    To: gateway_name
+  LogConfig:
+    To: log_config
+    Type: Map
+    Schema:
+      Sls:
+        To: sls
+  NetworkAccessConfig:
+    To: network_access_config
+    Type: Map
+    Schema:
+      Type:
+        To: type
+  PaymentType:
+    To: payment_type
+  ResourceGroupId:
+    To: resource_group_id
+  Spec:
+    To: spec
+  Tags:
+    To: tags
+  Vpc:
+    To: vpc
+    Type: Map
+    Schema:
+      VpcId:
+        To: vpc_id
+      Name:
+        Ignore: true
+  VSwitch:
+    To: vswitch
+    Type: Map
+    Schema:
+      VSwitchId:
+        To: vswitch_id
+      Name:
+        Ignore: true
+  ZoneConfig:
+    To: zone_config
+    Type: Map
+    Schema:
+      SelectOption:
+        To: select_option
+  Period:
+    Ignore: true
+  GatewayType:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+Attributes:
+  GatewayId:
+    To: id
+  CreateTime:
+    To: create_time
+  ExpireTime:
+    Ignore: true
+  Spec:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  Environments:
+    Ignore: true
+  SecurityGroup:
+    Ignore: true
+  VSwitch:
+    Ignore: true
+  Tags:
+    Ignore: true
+  Version:
+    Ignore: true
+  GatewayType:
+    Ignore: true
+  Zones:
+    Ignore: true
+  GatewayName:
+    Ignore: true
+  LoadBalancers:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  Vpc:
+    Ignore: true
+  PaymentType:
+    Ignore: true

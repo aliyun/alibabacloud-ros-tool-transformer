@@ -10,7 +10,17 @@ Properties:
     To: DestinationRegionId
   destination_zone_id:
     To: DestinationZoneId
+  disk_replica_group_name:
+    To: DiskReplicaGroupName
   group_name:
+    Ignore: true
+  one_shot:
+    Ignore: true
+  pair_ids:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  reverse_replicate:
     Ignore: true
   rpo:
     Ignore: true
@@ -20,6 +30,9 @@ Properties:
     To: SourceZoneId
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: ReplicaGroupId

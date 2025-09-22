@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CLOUDFW::Instance
+  To: alicloud_cloud_firewall_instance
+Properties:
+  AccountNum:
+    To: account_number
+  Bandwidth:
+    To: band_width
+  MultiAccountManagement:
+    To: cfw_account
+  LogAnalysis:
+    To: cfw_log
+  LogStorage:
+    To: cfw_log_storage
+  VpcFirewallNum:
+    To: fw_vpc_number
+  IpNum:
+    To: ip_number
+  PayType:
+    To: payment_type
+  Period:
+    To: period
+  AutoRenew:
+    To: renewal_duration
+  AutoRenew$$0:
+    To: renewal_status
+  Spec:
+    To: spec
+  NatBandwidth:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
+  NatFirewallNum:
+    Ignore: true
+  IgnoreExisting:
+    Ignore: true
+  AutoPay:
+    Ignore: true
+  AclExtension:
+    Ignore: true
+  VpcBandwidth:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: status

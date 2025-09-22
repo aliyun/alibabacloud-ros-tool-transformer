@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_edas_slb_attachment
+  To: ALIYUN::EDAS::K8sSlbBinding
+Properties:
+  app_id:
+    To: AppId
+  listener_port:
+    Ignore: true
+  slb_id:
+    To: LoadBalancerId
+  slb_ip:
+    Ignore: true
+  type:
+    To: Type
+  vserver_group_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  slb_status:
+    Ignore: true
+  vswitch_id:
+    Ignore: true

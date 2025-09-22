@@ -1,0 +1,46 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_adb_cluster
+  To: ALIYUN::ADB::DBCluster
+Properties:
+  auto_renew_period:
+    Ignore: true
+  db_cluster_category:
+    To: DBClusterCategory
+  db_cluster_version:
+    To: DBClusterVersion
+  db_node_class:
+    To: DBClusterClass
+  db_node_count:
+    To: DBNodeGroupCount
+  db_node_storage:
+    To: DBNodeStorage
+  description:
+    To: DBClusterDescription
+  maintain_time:
+    Ignore: true
+  pay_type:
+    To: PayType
+  payment_type:
+    To: PayType
+  period:
+    To: Period
+  renewal_status:
+    Ignore: true
+  security_ips:
+    Ignore: true
+  tags:
+    To: Tags
+    Type: List
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    To: DBClusterId
+  connection_string:
+    To: ConnectionString
+  port:
+    Ignore: true

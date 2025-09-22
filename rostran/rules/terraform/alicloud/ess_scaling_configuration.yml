@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   credit_specification:
     To: CreditSpecification
+  custom_priorities:
+    Ignore: true
   data_disk:
     To: DiskMappings
     Type: List
@@ -76,6 +78,8 @@ Properties:
   kms_encrypted_password:
     Ignore: true
   kms_encryption_context:
+    Ignore: true
+  network_interfaces:
     Ignore: true
   override:
     Ignore: true

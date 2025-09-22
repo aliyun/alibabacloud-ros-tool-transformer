@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_cname
+  To: ALIYUN::OSS::Bucket
+Properties:
+  bucket:
+    To: BucketName
+  certificate:
+    To: ServerSideEncryptionConfiguration
+    Type: Map
+    Schema:
+      cert_id:
+        Ignore: true
+      certificate:
+        Ignore: true
+      private_key:
+        Ignore: true
+  delete_certificate:
+    Ignore: true
+  domain:
+    Ignore: true
+  force:
+    Ignore: true
+  previous_cert_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  certificate:
+    Ignore: true
+  status:
+    Ignore: true

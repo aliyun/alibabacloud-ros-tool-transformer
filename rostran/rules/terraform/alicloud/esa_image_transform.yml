@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_image_transform
+  To: ALIYUN::ESA::ImageTransform
+Properties:
+  enable:
+    To: Enable
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

@@ -30,6 +30,10 @@ Properties:
         To: ManagedRuleIdentifier
   description:
     To: Description
+  parameter_name:
+    Ignore: true
+  parameter_value:
+    Ignore: true
   risk_level:
     To: RiskLevel
   status:

@@ -1,3 +1,4 @@
+import json
 import os
 
 from rostran.core.settings import RULES_DIR
@@ -54,7 +55,11 @@ TF_ALI_ROS_PROP_MAPPINGS = {
     "alicloud_slb_acl": {"entry_list": "AclEntries"},
 }
 
-TF_ALI_ROS_GENERATE_MAPPINGS = {
+current_dir = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(current_dir, 'tf_ali_ros_generate_mappings.json'), 'r') as f:
+    tf_ali_ros_generate_mappings = json.load(f)
+
+TF_ALI_ROS_GENERATE_MAPPINGS = tf_ali_ros_generate_mappings or {
     # "alicloud_ack_one_cluster": "",
     # "alicloud_actiontrail_global_events_storage_region": "",
     # "alicloud_actiontrail_history_delivery_job": "",

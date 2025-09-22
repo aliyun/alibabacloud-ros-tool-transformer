@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sag_client_user
+  To: ALIYUN::SAG::AppUser
+Properties:
+  bandwidth:
+    To: Bandwidth
+  client_ip:
+    To: ClientIp
+  kms_encrypted_password:
+    Ignore: true
+  kms_encryption_context:
+    Ignore: true
+  password:
+    To: Password
+  sag_id:
+    To: SmartAGId
+  user_mail:
+    To: UserMail
+  user_name:
+    To: UserName
+Attributes:
+  id:
+    Ignore: true

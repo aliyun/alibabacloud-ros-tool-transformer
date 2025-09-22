@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CLOUDFW::TrFirewall
+  To: alicloud_cloud_firewall_vpc_cen_tr_firewall
+Properties:
+  CenId:
+    To: cen_id
+  FirewallDescription:
+    To: firewall_description
+  FirewallName:
+    To: firewall_name
+  FirewallSubnetCidr:
+    To: firewall_subnet_cidr
+  FirewallVpcCidr:
+    To: firewall_vpc_cidr
+  RegionNo:
+    To: region_no
+  RouteMode:
+    To: route_mode
+  TrAttachmentMasterCidr:
+    To: tr_attachment_master_cidr
+  TrAttachmentMasterZone:
+    To: tr_attachment_master_zone
+  TrAttachmentSlaveCidr:
+    To: tr_attachment_slave_cidr
+  TrAttachmentSlaveZone:
+    To: tr_attachment_slave_zone
+  TransitRouterId:
+    To: transit_router_id
+  FirewallVpcId:
+    Ignore: true
+  FirewallVswitchId:
+    Ignore: true
+Attributes:
+  FirewallId:
+    Ignore: true

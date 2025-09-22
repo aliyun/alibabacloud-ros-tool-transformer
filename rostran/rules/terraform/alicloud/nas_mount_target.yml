@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   access_group_name:
     To: AccessGroupName
+  dual_stack:
+    To: EnableIpv6
   file_system_id:
     To: FileSystemId
   mount_target_domain:

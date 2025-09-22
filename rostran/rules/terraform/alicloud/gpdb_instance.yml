@@ -10,6 +10,8 @@ Properties:
     Ignore: true
   create_sample_data:
     To: CreateSampleData
+  data_share_status:
+    Ignore: true
   db_instance_category:
     To: DBInstanceCategory
   db_instance_class:
@@ -54,16 +56,22 @@ Properties:
     Ignore: true
   private_ip_address:
     To: PrivateIpAddress
+  prod_type:
+    To: ProdType
   resource_group_id:
     Ignore: true
   resource_management_mode:
     Ignore: true
   security_ip_list:
     Ignore: true
+  seg_disk_performance_level:
+    To: SegDiskPerformanceLevel
   seg_node_num:
     To: SegNodeNum
   seg_storage_type:
     To: SegStorageType
+  serverless_mode:
+    To: ServerlessMode
   ssl_enabled:
     Ignore: true
   status:

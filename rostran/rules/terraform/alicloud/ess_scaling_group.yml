@@ -10,6 +10,20 @@ Properties:
     To: AllocationStrategy
   az_balance:
     To: AzBalance
+  capacity_options_compensate_with_on_demand:
+    To: CompensateWithOnDemand
+  capacity_options_on_demand_base_capacity:
+    To: OnDemandBaseCapacity
+  capacity_options_on_demand_percentage_above_base_capacity:
+    To: OnDemandPercentageAboveBaseCapacity
+  capacity_options_price_comparison_mode:
+    Ignore: true
+  capacity_options_spot_auto_replace_on_demand:
+    Ignore: true
+  compensate_with_on_demand:
+    To: CompensateWithOnDemand
+  container_group_id:
+    To: ContainerGroupId
   db_instance_ids:
     To: DBInstanceIds
   default_cooldown:
@@ -63,6 +77,8 @@ Properties:
     To: SpotInstancePools
   spot_instance_remedy:
     To: SpotInstanceRemedy
+  stop_instance_timeout:
+    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list

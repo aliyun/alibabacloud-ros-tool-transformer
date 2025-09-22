@@ -1,0 +1,12 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_logtail_attachment
+  To: ALIYUN::SLS::ApplyConfigToMachineGroup
+Properties:
+  logtail_config_name:
+    To: ConfigName
+  machine_group_name:
+    To: GroupName
+  project:
+    To: ProjectName

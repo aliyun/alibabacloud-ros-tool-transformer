@@ -1,0 +1,99 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_service_mesh_service_mesh
+  To: ALIYUN::ASM::ServiceMesh
+Properties:
+  auth_strategy:
+    Ignore: true
+  auto_injection_policy_enabled:
+    Ignore: true
+  cluster_domain:
+    Ignore: true
+  cluster_ids:
+    To: GuestCluster
+  cluster_spec:
+    Ignore: true
+  custom_prometheus_url:
+    Ignore: true
+  customized_prometheus:
+    To: CustomizedPrometheus
+  edition:
+    To: Edition
+  enable_namespaces_by_default:
+    Ignore: true
+  enabled:
+    To: OpaEnabled
+  extra_configuration:
+    Ignore: true
+  force:
+    Ignore: true
+  gateway_enabled:
+    Ignore: true
+  gateway_lifecycle:
+    Ignore: true
+  http10_enabled:
+    Ignore: true
+  init_cni_configuration:
+    Ignore: true
+  integrate_clb:
+    Ignore: true
+  kiali_arms_auth_tokens:
+    Ignore: true
+  kiali_service_annotations:
+    Ignore: true
+  limit_cpu:
+    Ignore: true
+  limit_memory:
+    Ignore: true
+  load_balancer:
+    Ignore: true
+  log_level:
+    Ignore: true
+  log_ttl_in_day:
+    Ignore: true
+  mesh_config:
+    Ignore: true
+  network:
+    Ignore: true
+  open_id_config:
+    Ignore: true
+  project:
+    Ignore: true
+  prometheus_url:
+    To: PrometheusUrl
+  ram_oauth_config:
+    Ignore: true
+  request_cpu:
+    Ignore: true
+  request_memory:
+    Ignore: true
+  server_config:
+    Ignore: true
+  service_mesh_name:
+    To: Name
+  sidecar_enabled:
+    Ignore: true
+  sidecar_lifecycle:
+    Ignore: true
+  tags:
+    Ignore: true
+  trace_sampling:
+    To: TraceSampling
+  version:
+    Ignore: true
+Attributes:
+  id:
+    To: ServiceMeshId
+  create_time:
+    Ignore: true
+  kubeconfig:
+    Ignore: true
+  load_balancer:
+    Ignore: true
+  mesh_config:
+    Ignore: true
+  network:
+    Ignore: true
+  status:
+    Ignore: true

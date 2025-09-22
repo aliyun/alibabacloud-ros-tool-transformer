@@ -1,0 +1,133 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_clone_db_instance
+  To: ALIYUN::RDS::DBInstanceClone
+Properties:
+  acl:
+    Ignore: true
+  auto_upgrade_minor_version:
+    Ignore: true
+  backup_id:
+    To: BackupId
+  backup_type:
+    To: BackupType
+  ca_type:
+    Ignore: true
+  category:
+    To: Category
+  certificate:
+    Ignore: true
+  client_ca_cert:
+    Ignore: true
+  client_ca_enabled:
+    Ignore: true
+  client_cert_revocation_list:
+    Ignore: true
+  client_crl_enabled:
+    Ignore: true
+  connection_string_prefix:
+    To: ConnectionStringPrefix
+  db_instance_class:
+    To: DBInstanceClass
+  db_instance_description:
+    To: DBInstanceDescription
+  db_instance_storage:
+    To: DBInstanceStorage
+  db_instance_storage_type:
+    To: DBInstanceStorageType
+  db_name:
+    Ignore: true
+  db_names:
+    To: DbNames
+  dedicated_host_group_id:
+    To: DedicatedHostGroupId
+  deletion_protection:
+    Ignore: true
+  direction:
+    Ignore: true
+  effective_time:
+    Ignore: true
+  encryption_key:
+    Ignore: true
+  engine:
+    Ignore: true
+  engine_version:
+    Ignore: true
+  force_restart:
+    Ignore: true
+  ha_mode:
+    Ignore: true
+  instance_network_type:
+    To: InstanceNetworkType
+  maintain_time:
+    To: MaintainTime
+  parameters:
+    Ignore: true
+  password:
+    To: MasterUserPassword
+  payment_type:
+    To: PayType
+  period:
+    To: PeriodType
+  pg_hba_conf:
+    Ignore: true
+  port:
+    To: Port
+  private_ip_address:
+    To: PrivateIpAddress
+  private_key:
+    Ignore: true
+  released_keep_policy:
+    Ignore: true
+  replication_acl:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  restore_table:
+    To: RestoreTable
+  restore_time:
+    To: RestoreTime
+  role_arn:
+    Ignore: true
+  security_ips:
+    To: SecurityIPList
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  serverless_config:
+    Ignore: true
+  source_biz:
+    Ignore: true
+  source_db_instance_id:
+    To: DBInstanceId
+  ssl_enabled:
+    To: SSLSetting
+  switch_time:
+    Ignore: true
+  sync_mode:
+    Ignore: true
+  table_meta:
+    To: TableMeta
+    Type: List
+  tcp_connection_type:
+    Ignore: true
+  tde_status:
+    Ignore: true
+  used_time:
+    To: Period
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+  zone_id_slave_a:
+    To: SlaveZoneIds
+    Type: List
+Attributes:
+  id:
+    Ignore: true
+  connection_string:
+    To: PublicConnectionString

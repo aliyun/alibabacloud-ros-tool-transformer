@@ -18,6 +18,10 @@ Properties:
     To: DestinationZoneId
   disk_id:
     To: DiskId
+  disk_replica_pair_name:
+    To: DiskReplicaPairName
+  one_shot:
+    Ignore: true
   pair_name:
     Ignore: true
   payment_type:
@@ -30,12 +34,17 @@ Properties:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  reverse_replicate:
+    Ignore: true
   rpo:
     Ignore: true
   source_zone_id:
     To: SourceZoneId
   status:
     Ignore: true
+  tags:
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: ReplicaPairId
@@ -57,6 +66,8 @@ Attributes:
     Ignore: true
   payment_type:
     To: PaymentType
+  region_id:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   rpo:

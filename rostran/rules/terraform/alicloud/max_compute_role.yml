@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_max_compute_role
+  To: ALIYUN::MaxCompute::Role
+Properties:
+  policy:
+    To: Policy
+  project_name:
+    To: ProjectName
+  role_name:
+    To: RoleName
+  type:
+    To: Type
+Attributes:
+  id:
+    Ignore: true
