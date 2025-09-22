@@ -1,0 +1,71 @@
+Transform: Aliyun::OpenTofu-v1.8
+Description:
+  zh-cn: 创建VPC
+  en: Create VPC
+Conditions:
+  IsChinaMainland:
+    Fn::Equals:
+    - cn-hangzhou
+    - Ref: Region
+Mappings:
+  RegionMap:
+    ChineseMainland:
+      Ipv6Isp: ChinaMobile
+      Region: cn-hangzhou
+    Overseas:
+      Ipv6Isp: BGP
+      Region: ap-southeast-1
+Parameters:
+  environment:
+    Type: String
+    Description:
+      en: Environment
+      zh-cn: 环境
+    Default: dev
+    AllowedValues:
+    - prod
+    - dev
+  vpc_name:
+    Type: String
+    Description:
+      en: Name of VPC
+      zh-cn: VPC名称
+  subnet_mask:
+    Type: Number
+    Label:
+      en: Subnet mask
+      zh-cn: 子网掩码
+    Description:
+      en: Subnet mask of VSwitch
+      zh-cn: 交换机子网掩码
+    Default: 21
+    MinValue: 13
+    MaxValue: 31
+Outputs:
+  vpc_id:
+    Description:
+      en: VPC ID
+      zh-cn: 专有网络ID
+    Value:
+      Ref: vpc
+Rules:
+  PublicNet:
+    RuleCondition:
+      Fn::Equals:
+      - Ref: environment
+      - prod
+    Assertions:
+    - Assert:
+        Fn::Equals:
+        - Ref: InternetMaxBandwidthOut
+        - 0
+      AssertDescription: ECS instance should be intranet when the environment is prod.
+Metadata:
+  ALIYUN::ROS::Interface:
+    ParameterGroups:
+    - Parameters:
+      - environment
+      - vpc_name
+      - subnet_mask
+AdditionalData:
+  Key: Value

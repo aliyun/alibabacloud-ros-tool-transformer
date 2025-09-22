@@ -186,3 +186,7 @@ class CloudFormationTransformNotSupported(RosTranException):
 
 class InvalidTargetPath(RosTranException):
     msg = "Target path {target_path} is invalid, {reason}"
+
+
+class InvalidTargetFile(RosTranException):
+    msg = "Target file {target_file} is invalid, {reason}"

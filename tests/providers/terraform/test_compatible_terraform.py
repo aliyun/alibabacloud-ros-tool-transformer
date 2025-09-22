@@ -64,3 +64,20 @@ def test_template_with_extra_files():
     assert workspace.get("main.tf")
     assert workspace.get(".metadata")
     assert workspace.get("charts/example/Chart.yaml")
+
+def test_template_with_target_path():
+    target_path = os.path.join(TERRAFORM_ALICLOUD_DIR, "ros-meta.yaml")
+    template = CompatibleTerraformTemplate.initialize(
+        TERRAFORM_ALICLOUD_DIR, exist_file_path=target_path)
+    ros_template = template.transform()
+    d = ros_template.as_dict(format=True)
+
+    assert "Workspace" in d
+    assert "Parameters" in d
+    assert "Mappings" in d
+    assert "Conditions" in d
+    assert "Outputs" in d
+    assert "Metadata" in d
+    assert "Rules" in d
+    assert "Description" in d
+    assert d["Transform"] == "Aliyun::OpenTofu-v1.8"
