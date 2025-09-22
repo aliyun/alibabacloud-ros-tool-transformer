@@ -1,6 +1,6 @@
 import json
 import logging
-from typing import Optional, Union
+from typing import Optional, Union, Dict
 from functools import partial
 
 import typer
@@ -85,6 +85,18 @@ class RosTemplate:
         self.rules = rules if rules is not None else Rules()
         self.transform = transform
         self.workspace = workspace
+        self._additional_data = None
+
+
+    @property
+    def additional_data(self):
+        return self._additional_data
+
+    @additional_data.setter
+    def additional_data(self, value):
+        assert isinstance(value, dict), "additional_data must be a dict"
+        self._additional_data = value
+
 
     @classmethod
     def initialize(cls, data: dict):
@@ -167,5 +179,7 @@ class RosTemplate:
             kwargs = {"indent": 2}
 
         data = self.as_dict(format=True)
+        if self.additional_data:
+            data.update(self.additional_data)
         with open(target_path, "w") as f:
             dump(data, f, **kwargs)
