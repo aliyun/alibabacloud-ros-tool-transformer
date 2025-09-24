@@ -90,7 +90,14 @@ Resources:
     Type: ALIYUN::RAM::User
     Properties:
       UserName:
-        Fn::Sub: create_by_solution-${ALIYUN::StackId}
+        Fn::Sub:
+          - http://${ServerAddress}
+          - ServerAddress:
+              Fn::Select:
+                - 0
+                - Fn::GetAtt:
+                    - EcsInstance
+                    - PublicIps
   RamAK:
     Type: ALIYUN::RAM::AccessKey
     Properties:
