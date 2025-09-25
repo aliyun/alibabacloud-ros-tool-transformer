@@ -26,6 +26,7 @@ from rostran.core.exceptions import (
 from rostran.core.rule_manager import RuleManager, RuleClassifier, ResourceRule
 from rostran.core.template import Template
 from rostran.core.format import FileFormat
+from rostran.core.reporter import ROS2TerraformReporter
 from rostran.providers.ros import functions
 from rostran.providers.terraform import template_blocks as tf
 from tools.utils import camel_to_snake
@@ -137,11 +138,7 @@ class ROS2TerraformTemplate(Template):
         self.tf_region_parameter = None
         self.resources_from_properties: List[ResourcesInProperty] = []
 
-        self._properties_unsupported = set()
-        self._properties_failed = set()
-        self._resources_supported = set()
-        self._resources_unsupported = set()
-        self._outputs_failed = set()
+        self.reporter = ROS2TerraformReporter()
 
     def _check_resources(self):
         for name, value in self.resources.items():
@@ -250,7 +247,7 @@ class ROS2TerraformTemplate(Template):
                 tf_files.append(file_path)
 
         typer.secho(f"Transform successful!\n")
-        self._generate_transform_report()
+        self.reporter.generate_report()
 
         try:
             tf_command = TerraformCommand(os.path.abspath(output_dir))
@@ -385,11 +382,11 @@ class ROS2TerraformTemplate(Template):
                     prop_name = f"{prop_name}.{name}"
                 prop_flag = prop_name or name
                 if name not in schema:
-                    self._properties_unsupported.add(f"{res_type}.{prop_flag}")
+                    self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
                     continue
                 if isinstance(value, tf.CommentType):
                     value = tf.CommentType(f"{prop_flag} transform failed: {value.value}")
-                    self._properties_failed.add(f"{res_type}.{prop_flag}")
+                    self.reporter.add_failed_property(f"{res_type}.{prop_flag}")
                 schema_value = schema[name] or {}
                 tf_arg_name = schema_value.get("To")
                 new_res_schema = schema_value.get("ToResources")
@@ -416,7 +413,7 @@ class ROS2TerraformTemplate(Template):
                     continue
 
                 if schema_value.get("Ignore") or not tf_arg_name:
-                    self._properties_unsupported.add(f"{res_type}.{prop_flag}")
+                    self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
                     continue
 
                 handled_value = self._handled_value(tf_argument, schema_value, tf_arg_name, value)
@@ -470,9 +467,9 @@ class ROS2TerraformTemplate(Template):
             else:
                 resource_rule = self.get_resource_rule(ros_res_type)
             if not resource_rule:
-                self._resources_unsupported.add(ros_res_type)
+                self.reporter.add_unsupported_resource(ros_res_type)
                 continue
-            self._resources_supported.add(ros_res_type)
+            self.reporter.add_supported_resource(ros_res_type)
             properties = res.get("Properties")
             resolved_props = {key: self.resolve_values(value, False, True) for key, value in properties.items()}
             tf_argument = self._get_tf_argument(ros_res_type, resolved_props, resource_rule.properties, res_name=name)
@@ -570,7 +567,7 @@ class ROS2TerraformTemplate(Template):
                 if isinstance(resolved_value, tf.CommentType):
                     tf_value["value_comment"] = resolved_value
                     tf_value["value"] = tf.NullType()
-                    self._outputs_failed.add(name)
+                    self.reporter.add_failed_output(name)
                 else:
                     tf_value["value"] = resolved_value
             desc = value.get("Description")
@@ -585,41 +582,3 @@ class ROS2TerraformTemplate(Template):
             output_block = tf.Output(tf_name, tf_value)
             tf_outputs.append(output_block)
         return tf_outputs
-
-    def _generate_transform_report(self):
-        """
-        Generate a transformation report for the ROS to Terraform conversion.
-        """
-        typer.secho("="*60, fg="blue")
-        typer.secho("ROS Template to Terraform Conversion Report", fg="blue", bold=True)
-        typer.secho("="*60, fg="blue")
-
-        typer.secho(f"\nRESOURCES:", fg="blue", bold=True)
-        total_count =  len(self._resources_supported) + len(self._resources_unsupported)
-        typer.secho(f"  • Total resources processed: {total_count}", fg="blue")
-        typer.secho(f"  • Successfully transformed: {len(self._resources_supported)}", fg="green")
-        typer.secho(f"  • Unsupported resources: {', '.join(self._resources_unsupported)}", fg="yellow")
-
-
-        if self._properties_unsupported or self._properties_failed:
-            typer.secho(f"\nPROPERTIES:", fg="blue", bold=True)
-            if self._properties_unsupported:
-                typer.secho(f" • The following properties of ROS resources are not supported "
-                            f"by Terraform: {', '.join(self._properties_unsupported)}", fg="yellow")
-            if self._properties_failed:
-                typer.secho(f" • The following properties of ROS resources are "
-                            f"transformed failed: {', '.join(self._properties_failed)}", fg="yellow")
-
-        if self._outputs_failed:
-            typer.secho(f"\nOUTPUTS:", fg="blue", bold=True)
-            typer.secho(f" • The following outputs of ROS template are "
-                        f"transformed failed: {', '.join(self._outputs_failed)}", fg="yellow")
-
-        typer.secho(f"\nMANUAL HANDLING REQUIRED:", fg="blue", bold=True)
-        if self._properties_failed or self._outputs_failed:
-            typer.secho(f"  • Please manually handle the failed properties or outputs "
-                        f"which are commented in templates", fg="yellow")
-
-        typer.secho("\n" + "="*60, fg="blue")
-        typer.secho("Conversion completed successfully!", fg="green", bold=True)
-        typer.secho("="*60 + "\n", fg="blue")
