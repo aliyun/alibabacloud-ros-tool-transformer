@@ -423,6 +423,9 @@ class ROS2TerraformTemplate(Template):
                 sub_schema = schema_value.get("Schema")
                 sub_args = self._get_tf_argument(res_type, value, sub_schema, name, res_name)
                 if sub_schema:
+                    if isinstance(sub_args, tf.JsonType):
+                        sub_args = sub_args.value
+
                     if isinstance(sub_args, list):
                         for i, item in enumerate(sub_args):
                             block = tf.Block(tf_arg_name, arguments=item)
@@ -533,6 +536,7 @@ class ROS2TerraformTemplate(Template):
                         depend_res_type = self.resources[depend]['Type']
                         depend_resource_rule = self.get_resource_rule(depend_res_type)
                         if not depend_resource_rule:
+                            tf_depends_on.append(tf.CommentType(f"Resource type {depend_res_type} is not supported."))
                             continue
                         tf_depend = f"{depend_resource_rule.target_resource_type}.{camel_to_snake(depend)}"
                         tf_depends_on.append(tf.LiteralType(tf_depend))

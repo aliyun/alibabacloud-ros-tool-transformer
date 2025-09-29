@@ -328,12 +328,17 @@ def _test_tpl_with_conditions():
         template.transform()
 
 
-def _test_solution_245():
+def _test_solution():
     with open(f"{ROS_TEMPLATE_DIR}/technical_solution.yml", 'r') as f:
         content = yaml.load(f)
     template = ROS2TerraformTemplate.initialize(content, validate=False)
     template.transform()
 
+def _test_solution2():
+    with open(f"{ROS_TEMPLATE_DIR}/technical_solution2.yml", 'r') as f:
+        content = yaml.load(f)
+    template = ROS2TerraformTemplate.initialize(content, validate=False)
+    template.transform()
 
 def _test_tpl_pseudo_parameter():
     source = yaml.load(pseudo_parameter_tpl)

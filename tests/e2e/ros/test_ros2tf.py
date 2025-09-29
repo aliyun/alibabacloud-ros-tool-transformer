@@ -34,10 +34,21 @@ class RosPlugin:
         return ret['body']['TemplateBody']
 
 
-def get_supported_resource_types():
-    res_rules = RuleManager.initialize(RuleClassifier.ROS).resource_rules
+def get_supported_resource_types(rule_classifier=None):
+    if not rule_classifier:
+        rule_classifier = RuleClassifier.ROS
+    res_rules = RuleManager.initialize(rule_classifier).resource_rules
     supported_resources = res_rules.keys()
     return tuple(supported_resources)
+
+def _test_statistical_conversion_rate():
+    ros_plugin = RosPlugin()
+    all_ros_types = ros_plugin.list_resource_types()["body"]["ResourceTypes"]
+    all_ros_count = len(all_ros_types)
+    ros2tf = get_supported_resource_types()
+    ros2tf_count = len(ros2tf)
+    print(f"ROS2TF: {ros2tf_count/all_ros_count}")
+
 
 
 def _test_all_resource_types(resource_type: str = None):

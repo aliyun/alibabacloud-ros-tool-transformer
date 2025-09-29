@@ -1,5 +1,5 @@
 resource "alicloud_ram_user" "ram_user" {
-  name = "create_by_solution-057c911c40e54db2ad843db112c55117"
+  name = "create_by_solution-8b599305d0784ccab890f408426cbcef"
 }
 
 resource "alicloud_ram_access_key" "ramak" {
@@ -24,10 +24,10 @@ resource "alicloud_security_group" "security_group" {
 }
 
 resource "alicloud_ecs_command" "instance_run_command_alicloud_ecs_command" {
-  command_content = base64encode("#!/bin/bash\ncat << EOF >> ~/.bash_profile\nexport ROS_DEPLOY=true\nexport BAILIAN_API_KEY=${var.bai_lian_api_key.Key}\nexport ALIBABA_CLOUD_ACCESS_KEY_ID=${alicloud_ram_access_key.ramak.id}\nexport ALIBABA_CLOUD_ACCESS_KEY_SECRET=// Could not transform ROS Attribute AccessKeySecret to Terraform attribute.\nEOF\nsource ~/.bash_profile\ncurl -fsSL https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/install-script/ai-security/install.sh | bash\n")
+  command_content = base64encode("#!/bin/bash\ncat << EOF >> ~/.bash_profile\nexport ROS_DEPLOY=true\nexport BAILIAN_API_KEY=${var.bai_lian_api_key.Key}\nexport ALIBABA_CLOUD_ACCESS_KEY_ID=${alicloud_ram_access_key.ramak.id}\nexport ALIBABA_CLOUD_ACCESS_KEY_SECRET=${alicloud_ram_access_key.ramak.secret}\nEOF\nsource ~/.bash_profile\ncurl -fsSL https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/install-script/ai-security/install.sh | bash\n")
   type            = "RunShellScript"
   timeout         = "2400"
-  name            = "auto-a912f2d2"
+  name            = "auto-78db94bb"
 }
 
 resource "alicloud_ecs_invocation" "instance_run_command_alicloud_ecs_invocation" {
@@ -59,7 +59,7 @@ resource "alicloud_vpc" "vpc" {
   cidr_block = "192.168.0.0/16"
 }
 
-resource "alicloud_security_group_rule" "security_group_security_group_ingress_0_862777d7" {
+resource "alicloud_security_group_rule" "security_group_security_group_ingress_0_ce8f2a1c" {
   priority          = 100
   port_range        = "80/80"
   nic_type          = "internet"
