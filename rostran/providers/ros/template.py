@@ -26,6 +26,7 @@ from rostran.core.exceptions import (
 from rostran.core.rule_manager import RuleManager, RuleClassifier, ResourceRule
 from rostran.core.template import Template
 from rostran.core.format import FileFormat
+from rostran.core.reporter import ROS2TerraformReporter
 from rostran.providers.ros import functions
 from rostran.providers.terraform import template_blocks as tf
 from tools.utils import camel_to_snake
@@ -137,6 +138,8 @@ class ROS2TerraformTemplate(Template):
         self.tf_region_parameter = None
         self.resources_from_properties: List[ResourcesInProperty] = []
 
+        self.reporter = ROS2TerraformReporter()
+
     def _check_resources(self):
         for name, value in self.resources.items():
             if value.get("Condition") or value.get("Count"):
@@ -154,6 +157,7 @@ class ROS2TerraformTemplate(Template):
     @classmethod
     def initialize(cls, source: dict, validate: bool = True, _: FileFormat = None):
         if validate:
+            typer.secho(f"Validating ROS template...")
             cls.validate_ros_template(source)
         rule_manager = RuleManager.initialize(RuleClassifier.ROS)
         return cls(source=source, rule_manager=rule_manager)
@@ -243,6 +247,7 @@ class ROS2TerraformTemplate(Template):
                 tf_files.append(file_path)
 
         typer.secho(f"Transform successful!\n")
+        self.reporter.generate_report()
 
         try:
             tf_command = TerraformCommand(os.path.abspath(output_dir))
@@ -260,25 +265,32 @@ class ROS2TerraformTemplate(Template):
     def get_resource_rule(self, ros_res_type: str) -> Optional[ResourceRule]:
         resource_rule: ResourceRule = self.rule_manager.resource_rules.get(ros_res_type)
         if resource_rule is None:
-            typer.secho(
-                f"Resource type {ros_res_type!r} is not supported and will be ignored.",
-                fg="yellow",
-            )
             return None
         return resource_rule
 
-    def resolve_values(self, data: Any, tf_type: bool = True) -> Any:
+    def resolve_values(self, data: Any, tf_type: bool = True, ignore_comment: bool = False) -> Any:
         if isinstance(data, dict):
             result = {}
             for key, value in data.items():
                 if key == 'Ref':
                     return functions.ref(self, value)
                 elif key in functions.ALL_FUNCTIONS:
-                    return functions.ALL_FUNCTIONS[key](self, self.resolve_values(value, False))
+                    value_result = self.resolve_values(value, False, ignore_comment)
+                    if isinstance(value_result, tf.CommentType) and ignore_comment:
+                        return value_result
+                    return functions.ALL_FUNCTIONS[key](self, value_result)
                 else:
-                    result[key] = self.resolve_values(value, tf_type)
+                    value_result = self.resolve_values(value, tf_type, ignore_comment)
+                    if isinstance(value_result, tf.CommentType) and ignore_comment:
+                        return value_result
+                    result[key] = self.resolve_values(value, tf_type, ignore_comment)
         elif isinstance(data, list):
-            result = [self.resolve_values(item, tf_type) for item in data]
+            result = []
+            for value in data:
+                value_result = self.resolve_values(value, tf_type, ignore_comment)
+                if isinstance(value_result, tf.CommentType) and ignore_comment:
+                    return value_result
+                result.append(value_result)
         else:
             result = data
 
@@ -369,10 +381,12 @@ class ROS2TerraformTemplate(Template):
                 if prop_name:
                     prop_name = f"{prop_name}.{name}"
                 prop_flag = prop_name or name
-                msg = f"Resource property {prop_flag!r} of {res_type!r} is not supported and will be ignored."
                 if name not in schema:
-                    typer.secho(msg, fg="yellow")
+                    self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
                     continue
+                if isinstance(value, tf.CommentType):
+                    value = tf.CommentType(f"{prop_flag} transform failed: {value.value}")
+                    self.reporter.add_failed_property(f"{res_type}.{prop_flag}")
                 schema_value = schema[name] or {}
                 tf_arg_name = schema_value.get("To")
                 new_res_schema = schema_value.get("ToResources")
@@ -399,7 +413,7 @@ class ROS2TerraformTemplate(Template):
                     continue
 
                 if schema_value.get("Ignore") or not tf_arg_name:
-                    typer.secho(msg, fg="yellow")
+                    self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
                     continue
 
                 handled_value = self._handled_value(tf_argument, schema_value, tf_arg_name, value)
@@ -409,6 +423,9 @@ class ROS2TerraformTemplate(Template):
                 sub_schema = schema_value.get("Schema")
                 sub_args = self._get_tf_argument(res_type, value, sub_schema, name, res_name)
                 if sub_schema:
+                    if isinstance(sub_args, tf.JsonType):
+                        sub_args = sub_args.value
+
                     if isinstance(sub_args, list):
                         for i, item in enumerate(sub_args):
                             block = tf.Block(tf_arg_name, arguments=item)
@@ -453,14 +470,11 @@ class ROS2TerraformTemplate(Template):
             else:
                 resource_rule = self.get_resource_rule(ros_res_type)
             if not resource_rule:
-                typer.secho(
-                    f"Resource type {ros_res_type!r} is not supported and will be ignored.",
-                    fg="yellow",
-                )
+                self.reporter.add_unsupported_resource(ros_res_type)
                 continue
-
+            self.reporter.add_supported_resource(ros_res_type)
             properties = res.get("Properties")
-            resolved_props = self.resolve_values(properties, False) or {}
+            resolved_props = {key: self.resolve_values(value, False, True) for key, value in properties.items()}
             tf_argument = self._get_tf_argument(ros_res_type, resolved_props, resource_rule.properties, res_name=name)
             if isinstance(tf_argument, tf.JsonType):
                 tf_argument = tf_argument.value
@@ -522,10 +536,7 @@ class ROS2TerraformTemplate(Template):
                         depend_res_type = self.resources[depend]['Type']
                         depend_resource_rule = self.get_resource_rule(depend_res_type)
                         if not depend_resource_rule:
-                            typer.secho(
-                                f"Resource type {depend_res_type!r} is not supported and will be ignored.",
-                                fg="yellow",
-                            )
+                            tf_depends_on.append(tf.CommentType(f"Resource type {depend_res_type} is not supported."))
                             continue
                         tf_depend = f"{depend_resource_rule.target_resource_type}.{camel_to_snake(depend)}"
                         tf_depends_on.append(tf.LiteralType(tf_depend))
@@ -551,7 +562,7 @@ class ROS2TerraformTemplate(Template):
             tf_name = camel_to_snake(name)
             tf_value = dict()
 
-            resolved_value = self.resolve_values(value.get("Value"))
+            resolved_value = self.resolve_values(value.get("Value"), ignore_comment=True)
             condition = value.get("Condition")
             if condition:
                 cont_value = f"local.{condition} ? {resolved_value} : {tf.NullType()}"
@@ -560,6 +571,7 @@ class ROS2TerraformTemplate(Template):
                 if isinstance(resolved_value, tf.CommentType):
                     tf_value["value_comment"] = resolved_value
                     tf_value["value"] = tf.NullType()
+                    self.reporter.add_failed_output(name)
                 else:
                     tf_value["value"] = resolved_value
             desc = value.get("Description")

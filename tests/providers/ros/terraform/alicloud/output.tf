@@ -1,5 +1,6 @@
 output "web_url" {
-  value = ""
+  // Could not transform ROS Attribute PublicIps to Terraform attribute.
+  value       = null
   description = <<EOT
   {
     "zh-cn": "Web 访问地址。",

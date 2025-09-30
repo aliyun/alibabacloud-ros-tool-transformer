@@ -62,7 +62,7 @@ variable "zone_id1" {
 }
 
 variable "bai_lian_api_key" {
-  type        = map
+  type        = string
   description = <<EOT
   {
     "Label": {

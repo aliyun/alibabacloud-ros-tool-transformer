@@ -1,5 +1,5 @@
 resource "alicloud_ram_user" "ram_user" {
-  name = "create_by_solution-8b4b55fb089340f7a91494f9a87de189"
+  name = "create_by_solution-8b599305d0784ccab890f408426cbcef"
 }
 
 resource "alicloud_ram_access_key" "ramak" {
@@ -24,10 +24,10 @@ resource "alicloud_security_group" "security_group" {
 }
 
 resource "alicloud_ecs_command" "instance_run_command_alicloud_ecs_command" {
-  command_content = base64encode("#!/bin/bash\ncat << EOF >> ~/.bash_profile\nexport ROS_DEPLOY=true\nexport BAILIAN_API_KEY=${var.bai_lian_api_key.Key}\nexport ALIBABA_CLOUD_ACCESS_KEY_ID=${alicloud_ram_access_key.ramak.id}\nexport ALIBABA_CLOUD_ACCESS_KEY_SECRET=// Could not transform ROS Attribute AccessKeySecret to Terraform attribute.\nEOF\nsource ~/.bash_profile\ncurl -fsSL https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/install-script/ai-security/install.sh | bash\n")
+  command_content = base64encode("#!/bin/bash\ncat << EOF >> ~/.bash_profile\nexport ROS_DEPLOY=true\nexport BAILIAN_API_KEY=${var.bai_lian_api_key.Key}\nexport ALIBABA_CLOUD_ACCESS_KEY_ID=${alicloud_ram_access_key.ramak.id}\nexport ALIBABA_CLOUD_ACCESS_KEY_SECRET=${alicloud_ram_access_key.ramak.secret}\nEOF\nsource ~/.bash_profile\ncurl -fsSL https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/install-script/ai-security/install.sh | bash\n")
   type            = "RunShellScript"
   timeout         = "2400"
-  name            = "auto-682b3bb8"
+  name            = "auto-78db94bb"
 }
 
 resource "alicloud_ecs_invocation" "instance_run_command_alicloud_ecs_invocation" {
@@ -45,7 +45,7 @@ resource "alicloud_vswitch" "vswitch1" {
 resource "alicloud_ecs_instance_set" "ecs_instance" {
   amount                     = 1
   system_disk_category       = "cloud_essd"
-  security_group_ids         = alicloud_security_group.security_group.id
+  security_group_ids         = [alicloud_security_group.security_group.id]
   image_id                   = "aliyun_3_x64_20G_alibase_"
   vswitch_id                 = alicloud_vswitch.vswitch1.id
   password                   = var.instance_password
@@ -59,7 +59,7 @@ resource "alicloud_vpc" "vpc" {
   cidr_block = "192.168.0.0/16"
 }
 
-resource "alicloud_security_group_rule" "security_group_security_group_ingress_0_1d6f9388" {
+resource "alicloud_security_group_rule" "security_group_security_group_ingress_0_ce8f2a1c" {
   priority          = 100
   port_range        = "80/80"
   nic_type          = "internet"
