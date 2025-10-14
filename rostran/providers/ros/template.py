@@ -29,7 +29,7 @@ from rostran.core.format import FileFormat
 from rostran.core.reporter import ROS2TerraformReporter
 from rostran.providers.ros import functions
 from rostran.providers.terraform import template_blocks as tf
-from tools.utils import camel_to_snake
+from tools.utils import camel_to_tf
 
 
 class WrapTerraformTemplate(Template):
@@ -130,6 +130,8 @@ class ROS2TerraformTemplate(Template):
         self.rules = source.get(self.RULES) or {}
         self.metadata = source.get(self.METADATA) or {}
         self.conditions = source.get(self.CONDITIONS) or {}
+        self.mappings = source.get(self.MAPPINGS) or {}
+        self.mappings_name_in_local = None
         self.resources_with_count = []
         self.tf_parameters = {}
         self._check_resources()
@@ -177,7 +179,7 @@ class ROS2TerraformTemplate(Template):
             )
             raise InvalidTemplate(reason=f'{e}')
         ros_client = Client(ros_config)
-        request = models.ValidateTemplateRequest(template_body=json.dumps(source))
+        request = models.ValidateTemplateRequest(template_body=json.dumps(source), region_id="cn-hangzhou")
         try:
             runtime = RuntimeOptions(autoretry=True, max_attempts=3, read_timeout=60000, connect_timeout=60000)
             ros_client.validate_template_with_options(request, runtime=runtime)
@@ -198,6 +200,7 @@ class ROS2TerraformTemplate(Template):
 
         if self.tf_region_parameter:
             tf_vars.append(self.tf_region_parameter)
+        return tf_vars, tf_resources
 
     def transform(self, target_path: str = None, single_file: bool = False):
         """
@@ -217,22 +220,28 @@ class ROS2TerraformTemplate(Template):
 
         typer.secho(f"Transforming ROS template to terraform ...")
         conditions = self._transform_conditions()
+        mappings = self._transform_mappings()
         parameters = self._transform_parameters()
         resources = self._transform_resources()
         res_in_properties = self._transform_resource_in_properties()
         resources = resources + res_in_properties
         outputs = self._transform_outputs()
-        self._transform_for_pseudo_param(parameters, resources)
+        parameters, resources =self._transform_for_pseudo_param(parameters, resources)
         if single_file:
             file_path = (output_dir / "main.tf").resolve()
             with file_path.open("w", encoding="utf-8") as f:
-                for block in conditions + parameters + resources + outputs:
+                for block in conditions + mappings + parameters + resources + outputs:
                     contents = block.render()
                     f.write(contents)
                     f.write("\n\n")
             tf_files = [file_path]
         else:
-            tf_blocks = (('local', conditions), ('variable', parameters), ('main', resources), ('output', outputs))
+            tf_blocks = (
+                ('local', conditions + mappings),
+                ('variable', parameters),
+                ('main', resources),
+                ('output', outputs)
+            )
             tf_files = []
             for block_name, blocks in tf_blocks:
                 if not blocks:
@@ -301,7 +310,7 @@ class ROS2TerraformTemplate(Template):
     def _transform_parameters(self) -> List[tf.Variable]:
         tf_vars = []
         for name, value in self.parameters.items():
-            tf_name = self.get_tf_params(camel_to_snake(name))
+            tf_name = self.get_tf_params(camel_to_tf(name))
             value = value.copy()
             param_type = value.pop("Type", None)
             tf_value = dict()
@@ -349,20 +358,32 @@ class ROS2TerraformTemplate(Template):
     def _transform_conditions(self) -> List[tf.Locals]:
         tf_conditions = []
         for name, value in self.conditions.items():
-            tf_value = {name: self.resolve_values(value)}
+            tf_value = {camel_to_tf(name): self.resolve_values(value)}
             tf_conditions.append(tf.Locals(tf_value))
         return tf_conditions
+
+    def _transform_mappings(self) -> List[tf.Locals]:
+        if not self.mappings:
+            return []
+        mapping_value = functions.convert_value_for_func(self.mappings)
+        self.mappings_name_in_local = f"mappings_{str(uuid.uuid4())[:8]}"
+        tf_mappings = [tf.Locals({self.mappings_name_in_local: mapping_value})]
+        return tf_mappings
 
     def _handled_value(self, tf_argument, schema_value, tf_arg_name, orig_value):
         handler = schema_value.get("Handler")
         if handler:
+            rule_args = []
+            if "(" in handler:
+                handler, rule_args = handler.split("(")
+                rule_args = rule_args.split(")")[0].split(",")
             handler_func = getattr(functions, handler, None)
             if callable(handler_func):
                 if isinstance(tf_arg_name, list):
                     for n in tf_arg_name:
-                        tf_argument[n] = handler_func(self, self.resolve_values(orig_value))
+                        tf_argument[n] = handler_func(self, self.resolve_values(orig_value), *rule_args)
                 else:
-                    tf_argument[tf_arg_name] = handler_func(self, self.resolve_values(orig_value))
+                    tf_argument[tf_arg_name] = handler_func(self, self.resolve_values(orig_value), *rule_args)
                 return True
 
     def _get_tf_argument(
@@ -404,6 +425,7 @@ class ROS2TerraformTemplate(Template):
                             continue
                         new_res_name = f"{res_name}_{name}_{i}_{uuid.uuid4().hex[:8]}"
                         new_resources[new_res_name] = {"Type": f"{res_type}.{name}", "Properties": p}
+                    if new_resources:
                         res_in_property = ResourcesInProperty(
                             resource_rule=new_res_rule,
                             resources=new_resources,
@@ -462,8 +484,15 @@ class ROS2TerraformTemplate(Template):
     def _transform_resources(self, resources_in_property: ResourcesInProperty = None) -> List[tf.Resource]:
         tf_resources = []
         resources = resources_in_property.resources if resources_in_property else self.resources
+        processed_resources = set()  # Track processed resources to avoid duplicates
         for name, res in resources.items():
-            tf_name = camel_to_snake(name)
+            # Create a unique key for tracking processed resources
+            resource_key = f"{name}_{res.get('Type', '')}"
+            if resource_key in processed_resources:
+                continue
+            processed_resources.add(resource_key)
+
+            tf_name = camel_to_tf(name)
             ros_res_type = res.get("Type")
             if resources_in_property:
                 resource_rule = resources_in_property.resource_rule
@@ -474,7 +503,13 @@ class ROS2TerraformTemplate(Template):
                 continue
             self.reporter.add_supported_resource(ros_res_type)
             properties = res.get("Properties")
-            resolved_props = {key: self.resolve_values(value, False, True) for key, value in properties.items()}
+            if properties:
+                resolved_props = {
+                    key: self.resolve_values(value, False, True)
+                    for key, value in properties.items()
+                }
+            else:
+                resolved_props = {}
             tf_argument = self._get_tf_argument(ros_res_type, resolved_props, resource_rule.properties, res_name=name)
             if isinstance(tf_argument, tf.JsonType):
                 tf_argument = tf_argument.value
@@ -489,7 +524,7 @@ class ROS2TerraformTemplate(Template):
                 if value_type and value_type == "ResolveAttribute":
                     t_type, expr = ret.split(".", 1)
                     if resources_in_property:
-                        n = camel_to_snake(resources_in_property.from_res_name)
+                        n = camel_to_tf(resources_in_property.from_res_name)
                     else:
                         n = f"{tf_name}_{t_type}"
                     return tf.LiteralType(f"{t_type}.{n}.{expr}")
@@ -525,7 +560,7 @@ class ROS2TerraformTemplate(Template):
                     tf_args["count"] = self.resolve_values(count)
                 if condition:
                     tf_count = tf_args.get("count") if tf_args.get("count") is not None else 1
-                    tf_args["count"] = tf.LiteralType(f"local.{condition} ? {tf_count} : 0")
+                    tf_args["count"] = tf.LiteralType(f"local.{camel_to_tf(condition)} ? {tf_count} : 0")
 
                 depends_on = res.get("DependsOn")
                 if depends_on:
@@ -538,7 +573,7 @@ class ROS2TerraformTemplate(Template):
                         if not depend_resource_rule:
                             tf_depends_on.append(tf.CommentType(f"Resource type {depend_res_type} is not supported."))
                             continue
-                        tf_depend = f"{depend_resource_rule.target_resource_type}.{camel_to_snake(depend)}"
+                        tf_depend = f"{depend_resource_rule.target_resource_type}.{camel_to_tf(depend)}"
                         tf_depends_on.append(tf.LiteralType(tf_depend))
                     tf_args["depends_on"] = tf.JsonType(tf_depends_on)
 
@@ -559,21 +594,21 @@ class ROS2TerraformTemplate(Template):
     def _transform_outputs(self) -> List[tf.Output]:
         tf_outputs = []
         for name, value in self.outputs.items():
-            tf_name = camel_to_snake(name)
+            tf_name = camel_to_tf(name)
             tf_value = dict()
 
             resolved_value = self.resolve_values(value.get("Value"), ignore_comment=True)
+            if isinstance(resolved_value, tf.CommentType):
+                tf_value["value_comment"] = resolved_value
+                tf_value["value"] = tf.NullType()
+                self.reporter.add_failed_output(name)
+                continue
             condition = value.get("Condition")
             if condition:
-                cont_value = f"local.{condition} ? {resolved_value} : {tf.NullType()}"
+                cont_value = f"local.{camel_to_tf(condition)} ? {resolved_value} : {tf.NullType()}"
                 tf_value["value"] = tf.LiteralType(cont_value)
             else:
-                if isinstance(resolved_value, tf.CommentType):
-                    tf_value["value_comment"] = resolved_value
-                    tf_value["value"] = tf.NullType()
-                    self.reporter.add_failed_output(name)
-                else:
-                    tf_value["value"] = resolved_value
+                tf_value["value"] = resolved_value
             desc = value.get("Description")
             if desc:
                 if isinstance(desc, str) and "\n" not in desc:

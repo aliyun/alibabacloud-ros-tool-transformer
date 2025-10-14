@@ -39,6 +39,13 @@ def camel_to_snake(name):
     return snake_str
 
 
+def camel_to_tf(name):
+    value = camel_to_snake(name)
+    if '.' in value:
+        value = value.replace('.', '_')
+    return value
+
+
 def print_tf_ali_ros_mapping(ros_types=None):
     alicloud_local = os.getenv("TERRAFORM_PROVIDER_ALICLOUD")
     if not alicloud_local:

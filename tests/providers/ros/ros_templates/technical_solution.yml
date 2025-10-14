@@ -37,7 +37,7 @@ Parameters:
       zh-cn: 交换机可用区ID
       en: Available Zone ID
   BaiLianApiKey:
-    Type: String
+    Type: Json
     Label:
       en: BaiLian API-KEY
       zh-cn: 百炼 API-KEY
