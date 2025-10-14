@@ -7,15 +7,15 @@ Properties:
   SnatEntryName:
     To: snat_entry_name
   EipAffinity:
-    Ignore: true
+    To: eip_affinity
   SnatTableId:
-    Ignore: true
+    To: snat_table_id
   SnatIp:
-    Ignore: true
+    To: snat_ip
   SourceVSwitchIds:
-    Ignore: true
+    To: source_vswitch_id
   SourceCIDR:
-    Ignore: true
+    To: source_cidr
 Attributes:
   SnatEntryIds:
-    Ignore: true
+    To: snat_entry_id

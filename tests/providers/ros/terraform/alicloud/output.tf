@@ -1,6 +1,5 @@
-output "web_url" {
-  // Could not transform ROS Attribute PublicIps to Terraform attribute.
-  value       = null
+output "console__web_url" {
+  value       = "http://${alicloud_alb_load_balancer.alb.dns_name}"
   description = <<EOT
   {
     "zh-cn": "Web 访问地址。",

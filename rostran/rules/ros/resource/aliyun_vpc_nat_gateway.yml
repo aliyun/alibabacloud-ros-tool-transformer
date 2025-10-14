@@ -15,7 +15,7 @@ Properties:
   InternetChargeType:
     To: internet_charge_type
   NatGatewayName:
-    To: name
+    To: nat_gateway_name
   NatGatewayName$$0:
     To: nat_gateway_name
   NatType:
@@ -47,6 +47,6 @@ Attributes:
   NatGatewayId:
     To: id
   SNatTableId:
-    Ignore: true
+    To: snat_table_ids
   ForwardTableId:
-    Ignore: true
+    To: forward_table_ids

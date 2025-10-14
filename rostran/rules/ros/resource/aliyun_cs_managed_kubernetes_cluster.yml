@@ -31,7 +31,7 @@ Properties:
   EncryptionProviderKey:
     To: encryption_provider_key
   CloudMonitorFlags:
-    To: install_cloud_monitor
+    Ignore: true
   IsEnterpriseSecurityGroup:
     To: is_enterprise_security_group
   KeyPair:
@@ -65,7 +65,9 @@ Properties:
   KubernetesVersion:
     To: version
   VpcId:
-    To: vpc_id
+    Ignore: true
+  VSwitchIds:
+    To: vswitch_ids
   SocEnabled:
     Ignore: true
   Tags:

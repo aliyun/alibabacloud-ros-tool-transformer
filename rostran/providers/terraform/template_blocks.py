@@ -37,10 +37,14 @@ class QuotedString(TerraformType):
     value: str
 
     def render(self, _=0):
+        if not isinstance(self.value, str):
+            return f'"{self.value}"'
+        value = self.value
         if '"' in self.value:
-            value = self.value.replace('"', '\\"')
-            return f'"{value}"'
-        return f'"{self.value}"'
+            value = value.replace('"', '\\"')
+        if '\n' in self.value:
+            value = value.replace('\n', '\\n')
+        return f'"{value}"'
 
 
 @dataclass(frozen=True)
@@ -72,7 +76,7 @@ class BooleanType(TerraformType):
 
 @dataclass
 class JsonType(TerraformType):
-    value: Union[List[Union[TerraformType, "Block"]], Dict[Union[QuotedString, LiteralType, str], TerraformType]]
+    value: Union[List[Union[TerraformType, "Block"]], Dict[Union[TerraformType, str], TerraformType]]
 
     def render(self, indent=0):
         suffix = " " * indent
@@ -117,6 +121,16 @@ class CommentType(TerraformType):
         spacing = " " * indent
         text = [f"{spacing}// {line.rstrip()}" for line in self.value.splitlines()]
         return "\n".join(text)
+
+
+def normalize_value(value: Any):
+    if isinstance(value, TerraformType):
+        value =  value.value
+    if isinstance(value, list):
+        return [normalize_value(item) for item in value]
+    elif isinstance(value, dict):
+        return {k: normalize_value(v) for k, v in value.items()}
+    return value
 
 
 def convert_to_tf_type(value: Any, type_: Optional[str] = None) -> Optional[TerraformType]:

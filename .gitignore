@@ -113,3 +113,6 @@ ENV/
 # Terraform
 .terraform
 .terraform.lock.hcl
+
+# Claude AI
+CLAUDE.md

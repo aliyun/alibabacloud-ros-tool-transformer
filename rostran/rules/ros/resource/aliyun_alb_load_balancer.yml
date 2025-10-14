@@ -30,6 +30,7 @@ Properties:
     Schema:
       PayType:
         To: pay_type
+        Handler: handle_pay_type(PayAsYouGo, PrePay)
   LoadBalancerEdition:
     To: load_balancer_edition
   LoadBalancerName:

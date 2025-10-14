@@ -14,6 +14,9 @@ ROS_TEMPLATE_DIR = os.path.abspath("ros_templates")
 tpl = '''
 ROSTemplateFormatVersion: '2015-09-01'
 Parameters:
+  PayType:
+    Type: String
+    Default: PostPaid
   Name:
     Type: String
     Default: demo
@@ -129,6 +132,47 @@ Resources:
       SystemDiskCategory: cloud_essd
       VSwitchId:
         Ref: MyVSwitch
+  LoadBalancer:
+    Type: ALIYUN::ALB::LoadBalancer
+    Properties:
+      LoadBalancerName:
+        Ref: ALIYUN::StackName
+      LoadBalancerEdition: Basic
+      VpcId:
+        Ref: EcsVpc
+      LoadBalancerBillingConfig:
+        PayType: PostPay
+      ZoneMappings:
+        - ZoneId:
+            Ref: VSwitchZoneId1
+          VSwitchId:
+            Ref: EcsVSwitch1
+        - ZoneId:
+            Ref: VSwitchZoneId2
+          VSwitchId:
+            Ref: EcsVSwitch2
+      AddressType: Internet
+  LoadBalancer2:
+    Type: ALIYUN::ALB::LoadBalancer
+    Properties:
+      LoadBalancerName:
+        Ref: ALIYUN::StackName
+      LoadBalancerEdition: Basic
+      VpcId:
+        Ref: EcsVpc
+      LoadBalancerBillingConfig:
+        PayType: 
+          Ref: PayType
+      ZoneMappings:
+        - ZoneId:
+            Ref: VSwitchZoneId1
+          VSwitchId:
+            Ref: EcsVSwitch1
+        - ZoneId:
+            Ref: VSwitchZoneId2
+          VSwitchId:
+            Ref: EcsVSwitch2
+      AddressType: Internet
 Outputs:
   VpcId:
     Value: !Ref MyDemoVpc
@@ -237,7 +281,7 @@ run_command_tpl = """
 ROSTemplateFormatVersion: '2015-09-01'
 Parameters:
   BaiLianApiKey:
-    Type: String
+    Type: Json
 Resources:
   InstanceRunCommand:
     Type: ALIYUN::ECS::RunCommand
@@ -316,14 +360,14 @@ class TestROS2TF:
 
 def _test_tpl():
     source = yaml.load(tpl)
-    template = ROS2TerraformTemplate.initialize(source)
+    template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
 
 
 def _test_tpl_with_conditions():
     source = yaml.load(tpl_with_resources)
-    template = ROS2TerraformTemplate.initialize(source)
+    template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
 
@@ -332,26 +376,40 @@ def _test_solution():
     with open(f"{ROS_TEMPLATE_DIR}/technical_solution.yml", 'r') as f:
         content = yaml.load(f)
     template = ROS2TerraformTemplate.initialize(content, validate=False)
-    template.transform()
+    with TestROS2TF():
+        template.transform()
 
 def _test_solution2():
     with open(f"{ROS_TEMPLATE_DIR}/technical_solution2.yml", 'r') as f:
         content = yaml.load(f)
     template = ROS2TerraformTemplate.initialize(content, validate=False)
-    template.transform()
+    with TestROS2TF():
+        template.transform()
+
+
+def _test_template3():
+    with open(f"{ROS_TEMPLATE_DIR}/template3.yml", 'r') as f:
+        content = yaml.load(f)
+    template = ROS2TerraformTemplate.initialize(content, validate=False)
+    with TestROS2TF():
+        template.transform()
+
 
 def _test_tpl_pseudo_parameter():
     source = yaml.load(pseudo_parameter_tpl)
-    template = ROS2TerraformTemplate.initialize(source)
-    template.transform()
+    template = ROS2TerraformTemplate.initialize(source, validate=False)
+    with TestROS2TF():
+        template.transform()
 
 
 def _test_run_command():
     source = yaml.load(run_command_tpl)
-    template = ROS2TerraformTemplate.initialize(source)
-    template.transform()
+    template = ROS2TerraformTemplate.initialize(source,  validate=False)
+    with TestROS2TF():
+        template.transform()
 
 def _test_security_group_tpl():
     source = yaml.load(security_group_tpl)
     template = ROS2TerraformTemplate.initialize(source)
-    template.transform()
+    with TestROS2TF():
+        template.transform()

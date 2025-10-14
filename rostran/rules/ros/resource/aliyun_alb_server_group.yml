@@ -30,7 +30,31 @@ Properties:
   ServiceName:
     Ignore: true
   HealthCheckConfig:
-    Ignore: true
+    To: health_check_config
+    Type: Map
+    Schema:
+      HealthCheckPath:
+        To: health_check_path
+      HealthCheckConnectPort:
+        To: health_check_connect_port
+      HealthCheckCodes:
+        To: health_check_codes
+      UnhealthyThreshold:
+        To: unhealthy_threshold
+      HealthCheckMethod:
+        To: health_check_method
+      HealthCheckHost:
+        To: health_check_host
+      HealthyThreshold:
+        To: healthy_threshold
+      HealthCheckProtocol:
+        To: health_check_protocol
+      HealthCheckHttpVersion:
+        To: health_check_http_version
+      HealthCheckEnabled:
+        To: health_check_enabled
+      HealthCheckTimeout:
+        To: health_check_timeout
   UpstreamKeepaliveEnabled:
     Ignore: true
   StickySessionConfig:

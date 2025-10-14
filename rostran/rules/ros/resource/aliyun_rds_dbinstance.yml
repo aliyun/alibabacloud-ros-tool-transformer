@@ -42,6 +42,7 @@ Properties:
     To: security_group_id
   SecurityIPList:
     To: security_ips
+    Handler: handle_one_line_list
   StorageAutoScale:
     To: storage_auto_scale
   StorageThreshold:
@@ -151,7 +152,7 @@ Attributes:
   PublicConnectionString:
     Ignore: true
   InnerConnectionString:
-    Ignore: true
+    To: connection_string
   InnerPort:
     Ignore: true
   PublicIPAddress:

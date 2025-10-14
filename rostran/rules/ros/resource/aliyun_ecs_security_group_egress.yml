@@ -1,11 +1,11 @@
 Version: '2020-06-01'
 Type: Resource
 ResourceType:
-  From: ALIYUN::ECS::SecurityGroupIngress
+  From: ALIYUN::ECS::SecurityGroupEgress
   To: alicloud_security_group_rule
   BuiltInProperties:
     type:
-      Value: ingress
+      Value: egress
 Properties:
   Description:
     To: description
@@ -21,16 +21,16 @@ Properties:
     To: priority
   SecurityGroupId:
     To: security_group_id
-  Ipv6SourceCidrIp:
+  Ipv6DestCidrIp:
     To: ipv6_cidr_ip
-  SourcePrefixListId:
+  DestPrefixListId:
     To: prefix_list_id
-  SourceCidrIp:
+  DestCidrIp:
     To: cidr_ip
-  SourcePortRange:
+  DestPortRange:
     To: port_range
-  SourceGroupId:
+  DestGroupId:
     To: source_security_group_id
-  SourceGroupOwnerId:
+  DestGroupOwnerId:
     To: source_group_owner_account
 Attributes: {}
