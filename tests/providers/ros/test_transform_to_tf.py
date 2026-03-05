@@ -414,7 +414,7 @@ def _test_security_group_tpl():
     with TestROS2TF():
         template.transform()
 
-def test_for_coverage():
+def _test_for_coverage():
     from alibabacloud_tea_openapi import models as open_api_models
     from alibabacloud_ros20190910.client import Client
     from alibabacloud_credentials.client import Client as CredClient

@@ -14,6 +14,7 @@ tpl = {
                 "DiskName": "terraform-example",
                 "Size": 20,
                 "ZoneId": "cn-beijing-c",
+                "DiskCategory": "cloud_efficiency",
             },
         },
         "alicloud_ecs_disk_attachment.example": {

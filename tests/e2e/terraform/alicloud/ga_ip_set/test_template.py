@@ -10,7 +10,11 @@ tpl = {
     "Resources": {
         "alicloud_ga_accelerator.default": {
             "Type": "ALIYUN::GA::Accelerator",
-            "Properties": {"Duration": 1, "Spec": "1"},
+            "Properties": {
+                "Duration": 1,
+                "Spec": "1",
+                "AutoUseCoupon": True,
+            },
         },
         "alicloud_ga_bandwidth_package.default": {
             "Type": "ALIYUN::GA::BandwidthPackage",
@@ -20,6 +24,7 @@ tpl = {
                 "BillingType": "PayBy95",
                 "Ratio": 30,
                 "Type": "Basic",
+                "ChargeType": "PayAsYouGo",
             },
         },
         "alicloud_ga_bandwidth_package_attachment.default": {

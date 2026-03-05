@@ -30,6 +30,7 @@ tpl = {
             "Type": "ALIYUN::VPC::Ipv6Gateway",
             "Properties": {
                 "Description": "test",
+                "Name": "tf-testacc-example",
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.defaultVpc", "VpcId"]},
             },
         },
