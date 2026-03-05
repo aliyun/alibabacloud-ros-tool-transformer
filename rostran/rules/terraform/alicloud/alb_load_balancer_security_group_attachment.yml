@@ -9,7 +9,8 @@ Properties:
   load_balancer_id:
     To: LoadBalancerId
   security_group_id:
-    Ignore: true
+    To: SecurityGroupIds
+    Type: List
 Attributes:
   id:
     Ignore: true

@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_remote_write
+  To: ALIYUN::ARMS::ManagedPrometheus
+Properties:
+  cluster_id:
+    To: ClusterId
+  remote_write_yaml:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  remote_write_name:
+    Ignore: true

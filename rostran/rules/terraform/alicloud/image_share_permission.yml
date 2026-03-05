@@ -5,7 +5,8 @@ ResourceType:
   To: ALIYUN::ECS::ImageSharePermission
 Properties:
   account_id:
-    Ignore: true
+    To: Accounts
+    Type: List
   image_id:
     To: ImageId
 Attributes:

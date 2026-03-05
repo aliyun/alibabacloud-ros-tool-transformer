@@ -33,7 +33,7 @@ Properties:
   ipv6_enabled:
     Ignore: true
   payment_type:
-    Ignore: true
+    To: ChargeType
   pricing_cycle:
     To: PricingCycle
   skip_wait_switch:

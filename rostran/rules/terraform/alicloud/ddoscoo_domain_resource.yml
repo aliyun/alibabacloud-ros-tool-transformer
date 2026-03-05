@@ -1,0 +1,50 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ddoscoo_domain_resource
+  To: ALIYUN::DDoSPro::WebRule
+Properties:
+  ai_mode:
+    Ignore: true
+  ai_template:
+    Ignore: true
+  black_list:
+    Ignore: true
+  bw_list_enable:
+    Ignore: true
+  cc_global_switch:
+    Ignore: true
+  cert:
+    Ignore: true
+  cert_identifier:
+    Ignore: true
+  cert_name:
+    Ignore: true
+  cert_region:
+    Ignore: true
+  custom_headers:
+    Ignore: true
+  domain:
+    To: Domain
+  https_ext:
+    To: HttpsExt
+  instance_ids:
+    To: InstanceIds
+    Type: List
+  key:
+    Ignore: true
+  ocsp_enabled:
+    Ignore: true
+  proxy_types:
+    Ignore: true
+  real_servers:
+    Ignore: true
+  rs_type:
+    To: RsType
+  white_list:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  cname:
+    Ignore: true

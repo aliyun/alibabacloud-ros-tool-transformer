@@ -7,7 +7,8 @@ Properties:
   app_id:
     To: AppId
   listener_port:
-    Ignore: true
+    To: ServicePortInfos
+    Type: List
   slb_id:
     To: LoadBalancerId
   slb_ip:

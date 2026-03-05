@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NAS::ProtocolMountTarget
+  To: alicloud_nas_access_point
+Properties:
+  AccessGroupName:
+    To: access_group
+  Description:
+    To: access_point_name
+  FileSystemId:
+    To: file_system_id
+  Path:
+    To: root_path
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ProtocolServiceId:
+    Ignore: true
+  FsetId:
+    Ignore: true
+Attributes:
+  ProtocolServiceId:
+    To: access_point_id
+  FileSystemId:
+    Ignore: true
+  ExportId:
+    Ignore: true
+  ProtocolMountTargetDomain:
+    Ignore: true

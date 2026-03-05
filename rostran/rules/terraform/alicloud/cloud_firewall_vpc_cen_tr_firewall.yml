@@ -30,6 +30,12 @@ Properties:
     To: TransitRouterId
 Attributes:
   id:
+    To: FirewallId
+  firewall_eni_id:
+    Ignore: true
+  firewall_eni_vpc_id:
+    Ignore: true
+  firewall_vpc_attachment_id:
     Ignore: true
   status:
     Ignore: true

@@ -30,7 +30,7 @@ Attributes:
   accelerator_id:
     Ignore: true
   forwarding_rule_id:
-    Ignore: true
+    To: ForwardingRuleIds
   forwarding_rule_name:
     Ignore: true
   forwarding_rule_status:

@@ -13,7 +13,7 @@ Properties:
   account_type:
     To: AccountType
   description:
-    Ignore: true
+    To: AccountDescription
   instance_id:
     To: InstanceId
   kms_encrypted_password:

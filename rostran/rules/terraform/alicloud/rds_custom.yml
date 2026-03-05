@@ -32,7 +32,7 @@ Properties:
   dry_run:
     Ignore: true
   force:
-    Ignore: true
+    To: SubscriptionDeletionForce
   force_stop:
     Ignore: true
   host_name:

@@ -1,0 +1,127 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_site_delivery_task
+  To: ALIYUN::ESA::SiteDeliveryTask
+Properties:
+  business_type:
+    To: BusinessType
+  data_center:
+    To: DataCenter
+  delivery_type:
+    To: DeliveryType
+  discard_rate:
+    To: DiscardRate
+  expired_time:
+    Ignore: true
+  field_name:
+    To: FieldName
+  http_delivery:
+    To: HttpDelivery
+    Type: Map
+    Schema:
+      compress:
+        To: Compress
+      dest_url:
+        To: DestUrl
+      header_param:
+        To: HeaderParam
+        Type: Map
+      log_body_prefix:
+        To: LogBodyPrefix
+      log_body_suffix:
+        To: LogBodySuffix
+      max_batch_mb:
+        To: MaxBatchMB
+      max_batch_size:
+        To: MaxBatchSize
+      max_retry:
+        To: MaxRetry
+      query_param:
+        To: QueryParam
+        Type: Map
+      standard_auth_on:
+        To: StandardAuthOn
+      standard_auth_param:
+        To: StandardAuthParam
+        Type: Map
+      transform_timeout:
+        To: TransformTimeout
+  kafka_delivery:
+    To: KafkaDelivery
+    Type: Map
+    Schema:
+      balancer:
+        To: Balancer
+      brokers:
+        To: Brokers
+        Type: List
+      compress:
+        To: Compress
+      machanism_type:
+        To: MachanismType
+      password:
+        To: Password
+      topic:
+        To: Topic
+      user_auth:
+        To: UserAuth
+      user_name:
+        To: UserName
+  oss_delivery:
+    To: OssDelivery
+    Type: Map
+    Schema:
+      aliuid:
+        To: Aliuid
+      bucket_name:
+        To: BucketName
+      prefix_path:
+        To: PrefixPath
+      region:
+        To: Region
+  private_key:
+    Ignore: true
+  s3_delivery:
+    To: S3Delivery
+    Type: Map
+    Schema:
+      access_key:
+        To: AccessKey
+      bucket_path:
+        To: BucketPath
+      endpoint:
+        To: Endpoint
+      prefix_path:
+        To: PrefixPath
+      region:
+        To: Region
+      s3_cmpt:
+        To: S3Cmpt
+      secret_key:
+        To: SecretKey
+      server_side_encryption:
+        To: ServerSideEncryption
+      vertify_type:
+        To: VertifyType
+  site_id:
+    To: SiteId
+  sls_delivery:
+    To: SlsDelivery
+    Type: Map
+    Schema:
+      sls_log_store:
+        To: SLSLogStore
+      sls_project:
+        To: SLSProject
+      sls_region:
+        To: SLSRegion
+  status:
+    Ignore: true
+  task_name:
+    To: TaskName
+  url_path:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

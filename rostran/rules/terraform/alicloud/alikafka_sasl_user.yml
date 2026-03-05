@@ -10,6 +10,8 @@ Properties:
     Ignore: true
   kms_encryption_context:
     Ignore: true
+  mechanism:
+    To: Mechanism
   password:
     To: Password
   type:

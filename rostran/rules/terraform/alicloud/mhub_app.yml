@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mhub_app
+  To: ALIYUN::ApiGateway::App
+Properties:
+  app_name:
+    To: AppName
+  bundle_id:
+    Ignore: true
+  encoded_icon:
+    Ignore: true
+  industry_id:
+    Ignore: true
+  package_name:
+    Ignore: true
+  product_id:
+    Ignore: true
+  type:
+    Ignore: true
+Attributes:
+  id:
+    To: AppId

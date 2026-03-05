@@ -11,11 +11,11 @@ Properties:
   instance_id:
     To: InstanceId
   namespace_desc:
-    Ignore: true
+    To: Desc
   namespace_id:
-    Ignore: true
+    To: Id
   namespace_show_name:
-    Ignore: true
+    To: Name
 Attributes:
   id:
     To: NamespaceId

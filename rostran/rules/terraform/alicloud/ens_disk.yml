@@ -15,9 +15,9 @@ Properties:
   ens_region_id:
     To: EnsRegionId
   kms_key_id:
-    Ignore: true
+    To: KMSKeyId
   payment_type:
-    Ignore: true
+    To: InstanceChargeType
   size:
     To: Size
     Handler: to_int

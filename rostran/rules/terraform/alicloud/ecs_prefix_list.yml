@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   address_family:
     To: AddressFamily
+  cidr:
+    Ignore: true
   description:
     To: Description
   entry:

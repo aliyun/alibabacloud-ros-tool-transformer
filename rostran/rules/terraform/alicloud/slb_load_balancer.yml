@@ -7,13 +7,13 @@ Properties:
   address:
     Ignore: true
   address_ip_version:
-    Ignore: true
+    To: AddressIPVersion
   address_type:
     To: AddressType
   bandwidth:
     To: Bandwidth
   delete_protection:
-    Ignore: true
+    To: DeletionProtection
   instance_charge_type:
     To: InstanceChargeType
   internet:
@@ -53,7 +53,7 @@ Attributes:
   id:
     To: LoadBalancerId
   address:
-    Ignore: true
+    To: IpAddress
   address_ip_version:
     Ignore: true
   address_type:

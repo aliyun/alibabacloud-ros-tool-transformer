@@ -1,0 +1,109 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ddos_bgp_policy
+  To: ALIYUN::DDoS::Policy
+Properties:
+  action:
+    Ignore: true
+  block_expire_seconds:
+    Ignore: true
+  bps:
+    Ignore: true
+  condition_list:
+    Ignore: true
+  content:
+    To: Content
+    Type: Map
+    Schema:
+      black_ip_list_expire_at:
+        To: BlackIpListExpireAt
+      enable_defense:
+        To: EnableDefense
+      enable_drop_icmp:
+        To: EnableDropIcmp
+      enable_intelligence:
+        To: EnableIntelligence
+      finger_print_rule_list:
+        To: FingerPrintRuleList
+        Type: List
+      intelligence_level:
+        To: IntelligenceLevel
+      layer4_rule_list:
+        To: Layer4RuleList
+        Type: List
+      port_rule_list:
+        To: PortRuleList
+        Type: List
+      reflect_block_udp_port_list:
+        To: ReflectBlockUdpPortList
+        Type: List
+      region_block_country_list:
+        To: RegionBlockCountryList
+        Type: List
+      region_block_province_list:
+        To: RegionBlockProvinceList
+        Type: List
+      source_block_list:
+        To: SourceBlockList
+        Type: List
+      source_limit:
+        To: SourceLimit
+        Type: Map
+      whiten_gfbr_nets:
+        To: WhitenGfbrNets
+  dst_port_end:
+    Ignore: true
+  dst_port_start:
+    Ignore: true
+  every_seconds:
+    Ignore: true
+  exceed_limit_times:
+    Ignore: true
+  finger_print_rule_id:
+    Ignore: true
+  limited:
+    Ignore: true
+  match:
+    Ignore: true
+  match_action:
+    Ignore: true
+  max_pkt_len:
+    Ignore: true
+  method:
+    Ignore: true
+  min_pkt_len:
+    Ignore: true
+  name:
+    Ignore: true
+  offset:
+    Ignore: true
+  payload_bytes:
+    Ignore: true
+  policy_name:
+    To: PolicyName
+  port_rule_id:
+    Ignore: true
+  pps:
+    Ignore: true
+  priority:
+    Ignore: true
+  protocol:
+    Ignore: true
+  rate_value:
+    Ignore: true
+  seq_no:
+    Ignore: true
+  src_port_end:
+    Ignore: true
+  src_port_start:
+    Ignore: true
+  syn_bps:
+    Ignore: true
+  syn_pps:
+    Ignore: true
+  type:
+    To: Type
+Attributes:
+  id:
+    To: PolicyId

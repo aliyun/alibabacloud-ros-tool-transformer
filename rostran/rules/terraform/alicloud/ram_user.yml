@@ -11,7 +11,7 @@ Properties:
   email:
     To: Email
   force:
-    Ignore: true
+    To: DeletionForce
   mobile:
     To: MobilePhone
   name:

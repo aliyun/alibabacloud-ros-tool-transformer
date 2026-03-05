@@ -14,6 +14,6 @@ Properties:
     To: WorkspaceId
 Attributes:
   id:
-    Ignore: true
+    To: ExperimentId
   create_time:
     To: CreateTime

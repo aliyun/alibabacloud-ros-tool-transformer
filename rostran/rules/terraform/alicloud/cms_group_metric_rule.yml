@@ -17,11 +17,22 @@ Properties:
   email_subject:
     To: EmailSubject
   escalations:
-    Ignore: true
+    To: Escalations
+    Type: Map
+    Schema:
+      critical:
+        To: Critical
+        Type: Map
+      info:
+        To: Info
+        Type: Map
+      warn:
+        To: Warn
+        Type: Map
   group_id:
     To: GroupId
   group_metric_rule_name:
-    Ignore: true
+    To: RuleName
   interval:
     To: Interval
   metric_name:

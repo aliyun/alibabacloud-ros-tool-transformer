@@ -21,7 +21,7 @@ Properties:
   instance_region_id:
     To: InstanceRegionId
   os_type:
-    Ignore: true
+    To: OSType
   source:
     To: Source
   source_instance_id:

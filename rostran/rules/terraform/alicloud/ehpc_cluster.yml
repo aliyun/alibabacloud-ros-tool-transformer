@@ -88,6 +88,8 @@ Properties:
     Ignore: true
   manager_instance_type:
     Ignore: true
+  name:
+    To: Name
   os_tag:
     To: OsTag
   password:

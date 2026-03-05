@@ -15,7 +15,7 @@ Properties:
   description:
     To: Description
   image_component_name:
-    Ignore: true
+    To: Name
   resource_group_id:
     To: ResourceGroupId
   system_type:

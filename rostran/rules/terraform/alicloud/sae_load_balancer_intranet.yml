@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sae_load_balancer_intranet
+  To: ALIYUN::SAE::SlbBinding
+Properties:
+  app_id:
+    To: AppId
+  intranet:
+    To: Intranet
+    Schema:
+      https_cert_id:
+        Ignore: true
+      port:
+        Ignore: true
+      protocol:
+        Ignore: true
+      target_port:
+        Ignore: true
+  intranet_slb_id:
+    To: IntranetSlbId
+Attributes:
+  id:
+    To: AppId
+  intranet_ip:
+    Ignore: true

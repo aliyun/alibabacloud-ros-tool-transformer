@@ -1,0 +1,10 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_ipam_service
+  To: ALIYUN::VPC::Ipam
+Attributes:
+  id:
+    To: IpamId
+  enabled:
+    Ignore: true

@@ -5,7 +5,8 @@ ResourceType:
   To: ALIYUN::ALB::AclAssociation
 Properties:
   acl_id:
-    Ignore: true
+    To: AclIds
+    Type: List
   acl_type:
     To: AclType
   listener_id:

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ess_attachment
+  To: ALIYUN::ESS::ServerGroupAttachment
+Properties:
+  entrusted:
+    Ignore: true
+  force:
+    To: ForceAttach
+  instance_ids:
+    Ignore: true
+  lifecycle_hook:
+    Ignore: true
+  load_balancer_weights:
+    Ignore: true
+  scaling_group_id:
+    To: ScalingGroupId
+Attributes:
+  id:
+    Ignore: true

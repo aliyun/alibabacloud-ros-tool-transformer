@@ -10,7 +10,7 @@ Properties:
     To: Bandwidth
     Handler: to_int
   bandwidth_mode:
-    Ignore: true
+    To: BurstBandwidthMode
   base_bandwidth:
     To: BaseBandwidth
     Handler: to_int
@@ -18,7 +18,7 @@ Properties:
     To: DomainCount
     Handler: to_int
   edition_sale:
-    Ignore: true
+    To: Edition
   function_version:
     To: FunctionVersion
   ip:

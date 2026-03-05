@@ -43,7 +43,29 @@ Properties:
   is_access_time:
     Ignore: true
   lifecycle_rule:
-    Ignore: true
+    To: LifecycleConfiguration
+    Type: Map
+    Schema:
+      abort_multipart_upload:
+        Ignore: true
+      enabled:
+        Ignore: true
+      expiration:
+        Ignore: true
+      filter:
+        Ignore: true
+      id:
+        Ignore: true
+      noncurrent_version_expiration:
+        Ignore: true
+      noncurrent_version_transition:
+        Ignore: true
+      prefix:
+        Ignore: true
+      tags:
+        Ignore: true
+      transitions:
+        Ignore: true
   lifecycle_rule_allow_same_action_overlap:
     Ignore: true
   location:
@@ -100,7 +122,11 @@ Properties:
   transfer_acceleration:
     Ignore: true
   versioning:
-    Ignore: true
+    To: VersioningConfiguration
+    Type: Map
+    Schema:
+      status:
+        To: Status
   website:
     To: WebsiteConfiguration
     Type: Map
@@ -121,9 +147,9 @@ Attributes:
   creation_date:
     Ignore: true
   extranet_endpoint:
-    Ignore: true
+    To: DomainName
   intranet_endpoint:
-    Ignore: true
+    To: InternalDomainName
   location:
     Ignore: true
   owner:

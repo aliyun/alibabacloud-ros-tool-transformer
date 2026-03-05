@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DDoS::Policy
+  To: alicloud_ddos_bgp_policy
+Properties:
+  Content:
+    To: content
+    Type: Map
+    Schema:
+      BlackIpListExpireAt:
+        To: black_ip_list_expire_at
+      EnableDefense:
+        To: enable_defense
+      EnableDropIcmp:
+        To: enable_drop_icmp
+      EnableIntelligence:
+        To: enable_intelligence
+      FingerPrintRuleList:
+        To: finger_print_rule_list
+      IntelligenceLevel:
+        To: intelligence_level
+      Layer4RuleList:
+        To: layer4_rule_list
+      PortRuleList:
+        To: port_rule_list
+      ReflectBlockUdpPortList:
+        To: reflect_block_udp_port_list
+      RegionBlockCountryList:
+        To: region_block_country_list
+      RegionBlockProvinceList:
+        To: region_block_province_list
+      SourceBlockList:
+        To: source_block_list
+      SourceLimit:
+        To: source_limit
+      WhitenGfbrNets:
+        To: whiten_gfbr_nets
+  PolicyName:
+    To: policy_name
+  Type:
+    To: type
+  ActionType:
+    Ignore: true
+  BlackIpList:
+    Ignore: true
+  WhiteIpList:
+    Ignore: true
+Attributes:
+  PolicyId:
+    To: id
+  PolicyName:
+    Ignore: true
+  Type:
+    Ignore: true
+  Content:
+    Ignore: true

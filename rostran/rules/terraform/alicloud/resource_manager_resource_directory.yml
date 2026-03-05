@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   master_account_name:
     Ignore: true
+  member_account_display_name_sync_status:
+    Ignore: true
   member_deletion_status:
     Ignore: true
   root_folder_id:
@@ -17,6 +19,8 @@ Properties:
 Attributes:
   id:
     To: ResourceDirectoryId
+  create_time:
+    Ignore: true
   master_account_id:
     To: MasterAccountId
   master_account_name:

@@ -122,7 +122,7 @@ Properties:
   system_disk_description:
     To: SystemDiskDescription
   system_disk_name:
-    Ignore: true
+    To: SystemDiskDiskName
   system_disk_size:
     To: SystemDiskSize
   tags:

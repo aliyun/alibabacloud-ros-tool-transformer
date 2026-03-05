@@ -4,12 +4,16 @@ ResourceType:
   From: alicloud_log_alert
   To: ALIYUN::SLS::Alert
 Properties:
+  action_policy_id:
+    Ignore: true
   alert_description:
     To: Detail.Description
   alert_displayname:
     To: Detail.DisplayName
   alert_name:
     To: Detail.Name
+  alert_policy_id:
+    Ignore: true
   annotations:
     To: Detail.Configuration.Annotations
     Type: List
@@ -20,11 +24,29 @@ Properties:
         To: Value
   auto_annotation:
     To: Detail.Configuration.AutoAnnotation
+  chart_title:
+    Ignore: true
   condition:
     To: Detail.Configuration.Condition
+  content:
+    Ignore: true
+  count_condition:
+    Ignore: true
+  cron_expression:
+    Ignore: true
   dashboard:
     To: Detail.Configuration.Dashboard
+  dashboard_id:
+    Ignore: true
+  day_of_week:
+    Ignore: true
   email_list:
+    Ignore: true
+  end:
+    Ignore: true
+  eval_condition:
+    Ignore: true
+  fileds:
     Ignore: true
   group_configuration:
     To: Detail.Configuration.GroupConfiguration
@@ -35,6 +57,12 @@ Properties:
         Type: List
       type:
         To: Type
+  hour:
+    Ignore: true
+  id:
+    Ignore: true
+  interval:
+    Ignore: true
   join_configurations:
     To: Detail.Configuration.JoinConfigurations
     Type: List
@@ -43,6 +71,8 @@ Properties:
         To: Condition
       type:
         To: Type
+  key:
+    Ignore: true
   labels:
     To: Detail.Configuration.Labels
     Type: List
@@ -51,6 +81,10 @@ Properties:
         To: Key
       value:
         To: Value
+  lang:
+    Ignore: true
+  logstore:
+    Ignore: true
   mobile_list:
     Ignore: true
   mute_until:
@@ -91,10 +125,22 @@ Properties:
         To: RepeatInterval
       use_default:
         To: UseDefault
+  power_sql_mode:
+    Ignore: true
+  project:
+    To: Project
   project_name:
     To: Project
+  query:
+    Ignore: true
   query_list:
     To: Detail.Configuration.QueryList
+  region:
+    Ignore: true
+  repeat_interval:
+    Ignore: true
+  role_arn:
+    Ignore: true
   schedule:
     To: Detail.Configuration.Schedule
     Type: Map
@@ -119,6 +165,10 @@ Properties:
     To: Detail.Configuration.Schedule.Type
   send_resolved:
     To: Detail.Configuration.SendResolved
+  service_uri:
+    Ignore: true
+  severity:
+    Ignore: true
   severity_configurations:
     To: Detail.Configuration.SeverityConfigurations
     Type: List
@@ -133,14 +183,28 @@ Properties:
             To: CountCondition
       severity:
         To: Severity
+  start:
+    Ignore: true
+  store:
+    Ignore: true
+  store_type:
+    Ignore: true
   template_configuration:
     Ignore: true
   threshold:
     To: Detail.Configuration.Threshold
   throttling:
     To: Detail.Configuration.Throttling
+  time_span_type:
+    Ignore: true
+  time_zone:
+    Ignore: true
+  tokens:
+    Ignore: true
   type:
     To: Detail.Type
+  value:
+    Ignore: true
   version:
     To: Detail.Configuration.Version
 Attributes:

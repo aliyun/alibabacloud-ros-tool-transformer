@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::MarketPlace::Order
 Properties:
   components:
-    Ignore: true
+    To: Preference
   coupon_id:
     Ignore: true
   duration:

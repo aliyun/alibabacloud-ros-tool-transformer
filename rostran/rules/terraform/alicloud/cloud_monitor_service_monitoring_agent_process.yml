@@ -12,6 +12,6 @@ Properties:
     To: ProcessUser
 Attributes:
   id:
-    Ignore: true
+    To: Id
   process_id:
     To: Id

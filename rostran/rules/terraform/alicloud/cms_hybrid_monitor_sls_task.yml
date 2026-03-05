@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_hybrid_monitor_sls_task
+  To: ALIYUN::CMS::SlsGroup
+Properties:
+  alias:
+    Ignore: true
+  attach_labels:
+    Ignore: true
+  collect_interval:
+    Ignore: true
+  collect_target_type:
+    To: SlsGroupName
+  description:
+    To: SlsGroupDescription
+  express:
+    Ignore: true
+  filters:
+    Ignore: true
+  function:
+    Ignore: true
+  namespace:
+    Ignore: true
+  parameter_one:
+    Ignore: true
+  parameter_two:
+    Ignore: true
+  relation:
+    Ignore: true
+  sls_key_name:
+    Ignore: true
+  sls_process_config:
+    To: SlsGroupConfig
+    Type: List
+    Schema:
+      express:
+        Ignore: true
+      filter:
+        Ignore: true
+      group_by:
+        Ignore: true
+      statistics:
+        Ignore: true
+  task_name:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

@@ -9,7 +9,7 @@ Properties:
   auto_renew:
     To: AutoRenew
   capacity_unit:
-    Ignore: true
+    To: ProvisionedIops
   db_instance_description:
     To: DBInstanceDescription
   db_instance_storage:
@@ -28,7 +28,13 @@ Properties:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  security_ip_group_attribute:
+    Ignore: true
+  security_ip_group_name:
+    Ignore: true
   security_ip_groups:
+    To: SecurityIPArray
+  security_ip_list:
     To: SecurityIPArray
   storage_engine:
     To: StorageEngine
@@ -43,6 +49,6 @@ Properties:
     To: ZoneId
 Attributes:
   id:
-    Ignore: true
+    To: DBInstanceId
   status:
     To: DBInstanceStatus

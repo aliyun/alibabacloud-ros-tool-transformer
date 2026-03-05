@@ -17,9 +17,9 @@ Properties:
   desktop_type:
     Ignore: true
   end_user_ids:
-    Ignore: true
+    To: EndUserId
   host_name:
-    Ignore: true
+    To: Hostname
   office_site_id:
     To: OfficeSiteId
   payment_type:

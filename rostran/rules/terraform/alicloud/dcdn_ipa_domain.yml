@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_dcdn_ipa_domain
+  To: ALIYUN::DCDN::Domain
+Properties:
+  domain_name:
+    To: DomainName
+  resource_group_id:
+    To: ResourceGroupId
+  scope:
+    To: Scope
+  sources:
+    To: Sources
+    Type: List
+    Schema:
+      content:
+        To: Content
+      port:
+        To: Port
+      priority:
+        To: Priority
+      type:
+        To: Type
+      weight:
+        To: Weight
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: DomainName

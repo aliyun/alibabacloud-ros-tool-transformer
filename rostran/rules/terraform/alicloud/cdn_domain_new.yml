@@ -21,7 +21,18 @@ Properties:
   scope:
     To: Scope
   sources:
-    Ignore: true
+    To: Sources
+    Schema:
+      content:
+        Ignore: true
+      port:
+        Ignore: true
+      priority:
+        Ignore: true
+      type:
+        Ignore: true
+      weight:
+        Ignore: true
   status:
     Ignore: true
   tags:

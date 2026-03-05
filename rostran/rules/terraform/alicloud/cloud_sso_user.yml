@@ -16,14 +16,22 @@ Properties:
     To: FirstName
   last_name:
     To: LastName
+  mfa_authentication_settings:
+    Ignore: true
+  password:
+    Ignore: true
   status:
     To: Status
+  tags:
+    Ignore: true
   user_id:
     Ignore: true
   user_name:
     To: UserName
 Attributes:
   id:
+    Ignore: true
+  create_time:
     Ignore: true
   description:
     Ignore: true

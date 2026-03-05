@@ -17,7 +17,34 @@ Properties:
   dry_run:
     Ignore: true
   health_check_config:
-    Ignore: true
+    To: HealthCheckConfig
+    Type: Map
+    Schema:
+      health_check_codes:
+        To: HealthCheckCodes
+        Type: List
+      health_check_connect_port:
+        To: HealthCheckConnectPort
+      health_check_enabled:
+        To: HealthCheckEnabled
+      health_check_host:
+        To: HealthCheckHost
+      health_check_http_version:
+        To: HealthCheckHttpVersion
+      health_check_interval:
+        To: HealthCheckInterval
+      health_check_method:
+        To: HealthCheckMethod
+      health_check_path:
+        To: HealthCheckPath
+      health_check_protocol:
+        To: HealthCheckProtocol
+      health_check_timeout:
+        To: HealthCheckTimeout
+      healthy_threshold:
+        To: HealthyThreshold
+      unhealthy_threshold:
+        To: UnhealthyThreshold
   health_check_template_id:
     Ignore: true
   ipv6_enabled:
@@ -47,7 +74,17 @@ Properties:
   status:
     Ignore: true
   sticky_session_config:
-    Ignore: true
+    To: StickySessionConfig
+    Type: Map
+    Schema:
+      cookie:
+        To: Cookie
+      cookie_timeout:
+        To: CookieTimeout
+      sticky_session_enabled:
+        To: StickySessionEnabled
+      sticky_session_type:
+        To: StickySessionType
   tags:
     To: Tags
     Handler: tags_dict_to_list

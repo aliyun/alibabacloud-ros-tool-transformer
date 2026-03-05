@@ -24,7 +24,13 @@ Properties:
     To: Period
   post_paid_flag:
     Ignore: true
+  post_paid_host_auto_bind:
+    Ignore: true
+  post_paid_host_auto_bind_version:
+    Ignore: true
   post_pay_module_switch:
+    Ignore: true
+  post_pay_module_switch_obj:
     Ignore: true
   rasp_count:
     To: RaspCount
@@ -41,7 +47,7 @@ Properties:
   sas_cspm_switch:
     To: SasCspmSwitch
   sas_sc:
-    Ignore: true
+    To: SasSc
   sas_sdk:
     To: SasSdk
   sas_sdk_switch:

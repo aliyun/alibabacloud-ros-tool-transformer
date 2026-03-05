@@ -5,13 +5,13 @@ ResourceType:
   To: ALIYUN::RAM::LoginProfile
 Properties:
   mfa_bind_required:
-    Ignore: true
+    To: MFABindRequired
   password:
     To: Password
   password_reset_required:
     To: PasswordResetRequired
   user_name:
-    Ignore: true
+    To: UserPrincipalName
 Attributes:
   id:
     Ignore: true

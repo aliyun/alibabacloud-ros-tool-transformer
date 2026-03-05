@@ -1,0 +1,118 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_star_rocks_instance
+  To: ALIYUN::EMR::StarRocksInstance
+Properties:
+  admin_password:
+    To: AdminPassword
+  auto_renew:
+    To: AutoRenew
+  backend_node_groups:
+    To: BackendNodeGroups
+    Type: List
+    Schema:
+      cu:
+        To: Cu
+      disk_number:
+        To: DiskNumber
+      local_storage_instance_type:
+        To: LocalStorageInstanceType
+      resident_node_number:
+        To: ResidentNodeNumber
+      spec_type:
+        To: SpecType
+      storage_performance_level:
+        To: StoragePerformanceLevel
+      storage_size:
+        To: StorageSize
+      zone_id:
+        To: ZoneId
+  cluster_zone_id:
+    To: ClusterZoneId
+  duration:
+    To: Duration
+  encrypted:
+    To: Encrypted
+  frontend_node_groups:
+    To: FrontendNodeGroups
+    Type: List
+    Schema:
+      cu:
+        To: Cu
+      disk_number:
+        To: DiskNumber
+      local_storage_instance_type:
+        To: LocalStorageInstanceType
+      resident_node_number:
+        To: ResidentNodeNumber
+      spec_type:
+        To: SpecType
+      storage_performance_level:
+        To: StoragePerformanceLevel
+      storage_size:
+        To: StorageSize
+      zone_id:
+        To: ZoneId
+  instance_name:
+    To: InstanceName
+  kms_key_id:
+    To: KmsKeyId
+  observer_node_groups:
+    To: ObserverNodeGroups
+    Type: List
+    Schema:
+      cu:
+        To: Cu
+      disk_number:
+        To: DiskNumber
+      local_storage_instance_type:
+        To: LocalStorageInstanceType
+      resident_node_number:
+        To: ResidentNodeNumber
+      spec_type:
+        To: SpecType
+      storage_performance_level:
+        To: StoragePerformanceLevel
+      storage_size:
+        To: StorageSize
+      zone_id:
+        To: ZoneId
+  oss_accessing_role_name:
+    To: OssAccessingRoleName
+  package_type:
+    To: PackageType
+  pay_type:
+    To: PayType
+  pricing_cycle:
+    To: PricingCycle
+  promotion_option_no:
+    To: PromotionOptionNo
+  resource_group_id:
+    To: ResourceGroupId
+  run_mode:
+    To: RunMode
+  tags:
+    To: Tags
+    Type: List
+  version:
+    To: Version
+  vpc_id:
+    To: VpcId
+  vswitches:
+    To: Vswitches
+    Type: List
+    Schema:
+      vswitch_id:
+        To: VSwitchId
+      zone_id:
+        To: ZoneId
+Attributes:
+  id:
+    To: InstanceId
+  create_time:
+    To: CreateTime
+  region_id:
+    Ignore: true
+  status:
+    Ignore: true

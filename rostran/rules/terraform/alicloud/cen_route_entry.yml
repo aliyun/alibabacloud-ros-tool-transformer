@@ -5,11 +5,11 @@ ResourceType:
   To: ALIYUN::CEN::RouteEntry
 Properties:
   cidr_block:
-    Ignore: true
+    To: DestinationCidrBlock
   instance_id:
-    Ignore: true
+    To: CenId
   route_table_id:
-    Ignore: true
+    To: ChildInstanceRouteTableId
 Attributes:
   id:
     Ignore: true

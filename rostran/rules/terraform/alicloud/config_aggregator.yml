@@ -20,6 +20,8 @@ Properties:
     To: AggregatorType
   description:
     To: Description
+  folder_id:
+    To: FolderId
   status:
     Ignore: true
 Attributes:
@@ -28,6 +30,8 @@ Attributes:
   aggregator_name:
     Ignore: true
   aggregator_type:
+    Ignore: true
+  create_time:
     Ignore: true
   description:
     Ignore: true

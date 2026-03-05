@@ -4,178 +4,480 @@ ResourceType:
   From: alicloud_cs_kubernetes_node_pool
   To: ALIYUN::CS::ClusterNodePool
 Properties:
+  auto_mode:
+    To: NodePoolInfo
+    Type: Map
+    Schema:
+      enabled:
+        Ignore: true
   auto_renew:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   auto_renew_period:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   auto_upgrade_kubelet:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   cis_enabled:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   cluster_id:
     To: ClusterId
   compensate_with_on_demand:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
   cpu_policy:
-    Ignore: true
+    To: KubernetesConfig
+    Type: Map
   data_disks:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
+    Schema:
+      auto_format:
+        Ignore: true
+      auto_snapshot_policy_id:
+        Ignore: true
+      bursting_enabled:
+        Ignore: true
+      category:
+        Ignore: true
+      device:
+        Ignore: true
+      encrypted:
+        Ignore: true
+      file_system:
+        Ignore: true
+      kms_key_id:
+        Ignore: true
+      mount_target:
+        Ignore: true
+      name:
+        Ignore: true
+      performance_level:
+        Ignore: true
+      provisioned_iops:
+        Ignore: true
+      size:
+        Ignore: true
+      snapshot_id:
+        Ignore: true
   deployment_set_id:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   desired_size:
-    Ignore: true
+    To: Count
   eflo_node_group:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
+    Schema:
+      cluster_id:
+        Ignore: true
+      group_id:
+        Ignore: true
   endpoint:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   force_delete:
     Ignore: true
   format_disk:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   image_id:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   image_type:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   install_cloud_monitor:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   instance_charge_type:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
+  instance_metadata_options:
+    To: ScalingGroup
+    Type: Map
+    Schema:
+      http_tokens:
+        Ignore: true
+  instance_patterns:
+    To: ScalingGroup
+    Type: Map
+    Schema:
+      cores:
+        Ignore: true
+      cpu_architectures:
+        Ignore: true
+      excluded_instance_types:
+        Ignore: true
+      instance_categories:
+        Ignore: true
+      instance_family_level:
+        Ignore: true
+      instance_type_families:
+        Ignore: true
+      max_cpu_cores:
+        Ignore: true
+      max_memory_size:
+        Ignore: true
+      memory:
+        Ignore: true
+      min_cpu_cores:
+        Ignore: true
+      min_memory_size:
+        Ignore: true
   instance_types:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   instances:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   internet_charge_type:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   internet_max_bandwidth_out:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   keep_instance_name:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   key_name:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   kms_encrypted_password:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   kms_encryption_context:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   kubelet_configuration:
-    Ignore: true
+    To: KubernetesConfig
+    Type: Map
+    Schema:
+      allowed_unsafe_sysctls:
+        Ignore: true
+      cluster_dns:
+        Ignore: true
+      container_log_max_files:
+        Ignore: true
+      container_log_max_size:
+        Ignore: true
+      container_log_max_workers:
+        Ignore: true
+      container_log_monitor_interval:
+        Ignore: true
+      cpu_cfs_quota:
+        Ignore: true
+      cpu_cfs_quota_period:
+        Ignore: true
+      cpu_manager_policy:
+        Ignore: true
+      event_burst:
+        Ignore: true
+      event_record_qps:
+        Ignore: true
+      eviction_hard:
+        Ignore: true
+      eviction_soft:
+        Ignore: true
+      eviction_soft_grace_period:
+        Ignore: true
+      feature_gates:
+        Ignore: true
+      image_gc_high_threshold_percent:
+        Ignore: true
+      image_gc_low_threshold_percent:
+        Ignore: true
+      kube_api_burst:
+        Ignore: true
+      kube_api_qps:
+        Ignore: true
+      kube_reserved:
+        Ignore: true
+      max_pods:
+        Ignore: true
+      memory_manager_policy:
+        Ignore: true
+      pod_pids_limit:
+        Ignore: true
+      read_only_port:
+        Ignore: true
+      registry_burst:
+        Ignore: true
+      registry_pull_qps:
+        Ignore: true
+      reserved_memory:
+        Ignore: true
+      serialize_image_pulls:
+        Ignore: true
+      server_tls_bootstrap:
+        Ignore: true
+      system_reserved:
+        Ignore: true
+      topology_manager_policy:
+        Ignore: true
+      tracing:
+        Ignore: true
   labels:
-    Ignore: true
+    To: KubernetesConfig
+    Type: Map
+    Schema:
+      key:
+        Ignore: true
+      value:
+        Ignore: true
   limits:
-    Ignore: true
+    To: KubernetesConfig
+    Type: Map
   login_as_non_root:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   management:
-    Ignore: true
+    To: Management
+    Type: Map
+    Schema:
+      auto_repair:
+        To: AutoRepair
+      auto_repair_policy:
+        Ignore: true
+      auto_upgrade:
+        Ignore: true
+      auto_upgrade_policy:
+        Ignore: true
+      auto_vul_fix:
+        Ignore: true
+      auto_vul_fix_policy:
+        Ignore: true
+      enable:
+        To: Enable
+      max_unavailable:
+        Ignore: true
+      surge:
+        Ignore: true
+      surge_percentage:
+        Ignore: true
   multi_az_policy:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   name:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   node_count:
     Ignore: true
   node_name_mode:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   node_pool_id:
     Ignore: true
   node_pool_name:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   numa_node:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   on_demand_base_capacity:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
   on_demand_percentage_above_base_capacity:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
   password:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   period:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   period_unit:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   platform:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   pre_user_data:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   private_pool_options:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
+    Schema:
+      private_pool_options_id:
+        Ignore: true
+      private_pool_options_match_criteria:
+        Ignore: true
   ram_role_name:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   rds_instances:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   resource_group_id:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   restart_node:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   rolling_policy:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
+    Schema:
+      batch_interval:
+        Ignore: true
+      max_parallelism:
+        Ignore: true
+      node_names:
+        Ignore: true
+      pause_policy:
+        Ignore: true
   rollout_policy:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
+    Schema:
+      max_unavailable:
+        Ignore: true
   runtime_name:
-    Ignore: true
+    To: KubernetesConfig
+    Type: Map
   runtime_version:
-    Ignore: true
+    To: KubernetesConfig
+    Type: Map
   sampling_rate_per_million:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   scaling_config:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
+    Schema:
+      eip_bandwidth:
+        To: EipBandwidth
+      eip_internet_charge_type:
+        To: EipInternetChargeType
+      enable:
+        To: Enable
+      is_bond_eip:
+        To: IsBondEip
+      max_size:
+        Ignore: true
+      min_size:
+        Ignore: true
+      type:
+        To: Type
   scaling_group_id:
     Ignore: true
   scaling_policy:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
   security_group_id:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   security_group_ids:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   security_hardening_os:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   soc_enabled:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   spot_instance_pools:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
   spot_instance_remedy:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
   spot_price_limit:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
+    Schema:
+      instance_type:
+        Ignore: true
+      price_limit:
+        Ignore: true
   spot_strategy:
-    Ignore: true
+    To: AutoScaling
+    Type: Map
   system_disk_bursting_enabled:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_categories:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_category:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_encrypt_algorithm:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_encrypted:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_kms_key:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_performance_level:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_provisioned_iops:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_size:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   system_disk_snapshot_policy_id:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   tags:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   taints:
-    Ignore: true
+    To: KubernetesConfig
+    Type: Map
+    Schema:
+      effect:
+        Ignore: true
+      key:
+        Ignore: true
+      value:
+        Ignore: true
   tee_config:
-    Ignore: true
+    To: TeeConfig
+    Type: Map
+    Schema:
+      tee_enable:
+        To: TeeEnable
   type:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   unschedulable:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
   update_nodes:
     Ignore: true
+  upgrade_policy:
+    To: NodePoolInfo
+    Type: Map
+    Schema:
+      image_id:
+        Ignore: true
+      kubernetes_version:
+        Ignore: true
+      runtime:
+        Ignore: true
+      runtime_version:
+        Ignore: true
+      use_replace:
+        Ignore: true
   user_data:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   vpc_id:
     Ignore: true
   vswitch_ids:
-    Ignore: true
+    To: ScalingGroup
+    Type: Map
   vul_level:
-    Ignore: true
+    To: NodePoolInfo
+    Type: Map
 Attributes:
   id:
     To: NodePoolId

@@ -39,5 +39,7 @@ Attributes:
     To: InstanceId
   create_time:
     Ignore: true
+  resource_id:
+    Ignore: true
   status:
     Ignore: true

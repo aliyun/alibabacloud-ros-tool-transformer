@@ -26,6 +26,6 @@ Properties:
     To: WorkspaceId
 Attributes:
   id:
-    Ignore: true
+    To: CodeSourcesId
   create_time:
     To: CreateTime

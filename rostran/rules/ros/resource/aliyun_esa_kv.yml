@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::Kv
+  To: alicloud_esa_kv
+Properties:
+  Expiration:
+    To: expiration
+  ExpirationTtl:
+    To: expiration_ttl
+  Key:
+    To: key
+  Namespace:
+    To: namespace
+  Value:
+    To: value
+Attributes:
+  Value:
+    Ignore: true

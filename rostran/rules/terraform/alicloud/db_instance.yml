@@ -11,7 +11,7 @@ Properties:
   auto_renew_period:
     Ignore: true
   auto_upgrade_minor_version:
-    Ignore: true
+    To: AutoUpgradeMinorVersion
   babelfish_config:
     Ignore: true
   babelfish_port:
@@ -47,13 +47,13 @@ Properties:
   db_instance_type:
     Ignore: true
   db_is_ignore_case:
-    Ignore: true
+    To: DBIsIgnoreCase
   db_param_group_id:
-    Ignore: true
+    To: DBParamGroupId
   db_time_zone:
-    Ignore: true
+    To: DBTimeZone
   deletion_protection:
-    Ignore: true
+    To: DeletionProtection
   direction:
     Ignore: true
   effective_time:
@@ -111,13 +111,13 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   role_arn:
-    Ignore: true
+    To: RoleARN
   security_group_id:
     To: SecurityGroupId
   security_group_ids:
     Ignore: true
   security_ip_mode:
-    Ignore: true
+    To: ConnectionMode
   security_ip_type:
     Ignore: true
   security_ips:
@@ -127,15 +127,25 @@ Properties:
   server_key:
     Ignore: true
   serverless_config:
-    Ignore: true
+    To: ServerlessConfig
+    Type: Map
+    Schema:
+      auto_pause:
+        To: AutoPause
+      max_capacity:
+        To: MaxCapacity
+      min_capacity:
+        To: MinCapacity
+      switch_force:
+        To: SwitchForce
   sql_collector_config_value:
     Ignore: true
   sql_collector_status:
-    Ignore: true
+    To: SQLCollectorStatus
   ssl_action:
-    Ignore: true
+    To: SSLSetting
   ssl_connection_string:
-    Ignore: true
+    To: ConnectionStringType
   ssl_status:
     Ignore: true
   status:
@@ -174,9 +184,11 @@ Properties:
   zone_id:
     To: ZoneId
   zone_id_slave_a:
-    Ignore: true
+    To: SlaveZoneIds
+    Type: List
   zone_id_slave_b:
-    Ignore: true
+    To: SlaveZoneIds
+    Type: List
 Attributes:
   id:
     To: DBInstanceId
@@ -203,7 +215,7 @@ Attributes:
   client_crl_enabled:
     Ignore: true
   connection_string:
-    Ignore: true
+    To: PublicConnectionString
   connection_string_prefix:
     Ignore: true
   create_time:

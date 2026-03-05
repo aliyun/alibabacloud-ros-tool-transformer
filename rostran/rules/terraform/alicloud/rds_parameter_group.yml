@@ -9,7 +9,13 @@ Properties:
   engine_version:
     Ignore: true
   param_detail:
-    Ignore: true
+    To: Parameters
+    Type: List
+    Schema:
+      param_name:
+        Ignore: true
+      param_value:
+        Ignore: true
   parameter_group_desc:
     Ignore: true
   parameter_group_name:

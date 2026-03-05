@@ -36,11 +36,11 @@ Properties:
   rule_name:
     To: RuleName
   silence_time:
-    Ignore: true
+    To: SilenceTime
   sls_parameters:
     Ignore: true
   status:
-    Ignore: true
+    To: State
   webhook_parameters:
     Ignore: true
 Attributes:

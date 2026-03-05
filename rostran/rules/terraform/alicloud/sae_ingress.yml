@@ -7,9 +7,18 @@ Properties:
   cert_id:
     To: CertId
   cert_ids:
-    Ignore: true
+    To: CertIds
+    Type: List
   default_rule:
-    Ignore: true
+    To: DefaultRule
+    Type: Map
+    Schema:
+      app_id:
+        To: AppId
+      app_name:
+        Ignore: true
+      container_port:
+        To: ContainerPort
   description:
     To: Description
   listener_port:

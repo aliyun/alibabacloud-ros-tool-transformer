@@ -11,9 +11,10 @@ Properties:
   name:
     To: SnapshotName
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: SnapshotId

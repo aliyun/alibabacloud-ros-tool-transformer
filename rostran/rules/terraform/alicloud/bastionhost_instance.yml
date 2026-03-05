@@ -7,7 +7,7 @@ Properties:
   ad_auth_server:
     Ignore: true
   bandwidth:
-    Ignore: true
+    To: ExtraBandwidth
   description:
     Ignore: true
   enable_public_access:
@@ -15,11 +15,11 @@ Properties:
   ldap_auth_server:
     Ignore: true
   license_code:
-    Ignore: true
+    To: Version
   period:
     To: Period
   plan_code:
-    Ignore: true
+    To: Plan
   public_white_list:
     Ignore: true
   renew_period:
@@ -27,13 +27,15 @@ Properties:
   renewal_period_unit:
     Ignore: true
   renewal_status:
-    Ignore: true
+    To: AutoRenew
   resource_group_id:
     To: ResourceGroupId
   security_group_ids:
     Ignore: true
-  storage:
+  slave_vswitch_id:
     Ignore: true
+  storage:
+    To: ExtendedStoragePlans
   tags:
     Ignore: true
   vswitch_id:

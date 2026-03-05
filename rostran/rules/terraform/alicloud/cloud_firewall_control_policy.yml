@@ -38,7 +38,7 @@ Properties:
   proto:
     To: Proto
   release:
-    Ignore: true
+    To: Release
   repeat_days:
     To: RepeatDays
     Type: List

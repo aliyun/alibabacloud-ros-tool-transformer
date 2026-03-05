@@ -18,23 +18,42 @@ Properties:
         To: Logstore
       project:
         To: Project
+  mount_dir:
+    Ignore: true
   name:
     To: ServiceName
   name_prefix:
     To: ServiceName
   nas_config:
-    Ignore: true
+    To: NasConfig
+    Type: Map
+    Schema:
+      group_id:
+        To: GroupId
+      mount_points:
+        To: MountPoints
+        Type: List
+      user_id:
+        To: UserId
   publish:
     Ignore: true
   role:
     To: Role
+  server_addr:
+    Ignore: true
   service_id:
     Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
   tracing_config:
-    Ignore: true
+    To: TracingConfig
+    Type: Map
+    Schema:
+      params:
+        To: Params
+      type:
+        To: Type
   version:
     Ignore: true
   vpc_config:

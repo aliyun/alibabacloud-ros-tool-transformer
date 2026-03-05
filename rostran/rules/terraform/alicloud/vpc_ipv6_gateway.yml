@@ -17,7 +17,7 @@ Properties:
   ipv6_gateway_id:
     Ignore: true
   ipv6_gateway_name:
-    Ignore: true
+    To: Name
   resource_group_id:
     Ignore: true
   spec:

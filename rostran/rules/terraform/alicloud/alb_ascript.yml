@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::ALB::AScript
 Properties:
   ascript_name:
-    Ignore: true
+    To: AScriptName
   dry_run:
     Ignore: true
   enabled:

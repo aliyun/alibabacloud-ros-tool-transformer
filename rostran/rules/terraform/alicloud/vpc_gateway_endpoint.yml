@@ -23,7 +23,7 @@ Properties:
     To: VpcId
 Attributes:
   id:
-    Ignore: true
+    To: EndpointId
   create_time:
     Ignore: true
   status:

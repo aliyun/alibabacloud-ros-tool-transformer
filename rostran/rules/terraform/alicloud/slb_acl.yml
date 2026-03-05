@@ -4,6 +4,10 @@ ResourceType:
   From: alicloud_slb_acl
   To: ALIYUN::SLB::AccessControl
 Properties:
+  comment:
+    Ignore: true
+  entry:
+    Ignore: true
   entry_list:
     To: AclEntries
     Type: List

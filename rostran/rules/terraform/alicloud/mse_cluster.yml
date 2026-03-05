@@ -30,7 +30,7 @@ Properties:
   net_type:
     To: NetType
   payment_type:
-    Ignore: true
+    To: ChargeType
   private_slb_specification:
     To: PrivateSlbSpecification
   pub_network_flow:
@@ -40,11 +40,12 @@ Properties:
   request_pars:
     To: RequestPars
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   status:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
   version_code:
     To: ClusterVersion
   vpc_id:
@@ -81,7 +82,7 @@ Attributes:
   resource_group_id:
     Ignore: true
   status:
-    Ignore: true
+    To: HealthStatus
   tags:
     Ignore: true
   vpc_id:

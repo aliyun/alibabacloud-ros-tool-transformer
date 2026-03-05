@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_client_certificate
+  To: ALIYUN::ESA::ClientCertificate
+Properties:
+  csr:
+    To: CSR
+  pkey_type:
+    To: PkeyType
+  site_id:
+    To: SiteId
+  status:
+    Ignore: true
+  validity_days:
+    To: ValidityDays
+Attributes:
+  id:
+    Ignore: true
+  client_cert_id:
+    To: ClientCertId
+  create_time:
+    To: CreateTime

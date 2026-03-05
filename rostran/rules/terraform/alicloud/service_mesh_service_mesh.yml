@@ -13,7 +13,7 @@ Properties:
   cluster_ids:
     To: GuestCluster
   cluster_spec:
-    Ignore: true
+    To: ClusterSpec
   custom_prometheus_url:
     Ignore: true
   customized_prometheus:
@@ -25,11 +25,14 @@ Properties:
   enabled:
     To: OpaEnabled
   extra_configuration:
-    Ignore: true
+    To: CRAggregationEnabled
+    Schema:
+      cr_aggregation_enabled:
+        Ignore: true
   force:
     Ignore: true
   gateway_enabled:
-    Ignore: true
+    To: AccessLogEnabled
   gateway_lifecycle:
     Ignore: true
   http10_enabled:
@@ -59,7 +62,7 @@ Properties:
   open_id_config:
     Ignore: true
   project:
-    Ignore: true
+    To: ControlPlaneLogProject
   prometheus_url:
     To: PrometheusUrl
   ram_oauth_config:
@@ -81,7 +84,7 @@ Properties:
   trace_sampling:
     To: TraceSampling
   version:
-    Ignore: true
+    To: IstioVersion
 Attributes:
   id:
     To: ServiceMeshId

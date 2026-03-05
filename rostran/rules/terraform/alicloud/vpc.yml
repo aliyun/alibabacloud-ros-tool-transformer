@@ -59,7 +59,7 @@ Properties:
     To: Tags
     Handler: tags_dict_to_list
   user_cidrs:
-    Ignore: true
+    To: UserCidr
   vpc_name:
     To: VpcName
 Attributes:
@@ -88,7 +88,7 @@ Attributes:
   route_table_id:
     To: RouteTableId
   router_id:
-    Ignore: true
+    To: VRouterId
   router_table_id:
     Ignore: true
   secondary_cidr_blocks:

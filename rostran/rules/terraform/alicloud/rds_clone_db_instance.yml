@@ -128,6 +128,6 @@ Properties:
     Type: List
 Attributes:
   id:
-    Ignore: true
+    To: DBInstanceId
   connection_string:
     To: PublicConnectionString

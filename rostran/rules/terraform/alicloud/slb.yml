@@ -7,7 +7,7 @@ Properties:
   address:
     Ignore: true
   address_ip_version:
-    Ignore: true
+    To: AddressIPVersion
   address_type:
     To: AddressType
   bandwidth:

@@ -22,6 +22,8 @@ Properties:
         To: Webhook
   apply_mode:
     Ignore: true
+  critical:
+    Ignore: true
   description:
     To: Description
   enable_end_time:
@@ -30,13 +32,17 @@ Properties:
     Ignore: true
   group_id:
     Ignore: true
-  metric_rule_template_name:
+  info:
     Ignore: true
+  metric_rule_template_name:
+    To: Name
   notify_level:
     Ignore: true
   rest_version:
     To: RestVersion
   silence_time:
+    Ignore: true
+  warn:
     Ignore: true
   webhook:
     Ignore: true

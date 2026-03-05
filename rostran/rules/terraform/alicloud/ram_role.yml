@@ -14,7 +14,7 @@ Properties:
   document:
     To: AssumeRolePolicyDocument
   force:
-    Ignore: true
+    To: DeletionForce
   max_session_duration:
     To: MaxSessionDuration
   name:
@@ -28,7 +28,8 @@ Properties:
   services:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
   version:
     Ignore: true
 Attributes:

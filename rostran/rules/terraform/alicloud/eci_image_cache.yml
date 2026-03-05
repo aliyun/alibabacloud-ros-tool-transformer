@@ -12,6 +12,8 @@ Properties:
     To: ImageCacheName
   image_cache_size:
     To: ImageCacheSize
+  'image_cache_size` ':
+    Ignore: true
   image_registry_credential:
     To: ImageRegistryCredential
     Type: List

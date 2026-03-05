@@ -13,23 +13,31 @@ Properties:
   compress_type:
     Ignore: true
   config_columns:
-    Ignore: true
+    To: Configuration
+    Type: Map
   content_type:
     Ignore: true
   csv_config_columns:
-    Ignore: true
+    To: Configuration
+    Type: Map
   csv_config_delimiter:
-    Ignore: true
+    To: Configuration
+    Type: Map
   csv_config_escape:
-    Ignore: true
+    To: Configuration
+    Type: Map
   csv_config_header:
-    Ignore: true
+    To: Configuration
+    Type: Map
   csv_config_linefeed:
-    Ignore: true
+    To: Configuration
+    Type: Map
   csv_config_null:
-    Ignore: true
+    To: Configuration
+    Type: Map
   csv_config_quote:
-    Ignore: true
+    To: Configuration
+    Type: Map
   display_name:
     To: DisplayName
   export_name:
@@ -37,7 +45,8 @@ Properties:
   from_time:
     Ignore: true
   json_enable_tag:
-    Ignore: true
+    To: Configuration
+    Type: Map
   log_read_role_arn:
     Ignore: true
   logstore_name:

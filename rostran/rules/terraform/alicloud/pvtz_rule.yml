@@ -7,7 +7,13 @@ Properties:
   endpoint_id:
     To: EndpointId
   forward_ips:
-    Ignore: true
+    To: ForwardIp
+    Type: List
+    Schema:
+      ip:
+        To: Ip
+      port:
+        To: Port
   rule_name:
     To: RuleName
   type:

@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_transit_router_grant_attachment
+  To: ALIYUN::CEN::TransitRouterGrantAttachment
+Properties:
+  cen_owner_id:
+    To: CenOwnerId
+  instance_id:
+    To: InstanceId
+  instance_type:
+    To: InstanceType
+  order_type:
+    To: OrderType
+Attributes:
+  id:
+    Ignore: true

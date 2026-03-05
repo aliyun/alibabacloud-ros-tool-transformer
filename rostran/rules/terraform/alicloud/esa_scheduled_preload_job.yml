@@ -1,0 +1,24 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_scheduled_preload_job
+  To: ALIYUN::ESA::ScheduledPreloadJob
+Properties:
+  insert_way:
+    To: InsertWay
+  oss_url:
+    To: OssUrl
+  scheduled_preload_job_name:
+    To: ScheduledPreloadJobName
+  site_id:
+    To: SiteId
+  url_list:
+    To: UrlList
+    Type: List
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime
+  scheduled_preload_job_id:
+    To: ScheduledPreloadJobId

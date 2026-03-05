@@ -35,7 +35,7 @@ Properties:
   renewal_duration:
     To: AutoRenew
   renewal_duration_unit:
-    Ignore: true
+    To: PeriodUnit
   renewal_status:
     To: AutoRenew
   spec:

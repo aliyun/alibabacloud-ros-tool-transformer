@@ -10,13 +10,13 @@ Properties:
   status:
     Ignore: true
   tls_cipher_policy_name:
-    Ignore: true
+    To: TLSPolicyName
   tls_versions:
     To: TlsVersions
     Type: List
 Attributes:
   id:
-    Ignore: true
+    To: InstanceId
   ciphers:
     To: Ciphers
   status:

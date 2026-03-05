@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   create_time:
     Ignore: true
+  edition:
+    Ignore: true
   instance_name:
     To: InstanceName
   instance_type:
@@ -25,6 +27,8 @@ Properties:
   period:
     To: Period
   period_cycle:
+    To: PeriodUnit
+  provisioned_capacity:
     Ignore: true
   queue_capacity:
     To: QueueCapacity
@@ -41,9 +45,9 @@ Properties:
   storage_size:
     To: StorageSize
   support_eip:
-    Ignore: true
+    To: SupportEip
   support_tracing:
-    Ignore: true
+    To: SupportTracing
   tracing_storage_time:
     To: TracingStorageTime
 Attributes:

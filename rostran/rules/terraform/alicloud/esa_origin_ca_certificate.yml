@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_origin_ca_certificate
+  To: ALIYUN::ESA::ClientCaCertificate
+Properties:
+  certificate:
+    To: Certificate
+  name:
+    To: ClientCaCertName
+  site_id:
+    To: SiteId
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime
+  origin_ca_certificate_id:
+    To: ClientCaCertId
+  status:
+    Ignore: true

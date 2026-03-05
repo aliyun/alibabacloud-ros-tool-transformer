@@ -6,10 +6,14 @@ ResourceType:
 Properties:
   address:
     To: Address
+  agent_group:
+    Ignore: true
   alert_ids:
     To: AlertIds
     Type: List
   create_time:
+    Ignore: true
+  custom_schedule:
     Ignore: true
   interval:
     To: Interval
@@ -21,19 +25,29 @@ Properties:
         To: City
       isp:
         To: Isp
+  operator:
+    Ignore: true
+  option_json:
+    Ignore: true
   options_json:
     To: OptionsJson
+  status:
+    Ignore: true
+  target:
+    Ignore: true
   task_name:
     To: TaskName
   task_state:
     Ignore: true
   task_type:
     To: TaskType
+  type:
+    Ignore: true
   update_time:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: TaskId
   address:
     Ignore: true
   create_time:

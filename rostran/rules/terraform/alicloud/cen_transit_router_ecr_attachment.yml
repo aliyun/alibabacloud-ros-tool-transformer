@@ -21,7 +21,7 @@ Properties:
     To: TransitRouterId
 Attributes:
   id:
-    Ignore: true
+    To: TransitRouterAttachmentId
   create_time:
     Ignore: true
   status:

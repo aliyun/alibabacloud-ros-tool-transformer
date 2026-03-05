@@ -9,11 +9,11 @@ Properties:
   description:
     To: Description
   instance_charge_type:
-    Ignore: true
+    To: PayType
   instance_series:
     To: InstanceSeries
   mysql_version:
-    Ignore: true
+    To: MySQLVersion
   port:
     Ignore: true
   specification:
@@ -28,7 +28,7 @@ Attributes:
   id:
     To: DrdsInstanceId
   connection_string:
-    Ignore: true
+    To: InternetEndpoint
   description:
     Ignore: true
   mysql_version:

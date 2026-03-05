@@ -20,14 +20,67 @@ Properties:
     Ignore: true
   auto_match_image_cache:
     To: AutoMatchImageCache
+  capability:
+    Ignore: true
   container_group_name:
     To: ContainerGroupName
   containers:
+    To: Container
+    Type: List
+    Schema:
+      args:
+        Ignore: true
+      commands:
+        Ignore: true
+      cpu:
+        To: Cpu
+      environment_vars:
+        Ignore: true
+      gpu:
+        Ignore: true
+      image:
+        To: Image
+      image_pull_policy:
+        To: ImagePullPolicy
+      lifecycle_pre_stop_handler_exec:
+        Ignore: true
+      liveness_probe:
+        To: LivenessProbe
+        Type: Map
+      memory:
+        To: Memory
+      name:
+        To: Name
+      ports:
+        Ignore: true
+      readiness_probe:
+        To: ReadinessProbe
+        Type: Map
+      ready:
+        Ignore: true
+      restart_count:
+        Ignore: true
+      security_context:
+        To: SecurityContext
+        Type: Map
+      volume_mounts:
+        Ignore: true
+      working_dir:
+        To: WorkingDir
+  content:
     Ignore: true
   cpu:
     To: Cpu
   dns_config:
-    Ignore: true
+    To: DnsConfig
+    Type: Map
+    Schema:
+      name_servers:
+        Ignore: true
+      options:
+        Ignore: true
+      searches:
+        Ignore: true
   dns_policy:
     Ignore: true
   eci_security_context:
@@ -36,7 +89,23 @@ Properties:
     Ignore: true
   eip_instance_id:
     To: EipInstanceId
+  ephemeral_storage:
+    Ignore: true
+  exec:
+    Ignore: true
+  failure_threshold:
+    Ignore: true
+  field_ref:
+    Ignore: true
   host_aliases:
+    To: HostAliase
+    Type: List
+    Schema:
+      hostnames:
+        Ignore: true
+      ip:
+        To: Ip
+  http_get:
     Ignore: true
   image_registry_credential:
     To: ImageRegistryCredential
@@ -49,6 +118,41 @@ Properties:
       user_name:
         To: UserName
   init_containers:
+    To: InitContainer
+    Type: List
+    Schema:
+      args:
+        Ignore: true
+      commands:
+        Ignore: true
+      cpu:
+        To: Cpu
+      environment_vars:
+        Ignore: true
+      gpu:
+        Ignore: true
+      image:
+        To: Image
+      image_pull_policy:
+        To: ImagePullPolicy
+      memory:
+        To: Memory
+      name:
+        To: Name
+      ports:
+        Ignore: true
+      ready:
+        Ignore: true
+      restart_count:
+        Ignore: true
+      security_context:
+        To: SecurityContext
+        Type: Map
+      volume_mounts:
+        Ignore: true
+      working_dir:
+        To: WorkingDir
+  initial_delay_seconds:
     Ignore: true
   insecure_registry:
     Ignore: true
@@ -58,16 +162,34 @@ Properties:
     Ignore: true
   intranet_ip:
     Ignore: true
+  key:
+    Ignore: true
   memory:
     To: Memory
+  mount_path:
+    Ignore: true
+  name:
+    Ignore: true
+  path:
+    Ignore: true
+  period_seconds:
+    Ignore: true
   plain_http_registry:
+    Ignore: true
+  port:
+    Ignore: true
+  protocol:
     Ignore: true
   ram_role_name:
     To: RamRoleName
+  read_only:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   restart_policy:
     To: RestartPolicy
+  run_as_user:
+    Ignore: true
   security_context:
     Ignore: true
   security_group_id:
@@ -78,12 +200,45 @@ Properties:
     To: SpotStrategy
   status:
     Ignore: true
+  success_threshold:
+    Ignore: true
   tags:
+    To: Tag
+    Type: List
+  tcp_socket:
     Ignore: true
   termination_grace_period_seconds:
     To: TerminationGracePeriodSeconds
-  volumes:
+  timeout_seconds:
     Ignore: true
+  value:
+    Ignore: true
+  volumes:
+    To: Volume
+    Type: List
+    Schema:
+      config_file_volume_config_file_to_paths:
+        Ignore: true
+      disk_volume_disk_id:
+        Ignore: true
+      disk_volume_fs_type:
+        Ignore: true
+      flex_volume_driver:
+        Ignore: true
+      flex_volume_fs_type:
+        Ignore: true
+      flex_volume_options:
+        Ignore: true
+      name:
+        To: Name
+      nfs_volume_path:
+        Ignore: true
+      nfs_volume_read_only:
+        Ignore: true
+      nfs_volume_server:
+        Ignore: true
+      type:
+        To: Type
   vswitch_id:
     To: VSwitchId
   zone_id:

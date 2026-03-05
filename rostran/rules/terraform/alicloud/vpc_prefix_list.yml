@@ -4,7 +4,11 @@ ResourceType:
   From: alicloud_vpc_prefix_list
   To: ALIYUN::VPC::PrefixList
 Properties:
+  cidr:
+    Ignore: true
   create_time:
+    Ignore: true
+  description:
     Ignore: true
   entrys:
     To: Entries

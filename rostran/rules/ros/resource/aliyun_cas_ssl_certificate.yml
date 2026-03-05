@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CAS::SslCertificate
+  To: alicloud_ssl_certificates_service_pca_certificate
+Properties:
+  ValidateType:
+    Ignore: true
+  ProductCode:
+    Ignore: true
+  Domains:
+    Ignore: true
+  CertType:
+    Ignore: true
+  CertBrand:
+    Ignore: true
+  Username:
+    Ignore: true
+  DomainType:
+    Ignore: true
+  CompanyName:
+    Ignore: true
+  Email:
+    Ignore: true
+  Phone:
+    Ignore: true
+  Csr:
+    Ignore: true
+Attributes:
+  CertificateId:
+    To: id
+  OrderId:
+    Ignore: true

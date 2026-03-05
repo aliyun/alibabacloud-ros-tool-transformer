@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_network_optimization
+  To: ALIYUN::ESA::NetworkOptimization
+Properties:
+  grpc:
+    To: Grpc
+  http2_origin:
+    To: Http2Origin
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  sequence:
+    To: Sequence
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+  smart_routing:
+    To: SmartRouting
+  upload_max_filesize:
+    To: UploadMaxFilesize
+  websocket:
+    To: Websocket
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

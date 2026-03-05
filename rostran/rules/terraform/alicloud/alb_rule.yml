@@ -4,14 +4,50 @@ ResourceType:
   From: alicloud_alb_rule
   To: ALIYUN::ALB::Rule
 Properties:
+  allow_credentials:
+    Ignore: true
+  allow_headers:
+    Ignore: true
+  allow_methods:
+    Ignore: true
+  allow_origin:
+    Ignore: true
+  content:
+    Ignore: true
+  content_type:
+    Ignore: true
   direction:
     To: Direction
   dry_run:
     Ignore: true
+  expose_headers:
+    Ignore: true
+  host:
+    Ignore: true
+  http_code:
+    Ignore: true
+  key:
+    Ignore: true
   listener_id:
     To: ListenerId
+  max_age:
+    Ignore: true
+  mirror_group_config:
+    Ignore: true
+  path:
+    Ignore: true
+  per_ip_qps:
+    Ignore: true
+  port:
+    Ignore: true
   priority:
     To: Priority
+  protocol:
+    Ignore: true
+  qps:
+    Ignore: true
+  query:
+    Ignore: true
   rule_actions:
     To: RuleActions
     Type: List
@@ -64,7 +100,21 @@ Properties:
         To: Type
   rule_name:
     To: RuleName
+  server_group_id:
+    Ignore: true
+  server_group_sticky_session:
+    Ignore: true
+  server_group_tuples:
+    Ignore: true
   status:
+    Ignore: true
+  target_type:
+    Ignore: true
+  value:
+    Ignore: true
+  value_type:
+    Ignore: true
+  values:
     Ignore: true
 Attributes:
   id:

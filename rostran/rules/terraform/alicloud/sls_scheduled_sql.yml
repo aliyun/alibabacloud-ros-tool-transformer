@@ -1,0 +1,73 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_scheduled_sql
+  To: ALIYUN::SLS::Etl
+Properties:
+  description:
+    To: Description
+  display_name:
+    To: DisplayName
+  project:
+    To: ProjectName
+  schedule:
+    To: Schedule
+    Type: Map
+    Schema:
+      cron_expression:
+        Ignore: true
+      delay:
+        Ignore: true
+      interval:
+        Ignore: true
+      run_immediately:
+        Ignore: true
+      time_zone:
+        Ignore: true
+      type:
+        To: Type
+  scheduled_sql_configuration:
+    To: Configuration
+    Type: Map
+    Schema:
+      data_format:
+        Ignore: true
+      dest_endpoint:
+        Ignore: true
+      dest_logstore:
+        Ignore: true
+      dest_project:
+        Ignore: true
+      dest_role_arn:
+        Ignore: true
+      from_time:
+        To: FromTime
+      from_time_expr:
+        Ignore: true
+      max_retries:
+        Ignore: true
+      max_run_time_in_seconds:
+        Ignore: true
+      parameters:
+        To: Parameters
+      resource_pool:
+        Ignore: true
+      role_arn:
+        To: RoleArn
+      script:
+        To: Script
+      source_logstore:
+        Ignore: true
+      sql_type:
+        Ignore: true
+      to_time:
+        To: ToTime
+      to_time_expr:
+        Ignore: true
+  scheduled_sql_name:
+    To: Name
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

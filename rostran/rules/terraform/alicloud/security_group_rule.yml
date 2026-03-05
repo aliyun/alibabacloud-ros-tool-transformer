@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::ECS::SecurityGroupIngress
 Properties:
   cidr_ip:
-    Ignore: true
+    To: SourceCidrIp
   description:
     To: Description
   ip_protocol:
@@ -25,9 +25,9 @@ Properties:
   security_group_id:
     To: SecurityGroupId
   source_group_owner_account:
-    Ignore: true
+    To: SourceGroupOwnerId
   source_security_group_id:
-    Ignore: true
+    To: SourceGroupId
   type:
     Ignore: true
 Attributes:
@@ -52,6 +52,8 @@ Attributes:
   priority:
     Ignore: true
   security_group_id:
+    Ignore: true
+  security_group_rule_id:
     Ignore: true
   source_group_owner_account:
     Ignore: true

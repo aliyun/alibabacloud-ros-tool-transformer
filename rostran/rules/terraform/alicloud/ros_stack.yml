@@ -12,6 +12,10 @@ Properties:
     Ignore: true
   notification_urls:
     Ignore: true
+  parameter_key:
+    Ignore: true
+  parameter_value:
+    Ignore: true
   parameters:
     To: Parameters
     Handler: ros_parameters

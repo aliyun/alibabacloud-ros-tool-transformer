@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_policy
+  To: ALIYUN::ResourceManager::ControlPolicy
+Properties:
+  default_version:
+    Ignore: true
+  description:
+    To: Description
+  policy_document:
+    To: PolicyDocument
+  policy_name:
+    To: ControlPolicyName
+Attributes:
+  id:
+    To: PolicyId
+  policy_type:
+    To: PolicyType

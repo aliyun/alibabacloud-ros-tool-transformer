@@ -12,6 +12,8 @@ Properties:
     To: RuleEnable
   rule_name:
     To: RuleName
+  sequence:
+    To: Sequence
   site_id:
     To: SiteId
   site_version:

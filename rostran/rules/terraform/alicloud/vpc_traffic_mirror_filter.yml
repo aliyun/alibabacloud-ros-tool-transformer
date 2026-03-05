@@ -4,6 +4,12 @@ ResourceType:
   From: alicloud_vpc_traffic_mirror_filter
   To: ALIYUN::VPC::TrafficMirrorFilter
 Properties:
+  action:
+    Ignore: true
+  destination_cidr_block:
+    Ignore: true
+  destination_port_range:
+    Ignore: true
   dry_run:
     Ignore: true
   egress_rules:
@@ -46,7 +52,15 @@ Properties:
         To: SourcePortRange
       traffic_mirror_filter_rule_status:
         Ignore: true
+  priority:
+    Ignore: true
+  protocol:
+    Ignore: true
   resource_group_id:
+    Ignore: true
+  source_cidr_block:
+    Ignore: true
+  source_port_range:
     Ignore: true
   status:
     Ignore: true

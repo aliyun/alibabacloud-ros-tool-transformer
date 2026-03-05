@@ -8,6 +8,8 @@ Properties:
     Ignore: true
   gateway_name:
     To: GatewayName
+  gateway_type:
+    To: GatewayType
   log_config:
     To: LogConfig
     Type: Map
@@ -48,6 +50,8 @@ Properties:
     Schema:
       select_option:
         To: SelectOption
+  zones:
+    Ignore: true
 Attributes:
   id:
     To: GatewayId
@@ -56,6 +60,8 @@ Attributes:
   status:
     Ignore: true
   vpc:
-    Ignore: true
+    To: Vpc
   vswitch:
-    Ignore: true
+    To: VSwitch
+  zones:
+    To: Zones

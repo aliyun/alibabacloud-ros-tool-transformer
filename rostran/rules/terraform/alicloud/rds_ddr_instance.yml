@@ -63,7 +63,12 @@ Properties:
   monitoring_period:
     Ignore: true
   parameters:
-    Ignore: true
+    To: DBParamGroupId
+    Schema:
+      name:
+        Ignore: true
+      value:
+        Ignore: true
   payment_type:
     To: PayType
   period:
@@ -85,7 +90,7 @@ Properties:
   security_group_ids:
     To: SecurityGroupId
   security_ip_mode:
-    Ignore: true
+    To: ConnectionMode
   security_ip_type:
     Ignore: true
   security_ips:
@@ -142,4 +147,6 @@ Attributes:
   ssl_status:
     Ignore: true
   zone_id_slave_a:
+    Ignore: true
+  zone_id_slave_b:
     Ignore: true

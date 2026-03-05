@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   compact_topic:
     To: CompactTopic
+  configs:
+    To: Config
   instance_id:
     To: InstanceId
   local_topic:
@@ -27,13 +29,19 @@ Attributes:
     Handler: colon_join
   compact_topic:
     Ignore: true
+  create_time:
+    Ignore: true
   instance_id:
     To: InstanceId
   local_topic:
     Ignore: true
   partition_num:
     Ignore: true
+  region_id:
+    Ignore: true
   remark:
+    Ignore: true
+  status:
     Ignore: true
   tags:
     Ignore: true

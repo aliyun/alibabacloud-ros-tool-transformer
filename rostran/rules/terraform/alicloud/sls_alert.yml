@@ -17,7 +17,53 @@ Properties:
   condition:
     Ignore: true
   configuration:
-    Ignore: true
+    To: Detail
+    Type: Map
+    Schema:
+      annotations:
+        Ignore: true
+      auto_annotation:
+        Ignore: true
+      condition_configuration:
+        Ignore: true
+      dashboard:
+        Ignore: true
+      group_configuration:
+        Ignore: true
+      join_configurations:
+        Ignore: true
+      labels:
+        Ignore: true
+      mute_until:
+        Ignore: true
+      no_data_fire:
+        Ignore: true
+      no_data_severity:
+        Ignore: true
+      policy_configuration:
+        Ignore: true
+      query_list:
+        Ignore: true
+      send_resolved:
+        Ignore: true
+      severity_configurations:
+        Ignore: true
+      sink_alerthub:
+        Ignore: true
+      sink_cms:
+        Ignore: true
+      sink_event_store:
+        Ignore: true
+      tags:
+        Ignore: true
+      template_configuration:
+        Ignore: true
+      threshold:
+        Ignore: true
+      type:
+        To: Type
+      version:
+        Ignore: true
   count_condition:
     Ignore: true
   create_time:
@@ -47,7 +93,7 @@ Properties:
   power_sql_mode:
     Ignore: true
   project:
-    Ignore: true
+    To: Project
   project_name:
     Ignore: true
   query:

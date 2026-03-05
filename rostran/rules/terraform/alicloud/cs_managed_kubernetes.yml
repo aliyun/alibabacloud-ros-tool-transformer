@@ -41,11 +41,12 @@ Properties:
   connections:
     Ignore: true
   control_plane_log_components:
-    Ignore: true
+    To: ControlPlaneLogComponents
+    Type: List
   control_plane_log_project:
-    Ignore: true
+    To: ControlPlaneLogProject
   control_plane_log_ttl:
-    Ignore: true
+    To: ControlPlaneLogTtl
   cpu_policy:
     To: CpuPolicy
   custom_san:
@@ -61,7 +62,13 @@ Properties:
   deletion_protection:
     To: DeletionProtection
   enable_rrsa:
-    Ignore: true
+    To: RrsaConfig
+    Type: Map
+    Schema:
+      channel:
+        Ignore: true
+      enabled:
+        To: Enabled
   enable_ssh:
     To: SshFlags
   encryption_provider_key:
@@ -74,12 +81,14 @@ Properties:
     Ignore: true
   install_cloud_monitor:
     To: CloudMonitorFlags
+  ip_stack:
+    To: IpStack
   is_enterprise_security_group:
     To: IsEnterpriseSecurityGroup
   key_name:
     To: KeyPair
   kms_encrypted_password:
-    Ignore: true
+    To: LoginPassword
   kms_encryption_context:
     Ignore: true
   kube_config:
@@ -89,7 +98,17 @@ Properties:
   log_config:
     Ignore: true
   maintenance_window:
-    Ignore: true
+    To: MaintenanceWindow
+    Type: Map
+    Schema:
+      duration:
+        To: Duration
+      enable:
+        To: Enable
+      maintenance_time:
+        To: MaintenanceTime
+      weekly_period:
+        To: WeeklyPeriod
   name:
     To: Name
   name_prefix:
@@ -97,7 +116,7 @@ Properties:
   nat_gateway_id:
     Ignore: true
   new_nat_gateway:
-    Ignore: true
+    To: SnatEntry
   node_cidr_mask:
     To: NodeCidrMask
   node_name_mode:
@@ -113,7 +132,7 @@ Properties:
   platform:
     To: Platform
   pod_cidr:
-    Ignore: true
+    To: ContainerCidr
   pod_vswitch_ids:
     To: PodVswitchIds
     Type: List
@@ -130,7 +149,8 @@ Properties:
   rrsa_metadata:
     Ignore: true
   runtime:
-    Ignore: true
+    To: Runtime
+    Type: Map
   security_group_id:
     To: SecurityGroupId
   service_account_issuer:
@@ -144,14 +164,18 @@ Properties:
   slb_internet:
     Ignore: true
   slb_internet_enabled:
-    Ignore: true
+    To: EndpointPublicAccess
   slb_intranet:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
   taints:
-    Ignore: true
+    To: Taint
+    Type: List
   timezone:
+    To: TimeZone
+  upgrade_policy:
     Ignore: true
   user_ca:
     Ignore: true
@@ -162,7 +186,8 @@ Properties:
   vpc_id:
     To: VpcId
   vswitch_ids:
-    Ignore: true
+    To: VSwitchIds
+    Type: List
   worker_auto_renew:
     Ignore: true
   worker_auto_renew_period:
@@ -223,6 +248,9 @@ Properties:
   worker_vswitch_ids:
     To: WorkerVSwitchIds
     Type: List
+  zone_ids:
+    To: ZoneIds
+    Type: List
 Attributes:
   id:
     To: ClusterId
@@ -249,6 +277,6 @@ Attributes:
   vpc_id:
     Ignore: true
   worker_nodes:
-    Ignore: true
+    To: Nodes
   worker_ram_role_name:
     To: WorkerRamRoleName

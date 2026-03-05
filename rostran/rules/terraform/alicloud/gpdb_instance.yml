@@ -43,7 +43,7 @@ Properties:
   maintain_start_time:
     Ignore: true
   master_cu:
-    Ignore: true
+    To: MasterCU
   master_node_num:
     To: MasterNodeNum
   parameters:
@@ -59,11 +59,11 @@ Properties:
   prod_type:
     To: ProdType
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   resource_management_mode:
     Ignore: true
   security_ip_list:
-    Ignore: true
+    To: SecurityIPList
   seg_disk_performance_level:
     To: SegDiskPerformanceLevel
   seg_node_num:

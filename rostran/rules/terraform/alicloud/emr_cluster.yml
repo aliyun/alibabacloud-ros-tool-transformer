@@ -4,6 +4,10 @@ ResourceType:
   From: alicloud_emr_cluster
   To: ALIYUN::EMR::Cluster
 Properties:
+  arg:
+    Ignore: true
+  auto_renew:
+    To: AutoRenew
   bootstrap_action:
     To: BootstrapAction
     Type: List
@@ -24,14 +28,54 @@ Properties:
     To: ChargeType
   cluster_type:
     To: ClusterType
+  comment:
+    Ignore: true
+  config_key:
+    Ignore: true
+  config_params:
+    Ignore: true
+  config_type:
+    Ignore: true
+  config_value:
+    Ignore: true
   configs:
+    To: Configurations
+  custom_config_params:
+    Ignore: true
+  db_password:
+    Ignore: true
+  db_url:
+    Ignore: true
+  db_user_name:
+    Ignore: true
+  decommission_timeout:
     Ignore: true
   deposit_type:
     To: DepositType
+  disk_capacity:
+    Ignore: true
+  disk_count:
+    Ignore: true
+  disk_type:
+    Ignore: true
   eas_enable:
     To: EasEnable
   emr_ver:
     To: EmrVer
+  enable_graceful_decommission:
+    Ignore: true
+  execution_fail_strategy:
+    Ignore: true
+  execution_moment:
+    Ignore: true
+  execution_target:
+    Ignore: true
+  file_name:
+    Ignore: true
+  gateway_cluster_id_list:
+    Ignore: true
+  group_id:
+    Ignore: true
   high_availability_enable:
     To: HighAvailabilityEnable
   host_group:
@@ -70,6 +114,16 @@ Properties:
         To: SysDiskCapacity
       sys_disk_type:
         To: SysDiskType
+  host_group_name:
+    Ignore: true
+  host_group_type:
+    Ignore: true
+  host_instance_id:
+    Ignore: true
+  instance_list:
+    Ignore: true
+  instance_type:
+    Ignore: true
   is_open_public_ip:
     To: IsOpenPublicIp
   key_pair_name:
@@ -77,25 +131,37 @@ Properties:
   master_pwd:
     To: MasterPwd
   meta_store_conf:
-    Ignore: true
+    To: MetaStoreConf
   meta_store_type:
     To: MetaStoreType
   modify_cluster_service_config:
     Ignore: true
   name:
     To: Name
+  node_count:
+    Ignore: true
   option_software_list:
     To: OptionSoftWareList
+  path:
+    Ignore: true
   period:
     To: Period
+  refresh_host_config:
+    Ignore: true
   related_cluster_id:
     To: RelatedClusterId
   resource_group_id:
     To: ResourceGroupId
   security_group_id:
     To: SecurityGroupId
+  service_name:
+    Ignore: true
   ssh_enable:
     To: SshEnable
+  sys_disk_capacity:
+    Ignore: true
+  sys_disk_type:
+    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list

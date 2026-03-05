@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC3::AsyncInvokeConfig
+  To: alicloud_fcv3_async_invoke_config
+Properties:
+  FunctionName:
+    To: function_name
+  MaxAsyncRetryAttempts:
+    Ignore: true
+  AsyncTask:
+    Ignore: true
+  DestinationConfig:
+    Ignore: true
+  MaxAsyncEventAgeInSeconds:
+    Ignore: true
+Attributes: {}

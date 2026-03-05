@@ -12,6 +12,8 @@ Properties:
     To: ParameterGroupDesc
   name:
     To: ParameterGroupName
+  parameter_group_name:
+    To: ParameterGroupName
   parameters:
     To: Parameters
     Type: List
@@ -23,6 +25,8 @@ Properties:
 Attributes:
   id:
     To: ParameterGroupId
+  create_time:
+    To: CreateTime
   db_type:
     To: DbType
   db_version:
