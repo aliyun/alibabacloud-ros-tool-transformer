@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_cs_kubernetes
-  To: ALIYUN::CS::KubernetesCluster
+  To: ALIYUN::CS::ManagedKubernetesCluster
 Properties:
   addons:
     To: Addons

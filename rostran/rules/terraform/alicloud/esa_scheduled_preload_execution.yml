@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_scheduled_preload_execution
+  To: ALIYUN::ESA::ScheduledPreloadJob
+Properties:
+  end_time:
+    Ignore: true
+  interval:
+    Ignore: true
+  scheduled_preload_job_id:
+    Ignore: true
+  slice_len:
+    Ignore: true
+  start_time:
+    Ignore: true
+Attributes:
+  id:
+    To: ScheduledPreloadJobId
+  scheduled_preload_execution_id:
+    To: ScheduledPreloadJobId
+  status:
+    Ignore: true

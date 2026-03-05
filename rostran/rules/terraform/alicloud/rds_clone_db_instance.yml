@@ -65,11 +65,11 @@ Properties:
   parameters:
     Ignore: true
   password:
-    To: MasterUserPassword
+    Ignore: true
   payment_type:
     To: PayType
   period:
-    To: PeriodType
+    To: Period
   pg_hba_conf:
     Ignore: true
   port:
@@ -116,7 +116,7 @@ Properties:
   tde_status:
     Ignore: true
   used_time:
-    To: Period
+    Ignore: true
   vpc_id:
     To: VpcId
   vswitch_id:
@@ -128,6 +128,6 @@ Properties:
     Type: List
 Attributes:
   id:
-    Ignore: true
+    To: DBInstanceId
   connection_string:
     To: PublicConnectionString

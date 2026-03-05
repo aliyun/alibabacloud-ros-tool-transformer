@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DDoS::Policy
+  To: alicloud_ddos_bgp_policy
+Properties:
+  WhiteIpList:
+    Ignore: true
+  Content:
+    Ignore: true
+  PolicyName:
+    Ignore: true
+  BlackIpList:
+    Ignore: true
+  ActionType:
+    Ignore: true
+  Type:
+    Ignore: true
+Attributes:
+  PolicyName:
+    Ignore: true
+  Content:
+    Ignore: true
+  PolicyId:
+    Ignore: true
+  Type:
+    Ignore: true

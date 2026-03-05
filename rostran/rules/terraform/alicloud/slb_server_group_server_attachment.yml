@@ -5,29 +5,17 @@ ResourceType:
   To: ALIYUN::SLB::BackendServerToVServerGroupAddition
 Properties:
   description:
-    To: BackendServers.Description
+    Ignore: true
   port:
-    To: BackendServers.Port
+    Ignore: true
   server_group_id:
     To: VServerGroupId
   server_id:
-    To: BackendServers.ServerId
+    Ignore: true
   type:
-    To: BackendServers.Type
+    Ignore: true
   weight:
-    To: BackendServers.Weight
+    Ignore: true
 Attributes:
   id:
-    Ignore: true
-  description:
-    Ignore: true
-  port:
-    Ignore: true
-  server_group_id:
-    To: VServerGroupId
-  server_id:
-    Ignore: true
-  type:
-    Ignore: true
-  weight:
     Ignore: true

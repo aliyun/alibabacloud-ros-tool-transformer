@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_https_basic_configuration
+  To: ALIYUN::ESA::HttpsBasicConfiguration
+Properties:
+  ciphersuite:
+    To: Ciphersuite
+  ciphersuite_group:
+    To: CiphersuiteGroup
+  http2:
+    To: Http2
+  http3:
+    To: Http3
+  https:
+    To: Https
+  ocsp_stapling:
+    To: OcspStapling
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  sequence:
+    To: Sequence
+  site_id:
+    To: SiteId
+  tls10:
+    To: Tls10
+  tls11:
+    To: Tls11
+  tls12:
+    To: Tls12
+  tls13:
+    To: Tls13
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

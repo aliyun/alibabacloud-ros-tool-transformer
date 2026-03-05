@@ -57,10 +57,15 @@ Properties:
   jdk:
     To: Jdk
   kafka_configs:
-    Ignore: true
+    To: KafkaConfigs
+    Schema:
+      kafka_configs:
+        Ignore: true
   liveness:
     To: Liveness
   liveness_v2:
+    Ignore: true
+  log_type:
     Ignore: true
   memory:
     To: Memory
@@ -77,7 +82,7 @@ Properties:
   namespace_id:
     To: NamespaceId
   nas_configs:
-    Ignore: true
+    To: NasConfigs
   nas_id:
     To: NasId
   oss_ak_id:
@@ -85,7 +90,7 @@ Properties:
   oss_ak_secret:
     To: OssAkSecret
   oss_mount_descs:
-    Ignore: true
+    To: OssMountDescs
   oss_mount_descs_v2:
     Ignore: true
   package_type:
@@ -102,6 +107,8 @@ Properties:
     To: PhpConfig
   php_config_location:
     To: PhpConfigLocation
+  port:
+    Ignore: true
   post_start:
     To: PostStart
   post_start_v2:
@@ -113,10 +120,17 @@ Properties:
   programming_language:
     To: ProgrammingLanguage
   pvtz_discovery_svc:
-    Ignore: true
+    To: PvtzDiscoverySvc
+    Schema:
+      port_protocols:
+        Ignore: true
+      service_name:
+        Ignore: true
   readiness:
     To: Readiness
   readiness_v2:
+    Ignore: true
+  release_type:
     Ignore: true
   replicas:
     To: Replicas
@@ -128,7 +142,7 @@ Properties:
     Ignore: true
   tags:
     To: Tags
-    Handler: tags_dict_to_list
+    Type: List
   termination_grace_period_seconds:
     To: TerminationGracePeriodSeconds
   timezone:
@@ -154,133 +168,3 @@ Properties:
 Attributes:
   id:
     To: AppId
-  acr_assume_role_arn:
-    Ignore: true
-  acr_instance_id:
-    Ignore: true
-  app_description:
-    Ignore: true
-  app_name:
-    Ignore: true
-  batch_wait_time:
-    Ignore: true
-  command:
-    Ignore: true
-  command_args:
-    Ignore: true
-  command_args_v2:
-    Ignore: true
-  config_map_mount_desc:
-    Ignore: true
-  config_map_mount_desc_v2:
-    Ignore: true
-  cpu:
-    Ignore: true
-  custom_host_alias:
-    Ignore: true
-  custom_host_alias_v2:
-    Ignore: true
-  edas_container_version:
-    Ignore: true
-  enable_ahas:
-    Ignore: true
-  enable_grey_tag_route:
-    Ignore: true
-  envs:
-    Ignore: true
-  image_pull_secrets:
-    Ignore: true
-  image_url:
-    Ignore: true
-  jar_start_args:
-    Ignore: true
-  jar_start_options:
-    Ignore: true
-  jdk:
-    Ignore: true
-  kafka_configs:
-    Ignore: true
-  liveness:
-    Ignore: true
-  liveness_v2:
-    Ignore: true
-  memory:
-    Ignore: true
-  micro_registration:
-    Ignore: true
-  min_ready_instance_ratio:
-    Ignore: true
-  min_ready_instances:
-    Ignore: true
-  namespace_id:
-    Ignore: true
-  nas_configs:
-    Ignore: true
-  oss_ak_id:
-    Ignore: true
-  oss_ak_secret:
-    Ignore: true
-  oss_mount_descs:
-    Ignore: true
-  oss_mount_descs_v2:
-    Ignore: true
-  package_type:
-    Ignore: true
-  package_url:
-    Ignore: true
-  package_version:
-    Ignore: true
-  php:
-    Ignore: true
-  php_arms_config_location:
-    Ignore: true
-  php_config:
-    Ignore: true
-  php_config_location:
-    Ignore: true
-  post_start:
-    Ignore: true
-  post_start_v2:
-    Ignore: true
-  pre_stop:
-    Ignore: true
-  pre_stop_v2:
-    Ignore: true
-  programming_language:
-    Ignore: true
-  pvtz_discovery_svc:
-    Ignore: true
-  readiness:
-    Ignore: true
-  readiness_v2:
-    Ignore: true
-  replicas:
-    Ignore: true
-  security_group_id:
-    Ignore: true
-  sls_configs:
-    Ignore: true
-  status:
-    Ignore: true
-  tags:
-    Ignore: true
-  termination_grace_period_seconds:
-    Ignore: true
-  timezone:
-    Ignore: true
-  tomcat_config:
-    Ignore: true
-  tomcat_config_v2:
-    Ignore: true
-  update_strategy:
-    Ignore: true
-  update_strategy_v2:
-    Ignore: true
-  vpc_id:
-    Ignore: true
-  vswitch_id:
-    Ignore: true
-  war_start_options:
-    Ignore: true
-  web_container:
-    Ignore: true

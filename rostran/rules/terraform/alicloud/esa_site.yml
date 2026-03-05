@@ -1,0 +1,66 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_site
+  To: ALIYUN::ESA::Site
+Properties:
+  access_type:
+    To: AccessType
+  add_client_geolocation_header:
+    Ignore: true
+  add_real_client_ip_header:
+    Ignore: true
+  ai_mode:
+    Ignore: true
+  ai_template:
+    Ignore: true
+  cache_architecture_mode:
+    Ignore: true
+  cache_reserve_enable:
+    Ignore: true
+  cache_reserve_instance_id:
+    Ignore: true
+  case_insensitive:
+    Ignore: true
+  coverage:
+    To: Coverage
+  cross_border_optimization:
+    Ignore: true
+  development_mode:
+    Ignore: true
+  flatten_mode:
+    Ignore: true
+  global_mode:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  ipv6_enable:
+    Ignore: true
+  ipv6_region:
+    Ignore: true
+  paused:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  seo_bypass:
+    Ignore: true
+  site_name:
+    To: SiteName
+  site_name_exclusive:
+    Ignore: true
+  site_version:
+    Ignore: true
+  tag_name:
+    Ignore: true
+  tags:
+    To: Tags
+    Type: List
+  version_management:
+    Ignore: true
+Attributes:
+  id:
+    To: SiteId
+  create_time:
+    To: CreateTime
+  status:
+    Ignore: true

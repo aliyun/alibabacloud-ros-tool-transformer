@@ -19,7 +19,7 @@ Properties:
   remark:
     To: Remark
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   resource_group_name:
     To: Name
   specification:

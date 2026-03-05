@@ -23,6 +23,8 @@ Attributes:
     To: CreateTime
   private_default_scope_id:
     To: PrivateDefaultScopeId
+  public_default_scope_id:
+    To: PublicDefaultScopeId
   region_id:
     Ignore: true
   status:

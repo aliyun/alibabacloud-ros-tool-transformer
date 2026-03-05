@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_nas_fileset
   To: ALIYUN::NAS::Fileset
 Properties:
+  deletion_protection:
+    Ignore: true
   description:
     To: Description
   dry_run:
@@ -19,6 +21,8 @@ Properties:
 Attributes:
   id:
     To: FileSystemId
+  create_time:
+    Ignore: true
   description:
     Ignore: true
   file_system_id:
@@ -26,6 +30,6 @@ Attributes:
   file_system_path:
     To: FileSystemPath
   fileset_id:
-    Ignore: true
+    To: FsetId
   status:
     Ignore: true

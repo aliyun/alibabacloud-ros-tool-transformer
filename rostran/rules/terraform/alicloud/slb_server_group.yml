@@ -17,22 +17,14 @@ Properties:
       port:
         To: Port
       server_ids:
-        To: ServerId
-        Handler: select_first
-        Warning: Only first server_id can be used
-      type:
         Ignore: true
+      type:
+        To: Type
       weight:
         To: Weight
   tags:
     To: Tags
-    Handler: tags_dict_to_list
+    Type: List
 Attributes:
   id:
     To: VServerGroupId
-  load_balancer_id:
-    To: LoadBalancerId
-  name:
-    Ignore: true
-  tags:
-    Ignore: true

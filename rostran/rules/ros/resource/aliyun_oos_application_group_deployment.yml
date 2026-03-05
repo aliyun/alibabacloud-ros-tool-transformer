@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OOS::ApplicationGroupDeployment
+  To: alicloud_oos_application_group
+Properties:
+  Name:
+    To: application_group_name
+  ApplicationName:
+    To: application_name
+  DeployParameters:
+    Ignore: true
+  RevisionId:
+    Ignore: true
+Attributes:
+  ExecutionId:
+    Ignore: true

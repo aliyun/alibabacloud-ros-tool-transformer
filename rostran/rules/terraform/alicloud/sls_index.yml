@@ -1,0 +1,38 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_index
+  To: ALIYUN::SLS::Index
+Properties:
+  keys:
+    To: KeyIndices
+    Type: List
+  line:
+    To: FullTextIndex
+    Type: Map
+    Schema:
+      case_sensitive:
+        To: CaseSensitive
+      chn:
+        Ignore: true
+      exclude_keys:
+        Ignore: true
+      include_keys:
+        Ignore: true
+      token:
+        Ignore: true
+  log_reduce:
+    To: LogReduce
+  log_reduce_black_list:
+    Ignore: true
+  log_reduce_white_list:
+    Ignore: true
+  logstore_name:
+    To: LogstoreName
+  max_text_len:
+    Ignore: true
+  project_name:
+    To: ProjectName
+Attributes:
+  id:
+    Ignore: true

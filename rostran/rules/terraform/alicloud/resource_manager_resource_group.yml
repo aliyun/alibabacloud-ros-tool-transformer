@@ -4,22 +4,15 @@ ResourceType:
   From: alicloud_resource_manager_resource_group
   To: ALIYUN::ResourceManager::ResourceGroup
 Properties:
-  account_id:
-    Ignore: true
-  create_date:
-    Ignore: true
   display_name:
     To: DisplayName
   name:
     To: Name
-  region_statuses:
-    Ignore: true
   resource_group_name:
-    To: Name
-  status:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: Id
@@ -27,15 +20,7 @@ Attributes:
     To: AccountId
   create_date:
     Ignore: true
-  display_name:
-    To: DisplayName
-  name:
-    To: Name
   region_statuses:
     To: RegionStatuses
-  resource_group_name:
-    To: Name
   status:
-    Ignore: true
-  tags:
     Ignore: true

@@ -8,10 +8,28 @@ Properties:
     Ignore: true
   client_node_amount:
     Ignore: true
+  client_node_configuration:
+    Ignore: true
   client_node_spec:
     Ignore: true
   data_node_amount:
     Ignore: true
+  data_node_configuration:
+    To: DataNode
+    Type: Map
+    Schema:
+      amount:
+        To: Amount
+      disk:
+        Ignore: true
+      disk_encryption:
+        To: DiskEncryption
+      disk_type:
+        To: DiskType
+      performance_level:
+        To: PerformanceLevel
+      spec:
+        To: Spec
   data_node_disk_encrypted:
     Ignore: true
   data_node_disk_performance_level:
@@ -21,23 +39,39 @@ Properties:
   data_node_disk_type:
     Ignore: true
   data_node_spec:
-    Ignore: true
+    To: DataNode
+    Type: Map
   description:
     To: Description
   domain:
     Ignore: true
   enable_kibana_private_network:
-    Ignore: true
+    To: EnableKibanaPrivate
   enable_kibana_public_network:
-    Ignore: true
+    To: EnableKibanaPublic
   enable_public:
     To: EnablePublic
+  force:
+    Ignore: true
+  instance_category:
+    To: InstanceCategory
   instance_charge_type:
     To: InstanceChargeType
+  kibana_configuration:
+    To: KibanaNode
+    Type: Map
+    Schema:
+      amount:
+        Ignore: true
+      disk:
+        Ignore: true
+      spec:
+        To: Spec
   kibana_domain:
     Ignore: true
   kibana_node_spec:
-    Ignore: true
+    To: KibanaNode
+    Type: Map
   kibana_port:
     Ignore: true
   kibana_private_security_group_id:
@@ -51,12 +85,29 @@ Properties:
     Ignore: true
   kms_encryption_context:
     Ignore: true
+  master_configuration:
+    To: MasterNode
+    Type: Map
+    Schema:
+      amount:
+        To: Amount
+      disk:
+        Ignore: true
+      disk_type:
+        To: DiskType
+      spec:
+        To: Spec
   master_node_disk_type:
     Ignore: true
   master_node_spec:
+    To: MasterNode
+    Type: Map
+  order_action_type:
     Ignore: true
   password:
     To: Password
+  payment_type:
+    Ignore: true
   period:
     To: Period
   port:
@@ -76,21 +127,26 @@ Properties:
   renew_status:
     Ignore: true
   renewal_duration_unit:
-    Ignore: true
+    To: PeriodUnit
   resource_group_id:
     To: ResourceGroupId
   setting_config:
-    Ignore: true
+    To: YMLConfig
+    Type: Map
   status:
     Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
+  update_strategy:
+    Ignore: true
   version:
     To: Version
   vswitch_id:
     To: VSwitchId
   warm_node_amount:
+    Ignore: true
+  warm_node_configuration:
     Ignore: true
   warm_node_disk_encrypted:
     Ignore: true
@@ -105,11 +161,15 @@ Properties:
 Attributes:
   id:
     To: InstanceId
+  arch_type:
+    Ignore: true
   auto_renew_duration:
     Ignore: true
   client_node_amount:
     Ignore: true
   client_node_spec:
+    Ignore: true
+  create_time:
     Ignore: true
   data_node_amount:
     Ignore: true
@@ -141,6 +201,8 @@ Attributes:
     Ignore: true
   kibana_port:
     To: KibanaPort
+  kibana_private_domain:
+    Ignore: true
   kibana_private_security_group_id:
     Ignore: true
   kibana_private_whitelist:

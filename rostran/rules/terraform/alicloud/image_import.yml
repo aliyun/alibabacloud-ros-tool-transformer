@@ -11,7 +11,19 @@ Properties:
   description:
     To: Description
   disk_device_mapping:
-    Ignore: true
+    To: DiskDeviceMapping
+    Type: List
+    Schema:
+      device:
+        To: Device
+      disk_image_size:
+        Ignore: true
+      format:
+        Ignore: true
+      oss_bucket:
+        Ignore: true
+      oss_object:
+        Ignore: true
   image_name:
     To: ImageName
   license_type:
@@ -22,4 +34,4 @@ Properties:
     To: Platform
 Attributes:
   id:
-    Ignore: true
+    To: ImageId

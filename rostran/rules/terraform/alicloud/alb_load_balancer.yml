@@ -31,7 +31,7 @@ Properties:
   dry_run:
     Ignore: true
   ipv6_address_type:
-    Ignore: true
+    To: Ipv6AddressType
   load_balancer_billing_config:
     To: LoadBalancerBillingConfig
     Type: Map

@@ -10,8 +10,6 @@ Properties:
     Ignore: true
   editing_project_name:
     To: EditingProjectName
-  status:
-    Ignore: true
   timeline:
     To: Timeline
   title:
@@ -19,13 +17,5 @@ Properties:
 Attributes:
   id:
     To: EditingProjectId
-  cover_url:
-    Ignore: true
-  editing_project_name:
-    To: EditingProjectName
   status:
     Ignore: true
-  timeline:
-    To: Timeline
-  title:
-    To: Title

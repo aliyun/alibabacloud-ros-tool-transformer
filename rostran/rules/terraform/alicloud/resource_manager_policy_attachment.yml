@@ -16,20 +16,4 @@ Properties:
     To: ResourceGroupId
 Attributes:
   id:
-    To:
-    - PolicyName
-    - PolicyType
-    - PrincipalName
-    - PrincipalType
-    - ResourceGroupId
-    Handler: colon_join
-  policy_name:
-    To: PolicyName
-  policy_type:
-    To: PolicyType
-  principal_name:
-    To: PrincipalName
-  principal_type:
-    To: PrincipalType
-  resource_group_id:
-    To: ResourceGroupId
+    Ignore: true

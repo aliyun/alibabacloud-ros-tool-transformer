@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_config_aggregate_config_rule
-  To: ALIYUN::Config::AggregateCompliancePack
+  To: ALIYUN::Config::Rule
 Properties:
   aggregate_config_rule_name:
     Ignore: true

@@ -14,17 +14,14 @@ Properties:
     To: DomainName
   domain_name_servers:
     To: DomainNameServers
+    Type: List
   dry_run:
     Ignore: true
   ipv6_lease_time:
     Ignore: true
   lease_time:
     Ignore: true
-  owner_id:
-    Ignore: true
   resource_group_id:
-    Ignore: true
-  status:
     Ignore: true
   tags:
     Ignore: true
@@ -33,23 +30,7 @@ Attributes:
     To: DhcpOptionsSetId
   associate_vpcs:
     Ignore: true
-  dhcp_options_set_description:
-    Ignore: true
-  dhcp_options_set_name:
-    Ignore: true
-  domain_name:
-    Ignore: true
-  domain_name_servers:
-    Ignore: true
-  ipv6_lease_time:
-    Ignore: true
-  lease_time:
-    Ignore: true
   owner_id:
     Ignore: true
-  resource_group_id:
-    Ignore: true
   status:
-    Ignore: true
-  tags:
     Ignore: true

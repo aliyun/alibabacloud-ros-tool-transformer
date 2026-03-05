@@ -12,14 +12,12 @@ Properties:
     To: AcceptingVpcId
   bandwidth:
     Ignore: true
-  create_time:
-    Ignore: true
   description:
     To: Description
   dry_run:
     Ignore: true
   force_delete:
-    Ignore: true
+    To: DeletionForce
   link_type:
     Ignore: true
   peer_connection_name:
@@ -35,27 +33,7 @@ Properties:
 Attributes:
   id:
     To: InstanceId
-  accepting_ali_uid:
-    Ignore: true
-  accepting_region_id:
-    Ignore: true
-  accepting_vpc_id:
-    Ignore: true
-  bandwidth:
-    Ignore: true
   create_time:
     Ignore: true
-  description:
-    Ignore: true
-  peer_connection_name:
-    Ignore: true
   region_id:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  status:
-    Ignore: true
-  tags:
-    Ignore: true
-  vpc_id:
     Ignore: true

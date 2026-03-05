@@ -1,0 +1,65 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::Certificate
+  To: alicloud_esa_certificate
+Properties:
+  CasId:
+    To: cas_id
+  CertId:
+    To: cert_id
+  CertName:
+    To: cert_name
+  Certificate:
+    To: certificate
+  CreatedType:
+    To: created_type
+  Domains:
+    To: domains
+  PrivateKey:
+    To: private_key
+  SiteId:
+    To: site_id
+Attributes:
+  CreateTime:
+    To: create_time
+  Certificate:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  CasId:
+    Ignore: true
+  IssuerCN:
+    Ignore: true
+  PubAlg:
+    Ignore: true
+  NotBefore:
+    Ignore: true
+  CommonName:
+    Ignore: true
+  DCV:
+    Ignore: true
+  Domains:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  SerialNumber:
+    Ignore: true
+  NotAfter:
+    Ignore: true
+  SiteName:
+    Ignore: true
+  ApplyMessage:
+    Ignore: true
+  CertName:
+    Ignore: true
+  CertId:
+    Ignore: true
+  Issuer:
+    Ignore: true
+  SigAlg:
+    Ignore: true
+  ApplyCode:
+    Ignore: true
+  FingerprintSha256:
+    Ignore: true

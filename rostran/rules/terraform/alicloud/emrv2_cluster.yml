@@ -27,7 +27,8 @@ Properties:
       node_group_name:
         To: NodeGroupName
   applications:
-    Ignore: true
+    To: Applications
+    Type: List
   auto_pay_order:
     Ignore: true
   auto_renew:
@@ -105,6 +106,28 @@ Properties:
   node_affinity:
     Ignore: true
   node_attributes:
+    To: NodeAttributes
+    Type: Map
+    Schema:
+      data_disk_encrypted:
+        Ignore: true
+      data_disk_kms_key_id:
+        Ignore: true
+      key_pair_name:
+        To: KeyPairName
+      ram_role:
+        To: RamRole
+      security_group_id:
+        To: SecurityGroupId
+      system_disk_encrypted:
+        Ignore: true
+      system_disk_kms_key_id:
+        Ignore: true
+      vpc_id:
+        To: VpcId
+      zone_id:
+        To: ZoneId
+  node_group_id:
     Ignore: true
   node_group_ids:
     Ignore: true
@@ -223,7 +246,21 @@ Properties:
   start_time:
     Ignore: true
   subscription_config:
-    Ignore: true
+    To: SubscriptionConfig
+    Type: Map
+    Schema:
+      auto_pay_order:
+        Ignore: true
+      auto_renew:
+        To: AutoRenew
+      auto_renew_duration:
+        To: AutoRenewDuration
+      auto_renew_duration_unit:
+        To: AutoRenewDurationUnit
+      payment_duration:
+        To: PaymentDuration
+      payment_duration_unit:
+        To: PaymentDurationUnit
   tags:
     To: Tags
     Handler: tags_dict_to_list

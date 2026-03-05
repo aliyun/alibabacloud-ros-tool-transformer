@@ -7,7 +7,7 @@ Properties:
   config:
     To: TriggerConfig
   config_mns:
-    Ignore: true
+    To: TriggerConfig
   function:
     To: FunctionName
   last_modified:

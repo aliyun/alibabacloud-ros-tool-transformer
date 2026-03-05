@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_dts_synchronization_job
-  To: ALIYUN::DTS::SynchronizationJob
+  To: ALIYUN::DTS::SynchronizationJob2
 Properties:
   checkpoint:
     Ignore: true

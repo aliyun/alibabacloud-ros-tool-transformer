@@ -60,6 +60,8 @@ Attributes:
     Ignore: true
   ratio:
     Ignore: true
+  region_id:
+    Ignore: true
   resource_group_id:
     Ignore: true
   security_protection_types:

@@ -49,7 +49,7 @@ Attributes:
   db_endpoint_description:
     Ignore: true
   db_endpoint_id:
-    Ignore: true
+    To: DBEndpointId
   endpoint_type:
     Ignore: true
   nodes:

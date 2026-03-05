@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::IpamPool
+  To: alicloud_vpc_ipam_ipam_pool
+Properties:
+  AllocationDefaultCidrMask:
+    To: allocation_default_cidr_mask
+  AllocationMaxCidrMask:
+    To: allocation_max_cidr_mask
+  AllocationMinCidrMask:
+    To: allocation_min_cidr_mask
+  AutoImport:
+    To: auto_import
+  IpVersion:
+    To: ip_version
+  IpamPoolDescription:
+    To: ipam_pool_description
+  IpamPoolName:
+    To: ipam_pool_name
+  IpamScopeId:
+    To: ipam_scope_id
+  Ipv6Isp:
+    To: ipv6_isp
+  PoolRegionId:
+    To: pool_region_id
+  ResourceGroupId:
+    To: resource_group_id
+  SourceIpamPoolId:
+    To: source_ipam_pool_id
+  Tags:
+    To: tags
+Attributes:
+  IpamPoolId:
+    To: id

@@ -1,0 +1,43 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::ClientCaCertificate
+  To: alicloud_esa_client_ca_certificate
+Properties:
+  Certificate:
+    To: certificate
+  ClientCaCertName:
+    To: client_ca_cert_name
+  SiteId:
+    To: site_id
+Attributes:
+  ClientCaCertId:
+    To: client_ca_cert_id
+  CreateTime:
+    To: create_time
+  Certificate:
+    Ignore: true
+  SAN:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  SignatureAlgorithm:
+    Ignore: true
+  PubkeyAlgorithm:
+    Ignore: true
+  ClientCaCertName:
+    Ignore: true
+  NotBefore:
+    Ignore: true
+  Issuer:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  NotAfter:
+    Ignore: true
+  SiteName:
+    Ignore: true
+  CommonName:
+    Ignore: true
+  Type:
+    Ignore: true

@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::Config::AggregateCompliancePack
 Properties:
   aggregate_compliance_pack_name:
-    Ignore: true
+    To: CompliancePackName
   aggregator_compliance_pack_id:
     Ignore: true
   aggregator_id:
@@ -44,7 +44,7 @@ Attributes:
   aggregate_compliance_pack_name:
     Ignore: true
   aggregator_compliance_pack_id:
-    Ignore: true
+    To: CompliancePackId
   aggregator_id:
     Ignore: true
   compliance_pack_template_id:

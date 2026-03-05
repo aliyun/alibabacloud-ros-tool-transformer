@@ -15,7 +15,7 @@ Properties:
   project_name:
     Ignore: true
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   status:
     Ignore: true
   tags:

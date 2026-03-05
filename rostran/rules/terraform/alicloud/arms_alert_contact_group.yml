@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::ARMS::AlertContactGroup
 Properties:
   alert_contact_group_name:
-    Ignore: true
+    To: ContactGroupName
   contact_ids:
     To: ContactIds
     Type: List

@@ -8,8 +8,6 @@ Properties:
     To: CidrBlock
   classic_link_enabled:
     Ignore: true
-  create_time:
-    Ignore: true
   description:
     To: Description
   dns_hostname_status:
@@ -26,19 +24,15 @@ Properties:
     Ignore: true
   ipv6_cidr_block:
     To: Ipv6CidrBlock
-  ipv6_cidr_blocks:
-    Ignore: true
   ipv6_isp:
     To: Ipv6Isp
   is_default:
     Ignore: true
   name:
-    To: VpcName
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   route_table_id:
-    Ignore: true
-  router_id:
     Ignore: true
   router_table_id:
     Ignore: true
@@ -46,8 +40,6 @@ Properties:
     To: SecondaryCidrBlocks
     Type: List
   secondary_cidr_mask:
-    Ignore: true
-  status:
     Ignore: true
   system_route_table_description:
     Ignore: true
@@ -57,51 +49,21 @@ Properties:
     Ignore: true
   tags:
     To: Tags
-    Handler: tags_dict_to_list
+    Type: List
   user_cidrs:
-    Ignore: true
+    To: UserCidr
   vpc_name:
     To: VpcName
 Attributes:
   id:
     To: VpcId
-  cidr_block:
-    Ignore: true
-  classic_link_enabled:
-    Ignore: true
   create_time:
-    Ignore: true
-  description:
-    Ignore: true
-  enable_ipv6:
-    Ignore: true
-  ipv6_cidr_block:
     Ignore: true
   ipv6_cidr_blocks:
     Ignore: true
-  name:
-    Ignore: true
   region_id:
     Ignore: true
-  resource_group_id:
-    Ignore: true
-  route_table_id:
-    To: RouteTableId
   router_id:
-    Ignore: true
-  router_table_id:
-    Ignore: true
-  secondary_cidr_blocks:
-    Ignore: true
+    To: VRouterId
   status:
     Ignore: true
-  system_route_table_description:
-    Ignore: true
-  system_route_table_name:
-    Ignore: true
-  tags:
-    Ignore: true
-  user_cidrs:
-    Ignore: true
-  vpc_name:
-    To: VpcName

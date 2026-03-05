@@ -1,0 +1,63 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_virtual_physical_connection
+  To: ALIYUN::VPC::VirtualBorderRouter
+Properties:
+  description:
+    To: Description
+  dry_run:
+    Ignore: true
+  expect_spec:
+    Ignore: true
+  order_mode:
+    Ignore: true
+  parent_physical_connection_id:
+    To: PhysicalConnectionId
+  resource_group_id:
+    Ignore: true
+  spec:
+    Ignore: true
+  virtual_physical_connection_name:
+    To: Name
+  vlan_id:
+    To: VlanId
+  vpconn_ali_uid:
+    Ignore: true
+Attributes:
+  id:
+    To: VbrId
+  access_point_id:
+    Ignore: true
+  ad_location:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  business_status:
+    Ignore: true
+  circuit_code:
+    Ignore: true
+  create_time:
+    Ignore: true
+  enabled_time:
+    Ignore: true
+  end_time:
+    Ignore: true
+  line_operator:
+    Ignore: true
+  loa_status:
+    Ignore: true
+  parent_physical_connection_ali_uid:
+    Ignore: true
+  peer_location:
+    Ignore: true
+  port_number:
+    Ignore: true
+  port_type:
+    Ignore: true
+  redundant_physical_connection_id:
+    Ignore: true
+  status:
+    Ignore: true
+  virtual_physical_connection_status:
+    Ignore: true

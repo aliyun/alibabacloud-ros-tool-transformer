@@ -1,0 +1,48 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_origin_pool
+  To: ALIYUN::ESA::OriginPool
+Properties:
+  access_key:
+    Ignore: true
+  auth_type:
+    Ignore: true
+  enabled:
+    To: Enabled
+  origin_pool_name:
+    To: OriginPoolName
+  origins:
+    To: Origins
+    Type: List
+    Schema:
+      address:
+        To: Address
+      auth_conf:
+        To: AuthConf
+        Type: Map
+      enabled:
+        To: Enabled
+      header:
+        To: Header
+      name:
+        To: Name
+      type:
+        To: Type
+      weight:
+        To: Weight
+  region:
+    Ignore: true
+  secret_key:
+    Ignore: true
+  site_id:
+    To: SiteId
+  version:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  origin_pool_id:
+    To: OriginPoolId
+  origins:
+    To: Origins

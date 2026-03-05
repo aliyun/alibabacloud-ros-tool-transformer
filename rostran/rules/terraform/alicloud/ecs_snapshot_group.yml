@@ -7,9 +7,11 @@ Properties:
   description:
     To: Description
   disk_id:
-    Ignore: true
+    To: DiskIds
+    Type: List
   exclude_disk_id:
-    Ignore: true
+    To: ExcludeDiskIds
+    Type: List
   instance_id:
     To: InstanceId
   instant_access:
@@ -19,7 +21,7 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   snapshot_group_name:
-    Ignore: true
+    To: Name
   status:
     Ignore: true
   tags:

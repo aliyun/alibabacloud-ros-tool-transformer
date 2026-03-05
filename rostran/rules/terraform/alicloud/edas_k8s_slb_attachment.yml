@@ -11,11 +11,19 @@ Properties:
   loadbalancer_protocol:
     Ignore: true
   service_port:
-    Ignore: true
+    To: ServicePortInfos
+    Type: List
+    Schema:
+      port:
+        To: Port
+      protocol:
+        Ignore: true
+      target_port:
+        To: TargetPort
   slb_configs:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: AppId
   app_id:
     To: AppId

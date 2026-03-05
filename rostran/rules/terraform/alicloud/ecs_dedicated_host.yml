@@ -15,9 +15,9 @@ Properties:
   auto_renew_period:
     To: AutoRenewPeriod
   cpu_over_commit_ratio:
-    Ignore: true
+    To: CpuOverCommitRatio
   dedicated_host_cluster_id:
-    Ignore: true
+    To: DedicatedHostClusterId
   dedicated_host_name:
     To: DedicatedHostName
   dedicated_host_type:
@@ -29,13 +29,13 @@ Properties:
   dry_run:
     Ignore: true
   expired_time:
-    Ignore: true
+    To: Period
   min_quantity:
-    Ignore: true
+    To: MinQuantity
   network_attributes:
     Ignore: true
   payment_type:
-    Ignore: true
+    To: ChargeType
   resource_group_id:
     To: ResourceGroupId
   sale_cycle:

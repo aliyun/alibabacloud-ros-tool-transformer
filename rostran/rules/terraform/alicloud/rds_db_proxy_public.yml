@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_db_proxy_public
+  To: ALIYUN::RDS::Connection
+Properties:
+  connection_string_prefix:
+    To: ConnectionStringPrefix
+  db_instance_id:
+    To: DBInstanceId
+  db_proxy_connection_string_net_type:
+    Ignore: true
+  db_proxy_endpoint_id:
+    Ignore: true
+  db_proxy_new_connect_string_port:
+    To: Port
+Attributes:
+  id:
+    Ignore: true

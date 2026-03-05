@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_cen_bandwidth_package
   To: ALIYUN::CEN::CenBandwidthPackage
 Properties:
+  auto_renew:
+    To: AutoRenew
   bandwidth:
     To: Bandwidth
   cen_bandwidth_package_name:

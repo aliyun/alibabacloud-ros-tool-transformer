@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::Page
+  To: alicloud_esa_page
+Properties:
+  Content:
+    To: content
+  ContentType:
+    To: content_type
+  Description:
+    To: description
+  PageName:
+    To: page_name
+Attributes:
+  PageId:
+    To: id
+  Kind:
+    Ignore: true
+  Description:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  Content:
+    Ignore: true
+  ContentType:
+    Ignore: true
+  PageName:
+    Ignore: true

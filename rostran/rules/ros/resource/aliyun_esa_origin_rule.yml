@@ -1,0 +1,97 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::OriginRule
+  To: alicloud_esa_origin_rule
+Properties:
+  DnsRecord:
+    To: dns_record
+  Follow302Enable:
+    To: follow302_enable
+  Follow302MaxTries:
+    To: follow302_max_tries
+  Follow302RetainArgs:
+    To: follow302_retain_args
+  Follow302RetainHeader:
+    To: follow302_retain_header
+  Follow302TargetHost:
+    To: follow302_target_host
+  OriginHost:
+    To: origin_host
+  OriginHttpPort:
+    To: origin_http_port
+  OriginHttpsPort:
+    To: origin_https_port
+  OriginMtls:
+    To: origin_mtls
+  OriginReadTimeout:
+    To: origin_read_timeout
+  OriginScheme:
+    To: origin_scheme
+  OriginSni:
+    To: origin_sni
+  OriginVerify:
+    To: origin_verify
+  Range:
+    To: range
+  RangeChunkSize:
+    To: range_chunk_size
+  Rule:
+    To: rule
+  RuleEnable:
+    To: rule_enable
+  RuleName:
+    To: rule_name
+  Sequence:
+    To: sequence
+  SiteId:
+    To: site_id
+  SiteVersion:
+    To: site_version
+Attributes:
+  ConfigId:
+    To: config_id
+  OriginHttpPort:
+    Ignore: true
+  OriginReadTimeout:
+    Ignore: true
+  RangeChunkSize:
+    Ignore: true
+  OriginScheme:
+    Ignore: true
+  Follow302TargetHost:
+    Ignore: true
+  Follow302RetainHeader:
+    Ignore: true
+  OriginMtls:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  OriginHost:
+    Ignore: true
+  RuleName:
+    Ignore: true
+  DnsRecord:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  ConfigType:
+    Ignore: true
+  Range:
+    Ignore: true
+  Rule:
+    Ignore: true
+  Follow302RetainArgs:
+    Ignore: true
+  Follow302MaxTries:
+    Ignore: true
+  OriginSni:
+    Ignore: true
+  OriginVerify:
+    Ignore: true
+  OriginHttpsPort:
+    Ignore: true
+  Follow302Enable:
+    Ignore: true

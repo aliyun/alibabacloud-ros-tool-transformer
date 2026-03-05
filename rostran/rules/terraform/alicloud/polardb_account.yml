@@ -6,10 +6,14 @@ ResourceType:
 Properties:
   account_description:
     To: AccountDescription
+  account_lock_state:
+    Ignore: true
   account_name:
     To: AccountName
   account_password:
     To: AccountPassword
+  account_password_valid_time:
+    Ignore: true
   account_type:
     To: AccountType
   db_cluster_id:
@@ -28,4 +32,6 @@ Attributes:
   account_type:
     Ignore: true
   db_cluster_id:
+    Ignore: true
+  status:
     Ignore: true

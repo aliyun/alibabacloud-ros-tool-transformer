@@ -12,5 +12,7 @@ Properties:
 Attributes:
   id:
     Ignore: true
+  create_time:
+    Ignore: true
   status:
     Ignore: true

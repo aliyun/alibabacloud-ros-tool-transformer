@@ -5,14 +5,22 @@ ResourceType:
   To: ALIYUN::PolarDBX::DBInstance
 Properties:
   cn_class:
-    Ignore: true
+    To: DBNodeClass
   cn_node_count:
-    Ignore: true
+    To: DBNodeCount
   create_time:
     Ignore: true
+  description:
+    To: DBInstanceDescription
   dn_class:
     Ignore: true
   dn_node_count:
+    Ignore: true
+  engine_version:
+    To: EngineVersion
+  is_read_db_instance:
+    Ignore: true
+  primary_db_instance_name:
     Ignore: true
   primary_zone:
     To: PrimaryZone
@@ -44,6 +52,8 @@ Attributes:
   dn_node_count:
     Ignore: true
   primary_zone:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_group_id:
     Ignore: true

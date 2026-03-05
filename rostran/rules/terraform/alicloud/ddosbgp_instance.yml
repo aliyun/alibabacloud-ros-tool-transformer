@@ -5,21 +5,28 @@ ResourceType:
   To: ALIYUN::DDoS::OriginInstance
 Properties:
   bandwidth:
-    Ignore: true
+    To: CleanBandwidth
   base_bandwidth:
     Ignore: true
+  instance_name:
+    Ignore: true
   ip_count:
-    Ignore: true
+    To: IpAddresses
   ip_type:
-    Ignore: true
+    To: NetworkProtocol
   name:
     Ignore: true
   normal_bandwidth:
-    Ignore: true
+    To: CleanBandwidth
   period:
     To: Period
-  type:
+  resource_group_id:
     Ignore: true
+  tags:
+    To: Tags
+    Type: List
+  type:
+    To: Edition
 Attributes:
   id:
     To: InstanceId
@@ -34,6 +41,8 @@ Attributes:
   name:
     Ignore: true
   normal_bandwidth:
+    Ignore: true
+  status:
     Ignore: true
   type:
     Ignore: true

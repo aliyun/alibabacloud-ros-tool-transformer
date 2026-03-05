@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_cs_serverless_kubernetes
-  To: ALIYUN::CS::ServerlessKubernetesCluster
+  To: ALIYUN::CS::ASKCluster
 Properties:
   addons:
     To: Addons

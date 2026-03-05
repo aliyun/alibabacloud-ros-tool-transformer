@@ -12,31 +12,12 @@ Properties:
     To: RouteDest
   route_source:
     To: RouteSource
-  status:
-    Ignore: true
   vpn_gateway_id:
     To: VpnGatewayId
   weight:
     To: Weight
 Attributes:
   id:
-    To:
-    - VpcGatewayId
-    - NextHop
-    - RouteSource
-    - RouteDest
-    Handler: colon_join
-  next_hop:
-    To: NextHop
-  publish_vpc:
     Ignore: true
-  route_dest:
-    To: RouteDest
-  route_source:
-    To: RouteSource
   status:
-    Ignore: true
-  vpn_gateway_id:
-    To: VpnGatewayId
-  weight:
     Ignore: true

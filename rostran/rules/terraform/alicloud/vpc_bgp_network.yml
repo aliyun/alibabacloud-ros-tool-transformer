@@ -8,14 +8,10 @@ Properties:
     To: DstCidrBlock
   router_id:
     To: RouterId
-  status:
+  vpc_id:
     Ignore: true
 Attributes:
   id:
-    To: RouterId
-  dst_cidr_block:
-    To: DstCidrBlock
-  router_id:
-    To: RouterId
+    Ignore: true
   status:
     Ignore: true

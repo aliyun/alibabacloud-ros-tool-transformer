@@ -19,7 +19,7 @@ Properties:
   mem_allocation_ratio:
     To: MemAllocationRatio
   open_permission:
-    Ignore: true
+    To: OpenPermission
   vpc_id:
     To: VpcId
 Attributes:

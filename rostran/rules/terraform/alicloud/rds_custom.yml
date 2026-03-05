@@ -15,14 +15,7 @@ Properties:
   create_mode:
     Ignore: true
   data_disk:
-    To: DBInstanceStorage
-    Schema:
-      category:
-        Ignore: true
-      performance_level:
-        Ignore: true
-      size:
-        Ignore: true
+    Ignore: true
   deployment_set_id:
     Ignore: true
   description:

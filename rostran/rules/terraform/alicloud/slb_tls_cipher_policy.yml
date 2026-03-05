@@ -7,21 +7,13 @@ Properties:
   ciphers:
     To: Ciphers
     Type: List
-  status:
-    Ignore: true
   tls_cipher_policy_name:
-    Ignore: true
+    To: TLSPolicyName
   tls_versions:
     To: TlsVersions
     Type: List
 Attributes:
   id:
-    Ignore: true
-  ciphers:
-    To: Ciphers
+    To: InstanceId
   status:
     Ignore: true
-  tls_cipher_policy_name:
-    Ignore: true
-  tls_versions:
-    To: TlsVersions

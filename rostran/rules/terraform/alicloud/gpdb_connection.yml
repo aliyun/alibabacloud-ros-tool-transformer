@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_connection
+  To: ALIYUN::GPDB::InstancePublicConnection
+Properties:
+  connection_prefix:
+    To: ConnectionStringPrefix
+  connection_string:
+    Ignore: true
+  instance_id:
+    To: DBInstanceId
+  ip_address:
+    Ignore: true
+  port:
+    To: Port
+Attributes:
+  id:
+    Ignore: true

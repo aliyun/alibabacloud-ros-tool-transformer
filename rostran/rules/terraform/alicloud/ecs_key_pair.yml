@@ -27,7 +27,7 @@ Attributes:
   create_time:
     Ignore: true
   finger_print:
-    Ignore: true
+    To: KeyPairFingerPrint
   key_name:
     To: KeyPairName
   key_pair_name:

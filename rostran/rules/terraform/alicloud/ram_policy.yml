@@ -4,68 +4,37 @@ ResourceType:
   From: alicloud_ram_policy
   To: ALIYUN::RAM::ManagedPolicy
 Properties:
-  attachment_count:
-    Ignore: true
-  default_version:
-    Ignore: true
   description:
     To: Description
   document:
-    To: PolicyDocument
-    Handler: json_load
+    Ignore: true
   force:
     Ignore: true
   name:
-    To: PolicyName
+    Ignore: true
   policy_document:
     To: PolicyDocument
-    Handler: json_load
+    Type: Map
   policy_name:
     To: PolicyName
   rotate_strategy:
     Ignore: true
   statement:
-    To: PolicyDocument.Statement
-    Type: List
-    Schema:
-      action:
-        To: Action
-      effect:
-        To: Effect
-      resource:
-        To: Resource
+    Ignore: true
   tags:
     Ignore: true
-  type:
-    Ignore: true
   version:
-    To: PolicyDocument.Version
-  version_id:
     Ignore: true
 Attributes:
   id:
-    To: PolicyName
+    Ignore: true
   attachment_count:
     Ignore: true
   create_time:
     Ignore: true
   default_version:
     Ignore: true
-  description:
-    Ignore: true
-  document:
-    Ignore: true
-  name:
-    Ignore: true
-  policy_document:
-    Ignore: true
-  policy_name:
-    To: PolicyName
-  statement:
-    Ignore: true
   type:
-    Ignore: true
-  version:
     Ignore: true
   version_id:
     Ignore: true

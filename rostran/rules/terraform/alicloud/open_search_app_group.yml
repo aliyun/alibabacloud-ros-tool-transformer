@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_open_search_app_group
+  To: ALIYUN::SearchEngine::Instance
+Properties:
+  app_group_name:
+    Ignore: true
+  auto_renew:
+    Ignore: true
+  charge_way:
+    Ignore: true
+  compute_resource:
+    Ignore: true
+  current_version:
+    Ignore: true
+  description:
+    Ignore: true
+  doc_size:
+    Ignore: true
+  duration:
+    Ignore: true
+  order:
+    Ignore: true
+  order_type:
+    Ignore: true
+  payment_type:
+    To: ChargeType
+  pricing_cycle:
+    Ignore: true
+  qps:
+    Ignore: true
+  quota:
+    Ignore: true
+  spec:
+    Ignore: true
+  type:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  status:
+    Ignore: true

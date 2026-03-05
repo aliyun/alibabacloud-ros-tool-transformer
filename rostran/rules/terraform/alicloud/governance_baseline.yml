@@ -5,11 +5,19 @@ ResourceType:
   To: ALIYUN::Config::CompliancePack
 Properties:
   baseline_items:
-    Ignore: true
+    To: ConfigRuleIds
+    Type: List
+    Schema:
+      config:
+        Ignore: true
+      name:
+        Ignore: true
+      version:
+        Ignore: true
   baseline_name:
     To: CompliancePackName
   description:
     To: Description
 Attributes:
   id:
-    Ignore: true
+    To: CompliancePackId

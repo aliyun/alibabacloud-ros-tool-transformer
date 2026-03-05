@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_log_oss_shipper
+  To: ALIYUN::SLS::OssExport
+Properties:
+  buffer_interval:
+    To: Configuration
+    Type: Map
+  buffer_size:
+    To: Configuration
+    Type: Map
+  compress_type:
+    To: Configuration
+    Type: Map
+  format:
+    To: Configuration
+    Type: Map
+  logstore_name:
+    Ignore: true
+  oss_bucket:
+    To: Configuration
+    Type: Map
+  oss_prefix:
+    To: Configuration
+    Type: Map
+  path_format:
+    To: Configuration
+    Type: Map
+  project_name:
+    To: ProjectName
+  role_arn:
+    To: Configuration
+    Type: Map
+  shipper_name:
+    To: ExportName
+Attributes:
+  id:
+    Ignore: true

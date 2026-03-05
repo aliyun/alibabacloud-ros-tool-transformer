@@ -67,6 +67,6 @@ Attributes:
   tags:
     Ignore: true
   vpc_endpoint_service_name:
-    Ignore: true
+    To: ServiceName
   zone_affinity_enabled:
     Ignore: true

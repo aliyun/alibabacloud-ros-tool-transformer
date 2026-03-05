@@ -5,9 +5,9 @@ ResourceType:
   To: ALIYUN::ResourceManager::PolicyAttachment
 Properties:
   policy_id:
-    To: PolicyName
+    Ignore: true
   target_id:
-    To: PrincipalName
+    Ignore: true
   target_type:
     To: PrincipalType
 Attributes:

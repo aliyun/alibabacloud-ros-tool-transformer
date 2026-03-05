@@ -30,7 +30,8 @@ Properties:
   system_disk_size:
     To: SystemDiskSize
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
   to_region_id:
     To: ToRegionId
     Type: List

@@ -5,57 +5,29 @@ ResourceType:
   To: ALIYUN::ECS::SecurityGroupIngress
 Properties:
   cidr_ip:
-    Ignore: true
+    To: SourceCidrIp
   description:
     To: Description
   ip_protocol:
     To: IpProtocol
-  ipv6_cidr_ip:
-    Ignore: true
   nic_type:
     To: NicType
   policy:
     To: Policy
   port_range:
     To: PortRange
-  prefix_list_id:
-    Ignore: true
   priority:
     To: Priority
   security_group_id:
     To: SecurityGroupId
   source_group_owner_account:
-    Ignore: true
+    To: SourceGroupOwnerId
   source_security_group_id:
-    Ignore: true
+    To: SourceGroupId
   type:
     Ignore: true
 Attributes:
   id:
     Ignore: true
-  cidr_ip:
-    Ignore: true
-  description:
-    Ignore: true
-  ip_protocol:
-    Ignore: true
-  ipv6_cidr_ip:
-    Ignore: true
-  nic_type:
-    Ignore: true
-  policy:
-    Ignore: true
-  port_range:
-    Ignore: true
-  prefix_list_id:
-    Ignore: true
-  priority:
-    Ignore: true
-  security_group_id:
-    Ignore: true
-  source_group_owner_account:
-    Ignore: true
-  source_security_group_id:
-    Ignore: true
-  type:
+  security_group_rule_id:
     Ignore: true

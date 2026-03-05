@@ -12,18 +12,8 @@ Properties:
     To: Ipv6AddressId
   ipv6_gateway_id:
     To: Ipv6GatewayId
-  status:
-    Ignore: true
 Attributes:
   id:
     To: InternetBandwidthId
-  bandwidth:
-    Ignore: true
-  internet_charge_type:
-    Ignore: true
-  ipv6_address_id:
-    Ignore: true
-  ipv6_gateway_id:
-    Ignore: true
   status:
     Ignore: true

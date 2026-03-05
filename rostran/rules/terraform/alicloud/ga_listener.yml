@@ -17,7 +17,19 @@ Properties:
   description:
     To: Description
   forwarded_for_config:
-    Ignore: true
+    To: XForwardedForConfig
+    Type: Map
+    Schema:
+      forwarded_for_ga_ap_enabled:
+        Ignore: true
+      forwarded_for_ga_id_enabled:
+        Ignore: true
+      forwarded_for_port_enabled:
+        Ignore: true
+      forwarded_for_proto_enabled:
+        Ignore: true
+      real_ip_enabled:
+        Ignore: true
   http_version:
     Ignore: true
   idle_timeout:

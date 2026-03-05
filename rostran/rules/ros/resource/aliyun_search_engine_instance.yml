@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SearchEngine::Instance
+  To: alicloud_open_search_app_group
+Properties:
+  ChargeType:
+    To: payment_type
+  VpcId:
+    Ignore: true
+  SearcherDocSize:
+    Ignore: true
+  QrsSpec:
+    Ignore: true
+  QrsNum:
+    Ignore: true
+  SearcherSpec:
+    Ignore: true
+  SearcherNum:
+    Ignore: true
+  UserName:
+    Ignore: true
+  VSwitchId:
+    Ignore: true
+  Password:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: instance_id
+  Endpoint:
+    Ignore: true

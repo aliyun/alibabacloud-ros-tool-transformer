@@ -5,7 +5,17 @@ ResourceType:
   To: ALIYUN::VPC::VpnAttachment
 Properties:
   bgp_config:
-    Ignore: true
+    To: BgpConfig
+    Type: Map
+    Schema:
+      enable:
+        Ignore: true
+      local_asn:
+        To: LocalAsn
+      local_bgp_ip:
+        To: LocalBgpIp
+      tunnel_cidr:
+        To: TunnelCidr
   customer_gateway_id:
     To: CustomerGatewayId
   effect_immediately:
@@ -17,26 +27,92 @@ Properties:
   enable_tunnels_bgp:
     Ignore: true
   health_check_config:
+    To: HealthCheckConfig
+    Type: Map
+    Schema:
+      dip:
+        To: Dip
+      enable:
+        To: Enable
+      interval:
+        To: Interval
+      policy:
+        To: Policy
+      retry:
+        To: Retry
+      sip:
+        To: Sip
+  ike_auth_alg:
     Ignore: true
   ike_config:
+    To: IkeConfig
+    Type: Map
+    Schema:
+      ike_auth_alg:
+        To: IkeAuthAlg
+      ike_enc_alg:
+        To: IkeEncAlg
+      ike_lifetime:
+        To: IkeLifetime
+      ike_mode:
+        To: IkeMode
+      ike_pfs:
+        To: IkePfs
+      ike_version:
+        To: IkeVersion
+      local_id:
+        To: LocalId
+      psk:
+        To: Psk
+      remote_id:
+        To: RemoteId
+  ike_enc_alg:
     Ignore: true
-  internet_ip:
+  ike_lifetime:
+    Ignore: true
+  ike_mode:
+    Ignore: true
+  ike_pfs:
+    Ignore: true
+  ike_version:
+    Ignore: true
+  ipsec_auth_alg:
     Ignore: true
   ipsec_config:
+    To: IpsecConfig
+    Type: Map
+    Schema:
+      ipsec_auth_alg:
+        To: IpsecAuthAlg
+      ipsec_enc_alg:
+        To: IpsecEncAlg
+      ipsec_lifetime:
+        To: IpsecLifetime
+      ipsec_pfs:
+        To: IpsecPfs
+  ipsec_enc_alg:
+    Ignore: true
+  ipsec_lifetime:
+    Ignore: true
+  ipsec_pfs:
     Ignore: true
   local_asn:
     Ignore: true
   local_bgp_ip:
     Ignore: true
+  local_id:
+    Ignore: true
   local_subnet:
     To: LocalSubnet
   network_type:
     To: NetworkType
+  psk:
+    Ignore: true
+  remote_id:
+    Ignore: true
   remote_subnet:
     To: RemoteSubnet
   resource_group_id:
-    Ignore: true
-  status:
     Ignore: true
   tags:
     Ignore: true
@@ -45,7 +121,7 @@ Properties:
   tunnel_options_specification:
     Ignore: true
   vpn_attachment_name:
-    Ignore: true
+    To: Name
 Attributes:
   id:
     To: VpnAttachmentId
@@ -53,31 +129,9 @@ Attributes:
     Ignore: true
   create_time:
     Ignore: true
-  customer_gateway_id:
-    Ignore: true
-  effect_immediately:
-    Ignore: true
-  enable_dpd:
-    Ignore: true
-  enable_nat_traversal:
-    Ignore: true
   health_check_config:
-    Ignore: true
-  ike_config:
-    Ignore: true
-  internet_ip:
-    To: InternetIp
-  ipsec_config:
-    Ignore: true
-  local_subnet:
-    Ignore: true
-  network_type:
-    Ignore: true
-  remote_subnet:
     Ignore: true
   status:
     Ignore: true
   tunnel_options_specification:
-    Ignore: true
-  vpn_attachment_name:
     Ignore: true

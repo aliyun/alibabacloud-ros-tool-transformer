@@ -15,17 +15,17 @@ Properties:
   db_cluster_access_white_list:
     Ignore: true
   db_cluster_class:
-    Ignore: true
+    To: DBClusterType
   db_cluster_description:
-    Ignore: true
+    To: DBClusterDescription
   db_cluster_network_type:
-    Ignore: true
+    To: DBClusterNetworkType
   db_cluster_version:
-    Ignore: true
+    To: DBClusterVersion
   db_node_group_count:
-    Ignore: true
+    To: DBNodeCount
   db_node_storage:
-    Ignore: true
+    To: DBNodeStorage
   encryption_key:
     To: EncryptionKey
   encryption_type:
@@ -47,7 +47,7 @@ Properties:
   status:
     Ignore: true
   storage_type:
-    Ignore: true
+    To: DbNodeStorageType
   used_time:
     To: UsedTime
   vpc_id:

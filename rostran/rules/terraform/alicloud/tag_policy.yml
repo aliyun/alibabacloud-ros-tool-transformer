@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_tag_policy
+  To: ALIYUN::ResourceManager::ControlPolicy
+Properties:
+  policy_content:
+    To: PolicyDocument
+  policy_desc:
+    To: Description
+  policy_name:
+    To: ControlPolicyName
+  user_type:
+    To: EffectScope
+Attributes:
+  id:
+    To: PolicyId

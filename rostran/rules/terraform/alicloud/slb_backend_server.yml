@@ -7,21 +7,19 @@ Properties:
   backend_servers:
     To: BackendServers
     Type: List
-    Schema:
-      server_id:
-        To: ServerId
-      server_ip:
-        To: ServerIp
-      type:
-        To: Type
-      weight:
-        To: Weight
   delete_protection_validation:
     Ignore: true
   load_balancer_id:
     To: LoadBalancerId
+  server_id:
+    To: BackendServerList
+    Type: List
+  server_ip:
+    Ignore: true
+  type:
+    Ignore: true
+  weight:
+    To: BackendServerWeightList
 Attributes:
   id:
-    To: LoadBalancerId
-  load_balancer_id:
     To: LoadBalancerId

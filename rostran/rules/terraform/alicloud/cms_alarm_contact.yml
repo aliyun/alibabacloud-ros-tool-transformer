@@ -5,15 +5,19 @@ ResourceType:
   To: ALIYUN::CMS::Contact
 Properties:
   alarm_contact_name:
-    Ignore: true
+    To: ContactName
   channels_aliim:
-    Ignore: true
+    To: Channels
+    Type: Map
   channels_ding_web_hook:
-    Ignore: true
+    To: Channels
+    Type: Map
   channels_mail:
-    Ignore: true
+    To: Channels
+    Type: Map
   channels_sms:
-    Ignore: true
+    To: Channels
+    Type: Map
   describe:
     To: Describe
   lang:

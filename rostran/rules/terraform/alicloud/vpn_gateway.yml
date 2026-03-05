@@ -10,24 +10,16 @@ Properties:
     Ignore: true
   bandwidth:
     To: Bandwidth
-  business_status:
-    Ignore: true
-  create_time:
-    Ignore: true
   description:
     To: Description
-  disaster_recovery_internet_ip:
-    Ignore: true
   disaster_recovery_vswitch_id:
-    Ignore: true
+    To: DisasterRecoveryVSwitchId
   enable_ipsec:
     To: EnableIpsec
   enable_ssl:
     To: EnableSsl
   instance_charge_type:
     To: InstanceChargeType
-  internet_ip:
-    Ignore: true
   name:
     To: Name
   network_type:
@@ -40,13 +32,9 @@ Properties:
     Ignore: true
   ssl_connections:
     To: SslConnections
-  ssl_vpn_internet_ip:
-    Ignore: true
-  status:
-    Ignore: true
   tags:
     To: Tags
-    Handler: tags_dict_to_list
+    Type: List
   vpc_id:
     To: VpcId
   vpn_gateway_name:
@@ -58,49 +46,15 @@ Properties:
 Attributes:
   id:
     To: VpnGatewayId
-  auto_propagate:
-    Ignore: true
-  bandwidth:
-    Ignore: true
   business_status:
     Ignore: true
   create_time:
     Ignore: true
-  description:
-    Ignore: true
   disaster_recovery_internet_ip:
     To: DisasterRecoveryInternetIp
-  disaster_recovery_vswitch_id:
-    Ignore: true
-  enable_ipsec:
-    Ignore: true
-  enable_ssl:
-    Ignore: true
-  instance_charge_type:
-    Ignore: true
   internet_ip:
     To: InternetIp
-  name:
-    Ignore: true
-  network_type:
-    Ignore: true
-  payment_type:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  ssl_connections:
-    Ignore: true
   ssl_vpn_internet_ip:
     To: SslVpnInternetIp
   status:
     Ignore: true
-  tags:
-    Ignore: true
-  vpc_id:
-    To: VpcId
-  vpn_gateway_name:
-    Ignore: true
-  vpn_type:
-    To: VpnType
-  vswitch_id:
-    To: VSwitchId

@@ -41,7 +41,7 @@ Properties:
   name:
     Ignore: true
   paid_type:
-    Ignore: true
+    To: PayType
   partition_left:
     Ignore: true
   partition_num:
@@ -105,7 +105,7 @@ Attributes:
   eip_max:
     Ignore: true
   end_point:
-    Ignore: true
+    To: Endpoint
   group_left:
     Ignore: true
   group_used:

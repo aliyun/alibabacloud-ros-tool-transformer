@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_transit_router_prefix_list_association
+  To: ALIYUN::CEN::TransitRouterRouteTableAssociation
+Properties:
+  next_hop:
+    To: TransitRouterAttachmentId
+  next_hop_type:
+    Ignore: true
+  owner_uid:
+    Ignore: true
+  prefix_list_id:
+    Ignore: true
+  transit_router_id:
+    Ignore: true
+  transit_router_table_id:
+    To: TransitRouterRouteTableId
+Attributes:
+  id:
+    To: ResourceId
+  status:
+    Ignore: true

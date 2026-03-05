@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MSE::Znode
+  To: alicloud_mse_znode
+Properties:
+  ClusterId:
+    To: cluster_id
+  Data:
+    To: data
+  Path:
+    To: path
+  InstanceId:
+    Ignore: true
+  Type:
+    Ignore: true
+Attributes: {}

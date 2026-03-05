@@ -12,6 +12,8 @@ Properties:
     To: PrimaryIpAddress
   private_ips_count:
     To: SecondaryPrivateIpAddressCount
+  private_ips`:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   security_groups:

@@ -21,8 +21,7 @@ Properties:
       script:
         To: Script
       sink:
-        To: Sinks
-        Type: List
+        Ignore: true
       to_time:
         To: ToTime
   datasets:
@@ -34,11 +33,11 @@ Properties:
   endpoint:
     Ignore: true
   job_name:
-    To: Name
+    Ignore: true
   logstore:
     Ignore: true
   name:
-    Ignore: true
+    To: Name
   project:
     To: ProjectName
   role_arn:

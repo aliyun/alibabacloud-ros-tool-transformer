@@ -4,8 +4,6 @@ ResourceType:
   From: alicloud_threat_detection_anti_brute_force_rule
   To: ALIYUN::ThreatDetection::AntiBruteForceRule
 Properties:
-  anti_brute_force_rule_id:
-    Ignore: true
   anti_brute_force_rule_name:
     To: AntiBruteForceRuleName
   default_rule:
@@ -24,17 +22,3 @@ Properties:
 Attributes:
   id:
     To: AntiBruteForceRuleId
-  anti_brute_force_rule_id:
-    To: AntiBruteForceRuleId
-  anti_brute_force_rule_name:
-    To: AntiBruteForceRuleName
-  default_rule:
-    To: DefaultRule
-  fail_count:
-    To: FailCount
-  forbidden_time:
-    To: ForbiddenTime
-  span:
-    To: Span
-  uuid_list:
-    To: UuidList

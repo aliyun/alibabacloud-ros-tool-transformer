@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CMS::ResourceMetricRule
+  To: alicloud_cms_alarm
+Properties:
+  Escalations:
+    To: comparison_operator
+  CompositeExpression:
+    To: composite_expression
+    Type: Map
+    Schema:
+      ExpressionList:
+        To: expression_list
+      ExpressionListJoin:
+        To: expression_list_join
+      ExpressionRaw:
+        To: expression_raw
+      Level:
+        To: level
+      Times:
+        To: times
+  ContactGroups:
+    To: contact_groups
+  Resources:
+    To: dimensions
+  EffectiveInterval:
+    To: effective_interval
+  Escalations$$0:
+    To: threshold
+  Resources$$0:
+    To: metric_dimensions
+  MetricName:
+    To: metric_name
+  RuleName:
+    To: name
+  Period:
+    To: period
+  Namespace:
+    To: project
+  Prometheus:
+    To: prometheus
+    Type: Map
+    Schema:
+      Annotations:
+        To: annotations
+      Level:
+        To: level
+      PromQL:
+        To: prom_ql
+      Times:
+        To: times
+  SilenceTime:
+    To: silence_time
+  Labels:
+    To: tags
+  NoEffectiveInterval:
+    Ignore: true
+  Webhook:
+    Ignore: true
+  RuleId:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
+  Interval:
+    Ignore: true
+  EmailSubject:
+    Ignore: true
+  NoDataPolicy:
+    Ignore: true
+Attributes:
+  RuleId:
+    To: id
+  RuleName:
+    Ignore: true

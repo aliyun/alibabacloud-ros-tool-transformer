@@ -8,6 +8,8 @@ Properties:
     To: Name
 Attributes:
   id:
+    To: Name
+  create_time:
     Ignore: true
   status:
     Ignore: true

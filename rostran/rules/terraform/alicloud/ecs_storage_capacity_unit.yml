@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ecs_storage_capacity_unit
+  To: ALIYUN::ECS::CapacityReservation
+Properties:
+  capacity:
+    Ignore: true
+  description:
+    To: Description
+  period:
+    Ignore: true
+  period_unit:
+    Ignore: true
+  start_time:
+    Ignore: true
+  storage_capacity_unit_name:
+    Ignore: true
+Attributes:
+  id:
+    To: PrivatePoolOptionsId
+  status:
+    Ignore: true

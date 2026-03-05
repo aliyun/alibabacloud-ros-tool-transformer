@@ -16,6 +16,6 @@ Properties:
     To: ListenerId
 Attributes:
   id:
-    Ignore: true
+    To: EndpointGroupId
   status:
     Ignore: true

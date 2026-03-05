@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudSSO::UserProvision
+  To: alicloud_cloud_sso_user_provisioning
+Properties:
+  DeletionStrategy:
+    To: deletion_strategy
+  Description:
+    To: description
+  DirectoryId:
+    To: directory_id
+  DuplicationStrategy:
+    To: duplication_strategy
+  PrincipalId:
+    To: principal_id
+  PrincipalType:
+    To: principal_type
+  TargetId:
+    To: target_id
+  TargetType:
+    To: target_type
+Attributes:
+  UserProvisionId:
+    To: id
+  UserProvisionId$$0:
+    To: user_provisioning_id

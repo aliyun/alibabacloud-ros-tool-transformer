@@ -7,7 +7,7 @@ Properties:
   created_time:
     Ignore: true
   custom_oss_bucket:
-    Ignore: true
+    To: InstanceStorageName
   default_oss_bucket:
     Ignore: true
   end_time:
@@ -22,6 +22,8 @@ Properties:
     Ignore: true
   kms_encryption_context:
     Ignore: true
+  namespace_quota:
+    Ignore: true
   password:
     Ignore: true
   payment_type:
@@ -32,9 +34,13 @@ Properties:
     To: RenewPeriod
   renewal_status:
     To: RenewalStatus
+  repo_quota:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   status:
+    Ignore: true
+  vpc_quota:
     Ignore: true
 Attributes:
   id:

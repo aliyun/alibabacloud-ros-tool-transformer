@@ -29,7 +29,8 @@ Properties:
   resource_group_id:
     Ignore: true
   security_group_ids:
-    Ignore: true
+    To: SecurityGroupId
+    Type: List
   service_id:
     To: ServiceId
   service_name:

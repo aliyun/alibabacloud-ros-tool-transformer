@@ -18,6 +18,8 @@ Properties:
     Ignore: true
   progress:
     Ignore: true
+  rtc:
+    Ignore: true
   source_selection_criteria:
     Ignore: true
   status:

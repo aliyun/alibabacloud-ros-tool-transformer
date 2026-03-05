@@ -7,7 +7,13 @@ Properties:
   allow_update:
     Ignore: true
   defined_column:
-    Ignore: true
+    To: Columns
+    Type: List
+    Schema:
+      name:
+        To: Name
+      type:
+        To: Type
   deviation_cell_version_in_sec:
     To: DeviationCellVersionInSec
   enable_sse:

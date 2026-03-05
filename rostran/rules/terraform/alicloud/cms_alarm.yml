@@ -1,0 +1,123 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cms_alarm
+  To: ALIYUN::CMS::ResourceMetricRule
+Properties:
+  comparison_operator:
+    To: Escalations
+    Type: Map
+  composite_expression:
+    To: CompositeExpression
+    Type: Map
+    Schema:
+      expression_list:
+        To: ExpressionList
+        Type: List
+      expression_list_join:
+        To: ExpressionListJoin
+      expression_raw:
+        To: ExpressionRaw
+      level:
+        To: Level
+      times:
+        To: Times
+  contact_groups:
+    To: ContactGroups
+    Type: List
+  dimensions:
+    To: Resources
+    Type: List
+  effective_interval:
+    To: EffectiveInterval
+  enabled:
+    Ignore: true
+  end_time:
+    Ignore: true
+  escalations_critical:
+    To: Escalations
+    Type: Map
+    Schema:
+      comparison_operator:
+        Ignore: true
+      statistics:
+        Ignore: true
+      threshold:
+        Ignore: true
+      times:
+        Ignore: true
+  escalations_info:
+    To: Escalations
+    Type: Map
+    Schema:
+      comparison_operator:
+        Ignore: true
+      statistics:
+        Ignore: true
+      threshold:
+        Ignore: true
+      times:
+        Ignore: true
+  escalations_warn:
+    To: Escalations
+    Type: Map
+    Schema:
+      comparison_operator:
+        Ignore: true
+      statistics:
+        Ignore: true
+      threshold:
+        Ignore: true
+      times:
+        Ignore: true
+  metric:
+    Ignore: true
+  metric_dimensions:
+    To: Resources
+    Type: List
+  metric_name:
+    To: MetricName
+  name:
+    To: RuleName
+  notify_type:
+    Ignore: true
+  operator:
+    Ignore: true
+  period:
+    To: Period
+  project:
+    To: Namespace
+  prometheus:
+    To: Prometheus
+    Type: Map
+    Schema:
+      annotations:
+        To: Annotations
+        Type: List
+      level:
+        To: Level
+      prom_ql:
+        To: PromQL
+      times:
+        To: Times
+  silence_time:
+    To: SilenceTime
+  start_time:
+    Ignore: true
+  statistics:
+    Ignore: true
+  tags:
+    To: Labels
+    Type: List
+  targets:
+    Ignore: true
+  threshold:
+    To: Escalations
+    Type: Map
+  triggered_count:
+    Ignore: true
+Attributes:
+  id:
+    To: RuleId
+  status:
+    Ignore: true

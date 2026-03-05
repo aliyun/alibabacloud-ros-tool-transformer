@@ -5,11 +5,17 @@ ResourceType:
   To: ALIYUN::ROCKETMQ5::ConsumerGroup
 Properties:
   consume_retry_policy:
-    Ignore: true
+    To: ConsumeRetryPolicy
+    Type: Map
+    Schema:
+      dead_letter_target_topic:
+        To: DeadLetterTargetTopic
+      max_retry_times:
+        To: MaxRetryTimes
+      retry_policy:
+        To: RetryPolicy
   consumer_group_id:
     To: ConsumerGroupId
-  create_time:
-    Ignore: true
   delivery_order_type:
     To: DeliveryOrderType
   instance_id:
@@ -18,27 +24,12 @@ Properties:
     Ignore: true
   remark:
     To: Remark
-  status:
-    Ignore: true
 Attributes:
   id:
-    To:
-    - InstanceId
-    - ConsumerGroupId
-    Handler: colon_join
-  consume_retry_policy:
     Ignore: true
-  consumer_group_id:
-    To: ConsumerGroupId
   create_time:
     Ignore: true
-  delivery_order_type:
-    To: DeliveryOrderType
-  instance_id:
-    To: InstanceId
   region_id:
-    Ignore: true
-  remark:
     Ignore: true
   status:
     Ignore: true

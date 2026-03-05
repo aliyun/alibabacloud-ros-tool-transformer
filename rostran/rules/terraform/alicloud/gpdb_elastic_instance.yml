@@ -7,9 +7,9 @@ Properties:
   connection_string:
     Ignore: true
   db_instance_category:
-    Ignore: true
+    To: DBInstanceCategory
   db_instance_description:
-    Ignore: true
+    To: DBInstanceDescription
   encryption_key:
     To: EncryptionKey
   encryption_type:
@@ -31,7 +31,7 @@ Properties:
   port:
     Ignore: true
   security_ip_list:
-    Ignore: true
+    To: SecurityIPList
   seg_node_num:
     To: SegNodeNum
   seg_storage_type:

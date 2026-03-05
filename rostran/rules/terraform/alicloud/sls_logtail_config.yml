@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_logtail_config
+  To: ALIYUN::SLS::LogtailConfig
+Properties:
+  create_time:
+    Ignore: true
+  input_detail:
+    Ignore: true
+  input_type:
+    Ignore: true
+  last_modify_time:
+    Ignore: true
+  log_sample:
+    Ignore: true
+  logtail_config_name:
+    To: LogtailConfigName
+  output_detail:
+    Ignore: true
+  output_type:
+    Ignore: true
+  project_name:
+    To: ProjectName
+Attributes:
+  id:
+    Ignore: true

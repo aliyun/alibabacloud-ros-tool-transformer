@@ -1,0 +1,167 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EMR::StarRocksInstance
+  To: alicloud_star_rocks_instance
+Properties:
+  AdminPassword:
+    To: admin_password
+  AutoRenew:
+    To: auto_renew
+  BackendNodeGroups:
+    To: backend_node_groups
+    Type: List
+    Schema:
+      Cu:
+        To: cu
+      DiskNumber:
+        To: disk_number
+      LocalStorageInstanceType:
+        To: local_storage_instance_type
+      ResidentNodeNumber:
+        To: resident_node_number
+      SpecType:
+        To: spec_type
+      StoragePerformanceLevel:
+        To: storage_performance_level
+      StorageSize:
+        To: storage_size
+      ZoneId:
+        To: zone_id
+  ClusterZoneId:
+    To: cluster_zone_id
+  Duration:
+    To: duration
+  Encrypted:
+    To: encrypted
+  FrontendNodeGroups:
+    To: frontend_node_groups
+    Type: List
+    Schema:
+      Cu:
+        To: cu
+      DiskNumber:
+        To: disk_number
+      LocalStorageInstanceType:
+        To: local_storage_instance_type
+      ResidentNodeNumber:
+        To: resident_node_number
+      SpecType:
+        To: spec_type
+      StoragePerformanceLevel:
+        To: storage_performance_level
+      StorageSize:
+        To: storage_size
+      ZoneId:
+        To: zone_id
+  InstanceName:
+    To: instance_name
+  KmsKeyId:
+    To: kms_key_id
+  ObserverNodeGroups:
+    To: observer_node_groups
+    Type: List
+    Schema:
+      Cu:
+        To: cu
+      DiskNumber:
+        To: disk_number
+      LocalStorageInstanceType:
+        To: local_storage_instance_type
+      ResidentNodeNumber:
+        To: resident_node_number
+      SpecType:
+        To: spec_type
+      StoragePerformanceLevel:
+        To: storage_performance_level
+      StorageSize:
+        To: storage_size
+      ZoneId:
+        To: zone_id
+  OssAccessingRoleName:
+    To: oss_accessing_role_name
+  PackageType:
+    To: package_type
+  PayType:
+    To: pay_type
+  PricingCycle:
+    To: pricing_cycle
+  PromotionOptionNo:
+    To: promotion_option_no
+  ResourceGroupId:
+    To: resource_group_id
+  RunMode:
+    To: run_mode
+  Tags:
+    To: tags
+  Version:
+    To: version
+  VpcId:
+    To: vpc_id
+  Vswitches:
+    To: vswitches
+    Type: List
+    Schema:
+      VSwitchId:
+        To: vswitch_id
+      ZoneId:
+        To: zone_id
+  OrderId:
+    Ignore: true
+  ResourceType:
+    Ignore: true
+Attributes:
+  InstanceId:
+    To: id
+  CreateTime:
+    To: create_time
+  RunMode:
+    Ignore: true
+  EnabledAuditLoader:
+    Ignore: true
+  PackageType:
+    Ignore: true
+  ExpireTime:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  MinorVersion:
+    Ignore: true
+  IsolateLeader:
+    Ignore: true
+  InstanceName:
+    Ignore: true
+  Version:
+    Ignore: true
+  PayType:
+    Ignore: true
+  AclId:
+    Ignore: true
+  Encrypted:
+    Ignore: true
+  EnableSsl:
+    Ignore: true
+  SgId:
+    Ignore: true
+  EnableAutoMinorVersionUpgrade:
+    Ignore: true
+  Tags:
+    Ignore: true
+  KmsKeyId:
+    Ignore: true
+  MaintainablePeriod:
+    Ignore: true
+  OssLocation:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  Architecture:
+    Ignore: true
+  RunningTime:
+    Ignore: true
+  SecurityGroupManaged:
+    Ignore: true
+  Vswitches:
+    Ignore: true
+  MonitorType:
+    Ignore: true

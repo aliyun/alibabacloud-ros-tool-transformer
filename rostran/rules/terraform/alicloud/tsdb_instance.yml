@@ -20,8 +20,6 @@ Properties:
     To: InstanceStorage
   payment_type:
     To: PayType
-  status:
-    Ignore: true
   vswitch_id:
     To: VSwitchId
   zone_id:
@@ -29,21 +27,5 @@ Properties:
 Attributes:
   id:
     To: InstanceId
-  disk_category:
-    Ignore: true
-  engine_type:
-    To: EngineType
-  instance_alias:
-    Ignore: true
-  instance_class:
-    Ignore: true
-  instance_storage:
-    Ignore: true
-  payment_type:
-    Ignore: true
   status:
-    Ignore: true
-  vswitch_id:
-    Ignore: true
-  zone_id:
     Ignore: true

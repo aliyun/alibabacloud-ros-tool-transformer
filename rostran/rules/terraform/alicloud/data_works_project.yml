@@ -7,7 +7,7 @@ Properties:
   create_time:
     Ignore: true
   description:
-    Ignore: true
+    To: ProjectDescription
   dev_environment_enabled:
     Ignore: true
   dev_role_disabled:

@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ssl_certificates_service_pca_certificate
+  To: ALIYUN::CAS::SslCertificate
+Properties:
+  algorithm:
+    Ignore: true
+  alias_name:
+    Ignore: true
+  certificate_type:
+    Ignore: true
+  common_name:
+    Ignore: true
+  country_code:
+    Ignore: true
+  crl_day:
+    Ignore: true
+  enable_crl:
+    Ignore: true
+  extended_key_usages:
+    Ignore: true
+  locality:
+    Ignore: true
+  organization:
+    To: CompanyName
+  organization_unit:
+    Ignore: true
+  parent_identifier:
+    Ignore: true
+  path_len_constraint:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  state:
+    Ignore: true
+  tags:
+    Ignore: true
+  years:
+    Ignore: true
+Attributes:
+  id:
+    To: CertificateId
+  status:
+    Ignore: true

@@ -39,7 +39,11 @@ Properties:
       snapshot_id:
         To: SnapshotId
   features:
-    Ignore: true
+    To: Features
+    Type: Map
+    Schema:
+      nvme_support:
+        Ignore: true
   force:
     Ignore: true
   image_family:

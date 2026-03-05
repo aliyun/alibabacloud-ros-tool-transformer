@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DTS::ConsumerGroup
+  To: alicloud_dts_consumer_channel
+Properties:
+  ConsumerGroupName:
+    To: consumer_group_name
+  ConsumerGroupPassword:
+    To: consumer_group_password
+  ConsumerGroupUserName:
+    To: consumer_group_user_name
+  SubscriptionInstanceId:
+    To: dts_instance_id
+Attributes:
+  ConsumerGroupID:
+    To: consumer_group_id
+  ConsumerGroupName:
+    Ignore: true
+  SubscriptionInstanceId:
+    Ignore: true

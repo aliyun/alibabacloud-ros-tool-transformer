@@ -15,7 +15,7 @@ Properties:
     To: RoleName
 Attributes:
   id:
-    To: RoleId
+    To: RoleName
   arn:
     To: Arn
   role_id:

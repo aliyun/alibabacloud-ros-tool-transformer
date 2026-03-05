@@ -7,12 +7,19 @@ Properties:
   acl_operation_type:
     To: AclOperationTypes
     Type: List
+  acl_operation_types:
+    To: AclOperationTypes
+    Type: List
+  acl_permission_type:
+    To: AclPermissionType
   acl_resource_name:
     To: AclResourceName
   acl_resource_pattern_type:
     To: AclResourcePatternType
   acl_resource_type:
     To: AclResourceType
+  host:
+    To: Host
   instance_id:
     To: InstanceId
   username:

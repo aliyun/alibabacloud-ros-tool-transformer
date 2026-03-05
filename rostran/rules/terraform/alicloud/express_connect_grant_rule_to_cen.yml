@@ -1,0 +1,5 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_grant_rule_to_cen
+  To: ALIYUN::VPC::GrantInstanceToCen

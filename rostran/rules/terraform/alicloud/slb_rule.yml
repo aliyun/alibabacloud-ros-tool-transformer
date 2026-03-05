@@ -11,7 +11,7 @@ Properties:
   delete_protection_validation:
     Ignore: true
   domain:
-    To: RuleList.0.Domain
+    Ignore: true
   frontend_port:
     To: ListenerPort
   health_check:
@@ -35,11 +35,11 @@ Properties:
   load_balancer_id:
     To: LoadBalancerId
   name:
-    To: RuleList.0.RuleName
+    Ignore: true
   scheduler:
     Ignore: true
   server_group_id:
-    To: RuleList.0.VServerGroupId
+    Ignore: true
   sticky_session:
     Ignore: true
   sticky_session_type:
@@ -47,49 +47,7 @@ Properties:
   unhealthy_threshold:
     Ignore: true
   url:
-    To: RuleList.0.Url
+    Ignore: true
 Attributes:
   id:
-    Ignore: true
-  cookie:
-    Ignore: true
-  cookie_timeout:
-    Ignore: true
-  domain:
-    Ignore: true
-  frontend_port:
-    Ignore: true
-  health_check:
-    Ignore: true
-  health_check_connect_port:
-    Ignore: true
-  health_check_domain:
-    Ignore: true
-  health_check_http_code:
-    Ignore: true
-  health_check_interval:
-    Ignore: true
-  health_check_timeout:
-    Ignore: true
-  health_check_uri:
-    Ignore: true
-  healthy_threshold:
-    Ignore: true
-  listener_sync:
-    Ignore: true
-  load_balancer_id:
-    Ignore: true
-  name:
-    Ignore: true
-  scheduler:
-    Ignore: true
-  server_group_id:
-    Ignore: true
-  sticky_session:
-    Ignore: true
-  sticky_session_type:
-    Ignore: true
-  unhealthy_threshold:
-    Ignore: true
-  url:
     Ignore: true

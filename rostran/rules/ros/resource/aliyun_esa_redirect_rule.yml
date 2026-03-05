@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::RedirectRule
+  To: alicloud_esa_redirect_rule
+Properties:
+  ReserveQueryString:
+    To: reserve_query_string
+  Rule:
+    To: rule
+  RuleEnable:
+    To: rule_enable
+  RuleName:
+    To: rule_name
+  SiteId:
+    To: site_id
+  SiteVersion:
+    To: site_version
+  StatusCode:
+    To: status_code
+  TargetUrl:
+    To: target_url
+  Type:
+    To: type
+Attributes:
+  ConfigId:
+    To: config_id
+  TargetUrl:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  RuleName:
+    Ignore: true
+  ConfigType:
+    Ignore: true
+  Rule:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  StatusCode:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  ReserveQueryString:
+    Ignore: true
+  Type:
+    Ignore: true

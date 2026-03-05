@@ -12,9 +12,12 @@ Properties:
     Ignore: true
   notification_urls:
     Ignore: true
+  parameter_key:
+    Ignore: true
+  parameter_value:
+    Ignore: true
   parameters:
     To: Parameters
-    Handler: ros_parameters
   ram_role_name:
     Ignore: true
   replacement_option:
@@ -33,14 +36,11 @@ Properties:
     Ignore: true
   stack_policy_url:
     Ignore: true
-  status:
-    Ignore: true
   tags:
     To: Tags
-    Handler: tags_dict_to_list
+    Type: List
   template_body:
     To: TemplateBody
-    Handler: json_load
   template_url:
     To: TemplateURL
   template_version:
@@ -52,19 +52,5 @@ Properties:
 Attributes:
   id:
     Ignore: true
-  deletion_protection:
-    Ignore: true
-  disable_rollback:
-    Ignore: true
-  ram_role_name:
-    Ignore: true
-  stack_name:
-    Ignore: true
-  stack_policy_body:
-    Ignore: true
   status:
-    Ignore: true
-  tags:
-    Ignore: true
-  timeout_in_minutes:
     Ignore: true

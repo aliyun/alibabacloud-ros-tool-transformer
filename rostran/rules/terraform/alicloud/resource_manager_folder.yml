@@ -8,10 +8,10 @@ Properties:
     To: FolderName
   parent_folder_id:
     To: ParentFolderId
+  tags:
+    Ignore: true
 Attributes:
   id:
     To: FolderId
-  folder_name:
-    To: FolderName
-  parent_folder_id:
-    To: ParentFolderId
+  create_time:
+    Ignore: true

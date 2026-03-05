@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ga_custom_routing_endpoint
+  To: ALIYUN::GA::EndpointGroup
+Properties:
+  endpoint:
+    To: EndpointAddress
+  endpoint_group_id:
+    To: EndpointGroupId
+  traffic_to_endpoint_policy:
+    Ignore: true
+  type:
+    To: EndpointType
+Attributes:
+  id:
+    To: EndpointId
+  accelerator_id:
+    Ignore: true
+  custom_routing_endpoint_id:
+    Ignore: true
+  listener_id:
+    Ignore: true
+  status:
+    Ignore: true

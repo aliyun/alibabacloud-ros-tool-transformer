@@ -7,7 +7,7 @@ Properties:
   instance_id:
     To: InstanceId
   virtual_host_name:
-    Ignore: true
+    To: VirtualHost
 Attributes:
   id:
     Ignore: true

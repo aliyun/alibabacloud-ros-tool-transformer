@@ -5,13 +5,13 @@ ResourceType:
   To: ALIYUN::MSE::Gateway
 Properties:
   backup_vswitch_id:
-    Ignore: true
+    To: BackupVSwitchId
   delete_slb:
     Ignore: true
   enterprise_security_group:
-    Ignore: true
+    To: EnterpriseSecurityGroup
   gateway_name:
-    Ignore: true
+    To: Name
   internet_slb_spec:
     To: InternetSlbSpec
   replica:

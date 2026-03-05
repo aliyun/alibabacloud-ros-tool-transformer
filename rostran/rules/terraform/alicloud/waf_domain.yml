@@ -6,8 +6,6 @@ ResourceType:
 Properties:
   cluster_type:
     To: ClusterType
-  cname:
-    Ignore: true
   connection_time:
     To: ConnectionTime
   domain:
@@ -36,11 +34,6 @@ Properties:
   log_headers:
     To: LogHeaders
     Type: List
-    Schema:
-      key:
-        Ignore: true
-      value:
-        Ignore: true
   read_time:
     To: ReadTime
   resource_group_id:
@@ -52,41 +45,6 @@ Properties:
     To: WriteTime
 Attributes:
   id:
-    To:
-    - InstanceId
-    - DomainName
-    Handler: colon_join
-  cluster_type:
-    To: ClusterType
+    Ignore: true
   cname:
     To: Cname
-  connection_time:
-    Ignore: true
-  domain:
-    Ignore: true
-  domain_name:
-    To: DomainName
-  http2_port:
-    To: Http2Port
-  http_port:
-    To: HttpPort
-  http_to_user_ip:
-    To: HttpToUserIp
-  https_port:
-    To: HttpsPort
-  https_redirect:
-    To: HttpsRedirect
-  instance_id:
-    To: InstanceId
-  is_access_product:
-    To: IsAccessProduct
-  load_balancing:
-    To: LoadBalancing
-  read_time:
-    Ignore: true
-  resource_group_id:
-    To: ResourceGroupId
-  source_ips:
-    To: SourceIps
-  write_time:
-    Ignore: true

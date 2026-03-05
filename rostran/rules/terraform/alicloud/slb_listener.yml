@@ -20,9 +20,11 @@ Properties:
   ca_certificate_id:
     To: CACertificateId
   cookie:
-    To: Persistence.Cookie
+    To: Persistence
+    Type: Map
   cookie_timeout:
-    To: Persistence.CookieTimeout
+    To: Persistence
+    Type: Map
   delete_protection_validation:
     Ignore: true
   description:
@@ -32,39 +34,34 @@ Properties:
   established_timeout:
     Ignore: true
   forward_port:
-    To: HttpConfig.ForwardPort
+    Ignore: true
   frontend_port:
     To: ListenerPort
   gzip:
     To: Gzip
   health_check:
-    To: HealthCheck.Switch
+    To: HealthCheck
+    Type: Map
   health_check_connect_port:
-    To: HealthCheck.Port
+    Ignore: true
   health_check_domain:
-    To: HealthCheck.Domain
+    Ignore: true
   health_check_http_code:
-    To: HealthCheck.HttpCode
+    Ignore: true
   health_check_interval:
-    To: HealthCheck.Interval
+    Ignore: true
   health_check_method:
-    To: HealthCheck.HealthCheckMethod
+    Ignore: true
   health_check_timeout:
-    To: HealthCheck.Timeout
+    Ignore: true
   health_check_type:
-    To: HealthCheck.HealthCheckType
+    Ignore: true
   health_check_uri:
-    To: HealthCheck.URI
+    Ignore: true
   healthy_threshold:
-    To: HealthCheck.HealthyThreshold
+    Ignore: true
   idle_timeout:
     To: IdleTimeout
-  instance_port:
-    Ignore: true
-  lb_port:
-    Ignore: true
-  lb_protocol:
-    Ignore: true
   listener_forward:
     Ignore: true
   load_balancer_id:
@@ -72,7 +69,8 @@ Properties:
   master_slave_server_group_id:
     To: MasterSlaveServerGroupId
   persistence_timeout:
-    To: Persistence.PersistenceTimeout
+    To: Persistence
+    Type: Map
   protocol:
     To: Protocol
   proxy_protocol_v2_enabled:
@@ -86,100 +84,21 @@ Properties:
   server_group_id:
     To: VServerGroupId
   ssl_certificate_id:
-    To: ServerCertificateId
+    Ignore: true
   sticky_session:
-    To: Persistence.StickySession
+    To: Persistence
+    Type: Map
   sticky_session_type:
-    To: Persistence.StickySessionType
+    To: Persistence
+    Type: Map
   tls_cipher_policy:
     To: TLSCipherPolicy
   unhealthy_threshold:
-    To: HealthCheck.UnhealthyThreshold
+    Ignore: true
   x_forwarded_for:
-    To: Persistence.__single_to_multi_handler__
-    Handler: slb_x_forwarded_for
+    Ignore: true
 Attributes:
   id:
-    Ignore: true
-  acl_id:
-    Ignore: true
-  acl_status:
-    Ignore: true
-  acl_type:
-    Ignore: true
-  backend_port:
-    Ignore: true
-  bandwidth:
-    Ignore: true
-  ca_certificate_id:
-    Ignore: true
-  cookie:
-    Ignore: true
-  cookie_timeout:
-    Ignore: true
-  description:
-    Ignore: true
-  enable_http2:
-    Ignore: true
-  established_timeout:
-    Ignore: true
-  forward_port:
-    Ignore: true
-  frontend_port:
-    Ignore: true
-  gzip:
-    Ignore: true
-  health_check:
-    Ignore: true
-  health_check_connect_port:
-    Ignore: true
-  health_check_domain:
-    Ignore: true
-  health_check_http_code:
-    Ignore: true
-  health_check_interval:
-    Ignore: true
-  health_check_method:
-    Ignore: true
-  health_check_timeout:
-    Ignore: true
-  health_check_type:
-    Ignore: true
-  health_check_uri:
-    Ignore: true
-  healthy_threshold:
-    Ignore: true
-  idle_timeout:
-    Ignore: true
-  listener_forward:
-    Ignore: true
-  load_balancer_id:
-    To: LoadBalancerId
-  master_slave_server_group_id:
-    Ignore: true
-  persistence_timeout:
-    Ignore: true
-  protocol:
-    Ignore: true
-  proxy_protocol_v2_enabled:
-    Ignore: true
-  request_timeout:
-    Ignore: true
-  scheduler:
-    Ignore: true
-  server_certificate_id:
-    Ignore: true
-  server_group_id:
-    Ignore: true
-  ssl_certificate_id:
-    Ignore: true
-  sticky_session:
-    Ignore: true
-  sticky_session_type:
-    Ignore: true
-  tls_cipher_policy:
-    Ignore: true
-  unhealthy_threshold:
     Ignore: true
   x_forwarded_for:
     Ignore: true

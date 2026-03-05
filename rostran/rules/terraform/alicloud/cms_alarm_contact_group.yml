@@ -5,13 +5,14 @@ ResourceType:
   To: ALIYUN::CMS::ContactGroup
 Properties:
   alarm_contact_group_name:
-    Ignore: true
+    To: ContactGroupName
   contacts:
-    Ignore: true
+    To: ContactNames
+    Type: List
   describe:
     To: Describe
   enable_subscribed:
-    Ignore: true
+    To: EnableSubscribed
 Attributes:
   id:
     To: ContactGroupName

@@ -4,36 +4,121 @@ ResourceType:
   From: alicloud_fcv3_function
   To: ALIYUN::FC3::Function
 Properties:
+  bucket_name:
+    Ignore: true
+  bucket_path:
+    Ignore: true
   code:
+    To: Code
+    Type: Map
+    Schema:
+      checksum:
+        To: Checksum
+      oss_bucket_name:
+        To: OssBucketName
+      oss_object_name:
+        To: OssObjectName
+      zip_file:
+        To: ZipFile
+  command:
     Ignore: true
   cpu:
     To: Cpu
   create_time:
     Ignore: true
   custom_container_config:
-    Ignore: true
+    To: CustomContainerConfig
+    Type: Map
+    Schema:
+      acceleration_type:
+        To: AccelerationType
+      acr_instance_id:
+        To: AcrInstanceId
+      command:
+        To: Command
+        Type: List
+      entrypoint:
+        To: Entrypoint
+        Type: List
+      health_check_config:
+        To: HealthCheckConfig
+        Type: Map
+      image:
+        To: Image
+      port:
+        To: Port
   custom_dns:
-    Ignore: true
+    To: CustomDns
+    Type: Map
+    Schema:
+      dns_options:
+        To: DnsOptions
+        Type: List
+      name_servers:
+        To: NameServers
+        Type: List
+      searches:
+        To: Searches
+        Type: List
   custom_runtime_config:
-    Ignore: true
+    To: CustomRuntimeConfig
+    Type: Map
+    Schema:
+      args:
+        To: Args
+        Type: List
+      command:
+        To: Command
+        Type: List
+      health_check_config:
+        To: HealthCheckConfig
+        Type: Map
+      port:
+        To: Port
   description:
     To: Description
   disk_size:
     To: DiskSize
+  enable_tls:
+    Ignore: true
+  endpoint:
+    Ignore: true
   environment_variables:
     To: EnvironmentVariables
+  failure_threshold:
+    Ignore: true
   function_name:
     To: FunctionName
   gpu_config:
-    Ignore: true
+    To: GpuConfig
+    Type: Map
+    Schema:
+      gpu_memory_size:
+        To: GpuMemorySize
+      gpu_type:
+        To: GpuType
   handler:
     To: Handler
+  http_get_url:
+    Ignore: true
+  idle_timeout:
+    Ignore: true
+  initial_delay_seconds:
+    Ignore: true
   instance_concurrency:
     To: InstanceConcurrency
   instance_isolation_mode:
-    Ignore: true
+    To: InstanceIsolationMode
   instance_lifecycle_config:
-    Ignore: true
+    To: InstanceLifecycleConfig
+    Type: Map
+    Schema:
+      initializer:
+        To: Initializer
+        Type: Map
+      pre_stop:
+        To: PreStop
+        Type: Map
   internet_access:
     To: InternetAccess
   invocation_restriction:
@@ -42,28 +127,81 @@ Properties:
     To: Layers
     Type: List
   log_config:
-    Ignore: true
+    To: LogConfig
+    Type: Map
+    Schema:
+      enable_instance_metrics:
+        To: EnableInstanceMetrics
+      enable_request_metrics:
+        To: EnableRequestMetrics
+      log_begin_rule:
+        To: LogBeginRule
+      logstore:
+        To: Logstore
+      project:
+        To: Project
   memory_size:
     To: MemorySize
-  nas_config:
+  mount_dir:
     Ignore: true
+  name:
+    Ignore: true
+  nas_config:
+    To: NasConfig
+    Type: Map
+    Schema:
+      group_id:
+        To: GroupId
+      mount_points:
+        To: MountPoints
+        Type: List
+      user_id:
+        To: UserId
   oss_mount_config:
+    To: OssMountConfig
+    Type: Map
+    Schema:
+      mount_points:
+        To: MountPoints
+        Type: List
+  period_seconds:
+    Ignore: true
+  read_only:
+    Ignore: true
+  resource_group_id:
     Ignore: true
   role:
     To: Role
   runtime:
     To: Runtime
-  session_affinity:
+  server_addr:
     Ignore: true
+  session_affinity:
+    To: SessionAffinity
   session_affinity_config:
+    To: SessionAffinityConfig
+  success_threshold:
     Ignore: true
   tags:
     To: Tags
     Type: List
   timeout:
     To: Timeout
-  vpc_config:
+  timeout_seconds:
     Ignore: true
+  value:
+    Ignore: true
+  vpc_config:
+    To: VpcConfig
+    Type: Map
+    Schema:
+      security_group_id:
+        To: SecurityGroupId
+      vpc_id:
+        To: VpcId
+      vswitch_ids:
+        To: VSwitchIds
+        Type: List
 Attributes:
   id:
     To: FunctionId

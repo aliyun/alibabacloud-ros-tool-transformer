@@ -17,11 +17,3 @@ Properties:
 Attributes:
   id:
     To: DomainExtensionId
-  domain:
-    Ignore: true
-  frontend_port:
-    Ignore: true
-  load_balancer_id:
-    Ignore: true
-  server_certificate_id:
-    Ignore: true

@@ -1,0 +1,10 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_monitor_service_basic_public
+  To: ALIYUN::CMS::MonitorGroup
+Attributes:
+  id:
+    To: GroupId
+  create_time:
+    Ignore: true

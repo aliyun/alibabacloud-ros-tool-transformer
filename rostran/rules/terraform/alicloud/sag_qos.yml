@@ -9,5 +9,3 @@ Properties:
 Attributes:
   id:
     To: QosId
-  name:
-    Ignore: true

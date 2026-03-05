@@ -17,4 +17,5 @@ Properties:
       taints:
         Ignore: true
   utilization:
-    Ignore: true
+    To: AutoScaling
+    Type: Map

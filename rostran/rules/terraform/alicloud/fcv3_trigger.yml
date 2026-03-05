@@ -19,7 +19,7 @@ Properties:
   status:
     Ignore: true
   trigger_config:
-    Ignore: true
+    To: TriggerConfig
   trigger_name:
     To: TriggerName
   trigger_type:
@@ -46,7 +46,7 @@ Attributes:
   status:
     Ignore: true
   target_arn:
-    Ignore: true
+    To: FunctionName
   trigger_config:
     Ignore: true
   trigger_id:

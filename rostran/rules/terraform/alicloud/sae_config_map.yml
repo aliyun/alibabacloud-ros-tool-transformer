@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::SAE::ConfigMap
 Properties:
   data:
-    Ignore: true
+    To: Data
   description:
     To: Description
   name:
@@ -15,11 +15,3 @@ Properties:
 Attributes:
   id:
     To: ConfigMapId
-  data:
-    Ignore: true
-  description:
-    Ignore: true
-  name:
-    Ignore: true
-  namespace_id:
-    To: NamespaceId

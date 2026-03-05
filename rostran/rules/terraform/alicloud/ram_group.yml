@@ -7,17 +7,13 @@ Properties:
   comments:
     To: Comments
   force:
-    Ignore: true
+    To: DeletionForce
   group_name:
     To: GroupName
   name:
-    To: GroupName
+    Ignore: true
 Attributes:
   id:
     To: GroupName
-  comments:
-    Ignore: true
   create_time:
-    Ignore: true
-  name:
     Ignore: true

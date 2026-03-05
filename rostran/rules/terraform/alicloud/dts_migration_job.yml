@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_dts_migration_job
-  To: ALIYUN::DTS::MigrationJob
+  To: ALIYUN::DTS::MigrationJob2
 Properties:
   checkpoint:
     Ignore: true

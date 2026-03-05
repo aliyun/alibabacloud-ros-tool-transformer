@@ -16,19 +16,9 @@ Properties:
     To: FolderId
   force_delete:
     To: DeleteAccount
-  join_method:
-    Ignore: true
-  join_time:
-    Ignore: true
-  modify_time:
-    Ignore: true
   payer_account_id:
     To: PayerAccountId
   resell_account_type:
-    Ignore: true
-  resource_directory_id:
-    Ignore: true
-  status:
     Ignore: true
   tags:
     Ignore: true
@@ -37,23 +27,13 @@ Properties:
 Attributes:
   id:
     To: AccountId
-  display_name:
-    To: DisplayName
-  folder_id:
-    To: FolderId
   join_method:
     To: JoinMethod
   join_time:
     Ignore: true
   modify_time:
     Ignore: true
-  payer_account_id:
-    Ignore: true
   resource_directory_id:
     To: ResourceDirectoryId
   status:
     Ignore: true
-  tags:
-    Ignore: true
-  type:
-    To: Type

@@ -1,0 +1,43 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GWLB::LoadBalancer
+  To: alicloud_gwlb_load_balancer
+Properties:
+  AddressIpVersion:
+    To: address_ip_version
+  LoadBalancerName:
+    To: load_balancer_name
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+  VpcId:
+    To: vpc_id
+  ZoneMappings:
+    To: zone_mappings
+    Type: List
+    Schema:
+      VSwitchId:
+        To: vswitch_id
+      ZoneId:
+        To: zone_id
+Attributes:
+  LoadBalancerId:
+    To: id
+  CreateTime:
+    To: create_time
+  BusinessStatus:
+    To: status
+  ZoneMappings:
+    To: zone_mappings
+  VpcId:
+    Ignore: true
+  LoadBalancerName:
+    Ignore: true
+  AddressIpVersion:
+    Ignore: true
+  Tags:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true

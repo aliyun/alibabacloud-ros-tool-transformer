@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OSS::Website
+  To: alicloud_oss_bucket_website
+Properties:
+  WebsiteConfiguration:
+    To: access_key_id
+  WebsiteConfiguration$$0:
+    To: taggings
+    Type: Map
+    Schema:
+      IndexDocument:
+        Ignore: true
+      RoutingRules:
+        Ignore: true
+      ErrorDocument:
+        Ignore: true
+  BucketName:
+    To: bucket
+Attributes: {}

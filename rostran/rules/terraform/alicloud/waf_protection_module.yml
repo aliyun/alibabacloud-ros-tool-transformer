@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_waf_protection_module
+  To: ALIYUN::WAF::WafSwitch
+Properties:
+  defense_type:
+    Ignore: true
+  domain:
+    To: Domain
+  instance_id:
+    To: InstanceId
+  mode:
+    Ignore: true
+  status:
+    To: ServiceOn
+Attributes:
+  id:
+    Ignore: true

@@ -56,8 +56,16 @@ Properties:
     Ignore: true
   json_keys:
     Ignore: true
+  log_reduce:
+    To: LogReduce
+  log_reduce_black_list:
+    Ignore: true
+  log_reduce_white_list:
+    Ignore: true
   logstore:
     To: LogstoreName
+  max_text_len:
+    Ignore: true
   name:
     Ignore: true
   project:

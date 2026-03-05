@@ -12,6 +12,9 @@ Properties:
     Ignore: true
   application_name:
     To: ApplicationName
+  application_name_list:
+    To: ApplicationNameList
+    Type: List
   description:
     To: Description
   dest_port:
@@ -30,6 +33,10 @@ Properties:
     Ignore: true
   destination_type:
     To: DestinationType
+  domain_resolve_type:
+    To: DomainResolveType
+  end_time:
+    To: EndTime
   hit_times:
     Ignore: true
   lang:
@@ -37,11 +44,20 @@ Properties:
   member_uid:
     To: MemberUid
   order:
-    Ignore: true
+    To: NewOrder
   proto:
     To: Proto
   release:
     To: Release
+  repeat_days:
+    To: RepeatDays
+    Type: List
+  repeat_end_time:
+    To: RepeatEndTime
+  repeat_start_time:
+    To: RepeatStartTime
+  repeat_type:
+    To: RepeatType
   source:
     To: Source
   source_group_cidrs:
@@ -50,6 +66,8 @@ Properties:
     Ignore: true
   source_type:
     To: SourceType
+  start_time:
+    To: StartTime
   vpc_firewall_id:
     To: VpcFirewallId
 Attributes:
@@ -62,6 +80,8 @@ Attributes:
   application_id:
     Ignore: true
   application_name:
+    Ignore: true
+  create_time:
     Ignore: true
   description:
     Ignore: true

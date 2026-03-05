@@ -21,17 +21,3 @@ Properties:
 Attributes:
   id:
     To: SslVpnClientCertId
-  ca_cert:
-    Ignore: true
-  client_cert:
-    Ignore: true
-  client_config:
-    Ignore: true
-  client_key:
-    Ignore: true
-  name:
-    Ignore: true
-  ssl_vpn_server_id:
-    Ignore: true
-  status:
-    Ignore: true

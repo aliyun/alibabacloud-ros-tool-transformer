@@ -7,7 +7,7 @@ Properties:
   create_time:
     Ignore: true
   delete_after_image_upload:
-    Ignore: true
+    To: DeleteAfterImageUpload
   image_name:
     To: ImageName
   instance_id:

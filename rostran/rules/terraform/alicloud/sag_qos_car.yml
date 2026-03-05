@@ -27,23 +27,3 @@ Properties:
 Attributes:
   id:
     To: QosCarId
-  description:
-    Ignore: true
-  limit_type:
-    Ignore: true
-  max_bandwidth_abs:
-    Ignore: true
-  max_bandwidth_percent:
-    Ignore: true
-  min_bandwidth_abs:
-    Ignore: true
-  min_bandwidth_percent:
-    Ignore: true
-  name:
-    Ignore: true
-  percent_source_type:
-    Ignore: true
-  priority:
-    Ignore: true
-  qos_id:
-    Ignore: true

@@ -14,16 +14,17 @@ Properties:
     Ignore: true
   commodity_code:
     Ignore: true
-  create_time:
-    Ignore: true
   flow_out_bandwidth:
-    Ignore: true
+    To: InternetInfo
+    Type: Map
   flow_out_type:
-    Ignore: true
+    To: InternetInfo
+    Type: Map
   instance_name:
     To: InstanceName
   internet_spec:
-    Ignore: true
+    To: InternetInfo
+    Type: Map
   ip_whitelist:
     Ignore: true
   ip_whitelists:
@@ -37,67 +38,63 @@ Properties:
   period_unit:
     To: PeriodUnit
   product_info:
-    Ignore: true
+    To: ProductInfo
+    Type: Map
+    Schema:
+      auto_scaling:
+        To: AutoScaling
+      message_retention_time:
+        To: MessageRetentionTime
+      msg_process_spec:
+        To: MsgProcessSpec
+      send_receive_ratio:
+        To: SendReceiveRatio
+      storage_encryption:
+        Ignore: true
+      storage_secret_key:
+        Ignore: true
+      trace_on:
+        Ignore: true
   remark:
     To: Remark
   resource_group_id:
     To: ResourceGroupId
   security_group_ids:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
   series_code:
     To: SeriesCode
   service_code:
     Ignore: true
   software:
     Ignore: true
-  status:
-    Ignore: true
   sub_series_code:
     To: SubSeriesCode
   tags:
     Ignore: true
   vpc_id:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
   vswitch_id:
     Ignore: true
   vswitches:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
+    Schema:
+      vswitch_id:
+        To: VSwitchId
 Attributes:
   id:
     To: InstanceId
-  auto_renew:
-    Ignore: true
-  auto_renew_period:
-    Ignore: true
-  auto_renew_period_unit:
-    Ignore: true
-  commodity_code:
-    Ignore: true
   create_time:
     Ignore: true
-  instance_name:
-    To: InstanceName
   network_info:
-    Ignore: true
-  payment_type:
     Ignore: true
   product_info:
     Ignore: true
   region_id:
     Ignore: true
-  remark:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  series_code:
-    Ignore: true
-  service_code:
-    Ignore: true
   software:
     Ignore: true
   status:
-    Ignore: true
-  sub_series_code:
-    Ignore: true
-  tags:
     Ignore: true

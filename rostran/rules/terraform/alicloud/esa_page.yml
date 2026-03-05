@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_page
+  To: ALIYUN::ESA::Page
+Properties:
+  content:
+    To: Content
+  content_type:
+    To: ContentType
+  description:
+    To: Description
+  page_name:
+    To: PageName
+Attributes:
+  id:
+    To: PageId

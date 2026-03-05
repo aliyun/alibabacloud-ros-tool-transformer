@@ -27,13 +27,3 @@ Properties:
 Attributes:
   id:
     To: InstanceId
-  image_id:
-    Ignore: true
-  instance_name:
-    Ignore: true
-  payment_type:
-    Ignore: true
-  plan_id:
-    Ignore: true
-  status:
-    Ignore: true

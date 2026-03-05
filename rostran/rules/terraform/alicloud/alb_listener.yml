@@ -51,7 +51,13 @@ Properties:
   load_balancer_id:
     To: LoadBalancerId
   quic_config:
-    Ignore: true
+    To: QuicConfig
+    Type: Map
+    Schema:
+      quic_listener_id:
+        To: QuicListenerId
+      quic_upgrade_enabled:
+        To: QuicUpgradeEnabled
   request_timeout:
     To: RequestTimeout
   security_policy_id:
@@ -59,11 +65,47 @@ Properties:
   server_group_tuples:
     Ignore: true
   status:
-    Ignore: true
+    To: ListenerStatus
   tags:
     Ignore: true
   x_forwarded_for_config:
-    Ignore: true
+    To: XForwardedForConfig
+    Type: Map
+    Schema:
+      x_forwarded_for_client_cert_client_verify_alias:
+        To: XForwardedForClientCertClientVerifyAlias
+      x_forwarded_for_client_cert_client_verify_enabled:
+        To: XForwardedForClientCertClientVerifyEnabled
+      x_forwarded_for_client_cert_finger_print_alias:
+        To: XForwardedForClientCertFingerprintAlias
+      x_forwarded_for_client_cert_finger_print_enabled:
+        To: XForwardedForClientCertFingerprintEnabled
+      x_forwarded_for_client_cert_issuer_dn_alias:
+        To: XForwardedForClientCertIssuerDNAlias
+      x_forwarded_for_client_cert_issuer_dn_enabled:
+        To: XForwardedForClientCertIssuerDNEnabled
+      x_forwarded_for_client_cert_subject_dn_alias:
+        To: XForwardedForClientCertSubjectDNAlias
+      x_forwarded_for_client_cert_subject_dn_enabled:
+        To: XForwardedForClientCertSubjectDNEnabled
+      x_forwarded_for_client_source_ips_enabled:
+        To: XForwardedForClientSourceIpsEnabled
+      x_forwarded_for_client_source_ips_trusted:
+        To: XForwardedForClientSourceIpsTrusted
+      x_forwarded_for_client_src_port_enabled:
+        To: XForwardedForClientSrcPortEnabled
+      x_forwarded_for_enabled:
+        To: XForwardedForEnabled
+      x_forwarded_for_host_enabled:
+        To: XForwardedForHostEnabled
+      x_forwarded_for_processing_mode:
+        To: XForwardedForProcessingMode
+      x_forwarded_for_proto_enabled:
+        To: XForwardedForProtoEnabled
+      x_forwarded_for_slb_id_enabled:
+        To: XForwardedForSLBIdEnabled
+      x_forwarded_for_slb_port_enabled:
+        To: XForwardedForSLBPortEnabled
   xforwarded_for_config:
     Ignore: true
 Attributes:

@@ -5,17 +5,26 @@ ResourceType:
   To: ALIYUN::FC::Function
 Properties:
   ca_port:
-    Ignore: true
+    To: CAPort
   code_checksum:
     Ignore: true
   custom_container_config:
-    Ignore: true
+    To: CustomContainerConfig
+    Type: Map
+    Schema:
+      args:
+        To: Args
+      command:
+        To: Command
+      image:
+        To: Image
   description:
     To: Description
   environment_variables:
     To: EnvironmentVariables
   filename:
-    Ignore: true
+    To: Code
+    Type: Map
   function_id:
     Ignore: true
   handler:
@@ -39,9 +48,11 @@ Properties:
   name_prefix:
     To: FunctionName
   oss_bucket:
-    Ignore: true
+    To: Code
+    Type: Map
   oss_key:
-    Ignore: true
+    To: Code
+    Type: Map
   runtime:
     To: Runtime
   service:

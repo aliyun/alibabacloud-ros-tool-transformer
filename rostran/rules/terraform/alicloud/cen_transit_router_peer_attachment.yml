@@ -9,7 +9,7 @@ Properties:
   bandwidth:
     To: Bandwidth
   bandwidth_type:
-    Ignore: true
+    To: BandwidthType
   cen_bandwidth_package_id:
     To: CenBandwidthPackageId
   cen_id:
@@ -17,7 +17,7 @@ Properties:
   create_time:
     Ignore: true
   default_link_type:
-    Ignore: true
+    To: DefaultLinkType
   dry_run:
     Ignore: true
   peer_transit_router_id:
@@ -27,9 +27,9 @@ Properties:
   resource_type:
     Ignore: true
   route_table_association_enabled:
-    Ignore: true
+    To: RouteTableAssociationEnabled
   route_table_propagation_enabled:
-    Ignore: true
+    To: RouteTablePropagationEnabled
   status:
     Ignore: true
   tags:

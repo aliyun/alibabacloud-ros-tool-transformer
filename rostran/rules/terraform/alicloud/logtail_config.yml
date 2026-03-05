@@ -13,13 +13,13 @@ Properties:
   log_sample:
     Ignore: true
   logstore:
-    Ignore: true
+    To: LogstoreName
   name:
-    Ignore: true
+    To: LogtailConfigName
   output_type:
     Ignore: true
   project:
-    Ignore: true
+    To: ProjectName
 Attributes:
   id:
     Ignore: true

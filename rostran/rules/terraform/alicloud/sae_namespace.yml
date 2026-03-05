@@ -17,13 +17,3 @@ Properties:
 Attributes:
   id:
     To: NamespaceId
-  enable_micro_registration:
-    Ignore: true
-  namespace_description:
-    Ignore: true
-  namespace_id:
-    To: NamespaceId
-  namespace_name:
-    Ignore: true
-  namespace_short_id:
-    Ignore: true

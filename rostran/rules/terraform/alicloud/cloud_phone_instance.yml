@@ -10,4 +10,4 @@ Properties:
     To: InstanceName
 Attributes:
   id:
-    Ignore: true
+    To: InstanceIds

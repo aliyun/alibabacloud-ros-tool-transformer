@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_oss_bucket_cname
-  To: ALIYUN::OSS::Bucket
+  To: ALIYUN::OSS::Domain
 Properties:
   bucket:
     To: BucketName
@@ -19,7 +19,7 @@ Properties:
   delete_certificate:
     Ignore: true
   domain:
-    Ignore: true
+    To: DomainName
   force:
     Ignore: true
   previous_cert_id:

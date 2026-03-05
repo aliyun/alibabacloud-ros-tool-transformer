@@ -17,7 +17,13 @@ Properties:
   cross_zone_enabled:
     To: CrossZoneEnabled
   deletion_protection_config:
-    Ignore: true
+    To: DeletionProtectionConfig
+    Type: Map
+    Schema:
+      enabled:
+        To: Enabled
+      reason:
+        To: Reason
   deletion_protection_enabled:
     To: DeletionProtectionConfig.Enabled
   deletion_protection_reason:
@@ -33,7 +39,13 @@ Properties:
   load_balancer_type:
     To: LoadBalancerType
   modification_protection_config:
-    Ignore: true
+    To: ModificationProtectionConfig
+    Type: Map
+    Schema:
+      reason:
+        To: Reason
+      status:
+        To: Status
   modification_protection_reason:
     To: ModificationProtectionConfig.Reason
   modification_protection_status:

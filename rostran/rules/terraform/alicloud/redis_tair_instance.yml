@@ -7,18 +7,16 @@ Properties:
   auto_renew:
     Ignore: true
   auto_renew_period:
-    Ignore: true
+    To: AutoRenewDuration
   backup_id:
     Ignore: true
   cluster_backup_id:
     Ignore: true
   connection_string_prefix:
-    To: Connections
-    Type: Map
-  create_time:
     Ignore: true
   effective_time:
-    Ignore: true
+    To: InstanceMaintainTime
+    Type: Map
   engine_version:
     To: EngineVersion
   force_upgrade:
@@ -28,7 +26,7 @@ Properties:
   instance_class:
     To: InstanceClass
   instance_type:
-    Ignore: true
+    To: ProductType
   intranet_bandwidth:
     Ignore: true
   modify_mode:
@@ -36,17 +34,23 @@ Properties:
   node_type:
     To: NodeType
   param_no_loose_sentinel_enabled:
-    Ignore: true
+    To: TairConfig
+    Type: Map
   param_no_loose_sentinel_password_free_access:
-    Ignore: true
+    To: TairConfig
+    Type: Map
   param_no_loose_sentinel_password_free_commands:
-    Ignore: true
+    To: TairConfig
+    Type: Map
   param_repl_mode:
-    Ignore: true
+    To: TairConfig
+    Type: Map
   param_semisync_repl_timeout:
-    Ignore: true
+    To: TairConfig
+    Type: Map
   param_sentinel_compat_enable:
-    Ignore: true
+    To: TairConfig
+    Type: Map
   password:
     To: Password
   payment_type:
@@ -56,7 +60,7 @@ Properties:
   port:
     Ignore: true
   read_only_count:
-    Ignore: true
+    To: ReadOnlyCount
   recover_config_mode:
     Ignore: true
   resource_group_id:
@@ -76,18 +80,16 @@ Properties:
   src_db_instance_id:
     Ignore: true
   ssl_enabled:
-    Ignore: true
-  status:
-    Ignore: true
+    To: SSLEnabled
   storage_performance_level:
     Ignore: true
   storage_size_gb:
     Ignore: true
   tags:
     To: Tags
-    Handler: tags_dict_to_list
+    Type: List
   tair_instance_name:
-    Ignore: true
+    To: InstanceName
   vpc_auth_mode:
     To: VpcPasswordFree
   vpc_id:
@@ -105,49 +107,13 @@ Attributes:
     To: ConnectionDomain
   create_time:
     Ignore: true
-  engine_version:
-    To: EngineVersion
-  instance_class:
-    To: InstanceClass
-  instance_type:
-    To: InstanceType
   max_connections:
-    Ignore: true
+    To: Connections
   network_type:
     To: NetworkType
-  node_type:
-    To: NodeType
-  payment_type:
-    Ignore: true
-  port:
-    To: Port
   region_id:
-    Ignore: true
-  resource_group_id:
-    To: ResourceGroupId
-  secondary_zone_id:
-    Ignore: true
-  security_group_id:
-    Ignore: true
-  shard_count:
-    Ignore: true
-  ssl_enabled:
     Ignore: true
   status:
     Ignore: true
-  storage_performance_level:
-    Ignore: true
-  storage_size_gb:
-    Ignore: true
-  tags:
-    Ignore: true
   tair_instance_id:
     To: InstanceId
-  tair_instance_name:
-    Ignore: true
-  vpc_id:
-    To: VpcId
-  vswitch_id:
-    To: VSwitchId
-  zone_id:
-    To: ZoneId

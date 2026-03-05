@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbr_hana_backup_client
+  To: ALIYUN::HBR::BackupClients
+Properties:
+  alert_setting:
+    Ignore: true
+  client_info:
+    To: InstanceIds
+    Type: List
+  use_https:
+    Ignore: true
+  vault_id:
+    Ignore: true
+Attributes:
+  id:
+    To: Arn
+  client_id:
+    To: ClientIds
+  cluster_id:
+    Ignore: true
+  instance_id:
+    To: InstanceIds
+  status:
+    Ignore: true

@@ -18,7 +18,8 @@ Properties:
   tags:
     Ignore: true
   tls_versions:
-    Ignore: true
+    To: TLSVersions
+    Type: List
 Attributes:
   id:
     To: SecurityPolicyId

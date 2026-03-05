@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EdsUser::User
+  To: alicloud_ecd_user
+Properties:
+  Email:
+    To: email
+  EndUserId:
+    To: end_user_id
+  Password:
+    To: password
+  Phone:
+    To: phone
+  OwnerType:
+    Ignore: true
+  Remark:
+    Ignore: true
+  OrgId:
+    Ignore: true
+Attributes:
+  EndUserId:
+    To: id

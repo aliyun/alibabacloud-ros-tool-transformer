@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ADB::BackupPolicy
+  To: alicloud_adb_backup_policy
+Properties:
+  DBClusterId:
+    To: db_cluster_id
+  PreferredBackupPeriod:
+    To: preferred_backup_period
+  PreferredBackupTime:
+    To: preferred_backup_time
+  LogBackupRetentionPeriod:
+    Ignore: true
+  EnableBackupLog:
+    Ignore: true
+  BackupRetentionPeriod:
+    Ignore: true
+Attributes: {}

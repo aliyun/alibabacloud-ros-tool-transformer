@@ -1,0 +1,203 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_website
+  To: ALIYUN::OSS::Website
+Properties:
+  access_key_id:
+    To: WebsiteConfiguration
+    Type: Map
+  access_key_secret:
+    To: WebsiteConfiguration
+    Type: Map
+  auth_type:
+    To: WebsiteConfiguration
+    Type: Map
+  bucket:
+    To: BucketName
+  condition:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      http_error_code_returned_equals:
+        Ignore: true
+      include_headers:
+        Ignore: true
+      key_prefix_equals:
+        Ignore: true
+      key_suffix_equals:
+        Ignore: true
+  ends_with:
+    To: WebsiteConfiguration
+    Type: Map
+  equals:
+    To: WebsiteConfiguration
+    Type: Map
+  error_document:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      http_status:
+        Ignore: true
+      key:
+        Ignore: true
+  index_document:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      suffix:
+        Ignore: true
+      support_sub_dir:
+        Ignore: true
+      type:
+        Ignore: true
+  key:
+    To: WebsiteConfiguration
+    Type: Map
+  lua_config:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      script:
+        Ignore: true
+  mirror_multi_alternate:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      mirror_multi_alternate_dst_region:
+        Ignore: true
+      mirror_multi_alternate_number:
+        Ignore: true
+      mirror_multi_alternate_url:
+        Ignore: true
+      mirror_multi_alternate_vpc_id:
+        Ignore: true
+  pass:
+    To: WebsiteConfiguration
+    Type: Map
+  pass_all:
+    To: WebsiteConfiguration
+    Type: Map
+  redirect:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      enable_replace_prefix:
+        Ignore: true
+      host_name:
+        Ignore: true
+      http_redirect_code:
+        Ignore: true
+      mirror_allow_get_image_info:
+        Ignore: true
+      mirror_allow_head_object:
+        Ignore: true
+      mirror_allow_video_snapshot:
+        Ignore: true
+      mirror_async_status:
+        Ignore: true
+      mirror_auth:
+        Ignore: true
+      mirror_check_md5:
+        Ignore: true
+      mirror_dst_region:
+        Ignore: true
+      mirror_dst_slave_vpc_id:
+        Ignore: true
+      mirror_dst_vpc_id:
+        Ignore: true
+      mirror_follow_redirect:
+        Ignore: true
+      mirror_headers:
+        Ignore: true
+      mirror_is_express_tunnel:
+        Ignore: true
+      mirror_multi_alternates:
+        Ignore: true
+      mirror_pass_original_slashes:
+        Ignore: true
+      mirror_pass_query_string:
+        Ignore: true
+      mirror_proxy_pass:
+        Ignore: true
+      mirror_return_headers:
+        Ignore: true
+      mirror_role:
+        Ignore: true
+      mirror_save_oss_meta:
+        Ignore: true
+      mirror_sni:
+        Ignore: true
+      mirror_switch_all_errors:
+        Ignore: true
+      mirror_taggings:
+        Ignore: true
+      mirror_tunnel_id:
+        Ignore: true
+      mirror_url:
+        Ignore: true
+      mirror_url_probe:
+        Ignore: true
+      mirror_url_slave:
+        Ignore: true
+      mirror_user_last_modified:
+        Ignore: true
+      mirror_using_role:
+        Ignore: true
+      pass_query_string:
+        Ignore: true
+      protocol:
+        Ignore: true
+      redirect_type:
+        Ignore: true
+      replace_key_prefix_with:
+        Ignore: true
+      replace_key_with:
+        Ignore: true
+      transparent_mirror_response_codes:
+        Ignore: true
+  region:
+    To: WebsiteConfiguration
+    Type: Map
+  remove:
+    To: WebsiteConfiguration
+    Type: Map
+  return_header:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      key:
+        Ignore: true
+      value:
+        Ignore: true
+  routing_rules:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      routing_rule:
+        Ignore: true
+  rule_number:
+    To: WebsiteConfiguration
+    Type: Map
+  set:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      key:
+        Ignore: true
+      value:
+        Ignore: true
+  starts_with:
+    To: WebsiteConfiguration
+    Type: Map
+  taggings:
+    To: WebsiteConfiguration
+    Type: Map
+    Schema:
+      key:
+        Ignore: true
+      value:
+        Ignore: true
+Attributes:
+  id:
+    Ignore: true

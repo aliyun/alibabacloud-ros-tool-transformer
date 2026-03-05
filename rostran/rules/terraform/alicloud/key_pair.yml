@@ -15,7 +15,8 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
 Attributes:
   fingerprint:
     To: KeyPairFingerPrint

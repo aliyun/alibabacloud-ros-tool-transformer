@@ -23,7 +23,7 @@ Properties:
   core_spec:
     To: CoreSpec
   deletion_proection:
-    Ignore: true
+    To: DeletionProtection
   disk_category:
     To: DiskCategory
   duration:
@@ -51,7 +51,8 @@ Properties:
   instance_storage:
     To: InstanceStorage
   ip_white_list:
-    Ignore: true
+    To: SecurityIpList
+    Type: List
   log_disk_category:
     Ignore: true
   log_num:
@@ -97,15 +98,15 @@ Properties:
   stream_engine_specification:
     To: StreamSpec
   table_engine_node_count:
-    Ignore: true
+    To: LindormNum
   table_engine_specification:
-    Ignore: true
+    To: LindormSpec
   tags:
     Ignore: true
   time_series_engine_node_count:
-    Ignore: true
+    To: TsdbNum
   time_series_engine_specification:
-    Ignore: true
+    To: TsdbSpec
   time_serires_engine_specification:
     Ignore: true
   upgrade_type:

@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::RDS::DBInstanceSecurityIps
+  To: alicloud_rds_whitelist_template
+Properties:
+  DBInstanceIPArrayAttribute:
+    To: ip_white_list
+  DBInstanceIPArrayName:
+    To: template_name
+  DBInstanceId:
+    Ignore: true
+Attributes:
+  SecurityIps:
+    Ignore: true

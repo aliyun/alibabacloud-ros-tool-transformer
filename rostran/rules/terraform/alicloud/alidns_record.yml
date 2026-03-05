@@ -19,7 +19,7 @@ Properties:
   status:
     Ignore: true
   ttl:
-    Ignore: true
+    To: TTL
   type:
     To: Type
   user_client_ip:

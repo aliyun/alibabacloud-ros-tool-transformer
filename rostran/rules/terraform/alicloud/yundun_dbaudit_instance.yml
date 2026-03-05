@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_yundun_dbaudit_instance
+  To: ALIYUN::KMS::Instance
+Properties:
+  description:
+    Ignore: true
+  period:
+    To: Period
+  plan_code:
+    To: ProductVersion
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId

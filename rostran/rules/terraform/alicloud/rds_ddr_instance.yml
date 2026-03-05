@@ -49,7 +49,7 @@ Properties:
   ha_config:
     Ignore: true
   instance_name:
-    To: DBInstanceDescription
+    Ignore: true
   instance_storage:
     To: DBInstanceStorage
   instance_type:
@@ -85,7 +85,7 @@ Properties:
   security_group_ids:
     To: SecurityGroupId
   security_ip_mode:
-    Ignore: true
+    To: ConnectionMode
   security_ip_type:
     Ignore: true
   security_ips:
@@ -138,8 +138,10 @@ Attributes:
   category:
     Ignore: true
   connection_string:
-    To: InnerConnectionString
+    To: PublicConnectionString
   ssl_status:
     Ignore: true
   zone_id_slave_a:
+    Ignore: true
+  zone_id_slave_b:
     Ignore: true

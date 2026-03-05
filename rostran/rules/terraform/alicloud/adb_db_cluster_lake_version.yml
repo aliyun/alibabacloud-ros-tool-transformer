@@ -15,13 +15,13 @@ Properties:
   create_time:
     Ignore: true
   db_cluster_description:
-    Ignore: true
+    To: DBClusterDescription
   db_cluster_version:
-    Ignore: true
+    To: DBClusterVersion
   disk_encryption:
     To: DiskEncryption
   enable_default_resource_group:
-    Ignore: true
+    To: EnableDefaultResourcePool
   enable_ssl:
     Ignore: true
   engine:
@@ -39,7 +39,7 @@ Properties:
   lock_reason:
     Ignore: true
   payment_type:
-    Ignore: true
+    To: PayType
   period:
     To: Period
   port:
@@ -71,7 +71,7 @@ Properties:
   storage_resource:
     To: StorageResource
   vpc_id:
-    Ignore: true
+    To: VPCId
   vswitch_id:
     To: VSwitchId
   zone_id:

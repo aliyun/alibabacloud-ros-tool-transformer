@@ -20,8 +20,6 @@ Properties:
     Ignore: true
   count_condition:
     Ignore: true
-  create_time:
-    Ignore: true
   dashboard_id:
     Ignore: true
   description:
@@ -47,7 +45,7 @@ Properties:
   power_sql_mode:
     Ignore: true
   project:
-    Ignore: true
+    To: Project
   project_name:
     Ignore: true
   query:
@@ -87,19 +85,5 @@ Properties:
 Attributes:
   id:
     Ignore: true
-  alert_name:
-    To: Name
-  configuration:
-    Ignore: true
   create_time:
-    Ignore: true
-  description:
-    Ignore: true
-  display_name:
-    Ignore: true
-  project_name:
-    Ignore: true
-  schedule:
-    Ignore: true
-  status:
     Ignore: true

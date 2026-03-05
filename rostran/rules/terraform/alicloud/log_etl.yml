@@ -5,9 +5,11 @@ ResourceType:
   To: ALIYUN::SLS::Etl
 Properties:
   access_key_id:
-    Ignore: true
+    To: Configuration
+    Type: Map
   access_key_secret:
-    Ignore: true
+    To: Configuration
+    Type: Map
   create_time:
     Ignore: true
   description:
@@ -39,17 +41,25 @@ Properties:
       role_arn:
         To: RoleArn
   etl_type:
-    Ignore: true
+    To: Configuration
+    Type: Map
   from_time:
     To: Configuration.FromTime
   kms_encrypted_access_key_id:
-    Ignore: true
+    To: Configuration
+    Type: Map
   kms_encrypted_access_key_secret:
-    Ignore: true
+    To: Configuration
+    Type: Map
   kms_encryption_access_key_id_context:
-    Ignore: true
+    To: Configuration
+    Type: Map
   kms_encryption_access_key_secret_context:
-    Ignore: true
+    To: Configuration
+    Type: Map
+  lang:
+    To: Configuration
+    Type: Map
   last_modified_time:
     Ignore: true
   logstore:

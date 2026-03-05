@@ -15,7 +15,7 @@ Properties:
   network_source_acl:
     Ignore: true
   network_type_acl:
-    Ignore: true
+    To: Network
   resource_group_id:
     Ignore: true
   tags:

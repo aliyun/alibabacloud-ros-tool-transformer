@@ -53,7 +53,7 @@ Properties:
   start_port:
     To: StartPort
   status:
-    Ignore: true
+    To: Enable
   tags:
     To: Tags
     Handler: tags_dict_to_list

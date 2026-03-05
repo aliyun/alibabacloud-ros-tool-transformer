@@ -12,6 +12,8 @@ Properties:
     To: AccountPassword
   account_type:
     To: AccountType
+  check_policy:
+    Ignore: true
   db_instance_id:
     To: DBInstanceId
   description:

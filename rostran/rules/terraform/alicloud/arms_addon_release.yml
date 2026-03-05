@@ -5,9 +5,9 @@ ResourceType:
   To: ALIYUN::ARMS::AddonRelease
 Properties:
   addon_name:
-    Ignore: true
+    To: Name
   addon_release_name:
-    Ignore: true
+    To: ReleaseName
   addon_version:
     To: AddonVersion
   aliyun_lang:
@@ -17,7 +17,7 @@ Properties:
   environment_id:
     To: EnvironmentId
   values:
-    Ignore: true
+    To: Values
 Attributes:
   id:
     To:

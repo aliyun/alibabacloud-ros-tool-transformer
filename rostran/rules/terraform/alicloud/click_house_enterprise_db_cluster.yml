@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_click_house_enterprise_db_cluster
-  To: ALIYUN::ClickHouse::DBCluster
+  To: ALIYUN::ClickHouse::EnterpriseDBCluster
 Properties:
   multi_zones:
     Ignore: true

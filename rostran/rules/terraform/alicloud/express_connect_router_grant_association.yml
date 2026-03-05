@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_router_grant_association
+  To: ALIYUN::VPC::GrantInstanceToCen
+Properties:
+  ecr_id:
+    Ignore: true
+  ecr_owner_ali_uid:
+    To: CenOwnerId
+  instance_id:
+    To: InstanceId
+  instance_region_id:
+    Ignore: true
+  instance_type:
+    To: InstanceType
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

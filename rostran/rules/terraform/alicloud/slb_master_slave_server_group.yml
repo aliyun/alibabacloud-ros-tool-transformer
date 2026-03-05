@@ -18,20 +18,14 @@ Properties:
         Ignore: true
       port:
         To: Port
-      server_ids:
+      server_id:
         To: ServerId
-        Handler: select_first
-        Warning: Only first server_id can be used
       server_type:
         To: ServerType
       type:
-        Ignore: true
+        To: Type
       weight:
         To: Weight
 Attributes:
   id:
     To: MasterSlaveServerGroupId
-  load_balancer_id:
-    Ignore: true
-  name:
-    Ignore: true

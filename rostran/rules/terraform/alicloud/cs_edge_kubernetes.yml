@@ -17,7 +17,8 @@ Properties:
       version:
         Ignore: true
   availability_zone:
-    Ignore: true
+    To: ZoneIds
+    Type: List
   certificate_authority:
     Ignore: true
   client_cert:
@@ -35,11 +36,11 @@ Properties:
   force_update:
     Ignore: true
   install_cloud_monitor:
-    Ignore: true
+    To: CloudMonitorFlags
   is_enterprise_security_group:
     To: IsEnterpriseSecurityGroup
   key_name:
-    Ignore: true
+    To: KeyPair
   kube_config:
     Ignore: true
   load_balancer_spec:
@@ -53,13 +54,13 @@ Properties:
   nat_gateway_id:
     Ignore: true
   new_nat_gateway:
-    Ignore: true
+    To: SnatEntry
   node_cidr_mask:
     To: NodeCidrMask
   password:
-    Ignore: true
+    To: LoginPassword
   pod_cidr:
-    Ignore: true
+    To: ContainerCidr
   proxy_mode:
     To: ProxyMode
   rds_instances:
@@ -79,15 +80,16 @@ Properties:
   slb_internet:
     Ignore: true
   slb_internet_enabled:
-    Ignore: true
+    To: EndpointPublicAccess
   slb_intranet:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
   user_data:
     Ignore: true
   version:
-    Ignore: true
+    To: KubernetesVersion
   vpc_id:
     To: VpcId
   worker_data_disks:
@@ -146,7 +148,7 @@ Attributes:
   slb_internet:
     To: APIServerSLBId
   slb_intranet:
-    Ignore: true
+    To: APIServerSLBId
   vpc_id:
     Ignore: true
   worker_nodes:

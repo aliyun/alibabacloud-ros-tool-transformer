@@ -8,10 +8,14 @@ Properties:
     To: AccessPointId
   auto_pay:
     To: AutoPay
+  auto_renew:
+    Ignore: true
   delete_health_check_ip:
     Ignore: true
   description:
     To: Description
+  fast_link_mode:
+    Ignore: true
   hc_rate:
     Ignore: true
   hc_threshold:
@@ -38,6 +42,8 @@ Properties:
     To: Period
   pricing_cycle:
     To: PricingCycle
+  resource_group_id:
+    Ignore: true
   role:
     To: Role
   router_id:
@@ -51,6 +57,8 @@ Properties:
   spec:
     To: Spec
   status:
+    Ignore: true
+  tags:
     Ignore: true
 Attributes:
   id:
@@ -87,5 +95,7 @@ Attributes:
     Ignore: true
   reservation_order_type:
     Ignore: true
+  router_interface_id:
+    To: RouterInterfaceId
   vpc_instance_id:
     Ignore: true

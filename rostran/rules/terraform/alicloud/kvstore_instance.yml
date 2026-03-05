@@ -7,7 +7,7 @@ Properties:
   auto_renew:
     Ignore: true
   auto_renew_period:
-    Ignore: true
+    To: AutoRenewDuration
   auto_use_coupon:
     Ignore: true
   availability_zone:
@@ -77,9 +77,11 @@ Properties:
   kms_encryption_context:
     Ignore: true
   maintain_end_time:
-    Ignore: true
+    To: InstanceMaintainTime
+    Type: Map
   maintain_start_time:
-    Ignore: true
+    To: InstanceMaintainTime
+    Type: Map
   modify_mode:
     Ignore: true
   node_type:
@@ -105,7 +107,7 @@ Properties:
   qps:
     Ignore: true
   read_only_count:
-    Ignore: true
+    To: ReadOnlyCount
   resource_group_id:
     To: ResourceGroupId
   restore_time:
@@ -205,7 +207,7 @@ Attributes:
   private_ip:
     To: PrivateIp
   qps:
-    Ignore: true
+    To: QPS
   read_only_count:
     Ignore: true
   resource_group_id:

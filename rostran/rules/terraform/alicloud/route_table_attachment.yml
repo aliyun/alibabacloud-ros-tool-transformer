@@ -6,18 +6,10 @@ ResourceType:
 Properties:
   route_table_id:
     To: RouteTableId
-  status:
-    Ignore: true
   vswitch_id:
     To: VSwitchId
 Attributes:
   id:
-    To:
-    - RouteTableId
-    - VSwitchId
-  route_table_id:
-    To: RouteTableId
+    Ignore: true
   status:
     Ignore: true
-  vswitch_id:
-    To: VSwitchId

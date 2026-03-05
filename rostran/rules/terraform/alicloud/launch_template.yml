@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   auto_release_time:
     To: AutoReleaseTime
+  category:
+    Ignore: true
   data_disks:
     To: DiskMappings
     Type: List
@@ -24,6 +26,8 @@ Properties:
         To: Size
       snapshot_id:
         To: SnapshotId
+  delete_with_instance:
+    Ignore: true
   description:
     To: Description
   host_name:
@@ -31,7 +35,7 @@ Properties:
   image_id:
     To: ImageId
   instance_charge_type:
-    Ignore: true
+    To: InstanceChargeType
   instance_name:
     To: InstanceName
   instance_type:
@@ -64,12 +68,18 @@ Properties:
         To: VSwitchId
   network_type:
     To: NetworkType
+  primary_ip:
+    To: PrivateIpAddress
   ram_role_name:
     To: RamRoleName
   security_enhancement_strategy:
     To: SecurityEnhancementStrategy
   security_group_id:
     To: SecurityGroupId
+  size:
+    Ignore: true
+  snapshot_id:
+    Ignore: true
   spot_price_limit:
     To: SpotPriceLimit
   spot_strategy:
@@ -85,7 +95,7 @@ Properties:
   tags:
     To: Tags
   userdata:
-    Ignore: true
+    To: UserData
   vswitch_id:
     To: VSwitchId
   zone_id:

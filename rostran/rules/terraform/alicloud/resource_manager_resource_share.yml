@@ -4,16 +4,34 @@ ResourceType:
   From: alicloud_resource_manager_resource_share
   To: ALIYUN::ResourceManager::ResourceShare
 Properties:
+  allow_external_targets:
+    To: AllowExternalTargets
+  permission_names:
+    To: PermissionNames
+    Type: List
+  resource_arns:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
   resource_share_name:
     To: ResourceShareName
-  resource_share_owner:
+  resources:
+    To: Resources
+    Type: List
+    Schema:
+      resource_id:
+        To: ResourceId
+      resource_type:
+        To: ResourceType
+  tags:
     Ignore: true
-  status:
-    Ignore: true
+  targets:
+    To: Targets
+    Type: List
 Attributes:
   id:
     To: ResourceShareId
-  resource_share_name:
+  create_time:
     Ignore: true
   resource_share_owner:
     Ignore: true

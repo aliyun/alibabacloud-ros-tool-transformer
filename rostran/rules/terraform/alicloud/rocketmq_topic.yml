@@ -4,8 +4,6 @@ ResourceType:
   From: alicloud_rocketmq_topic
   To: ALIYUN::ROCKETMQ5::Topic
 Properties:
-  create_time:
-    Ignore: true
   instance_id:
     To: InstanceId
   max_send_tps:
@@ -14,27 +12,14 @@ Properties:
     To: MessageType
   remark:
     To: Remark
-  status:
-    Ignore: true
   topic_name:
     To: TopicName
 Attributes:
   id:
-    To:
-    - InstanceId
-    - TopicName
-    Handler: colon_join
+    Ignore: true
   create_time:
     Ignore: true
-  instance_id:
-    To: InstanceId
-  message_type:
-    To: MessageType
   region_id:
-    Ignore: true
-  remark:
     Ignore: true
   status:
     Ignore: true
-  topic_name:
-    To: TopicName

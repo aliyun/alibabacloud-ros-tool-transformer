@@ -4,20 +4,8 @@ ResourceType:
   From: alicloud_resource_manager_handshake
   To: ALIYUN::ResourceManager::Handshake
 Properties:
-  expire_time:
-    Ignore: true
-  master_account_id:
-    Ignore: true
-  master_account_name:
-    Ignore: true
-  modify_time:
-    Ignore: true
   note:
     To: Note
-  resource_directory_id:
-    Ignore: true
-  status:
-    Ignore: true
   target_entity:
     To: TargetEntity
   target_type:
@@ -25,6 +13,8 @@ Properties:
 Attributes:
   id:
     To: HandshakeId
+  create_time:
+    Ignore: true
   expire_time:
     Ignore: true
   master_account_id:
@@ -33,13 +23,7 @@ Attributes:
     To: MasterAccountName
   modify_time:
     Ignore: true
-  note:
-    To: Note
   resource_directory_id:
     To: ResourceDirectoryId
   status:
     Ignore: true
-  target_entity:
-    To: TargetEntity
-  target_type:
-    To: TargetType

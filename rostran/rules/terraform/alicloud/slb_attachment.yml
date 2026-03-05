@@ -5,29 +5,19 @@ ResourceType:
   To: ALIYUN::SLB::BackendServerAttachment
 Properties:
   backend_servers:
-    Ignore: true
+    To: BackendServers
+    Type: List
   delete_protection_validation:
     Ignore: true
   instance_ids:
     To: BackendServerList
+    Type: List
   load_balancer_id:
     To: LoadBalancerId
   server_type:
     Ignore: true
   weight:
     To: BackendServerWeightList
-    Handler: select_first
-    Warning: Only first weight can be used
 Attributes:
   id:
-    To: LoadBalancerId
-  backend_servers:
-    To: BackendServers
-  instance_ids:
-    Ignore: true
-  load_balancer_id:
-    To: LoadBalancerId
-  server_type:
-    Ignore: true
-  weight:
     Ignore: true

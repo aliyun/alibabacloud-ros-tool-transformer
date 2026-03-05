@@ -26,6 +26,10 @@ Properties:
     To: ProtocolType
   recycle_bin:
     Ignore: true
+  redundancy_type:
+    Ignore: true
+  redundancy_vswitch_ids:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   smb_acl:

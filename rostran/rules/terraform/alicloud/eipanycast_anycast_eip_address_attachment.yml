@@ -7,7 +7,7 @@ Properties:
   anycast_id:
     To: AnycastId
   association_mode:
-    Ignore: true
+    To: AssociationMode
   bind_instance_id:
     To: BindInstanceId
   bind_instance_region_id:
@@ -17,9 +17,13 @@ Properties:
   bind_time:
     Ignore: true
   pop_locations:
-    Ignore: true
+    To: PopLocations
+    Type: List
+    Schema:
+      pop_location:
+        To: PopLocation
   private_ip_address:
-    Ignore: true
+    To: PrivateIpAddress
   status:
     Ignore: true
 Attributes:

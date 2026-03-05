@@ -29,25 +29,3 @@ Properties:
 Attributes:
   id:
     To: QosPolicyId
-  description:
-    Ignore: true
-  dest_cidr:
-    Ignore: true
-  dest_port_range:
-    Ignore: true
-  end_time:
-    Ignore: true
-  ip_protocol:
-    Ignore: true
-  name:
-    Ignore: true
-  priority:
-    Ignore: true
-  qos_id:
-    Ignore: true
-  source_cidr:
-    Ignore: true
-  source_port_range:
-    Ignore: true
-  start_time:
-    Ignore: true

@@ -4,16 +4,22 @@ ResourceType:
   From: alicloud_ros_stack_group
   To: ALIYUN::ROS::StackGroup
 Properties:
-  account_ids:
-    Ignore: true
   administration_role_name:
     To: AdministrationRoleName
   auto_deployment:
     To: AutoDeployment
     Type: Map
     Schema:
+      account_ids:
+        Ignore: true
       enabled:
         To: Enabled
+      operation_description:
+        Ignore: true
+      operation_preferences:
+        Ignore: true
+      region_ids:
+        Ignore: true
       retain_stacks_on_account_removal:
         To: RetainStacksOnAccountRemoval
   capabilities:
@@ -22,30 +28,23 @@ Properties:
     To: Description
   execution_role_name:
     To: ExecutionRoleName
-  operation_description:
-    Ignore: true
-  operation_preferences:
-    Ignore: true
   parameters:
     To: Parameters
-    Handler: ros_parameters
+    Schema:
+      parameter_key:
+        Ignore: true
+      parameter_value:
+        Ignore: true
   permission_model:
     To: PermissionModel
-  region_ids:
-    Ignore: true
   resource_group_id:
     To: ResourceGroupId
-  stack_group_id:
-    Ignore: true
   stack_group_name:
     To: StackGroupName
-  status:
-    Ignore: true
   tags:
     Ignore: true
   template_body:
     To: TemplateBody
-    Handler: json_load
   template_id:
     To: TemplateId
   template_url:
@@ -55,17 +54,7 @@ Properties:
 Attributes:
   id:
     Ignore: true
-  administration_role_name:
-    Ignore: true
-  description:
-    Ignore: true
-  execution_role_name:
-    Ignore: true
   stack_group_id:
     To: StackGroupId
-  stack_group_name:
-    Ignore: true
   status:
-    Ignore: true
-  template_body:
     Ignore: true

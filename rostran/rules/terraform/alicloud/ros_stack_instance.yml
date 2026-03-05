@@ -8,32 +8,27 @@ Properties:
     To: OperationDescription
   operation_preferences:
     To: OperationPreferences
-    Handler: json_load
+    Type: Map
+  parameter_key:
+    Ignore: true
   parameter_overrides:
     To: ParameterOverrides
-    Handler: ros_parameters
+  parameter_value:
+    Ignore: true
   retain_stacks:
     To: RetainStacks
   stack_group_name:
     To: StackGroupName
   stack_instance_account_id:
-    To: AccountIds.0
+    To: AccountIds
+    Type: List
   stack_instance_region_id:
-    To: RegionIds.0
-  status:
-    Ignore: true
+    To: RegionIds
+    Type: List
   timeout_in_minutes:
     To: TimeoutInMinutes
 Attributes:
   id:
-    Ignore: true
-  parameter_overrides:
-    Ignore: true
-  stack_group_name:
-    Ignore: true
-  stack_instance_account_id:
-    Ignore: true
-  stack_instance_region_id:
     Ignore: true
   status:
     Ignore: true

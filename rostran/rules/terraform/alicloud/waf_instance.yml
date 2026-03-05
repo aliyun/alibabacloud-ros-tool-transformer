@@ -32,8 +32,6 @@ Properties:
     To: RenewalStatus
   resource_group_id:
     Ignore: true
-  status:
-    Ignore: true
   subscription_type:
     To: SubscriptionType
   waf_log:
@@ -43,5 +41,3 @@ Attributes:
     To: InstanceId
   status:
     Ignore: true
-  subscription_type:
-    To: SubscriptionType

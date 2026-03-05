@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::CEN::TransitRouterVpcAttachment
 Properties:
   auto_publish_route_enabled:
-    Ignore: true
+    To: AutoPublishRouteEnabled
   cen_id:
     To: CenId
   create_time:
@@ -13,7 +13,7 @@ Properties:
   dry_run:
     Ignore: true
   force_delete:
-    Ignore: true
+    To: DeletionForce
   payment_type:
     To: ChargeType
   resource_type:
@@ -37,7 +37,7 @@ Properties:
   transit_router_vpc_attachment_name:
     Ignore: true
   transit_router_vpc_attachment_options:
-    Ignore: true
+    To: TransitRouterVPCAttachmentOptions
   vpc_id:
     To: VpcId
   vpc_owner_id:
@@ -60,6 +60,8 @@ Attributes:
   create_time:
     Ignore: true
   payment_type:
+    Ignore: true
+  region_id:
     Ignore: true
   resource_type:
     To: ResourceType

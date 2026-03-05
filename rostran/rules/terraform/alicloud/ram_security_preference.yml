@@ -15,13 +15,17 @@ Properties:
   allow_user_to_manage_personal_ding_talk:
     Ignore: true
   enable_save_mfa_ticket:
-    Ignore: true
+    To: EnableSaveMFATicket
   enforce_mfa_for_login:
     To: EnableSaveMFATicket
   login_network_masks:
     To: LoginNetworkMasks
   login_session_duration:
     To: LoginSessionDuration
+  max_idle_days_for_access_keys:
+    Ignore: true
+  max_idle_days_for_users:
+    Ignore: true
   mfa_operation_for_login:
     Ignore: true
   operation_for_risk_login:

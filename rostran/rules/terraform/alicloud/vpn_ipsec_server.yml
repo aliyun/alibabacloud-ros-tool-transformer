@@ -55,21 +55,3 @@ Properties:
 Attributes:
   id:
     To: IpsecServerId
-  client_ip_pool:
-    Ignore: true
-  effect_immediately:
-    Ignore: true
-  ike_config:
-    Ignore: true
-  ipsec_config:
-    Ignore: true
-  ipsec_server_name:
-    To: IpsecServerName
-  local_subnet:
-    Ignore: true
-  psk:
-    Ignore: true
-  psk_enabled:
-    Ignore: true
-  vpn_gateway_id:
-    Ignore: true

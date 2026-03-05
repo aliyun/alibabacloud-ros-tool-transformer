@@ -7,7 +7,7 @@ Properties:
   address:
     Ignore: true
   address_ip_version:
-    Ignore: true
+    To: AddressIPVersion
   address_type:
     To: AddressType
   bandwidth:
@@ -15,9 +15,9 @@ Properties:
   delete_protection:
     To: DeletionProtection
   instance_charge_type:
-    To: PayType
+    To: InstanceChargeType
   internet:
-    To: AddressType
+    Ignore: true
   internet_charge_type:
     To: InternetChargeType
   load_balancer_name:
@@ -31,25 +31,24 @@ Properties:
   modification_protection_status:
     To: ModificationProtectionStatus
   name:
-    To: LoadBalancerName
+    Ignore: true
   payment_type:
     Ignore: true
   period:
-    To: Duration
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   slave_zone_id:
     To: SlaveZoneId
   specification:
-    To: LoadBalancerSpec
+    Ignore: true
   status:
     Ignore: true
   tags:
     To: Tags
+    Type: List
   vswitch_id:
     To: VSwitchId
 Attributes:
   id:
     To: LoadBalancerId
-  address:
-    To: IpAddress

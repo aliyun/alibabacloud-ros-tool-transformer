@@ -1,0 +1,133 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::SiteDeliveryTask
+  To: alicloud_esa_site_delivery_task
+Properties:
+  BusinessType:
+    To: business_type
+  DataCenter:
+    To: data_center
+  DeliveryType:
+    To: delivery_type
+  DiscardRate:
+    To: discard_rate
+  FieldName:
+    To: field_name
+  HttpDelivery:
+    To: http_delivery
+    Type: Map
+    Schema:
+      Compress:
+        To: compress
+      DestUrl:
+        To: dest_url
+      HeaderParam:
+        To: header_param
+      LogBodyPrefix:
+        To: log_body_prefix
+      LogBodySuffix:
+        To: log_body_suffix
+      MaxBatchMB:
+        To: max_batch_mb
+      MaxBatchSize:
+        To: max_batch_size
+      MaxRetry:
+        To: max_retry
+      QueryParam:
+        To: query_param
+      StandardAuthOn:
+        To: standard_auth_on
+      StandardAuthParam:
+        To: standard_auth_param
+      TransformTimeout:
+        To: transform_timeout
+  KafkaDelivery:
+    To: kafka_delivery
+    Type: Map
+    Schema:
+      Balancer:
+        To: balancer
+      Brokers:
+        To: brokers
+      Compress:
+        To: compress
+      MachanismType:
+        To: machanism_type
+      Password:
+        To: password
+      Topic:
+        To: topic
+      UserAuth:
+        To: user_auth
+      UserName:
+        To: user_name
+  OssDelivery:
+    To: oss_delivery
+    Type: Map
+    Schema:
+      Aliuid:
+        To: aliuid
+      BucketName:
+        To: bucket_name
+      PrefixPath:
+        To: prefix_path
+      Region:
+        To: region
+  S3Delivery:
+    To: s3_delivery
+    Type: Map
+    Schema:
+      AccessKey:
+        To: access_key
+      BucketPath:
+        To: bucket_path
+      Endpoint:
+        To: endpoint
+      PrefixPath:
+        To: prefix_path
+      Region:
+        To: region
+      S3Cmpt:
+        To: s3_cmpt
+      SecretKey:
+        To: secret_key
+      ServerSideEncryption:
+        To: server_side_encryption
+      VertifyType:
+        To: vertify_type
+  SiteId:
+    To: site_id
+  SlsDelivery:
+    To: sls_delivery
+    Type: Map
+    Schema:
+      SLSLogStore:
+        To: sls_log_store
+      SLSProject:
+        To: sls_project
+      SLSRegion:
+        To: sls_region
+  TaskName:
+    To: task_name
+Attributes:
+  FilterRules:
+    Ignore: true
+  DiscardRate:
+    Ignore: true
+  SinkConfig:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  TaskName:
+    Ignore: true
+  DataCenter:
+    Ignore: true
+  FieldName:
+    Ignore: true
+  SiteName:
+    Ignore: true
+  DeliveryType:
+    Ignore: true
+  BusinessType:
+    Ignore: true

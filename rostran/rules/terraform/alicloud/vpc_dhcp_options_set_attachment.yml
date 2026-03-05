@@ -8,19 +8,10 @@ Properties:
     To: DhcpOptionsSetId
   dry_run:
     Ignore: true
-  status:
-    Ignore: true
   vpc_id:
     To: VpcId
 Attributes:
   id:
-    To:
-    - VpcId
-    - DhcpOptionsSetId
-    Handler: colon_join
-  dhcp_options_set_id:
-    To: DhcpOptionsSetId
+    Ignore: true
   status:
     Ignore: true
-  vpc_id:
-    To: VpcId

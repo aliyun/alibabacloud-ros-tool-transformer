@@ -5,11 +5,11 @@ ResourceType:
   To: ALIYUN::ENS::Instance
 Properties:
   amount:
-    Ignore: true
+    To: Quantity
   auto_release_time:
     Ignore: true
   auto_renew:
-    Ignore: true
+    To: AutoRenew
   auto_use_coupon:
     Ignore: true
   billing_cycle:
@@ -88,7 +88,7 @@ Attributes:
   auto_release_time:
     Ignore: true
   data_disk:
-    Ignore: true
+    To: DataDiskSize
   ens_region_id:
     To: EnsRegionId
   host_name:

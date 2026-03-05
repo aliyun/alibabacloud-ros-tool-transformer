@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::CustomCheckStandardPolicy
+  To: alicloud_threat_detection_baseline_strategy
+Properties:
+  PolicyShowName:
+    To: baseline_strategy_name
+  PolicyType:
+    To: custom_type
+  DependentPolicyId:
+    Ignore: true
+  Type:
+    Ignore: true
+Attributes:
+  PolicyId:
+    To: id
+  PolicyId$$0:
+    To: baseline_strategy_id

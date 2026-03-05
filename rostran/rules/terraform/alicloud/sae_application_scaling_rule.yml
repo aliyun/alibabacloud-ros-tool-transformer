@@ -74,4 +74,4 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    To: ScalingRuleName
+    Ignore: true

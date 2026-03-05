@@ -10,8 +10,6 @@ Properties:
     To: ContainerImageScan
   container_image_scan_new:
     To: ContainerImageScanNew
-  create_time:
-    Ignore: true
   honeypot:
     To: Honeypot
   honeypot_switch:
@@ -24,73 +22,14 @@ Properties:
     To: Period
   post_paid_flag:
     Ignore: true
+  post_paid_host_auto_bind:
+    Ignore: true
+  post_paid_host_auto_bind_version:
+    Ignore: true
   post_pay_module_switch:
     Ignore: true
-  rasp_count:
-    To: RaspCount
-  renew_period:
-    To: RenewPeriod
-  renewal_period_unit:
-    To: RenewalPeriodUnit
-  renewal_status:
-    To: RenewalStatus
-  sas_anti_ransomware:
-    To: SasAntiRansomware
-  sas_cspm:
-    To: SasCspm
-  sas_cspm_switch:
-    To: SasCspmSwitch
-  sas_sc:
+  post_pay_module_switch_obj:
     Ignore: true
-  sas_sdk:
-    To: SasSdk
-  sas_sdk_switch:
-    To: SasSdkSwitch
-  sas_sls_storage:
-    To: SasSlsStorage
-  sas_webguard_boolean:
-    To: SasWebguardBoolean
-  sas_webguard_order_num:
-    To: SasWebguardOrderNum
-  status:
-    Ignore: true
-  subscription_type:
-    Ignore: true
-  threat_analysis:
-    To: ThreatAnalysis
-  threat_analysis_flow:
-    Ignore: true
-  threat_analysis_sls_storage:
-    Ignore: true
-  threat_analysis_switch:
-    To: ThreatAnalysisSwitch
-  threat_analysis_switch1:
-    Ignore: true
-  v_core:
-    To: VCore
-  version_code:
-    To: VersionCode
-  vul_count:
-    To: VulCount
-  vul_switch:
-    To: VulSwitch
-Attributes:
-  id:
-    To: InstanceId
-  buy_number:
-    To: BuyNumber
-  container_image_scan:
-    To: ContainerImageScan
-  container_image_scan_new:
-    To: ContainerImageScanNew
-  create_time:
-    To: CreateTime
-  honeypot:
-    To: Honeypot
-  honeypot_switch:
-    To: HoneypotSwitch
-  payment_type:
-    To: PaymentType
   rasp_count:
     To: RaspCount
   renew_period:
@@ -117,12 +56,18 @@ Attributes:
     To: SasWebguardBoolean
   sas_webguard_order_num:
     To: SasWebguardOrderNum
-  status:
+  subscription_type:
     Ignore: true
   threat_analysis:
     To: ThreatAnalysis
+  threat_analysis_flow:
+    Ignore: true
+  threat_analysis_sls_storage:
+    Ignore: true
   threat_analysis_switch:
     To: ThreatAnalysisSwitch
+  threat_analysis_switch1:
+    Ignore: true
   v_core:
     To: VCore
   version_code:
@@ -131,3 +76,10 @@ Attributes:
     To: VulCount
   vul_switch:
     To: VulSwitch
+Attributes:
+  id:
+    To: InstanceId
+  create_time:
+    To: CreateTime
+  status:
+    Ignore: true

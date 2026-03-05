@@ -129,6 +129,8 @@ Properties:
             To: ReadOnly
       working_dir:
         To: WorkingDir
+  content:
+    Ignore: true
   cost_optimization:
     To: CostOptimization
   cpu:
@@ -157,6 +159,8 @@ Properties:
     Ignore: true
   ephemeral_storage:
     To: EphemeralStorage
+  field_ref_field_path:
+    Ignore: true
   force_delete:
     Ignore: true
   host_aliases:
@@ -227,12 +231,32 @@ Properties:
     Type: List
   ipv6_address_count:
     To: Ipv6AddressCount
+  key:
+    Ignore: true
   load_balancer_weight:
     To: LoadBalancerWeight
   memory:
     To: Memory
+  mode:
+    Ignore: true
+  mount_path:
+    Ignore: true
+  mount_propagation:
+    Ignore: true
+  name:
+    Ignore: true
+  override:
+    Ignore: true
+  path:
+    Ignore: true
+  port:
+    Ignore: true
+  protocol:
+    Ignore: true
   ram_role_name:
     To: RamRoleName
+  read_only:
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   restart_policy:
@@ -255,11 +279,15 @@ Properties:
     To: SpotPriceLimit
   spot_strategy:
     To: SpotStrategy
+  sub_path:
+    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
   termination_grace_period_seconds:
     To: TerminationGracePeriodSeconds
+  value:
+    Ignore: true
   volumes:
     To: Volumes
     Type: List

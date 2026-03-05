@@ -7,21 +7,25 @@ Properties:
   cert:
     To: Cert
   certificate_name:
-    To: Name
+    Ignore: true
+  encrypt_cert:
+    Ignore: true
+  encrypt_private_key:
+    Ignore: true
   key:
     To: Key
   lang:
     To: Lang
   name:
     To: Name
+  resource_group_id:
+    Ignore: true
+  sign_cert:
+    Ignore: true
+  sign_private_key:
+    Ignore: true
+  tags:
+    Ignore: true
 Attributes:
   id:
     To: CertId
-  cert:
-    Ignore: true
-  certificate_name:
-    Ignore: true
-  key:
-    Ignore: true
-  name:
-    Ignore: true
