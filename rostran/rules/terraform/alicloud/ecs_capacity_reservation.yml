@@ -19,7 +19,8 @@ Properties:
   instance_type:
     To: InstanceType
   match_criteria:
-    Ignore: true
+    To: PrivatePoolOptions
+    Type: Map
   payment_type:
     Ignore: true
   platform:
@@ -38,7 +39,7 @@ Properties:
   time_slot:
     Ignore: true
   zone_ids:
-    Ignore: true
+    To: ZoneId
 Attributes:
   id:
     To: PrivatePoolOptionsId

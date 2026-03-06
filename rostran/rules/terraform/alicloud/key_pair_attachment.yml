@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::ECS::SSHKeyPairAttachment
 Properties:
   force:
-    Ignore: true
+    To: AutoReboot
   instance_ids:
     To: InstanceIds
   key_name:

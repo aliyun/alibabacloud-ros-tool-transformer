@@ -7,7 +7,7 @@ Properties:
   accelerator_id:
     To: AcceleratorId
   basic_endpoint_name:
-    Ignore: true
+    To: Name
   endpoint_address:
     To: EndpointAddress
   endpoint_group_id:

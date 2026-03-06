@@ -9,7 +9,7 @@ Properties:
   auto_renew_duration:
     Ignore: true
   auto_use_coupon:
-    Ignore: true
+    To: AutoUseCoupon
   bandwidth:
     To: Bandwidth
   bandwidth_package_name:
@@ -19,15 +19,15 @@ Properties:
   billing_type:
     To: BillingType
   cbn_geographic_region_ida:
-    Ignore: true
+    To: CbnGeographicRegionIdA
   cbn_geographic_region_idb:
-    Ignore: true
+    To: CbnGeographicRegionIdB
   description:
     Ignore: true
   duration:
     To: Duration
   payment_type:
-    Ignore: true
+    To: ChargeType
   promotion_option_no:
     Ignore: true
   ratio:

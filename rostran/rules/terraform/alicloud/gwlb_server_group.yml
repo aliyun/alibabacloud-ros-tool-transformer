@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gwlb_server_group
+  To: ALIYUN::GWLB::ServerGroup
+Properties:
+  connection_drain_config:
+    To: ConnectionDrainConfig
+    Type: Map
+    Schema:
+      connection_drain_enabled:
+        To: ConnectionDrainEnabled
+      connection_drain_timeout:
+        To: ConnectionDrainTimeout
+  dry_run:
+    Ignore: true
+  health_check_config:
+    To: HealthCheckConfig
+    Type: Map
+    Schema:
+      health_check_connect_port:
+        To: HealthCheckConnectPort
+      health_check_connect_timeout:
+        To: HealthCheckConnectTimeout
+      health_check_domain:
+        To: HealthCheckDomain
+      health_check_enabled:
+        To: HealthCheckEnabled
+      health_check_http_code:
+        To: HealthCheckHttpCode
+        Type: List
+      health_check_interval:
+        To: HealthCheckInterval
+      health_check_path:
+        To: HealthCheckPath
+      health_check_protocol:
+        To: HealthCheckProtocol
+      healthy_threshold:
+        To: HealthyThreshold
+      unhealthy_threshold:
+        To: UnhealthyThreshold
+  protocol:
+    To: Protocol
+  resource_group_id:
+    To: ResourceGroupId
+  scheduler:
+    To: Scheduler
+  server_group_name:
+    To: ServerGroupName
+  server_group_type:
+    To: ServerGroupType
+  servers:
+    To: Servers
+    Type: List
+    Schema:
+      server_id:
+        To: ServerId
+      server_ip:
+        To: ServerIp
+      server_type:
+        To: ServerType
+  tags:
+    To: Tags
+    Type: List
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    To: ServerGroupId
+  create_time:
+    To: CreateTime
+  servers:
+    To: Servers
+  status:
+    Ignore: true

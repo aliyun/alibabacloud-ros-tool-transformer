@@ -41,11 +41,51 @@ Properties:
   group_id:
     To: GroupId
   http_service_config:
-    Ignore: true
+    To: ServiceConfig
+    Type: Map
+    Schema:
+      address:
+        Ignore: true
+      aone_name:
+        Ignore: true
+      content_type_category:
+        Ignore: true
+      content_type_value:
+        To: ContentTypeValue
+      method:
+        Ignore: true
+      path:
+        Ignore: true
+      timeout:
+        Ignore: true
   http_vpc_service_config:
-    Ignore: true
+    To: ServiceConfig
+    Type: Map
+    Schema:
+      aone_name:
+        Ignore: true
+      content_type_category:
+        Ignore: true
+      content_type_value:
+        To: ContentTypeValue
+      method:
+        Ignore: true
+      name:
+        Ignore: true
+      path:
+        Ignore: true
+      timeout:
+        Ignore: true
+      vpc_scheme:
+        Ignore: true
   mock_service_config:
-    Ignore: true
+    To: ServiceConfig
+    Type: Map
+    Schema:
+      aone_name:
+        Ignore: true
+      result:
+        Ignore: true
   name:
     To: ApiName
   request_config:

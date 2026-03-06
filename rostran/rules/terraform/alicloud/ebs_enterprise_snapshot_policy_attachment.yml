@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ebs_enterprise_snapshot_policy_attachment
+  To: ALIYUN::EBS::DiskReplicaPair
+Properties:
+  disk_id:
+    To: DiskId
+  policy_id:
+    Ignore: true
+Attributes:
+  id:
+    To: ReplicaPairId

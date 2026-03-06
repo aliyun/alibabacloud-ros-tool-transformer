@@ -5,7 +5,13 @@ ResourceType:
   To: ALIYUN::ComputeNest::ServiceInstance
 Properties:
   commodity:
-    Ignore: true
+    To: Commodity
+    Type: Map
+    Schema:
+      pay_period:
+        To: PayPeriod
+      pay_period_unit:
+        To: PayPeriodUnit
   enable_instance_ops:
     To: EnableInstanceOps
   enable_user_prometheus:
@@ -13,19 +19,21 @@ Properties:
   operation_metadata:
     Ignore: true
   parameters:
-    Ignore: true
+    To: Parameters
   payment_type:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
   service_id:
-    Ignore: true
+    To: Service
+    Type: Map
   service_instance_name:
-    Ignore: true
+    To: ServiceInstanceName
   service_version:
-    Ignore: true
+    To: Service
+    Type: Map
   specification_name:
-    Ignore: true
+    To: SpecificationCode
   status:
     Ignore: true
   tags:
@@ -55,7 +63,7 @@ Attributes:
   specification_name:
     Ignore: true
   status:
-    Ignore: true
+    To: StatusDetail
   tags:
     To: Tags
   template_name:

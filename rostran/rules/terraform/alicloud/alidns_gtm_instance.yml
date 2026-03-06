@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alidns_gtm_instance
+  To: ALIYUN::DNS::Instance
+Properties:
+  alert_config:
+    Ignore: true
+  alert_group:
+    Ignore: true
+  cname_type:
+    Ignore: true
+  force_update:
+    Ignore: true
+  health_check_task_count:
+    Ignore: true
+  instance_name:
+    Ignore: true
+  lang:
+    Ignore: true
+  package_edition:
+    To: Version
+  payment_type:
+    Ignore: true
+  period:
+    To: Period
+  public_cname_mode:
+    Ignore: true
+  public_rr:
+    Ignore: true
+  public_user_domain_name:
+    Ignore: true
+  public_zone_name:
+    Ignore: true
+  renew_period:
+    Ignore: true
+  renewal_status:
+    To: RenewalStatus
+  resource_group_id:
+    Ignore: true
+  sms_notification_count:
+    Ignore: true
+  strategy_mode:
+    Ignore: true
+  ttl:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId

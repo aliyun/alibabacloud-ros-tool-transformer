@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::ECS::Disk
 Properties:
   availability_zone:
-    Ignore: true
+    To: ZoneId
   category:
     To: DiskCategory
   delete_auto_snapshot:
@@ -15,11 +15,11 @@ Properties:
   description:
     To: Description
   enable_auto_snapshot:
-    Ignore: true
+    To: AutoSnapshotPolicyId
   encrypted:
     To: Encrypted
   kms_key_id:
-    Ignore: true
+    To: KMSKeyId
   name:
     To: DiskName
   performance_level:
@@ -31,7 +31,8 @@ Properties:
   snapshot_id:
     To: SnapshotId
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: DiskId

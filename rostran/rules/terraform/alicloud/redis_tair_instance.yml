@@ -7,7 +7,7 @@ Properties:
   auto_renew:
     Ignore: true
   auto_renew_period:
-    Ignore: true
+    To: AutoRenewDuration
   backup_id:
     Ignore: true
   cluster_backup_id:
@@ -18,7 +18,8 @@ Properties:
   create_time:
     Ignore: true
   effective_time:
-    Ignore: true
+    To: InstanceMaintainTime
+    Type: Map
   engine_version:
     To: EngineVersion
   force_upgrade:
@@ -28,7 +29,7 @@ Properties:
   instance_class:
     To: InstanceClass
   instance_type:
-    Ignore: true
+    To: ProductType
   intranet_bandwidth:
     Ignore: true
   modify_mode:
@@ -56,7 +57,7 @@ Properties:
   port:
     Ignore: true
   read_only_count:
-    Ignore: true
+    To: ReadOnlyCount
   recover_config_mode:
     Ignore: true
   resource_group_id:
@@ -76,7 +77,7 @@ Properties:
   src_db_instance_id:
     Ignore: true
   ssl_enabled:
-    Ignore: true
+    To: SSLEnabled
   status:
     Ignore: true
   storage_performance_level:
@@ -87,7 +88,7 @@ Properties:
     To: Tags
     Handler: tags_dict_to_list
   tair_instance_name:
-    Ignore: true
+    To: InstanceName
   vpc_auth_mode:
     To: VpcPasswordFree
   vpc_id:
@@ -112,7 +113,7 @@ Attributes:
   instance_type:
     To: InstanceType
   max_connections:
-    Ignore: true
+    To: Connections
   network_type:
     To: NetworkType
   node_type:

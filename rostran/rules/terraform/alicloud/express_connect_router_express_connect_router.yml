@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_router_express_connect_router
+  To: ALIYUN::VPC::VirtualBorderRouter
+Properties:
+  alibaba_side_asn:
+    Ignore: true
+  description:
+    To: Description
+  ecr_name:
+    To: Name
+  regions:
+    Ignore: true
+  resource_group_id:
+    Ignore: true
+  tags:
+    Ignore: true
+Attributes:
+  id:
+    To: VbrId
+  create_time:
+    Ignore: true
+  status:
+    Ignore: true

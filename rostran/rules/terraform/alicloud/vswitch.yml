@@ -17,7 +17,7 @@ Properties:
   ipv6_cidr_block:
     To: Ipv6CidrBlock
   ipv6_cidr_block_mask:
-    Ignore: true
+    To: Ipv6CidrBlock
   is_default:
     Ignore: true
   name:

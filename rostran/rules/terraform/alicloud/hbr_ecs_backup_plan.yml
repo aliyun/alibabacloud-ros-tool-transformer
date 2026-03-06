@@ -33,11 +33,11 @@ Properties:
   schedule:
     To: FullPlan
   speed_limit:
-    Ignore: true
+    To: MaxRateLimit
   update_paths:
     Ignore: true
   vault_id:
     To: VaultId
 Attributes:
   id:
-    Ignore: true
+    To: PlanId

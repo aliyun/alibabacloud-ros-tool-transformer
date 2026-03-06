@@ -17,7 +17,7 @@ Properties:
   ha_vip_id:
     Ignore: true
   ha_vip_name:
-    Ignore: true
+    To: Name
   havip_name:
     To: Name
   ip_address:

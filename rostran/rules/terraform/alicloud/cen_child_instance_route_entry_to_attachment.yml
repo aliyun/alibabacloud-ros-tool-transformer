@@ -7,7 +7,7 @@ Properties:
   cen_id:
     To: CenId
   child_instance_route_table_id:
-    Ignore: true
+    To: RouteTableId
   destination_cidr_block:
     To: DestinationCidrBlock
   dry_run:

@@ -17,7 +17,16 @@ Properties:
   enable_web_tracking:
     To: EnableTracking
   encrypt_conf:
-    Ignore: true
+    To: EncryptConf
+    Type: Map
+    Schema:
+      enable:
+        To: Enable
+      encrypt_type:
+        To: EncryptType
+      user_cmk_info:
+        To: UserCmkInfo
+        Type: Map
   hot_ttl:
     Ignore: true
   infrequent_access_ttl:

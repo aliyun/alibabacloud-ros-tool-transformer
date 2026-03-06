@@ -7,7 +7,7 @@ Properties:
   account_name:
     To: AccountName
   db_names:
-    Ignore: true
+    To: DBName
   instance_id:
     To: DBInstanceId
   privilege:

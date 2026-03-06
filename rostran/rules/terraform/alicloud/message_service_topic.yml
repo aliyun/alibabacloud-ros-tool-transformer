@@ -9,7 +9,7 @@ Properties:
   logging_enabled:
     To: LoggingEnabled
   max_message_size:
-    Ignore: true
+    To: MaximumMessageSize
   tags:
     To: Tags
     Type: List

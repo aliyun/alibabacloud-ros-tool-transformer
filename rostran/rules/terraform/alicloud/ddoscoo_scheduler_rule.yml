@@ -15,7 +15,20 @@ Properties:
   rule_type:
     To: RuleType
   rules:
-    Ignore: true
+    To: Rules
+    Schema:
+      priority:
+        Ignore: true
+      region_id:
+        Ignore: true
+      status:
+        Ignore: true
+      type:
+        Ignore: true
+      value:
+        Ignore: true
+      value_type:
+        Ignore: true
 Attributes:
   id:
     To: RuleName

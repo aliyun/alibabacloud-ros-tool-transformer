@@ -10,6 +10,8 @@ Properties:
     To: ClientIpPool
   compress:
     To: Compress
+  compress`:
+    Ignore: true
   connections:
     Ignore: true
   internet_ip:

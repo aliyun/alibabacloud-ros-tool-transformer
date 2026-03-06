@@ -1,0 +1,43 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::ScheduledPreloadJob
+  To: alicloud_esa_scheduled_preload_execution
+Properties:
+  ScheduledPreloadJobName:
+    Ignore: true
+  OssUrl:
+    Ignore: true
+  InsertWay:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  UrlList:
+    Ignore: true
+Attributes:
+  ScheduledPreloadJobId:
+    To: scheduled_preload_execution_id
+  TaskSubmitted:
+    Ignore: true
+  TaskType:
+    Ignore: true
+  UrlCount:
+    Ignore: true
+  Domains:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  ErrorInfo:
+    Ignore: true
+  UrlSubmitted:
+    Ignore: true
+  ScheduledPreloadJobName:
+    Ignore: true
+  FileId:
+    Ignore: true
+  InsertWay:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  FailedFileOss:
+    Ignore: true

@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_max_compute_quota_plan
+  To: ALIYUN::MaxCompute::Quota
+Properties:
+  elastic_reserved_cu:
+    Ignore: true
+  is_effective:
+    Ignore: true
+  nick_name:
+    Ignore: true
+  nickname:
+    To: QuotaNickname
+  parameter:
+    Ignore: true
+  plan_name:
+    Ignore: true
+  quota:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  quota:
+    Ignore: true

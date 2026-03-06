@@ -23,7 +23,7 @@ Properties:
   duration:
     To: Duration
   payment_type:
-    Ignore: true
+    To: ChargeType
   pricing_cycle:
     To: PricingCycle
   promotion_option_no:

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_transport_layer_application
+  To: ALIYUN::ESA::EdgeContainerApp
+Properties:
+  cross_border_optimization:
+    Ignore: true
+  ip_access_rule:
+    Ignore: true
+  ipv6:
+    Ignore: true
+  record_name:
+    Ignore: true
+  rules:
+    Ignore: true
+  site_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  application_id:
+    Ignore: true
+  rules:
+    Ignore: true
+  status:
+    To: AppStatus

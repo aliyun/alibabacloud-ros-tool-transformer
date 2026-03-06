@@ -9,7 +9,15 @@ Properties:
   api_version:
     To: ApiVersion
   cert_config:
-    Ignore: true
+    To: CertConfig
+    Type: Map
+    Schema:
+      cert_name:
+        To: CertName
+      certificate:
+        To: Certificate
+      private_key:
+        To: PrivateKey
   created_time:
     Ignore: true
   domain_name:
@@ -19,7 +27,19 @@ Properties:
   protocol:
     To: Protocol
   route_config:
-    Ignore: true
+    To: RouteConfig
+    Type: Map
+    Schema:
+      function_name:
+        Ignore: true
+      methods:
+        Ignore: true
+      path:
+        Ignore: true
+      qualifier:
+        Ignore: true
+      service_name:
+        Ignore: true
 Attributes:
   id:
     To: DomainName

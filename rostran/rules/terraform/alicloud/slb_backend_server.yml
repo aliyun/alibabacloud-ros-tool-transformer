@@ -20,6 +20,15 @@ Properties:
     Ignore: true
   load_balancer_id:
     To: LoadBalancerId
+  server_id:
+    To: BackendServerList
+    Type: List
+  server_ip:
+    Ignore: true
+  type:
+    Ignore: true
+  weight:
+    To: BackendServerWeightList
 Attributes:
   id:
     To: LoadBalancerId

@@ -413,3 +413,19 @@ def _test_security_group_tpl():
     template = ROS2TerraformTemplate.initialize(source)
     with TestROS2TF():
         template.transform()
+
+def _test_for_coverage():
+    from alibabacloud_tea_openapi import models as open_api_models
+    from alibabacloud_ros20190910.client import Client
+    from alibabacloud_credentials.client import Client as CredClient
+    from alibabacloud_ros20190910 import models
+    ros_config = open_api_models.Config(credential=CredClient())
+    ros_client = Client(ros_config)
+    request = models.ListResourceTypesRequest(entity_type='Resource', provider='ROS')
+    ret = ros_client.list_resource_types(request).to_map()['body']['ResourceTypes']
+    support_types = set([n for n in ret if '::ROS::' not in n])
+    root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+    ros_res_rules = os.path.join(root_dir, "rostran/rules/ros/resource")
+    res_count = len([f for f in os.listdir(ros_res_rules)]) - 1
+    print()
+    print(f'覆盖率为{res_count/len(support_types) * 100}%\n')

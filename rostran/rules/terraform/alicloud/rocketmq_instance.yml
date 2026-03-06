@@ -17,19 +17,28 @@ Properties:
   create_time:
     Ignore: true
   flow_out_bandwidth:
-    Ignore: true
+    To: InternetInfo
+    Type: Map
   flow_out_type:
-    Ignore: true
+    To: InternetInfo
+    Type: Map
   instance_name:
     To: InstanceName
   internet_spec:
-    Ignore: true
+    To: InternetInfo
+    Type: Map
   ip_whitelist:
     Ignore: true
   ip_whitelists:
     Ignore: true
   network_info:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
+    Schema:
+      internet_info:
+        Ignore: true
+      vpc_info:
+        Ignore: true
   payment_type:
     To: PaymentType
   period:
@@ -37,13 +46,30 @@ Properties:
   period_unit:
     To: PeriodUnit
   product_info:
-    Ignore: true
+    To: ProductInfo
+    Type: Map
+    Schema:
+      auto_scaling:
+        To: AutoScaling
+      message_retention_time:
+        To: MessageRetentionTime
+      msg_process_spec:
+        To: MsgProcessSpec
+      send_receive_ratio:
+        To: SendReceiveRatio
+      storage_encryption:
+        Ignore: true
+      storage_secret_key:
+        Ignore: true
+      trace_on:
+        Ignore: true
   remark:
     To: Remark
   resource_group_id:
     To: ResourceGroupId
   security_group_ids:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
   series_code:
     To: SeriesCode
   service_code:
@@ -57,11 +83,17 @@ Properties:
   tags:
     Ignore: true
   vpc_id:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
   vswitch_id:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
   vswitches:
-    Ignore: true
+    To: VpcInfo
+    Type: Map
+    Schema:
+      vswitch_id:
+        To: VSwitchId
 Attributes:
   id:
     To: InstanceId

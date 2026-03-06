@@ -26,6 +26,10 @@ Properties:
     Ignore: true
   ip_white:
     To: SecurityIPList
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
+    Ignore: true
   master_instance_type:
     To: MasterInstanceType
   name:

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SAE::SlbBinding
+  To: alicloud_sae_load_balancer_internet
+Properties:
+  AppId:
+    To: app_id
+  Internet:
+    To: internet
+  InternetSlbId:
+    To: internet_slb_id
+  Intranet:
+    Ignore: true
+  IntranetSlbId:
+    Ignore: true
+Attributes:
+  AppId:
+    To: id
+  ChangeOrderId:
+    Ignore: true

@@ -17,6 +17,8 @@ tpl = {
                 "Size": 30,
                 "Tags": [{"Key": "Name", "Value": "terraform-example"}],
                 "ZoneId": "cn-beijing-c",
+                "DiskCategory": "cloud_efficiency",
+                "KMSKeyId": {"Fn::GetAtt": ["alicloud_kms_key.example", "KeyId"]},
             },
         },
         "alicloud_kms_key.example": {
@@ -24,6 +26,7 @@ tpl = {
             "Properties": {
                 "Description": "terraform-example",
                 "PendingWindowInDays": 7,
+                "Enable": "Enabled",
             },
         },
     },

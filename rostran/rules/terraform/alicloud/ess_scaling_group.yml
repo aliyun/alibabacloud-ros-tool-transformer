@@ -5,11 +5,23 @@ ResourceType:
   To: ALIYUN::ESS::ScalingGroup
 Properties:
   alb_server_group:
-    Ignore: true
+    To: ServerGroups
+    Type: List
+    Schema:
+      alb_server_group_id:
+        Ignore: true
+      port:
+        To: Port
+      weight:
+        To: Weight
   allocation_strategy:
     To: AllocationStrategy
+  auto_rebalance:
+    Ignore: true
   az_balance:
     To: AzBalance
+  balance_mode:
+    Ignore: true
   capacity_options_compensate_with_on_demand:
     To: CompensateWithOnDemand
   capacity_options_on_demand_base_capacity:
@@ -37,13 +49,22 @@ Properties:
   health_check_type:
     To: HealthCheckType
   health_check_types:
-    Ignore: true
+    To: HealthCheckTypes
+    Type: List
   instance_id:
     To: InstanceId
   launch_template_id:
     To: LaunchTemplateId
   launch_template_override:
-    Ignore: true
+    To: LaunchTemplateOverrides
+    Type: List
+    Schema:
+      instance_type:
+        To: InstanceType
+      spot_price_limit:
+        To: SpotPriceLimit
+      weighted_capacity:
+        To: WeightedCapacity
   launch_template_version:
     To: LaunchTemplateVersion
   loadbalancer_ids:

@@ -1,0 +1,36 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_route_entry
+  To: ALIYUN::VPC::VpnRouteEntry
+Properties:
+  description:
+    To: Description
+  destination_cidr_block:
+    To: RouteDest
+  next_hops:
+    Ignore: true
+  nexthop_id:
+    To: NextHop
+  nexthop_type:
+    Ignore: true
+  route_entry_name:
+    Ignore: true
+  route_publish_targets:
+    To: PublishVpc
+    Schema:
+      target_instance_id:
+        Ignore: true
+      target_type:
+        Ignore: true
+  route_table_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  next_hops:
+    To: NextHop
+  route_publish_targets:
+    Ignore: true
+  status:
+    Ignore: true

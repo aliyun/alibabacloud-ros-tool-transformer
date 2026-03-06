@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::EdgeContainerAppRecord
+  To: alicloud_esa_edge_container_app_record
+Properties:
+  AppId:
+    To: app_id
+  RecordName:
+    To: record_name
+  SiteId:
+    To: site_id
+Attributes:
+  RecordId:
+    To: id
+  CreateTime:
+    To: create_time
+  Cname:
+    Ignore: true
+  SchemdId:
+    Ignore: true
+  RecordName:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  AppId:
+    Ignore: true
+  ConfigId:
+    Ignore: true
+  SiteId:
+    Ignore: true

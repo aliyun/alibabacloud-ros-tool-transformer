@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::NLB::ServerGroup
 Properties:
   address_ip_version:
-    Ignore: true
+    To: AddressIPVersion
   any_port_enabled:
     To: AnyPortEnabled
   connection_drain:
@@ -15,7 +15,36 @@ Properties:
   connection_drain_timeout:
     To: ConnectionDrainTimeout
   health_check:
-    Ignore: true
+    To: HealthCheckConfig
+    Type: Map
+    Schema:
+      health_check_connect_port:
+        To: HealthCheckConnectPort
+      health_check_connect_timeout:
+        To: HealthCheckConnectTimeout
+      health_check_domain:
+        To: HealthCheckDomain
+      health_check_enabled:
+        To: HealthCheckEnabled
+      health_check_exp:
+        Ignore: true
+      health_check_http_code:
+        To: HealthCheckHttpCode
+        Type: List
+      health_check_interval:
+        To: HealthCheckInterval
+      health_check_req:
+        Ignore: true
+      health_check_type:
+        To: HealthCheckType
+      health_check_url:
+        To: HealthCheckUrl
+      healthy_threshold:
+        To: HealthyThreshold
+      http_check_method:
+        To: HttpCheckMethod
+      unhealthy_threshold:
+        To: UnhealthyThreshold
   preserve_client_ip_enabled:
     To: PreserveClientIpEnabled
   protocol:

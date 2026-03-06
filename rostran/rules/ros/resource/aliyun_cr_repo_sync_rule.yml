@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CR::RepoSyncRule
+  To: alicloud_cr_ee_sync_rule
+Properties:
+  InstanceId:
+    To: instance_id
+  NamespaceName:
+    To: namespace_name
+  RepoName:
+    To: repo_name
+  SyncRuleName:
+    To: sync_rule_name
+  SyncScope:
+    To: sync_scope
+  SyncTrigger:
+    To: sync_trigger
+  TagFilter:
+    To: tag_filter
+  TargetInstanceId:
+    To: target_instance_id
+  TargetNamespaceName:
+    To: target_namespace_name
+  TargetRegionId:
+    To: target_region_id
+  TargetRepoName:
+    To: target_repo_name
+  TargetUserId:
+    To: target_user_id
+  RepoNameFilter:
+    Ignore: true
+Attributes:
+  SyncRuleId:
+    To: repo_sync_rule_id

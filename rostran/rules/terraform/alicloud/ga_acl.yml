@@ -15,7 +15,7 @@ Properties:
   acl_name:
     To: AclName
   address_ip_version:
-    Ignore: true
+    To: AddressIPVersion
   dry_run:
     Ignore: true
   resource_group_id:

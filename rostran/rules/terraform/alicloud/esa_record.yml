@@ -1,0 +1,75 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_record
+  To: ALIYUN::ESA::Record
+Properties:
+  auth_conf:
+    To: AuthConf
+    Type: Map
+    Schema:
+      access_key:
+        To: AccessKey
+      auth_type:
+        To: AuthType
+      region:
+        To: Region
+      secret_key:
+        To: SecretKey
+      version:
+        To: Version
+  biz_name:
+    To: BizName
+  comment:
+    To: Comment
+  data:
+    To: Data
+    Type: Map
+    Schema:
+      algorithm:
+        To: Algorithm
+      certificate:
+        To: Certificate
+      fingerprint:
+        To: Fingerprint
+      flag:
+        To: Flag
+      key_tag:
+        To: KeyTag
+      matching_type:
+        To: MatchingType
+      port:
+        To: Port
+      priority:
+        To: Priority
+      selector:
+        To: Selector
+      tag:
+        To: Tag
+      type:
+        To: Type
+      usage:
+        To: Usage
+      value:
+        To: Value
+      weight:
+        To: Weight
+  host_policy:
+    To: HostPolicy
+  proxied:
+    To: Proxied
+  record_name:
+    To: RecordName
+  record_type:
+    To: RecordType
+  site_id:
+    To: SiteId
+  source_type:
+    To: SourceType
+  ttl:
+    To: Ttl
+Attributes:
+  id:
+    To: RecordId
+  create_time:
+    To: CreateTime

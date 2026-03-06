@@ -5,13 +5,13 @@ ResourceType:
   To: ALIYUN::VPC::VSwitchCidrReservation
 Properties:
   cidr_reservation_cidr:
-    Ignore: true
+    To: VSwitchCidrReservationCidr
   cidr_reservation_description:
-    Ignore: true
+    To: VSwitchCidrReservationDescription
   cidr_reservation_mask:
-    Ignore: true
+    To: VSwitchCidrReservationMask
   cidr_reservation_type:
-    Ignore: true
+    To: VSwitchCidrReservationType
   create_time:
     Ignore: true
   ip_version:
@@ -23,7 +23,7 @@ Properties:
   vswitch_cidr_reservation_id:
     Ignore: true
   vswitch_cidr_reservation_name:
-    Ignore: true
+    To: VSwitchCidrReservationName
   vswitch_id:
     To: VSwitchId
 Attributes:
@@ -44,7 +44,7 @@ Attributes:
   vpc_id:
     Ignore: true
   vswitch_cidr_reservation_id:
-    Ignore: true
+    To: VSwitchCidrReservationId
   vswitch_cidr_reservation_name:
     Ignore: true
   vswitch_id:

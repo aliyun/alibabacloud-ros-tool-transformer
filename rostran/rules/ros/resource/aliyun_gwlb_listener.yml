@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GWLB::Listener
+  To: alicloud_gwlb_listener
+Properties:
+  ListenerDescription:
+    To: listener_description
+  LoadBalancerId:
+    To: load_balancer_id
+  ServerGroupId:
+    To: server_group_id
+  Tags:
+    To: tags
+Attributes:
+  ListenerId:
+    To: id
+  ServerGroupId:
+    Ignore: true
+  ListenerDescription:
+    Ignore: true
+  LoadBalancerId:
+    Ignore: true
+  Tags:
+    Ignore: true

@@ -9,7 +9,7 @@ Properties:
   auto_renew_duration:
     To: AutoRenewDuration
   auto_use_coupon:
-    Ignore: true
+    To: AutoUseCoupon
   bandwidth_billing_type:
     To: BandwidthBillingType
   cross_border_mode:

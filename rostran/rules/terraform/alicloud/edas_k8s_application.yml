@@ -5,19 +5,21 @@ ResourceType:
   To: ALIYUN::EDAS::K8sApplication
 Properties:
   application_descriotion:
-    Ignore: true
+    To: ApplicationDescription
   application_name:
-    Ignore: true
+    To: AppName
   cluster_id:
     To: ClusterId
   command:
     To: Command
   command_args:
-    Ignore: true
+    To: CommandArgs
+    Type: List
   edas_container_version:
     To: EdasContainerVersion
   envs:
-    Ignore: true
+    To: Envs
+    Type: List
   image_url:
     To: ImageUrl
   internet_slb_id:
@@ -29,19 +31,22 @@ Properties:
   internet_target_port:
     To: InternetTargetPort
   jdk:
-    Ignore: true
+    To: JDK
   limit_m_cpu:
-    Ignore: true
+    To: LimitCpu
   limit_mem:
     To: LimitMem
   liveness:
-    Ignore: true
+    To: Liveness
+    Type: Map
   local_volume:
-    Ignore: true
+    To: LocalVolume
+    Type: List
   logical_region_id:
     To: LogicalRegionId
   mount_descs:
-    Ignore: true
+    To: MountDescs
+    Type: List
   namespace:
     To: Namespace
   nas_id:
@@ -53,15 +58,18 @@ Properties:
   package_version:
     To: PackageVersion
   post_start:
-    Ignore: true
+    To: PostStart
+    Type: Map
   pre_stop:
-    Ignore: true
+    To: PreStop
+    Type: Map
   readiness:
-    Ignore: true
+    To: Readiness
+    Type: Map
   replicas:
     To: Replicas
   requests_m_cpu:
-    Ignore: true
+    To: RequestsCpu
   requests_mem:
     To: RequestsMem
   web_container:

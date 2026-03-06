@@ -67,9 +67,11 @@ Properties:
   status:
     To: Status
   subscription_data_type_ddl:
-    Ignore: true
+    To: SubscriptionDataType
+    Type: Map
   subscription_data_type_dml:
-    Ignore: true
+    To: SubscriptionDataType
+    Type: Map
   subscription_instance_network_type:
     Ignore: true
   subscription_instance_vpc_id:
@@ -84,4 +86,4 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: DtsJobId

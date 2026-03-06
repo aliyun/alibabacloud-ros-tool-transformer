@@ -13,7 +13,7 @@ Properties:
   alicloud_certificate_name:
     To: AliCloudCertificateName
   alicloud_certificate_region_id:
-    Ignore: true
+    To: AliCloudCertificateRegionId
   name:
     To: CertificateName
   private_key:

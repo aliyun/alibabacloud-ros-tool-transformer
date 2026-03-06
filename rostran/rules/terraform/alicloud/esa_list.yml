@@ -1,0 +1,18 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_list
+  To: ALIYUN::ESA::CustomList
+Properties:
+  description:
+    To: Description
+  items:
+    To: Items
+    Type: List
+  kind:
+    To: Kind
+  name:
+    To: ListName
+Attributes:
+  id:
+    To: ListId

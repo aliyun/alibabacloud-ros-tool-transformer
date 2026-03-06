@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ARMS::ApplyAlertRuleTemplate
+  To: alicloud_arms_prometheus_alert_rule
+Properties:
+  ClusterIds:
+    To: cluster_id
+  Update:
+    Ignore: true
+  TemplateIds:
+    Ignore: true
+Attributes: {}

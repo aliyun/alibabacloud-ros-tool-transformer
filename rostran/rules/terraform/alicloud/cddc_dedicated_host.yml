@@ -7,7 +7,7 @@ Properties:
   allocation_status:
     Ignore: true
   auto_renew:
-    Ignore: true
+    To: AutoRenew
   dedicated_host_group_id:
     To: DedicatedHostGroupId
   dedicated_host_id:

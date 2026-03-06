@@ -4,11 +4,17 @@ ResourceType:
   From: alicloud_event_bridge_rule
   To: ALIYUN::EventBridge::Rule
 Properties:
+  arn:
+    Ignore: true
   description:
     To: Description
   event_bus_name:
     To: EventBusName
   filter_pattern:
+    To: FilterPattern
+  form:
+    Ignore: true
+  resource_key:
     Ignore: true
   rule_name:
     To: RuleName
@@ -40,6 +46,10 @@ Properties:
         Ignore: true
       type:
         To: Type
+  template:
+    Ignore: true
+  value:
+    Ignore: true
 Attributes:
   id:
     To:

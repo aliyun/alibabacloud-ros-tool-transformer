@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_nat_firewall
+  To: ALIYUN::CLOUDFW::Instance
+Properties:
+  firewall_switch:
+    Ignore: true
+  lang:
+    Ignore: true
+  nat_gateway_id:
+    Ignore: true
+  nat_route_entry_list:
+    Ignore: true
+  proxy_name:
+    Ignore: true
+  region_no:
+    Ignore: true
+  status:
+    Ignore: true
+  strict_mode:
+    Ignore: true
+  vpc_id:
+    Ignore: true
+  vswitch_auto:
+    Ignore: true
+  vswitch_cidr:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+Attributes:
+  id:
+    To: InstanceId

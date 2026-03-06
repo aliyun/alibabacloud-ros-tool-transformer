@@ -5,9 +5,9 @@ ResourceType:
   To: ALIYUN::CMS::MonitorGroup
 Properties:
   contact_groups:
-    Ignore: true
+    To: ContactGroups
   monitor_group_name:
-    Ignore: true
+    To: GroupName
   resource_group_id:
     Ignore: true
   resource_group_name:

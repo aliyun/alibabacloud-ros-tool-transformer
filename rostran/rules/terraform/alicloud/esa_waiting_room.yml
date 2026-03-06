@@ -1,0 +1,53 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_waiting_room
+  To: ALIYUN::ESA::WaitingRoom
+Properties:
+  cookie_name:
+    To: CookieName
+  custom_page_html:
+    To: CustomPageHtml
+  description:
+    To: Description
+  disable_session_renewal_enable:
+    To: DisableSessionRenewalEnable
+  host_name_and_path:
+    To: HostNameAndPath
+    Type: List
+    Schema:
+      domain:
+        To: Domain
+      path:
+        To: Path
+      subdomain:
+        To: Subdomain
+  json_response_enable:
+    To: JsonResponseEnable
+  language:
+    To: Language
+  new_users_per_minute:
+    To: NewUsersPerMinute
+  queue_all_enable:
+    To: QueueAllEnable
+  queuing_method:
+    To: QueuingMethod
+  queuing_status_code:
+    To: QueuingStatusCode
+  session_duration:
+    To: SessionDuration
+  site_id:
+    To: SiteId
+  status:
+    To: Status
+  total_active_users:
+    To: TotalActiveUsers
+  waiting_room_name:
+    To: WaitingRoomName
+  waiting_room_type:
+    To: WaitingRoomType
+Attributes:
+  id:
+    Ignore: true
+  waiting_room_id:
+    To: WaitingRoomId

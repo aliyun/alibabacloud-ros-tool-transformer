@@ -57,10 +57,15 @@ Properties:
   jdk:
     To: Jdk
   kafka_configs:
-    Ignore: true
+    To: KafkaConfigs
+    Schema:
+      kafka_configs:
+        Ignore: true
   liveness:
     To: Liveness
   liveness_v2:
+    Ignore: true
+  log_type:
     Ignore: true
   memory:
     To: Memory
@@ -77,7 +82,7 @@ Properties:
   namespace_id:
     To: NamespaceId
   nas_configs:
-    Ignore: true
+    To: NasConfigs
   nas_id:
     To: NasId
   oss_ak_id:
@@ -85,7 +90,7 @@ Properties:
   oss_ak_secret:
     To: OssAkSecret
   oss_mount_descs:
-    Ignore: true
+    To: OssMountDescs
   oss_mount_descs_v2:
     Ignore: true
   package_type:
@@ -102,6 +107,8 @@ Properties:
     To: PhpConfig
   php_config_location:
     To: PhpConfigLocation
+  port:
+    Ignore: true
   post_start:
     To: PostStart
   post_start_v2:
@@ -113,10 +120,17 @@ Properties:
   programming_language:
     To: ProgrammingLanguage
   pvtz_discovery_svc:
-    Ignore: true
+    To: PvtzDiscoverySvc
+    Schema:
+      port_protocols:
+        Ignore: true
+      service_name:
+        Ignore: true
   readiness:
     To: Readiness
   readiness_v2:
+    Ignore: true
+  release_type:
     Ignore: true
   replicas:
     To: Replicas

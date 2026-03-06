@@ -24,12 +24,20 @@ Properties:
     To: HttpsForce
   https_force_code:
     To: HttpsForceCode
+  https_no_sni_deny:
+    To: HttpsNoSniDeny
+  https_sni_verify:
+    To: HttpsSniVerify
+  https_sni_whitelist:
+    To: HttpsSniWhitelist
   rule:
     To: Rule
   rule_enable:
     To: RuleEnable
   rule_name:
     To: RuleName
+  sequence:
+    To: Sequence
   site_id:
     To: SiteId
   site_version:

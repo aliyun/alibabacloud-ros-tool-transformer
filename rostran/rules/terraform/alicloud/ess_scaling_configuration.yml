@@ -34,6 +34,8 @@ Properties:
         To: DiskName
       snapshot_id:
         To: SnapshotId
+  dedicated_host_cluster_id:
+    Ignore: true
   deletion_protection:
     Ignore: true
   enable:
@@ -42,6 +44,8 @@ Properties:
     Ignore: true
   host_name:
     To: HostName
+  http_endpoint:
+    Ignore: true
   image_id:
     To: ImageId
   image_name:
@@ -55,11 +59,67 @@ Properties:
   instance_name:
     To: InstanceName
   instance_pattern_info:
-    Ignore: true
+    To: InstancePatternInfos
+    Type: List
+    Schema:
+      architectures:
+        To: Architectures
+        Type: List
+      burstable_performance:
+        To: BurstablePerformance
+      cores:
+        To: Cores
+      cpu_architectures:
+        Ignore: true
+      excluded_instance_types:
+        To: ExcludedInstanceTypes
+        Type: List
+      gpu_specs:
+        Ignore: true
+      instance_categories:
+        Ignore: true
+      instance_family_level:
+        To: InstanceFamilyLevel
+      instance_type_families:
+        Ignore: true
+      max_price:
+        To: MaxPrice
+      maximum_cpu_core_count:
+        Ignore: true
+      maximum_gpu_amount:
+        Ignore: true
+      maximum_memory_size:
+        Ignore: true
+      memory:
+        To: Memory
+      minimum_baseline_credit:
+        Ignore: true
+      minimum_cpu_core_count:
+        Ignore: true
+      minimum_eni_ipv6_address_quantity:
+        Ignore: true
+      minimum_eni_private_ip_address_quantity:
+        Ignore: true
+      minimum_eni_quantity:
+        Ignore: true
+      minimum_gpu_amount:
+        Ignore: true
+      minimum_initial_credit:
+        Ignore: true
+      minimum_memory_size:
+        Ignore: true
+      physical_processor_models:
+        Ignore: true
   instance_type:
     To: InstanceType
   instance_type_override:
-    Ignore: true
+    To: InstanceTypeOverrides
+    Type: List
+    Schema:
+      instance_type:
+        To: InstanceType
+      weighted_capacity:
+        To: WeightedCapacity
   instance_types:
     To: InstanceTypes
     Type: List
@@ -105,7 +165,12 @@ Properties:
   spot_duration:
     To: SpotDuration
   spot_price_limit:
-    Ignore: true
+    To: SpotPriceLimit
+    Schema:
+      instance_type:
+        Ignore: true
+      price_limit:
+        Ignore: true
   spot_strategy:
     To: SpotStrategy
   substitute:
@@ -121,9 +186,9 @@ Properties:
   system_disk_encrypted:
     To: SystemDiskEncrypted
   system_disk_kms_key_id:
-    Ignore: true
+    To: SystemDiskKMSKeyId
   system_disk_name:
-    Ignore: true
+    To: SystemDiskDiskName
   system_disk_performance_level:
     To: SystemDiskPerformanceLevel
   system_disk_provisioned_iops:

@@ -27,7 +27,7 @@ Properties:
   db_instance_ip_array_name:
     Ignore: true
   db_instance_storage_type:
-    Ignore: true
+    To: DBInstanceStorageType
   deletion_protection:
     To: DeletionProtection
   direction:
@@ -41,7 +41,7 @@ Properties:
   force_restart:
     Ignore: true
   instance_charge_type:
-    Ignore: true
+    To: PayType
   instance_name:
     To: DBInstanceDescription
   instance_storage:

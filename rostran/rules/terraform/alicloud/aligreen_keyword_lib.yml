@@ -25,4 +25,4 @@ Properties:
     To: ResourceType
 Attributes:
   id:
-    Ignore: true
+    To: KeywordLibId

@@ -31,7 +31,7 @@ Properties:
   job_id:
     To: JobId
   payment_type:
-    Ignore: true
+    To: PayType
   period:
     To: Period
   resource_group_id:
@@ -62,7 +62,7 @@ Attributes:
   destination_region:
     Ignore: true
   dts_instance_id:
-    Ignore: true
+    To: InstanceId
   instance_class:
     Ignore: true
   instance_name:

@@ -5,7 +5,8 @@ ResourceType:
   To: ALIYUN::ALB::AdditionalCertificateAssociation
 Properties:
   certificate_id:
-    Ignore: true
+    To: Certificates
+    Type: List
   certificate_type:
     Ignore: true
   listener_id:

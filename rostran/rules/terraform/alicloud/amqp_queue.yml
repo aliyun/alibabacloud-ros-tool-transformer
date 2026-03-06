@@ -21,11 +21,11 @@ Properties:
   maximum_priority:
     To: MaximumPriority
   message_ttl:
-    Ignore: true
+    To: MessageTTL
   queue_name:
     To: QueueName
   virtual_host_name:
-    Ignore: true
+    To: VirtualHost
 Attributes:
   id:
     Ignore: true

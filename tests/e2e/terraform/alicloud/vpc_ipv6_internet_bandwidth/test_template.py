@@ -18,7 +18,10 @@ tpl = {
         },
         "alicloud_vpc_ipv6_gateway.example": {
             "Type": "ALIYUN::VPC::Ipv6Gateway",
-            "Properties": {"VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]}},
+            "Properties": {
+                "Name": "example_value",
+                "VpcId": {"Fn::GetAtt": ["alicloud_vpc.default", "VpcId"]},
+            },
         },
         "alicloud_vpc_ipv6_internet_bandwidth.example": {
             "Type": "ALIYUN::VPC::Ipv6InternetBandwidth",

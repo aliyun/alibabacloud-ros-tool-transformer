@@ -22,6 +22,8 @@ Properties:
         To: Certificate
       private_key:
         To: PrivateKey
+  cors_config:
+    Ignore: true
   custom_domain_name:
     To: DomainName
   function_name:

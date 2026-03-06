@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_http_response_header_modification_rule
+  To: ALIYUN::ESA::HttpResponseHeaderModificationRule
+Properties:
+  response_header_modification:
+    To: ResponseHeaderModification
+    Type: List
+    Schema:
+      name:
+        To: Name
+      operation:
+        To: Operation
+      type:
+        To: Type
+      value:
+        To: Value
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  sequence:
+    To: Sequence
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

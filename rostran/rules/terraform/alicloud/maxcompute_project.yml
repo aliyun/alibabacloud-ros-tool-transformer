@@ -17,7 +17,13 @@ Properties:
   exception_policy:
     Ignore: true
   ip_white_list:
-    Ignore: true
+    To: IpWhiteList
+    Type: Map
+    Schema:
+      ip_list:
+        To: IpList
+      vpc_ip_list:
+        To: VpcIpList
   is_logical:
     Ignore: true
   key:
@@ -27,9 +33,30 @@ Properties:
   product_type:
     Ignore: true
   project_name:
-    Ignore: true
+    To: Name
   properties:
-    Ignore: true
+    To: Properties
+    Type: Map
+    Schema:
+      allow_full_scan:
+        To: AllowFullScan
+      enable_decimal2:
+        To: EnableDecimal2
+      enable_dr:
+        Ignore: true
+      encryption:
+        To: Encryption
+        Type: Map
+      retention_days:
+        To: RetentionDays
+      sql_metering_max:
+        To: SqlMeteringMax
+      table_lifecycle:
+        Ignore: true
+      timezone:
+        Ignore: true
+      type_system:
+        To: TypeSystem
   protected:
     Ignore: true
   security_properties:

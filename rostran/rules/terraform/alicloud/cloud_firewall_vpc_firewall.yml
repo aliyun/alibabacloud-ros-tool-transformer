@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_vpc_firewall
+  To: ALIYUN::CLOUDFW::VpcFirewallCen
+Properties:
+  lang:
+    Ignore: true
+  local_route_entry_list:
+    Ignore: true
+  local_route_table_id:
+    Ignore: true
+  local_vpc:
+    Ignore: true
+  member_uid:
+    To: MemberUid
+  peer_route_entry_list:
+    Ignore: true
+  peer_route_table_id:
+    Ignore: true
+  peer_vpc:
+    Ignore: true
+  status:
+    To: FirewallSwitch
+  vpc_firewall_name:
+    To: VpcFirewallName
+Attributes:
+  id:
+    Ignore: true
+  bandwidth:
+    Ignore: true
+  connect_type:
+    Ignore: true
+  local_vpc:
+    Ignore: true
+  peer_vpc:
+    Ignore: true
+  region_status:
+    Ignore: true
+  vpc_firewall_id:
+    To: VpcFirewallId

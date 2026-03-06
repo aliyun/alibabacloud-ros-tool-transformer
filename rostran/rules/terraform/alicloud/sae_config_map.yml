@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::SAE::ConfigMap
 Properties:
   data:
-    Ignore: true
+    To: Data
   description:
     To: Description
   name:

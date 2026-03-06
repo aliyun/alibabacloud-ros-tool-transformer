@@ -8,6 +8,8 @@ Properties:
     To: AccountPassword
   auto_renew:
     To: AutoRenew
+  auto_renew_duration:
+    Ignore: true
   backup_interval:
     Ignore: true
   backup_period:
@@ -21,9 +23,9 @@ Properties:
   cloud_disk_encryption_key:
     Ignore: true
   db_instance_class:
-    Ignore: true
+    To: DBInstanceClass
   db_instance_release_protection:
-    Ignore: true
+    To: DBInstanceReleaseProtection
   db_instance_storage:
     To: DBInstanceClass
   effective_time:
@@ -31,13 +33,15 @@ Properties:
   enable_backup_log:
     Ignore: true
   encrypted:
-    Ignore: true
+    To: Encrypted
   encryption_key:
-    Ignore: true
+    To: EncryptionKey
   encryptor_name:
     Ignore: true
   engine_version:
     To: EngineVersion
+  force_encryption:
+    Ignore: true
   global_security_group_list:
     Ignore: true
   hidden_zone_id:
@@ -65,7 +69,7 @@ Properties:
   period:
     To: Period
   provisioned_iops:
-    Ignore: true
+    To: ProvisionedIops
   readonly_replicas:
     To: ReadonlyReplicas
   replica_set_name:
@@ -76,6 +80,8 @@ Properties:
     To: ReplicationFactor
   resource_group_id:
     To: ResourceGroupId
+  restore_time:
+    To: RestoreTime
   retention_period:
     Ignore: true
   role_arn:
@@ -88,6 +94,8 @@ Properties:
     To: SecurityIPArray
   snapshot_backup_type:
     Ignore: true
+  src_db_instance_id:
+    To: SrcDBInstanceId
   ssl_action:
     Ignore: true
   ssl_status:
@@ -100,7 +108,7 @@ Properties:
     To: Tags
     Handler: tags_dict_to_list
   tde_status:
-    Ignore: true
+    To: TDEStatus
   vpc_id:
     To: VpcId
   vswitch_id:
@@ -137,6 +145,8 @@ Attributes:
   hidden_zone_id:
     Ignore: true
   instance_charge_type:
+    Ignore: true
+  key_ids:
     Ignore: true
   log_backup_retention_period:
     Ignore: true
@@ -189,4 +199,6 @@ Attributes:
   vswitch_id:
     Ignore: true
   zone_id:
+    Ignore: true
+  zone_infos:
     Ignore: true

@@ -23,7 +23,7 @@ Properties:
   description:
     To: Description
   dkms_instance_id:
-    Ignore: true
+    To: DKMSInstanceId
   is_enabled:
     To: Enable
   key_spec:
@@ -43,7 +43,7 @@ Properties:
   pending_window_in_days:
     To: PendingWindowInDays
   policy:
-    Ignore: true
+    To: Policy
   primary_key_version:
     Ignore: true
   protection_level:
@@ -51,9 +51,10 @@ Properties:
   rotation_interval:
     To: RotationInterval
   status:
-    Ignore: true
+    To: Enable
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: KeyId

@@ -5,7 +5,8 @@ ResourceType:
   To: ALIYUN::KMS::Policy
 Properties:
   access_control_rules:
-    Ignore: true
+    To: AccessControlRules
+    Type: Map
   description:
     To: Description
   kms_instance_id:

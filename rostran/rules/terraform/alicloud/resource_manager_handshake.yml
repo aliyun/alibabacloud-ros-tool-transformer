@@ -25,6 +25,8 @@ Properties:
 Attributes:
   id:
     To: HandshakeId
+  create_time:
+    Ignore: true
   expire_time:
     Ignore: true
   master_account_id:

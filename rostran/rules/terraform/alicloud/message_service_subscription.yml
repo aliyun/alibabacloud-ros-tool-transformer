@@ -21,6 +21,8 @@ Properties:
   notify_strategy:
     To: NotifyStrategy
   push_type:
+    To: PushType
+  sts_role_arn:
     Ignore: true
   subscription_name:
     To: SubscriptionName

@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_db_instance_endpoint
+  To: ALIYUN::RDS::Connection
+Properties:
+  connection_string_prefix:
+    To: ConnectionStringPrefix
+  db_instance_endpoint_description:
+    Ignore: true
+  db_instance_id:
+    To: DBInstanceId
+  node_items:
+    Ignore: true
+  port:
+    To: Port
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  connection_string:
+    To: ConnectionString
+  db_instance_endpoint_id:
+    Ignore: true
+  db_instance_endpoint_type:
+    Ignore: true
+  ip_type:
+    Ignore: true
+  private_ip_address:
+    Ignore: true

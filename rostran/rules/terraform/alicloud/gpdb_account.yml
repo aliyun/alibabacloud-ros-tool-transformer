@@ -15,7 +15,7 @@ Properties:
   database_name:
     Ignore: true
   db_instance_id:
-    Ignore: true
+    To: DBInstanceId
   status:
     Ignore: true
 Attributes:

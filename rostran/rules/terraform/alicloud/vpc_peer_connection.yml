@@ -19,7 +19,7 @@ Properties:
   dry_run:
     Ignore: true
   force_delete:
-    Ignore: true
+    To: DeletionForce
   link_type:
     Ignore: true
   peer_connection_name:

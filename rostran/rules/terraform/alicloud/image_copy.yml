@@ -7,7 +7,7 @@ Properties:
   delete_auto_snapshot:
     Ignore: true
   description:
-    Ignore: true
+    To: DestinationDescription
   encrypted:
     To: Encrypted
   force:

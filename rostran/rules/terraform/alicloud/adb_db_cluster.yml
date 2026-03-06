@@ -25,19 +25,19 @@ Properties:
   description:
     To: DBClusterDescription
   disk_encryption:
-    Ignore: true
+    To: DiskEncryption
   disk_performance_level:
     Ignore: true
   elastic_io_resource:
-    Ignore: true
+    To: ElasticIOResource
   elastic_io_resource_size:
     Ignore: true
   enable_ssl:
-    Ignore: true
+    To: EnableSSL
   kernel_version:
     Ignore: true
   kms_id:
-    Ignore: true
+    To: KmsId
   maintain_time:
     Ignore: true
   mode:

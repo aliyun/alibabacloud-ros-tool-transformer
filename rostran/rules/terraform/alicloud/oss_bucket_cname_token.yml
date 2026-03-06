@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_cname_token
+  To: ALIYUN::OSS::Domain
+Properties:
+  bucket:
+    To: BucketName
+  domain:
+    To: DomainName
+Attributes:
+  id:
+    Ignore: true
+  token:
+    Ignore: true

@@ -5,9 +5,17 @@ ResourceType:
   To: ALIYUN::FC::Function
 Properties:
   ca_port:
-    Ignore: true
+    To: CAPort
   code:
-    Ignore: true
+    To: Code
+    Type: Map
+    Schema:
+      oss_bucket_name:
+        To: OssBucketName
+      oss_object_name:
+        To: OssObjectName
+      zip_file:
+        To: ZipFile
   code_checksum:
     Ignore: true
   cpu:
@@ -15,13 +23,58 @@ Properties:
   create_time:
     Ignore: true
   custom_container_config:
-    Ignore: true
+    To: CustomContainerConfig
+    Type: Map
+    Schema:
+      acceleration_type:
+        To: AccelerationType
+      args:
+        To: Args
+      command:
+        To: Command
+      image:
+        To: Image
+      web_server_mode:
+        To: WebServerMode
   custom_dns:
-    Ignore: true
+    To: CustomDNS
+    Type: Map
+    Schema:
+      dns_options:
+        To: DnsOptions
+        Type: List
+      name_servers:
+        To: NameServers
+        Type: List
+      searches:
+        To: Searches
+        Type: List
   custom_health_check_config:
-    Ignore: true
+    To: CustomHealthCheckConfig
+    Type: Map
+    Schema:
+      failure_threshold:
+        To: FailureThreshold
+      http_get_url:
+        To: HttpGetUrl
+      initial_delay_seconds:
+        To: InitialDelaySeconds
+      period_seconds:
+        To: PeriodSeconds
+      success_threshold:
+        To: SuccessThreshold
+      timeout_seconds:
+        To: TimeoutSeconds
   custom_runtime_config:
-    Ignore: true
+    To: CustomRuntimeConfig
+    Type: Map
+    Schema:
+      args:
+        To: Args
+        Type: List
+      command:
+        To: Command
+        Type: List
   description:
     To: Description
   disk_size:
@@ -41,19 +94,31 @@ Properties:
   instance_concurrency:
     To: InstanceConcurrency
   instance_lifecycle_config:
-    Ignore: true
+    To: InstanceLifecycleConfig
+    Type: Map
+    Schema:
+      pre_freeze:
+        To: PreFreeze
+        Type: Map
+      pre_stop:
+        To: PreStop
+        Type: Map
   instance_type:
     To: InstanceType
   layers:
     Ignore: true
   memory_size:
     To: MemorySize
+  name:
+    Ignore: true
   runtime:
     To: Runtime
   service_name:
     To: ServiceName
   timeout:
     To: Timeout
+  value:
+    Ignore: true
 Attributes:
   id:
     To:

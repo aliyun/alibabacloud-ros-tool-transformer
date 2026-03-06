@@ -8,14 +8,20 @@ Properties:
     To: AuthKey
   bgp_group_name:
     To: Name
+  clear_auth_key:
+    Ignore: true
   description:
     To: Description
+  ip_version:
+    To: IpVersion
   is_fake_asn:
     To: IsFakeAsn
   local_asn:
     To: LocalAsn
   peer_asn:
     To: PeerAsn
+  route_limit:
+    To: RouteQuota
   router_id:
     To: RouterId
   status:
@@ -34,6 +40,8 @@ Attributes:
   local_asn:
     Ignore: true
   peer_asn:
+    Ignore: true
+  region_id:
     Ignore: true
   router_id:
     Ignore: true

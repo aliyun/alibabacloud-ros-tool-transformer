@@ -17,7 +17,7 @@ Properties:
   internal:
     To: Internal
   virtual_host_name:
-    Ignore: true
+    To: VirtualHost
   x_delayed_type:
     To: XDelayedType
 Attributes:

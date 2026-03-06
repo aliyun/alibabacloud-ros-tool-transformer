@@ -10,6 +10,8 @@ Properties:
     To: RouterId
   status:
     Ignore: true
+  vpc_id:
+    Ignore: true
 Attributes:
   id:
     To: RouterId

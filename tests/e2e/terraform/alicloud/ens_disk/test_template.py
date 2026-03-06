@@ -14,6 +14,7 @@ tpl = {
                 "Category": "cloud_ssd",
                 "EnsRegionId": "cn-chongqing-11",
                 "Size": 20,
+                "InstanceChargeType": "PayAsYouGo",
             },
         }
     },

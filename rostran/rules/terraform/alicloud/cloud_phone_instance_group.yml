@@ -19,7 +19,7 @@ Properties:
   instance_group_name:
     To: InstanceName
   instance_group_spec:
-    Ignore: true
+    To: InstanceType
   number_of_instances:
     Ignore: true
   office_site_id:

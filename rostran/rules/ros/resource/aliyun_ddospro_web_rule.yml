@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DDoSPro::WebRule
+  To: alicloud_ddoscoo_domain_resource
+Properties:
+  Domain:
+    To: domain
+  HttpsExt:
+    To: https_ext
+  InstanceIds:
+    To: instance_ids
+  RsType:
+    To: rs_type
+  DefenseId:
+    Ignore: true
+  Rules:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+Attributes:
+  Domain:
+    Ignore: true

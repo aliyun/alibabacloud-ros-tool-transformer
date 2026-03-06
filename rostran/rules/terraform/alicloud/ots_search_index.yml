@@ -27,7 +27,8 @@ Properties:
   is_array:
     Ignore: true
   routing_fields:
-    Ignore: true
+    To: IndexSetting
+    Type: Map
   schema:
     Type: Map
     Schema:
@@ -63,7 +64,17 @@ Properties:
             To: Sorters
             Handler: ots_search_index_sorters
   sorter:
-    Ignore: true
+    To: IndexSort
+    Type: Map
+    Schema:
+      field_name:
+        Ignore: true
+      mode:
+        Ignore: true
+      order:
+        Ignore: true
+      sorter_type:
+        Ignore: true
   store:
     Ignore: true
   sync_phase:
@@ -71,7 +82,8 @@ Properties:
   table_name:
     To: TableName
   time_to_live:
-    Ignore: true
+    To: IndexSetting
+    Type: Map
 Attributes:
   id:
     Ignore: true

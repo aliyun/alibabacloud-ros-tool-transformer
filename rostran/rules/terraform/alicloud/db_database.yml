@@ -6,8 +6,10 @@ ResourceType:
 Properties:
   character_set:
     To: CharacterSetName
+  data_base_name:
+    To: DBName
   description:
-    Ignore: true
+    To: DBDescription
   instance_id:
     To: DBInstanceId
   name:
@@ -25,4 +27,6 @@ Attributes:
   instance_id:
     Ignore: true
   name:
+    Ignore: true
+  status:
     Ignore: true

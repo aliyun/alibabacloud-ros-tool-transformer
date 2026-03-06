@@ -1,0 +1,26 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_machine_group
+  To: ALIYUN::SLS::MachineGroup
+Properties:
+  group_attribute:
+    To: GroupAttribute
+    Schema:
+      external_name:
+        Ignore: true
+      group_topic:
+        Ignore: true
+  group_name:
+    To: GroupName
+  group_type:
+    To: GroupType
+  machine_identify_type:
+    To: MachineIdentifyType
+  machine_list:
+    To: MachineList
+  project_name:
+    To: ProjectName
+Attributes:
+  id:
+    Ignore: true

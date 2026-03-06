@@ -12,11 +12,15 @@ Properties:
     To: EffectScope
   policy_document:
     To: PolicyDocument
+  tags:
+    Ignore: true
 Attributes:
   id:
     To: PolicyId
   control_policy_name:
     To: ControlPolicyName
+  create_time:
+    Ignore: true
   description:
     To: Description
   effect_scope:

@@ -4,14 +4,23 @@ ResourceType:
   From: alicloud_resource_manager_shared_resource
   To: ALIYUN::ResourceManager::ResourceShareAssociation
 Properties:
-  resource_id:
+  permission_name:
+    To: PermissionNames
+    Type: List
+  resource_arn:
     Ignore: true
+  resource_id:
+    To: Resources
+    Type: List
   resource_share_id:
     To: ResourceShareId
   resource_type:
-    Ignore: true
+    To: Resources
+    Type: List
 Attributes:
   id:
+    Ignore: true
+  create_time:
     Ignore: true
   status:
     Ignore: true

@@ -19,7 +19,7 @@ Properties:
   disaster_recovery_internet_ip:
     Ignore: true
   disaster_recovery_vswitch_id:
-    Ignore: true
+    To: DisasterRecoveryVSwitchId
   enable_ipsec:
     To: EnableIpsec
   enable_ssl:

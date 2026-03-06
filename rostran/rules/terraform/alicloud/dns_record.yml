@@ -13,11 +13,11 @@ Properties:
   priority:
     To: Priority
   routing:
-    Ignore: true
+    To: Line
   status:
     Ignore: true
   ttl:
-    Ignore: true
+    To: TTL
   type:
     To: Type
   value:

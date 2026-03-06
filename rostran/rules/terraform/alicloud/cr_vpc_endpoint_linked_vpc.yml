@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::CR::InstanceVpcEndpointLinkedVpc
 Properties:
   enable_create_dns_record_in_pvzt:
-    Ignore: true
+    To: EnableCreateDNSRecordInPvzt
   instance_id:
     To: InstanceId
   module_name:

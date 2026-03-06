@@ -23,6 +23,8 @@ Attributes:
     Ignore: true
   access_configuration_id:
     Ignore: true
+  create_time:
+    Ignore: true
   directory_id:
     Ignore: true
   principal_id:

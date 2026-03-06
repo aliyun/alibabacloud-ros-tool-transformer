@@ -16,6 +16,6 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: KeyId
   create_time:
     Ignore: true

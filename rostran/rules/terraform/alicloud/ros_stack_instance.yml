@@ -9,9 +9,13 @@ Properties:
   operation_preferences:
     To: OperationPreferences
     Handler: json_load
+  parameter_key:
+    Ignore: true
   parameter_overrides:
     To: ParameterOverrides
     Handler: ros_parameters
+  parameter_value:
+    Ignore: true
   retain_stacks:
     To: RetainStacks
   stack_group_name:

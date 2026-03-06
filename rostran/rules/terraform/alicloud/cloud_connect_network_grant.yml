@@ -5,9 +5,9 @@ ResourceType:
   To: ALIYUN::SAG::GrantCcnToCen
 Properties:
   ccn_id:
-    Ignore: true
+    To: CcnInstanceId
   cen_id:
-    Ignore: true
+    To: CenInstanceId
   cen_uid:
     To: CenUid
 Attributes:

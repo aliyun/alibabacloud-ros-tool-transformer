@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::Site
+  To: alicloud_esa_site
+Properties:
+  AccessType:
+    To: access_type
+  Coverage:
+    To: coverage
+  InstanceId:
+    To: instance_id
+  ResourceGroupId:
+    To: resource_group_id
+  SiteName:
+    To: site_name
+  Tags:
+    To: tags
+  PaymentType:
+    Ignore: true
+Attributes:
+  SiteId:
+    To: id
+  CreateTime:
+    To: create_time
+  ModifyTime:
+    Ignore: true
+  SiteName:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  NameServerList:
+    Ignore: true
+  InstanceId:
+    Ignore: true
+  AccessType:
+    Ignore: true
+  Tags:
+    Ignore: true
+  Coverage:
+    Ignore: true

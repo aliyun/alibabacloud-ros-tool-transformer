@@ -4,6 +4,10 @@ ResourceType:
   From: alicloud_log_audit
   To: ALIYUN::SLS::Audit
 Properties:
+  actiontrail_enabled:
+    Ignore: true
+  actiontrail_ttl:
+    Ignore: true
   aliuid:
     Ignore: true
   display_name:

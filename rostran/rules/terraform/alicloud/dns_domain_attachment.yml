@@ -10,6 +10,6 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: RecordId
   domain_names:
     Ignore: true

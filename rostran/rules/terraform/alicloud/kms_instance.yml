@@ -17,11 +17,11 @@ Properties:
   key_num:
     To: KeyNum
   log:
-    Ignore: true
+    To: Log
   log_storage:
     To: LogStorage
   payment_type:
-    Ignore: true
+    To: InstanceChargeType
   period:
     To: Period
   product_version:
@@ -37,6 +37,8 @@ Properties:
   spec:
     To: Spec
   status:
+    Ignore: true
+  tags:
     Ignore: true
   vpc_id:
     Ignore: true

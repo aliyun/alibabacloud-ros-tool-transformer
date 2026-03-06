@@ -13,7 +13,7 @@ Properties:
   service_name:
     To: ServiceName
   service_version:
-    Ignore: true
+    To: VersionId
 Attributes:
   id:
     Ignore: true

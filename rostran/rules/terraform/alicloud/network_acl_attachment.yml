@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   network_acl_id:
     To: NetworkAclId
+  resource_id:
+    Ignore: true
+  resource_type:
+    Ignore: true
   resources:
     To: Resources
     Type: List

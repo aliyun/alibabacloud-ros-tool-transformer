@@ -14,7 +14,7 @@ Properties:
   health_check_host:
     To: HealthCheckHost
   health_check_http_version:
-    Ignore: true
+    To: HealthCheckHttpVersion
   health_check_interval:
     To: HealthCheckInterval
   health_check_method:
@@ -30,7 +30,7 @@ Properties:
   healthy_threshold:
     To: HealthyThreshold
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   tags:
     Ignore: true
   unhealthy_threshold:

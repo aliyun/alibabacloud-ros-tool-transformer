@@ -8,20 +8,44 @@ Properties:
     To: AccountPassword
   auto_renew:
     To: AutoRenew
+  auto_renew_duration:
+    Ignore: true
   backup_interval:
     Ignore: true
   backup_period:
+    Ignore: true
+  backup_retention_period:
     Ignore: true
   backup_retention_policy_on_cluster_deletion:
     Ignore: true
   backup_time:
     Ignore: true
-  config_server_list:
+  cloud_disk_encryption_key:
     Ignore: true
+  config_server_list:
+    To: ConfigServer
+    Type: List
+    Schema:
+      node_class:
+        Ignore: true
+      node_storage:
+        Ignore: true
   db_instance_release_protection:
+    Ignore: true
+  enable_backup_log:
+    Ignore: true
+  encrypted:
+    Ignore: true
+  encryption_key:
+    Ignore: true
+  encryptor_name:
     Ignore: true
   engine_version:
     To: EngineVersion
+  force_encryption:
+    Ignore: true
+  global_security_group_list:
+    Ignore: true
   hidden_zone_id:
     To: HiddenZoneId
   instance_charge_type:
@@ -29,6 +53,12 @@ Properties:
   kms_encrypted_password:
     Ignore: true
   kms_encryption_context:
+    Ignore: true
+  log_backup_retention_period:
+    Ignore: true
+  maintain_end_time:
+    Ignore: true
+  maintain_start_time:
     Ignore: true
   mongo_list:
     To: Mongos
@@ -42,6 +72,8 @@ Properties:
     To: NetworkType
   order_type:
     Ignore: true
+  parameters:
+    Ignore: true
   period:
     To: Period
   protocol_type:
@@ -50,7 +82,11 @@ Properties:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  restore_time:
+    To: RestoreTime
   retention_period:
+    Ignore: true
+  role_arn:
     Ignore: true
   secondary_zone_id:
     To: SecondaryZoneId
@@ -68,6 +104,10 @@ Properties:
         To: Storage
   snapshot_backup_type:
     Ignore: true
+  src_db_instance_id:
+    To: SrcDBInstanceId
+  ssl_action:
+    Ignore: true
   storage_engine:
     To: StorageEngine
   storage_type:
@@ -76,7 +116,7 @@ Properties:
     To: Tags
     Handler: tags_dict_to_list
   tde_status:
-    Ignore: true
+    To: TDEStatus
   vpc_id:
     To: VpcId
   vswitch_id:
@@ -96,6 +136,8 @@ Attributes:
     Ignore: true
   instance_charge_type:
     Ignore: true
+  key_ids:
+    Ignore: true
   mongo_list:
     Ignore: true
   name:
@@ -118,6 +160,8 @@ Attributes:
     Ignore: true
   shard_list:
     Ignore: true
+  ssl_status:
+    Ignore: true
   storage_engine:
     Ignore: true
   storage_type:
@@ -131,4 +175,6 @@ Attributes:
   vswitch_id:
     Ignore: true
   zone_id:
+    Ignore: true
+  zone_infos:
     Ignore: true

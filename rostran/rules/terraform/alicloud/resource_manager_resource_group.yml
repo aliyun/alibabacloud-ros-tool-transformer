@@ -19,7 +19,8 @@ Properties:
   status:
     Ignore: true
   tags:
-    Ignore: true
+    To: Tags
+    Type: List
 Attributes:
   id:
     To: Id

@@ -19,7 +19,7 @@ Properties:
   eip_bind_mode:
     To: EipBindMode
   force:
-    Ignore: true
+    To: DeletionForce
   forward_table_ids:
     Ignore: true
   icmp_reply_enabled:
@@ -67,7 +67,7 @@ Attributes:
   eip_bind_mode:
     Ignore: true
   forward_table_ids:
-    Ignore: true
+    To: ForwardTableId
   instance_charge_type:
     Ignore: true
   internet_charge_type:
@@ -83,7 +83,7 @@ Attributes:
   payment_type:
     Ignore: true
   snat_table_ids:
-    Ignore: true
+    To: SNatTableId
   specification:
     Ignore: true
   status:

@@ -1,0 +1,55 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_origin_rule
+  To: ALIYUN::ESA::OriginRule
+Properties:
+  dns_record:
+    To: DnsRecord
+  follow302_enable:
+    To: Follow302Enable
+  follow302_max_tries:
+    To: Follow302MaxTries
+  follow302_retain_args:
+    To: Follow302RetainArgs
+  follow302_retain_header:
+    To: Follow302RetainHeader
+  follow302_target_host:
+    To: Follow302TargetHost
+  origin_host:
+    To: OriginHost
+  origin_http_port:
+    To: OriginHttpPort
+  origin_https_port:
+    To: OriginHttpsPort
+  origin_mtls:
+    To: OriginMtls
+  origin_read_timeout:
+    To: OriginReadTimeout
+  origin_scheme:
+    To: OriginScheme
+  origin_sni:
+    To: OriginSni
+  origin_verify:
+    To: OriginVerify
+  range:
+    To: Range
+  range_chunk_size:
+    To: RangeChunkSize
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  sequence:
+    To: Sequence
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

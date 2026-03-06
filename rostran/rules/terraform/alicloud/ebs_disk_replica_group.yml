@@ -23,7 +23,7 @@ Properties:
   reverse_replicate:
     Ignore: true
   rpo:
-    Ignore: true
+    To: RPO
   source_region_id:
     To: SourceRegionId
   source_zone_id:

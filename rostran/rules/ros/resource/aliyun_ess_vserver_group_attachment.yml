@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESS::VServerGroupAttachment
+  To: alicloud_ess_scalinggroup_vserver_groups
+Properties:
+  ForceAttach:
+    To: force
+  ScalingGroupId:
+    To: scaling_group_id
+  VServerGroups:
+    To: vserver_groups
+    Type: List
+    Schema:
+      LoadBalancerId:
+        To: loadbalancer_id
+      VServerGroupAttributes:
+        Ignore: true
+Attributes:
+  ScalingGroupId:
+    Ignore: true

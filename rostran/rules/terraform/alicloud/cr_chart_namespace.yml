@@ -14,4 +14,4 @@ Properties:
     To: Namespace
 Attributes:
   id:
-    Ignore: true
+    To: NamespaceId

@@ -11,7 +11,7 @@ Properties:
   bursting_enabled:
     To: BurstingEnabled
   category:
-    Ignore: true
+    To: DiskCategory
   dedicated_block_storage_cluster_id:
     Ignore: true
   delete_auto_snapshot:
@@ -33,7 +33,7 @@ Properties:
   instance_id:
     To: InstanceId
   kms_key_id:
-    Ignore: true
+    To: KMSKeyId
   multi_attach:
     To: MultiAttach
   name:

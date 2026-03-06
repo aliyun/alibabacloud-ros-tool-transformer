@@ -38,7 +38,7 @@ Properties:
   logstore:
     Ignore: true
   name:
-    Ignore: true
+    To: Name
   project:
     To: ProjectName
   role_arn:
