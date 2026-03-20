@@ -360,6 +360,124 @@ def rules(
         rule_manager.show(markdown, with_link)
 
 
+@app.command("update-rules")
+def update_rules(
+    version: str = typer.Option(
+        None,
+        "--version",
+        "-v",
+        help="Specific rules version to install (e.g. 1.2.0). "
+        "Defaults to the latest version on the main branch.",
+    ),
+    force: bool = typer.Option(
+        False,
+        help="Force re-download even if the local rules are already up-to-date.",
+    ),
+    clean: bool = typer.Option(
+        False,
+        help="Remove the local rules cache and revert to built-in rules.",
+    ),
+    list_versions: bool = typer.Option(
+        False,
+        "--list",
+        "-l",
+        help="List all available rules versions from remote.",
+    ),
+):
+    """
+    Update transform rules from the remote repository without upgrading the package.
+
+    Downloads rules and caches them locally at ~/.rostran/rules/.
+    The cached rules take precedence over the built-in rules shipped with the package.
+
+    \b
+    Examples:
+        rostran update-rules              # update to latest
+        rostran update-rules -v 1.2.0     # install specific version
+        rostran update-rules --list       # list available versions
+        rostran update-rules --clean      # revert to built-in rules
+    """
+    from rostran.core.rules_updater import (
+        update_rules as do_update,
+        clean_user_rules,
+        get_local_rules_version,
+        fetch_available_versions,
+        RulesUpdateError,
+    )
+
+    if list_versions:
+        typer.secho("Fetching available rules versions...", fg=typer.colors.BLUE)
+        try:
+            versions = fetch_available_versions()
+        except RulesUpdateError as e:
+            typer.secho(f"Failed: {e}", fg=typer.colors.RED)
+            raise typer.Exit(1)
+        if not versions:
+            typer.secho("No rules versions found on remote.", fg=typer.colors.YELLOW)
+        else:
+            local_ver = get_local_rules_version()
+            for entry in versions:
+                v = entry["version"]
+                date = entry.get("date", "")
+                desc = entry.get("description", "")
+                marker = "  <-- installed" if v == local_ver else ""
+                info = f"  ({date})" if date else ""
+                typer.echo(f"  {v}{info}{marker}")
+                if desc:
+                    typer.secho(f"    {desc}", fg=typer.colors.BRIGHT_BLACK)
+        return
+
+    if clean:
+        msg = clean_user_rules()
+        typer.secho(msg, fg=typer.colors.GREEN)
+        return
+
+    local_ver = get_local_rules_version()
+    if local_ver:
+        typer.secho(f"Current rules version: {local_ver}", fg=typer.colors.BLUE)
+    else:
+        typer.secho(
+            "No local rules cache found, using built-in rules.",
+            fg=typer.colors.BLUE,
+        )
+
+    typer.secho("Checking for rules updates...", fg=typer.colors.BLUE)
+    try:
+        msg = do_update(version=version, force=force)
+    except RulesUpdateError as e:
+        typer.secho(f"Update failed: {e}", fg=typer.colors.RED)
+        raise typer.Exit(1)
+    typer.secho(msg, fg=typer.colors.GREEN)
+
+
+@app.command("rules-version")
+def rules_version():
+    """
+    Show the version of the currently active rules.
+    """
+    from rostran.core.rules_updater import (
+        get_local_rules_version,
+        get_builtin_rules_version,
+        has_user_rules,
+    )
+
+    local_ver = get_local_rules_version()
+    builtin_ver = get_builtin_rules_version()
+
+    if has_user_rules() and local_ver:
+        typer.secho("Rules source : local cache (~/.rostran/rules/)", fg=typer.colors.BLUE)
+        typer.secho(f"Rules version: {local_ver}", fg=typer.colors.GREEN)
+        if builtin_ver:
+            typer.secho(f"Built-in ver : {builtin_ver}", fg=typer.colors.BRIGHT_BLACK)
+    else:
+        typer.secho("Rules source : built-in (shipped with package)", fg=typer.colors.BLUE)
+        if builtin_ver:
+            typer.secho(f"Rules version: {builtin_ver}", fg=typer.colors.GREEN)
+        else:
+            from rostran import __version__
+            typer.secho(f"Package ver  : {__version__}", fg=typer.colors.GREEN)
+
+
 def main():
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     try:

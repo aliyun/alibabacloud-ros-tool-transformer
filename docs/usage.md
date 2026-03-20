@@ -111,6 +111,70 @@ The following options are supported:
 - `--with-link`: Append a link when showing rules in markdown format.
 - `--no-with-link`: [Default] No link is attached when showing rules in markdown format.
 
+## Update Transform Rules
+
+Update transform rules from the remote repository without upgrading the package.
+Downloaded rules are cached locally at `~/.rostran/rules/` and take precedence over the built-in rules shipped with the package.
+
+### Command
+
+```bash
+rostran update-rules [OPTIONS]
+```
+
+#### OPTIONS
+
+The following options are supported:
+
+- `--version`/`-v`: Specific rules version to install (e.g. `1.2.0`). Defaults to the latest version on the main branch.
+- `--list`/`-l`: List all available rules versions from remote.
+- `--force`: Force re-download even if the local rules are already up-to-date.
+- `--clean`: Remove the local rules cache and revert to built-in rules.
+
+#### Examples
+
+```bash
+# Update to the latest rules version
+rostran update-rules
+
+# Install a specific rules version
+rostran update-rules --version 1.2.0
+
+# List all available rules versions
+rostran update-rules --list
+
+# Force re-download
+rostran update-rules --force
+
+# Remove local cache and revert to built-in rules
+rostran update-rules --clean
+```
+
+## Show Rules Version
+
+Show the version and source of the currently active rules.
+
+### Command
+
+```bash
+rostran rules-version
+```
+
+When using locally cached rules (after running `update-rules`):
+
+```
+Rules source : local cache (~/.rostran/rules/)
+Rules version: 1.2.0
+Built-in ver : 1.0.0
+```
+
+When using built-in rules (default):
+
+```
+Rules source : built-in (shipped with package)
+Rules version: 1.0.0
+```
+
 ## View Help Information
 
 ### Command
