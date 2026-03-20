@@ -66,6 +66,7 @@ variable "display_name" {
 }
 
 variable "charts" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   nullable    = false
   description = <<EOT

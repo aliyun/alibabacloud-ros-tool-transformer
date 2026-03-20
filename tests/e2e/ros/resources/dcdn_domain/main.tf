@@ -81,6 +81,7 @@ variable "top_level_domain" {
 }
 
 variable "sources" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   nullable    = false
   description = <<EOT
@@ -151,6 +152,7 @@ variable "sources" {
 }
 
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -187,24 +189,18 @@ variable "tags" {
 }
 
 resource "alicloud_dcdn_domain" "domain" {
+  // The value var.sources of arguments sources is not block and will be ignore.
   check_url         = var.check_url
   resource_group_id = var.resource_group_id
   scope             = var.scope
   domain_name       = var.domain_name
   top_level_domain  = var.top_level_domain
-  sources           = var.sources
   tags              = var.tags
 }
 
 output "domain_name" {
   value       = alicloud_dcdn_domain.domain.id
   description = "The CDN domain name. Wildcard domain names that start with periods (.) are supported. For example, .a.com."
-}
-
-output "arn" {
-  // Could not transform ROS Attribute Arn to Terraform attribute.
-  value       = null
-  description = "The Alibaba Cloud Resource Name (ARN)."
 }
 
 output "cname" {

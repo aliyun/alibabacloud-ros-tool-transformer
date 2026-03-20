@@ -16,6 +16,7 @@ Properties:
     To: description
   InstanceChargeType:
     To: instance_charge_type
+    Handler: handle_instance_charge_type
   InternetChargeType:
     To: internet_charge_type
   Isp:
@@ -26,6 +27,7 @@ Properties:
     To: netmode
   InstanceChargeType$$0:
     To: payment_type
+    Handler: handle_pay_type(PayAsYouGo,Subscription)
   Period:
     To: period
   PricingCycle:

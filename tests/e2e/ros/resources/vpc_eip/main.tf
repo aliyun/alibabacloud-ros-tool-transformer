@@ -30,6 +30,17 @@ variable "resource_group_id" {
   EOT
 }
 
+variable "instance_id" {
+  type        = string
+  description = <<EOT
+  {
+    "Description": {
+      "en": "The instance ID of the requested EIP.\n\nYou must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP."
+    }
+  }
+  EOT
+}
+
 variable "zone" {
   type        = string
   description = <<EOT
@@ -309,6 +320,7 @@ variable "bandwidth" {
 }
 
 variable "security_protection_types" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -337,7 +349,19 @@ variable "security_protection_types" {
   EOT
 }
 
+variable "ip_address" {
+  type        = string
+  description = <<EOT
+  {
+    "Description": {
+      "en": "The IP address of the requested EIP.\n\nYou must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP."
+    }
+  }
+  EOT
+}
+
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -377,6 +401,7 @@ resource "alicloud_eip_address" "elastic_ip" {
   resource_group_id         = var.resource_group_id
   zone                      = var.zone
   instance_charge_type      = var.instance_charge_type
+  payment_type              = var.instance_charge_type
   pricing_cycle             = var.pricing_cycle
   isp                       = var.isp
   period                    = var.period
@@ -384,6 +409,7 @@ resource "alicloud_eip_address" "elastic_ip" {
   deletion_protection       = var.deletion_protection
   auto_pay                  = var.auto_pay
   address_name              = var.name
+  name                      = var.name
   internet_charge_type      = var.internet_charge_type
   netmode                   = var.netmode
   bandwidth                 = var.bandwidth
@@ -399,17 +425,5 @@ output "isp" {
 output "allocation_id" {
   value       = alicloud_eip_address.elastic_ip.id
   description = "ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses."
-}
-
-output "eip_address" {
-  // Could not transform ROS Attribute EipAddress to Terraform attribute.
-  value       = null
-  description = "IP address of created EIP."
-}
-
-output "order_id" {
-  // Could not transform ROS Attribute OrderId to Terraform attribute.
-  value       = null
-  description = "Order ID of prepaid EIP instance."
 }
 

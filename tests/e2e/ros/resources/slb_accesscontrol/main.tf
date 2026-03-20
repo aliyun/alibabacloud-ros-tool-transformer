@@ -1,4 +1,5 @@
 variable "acl_entries" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -85,6 +86,7 @@ variable "acl_name" {
 }
 
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -120,7 +122,7 @@ variable "tags" {
 }
 
 resource "alicloud_slb_acl" "access_control" {
-  entry_list        = var.acl_entries
+  // The value var.acl_entries of arguments entry_list is not block and will be ignore.
   resource_group_id = var.resource_group_id
   ip_version        = var.addressipversion
   name              = var.acl_name
@@ -130,11 +132,5 @@ resource "alicloud_slb_acl" "access_control" {
 output "acl_id" {
   value       = alicloud_slb_acl.access_control.id
   description = "The ID of the access control list."
-}
-
-output "arn" {
-  // Could not transform ROS Attribute Arn to Terraform attribute.
-  value       = null
-  description = "The Alibaba Cloud Resource Name (ARN)."
 }
 

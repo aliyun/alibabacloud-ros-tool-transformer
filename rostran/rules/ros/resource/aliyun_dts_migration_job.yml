@@ -9,11 +9,77 @@ Properties:
   MigrationJobClass:
     To: instance_class
   SourceEndpoint:
-    Ignore: true
+    To: source_endpoint_instance_type
+    Handler: handle_dict_value(InstanceType)
+  SourceEndpoint$$1:
+    To: source_endpoint_instance_id
+    Handler: handle_dict_value(InstanceID)
+  SourceEndpoint$$2:
+    To: source_endpoint_engine_name
+    Handler: handle_dict_value(EngineName)
+  SourceEndpoint$$3:
+    To: source_endpoint_region
+    Handler: handle_dict_value(Region)
+  SourceEndpoint$$4:
+    To: source_endpoint_ip
+    Handler: handle_dict_value(IP)
+  SourceEndpoint$$5:
+    To: source_endpoint_port
+    Handler: handle_dict_value(Port)
+  SourceEndpoint$$6:
+    To: source_endpoint_database_name
+    Handler: handle_dict_value(DatabaseName)
+  SourceEndpoint$$7:
+    To: source_endpoint_user_name
+    Handler: handle_dict_value(UserName)
+  SourceEndpoint$$8:
+    To: source_endpoint_password
+    Handler: handle_dict_value(Password)
+  SourceEndpoint$$9:
+    To: source_endpoint_owner_id
+    Handler: handle_dict_value(OwnerID)
+  SourceEndpoint$$10:
+    To: source_endpoint_role
+    Handler: handle_dict_value(Role)
+  SourceEndpoint$$11:
+    To: source_endpoint_oracle_sid
+    Handler: handle_dict_value(OracleSID)
   DestinationEndpoint:
-    Ignore: true
+    To: destination_endpoint_instance_type
+    Handler: handle_dict_value(InstanceType)
+  DestinationEndpoint$$1:
+    To: destination_endpoint_instance_id
+    Handler: handle_dict_value(InstanceID)
+  DestinationEndpoint$$2:
+    To: destination_endpoint_engine_name
+    Handler: handle_dict_value(EngineName)
+  DestinationEndpoint$$3:
+    To: destination_endpoint_region
+    Handler: handle_dict_value(Region)
+  DestinationEndpoint$$4:
+    To: destination_endpoint_ip
+    Handler: handle_dict_value(IP)
+  DestinationEndpoint$$5:
+    To: destination_endpoint_port
+    Handler: handle_dict_value(Port)
+  DestinationEndpoint$$6:
+    To: destination_endpoint_database_name
+    Handler: handle_dict_value(DatabaseName)
+  DestinationEndpoint$$7:
+    To: destination_endpoint_user_name
+    Handler: handle_dict_value(UserName)
+  DestinationEndpoint$$8:
+    To: destination_endpoint_password
+    Handler: handle_dict_value(Password)
   MigrationMode:
-    Ignore: true
+    To: data_initialization
+    Handler: handle_dict_value(DataIntialization)
+  MigrationMode$$1:
+    To: data_synchronization
+    Handler: handle_dict_value(DataSynchronization)
+  MigrationMode$$2:
+    To: structure_initialization
+    Handler: handle_dict_value(StructureIntialization)
   MigrationObject:
     Ignore: true
 Attributes:

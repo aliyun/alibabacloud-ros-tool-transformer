@@ -29,7 +29,7 @@ Properties:
       ZoneId:
         To: zone_id
       VSwitchId:
-        Ignore: true
+        To: vswitch_id
   DeletionForce:
     Ignore: true
   AutoCreateVpcRoute:

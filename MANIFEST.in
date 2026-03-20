@@ -2,3 +2,4 @@ include requirements.txt
 include LICENSE
 recursive-include rostran/bin *
 recursive-include rostran/rules *
+recursive-include tools *.json

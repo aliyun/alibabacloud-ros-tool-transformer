@@ -36,6 +36,7 @@ Properties:
     To: sync_architecture
   Type:
     To: type
+    Handler: handle_lower
   UsedTime:
     To: used_time
   PayType:

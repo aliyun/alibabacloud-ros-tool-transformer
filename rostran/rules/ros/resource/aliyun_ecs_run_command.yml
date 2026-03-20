@@ -25,6 +25,7 @@ Properties:
     To: alicloud_ecs_invocation.frequency
   InstanceIds:
     To: alicloud_ecs_invocation.instance_id
+    Handler: handle_to_list
   KeepCommand:
     Ignore: true
   Launcher:

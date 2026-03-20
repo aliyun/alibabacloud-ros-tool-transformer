@@ -15,6 +15,7 @@ variable "templateurl" {
 }
 
 variable "parameters" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -79,6 +80,7 @@ variable "template_version" {
 }
 
 variable "template_body" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -95,6 +97,7 @@ variable "template_body" {
 }
 
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {

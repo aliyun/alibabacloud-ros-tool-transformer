@@ -55,7 +55,7 @@ variable "connection_string_prefix" {
     "Description": {
       "en": "The prefix of the endpoint. \nOnly the prefix of the CurrentConnectionString parameter value can be modified.\nThe prefix must be 5 to 40 characters in length and can contain letters, digits, and hyphens (-). "
     },
-    "AllowedPattern": "[a-zA-Z0-9-]{5,40}",
+    "AllowedPattern": "^[a-zA-Z0-9-]{5,40}$",
     "Label": {
       "en": "ConnectionStringPrefix",
       "zh-cn": "外网连接地址的前缀"

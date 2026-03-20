@@ -268,6 +268,62 @@ def handle_one_line_list(ros2tf: "ROS2TerraformTemplate", args: Any):
     return tf.ListOneLineType(args)
 
 
+def select_first(ros2tf: "ROS2TerraformTemplate", args: Any):
+    if isinstance(args, tf.LiteralType):
+        return args
+    if isinstance(args, tf.JsonType):
+        value = args.value
+        if isinstance(value, list) and len(value) > 0:
+            return value[0]
+    if isinstance(args, list) and len(args) > 0:
+        return tf.convert_to_tf_type(args[0])
+    return args
+
+
+def handle_to_list(ros2tf: "ROS2TerraformTemplate", args: Any):
+    if isinstance(args, tf.LiteralType):
+        return tf.JsonType([args])
+    if isinstance(args, tf.JsonType):
+        value = args.value
+        if isinstance(value, list):
+            return args
+        return tf.JsonType([args])
+    if isinstance(args, list):
+        return tf.JsonType([tf.convert_to_tf_type(v) for v in args])
+    return tf.JsonType([tf.convert_to_tf_type(args)])
+
+
+def handle_lower(ros2tf: "ROS2TerraformTemplate", args: Any):
+    if isinstance(args, tf.LiteralType):
+        return args
+    if isinstance(args, tf.TerraformType):
+        args = args.value
+    if isinstance(args, str):
+        return tf.QuotedString(args.lower())
+    return tf.convert_to_tf_type(args)
+
+
+def handle_dict_value(ros2tf: "ROS2TerraformTemplate", args: Any, key: str):
+    """Extract a specific key from a dict value. Returns None to skip if key is absent."""
+    if isinstance(args, tf.LiteralType):
+        return args
+    if isinstance(args, tf.JsonType):
+        value = args.value
+        if isinstance(value, dict):
+            if key not in value:
+                return None
+            result = value.get(key)
+            if isinstance(result, tf.TerraformType):
+                return result
+            return tf.convert_to_tf_type(result)
+    if isinstance(args, dict):
+        if key not in args:
+            return None
+        value = args.get(key)
+        return ros2tf.resolve_values(value)
+    return None
+
+
 POST_PAID = ['PayAsYouGo', 'PostPaid', 'PayOnDemand', 'Postpaid', 'PostPay', 'Postpay', 'POSTPAY', 'POST']
 PRE_PAID = ['Subscription', 'PrePaid', 'Prepaid', 'PrePay', 'Prepay', 'PREPAY', 'PRE']
 
@@ -281,6 +337,18 @@ def handle_pay_type(ros2tf: "ROS2TerraformTemplate", args: str, pay_as_you_go, s
         return tf.QuotedString(subscription)
     else:
         return tf.QuotedString(pay_as_you_go)
+
+
+def handle_instance_charge_type(ros2tf: "ROS2TerraformTemplate", args: Any):
+    if isinstance(args, tf.LiteralType):
+        return args
+    if isinstance(args, tf.TerraformType):
+        args = args.value
+    if args in POST_PAID:
+        return tf.QuotedString("PostPaid")
+    elif args in PRE_PAID:
+        return tf.QuotedString("PrePaid")
+    return tf.convert_to_tf_type(args)
 
 
 def handle_required_string(ros2tf: "ROS2TerraformTemplate", args):
