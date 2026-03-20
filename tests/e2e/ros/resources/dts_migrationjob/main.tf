@@ -1,4 +1,5 @@
 variable "migration_object" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -180,6 +181,7 @@ variable "migration_object" {
 }
 
 variable "destination_endpoint" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -345,6 +347,7 @@ variable "migration_job_class" {
 }
 
 variable "source_endpoint" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -530,6 +533,7 @@ variable "migration_job_name" {
 }
 
 variable "migration_mode" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -585,8 +589,32 @@ variable "migration_mode" {
 }
 
 resource "alicloud_dts_migration_job" "migration_job" {
-  instance_class = var.migration_job_class
-  dts_job_name   = var.migration_job_name
+  destination_endpoint_instance_type = var.destination_endpoint
+  destination_endpoint_instance_id   = var.destination_endpoint
+  destination_endpoint_engine_name   = var.destination_endpoint
+  destination_endpoint_region        = var.destination_endpoint
+  destination_endpoint_ip            = var.destination_endpoint
+  destination_endpoint_port          = var.destination_endpoint
+  destination_endpoint_database_name = var.destination_endpoint
+  destination_endpoint_user_name     = var.destination_endpoint
+  destination_endpoint_password      = var.destination_endpoint
+  instance_class                     = var.migration_job_class
+  source_endpoint_instance_type      = var.source_endpoint
+  source_endpoint_instance_id        = var.source_endpoint
+  source_endpoint_engine_name        = var.source_endpoint
+  source_endpoint_region             = var.source_endpoint
+  source_endpoint_ip                 = var.source_endpoint
+  source_endpoint_port               = var.source_endpoint
+  source_endpoint_database_name      = var.source_endpoint
+  source_endpoint_user_name          = var.source_endpoint
+  source_endpoint_password           = var.source_endpoint
+  source_endpoint_owner_id           = var.source_endpoint
+  source_endpoint_role               = var.source_endpoint
+  source_endpoint_oracle_sid         = var.source_endpoint
+  dts_job_name                       = var.migration_job_name
+  data_initialization                = var.migration_mode
+  data_synchronization               = var.migration_mode
+  structure_initialization           = var.migration_mode
 }
 
 output "migration_job_id" {

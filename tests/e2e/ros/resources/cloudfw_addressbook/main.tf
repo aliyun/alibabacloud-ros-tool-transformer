@@ -37,7 +37,7 @@ variable "tag_relation" {
   description = <<EOT
   {
     "Description": {
-      "en": "The relationship between the labels to be matched more ECS.\nand: the relationship between multiple labels \"and\" that matches both ECS IP public network more tags will be added to the address book.\nor: a plurality of inter-labeled \"or\" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added."
+      "en": "The relationship between the labels to be matched more ECS.\nand: the relationship between multiple labels \"and\" that matches both ECS IP public network more tags will be added to the address book.\nor: a plurality of inter-labeled \"or\" relationship, i.e., as long as a matching tag ECS public IP address book will be added."
     },
     "AllowedValues": [
       "and",
@@ -60,10 +60,13 @@ variable "group_type" {
       "domain",
       "ip",
       "port",
-      "tag"
+      "tag",
+      "ackLabel",
+      "ipv6",
+      "ackNamespace"
     ],
     "Description": {
-      "en": "Type the address book, the optional values ​​are:\nip: IP Address Book\ndomain: domain name address book\nport: Port Address Book\ntag: ECS label address book"
+      "en": "Type of the address book."
     },
     "Label": {
       "en": "GroupType",
@@ -73,7 +76,35 @@ variable "group_type" {
   EOT
 }
 
+variable "ack_namespaces" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
+  type        = any
+  description = <<EOT
+  {
+    "AssociationPropertyMetadata": {
+      "Parameter": {
+        "Type": "String",
+        "Description": {
+          "en": "ACK cluster container group namespace.Required when GroupType is ackNamespace."
+        },
+        "Required": false
+      }
+    },
+    "AssociationProperty": "List[Parameter]",
+    "Description": {
+      "en": "ACK cluster container group namespace list. Up to 10."
+    },
+    "Label": {
+      "en": "AckNamespaces",
+      "zh-cn": "ACK 集群容器组命名空间列表"
+    },
+    "MaxLength": 10
+  }
+  EOT
+}
+
 variable "tag_list" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -126,6 +157,42 @@ variable "region_id" {
   EOT
 }
 
+variable "ack_labels" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
+  type        = any
+  description = <<EOT
+  {
+    "AssociationPropertyMetadata": {
+      "Parameters": {
+        "Value": {
+          "Type": "String",
+          "Description": {
+            "en": "Value of ACK cluster container group label."
+          },
+          "Required": false
+        },
+        "Key": {
+          "Type": "String",
+          "Description": {
+            "en": "Key of ACK cluster container group label."
+          },
+          "Required": false
+        }
+      }
+    },
+    "AssociationProperty": "List[Parameters]",
+    "Description": {
+      "en": "ACK cluster container group label list.\n\n> Up to 10."
+    },
+    "Label": {
+      "en": "AckLabels",
+      "zh-cn": "ACK 集群容器组标签列表"
+    },
+    "MaxLength": 10
+  }
+  EOT
+}
+
 variable "auto_add_tag_ecs" {
   type        = bool
   description = <<EOT
@@ -147,7 +214,7 @@ variable "address_list" {
   {
     "Description": {
       "en": "Address list of the address book, between multiple addresses separated by commas.\nNote: When GroupType ip, it must be set to port or domain.\nWhen GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24\nWhen GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200\nWhen GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com",
-      "zh-cn": "地址簿的地址列表，多个地址间用英文逗号分隔。说明 当GroupType为IP、port或domain时必须设置。"
+      "zh-cn": "地址簿的地址列表，多个地址间用英文逗号分隔。  说明 当GroupType为IP、port或domain时必须设置。"
     },
     "Label": {
       "en": "AddressList",
@@ -157,12 +224,27 @@ variable "address_list" {
   EOT
 }
 
+variable "ack_cluster_connector_id" {
+  type        = string
+  description = <<EOT
+  {
+    "Description": {
+      "en": "ACK cluster connector ID. Batch query ACK cluster connector list."
+    },
+    "Label": {
+      "en": "AckClusterConnectorId",
+      "zh-cn": "ACK 集群连接器 ID"
+    }
+  }
+  EOT
+}
+
 resource "alicloud_cloud_firewall_address_book" "address_book" {
+  // The value var.tag_list of arguments ecs_tags is not block and will be ignore.
   group_name       = var.group_name
   description      = var.description
   tag_relation     = var.tag_relation
   group_type       = var.group_type
-  ecs_tags         = var.tag_list
   auto_add_tag_ecs = var.auto_add_tag_ecs
   address_list     = var.address_list
 }

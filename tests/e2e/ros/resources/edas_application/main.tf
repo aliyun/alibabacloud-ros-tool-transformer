@@ -148,6 +148,7 @@ variable "package_type" {
 }
 
 variable "deployment" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -271,11 +272,5 @@ resource "alicloud_edas_application" "application" {
 output "app_id" {
   value       = alicloud_edas_application.application.id
   description = "Application Id, a unique identifier EDAS application"
-}
-
-output "port" {
-  // Could not transform ROS Attribute Port to Terraform attribute.
-  value       = null
-  description = "Application port"
 }
 

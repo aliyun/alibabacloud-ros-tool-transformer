@@ -402,6 +402,33 @@ class ROS2TerraformRuleGenerator(BaseRuleGenerator):
             tf_rule[section] = rule_section
         return tf_rule
 
+    @staticmethod
+    def _merge_rule_section(existing_section, generated_section):
+        """Merge generated rule section into existing one.
+
+        - If an existing entry is NOT Ignore: true, keep it as-is.
+        - If an existing entry IS Ignore: true AND the generated section
+          has a non-Ignore replacement, update it.
+        - Entries in existing but not in generated (e.g. $$-suffixed
+          entries added manually) are always preserved.
+        - New entries from generated that don't exist in existing are added.
+        """
+        merged = {}
+        for key, value in existing_section.items():
+            if key in generated_section:
+                if value.get("Ignore") and not generated_section[key].get("Ignore"):
+                    merged[key] = generated_section[key]
+                else:
+                    merged[key] = value
+            else:
+                merged[key] = value
+
+        for key, value in generated_section.items():
+            if key not in merged:
+                merged[key] = value
+
+        return merged
+
     def generate(self):
         rule = {
             "Version": "2020-06-01",
@@ -416,19 +443,38 @@ class ROS2TerraformRuleGenerator(BaseRuleGenerator):
         tf_rule_path = os.path.join(TF_ALI_RULES_DIR, f"{name}.yml")
         path = self._get_rule_path()
 
-        if os.path.exists(path):
+        if not os.path.exists(tf_rule_path):
             return
-        if os.path.exists(tf_rule_path):
-            with open(tf_rule_path, "r") as f:
-                tf_rule = yaml.safe_load(f)
-            for section in ["Properties", "Attributes"]:
-                ros_res_section = getattr(self.from_resource, section.lower())()
-                tf_rule_section = tf_rule.get(section, {}) or {}
-                rule[section] = self._get_rule_section(tf_rule_section, ros_res_section)
 
-            with open(path, "w") as f:
-                content = yaml.safe_dump(rule, sort_keys=False)
-                f.write(content)
+        with open(tf_rule_path, "r") as f:
+            tf_rule = yaml.safe_load(f)
+        for section in ["Properties", "Attributes"]:
+            ros_res_section = getattr(self.from_resource, section.lower())()
+            tf_rule_section = tf_rule.get(section, {}) or {}
+            rule[section] = self._get_rule_section(tf_rule_section, ros_res_section)
+
+        existing_rule = None
+        if os.path.exists(path):
+            with open(path, "r") as f:
+                existing_rule = yaml.safe_load(f)
+
+        if existing_rule:
+            existing_rt = existing_rule.get("ResourceType", {})
+            rule_rt = rule.get("ResourceType", {})
+            for rt_key in ("BuiltInProperties",):
+                if rt_key in existing_rt:
+                    rule_rt[rt_key] = existing_rt[rt_key]
+
+            for section in ("Properties", "Attributes"):
+                existing_section = existing_rule.get(section, {}) or {}
+                generated_section = rule.get(section, {}) or {}
+                rule[section] = self._merge_rule_section(
+                    existing_section, generated_section
+                )
+
+        with open(path, "w") as f:
+            content = yaml.safe_dump(rule, sort_keys=False)
+            f.write(content)
 
     def _get_rule_path(self):
         name = camel_to_snake(self.from_resource.resource_type.replace("::", "_"))

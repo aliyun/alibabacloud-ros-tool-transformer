@@ -32,7 +32,7 @@ variable "resource_group_id" {
   EOT
 }
 
-variable "version_037f81c2" {
+variable "version_c8c2dee5" {
   type        = string
   nullable    = false
   description = <<EOT
@@ -149,6 +149,7 @@ variable "plan" {
 }
 
 variable "start_instance_param" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   nullable    = false
   description = <<EOT

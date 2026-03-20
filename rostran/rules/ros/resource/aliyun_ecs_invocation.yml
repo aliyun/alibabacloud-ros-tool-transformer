@@ -10,6 +10,7 @@ Properties:
     To: frequency
   InstanceIds:
     To: instance_id
+    Handler: handle_to_list
   Parameters:
     To: parameters
   RepeatMode:

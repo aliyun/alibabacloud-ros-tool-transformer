@@ -379,11 +379,14 @@ class ROS2TerraformTemplate(Template):
                 rule_args = rule_args.split(")")[0].split(",")
             handler_func = getattr(functions, handler, None)
             if callable(handler_func):
+                result = handler_func(self, self.resolve_values(orig_value), *rule_args)
+                if result is None:
+                    return True
                 if isinstance(tf_arg_name, list):
                     for n in tf_arg_name:
-                        tf_argument[n] = handler_func(self, self.resolve_values(orig_value), *rule_args)
+                        tf_argument[n] = result
                 else:
-                    tf_argument[tf_arg_name] = handler_func(self, self.resolve_values(orig_value), *rule_args)
+                    tf_argument[tf_arg_name] = result
                 return True
 
     def _get_tf_argument(
@@ -398,72 +401,87 @@ class ROS2TerraformTemplate(Template):
             tf_argument = {}
             if not schema or not isinstance(schema, dict):
                 return self.resolve_values(values)
+
+            dollar_schema_keys = {}
+            for schema_key in schema:
+                if "$$" in schema_key:
+                    base_name = schema_key.split("$$")[0]
+                    dollar_schema_keys.setdefault(base_name, []).append(schema_key)
+
             for name, value in values.items():
                 if prop_name:
                     prop_name = f"{prop_name}.{name}"
                 prop_flag = prop_name or name
                 if name not in schema:
-                    self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
-                    continue
+                    if name not in dollar_schema_keys:
+                        self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
+                        continue
                 if isinstance(value, tf.CommentType):
                     value = tf.CommentType(f"{prop_flag} transform failed: {value.value}")
                     self.reporter.add_failed_property(f"{res_type}.{prop_flag}")
-                schema_value = schema[name] or {}
-                tf_arg_name = schema_value.get("To")
-                new_res_schema = schema_value.get("ToResources")
-                if new_res_schema:
-                    new_res_rule = ResourceRule.initialize_from_info(
-                        'builtIn',
-                        new_res_schema,
-                        ResourceRule.SUPPORTED_VERSIONS[0],
-                        ResourceRule.RESOURCE
-                    )
-                    new_prop = value if isinstance(value, list) else [value]
-                    new_resources = {}
-                    for i, p in enumerate(new_prop):
-                        if not isinstance(p, dict):
-                            continue
-                        new_res_name = f"{res_name}_{name}_{i}_{uuid.uuid4().hex[:8]}"
-                        new_resources[new_res_name] = {"Type": f"{res_type}.{name}", "Properties": p}
-                    if new_resources:
-                        res_in_property = ResourcesInProperty(
-                            resource_rule=new_res_rule,
-                            resources=new_resources,
-                            from_res_name=res_name
+
+                schema_entries = []
+                if name in schema:
+                    schema_entries.append((prop_flag, schema[name] or {}))
+                for dollar_key in dollar_schema_keys.get(name, []):
+                    schema_entries.append((f"{prop_flag}$${dollar_key}", schema[dollar_key] or {}))
+
+                for entry_flag, schema_value in schema_entries:
+                    tf_arg_name = schema_value.get("To")
+                    new_res_schema = schema_value.get("ToResources")
+                    if new_res_schema:
+                        new_res_rule = ResourceRule.initialize_from_info(
+                            'builtIn',
+                            new_res_schema,
+                            ResourceRule.SUPPORTED_VERSIONS[0],
+                            ResourceRule.RESOURCE
                         )
-                        self.resources_from_properties.append(res_in_property)
-                    continue
+                        new_prop = value if isinstance(value, list) else [value]
+                        new_resources = {}
+                        for i, p in enumerate(new_prop):
+                            if not isinstance(p, dict):
+                                continue
+                            new_res_name = f"{res_name}_{name}_{i}_{uuid.uuid4().hex[:8]}"
+                            new_resources[new_res_name] = {"Type": f"{res_type}.{name}", "Properties": p}
+                        if new_resources:
+                            res_in_property = ResourcesInProperty(
+                                resource_rule=new_res_rule,
+                                resources=new_resources,
+                                from_res_name=res_name
+                            )
+                            self.resources_from_properties.append(res_in_property)
+                        continue
 
-                if schema_value.get("Ignore") or not tf_arg_name:
-                    self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
-                    continue
+                    if schema_value.get("Ignore") or not tf_arg_name:
+                        self.reporter.add_unsupported_property(f"{res_type}.{prop_flag}")
+                        continue
 
-                handled_value = self._handled_value(tf_argument, schema_value, tf_arg_name, value)
-                if handled_value:
-                    continue
+                    handled_value = self._handled_value(tf_argument, schema_value, tf_arg_name, value)
+                    if handled_value:
+                        continue
 
-                sub_schema = schema_value.get("Schema")
-                sub_args = self._get_tf_argument(res_type, value, sub_schema, name, res_name)
-                if sub_schema:
-                    if isinstance(sub_args, tf.JsonType):
-                        sub_args = sub_args.value
+                    sub_schema = schema_value.get("Schema")
+                    sub_args = self._get_tf_argument(res_type, value, sub_schema, name, res_name)
+                    if sub_schema:
+                        if isinstance(sub_args, tf.JsonType):
+                            sub_args = sub_args.value
 
-                    if isinstance(sub_args, list):
-                        for i, item in enumerate(sub_args):
-                            block = tf.Block(tf_arg_name, arguments=item)
-                            tf_argument[f"{prop_flag}${i}"] = block
-                    elif isinstance(sub_args, dict):
-                        block = tf.Block(tf_arg_name, arguments=sub_args)
-                        tf_argument[f"{prop_flag}$Block"] = block
+                        if isinstance(sub_args, list):
+                            for i, item in enumerate(sub_args):
+                                block = tf.Block(tf_arg_name, arguments=item)
+                                tf_argument[f"{prop_flag}${i}"] = block
+                        elif isinstance(sub_args, dict):
+                            block = tf.Block(tf_arg_name, arguments=sub_args)
+                            tf_argument[f"{prop_flag}$Block"] = block
+                        else:
+                            msg = f"The value {sub_args} of arguments {tf_arg_name} is not block and will be ignore."
+                            tf_argument[f"{prop_flag}$Comment"] = tf.CommentType(msg)
                     else:
-                        msg = f"The value {sub_args} of arguments {tf_arg_name} is not block and will be ignore."
-                        tf_argument[f"{prop_flag}$Comment"] = tf.CommentType(msg)
-                else:
-                    if isinstance(tf_arg_name, list):
-                        for n in tf_arg_name:
-                            tf_argument[n] = sub_args
-                    else:
-                        tf_argument[tf_arg_name] = sub_args
+                        if isinstance(tf_arg_name, list):
+                            for n in tf_arg_name:
+                                tf_argument[n] = sub_args
+                        else:
+                            tf_argument[tf_arg_name] = sub_args
 
             for name, schema_value in schema.items():
                 if not schema_value.get("Required"):
@@ -471,7 +489,8 @@ class ROS2TerraformTemplate(Template):
                 tf_arg_name = schema_value.get("To")
                 if not tf_arg_name or tf_arg_name in tf_argument:
                     continue
-                self._handled_value(tf_argument, schema_value, tf_arg_name, values.get(name))
+                base_name = name.split("$$")[0] if "$$" in name else name
+                self._handled_value(tf_argument, schema_value, tf_arg_name, values.get(base_name))
 
             return tf_argument
         elif isinstance(values, list):

@@ -15,6 +15,7 @@ variable "vserver_group_id" {
 }
 
 variable "backend_servers" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   nullable    = false
   description = <<EOT

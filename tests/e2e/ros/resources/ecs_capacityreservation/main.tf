@@ -49,6 +49,7 @@ variable "end_time" {
 }
 
 variable "private_pool_options" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -151,6 +152,7 @@ variable "instance_type" {
 }
 
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {

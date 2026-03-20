@@ -79,6 +79,21 @@ variable "destination_region" {
   EOT
 }
 
+variable "source_endpoint_engine_name" {
+  type        = string
+  description = <<EOT
+  {
+    "Description": {
+      "en": "The database engine of the source instance. Valid values:\n- **MySQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database\n- **PolarDB**: PolarDB for MySQL cluster\n- **polardb_o**: PolarDB for Oracle cluster\n- **polardb_pg**: PolarDB for PostgreSQL cluster\n- **Redis**: ApsaraDB for Redis instance or self-managed Redis database\n- **DRDS**: PolarDB-X 1.0 or PolarDB-X 2.0 instance\n- **PostgreSQL**: self-managed PostgreSQL database\n- **odps**: MaxCompute project\n- **oracle**: self-managed Oracle database\n- **mongodb**: ApsaraDB for MongoDB instance or self-managed MongoDB database\n- **tidb**: TiDB database\n- **ADS**: AnalyticDB for MySQL V2.0 cluster\n- **ADB30**: AnalyticDB for MySQL V3.0 cluster\n- **Greenplum**: AnalyticDB for PostgreSQL instance\n- **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database\n- **kafka**: Message Queue for Apache Kafka instance or self-managed Kafka cluster\n- **DataHub**: DataHub project\n- **DB2**: self-managed Db2 for LUW database\n- **as400**: AS/400\n- **Tablestore**: Tablestore instance\n**Note**: The default value is **MySQL**. You must specify one of this parameter and the **JobId** parameter."
+    },
+    "Label": {
+      "en": "SourceEndpointEngineName",
+      "zh-cn": "源实例数据库引擎类型"
+    }
+  }
+  EOT
+}
+
 variable "instance_class" {
   type        = string
   nullable    = false
@@ -98,21 +113,6 @@ variable "instance_class" {
     "Label": {
       "en": "InstanceClass",
       "zh-cn": "迁移或同步实例的规格"
-    }
-  }
-  EOT
-}
-
-variable "source_endpoint_engine_name" {
-  type        = string
-  description = <<EOT
-  {
-    "Description": {
-      "en": "The database engine of the source instance. Valid values:\n- **MySQL**: ApsaraDB RDS for MySQL instance or self-managed MySQL database\n- **PolarDB**: PolarDB for MySQL cluster\n- **polardb_o**: PolarDB for Oracle cluster\n- **polardb_pg**: PolarDB for PostgreSQL cluster\n- **Redis**: ApsaraDB for Redis instance or self-managed Redis database\n- **DRDS**: PolarDB-X 1.0 or PolarDB-X 2.0 instance\n- **PostgreSQL**: self-managed PostgreSQL database\n- **odps**: MaxCompute project\n- **oracle**: self-managed Oracle database\n- **mongodb**: ApsaraDB for MongoDB instance or self-managed MongoDB database\n- **tidb**: TiDB database\n- **ADS**: AnalyticDB for MySQL V2.0 cluster\n- **ADB30**: AnalyticDB for MySQL V3.0 cluster\n- **Greenplum**: AnalyticDB for PostgreSQL instance\n- **MSSQL**: ApsaraDB RDS for SQL Server instance or self-managed SQL Server database\n- **kafka**: Message Queue for Apache Kafka instance or self-managed Kafka cluster\n- **DataHub**: DataHub project\n- **DB2**: self-managed Db2 for LUW database\n- **as400**: AS/400\n- **Tablestore**: Tablestore instance\n**Note**: The default value is **MySQL**. You must specify one of this parameter and the **JobId** parameter."
-    },
-    "Label": {
-      "en": "SourceEndpointEngineName",
-      "zh-cn": "源实例数据库引擎类型"
     }
   }
   EOT
@@ -183,6 +183,29 @@ variable "source_region" {
   EOT
 }
 
+variable "min_du" {
+  type        = number
+  description = <<EOT
+  {
+    "Description": {
+      "en": "The lower limit of DU.\n> Only Serverless instances are supported."
+    },
+    "AllowedValues": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "Label": {
+      "en": "MinDu",
+      "zh-cn": "DU的下限"
+    }
+  }
+  EOT
+}
+
 variable "du" {
   type        = number
   description = <<EOT
@@ -231,6 +254,17 @@ variable "database_count" {
     "Label": {
       "en": "DatabaseCount",
       "zh-cn": "PolarDB-X下的私有定制RDS实例的数量"
+    }
+  }
+  EOT
+}
+
+variable "insight_module" {
+  type        = bool
+  description = <<EOT
+  {
+    "Description": {
+      "en": "Whether to enable the insight module."
     }
   }
   EOT
@@ -311,14 +345,36 @@ variable "sync_architecture" {
   EOT
 }
 
+variable "max_du" {
+  type        = number
+  description = <<EOT
+  {
+    "Description": {
+      "en": "The upper limit of DU.\n> Only Serverless instances are supported."
+    },
+    "AllowedValues": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "Label": {
+      "en": "MaxDu",
+      "zh-cn": "DU的上限"
+    }
+  }
+  EOT
+}
+
 resource "alicloud_dts_instance" "instance" {
   resource_group_id                = var.resource_group_id
   fee_type                         = var.fee_type
   compute_unit                     = var.compute_unit
   period                           = var.period
   destination_region               = var.destination_region
-  instance_class                   = var.instance_class
   source_endpoint_engine_name      = var.source_endpoint_engine_name
+  instance_class                   = var.instance_class
   auto_pay                         = var.auto_pay
   destination_endpoint_engine_name = var.destination_endpoint_engine_name
   source_region                    = var.source_region
@@ -334,11 +390,5 @@ resource "alicloud_dts_instance" "instance" {
 output "instance_id" {
   value       = alicloud_dts_instance.instance.id
   description = "The ID of the DTS instance."
-}
-
-output "job_id" {
-  // Could not transform ROS Attribute JobId to Terraform attribute.
-  value       = null
-  description = "The ID of the task."
 }
 

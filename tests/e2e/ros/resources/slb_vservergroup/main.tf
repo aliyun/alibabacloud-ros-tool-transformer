@@ -32,6 +32,7 @@ variable "load_balancer_id" {
 }
 
 variable "backend_servers" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -114,6 +115,7 @@ variable "backend_servers" {
 }
 
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -149,9 +151,9 @@ variable "tags" {
 }
 
 resource "alicloud_slb_server_group" "vserver_group" {
+  // The value var.backend_servers of arguments servers is not block and will be ignore.
   name             = var.vserver_group_name
   load_balancer_id = var.load_balancer_id
-  servers          = var.backend_servers
   tags             = var.tags
 }
 
@@ -163,17 +165,5 @@ output "vserver_group_id" {
 output "load_balancer_id" {
   value       = alicloud_slb_server_group.vserver_group.load_balancer_id
   description = "The id of load balancer."
-}
-
-output "arn" {
-  // Could not transform ROS Attribute Arn to Terraform attribute.
-  value       = null
-  description = "The Alibaba Cloud Resource Name (ARN)."
-}
-
-output "backend_servers" {
-  // Could not transform ROS Attribute BackendServers to Terraform attribute.
-  value       = null
-  description = "Backend server list in this VServerGroup."
 }
 

@@ -53,6 +53,7 @@ Properties:
     To: image_id
   InstanceChargeType:
     To: instance_charge_type
+    Handler: handle_instance_charge_type
   InstanceName:
     To: instance_name
   InstanceType:
@@ -82,7 +83,7 @@ Properties:
     To: security_enhancement_strategy
   SecurityGroupId:
     To: security_groups
-    Handler: select_first
+    Handler: handle_to_list
   SpotDuration:
     To: spot_duration
   SpotPriceLimit:

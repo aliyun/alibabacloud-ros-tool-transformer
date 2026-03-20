@@ -31,6 +31,7 @@ variable "nas_id" {
 }
 
 variable "liveness" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -210,6 +211,7 @@ variable "limit_cpu" {
 }
 
 variable "sls_configs" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -310,6 +312,7 @@ variable "package_version" {
 }
 
 variable "web_container_config" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -472,6 +475,7 @@ variable "internet_slb_id" {
 }
 
 variable "pre_stop" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -555,6 +559,7 @@ variable "pre_stop" {
 }
 
 variable "readiness" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -788,6 +793,7 @@ variable "use_body_encoding" {
 }
 
 variable "java_start_up_config" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -1454,6 +1460,7 @@ variable "requests_cpu" {
 }
 
 variable "command_args" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -1538,6 +1545,7 @@ variable "timeout" {
 }
 
 variable "envs" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -1606,6 +1614,7 @@ variable "deploy_across_zones" {
 }
 
 variable "post_start" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -1795,6 +1804,7 @@ variable "intranet_target_port" {
 }
 
 variable "mount_descs" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -1829,6 +1839,7 @@ variable "mount_descs" {
 }
 
 variable "local_volume" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -2101,18 +2112,6 @@ output "app_id" {
 output "cluster_id" {
   value       = alicloud_edas_k8s_application.k8s_application.cluster_id
   description = "The cluster ID of the application."
-}
-
-output "change_order_id" {
-  // Could not transform ROS Attribute ChangeOrderId to Terraform attribute.
-  value       = null
-  description = "The ID of the change process."
-}
-
-output "cs_cluster_id" {
-  // Could not transform ROS Attribute CsClusterId to Terraform attribute.
-  value       = null
-  description = "The K8s cluster ID of the application."
 }
 
 output "app_name" {

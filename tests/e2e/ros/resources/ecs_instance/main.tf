@@ -250,33 +250,7 @@ variable "instance_charge_type" {
   description = <<EOT
   {
     "AssociationPropertyMetadata": {
-      "PaymentDefinition": {
-        "PostPaid": {},
-        "PrePaid": {
-          "Month": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9,
-            12,
-            24,
-            36,
-            48,
-            60
-          ],
-          "Week": [
-            1,
-            2,
-            3,
-            4
-          ]
-        }
-      }
+      "LocaleKey": "InstanceChargeType"
     },
     "AssociationProperty": "ChargeType",
     "Description": {
@@ -738,6 +712,22 @@ variable "zone_id" {
   EOT
 }
 
+variable "subscription_deletion_force" {
+  type        = bool
+  description = <<EOT
+  {
+    "Description": {
+      "en": "This option is only applicable to subscription instances. For subscription instances, if this option is true, the instance will be converted to a postpaid instance before being deleted. If false, the forced deletion will not be performed. This operation will incur additional fees, so choose carefully.",
+      "zh-cn": "该选项仅适用于包年包月实例。对于包年包月实例，如果此选项为 true，则在删除前会将实例转换为按量付费实例；如果为 false，则不会执行强制删除。此操作会产生额外费用，请谨慎选择。"
+    },
+    "Label": {
+      "en": "SubscriptionDeletionForce",
+      "zh-cn": "该选项仅适用于包年包月实例"
+    }
+  }
+  EOT
+}
+
 variable "hpc_cluster_id" {
   type        = string
   description = <<EOT
@@ -787,6 +777,16 @@ variable "period" {
   default     = 1
   description = <<EOT
   {
+    "AssociationPropertyMetadata": {
+      "Visible": {
+        "Condition": {
+          "Fn::Equals": [
+            "$${InstanceChargeType}",
+            "PrePaid"
+          ]
+        }
+      }
+    },
     "AssociationProperty": "PayPeriod",
     "Description": {
       "en": "Prepaid time period. Unit is month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Default value is 1."
@@ -1087,14 +1087,23 @@ variable "period_unit" {
   default     = "Month"
   description = <<EOT
   {
+    "AssociationPropertyMetadata": {
+      "Visible": {
+        "Condition": {
+          "Fn::Equals": [
+            "$${InstanceChargeType}",
+            "PrePaid"
+          ]
+        }
+      }
+    },
     "AssociationProperty": "PayPeriodUnit",
     "Description": {
       "en": "Unit of prepaid time period, it could be Week/Month/Year. Default value is Month."
     },
     "AllowedValues": [
       "Week",
-      "Month",
-      "Year"
+      "Month"
     ],
     "Label": {
       "en": "PeriodUnit",
@@ -1142,18 +1151,6 @@ resource "alicloud_instance" "instance" {
   period_unit                   = var.period_unit
 }
 
-output "primary_network_interface_id" {
-  // Could not transform ROS Attribute PrimaryNetworkInterfaceId to Terraform attribute.
-  value       = null
-  description = "Primary network interface ID of created instance."
-}
-
-output "inner_ip" {
-  // Could not transform ROS Attribute InnerIp to Terraform attribute.
-  value       = null
-  description = "Inner IP address of the specified instance. Only for classical instance."
-}
-
 output "zone_id" {
   value       = alicloud_instance.instance.availability_zone
   description = "Zone ID of created instance."
@@ -1172,12 +1169,6 @@ output "instance_id" {
 output "public_ip" {
   value       = alicloud_instance.instance.public_ip
   description = "Public IP address of created ecs instance."
-}
-
-output "security_group_ids" {
-  // Could not transform ROS Attribute SecurityGroupIds to Terraform attribute.
-  value       = null
-  description = "Security group ID list of created instance."
 }
 
 output "host_name" {

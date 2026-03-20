@@ -1,10 +1,11 @@
 variable "parameters" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
     "Description": {
       "en": "The key-value pairs of custom parameters passed in when the script contains custom parameters.\nNumber of custom parameters: 0 to 10.\nThe key cannot be an empty string. It can be up to 64 characters in length.\nThe value can be an empty string.\nAfter the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.\nThe set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.\nDefault value: null, indicating that this parameter is canceled and customer parameters are disabled.",
-      "zh-cn": "启用自定义参数功能时，执行命令时传入的自定义参数的键值对。示例值：{\"name\": \"Jack\", \"accessKey\": \"LTAIdyv******aRY\"}。"
+      "zh-cn": "启用自定义参数功能时，执行命令时传入的自定义参数的键值对。示例值：{\"name\": \"Jack\", \"accessKey\": \"LTAI****************\"}。"
     },
     "Label": {
       "en": "Parameters",
@@ -123,6 +124,21 @@ variable "container_id" {
   EOT
 }
 
+variable "launcher" {
+  type        = string
+  description = <<EOT
+  {
+    "Description": {
+      "en": "A bootloader for script execution. The length cannot exceed 1 KB."
+    },
+    "Label": {
+      "en": "Launcher",
+      "zh-cn": "脚本执行的引导程序"
+    }
+  }
+  EOT
+}
+
 variable "frequency" {
   type        = string
   description = <<EOT
@@ -199,22 +215,26 @@ variable "sync" {
 }
 
 variable "instance_ids" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   nullable    = false
   description = <<EOT
   {
     "AssociationPropertyMetadata": {
       "Parameter": {
-        "AssociationProperty": "ALIYUN::ECS::Instance::InstanceId",
-        "Type": "String"
+        "Type": "String",
+        "Description": {
+          "en": "The instance id."
+        },
+        "Required": false
       }
     },
+    "AssociationProperty": "List[Parameter]",
     "Description": {
       "en": "The instance id list. Instances status must be running."
     },
     "Label": {
-      "en": "InstanceIds",
-      "zh-cn": "执行命令的实例列表"
+      "zh-cn": "执行脚本的ECS实例ID列表"
     },
     "MaxLength": 50
   }
@@ -222,6 +242,7 @@ variable "instance_ids" {
 }
 
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -263,19 +284,9 @@ resource "alicloud_ecs_invocation" "invocation" {
   username              = var.username
   frequency             = var.frequency
   command_id            = var.command_id
-  instance_id           = var.instance_ids
-}
-
-output "invoke_results" {
-  // Could not transform ROS Attribute InvokeResults to Terraform attribute.
-  value       = null
-  description = "The results of invoke command."
-}
-
-output "invoke_instances" {
-  // Could not transform ROS Attribute InvokeInstances to Terraform attribute.
-  value       = null
-  description = "The InvokeInstances of command."
+  instance_id = [
+    var.instance_ids
+  ]
 }
 
 output "invoke_id" {

@@ -1,4 +1,5 @@
 variable "acl_entries" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -83,6 +84,7 @@ variable "acl_name" {
 }
 
 variable "tags" {
+  // The params type Json is not supported, may be ignored when referenced by a resource.
   type        = any
   description = <<EOT
   {
@@ -118,16 +120,10 @@ variable "tags" {
 }
 
 resource "alicloud_ga_acl" "extension_resource" {
-  acl_entries       = var.acl_entries
+  // The value var.acl_entries of arguments acl_entries is not block and will be ignore.
   resource_group_id = var.resource_group_id
   acl_name          = var.acl_name
   tags              = var.tags
-}
-
-output "acl_entries" {
-  // Could not transform ROS Attribute AclEntries to Terraform attribute.
-  value       = null
-  description = "The entries of the ACL."
 }
 
 output "resource_group_id" {
@@ -138,12 +134,6 @@ output "resource_group_id" {
 output "acl_id" {
   value       = alicloud_ga_acl.extension_resource.id
   description = "The  ID of the ACL."
-}
-
-output "addressipversion" {
-  // Could not transform ROS Attribute AddressIPVersion to Terraform attribute.
-  value       = null
-  description = "The IP version of the ACL."
 }
 
 output "tags" {

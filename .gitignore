@@ -116,3 +116,5 @@ ENV/
 
 # Claude AI
 CLAUDE.md
+
+.vscode
