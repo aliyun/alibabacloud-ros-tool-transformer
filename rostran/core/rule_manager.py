@@ -1,3 +1,4 @@
+import logging
 import os
 from typing import Dict
 
@@ -9,10 +10,11 @@ from .exceptions import (
     RuleTypeNotSupport,
     RuleAlreadyExist,
 )
-from rostran.core.settings import RULES_DIR
+from rostran.core.settings import RULES_DIR, USER_RULES_DIR
 import rostran.handlers.resource as resource_handler_module
 
 yaml = YAML()
+logger = logging.getLogger(__name__)
 
 
 class RuleClassifier:
@@ -45,11 +47,32 @@ class RuleManager:
         rule_manager.load()
         return rule_manager
 
-    def load(self):
-        rules_dir = os.path.join(RULES_DIR, self.rule_classifier)
-        if not os.path.exists(rules_dir):
-            return
+    def _get_rules_dirs(self):
+        """Return a list of rules directories in loading order.
 
+        If a user-level rules cache exists (``~/.rostran/rules/``), it takes
+        precedence over the built-in rules shipped with the package.  Only one
+        source is used — the first existing directory wins — so there is no
+        partial-merge complexity.
+        """
+        user_dir = os.path.join(USER_RULES_DIR, self.rule_classifier)
+        builtin_dir = os.path.join(RULES_DIR, self.rule_classifier)
+
+        if os.path.isdir(user_dir):
+            logger.debug("Using user-level rules from %s", user_dir)
+            return [user_dir]
+
+        if os.path.isdir(builtin_dir):
+            return [builtin_dir]
+
+        return []
+
+    def load(self):
+        rules_dirs = self._get_rules_dirs()
+        for rules_dir in rules_dirs:
+            self._load_from_dir(rules_dir)
+
+    def _load_from_dir(self, rules_dir):
         for root, dirs, files in os.walk(rules_dir):
             for filename in files:
                 if not filename.endswith(".yml"):
