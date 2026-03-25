@@ -55,8 +55,7 @@ TF_ALI_ROS_PROP_MAPPINGS = {
     "alicloud_slb_acl": {"entry_list": "AclEntries"},
 }
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(current_dir, 'tf_ali_ros_generate_mappings.json'), 'r') as f:
+with open(os.path.join(RULES_DIR, 'tf_ali_ros_generate_mappings.json'), 'r') as f:
     tf_ali_ros_generate_mappings = json.load(f)
 
 TF_ALI_ROS_GENERATE_MAPPINGS = tf_ali_ros_generate_mappings or {

@@ -1,0 +1,10 @@
+{
+  "latest": "1.0.0",
+  "versions": {
+    "1.0.0": {
+      "commit": "b7935bb63ce23206ff5c10ff5b2759ffacc4f8de",
+      "date": "2026-03-20",
+      "description": "Initial versioned rules release"
+    }
+  }
+}

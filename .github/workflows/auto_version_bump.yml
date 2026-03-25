@@ -1,0 +1,122 @@
+name: Auto Version Bump
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'rostran/rules/**'
+      - 'docs/**'
+      - '*.md'
+      - 'LICENSE'
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - 'rostran/rules/**'
+      - 'docs/**'
+      - '*.md'
+      - 'LICENSE'
+
+permissions:
+  contents: write
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-22.04
+    # Skip commits made by this workflow to avoid infinite loops
+    if: "!contains(github.event.head_commit.message, 'chore: bump version')"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          # For push: need HEAD~1 diff; for PR: need full branch history
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # For same-repo PRs, check out the head branch so we can push back;
+          # for fork PRs, fall back to the default merge ref (branch doesn't exist in base repo)
+          ref: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref || '' }}
+
+      - name: Check if code files changed (excluding rules)
+        id: check_changes
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          else
+            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+          fi
+
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+
+          CODE_CHANGED=false
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            case "$file" in
+              rostran/rules/*) continue ;;
+              docs/*) continue ;;
+              *.md) continue ;;
+              LICENSE) continue ;;
+              .github/workflows/auto_version_bump.yml) continue ;;
+              .github/workflows/auto_rules_version.yml) continue ;;
+              *)
+                CODE_CHANGED=true
+                echo "Code change detected: $file"
+                break
+                ;;
+            esac
+          done <<< "$CHANGED_FILES"
+
+          echo "code_changed=$CODE_CHANGED" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        if: steps.check_changes.outputs.code_changed == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Bump patch version
+        if: steps.check_changes.outputs.code_changed == 'true'
+        id: bump
+        run: |
+          INIT_FILE="rostran/__init__.py"
+          CURRENT_VERSION=$(python -c "
+          import re
+          with open('$INIT_FILE') as f:
+              match = re.search(r\"__version__\s*=\s*['\\\"]([^'\\\"]+)['\\\"]\", f.read())
+              print(match.group(1))
+          ")
+          echo "Current version: $CURRENT_VERSION"
+
+          NEW_VERSION=$(python -c "
+          parts = '$CURRENT_VERSION'.split('.')
+          parts[-1] = str(int(parts[-1]) + 1)
+          print('.'.join(parts))
+          ")
+          echo "New version: $NEW_VERSION"
+
+          python -c "
+          import re
+          with open('$INIT_FILE', 'r') as f:
+              content = f.read()
+          content = re.sub(
+              r\"__version__\s*=\s*['\\\"][^'\\\"]+['\\\"]\",
+              f'__version__ = \\\"$NEW_VERSION\\\"',
+              content,
+          )
+          with open('$INIT_FILE', 'w') as f:
+              f.write(content)
+          "
+
+          echo "old_version=$CURRENT_VERSION" >> "$GITHUB_OUTPUT"
+          echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Commit version bump
+        if: >-
+          steps.check_changes.outputs.code_changed == 'true' &&
+          (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rostran/__init__.py
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: bump version ${{ steps.bump.outputs.old_version }} -> ${{ steps.bump.outputs.new_version }}"
+          git push
