@@ -1,10 +1,13 @@
+import errno
 import io
 import json
 import os
 import shutil
+import socket
 import tarfile
 import tempfile
 from unittest import mock
+from urllib import error
 
 import pytest
 
@@ -75,7 +78,7 @@ class TestMeta:
 
 
 class TestBuiltinVersion:
-    def test_reads_version_file(self):
+    def test_reads_versions_json_latest(self):
         version = get_builtin_rules_version()
         assert version is not None
         assert version == "1.0.0"
@@ -110,7 +113,7 @@ def _make_rules_tarball(rules_files: dict, prefix: str = "repo-main") -> bytes:
     with tarfile.open(fileobj=buf, mode="w:gz") as tf:
         for path, content in rules_files.items():
             full_path = f"{prefix}/rostran/rules/{path}"
-            data = content.encode()
+            data = content.encode() if isinstance(content, str) else content
             info = tarfile.TarInfo(name=full_path)
             info.size = len(data)
             tf.addfile(info, io.BytesIO(data))
@@ -125,6 +128,60 @@ class TestFetchRemoteLatestVersion:
         ):
             ver = fetch_remote_latest_version()
             assert ver == "2.0.0"
+
+
+class TestHttpGetRetry:
+    def test_retries_on_socket_timeout_then_succeeds(self):
+        from rostran.core import rules_updater as ru
+
+        resp_ok = mock.MagicMock()
+        resp_ok.__enter__ = mock.Mock(return_value=resp_ok)
+        resp_ok.__exit__ = mock.Mock(return_value=False)
+        resp_ok.read.return_value = b'{"latest": "1.0.0", "versions": {}}'
+
+        with mock.patch(
+            "rostran.core.rules_updater.request.urlopen",
+            side_effect=[
+                error.URLError(socket.timeout("timed out")),
+                error.URLError(socket.timeout("timed out")),
+                resp_ok,
+            ],
+        ) as mock_urlopen, mock.patch(
+            "rostran.core.rules_updater.time.sleep"
+        ) as mock_sleep:
+            out = ru._http_get("https://example.com/x")
+            assert '{"latest":' in out
+            assert mock_urlopen.call_count == 3
+            assert mock_sleep.call_count == 2
+
+    def test_fails_after_six_timeout_attempts(self):
+        from rostran.core import rules_updater as ru
+
+        with mock.patch(
+            "rostran.core.rules_updater.request.urlopen",
+            side_effect=error.URLError(socket.timeout()),
+        ) as mock_urlopen, mock.patch(
+            "rostran.core.rules_updater.time.sleep"
+        ):
+            with pytest.raises(RulesUpdateError, match="Cannot reach remote"):
+                ru._http_get("https://example.com/x")
+            assert mock_urlopen.call_count == 6
+
+    def test_no_retry_on_non_timeout_urlerror(self):
+        from rostran.core import rules_updater as ru
+
+        with mock.patch(
+            "rostran.core.rules_updater.request.urlopen",
+            side_effect=error.URLError(
+                OSError(errno.ECONNREFUSED, "Connection refused")
+            ),
+        ) as mock_urlopen, mock.patch(
+            "rostran.core.rules_updater.time.sleep"
+        ) as mock_sleep:
+            with pytest.raises(RulesUpdateError, match="Cannot reach remote"):
+                ru._http_get("https://example.com/x")
+            assert mock_urlopen.call_count == 1
+            assert mock_sleep.call_count == 0
 
 
 class TestFetchAvailableVersions:
@@ -164,7 +221,9 @@ class TestUpdateRules:
 
     def test_update_to_latest(self, temp_user_dir):
         tarball = _make_rules_tarball({
-            "VERSION": "2.0.0",
+            "VERSIONS.json": json.dumps(
+                {"latest": "2.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
+            ),
             "terraform/alicloud/vpc.yml": "Version: '2020-06-01'\nType: Resource\n",
         })
 
@@ -180,7 +239,9 @@ class TestUpdateRules:
 
     def test_update_to_specific_version(self, temp_user_dir):
         tarball = _make_rules_tarball({
-            "VERSION": "1.0.0",
+            "VERSIONS.json": json.dumps(
+                {"latest": "1.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
+            ),
             "terraform/alicloud/vpc.yml": "data",
         }, prefix="repo-b7935bb")
 
@@ -213,7 +274,11 @@ class TestUpdateRules:
     def test_update_force_redownloads(self, temp_user_dir):
         _write_meta({"version": "2.0.0"})
 
-        tarball = _make_rules_tarball({"VERSION": "2.0.0"})
+        tarball = _make_rules_tarball({
+            "VERSIONS.json": json.dumps(
+                {"latest": "2.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
+            ),
+        })
 
         with mock.patch(
             "rostran.core.rules_updater._http_get",

@@ -5,13 +5,11 @@ on:
     branches: [main]
     paths:
       - 'rostran/rules/**'
-      - '!rostran/rules/VERSION'
       - '!rostran/rules/VERSIONS.json'
   pull_request:
     branches: [main]
     paths:
       - 'rostran/rules/**'
-      - '!rostran/rules/VERSION'
       - '!rostran/rules/VERSIONS.json'
 
 permissions:
@@ -44,7 +42,6 @@ jobs:
           while IFS= read -r file; do
             [ -z "$file" ] && continue
             case "$file" in
-              rostran/rules/VERSION) continue ;;
               rostran/rules/VERSIONS.json) continue ;;
               rostran/rules/*)
                 RULES_CHANGED=true
@@ -61,14 +58,13 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Bump VERSION and update VERSIONS.json
+      - name: Bump VERSIONS.json
         if: steps.check_changes.outputs.rules_changed == 'true'
         id: bump
         run: |
-          VERSION_FILE="rostran/rules/VERSION"
           VERSIONS_JSON="rostran/rules/VERSIONS.json"
 
-          CURRENT_VERSION=$(cat "$VERSION_FILE" | tr -d '[:space:]')
+          CURRENT_VERSION=$(python3 -c "import json; print(json.load(open('$VERSIONS_JSON'))['latest'])")
           echo "Current rules version: $CURRENT_VERSION"
 
           # Bump patch version
@@ -78,9 +74,6 @@ jobs:
           print('.'.join(parts))
           ")
           echo "New rules version: $NEW_VERSION"
-
-          # Write new VERSION file
-          echo "$NEW_VERSION" > "$VERSION_FILE"
 
           # Get commit info (use current HEAD; this commit will be
           # amended after we add our changes, but the SHA recorded
@@ -128,7 +121,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add rostran/rules/VERSION rostran/rules/VERSIONS.json
+          git add rostran/rules/VERSIONS.json
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore: bump rules version ${{ steps.bump.outputs.old_version }} -> ${{ steps.bump.outputs.new_version }}"
           git push

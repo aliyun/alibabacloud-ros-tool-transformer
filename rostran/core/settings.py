@@ -18,8 +18,7 @@ RULES_REPO_NAME = os.environ.get(
 )
 RULES_REPO_BRANCH = os.environ.get("ROSTRAN_RULES_BRANCH", "main")
 
-# Built-in rules version files
-RULES_VERSION_FILE = os.path.join(RULES_DIR, "VERSION")
+# Built-in rules version index (``latest`` is the current semantic version)
 RULES_VERSIONS_JSON_FILE = os.path.join(RULES_DIR, "VERSIONS.json")
 
 # GitHub raw content URL templates

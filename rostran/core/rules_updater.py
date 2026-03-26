@@ -4,8 +4,8 @@ caches them locally under ``~/.rostran/rules/``.
 
 Version convention
 ------------------
-- ``rostran/rules/VERSION`` contains the current semantic version.
-- ``rostran/rules/VERSIONS.json`` maps each version to a commit SHA::
+- ``rostran/rules/VERSIONS.json`` holds the current ``latest`` semantic version and
+  maps each version to a commit SHA::
 
       {
         "latest": "1.2.0",
@@ -15,8 +15,8 @@ Version convention
         }
       }
 
-- Maintainers update the yml files, bump ``VERSION``, add an entry
-  to ``VERSIONS.json``, and push to main.  No git tags needed.
+- Maintainers update the yml files, bump ``latest`` / ``versions`` in
+  ``VERSIONS.json``, and push to main.  No git tags needed.
 - ``rostran rules update`` pulls the latest version.
 - ``rostran rules update -v 1.1.0`` pulls a specific version by its
   recorded commit SHA.
@@ -24,12 +24,15 @@ Version convention
 - ``rostran rules reset`` removes the local cache and reverts to built-in rules.
 """
 
+import errno
 import json
 import logging
 import os
 import shutil
+import socket
 import tarfile
 import tempfile
+import time
 from datetime import datetime, timezone
 from io import BytesIO
 from typing import Dict, List, Optional
@@ -39,7 +42,6 @@ from rostran.core.settings import (
     USER_DATA_DIR,
     USER_RULES_DIR,
     USER_RULES_META_FILE,
-    RULES_VERSION_FILE,
     RULES_VERSIONS_JSON_FILE,
     RULES_REPO_OWNER,
     RULES_REPO_NAME,
@@ -51,7 +53,10 @@ from rostran.core.settings import (
 
 logger = logging.getLogger(__name__)
 
-_REQUEST_TIMEOUT = 60
+# Single HTTP attempt timeout (seconds). Large archives may need a long read.
+_REQUEST_TIMEOUT = 180
+# After a network timeout, retry this many additional times (1 + N total attempts).
+_HTTP_TIMEOUT_RETRIES = 5
 
 
 class RulesUpdateError(Exception):
@@ -84,35 +89,70 @@ def get_local_rules_version() -> Optional[str]:
     return meta.get("version")
 
 
+def _read_latest_from_versions_json(path: str) -> Optional[str]:
+    """Return the ``latest`` field from a VERSIONS.json file, or None."""
+    if not os.path.isfile(path):
+        return None
+    try:
+        with open(path) as f:
+            data = json.load(f)
+        latest = data.get("latest")
+        return str(latest).strip() if latest is not None else None
+    except (json.JSONDecodeError, OSError, TypeError):
+        return None
+
+
 def get_builtin_rules_version() -> Optional[str]:
-    """Read the VERSION file shipped inside the package."""
-    if os.path.isfile(RULES_VERSION_FILE):
-        with open(RULES_VERSION_FILE) as f:
-            return f.read().strip()
-    return None
+    """Read ``latest`` from the VERSIONS.json shipped inside the package."""
+    return _read_latest_from_versions_json(RULES_VERSIONS_JSON_FILE)
 
 
 # ---------------------------------------------------------------------------
 # HTTP helpers
 # ---------------------------------------------------------------------------
 
+def _urlerror_is_timeout(exc: error.URLError) -> bool:
+    """True if this error is worth retrying (connection timed out, read timeout)."""
+    r = exc.reason
+    if isinstance(r, socket.timeout):
+        return True
+    if isinstance(r, TimeoutError):
+        return True
+    if isinstance(r, OSError) and getattr(r, "errno", None) == errno.ETIMEDOUT:
+        return True
+    return False
+
+
 def _http_get(url: str, headers: dict = None, decode: bool = True):
     hdrs = {"User-Agent": "rostran-rules-updater"}
     if headers:
         hdrs.update(headers)
     req = request.Request(url, headers=hdrs)
-    try:
-        with request.urlopen(req, timeout=_REQUEST_TIMEOUT) as resp:
-            data = resp.read()
-            return data.decode() if decode else data
-    except error.HTTPError as exc:
-        raise RulesUpdateError(
-            f"HTTP request failed ({exc.code}): {url}"
-        ) from exc
-    except error.URLError as exc:
-        raise RulesUpdateError(
-            f"Cannot reach remote: {exc.reason}"
-        ) from exc
+    max_attempts = 1 + _HTTP_TIMEOUT_RETRIES
+
+    for attempt in range(max_attempts):
+        try:
+            with request.urlopen(req, timeout=_REQUEST_TIMEOUT) as resp:
+                data = resp.read()
+                return data.decode() if decode else data
+        except error.HTTPError as exc:
+            raise RulesUpdateError(
+                f"HTTP request failed ({exc.code}): {url}"
+            ) from exc
+        except error.URLError as exc:
+            if _urlerror_is_timeout(exc) and attempt < max_attempts - 1:
+                logger.warning(
+                    "HTTP timeout (%s), retry %s/%s: %s",
+                    exc.reason,
+                    attempt + 1,
+                    max_attempts,
+                    url,
+                )
+                time.sleep(min(2**attempt, 8))
+                continue
+            raise RulesUpdateError(
+                f"Cannot reach remote: {exc.reason}"
+            ) from exc
 
 
 # ---------------------------------------------------------------------------
@@ -230,12 +270,9 @@ def _download_and_extract_rules(ref: str) -> str:
 
 
 def _read_version_from_dir(rules_dir: str) -> Optional[str]:
-    """Read VERSION from an extracted rules directory."""
-    vf = os.path.join(rules_dir, "VERSION")
-    if os.path.isfile(vf):
-        with open(vf) as f:
-            return f.read().strip()
-    return None
+    """Read ``latest`` from VERSIONS.json in an extracted rules directory."""
+    vj = os.path.join(rules_dir, "VERSIONS.json")
+    return _read_latest_from_versions_json(vj)
 
 
 # ---------------------------------------------------------------------------
@@ -275,7 +312,7 @@ def update_rules(version: Optional[str] = None, force: bool = False) -> str:
         downloaded_version = _read_version_from_dir(tmpdir)
         if downloaded_version and downloaded_version != target_version:
             logger.warning(
-                "VERSION file mismatch: expected %s, got %s",
+                "VERSIONS.json latest mismatch: expected %s, got %s",
                 target_version,
                 downloaded_version,
             )
