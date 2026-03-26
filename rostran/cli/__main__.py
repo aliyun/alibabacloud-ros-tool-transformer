@@ -326,8 +326,40 @@ def _format_directory(
     return formatted_paths
 
 
-@app.command()
+rules_app = typer.Typer(
+    help="Show transform rules of Terraform and CloudFormation, or manage rules via sub-commands.",
+    invoke_without_command=True,
+)
+app.add_typer(rules_app, name="rules")
+
+
+def _show_rules_version():
+    from rostran.core.rules_updater import (
+        get_local_rules_version,
+        get_builtin_rules_version,
+        has_user_rules,
+    )
+
+    local_ver = get_local_rules_version()
+    builtin_ver = get_builtin_rules_version()
+
+    if has_user_rules() and local_ver:
+        typer.secho("Rules source : local cache (~/.rostran/rules/)", fg=typer.colors.BLUE)
+        typer.secho(f"Rules version: {local_ver}", fg=typer.colors.GREEN)
+        if builtin_ver:
+            typer.secho(f"Built-in ver : {builtin_ver}", fg=typer.colors.BRIGHT_BLACK)
+    else:
+        typer.secho("Rules source : built-in (shipped with package)", fg=typer.colors.BLUE)
+        if builtin_ver:
+            typer.secho(f"Rules version: {builtin_ver}", fg=typer.colors.GREEN)
+        else:
+            from rostran import __version__
+            typer.secho(f"Package ver  : {__version__}", fg=typer.colors.GREEN)
+
+
+@rules_app.callback()
 def rules(
+    ctx: typer.Context,
     terraform: bool = typer.Option(
         True,
         help="Whether to show Terraform transform rules.",
@@ -344,10 +376,23 @@ def rules(
         False,
         help="Whether to include links when showing rules in markdown format.",
     ),
+    version: bool = typer.Option(
+        False,
+        "--version",
+        "-V",
+        help="Show the version of the currently active rules.",
+    ),
 ):
     """
     Show transform rules of Terraform and CloudFormation.
     """
+    if ctx.invoked_subcommand is not None:
+        return
+
+    if version:
+        _show_rules_version()
+        return
+
     newline = False
     if terraform:
         rule_manager = RuleManager.initialize(RuleClassifier.TerraformAliCloud)
@@ -358,6 +403,96 @@ def rules(
             typer.echo("")
         rule_manager = RuleManager.initialize(RuleClassifier.CloudFormation)
         rule_manager.show(markdown, with_link)
+
+
+@rules_app.command("list")
+def rules_list():
+    """List all available rules versions from remote."""
+    from rostran.core.rules_updater import (
+        get_local_rules_version,
+        fetch_available_versions,
+        RulesUpdateError,
+    )
+
+    typer.secho("Fetching available rules versions...", fg=typer.colors.BLUE)
+    try:
+        versions = fetch_available_versions()
+    except RulesUpdateError as e:
+        typer.secho(f"Failed: {e}", fg=typer.colors.RED)
+        raise typer.Exit(1)
+    if not versions:
+        typer.secho("No rules versions found on remote.", fg=typer.colors.YELLOW)
+    else:
+        local_ver = get_local_rules_version()
+        for entry in versions:
+            v = entry["version"]
+            date = entry.get("date", "")
+            desc = entry.get("description", "")
+            marker = "  <-- installed" if v == local_ver else ""
+            info = f"  ({date})" if date else ""
+            typer.echo(f"  {v}{info}{marker}")
+            if desc:
+                typer.secho(f"    {desc}", fg=typer.colors.BRIGHT_BLACK)
+
+
+@rules_app.command("reset")
+def rules_reset():
+    """Remove the local rules cache and revert to built-in rules."""
+    from rostran.core.rules_updater import clean_user_rules
+
+    msg = clean_user_rules()
+    typer.secho(msg, fg=typer.colors.GREEN)
+
+
+@rules_app.command()
+def update(
+    version: str = typer.Option(
+        None,
+        "--version",
+        "-v",
+        help="Specific rules version to install (e.g. 1.2.0). "
+        "Defaults to the latest version on the main branch.",
+    ),
+    force: bool = typer.Option(
+        False,
+        help="Force re-download even if the local rules are already up-to-date.",
+    ),
+):
+    """
+    Update transform rules from the remote repository without upgrading the package.
+
+    Downloads rules and caches them locally at ~/.rostran/rules/.
+    The cached rules take precedence over the built-in rules shipped with the package.
+
+    \b
+    Examples:
+        rostran rules update              # update to latest
+        rostran rules update -v 1.2.0     # install specific version
+        rostran rules list                # list available versions
+        rostran rules reset               # revert to built-in rules
+    """
+    from rostran.core.rules_updater import (
+        update_rules as do_update,
+        get_local_rules_version,
+        RulesUpdateError,
+    )
+
+    local_ver = get_local_rules_version()
+    if local_ver:
+        typer.secho(f"Current rules version: {local_ver}", fg=typer.colors.BLUE)
+    else:
+        typer.secho(
+            "No local rules cache found, using built-in rules.",
+            fg=typer.colors.BLUE,
+        )
+
+    typer.secho("Checking for rules updates...", fg=typer.colors.BLUE)
+    try:
+        msg = do_update(version=version, force=force)
+    except RulesUpdateError as e:
+        typer.secho(f"Update failed: {e}", fg=typer.colors.RED)
+        raise typer.Exit(1)
+    typer.secho(msg, fg=typer.colors.GREEN)
 
 
 def main():

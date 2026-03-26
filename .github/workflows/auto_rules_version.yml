@@ -1,0 +1,156 @@
+name: Auto Rules Version
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rostran/rules/**'
+      - '!rostran/rules/VERSIONS.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'rostran/rules/**'
+      - '!rostran/rules/VERSIONS.json'
+
+permissions:
+  contents: write
+
+jobs:
+  auto-rules-version:
+    runs-on: ubuntu-22.04
+    if: "!contains(github.event.head_commit.message, 'chore: bump rules version')"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # For same-repo PRs, check out the head branch so we can push back;
+          # for fork PRs, fall back to the default merge ref (branch doesn't exist in base repo)
+          ref: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref || '' }}
+
+      - name: Check if rule files actually changed
+        id: check_changes
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          else
+            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+          fi
+
+          RULES_CHANGED=false
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            case "$file" in
+              rostran/rules/VERSIONS.json) continue ;;
+              rostran/rules/*)
+                RULES_CHANGED=true
+                echo "Rule file changed: $file"
+                ;;
+            esac
+          done <<< "$CHANGED_FILES"
+
+          echo "rules_changed=$RULES_CHANGED" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        if: steps.check_changes.outputs.rules_changed == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Bump VERSIONS.json
+        if: steps.check_changes.outputs.rules_changed == 'true'
+        id: bump
+        run: |
+          VERSIONS_JSON="rostran/rules/VERSIONS.json"
+
+          CURRENT_VERSION=$(python3 -c "import json; print(json.load(open('$VERSIONS_JSON'))['latest'])")
+          echo "Current rules version: $CURRENT_VERSION"
+
+          # Bump patch version
+          NEW_VERSION=$(python3 -c "
+          parts = '$CURRENT_VERSION'.split('.')
+          parts[-1] = str(int(parts[-1]) + 1)
+          print('.'.join(parts))
+          ")
+          echo "New rules version: $NEW_VERSION"
+
+          # Get commit info (use current HEAD; this commit will be
+          # amended after we add our changes, but the SHA recorded
+          # here will be updated by the commit step below)
+          COMMIT_SHA=$(git rev-parse HEAD)
+          TODAY=$(date -u +%Y-%m-%d)
+
+          # Update VERSIONS.json
+          python3 << PYEOF
+          import json
+
+          version = "$NEW_VERSION"
+          commit_sha = "$COMMIT_SHA"
+          today = "$TODAY"
+
+          with open("$VERSIONS_JSON", "r") as f:
+              data = json.load(f)
+
+          data["latest"] = version
+          if "versions" not in data:
+              data["versions"] = {}
+
+          new_versions = {
+              version: {
+                  "commit": commit_sha,
+                  "date": today,
+                  "description": ""
+              }
+          }
+          new_versions.update(data["versions"])
+          data["versions"] = new_versions
+
+          with open("$VERSIONS_JSON", "w") as f:
+              json.dump(data, f, indent=2)
+              f.write("\n")
+          PYEOF
+
+          echo "old_version=$CURRENT_VERSION" >> "$GITHUB_OUTPUT"
+          echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Commit version bump
+        if: >-
+          steps.check_changes.outputs.rules_changed == 'true' &&
+          (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rostran/rules/VERSIONS.json
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: bump rules version ${{ steps.bump.outputs.old_version }} -> ${{ steps.bump.outputs.new_version }}"
+          git push
+
+      - name: Update VERSIONS.json with final commit SHA
+        if: >-
+          steps.check_changes.outputs.rules_changed == 'true' &&
+          (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        run: |
+          VERSIONS_JSON="rostran/rules/VERSIONS.json"
+          NEW_VERSION="${{ steps.bump.outputs.new_version }}"
+          FINAL_SHA=$(git rev-parse HEAD)
+          TODAY=$(date -u +%Y-%m-%d)
+
+          python3 << PYEOF
+          import json
+
+          with open("$VERSIONS_JSON", "r") as f:
+              data = json.load(f)
+
+          data["versions"]["$NEW_VERSION"]["commit"] = "$FINAL_SHA"
+          data["versions"]["$NEW_VERSION"]["date"] = "$TODAY"
+
+          with open("$VERSIONS_JSON", "w") as f:
+              json.dump(data, f, indent=2)
+              f.write("\n")
+          PYEOF
+
+          git add rostran/rules/VERSIONS.json
+          git diff --cached --quiet && echo "SHA already correct, skipping." && exit 0
+          git commit -m "chore: update VERSIONS.json commit SHA for rules version $NEW_VERSION"
+          git push
