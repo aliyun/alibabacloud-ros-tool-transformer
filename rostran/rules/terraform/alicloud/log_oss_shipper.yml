@@ -28,4 +28,4 @@ Properties:
     To: ExportName
 Attributes:
   id:
-    Ignore: true
+    To: ExportName

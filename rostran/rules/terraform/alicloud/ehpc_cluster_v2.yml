@@ -1,0 +1,111 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ehpc_cluster_v2
+  To: ALIYUN::EHPC::ClusterV2
+Properties:
+  addons:
+    To: Addons
+    Type: List
+    Schema:
+      name:
+        To: Name
+      resources_spec:
+        To: ResourcesSpec
+      services_spec:
+        To: ServicesSpec
+      version:
+        To: Version
+  auto_renew:
+    Ignore: true
+  auto_renew_period:
+    Ignore: true
+  client_version:
+    To: ClientVersion
+  cluster_category:
+    To: ClusterCategory
+  cluster_credentials:
+    To: ClusterCredentials
+    Type: Map
+    Schema:
+      key_pair_name:
+        To: KeyPairName
+      password:
+        To: Password
+  cluster_mode:
+    To: ClusterMode
+  cluster_name:
+    To: ClusterName
+  cluster_vpc_id:
+    To: VpcId
+  cluster_vswitch_id:
+    To: VSwitchId
+  deletion_protection:
+    To: DeletionProtection
+  duration:
+    Ignore: true
+  enable_ht:
+    Ignore: true
+  image_id:
+    Ignore: true
+  instance_charge_type:
+    Ignore: true
+  instance_type:
+    Ignore: true
+  manager:
+    To: Manager
+    Type: Map
+    Schema:
+      directory_service:
+        To: DirectoryService
+        Type: Map
+      dns:
+        To: DNS
+        Type: Map
+      manager_node:
+        To: ManagerNode
+        Type: Map
+      scheduler:
+        To: Scheduler
+        Type: Map
+  period:
+    Ignore: true
+  period_unit:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  security_group_id:
+    To: SecurityGroupId
+  shared_storages:
+    To: SharedStorages
+    Type: List
+    Schema:
+      file_system_id:
+        To: FileSystemId
+      mount_directory:
+        To: MountDirectory
+      mount_options:
+        To: MountOptions
+      mount_target_domain:
+        To: MountTargetDomain
+      nas_directory:
+        To: NASDirectory
+      protocol_type:
+        To: ProtocolType
+  spot_price_limit:
+    Ignore: true
+  spot_strategy:
+    Ignore: true
+  system_disk:
+    Ignore: true
+  type:
+    Ignore: true
+  version:
+    Ignore: true
+Attributes:
+  id:
+    To: ClusterId
+  create_time:
+    Ignore: true
+  manager:
+    Ignore: true

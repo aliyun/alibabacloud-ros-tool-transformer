@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_data_works_network
+  To: ALIYUN::DataWorks::Route
+Properties:
+  dw_resource_group_id:
+    To: DwResourceGroupId
+  vpc_id:
+    Ignore: true
+  vswitch_id:
+    Ignore: true
+Attributes:
+  id:
+    To: RouteId
+  create_time:
+    To: CreateTime
+  status:
+    Ignore: true

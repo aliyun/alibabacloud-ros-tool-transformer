@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_access_monitor
+  To: ALIYUN::OSS::BucketAccessMonitor
+Properties:
+  bucket:
+    To: Bucket
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

@@ -12,7 +12,7 @@ Properties:
     To: ResourceGroupId
 Attributes:
   id:
-    Ignore: true
+    To: DomainName
   dns_server:
     To: DnsServers
   domain_id:

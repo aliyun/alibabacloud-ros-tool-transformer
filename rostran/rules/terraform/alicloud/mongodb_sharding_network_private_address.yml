@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mongodb_sharding_network_private_address
+  To: ALIYUN::MONGODB::ShardingNetworkPrivateAddress
+Properties:
+  account_name:
+    To: AccountName
+  account_password:
+    To: AccountPassword
+  db_instance_id:
+    To: DBInstanceId
+  node_id:
+    To: NodeId
+  zone_id:
+    To: ZoneId
+Attributes:
+  id:
+    Ignore: true
+  network_address:
+    To: NetworkAddresses

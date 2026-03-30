@@ -111,6 +111,8 @@ Properties:
   table_meta:
     To: TableMeta
     Type: List
+  tags:
+    To: Tags
   tcp_connection_type:
     Ignore: true
   tde_status:

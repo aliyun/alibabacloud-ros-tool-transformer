@@ -5,18 +5,23 @@ ResourceType:
   To: ALIYUN::SLS::OssExport
 Properties:
   bucket:
-    Ignore: true
+    To: Configuration
+    Type: Map
   buffer_interval:
-    Ignore: true
+    To: Configuration
+    Type: Map
   buffer_size:
-    Ignore: true
+    To: Configuration
+    Type: Map
   compress_type:
-    Ignore: true
+    To: Configuration
+    Type: Map
   config_columns:
     To: Configuration
     Type: Map
   content_type:
-    Ignore: true
+    To: Configuration
+    Type: Map
   csv_config_columns:
     To: Configuration
     Type: Map
@@ -43,29 +48,36 @@ Properties:
   export_name:
     To: ExportName
   from_time:
-    Ignore: true
+    To: Configuration
+    Type: Map
   json_enable_tag:
     To: Configuration
     Type: Map
   log_read_role_arn:
-    Ignore: true
+    To: Configuration
+    Type: Map
   logstore_name:
     Ignore: true
   path_format:
-    Ignore: true
+    To: Configuration
+    Type: Map
   prefix:
-    Ignore: true
+    To: Configuration
+    Type: Map
   project_name:
     To: ProjectName
   role_arn:
-    Ignore: true
+    To: Configuration
+    Type: Map
   suffix:
-    Ignore: true
+    To: Configuration
+    Type: Map
   time_zone:
-    Ignore: true
+    To: Configuration
+    Type: Map
 Attributes:
   id:
-    Ignore: true
+    To: ExportName
   bucket:
     Ignore: true
   buffer_interval:

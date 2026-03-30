@@ -9,7 +9,13 @@ Properties:
   domain_name:
     To: DomainNames
   function_args:
-    Ignore: true
+    To: FunctionList
+    Type: List
+    Schema:
+      arg_name:
+        Ignore: true
+      arg_value:
+        Ignore: true
   function_name:
     Ignore: true
   parent_id:

@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_bastionhost_user_group
+  To: ALIYUN::BastionHost::UserGroup
+Properties:
+  comment:
+    To: Comment
+  instance_id:
+    To: InstanceId
+  user_group_name:
+    To: UserGroupName
+Attributes:
+  id:
+    Ignore: true
+  user_group_id:
+    To: UserGroupId

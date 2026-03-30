@@ -1,0 +1,16 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_polardb_global_security_ip_group
+  To: ALIYUN::POLARDB::GlobalSecurityIPGroup
+Properties:
+  global_ip_group_name:
+    To: GlobalIgName
+  global_ip_list:
+    To: GIpList
+    Type: List
+Attributes:
+  id:
+    To: GlobalSecurityGroupId
+  region_id:
+    Ignore: true

@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_schedulerx_app_group
+  To: ALIYUN::SchedulerX::AppGroup
+Properties:
+  app_name:
+    To: AppName
+  app_type:
+    To: AppType
+  app_version:
+    To: AppVersion
+  delete_jobs:
+    Ignore: true
+  description:
+    To: Description
+  enable_log:
+    To: EnableLog
+  group_id:
+    To: GroupId
+  max_concurrency:
+    Ignore: true
+  max_jobs:
+    To: MaxJobs
+  monitor_config_json:
+    To: MonitorConfig
+  monitor_contacts_json:
+    To: MonitorContacts
+  namespace:
+    To: Namespace
+  namespace_name:
+    To: NamespaceName
+  namespace_source:
+    To: NamespaceSource
+  schedule_busy_workers:
+    To: ScheduleBusyWorkers
+Attributes:
+  id:
+    Ignore: true

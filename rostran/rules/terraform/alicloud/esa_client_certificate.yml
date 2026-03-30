@@ -16,7 +16,7 @@ Properties:
     To: ValidityDays
 Attributes:
   id:
-    Ignore: true
+    To: SiteId
   client_cert_id:
     To: ClientCertId
   create_time:

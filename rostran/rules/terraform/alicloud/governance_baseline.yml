@@ -20,4 +20,4 @@ Properties:
     To: Description
 Attributes:
   id:
-    Ignore: true
+    To: CompliancePackId

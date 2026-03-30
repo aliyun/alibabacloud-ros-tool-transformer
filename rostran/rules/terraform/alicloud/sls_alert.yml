@@ -105,7 +105,21 @@ Properties:
   role_arn:
     Ignore: true
   schedule:
-    Ignore: true
+    To: Detail
+    Type: Map
+    Schema:
+      cron_expression:
+        Ignore: true
+      delay:
+        Ignore: true
+      interval:
+        Ignore: true
+      run_immdiately:
+        Ignore: true
+      time_zone:
+        Ignore: true
+      type:
+        To: Type
   severity:
     Ignore: true
   start:

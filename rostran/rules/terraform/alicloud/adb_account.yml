@@ -18,6 +18,8 @@ Properties:
     Ignore: true
   kms_encryption_context:
     Ignore: true
+  tags:
+    Ignore: true
 Attributes:
   id:
     To:
@@ -30,3 +32,5 @@ Attributes:
     To: AccountName
   db_cluster_id:
     To: DBClusterId
+  status:
+    Ignore: true

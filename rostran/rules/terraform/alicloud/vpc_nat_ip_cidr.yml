@@ -19,6 +19,8 @@ Properties:
 Attributes:
   id:
     To: NatIpCidrId
+  create_time:
+    Ignore: true
   nat_gateway_id:
     Ignore: true
   nat_ip_cidr:

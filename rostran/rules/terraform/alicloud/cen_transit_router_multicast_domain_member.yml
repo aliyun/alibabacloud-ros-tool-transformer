@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_transit_router_multicast_domain_member
+  To: ALIYUN::CEN::TransitRouterMulticastDomainAssociation
+Properties:
+  dry_run:
+    Ignore: true
+  group_ip_address:
+    Ignore: true
+  network_interface_id:
+    To: TransitRouterAttachmentId
+  transit_router_multicast_domain_id:
+    To: TransitRouterMulticastDomainId
+  vpc_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

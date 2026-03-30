@@ -7,11 +7,16 @@ Properties:
   permission_name:
     To: PermissionNames
     Type: List
-  resource_arn:
+  properties_resource_arn:
     Ignore: true
+  resource_arn:
+    To: Resources
+    Type: List
   resource_id:
     To: Resources
     Type: List
+  resource_property:
+    Ignore: true
   resource_share_id:
     To: ResourceShareId
   resource_type:

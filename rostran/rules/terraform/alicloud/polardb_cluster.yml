@@ -55,6 +55,8 @@ Properties:
     To: DeletionProtection
   description:
     To: DBClusterDescription
+  enable_dynamodb:
+    Ignore: true
   encrypt_new_tables:
     Ignore: true
   encryption_key:

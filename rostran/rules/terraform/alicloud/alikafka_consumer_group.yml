@@ -17,7 +17,7 @@ Properties:
     Handler: tags_dict_to_list
 Attributes:
   id:
-    Ignore: true
+    To: ConsumerId
   consumer_id:
     To: ConsumerId
   create_time:

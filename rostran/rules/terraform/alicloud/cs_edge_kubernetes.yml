@@ -17,7 +17,8 @@ Properties:
       version:
         Ignore: true
   availability_zone:
-    Ignore: true
+    To: ZoneIds
+    Type: List
   certificate_authority:
     Ignore: true
   client_cert:

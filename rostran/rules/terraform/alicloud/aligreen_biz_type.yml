@@ -16,4 +16,4 @@ Properties:
     To: IndustryInfo
 Attributes:
   id:
-    Ignore: true
+    To: BizTypeName

@@ -9,7 +9,7 @@ Properties:
   alias_name:
     Ignore: true
   certificate_type:
-    Ignore: true
+    To: CertType
   common_name:
     Ignore: true
   country_code:
@@ -23,7 +23,7 @@ Properties:
   locality:
     Ignore: true
   organization:
-    Ignore: true
+    To: CompanyName
   organization_unit:
     Ignore: true
   parent_identifier:

@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_storage_gateway_gateway
+  To: ALIYUN::CloudStorageGateway::Gateway
+Properties:
+  description:
+    To: Description
+  gateway_class:
+    To: GatewayClass
+  gateway_name:
+    To: Name
+  location:
+    To: Location
+  payment_type:
+    Ignore: true
+  public_network_bandwidth:
+    To: PublicNetworkBandwidth
+  reason_detail:
+    Ignore: true
+  reason_type:
+    Ignore: true
+  release_after_expiration:
+    To: ReleaseAfterExpiration
+  storage_bundle_id:
+    To: StorageBundleId
+  type:
+    To: Type
+  vswitch_id:
+    To: VSwitchId
+Attributes:
+  id:
+    To: GatewayId
+  status:
+    Ignore: true

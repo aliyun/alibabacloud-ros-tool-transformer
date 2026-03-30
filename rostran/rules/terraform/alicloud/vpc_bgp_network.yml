@@ -11,7 +11,7 @@ Properties:
   status:
     Ignore: true
   vpc_id:
-    Ignore: true
+    To: VpcId
 Attributes:
   id:
     To: RouterId

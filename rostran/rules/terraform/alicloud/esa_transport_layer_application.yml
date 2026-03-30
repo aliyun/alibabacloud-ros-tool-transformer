@@ -11,7 +11,7 @@ Properties:
   ipv6:
     Ignore: true
   record_name:
-    Ignore: true
+    To: EdgeContainerAppName
   rules:
     Ignore: true
   site_id:

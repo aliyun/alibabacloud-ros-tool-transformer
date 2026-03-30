@@ -9,7 +9,8 @@ Properties:
   comparison_operator:
     Ignore: true
   contact_groups:
-    Ignore: true
+    To: ContactGroups
+    Type: List
   dimensions:
     To: Dimensions
   effective_interval:

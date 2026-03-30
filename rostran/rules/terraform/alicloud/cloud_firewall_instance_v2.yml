@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_firewall_instance_v2
+  To: ALIYUN::AMQP::Instance
+Properties:
+  cfw_log:
+    Ignore: true
+  modify_type:
+    Ignore: true
+  payment_type:
+    Ignore: true
+  period:
+    To: Period
+  product_code:
+    Ignore: true
+  product_type:
+    Ignore: true
+  renewal_duration:
+    Ignore: true
+  renewal_duration_unit:
+    Ignore: true
+  renewal_status:
+    Ignore: true
+  sdl:
+    Ignore: true
+  spec:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  end_time:
+    Ignore: true
+  release_time:
+    Ignore: true
+  status:
+    Ignore: true
+  user_status:
+    Ignore: true

@@ -41,7 +41,7 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: SiteId
   origin_pool_id:
     To: OriginPoolId
   origins:

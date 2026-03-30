@@ -1,0 +1,35 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_video_processing
+  To: ALIYUN::ESA::VideoProcessing
+Properties:
+  flv_seek_end:
+    To: FlvSeekEnd
+  flv_seek_start:
+    To: FlvSeekStart
+  flv_video_seek_mode:
+    To: FlvVideoSeekMode
+  mp4_seek_end:
+    To: Mp4SeekEnd
+  mp4_seek_start:
+    To: Mp4SeekStart
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  sequence:
+    To: Sequence
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+  video_seek_enable:
+    To: VideoSeekEnable
+Attributes:
+  id:
+    Ignore: true
+  config_id:
+    To: ConfigId

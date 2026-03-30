@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_style
+  To: ALIYUN::OSS::BucketStyle
+Properties:
+  bucket:
+    To: Bucket
+  category:
+    To: Category
+  content:
+    To: Content
+  style_name:
+    To: StyleName
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime

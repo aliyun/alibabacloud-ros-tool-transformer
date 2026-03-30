@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cloud_storage_gateway_express_sync
+  To: ALIYUN::CloudStorageGateway::ExpressSync
+Properties:
+  bucket_name:
+    To: BucketName
+  bucket_prefix:
+    To: BucketPrefix
+  bucket_region:
+    To: BucketRegion
+  description:
+    To: Description
+  express_sync_name:
+    To: Name
+Attributes:
+  id:
+    To: ExpressSyncId

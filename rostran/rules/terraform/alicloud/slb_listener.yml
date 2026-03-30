@@ -30,7 +30,7 @@ Properties:
   enable_http2:
     To: EnableHttp2
   established_timeout:
-    Ignore: true
+    To: ConnectionDrainTimeout
   forward_port:
     To: HttpConfig.ForwardPort
   frontend_port:

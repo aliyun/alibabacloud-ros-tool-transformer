@@ -69,7 +69,7 @@ Properties:
   instance_release_protection:
     Ignore: true
   instance_type:
-    Ignore: true
+    To: InstanceClass
   is_auto_upgrade_open:
     Ignore: true
   kms_encrypted_password:

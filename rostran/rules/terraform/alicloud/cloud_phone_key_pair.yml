@@ -10,4 +10,4 @@ Properties:
     To: PublicKeyBody
 Attributes:
   id:
-    Ignore: true
+    To: KeyPairName

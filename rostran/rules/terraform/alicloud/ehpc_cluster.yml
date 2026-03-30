@@ -47,11 +47,11 @@ Properties:
   cluster_version:
     Ignore: true
   compute_count:
-    Ignore: true
+    To: EcsOrderComputeCount
   compute_enable_ht:
     To: ComputeEnableHt
   compute_instance_type:
-    Ignore: true
+    To: EcsOrderComputeInstanceType
   compute_spot_price_limit:
     To: ComputeSpotPriceLimit
   compute_spot_strategy:
@@ -81,13 +81,13 @@ Properties:
   key_pair_name:
     To: KeyPairName
   login_count:
-    Ignore: true
+    To: EcsOrderLoginCount
   login_instance_type:
-    Ignore: true
+    To: EcsOrderLoginInstanceType
   manager_count:
-    Ignore: true
+    To: EcsOrderManagerCount
   manager_instance_type:
-    Ignore: true
+    To: EcsOrderManagerInstanceType
   name:
     To: Name
   os_tag:

@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_jdbc_data_source
+  To: ALIYUN::GPDB::JdbcDataSource
+Properties:
+  data_source_description:
+    To: DataSourceDescription
+  data_source_name:
+    To: DataSourceName
+  data_source_type:
+    To: DataSourceType
+  db_instance_id:
+    To: DBInstanceId
+  jdbc_connection_string:
+    To: JdbcConnectionString
+  jdbc_password:
+    To: JdbcPassword
+  jdbc_user_name:
+    To: JdbcUserName
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime
+  data_source_id:
+    To: DataSourceId
+  status:
+    To: ConnectionStatus

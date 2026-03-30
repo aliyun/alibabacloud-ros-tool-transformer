@@ -13,7 +13,8 @@ Properties:
   client_node_spec:
     Ignore: true
   data_node_amount:
-    Ignore: true
+    To: DataNode
+    Type: Map
   data_node_configuration:
     To: DataNode
     Type: Map
@@ -31,15 +32,19 @@ Properties:
       spec:
         To: Spec
   data_node_disk_encrypted:
-    Ignore: true
+    To: DataNode
+    Type: Map
   data_node_disk_performance_level:
     Ignore: true
   data_node_disk_size:
-    Ignore: true
+    To: DataNode
+    Type: Map
   data_node_disk_type:
-    Ignore: true
+    To: DataNode
+    Type: Map
   data_node_spec:
-    Ignore: true
+    To: DataNode
+    Type: Map
   description:
     To: Description
   domain:
@@ -69,7 +74,8 @@ Properties:
   kibana_domain:
     Ignore: true
   kibana_node_spec:
-    Ignore: true
+    To: KibanaNode
+    Type: Map
   kibana_port:
     Ignore: true
   kibana_private_security_group_id:
@@ -96,9 +102,11 @@ Properties:
       spec:
         To: Spec
   master_node_disk_type:
-    Ignore: true
+    To: MasterNode
+    Type: Map
   master_node_spec:
-    Ignore: true
+    To: MasterNode
+    Type: Map
   order_action_type:
     Ignore: true
   password:
@@ -124,7 +132,7 @@ Properties:
   renew_status:
     Ignore: true
   renewal_duration_unit:
-    Ignore: true
+    To: PeriodUnit
   resource_group_id:
     To: ResourceGroupId
   setting_config:

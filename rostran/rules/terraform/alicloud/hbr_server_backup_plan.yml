@@ -17,7 +17,7 @@ Properties:
   destination_retention:
     Ignore: true
   detail:
-    Ignore: true
+    To: Options
   disabled:
     Ignore: true
   disk_id_list:

@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::VPC::VpcPeerConnection
 Properties:
   bandwidth:
-    Ignore: true
+    To: Bandwidth
   description:
     To: Description
   dry_run:
@@ -15,11 +15,11 @@ Properties:
   instance_id:
     Ignore: true
   link_type:
-    Ignore: true
+    To: LinkType
   peer_connection_accepter_name:
     To: Name
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
 Attributes:
   id:
     To: InstanceId

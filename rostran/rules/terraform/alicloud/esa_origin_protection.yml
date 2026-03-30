@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_origin_protection
+  To: ALIYUN::ESA::OriginProtection
+Properties:
+  origin_converge:
+    To: OriginConverge
+  site_id:
+    To: SiteId
+Attributes:
+  id:
+    To: SiteId

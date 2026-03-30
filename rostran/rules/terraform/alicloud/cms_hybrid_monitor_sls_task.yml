@@ -43,7 +43,7 @@ Properties:
       statistics:
         Ignore: true
   task_name:
-    Ignore: true
+    To: SlsGroupName
 Attributes:
   id:
     Ignore: true

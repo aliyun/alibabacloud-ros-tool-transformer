@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbr_ots_backup_plan
+  To: ALIYUN::HBR::OtsBackupPlan
+Properties:
+  backup_type:
+    To: BackupType
+  cross_account_role_name:
+    To: CrossAccountRoleName
+  cross_account_type:
+    To: CrossAccountType
+  cross_account_user_id:
+    To: CrossAccountUserId
+  disabled:
+    To: Disabled
+  instance_name:
+    To: InstanceName
+  ots_backup_plan_name:
+    To: PlanName
+  ots_detail:
+    To: OtsDetail
+    Type: Map
+  retention:
+    To: Retention
+  rule_name:
+    Ignore: true
+  rules:
+    To: Rules
+    Type: List
+  schedule:
+    To: Schedule
+  table_names:
+    Ignore: true
+  vault_id:
+    To: VaultId
+Attributes:
+  id:
+    To: PlanId

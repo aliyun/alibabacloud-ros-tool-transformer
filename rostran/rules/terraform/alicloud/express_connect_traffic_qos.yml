@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_express_connect_traffic_qos
+  To: ALIYUN::VPC::TrafficQos
+Properties:
+  qos_description:
+    To: QosDescription
+  qos_name:
+    To: QosName
+  resource_group_id:
+    To: ResourceGroupId
+  tags:
+    To: Tags
+    Type: List
+Attributes:
+  id:
+    To: QosId
+  status:
+    Ignore: true

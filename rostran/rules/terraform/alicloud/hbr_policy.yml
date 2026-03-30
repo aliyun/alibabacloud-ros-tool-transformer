@@ -1,0 +1,60 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_hbr_policy
+  To: ALIYUN::HBR::Policy
+Properties:
+  advanced_retention_type:
+    Ignore: true
+  key:
+    Ignore: true
+  operator:
+    Ignore: true
+  policy_description:
+    To: PolicyDescription
+  policy_name:
+    To: PolicyName
+  policy_type:
+    To: PolicyType
+  retention:
+    Ignore: true
+  rules:
+    To: Rules
+    Type: List
+    Schema:
+      archive_days:
+        To: ArchiveDays
+      backup_type:
+        To: BackupType
+      data_source_filters:
+        To: DataSourceFilters
+        Type: List
+      keep_latest_snapshots:
+        To: KeepLatestSnapshots
+      replication_region_id:
+        To: ReplicationRegionId
+      retention:
+        To: Retention
+      retention_rules:
+        To: RetentionRules
+        Type: List
+      rule_type:
+        To: RuleType
+      schedule:
+        To: Schedule
+      tag_filters:
+        To: TagFilters
+        Type: List
+      vault_id:
+        To: VaultId
+  source_type:
+    Ignore: true
+  value:
+    Ignore: true
+Attributes:
+  id:
+    To: PolicyId
+  create_time:
+    Ignore: true
+  rules:
+    Ignore: true

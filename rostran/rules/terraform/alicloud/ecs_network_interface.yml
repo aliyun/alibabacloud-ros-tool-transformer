@@ -4,6 +4,8 @@ ResourceType:
   From: alicloud_ecs_network_interface
   To: ALIYUN::ECS::NetworkInterface
 Properties:
+  delete_on_release:
+    To: DeleteOnRelease
   description:
     To: Description
   instance_type:

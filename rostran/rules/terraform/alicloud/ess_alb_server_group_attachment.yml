@@ -5,15 +5,18 @@ ResourceType:
   To: ALIYUN::ESS::ServerGroupAttachment
 Properties:
   alb_server_group_id:
-    Ignore: true
+    To: ServerGroups
+    Type: List
   force_attach:
     To: ForceAttach
   port:
-    Ignore: true
+    To: ServerGroups
+    Type: List
   scaling_group_id:
     To: ScalingGroupId
   weight:
-    Ignore: true
+    To: ServerGroups
+    Type: List
 Attributes:
   id:
     Ignore: true

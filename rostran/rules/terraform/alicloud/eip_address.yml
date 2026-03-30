@@ -27,7 +27,7 @@ Properties:
   internet_charge_type:
     To: InternetChargeType
   ip_address:
-    Ignore: true
+    To: IpAddress
   isp:
     To: Isp
   log_project:

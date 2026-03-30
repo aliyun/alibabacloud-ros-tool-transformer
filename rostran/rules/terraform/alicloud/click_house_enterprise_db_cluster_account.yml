@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_click_house_enterprise_db_cluster_account
+  To: ALIYUN::ClickHouse::EnterpriseDBClusterAccount
+Properties:
+  account:
+    To: Account
+  account_type:
+    To: AccountType
+  db_instance_id:
+    To: DBInstanceId
+  description:
+    To: Description
+  dml_auth_setting:
+    To: DmlAuthSetting
+    Type: Map
+    Schema:
+      allow_databases:
+        To: AllowDatabases
+        Type: List
+      allow_dictionaries:
+        To: AllowDictionaries
+        Type: List
+      ddl_authority:
+        To: DdlAuthority
+      dml_authority:
+        To: DmlAuthority
+  password:
+    To: Password
+Attributes:
+  id:
+    Ignore: true

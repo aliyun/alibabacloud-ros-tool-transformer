@@ -37,7 +37,7 @@ Properties:
   period:
     To: Period
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   ssl_connections:
     To: SslConnections
   ssl_vpn_internet_ip:

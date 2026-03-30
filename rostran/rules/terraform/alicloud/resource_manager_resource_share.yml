@@ -13,6 +13,8 @@ Properties:
     Ignore: true
   resource_group_id:
     Ignore: true
+  resource_properties:
+    Ignore: true
   resource_share_name:
     To: ResourceShareName
   resource_share_owner:

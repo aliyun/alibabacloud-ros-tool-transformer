@@ -31,7 +31,7 @@ Properties:
   public_user_domain_name:
     Ignore: true
   public_zone_name:
-    Ignore: true
+    To: Domain
   renew_period:
     Ignore: true
   renewal_status:

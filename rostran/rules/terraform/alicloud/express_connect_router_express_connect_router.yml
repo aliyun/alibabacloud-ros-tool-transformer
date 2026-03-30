@@ -13,7 +13,7 @@ Properties:
   regions:
     Ignore: true
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   tags:
     Ignore: true
 Attributes:

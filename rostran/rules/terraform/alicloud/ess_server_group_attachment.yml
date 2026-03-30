@@ -11,7 +11,8 @@ Properties:
   scaling_group_id:
     To: ScalingGroupId
   server_group_id:
-    Ignore: true
+    To: ServerGroups
+    Type: List
   type:
     Ignore: true
   weight:

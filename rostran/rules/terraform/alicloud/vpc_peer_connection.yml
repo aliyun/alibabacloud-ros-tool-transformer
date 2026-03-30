@@ -11,7 +11,7 @@ Properties:
   accepting_vpc_id:
     To: AcceptingVpcId
   bandwidth:
-    Ignore: true
+    To: Bandwidth
   create_time:
     Ignore: true
   description:
@@ -21,11 +21,11 @@ Properties:
   force_delete:
     To: DeletionForce
   link_type:
-    Ignore: true
+    To: LinkType
   peer_connection_name:
     To: Name
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   status:
     Ignore: true
   tags:

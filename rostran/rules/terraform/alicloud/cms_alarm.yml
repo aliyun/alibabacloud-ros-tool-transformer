@@ -110,7 +110,16 @@ Properties:
   tags:
     Ignore: true
   targets:
-    Ignore: true
+    To: Webhook
+    Schema:
+      arn:
+        Ignore: true
+      json_params:
+        Ignore: true
+      level:
+        Ignore: true
+      target_id:
+        Ignore: true
   threshold:
     To: Escalations
     Type: Map

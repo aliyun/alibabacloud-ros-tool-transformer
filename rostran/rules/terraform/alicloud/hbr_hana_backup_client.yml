@@ -7,7 +7,8 @@ Properties:
   alert_setting:
     Ignore: true
   client_info:
-    Ignore: true
+    To: InstanceIds
+    Type: List
   use_https:
     Ignore: true
   vault_id:

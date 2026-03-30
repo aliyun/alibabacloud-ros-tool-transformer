@@ -7,7 +7,7 @@ Properties:
   next_hop:
     To: NextHop
   overlay_mode:
-    Ignore: true
+    To: OverlayMode
   route_dest:
     To: RouteDest
   vpn_connection_id:

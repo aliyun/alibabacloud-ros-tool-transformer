@@ -9,13 +9,13 @@ Properties:
   auto_pay:
     To: AutoPay
   auto_renew:
-    Ignore: true
+    To: AutoRenew
   delete_health_check_ip:
     Ignore: true
   description:
     To: Description
   fast_link_mode:
-    Ignore: true
+    To: FastLinkMode
   hc_rate:
     Ignore: true
   hc_threshold:
@@ -43,7 +43,7 @@ Properties:
   pricing_cycle:
     To: PricingCycle
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   role:
     To: Role
   router_id:

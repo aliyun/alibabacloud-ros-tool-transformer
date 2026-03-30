@@ -7,7 +7,7 @@ Properties:
   associated_physical_connections:
     Ignore: true
   bandwidth:
-    Ignore: true
+    To: Bandwidth
   circuit_code:
     To: CircuitCode
   description:
@@ -39,7 +39,7 @@ Properties:
   physical_connection_id:
     To: PhysicalConnectionId
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   route_table_id:
     Ignore: true
   sitelink_enable:

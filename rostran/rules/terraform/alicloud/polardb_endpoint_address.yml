@@ -30,7 +30,7 @@ Attributes:
   db_endpoint_id:
     Ignore: true
   ip_address:
-    Ignore: true
+    To: Address
   net_type:
     Ignore: true
   port:

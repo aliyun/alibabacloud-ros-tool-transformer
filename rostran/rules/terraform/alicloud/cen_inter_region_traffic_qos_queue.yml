@@ -1,0 +1,24 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_inter_region_traffic_qos_queue
+  To: ALIYUN::CEN::InterRegionTrafficQosQueue
+Properties:
+  bandwidth:
+    To: Bandwidth
+  dscps:
+    To: Dscps
+    Type: List
+  inter_region_traffic_qos_queue_description:
+    To: InterRegionTrafficQosQueueDescription
+  inter_region_traffic_qos_queue_name:
+    To: InterRegionTrafficQosQueueName
+  remain_bandwidth_percent:
+    To: RemainBandwidthPercent
+  traffic_qos_policy_id:
+    To: TrafficQosPolicyId
+Attributes:
+  id:
+    To: InterRegionTrafficQosQueueId
+  status:
+    Ignore: true

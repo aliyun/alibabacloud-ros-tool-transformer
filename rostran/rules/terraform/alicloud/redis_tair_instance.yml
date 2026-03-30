@@ -20,6 +20,10 @@ Properties:
   effective_time:
     To: InstanceMaintainTime
     Type: Map
+  encryption_key:
+    Ignore: true
+  encryption_name:
+    Ignore: true
   engine_version:
     To: EngineVersion
   force_upgrade:
@@ -62,6 +66,8 @@ Properties:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
+  role_arn:
+    Ignore: true
   secondary_zone_id:
     To: SecondaryZoneId
   security_group_id:
@@ -89,6 +95,8 @@ Properties:
     Handler: tags_dict_to_list
   tair_instance_name:
     To: InstanceName
+  tde_status:
+    Ignore: true
   vpc_auth_mode:
     To: VpcPasswordFree
   vpc_id:
