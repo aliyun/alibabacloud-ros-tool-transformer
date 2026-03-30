@@ -5,9 +5,9 @@ ResourceType:
   To: alicloud_cms_monitor_group
 Properties:
   GroupName:
-    Ignore: true
+    To: monitor_group_name
   ContactGroups:
-    Ignore: true
+    To: contact_groups
 Attributes:
   GroupId:
     To: id

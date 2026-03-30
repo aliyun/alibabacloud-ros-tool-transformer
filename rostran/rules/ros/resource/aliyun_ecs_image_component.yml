@@ -18,7 +18,7 @@ Properties:
     To: tags
     Handler: handle_tags
   Name:
-    Ignore: true
+    To: image_component_name
 Attributes:
   ImageComponentId:
     To: id

@@ -13,7 +13,7 @@ Properties:
   dev_role_disabled:
     To: DisableDevelopment
   display_name:
-    Ignore: true
+    To: ProjectName
   pai_task_enabled:
     Ignore: true
   project_mode:

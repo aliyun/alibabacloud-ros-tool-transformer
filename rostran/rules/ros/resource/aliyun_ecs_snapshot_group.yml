@@ -14,11 +14,11 @@ Properties:
     To: tags
     Handler: handle_tags
   DiskIds:
-    Ignore: true
+    To: disk_id
   Name:
-    Ignore: true
+    To: snapshot_group_name
   ExcludeDiskIds:
-    Ignore: true
+    To: exclude_disk_id
 Attributes:
   SnapshotGroupId:
     To: id

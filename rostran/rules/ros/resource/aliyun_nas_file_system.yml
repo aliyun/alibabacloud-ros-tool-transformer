@@ -32,9 +32,11 @@ Properties:
   DeletionForce:
     Ignore: true
   SnapshotId:
-    Ignore: true
+    To: snapshot_id
   ChargeType:
     Ignore: true
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   FileSystemId:
     To: id

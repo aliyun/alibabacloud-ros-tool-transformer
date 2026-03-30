@@ -76,6 +76,8 @@ Properties:
         Ignore: true
   SecurityGroupIds:
     Ignore: true
+  Ipv6AddressType:
+    To: ipv6_address_type
 Attributes:
   LoadBalancerId:
     To: id

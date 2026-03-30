@@ -9,7 +9,11 @@ Properties:
   TopicName:
     To: topic_name
   MaximumMessageSize:
-    Ignore: true
+    To: max_message_size
+  LoggingEnabled$$0:
+    To: logging_enabled
+  Tags:
+    To: tags
 Attributes:
   TopicName:
     To: id

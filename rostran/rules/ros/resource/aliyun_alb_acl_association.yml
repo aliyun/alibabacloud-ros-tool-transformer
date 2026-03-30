@@ -9,7 +9,7 @@ Properties:
   ListenerId:
     To: listener_id
   AclIds:
-    Ignore: true
+    To: acl_id
 Attributes:
   ListenerId:
     To: listener_id

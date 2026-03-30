@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rocketmq_acl
+  To: ALIYUN::ROCKETMQ5::Acl
+Properties:
+  actions:
+    To: Actions
+    Type: List
+  decision:
+    To: Decision
+  instance_id:
+    To: InstanceId
+  ip_whitelists:
+    To: IpWhitelists
+    Type: List
+  resource_name:
+    To: ResourceName
+  resource_type:
+    To: ResourceType
+  username:
+    To: Username
+Attributes:
+  id:
+    Ignore: true

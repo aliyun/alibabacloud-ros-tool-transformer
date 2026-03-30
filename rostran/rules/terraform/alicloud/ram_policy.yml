@@ -14,7 +14,7 @@ Properties:
     To: PolicyDocument
     Handler: json_load
   force:
-    Ignore: true
+    To: IgnoreExisting
   name:
     To: PolicyName
   policy_document:

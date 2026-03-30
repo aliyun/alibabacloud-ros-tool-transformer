@@ -35,15 +35,15 @@ Properties:
   SiteVersion:
     To: site_version
   HttpsSniVerify:
-    Ignore: true
+    To: https_sni_verify
   HttpsSniWhitelist:
-    Ignore: true
+    To: https_sni_whitelist
   Sequence:
-    Ignore: true
+    To: sequence
   PaymentType:
     Ignore: true
   HttpsNoSniDeny:
-    Ignore: true
+    To: https_no_sni_deny
 Attributes:
   ConfigId:
     To: config_id

@@ -19,7 +19,7 @@ Properties:
   VSwitchId:
     To: vswitch_id
   EnableIpv6:
-    Ignore: true
+    To: dual_stack
 Attributes:
   MountTargetDomain:
     To: id

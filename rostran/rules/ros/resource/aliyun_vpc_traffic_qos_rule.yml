@@ -1,0 +1,65 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::TrafficQosRule
+  To: alicloud_express_connect_traffic_qos_rule
+Properties:
+  DstCidr:
+    To: dst_cidr
+  DstIpv6Cidr:
+    To: dst_ipv6_cidr
+  DstPortRange:
+    To: dst_port_range
+  MatchDscp:
+    To: match_dscp
+  Priority:
+    To: priority
+  Protocol:
+    To: protocol
+  QosId:
+    To: qos_id
+  QueueId:
+    To: queue_id
+  RemarkingDscp:
+    To: remarking_dscp
+  RuleDescription:
+    To: rule_description
+  RuleName:
+    To: rule_name
+  SrcCidr:
+    To: src_cidr
+  SrcIpv6Cidr:
+    To: src_ipv6_cidr
+  SrcPortRange:
+    To: src_port_range
+Attributes:
+  RuleId:
+    To: rule_id
+  DstPortRange:
+    Ignore: true
+  QueueId:
+    Ignore: true
+  RemarkingDscp:
+    Ignore: true
+  SrcCidr:
+    Ignore: true
+  DstIpv6Cidr:
+    Ignore: true
+  DstCidr:
+    Ignore: true
+  RuleDescription:
+    Ignore: true
+  SrcIpv6Cidr:
+    Ignore: true
+  Protocol:
+    Ignore: true
+  RuleName:
+    Ignore: true
+  Priority:
+    Ignore: true
+  SrcPortRange:
+    Ignore: true
+  QosId:
+    Ignore: true
+  MatchDscp:
+    Ignore: true

@@ -13,7 +13,7 @@ Properties:
   AccountType:
     To: account_type
   DBClusterId:
-    Ignore: true
+    To: db_cluster_id
 Attributes:
   AccountName:
     To: account_name

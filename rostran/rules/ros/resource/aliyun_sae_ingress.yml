@@ -35,9 +35,17 @@ Properties:
   SlbId:
     To: slb_id
   CertIds:
-    Ignore: true
+    To: cert_ids
   DefaultRule:
-    Ignore: true
+    To: default_rule
+    Type: Map
+    Schema:
+      AppId:
+        To: app_id
+      ContainerPort:
+        To: container_port
+      BackendProtocol:
+        Ignore: true
 Attributes:
   IngressId:
     To: id

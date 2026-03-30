@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_logging
+  To: ALIYUN::OSS::BucketLogging
+Properties:
+  bucket:
+    To: Bucket
+  logging_role:
+    To: LoggingRole
+  target_bucket:
+    To: TargetBucket
+  target_prefix:
+    To: TargetPrefix
+Attributes:
+  id:
+    Ignore: true

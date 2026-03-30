@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::InterRegionTrafficQosPolicy
+  To: alicloud_cen_inter_region_traffic_qos_policy
+Properties:
+  BandwidthGuaranteeMode:
+    To: bandwidth_guarantee_mode
+  InterRegionTrafficQosPolicyDescription:
+    To: inter_region_traffic_qos_policy_description
+  InterRegionTrafficQosPolicyName:
+    To: inter_region_traffic_qos_policy_name
+  TransitRouterAttachmentId:
+    To: transit_router_attachment_id
+  TransitRouterId:
+    To: transit_router_id
+Attributes:
+  InterRegionTrafficQosPolicyId:
+    To: id
+  InterRegionTrafficQosPolicyName:
+    Ignore: true
+  TransitRouterId:
+    Ignore: true
+  InterRegionTrafficQosPolicyDescription:
+    Ignore: true
+  TransitRouterAttachmentId:
+    Ignore: true
+  BandwidthGuaranteeMode:
+    Ignore: true

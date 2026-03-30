@@ -64,19 +64,45 @@ Properties:
   VSwitchIds:
     To: vswitch_ids
   ServerGroups:
-    Ignore: true
+    To: alb_server_group
+    Type: List
+    Schema:
+      Port:
+        To: port
+      Weight:
+        To: weight
+      ServerGroupId:
+        Ignore: true
+      Type:
+        Ignore: true
   LaunchTemplateOverrides:
-    Ignore: true
+    To: launch_template_override
+    Type: List
+    Schema:
+      InstanceType:
+        To: instance_type
+      SpotPriceLimit:
+        To: spot_price_limit
+      WeightedCapacity:
+        To: weighted_capacity
   StandbyInstances:
     Ignore: true
   NotificationConfigurations:
     Ignore: true
   ContainerGroupId:
-    Ignore: true
+    To: container_group_id
   CompensateWithOnDemand:
-    Ignore: true
+    To: capacity_options_compensate_with_on_demand
   CustomPolicyARN:
     Ignore: true
+  CompensateWithOnDemand$$0:
+    To: compensate_with_on_demand
+  HealthCheckTypes:
+    To: health_check_types
+  OnDemandBaseCapacity$$0:
+    To: on_demand_base_capacity
+  OnDemandPercentageAboveBaseCapacity$$0:
+    To: on_demand_percentage_above_base_capacity
 Attributes:
   ScalingGroupId:
     To: id

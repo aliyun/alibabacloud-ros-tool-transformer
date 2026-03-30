@@ -15,13 +15,13 @@ Properties:
   SourceZoneId:
     To: source_zone_id
   Tags:
-    Ignore: true
+    To: tags
   ResourceGroupId:
-    Ignore: true
+    To: resource_group_id
   RPO:
-    Ignore: true
+    To: rpo
   DiskReplicaGroupName:
-    Ignore: true
+    To: disk_replica_group_name
 Attributes:
   ReplicaGroupId:
     To: id

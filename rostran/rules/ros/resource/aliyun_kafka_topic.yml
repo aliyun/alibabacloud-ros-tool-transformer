@@ -20,7 +20,7 @@ Properties:
   Topic:
     To: topic
   Config:
-    Ignore: true
+    To: configs
   ReplicationFactor:
     Ignore: true
   MinInsyncReplicas:

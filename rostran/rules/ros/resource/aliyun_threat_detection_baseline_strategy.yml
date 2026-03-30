@@ -1,0 +1,37 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::BaselineStrategy
+  To: alicloud_threat_detection_baseline_strategy
+Properties:
+  StartTime:
+    Ignore: true
+  TargetType:
+    Ignore: true
+  BaselineStrategyName:
+    Ignore: true
+  CustomType:
+    Ignore: true
+  EndTime:
+    Ignore: true
+  CycleDays:
+    Ignore: true
+  RiskSubTypeName:
+    Ignore: true
+Attributes:
+  TargetType:
+    Ignore: true
+  BaselineStrategyName:
+    Ignore: true
+  CycleDays:
+    Ignore: true
+  EndTime:
+    Ignore: true
+  BaselineStrategyId:
+    Ignore: true
+  RiskSubTypeName:
+    Ignore: true
+  StartTime:
+    Ignore: true
+  CustomType:
+    Ignore: true

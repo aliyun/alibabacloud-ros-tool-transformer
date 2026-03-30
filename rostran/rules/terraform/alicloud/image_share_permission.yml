@@ -11,7 +11,7 @@ Properties:
     To: ImageId
 Attributes:
   id:
-    Ignore: true
+    To: ImageId
   account_id:
     Ignore: true
   image_id:

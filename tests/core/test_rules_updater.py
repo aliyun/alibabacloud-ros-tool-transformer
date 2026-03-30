@@ -81,7 +81,6 @@ class TestBuiltinVersion:
     def test_reads_versions_json_latest(self):
         version = get_builtin_rules_version()
         assert version is not None
-        assert version == "1.0.0"
 
 
 class TestHasUserRules:

@@ -7,11 +7,13 @@ Properties:
   ResourceShareId:
     To: resource_share_id
   Resources:
-    Ignore: true
+    To: resource_arn
   PermissionNames:
-    Ignore: true
+    To: permission_name
   Targets:
     Ignore: true
+  Resources$$0:
+    To: resource_type
 Attributes:
   ResourceShareId:
     Ignore: true

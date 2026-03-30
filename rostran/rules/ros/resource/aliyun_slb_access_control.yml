@@ -21,6 +21,14 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
+  AclEntries$$0:
+    To: entry_list
+    Type: List
+    Schema:
+      Comment:
+        To: comment
+      Entry:
+        To: entry
 Attributes:
   AclId:
     To: id

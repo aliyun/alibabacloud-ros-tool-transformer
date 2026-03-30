@@ -29,7 +29,7 @@ Properties:
   RestVersion:
     To: rest_version
   Name:
-    Ignore: true
+    To: metric_rule_template_name
   TemplateId:
     Ignore: true
 Attributes:

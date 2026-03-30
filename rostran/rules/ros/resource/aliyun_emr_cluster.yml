@@ -110,9 +110,9 @@ Properties:
   UseCustomHiveMetaDB:
     Ignore: true
   Configurations:
-    Ignore: true
+    To: configs
   MetaStoreConf:
-    Ignore: true
+    To: meta_store_conf
   Config:
     Ignore: true
   SecurityGroupName:
@@ -124,7 +124,7 @@ Properties:
   ClickHouseConf:
     Ignore: true
   AutoRenew:
-    Ignore: true
+    To: auto_renew
   WhiteListType:
     Ignore: true
   MachineType:

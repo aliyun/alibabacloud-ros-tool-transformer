@@ -17,7 +17,7 @@ Properties:
   SiteVersion:
     To: site_version
   Sequence:
-    Ignore: true
+    To: sequence
   PaymentType:
     Ignore: true
 Attributes:

@@ -21,7 +21,7 @@ Properties:
   Type:
     Ignore: true
   MySQLVersion:
-    Ignore: true
+    To: mysql_version
   IsAutoRenew:
     Ignore: true
   PricingCycle:
@@ -29,7 +29,7 @@ Properties:
   Duration:
     Ignore: true
   PayType:
-    Ignore: true
+    To: instance_charge_type
   ResourceGroupId:
     Ignore: true
 Attributes:
@@ -40,6 +40,6 @@ Attributes:
   Arn:
     Ignore: true
   InternetEndpoint:
-    Ignore: true
+    To: connection_string
   OrderId:
     Ignore: true

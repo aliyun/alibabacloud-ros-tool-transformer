@@ -15,7 +15,9 @@ Properties:
   Schedule:
     Ignore: true
   Configuration:
-    Ignore: true
+    To: access_key_id
+  Configuration$$0:
+    To: kms_encryption_access_key_secret_context
 Attributes:
   Name:
     To: etl_name

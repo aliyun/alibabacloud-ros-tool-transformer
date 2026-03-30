@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ACTIONTRAIL::AdvancedQueryTemplate
+  To: alicloud_actiontrail_advanced_query_template
+Properties:
+  SimpleQuery:
+    To: simple_query
+  TemplateName:
+    To: template_name
+  TemplateSql:
+    To: template_sql
+Attributes:
+  TemplateId:
+    To: id

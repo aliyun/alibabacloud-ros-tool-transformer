@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::ReplicationVault
+  To: alicloud_hbr_replication_vault
+Properties:
+  Description:
+    To: description
+  EncryptType:
+    To: encrypt_type
+  KmsKeyId:
+    To: kms_key_id
+  ReplicationSourceRegionId:
+    To: replication_source_region_id
+  ReplicationSourceVaultId:
+    To: replication_source_vault_id
+  VaultName:
+    To: vault_name
+  VaultStorageClass:
+    To: vault_storage_class
+  RedundancyType:
+    Ignore: true
+Attributes:
+  VaultId:
+    To: id

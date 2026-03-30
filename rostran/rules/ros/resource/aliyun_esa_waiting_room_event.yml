@@ -1,0 +1,83 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::WaitingRoomEvent
+  To: alicloud_esa_waiting_room_event
+Properties:
+  CustomPageHtml:
+    To: custom_page_html
+  Description:
+    To: description
+  DisableSessionRenewalEnable:
+    To: disable_session_renewal_enable
+  JsonResponseEnable:
+    To: json_response_enable
+  Language:
+    To: language
+  NewUsersPerMinute:
+    To: new_users_per_minute
+  QueuingMethod:
+    To: queuing_method
+  QueuingStatusCode:
+    To: queuing_status_code
+  SessionDuration:
+    To: session_duration
+  SiteId:
+    To: site_id
+  TotalActiveUsers:
+    To: total_active_users
+  WaitingRoomType:
+    To: waiting_room_type
+  WaitingRoomId:
+    Ignore: true
+  PreQueueEnable:
+    Ignore: true
+  EndTime:
+    Ignore: true
+  PreQueueStartTime:
+    Ignore: true
+  StartTime:
+    Ignore: true
+  WaitingRoomEventName:
+    Ignore: true
+  RandomPreQueueEnable:
+    Ignore: true
+Attributes:
+  CustomPageHtml:
+    Ignore: true
+  WaitingRoomId:
+    Ignore: true
+  PreQueueEnable:
+    Ignore: true
+  EndTime:
+    Ignore: true
+  JsonResponseEnable:
+    Ignore: true
+  QueuingMethod:
+    Ignore: true
+  StartTime:
+    Ignore: true
+  TotalActiveUsers:
+    Ignore: true
+  WaitingRoomType:
+    Ignore: true
+  QueuingStatusCode:
+    Ignore: true
+  Language:
+    Ignore: true
+  Description:
+    Ignore: true
+  RandomPreQueueEnable:
+    Ignore: true
+  WaitingRoomEventName:
+    Ignore: true
+  NewUsersPerMinute:
+    Ignore: true
+  PreQueueStartTime:
+    Ignore: true
+  WaitingRoomEventId:
+    Ignore: true
+  SessionDuration:
+    Ignore: true
+  DisableSessionRenewalEnable:
+    Ignore: true

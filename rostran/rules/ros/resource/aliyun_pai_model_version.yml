@@ -1,0 +1,79 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PAI::ModelVersion
+  To: alicloud_pai_workspace_model_version
+Properties:
+  ExtraInfo:
+    To: extra_info
+  Labels:
+    To: labels
+    Type: List
+    Schema:
+      Key:
+        To: key
+      Value:
+        To: value
+  VersionDescription:
+    To: model_description
+  SourceType:
+    To: origin
+  VersionName:
+    To: version_name
+  ApprovalStatus:
+    To: approval_status
+  FrameworkType:
+    To: framework_type
+  TrainingSpec:
+    To: training_spec
+  Uri:
+    To: uri
+  ModelId:
+    To: model_id
+  Options:
+    To: options
+  InferenceSpec:
+    To: inference_spec
+  Metrics:
+    To: metrics
+  FormatType:
+    To: format_type
+  SourceId:
+    To: source_id
+Attributes:
+  VersionName:
+    Ignore: true
+  OwnerId:
+    Ignore: true
+  TrainingSpec:
+    Ignore: true
+  ExtraInfo:
+    Ignore: true
+  Uri:
+    Ignore: true
+  GmtCreateTime:
+    Ignore: true
+  VersionDescription:
+    Ignore: true
+  Options:
+    Ignore: true
+  InferenceSpec:
+    Ignore: true
+  Labels:
+    Ignore: true
+  GmtModifiedTime:
+    Ignore: true
+  ApprovalStatus:
+    Ignore: true
+  FrameworkType:
+    Ignore: true
+  UserId:
+    Ignore: true
+  Metrics:
+    Ignore: true
+  FormatType:
+    Ignore: true
+  SourceType:
+    Ignore: true
+  SourceId:
+    Ignore: true

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_bastionhost_host_account_user_group_attachment
+  To: ALIYUN::BastionHost::HostAccountUserGroupAttachment
+Properties:
+  host_account_ids:
+    To: Hosts
+    Type: List
+  host_id:
+    To: Hosts
+    Type: List
+  instance_id:
+    To: InstanceId
+  user_group_id:
+    To: UserGroupId
+Attributes:
+  id:
+    Ignore: true

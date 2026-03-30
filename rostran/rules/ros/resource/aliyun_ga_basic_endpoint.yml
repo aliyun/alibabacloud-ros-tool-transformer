@@ -19,7 +19,7 @@ Properties:
   EndpointZoneId:
     To: endpoint_zone_id
   Name:
-    Ignore: true
+    To: basic_endpoint_name
 Attributes:
   EndpointId:
     To: id

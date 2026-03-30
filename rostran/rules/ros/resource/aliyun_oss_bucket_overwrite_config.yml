@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OSS::BucketOverwriteConfig
+  To: alicloud_oss_bucket_overwrite_config
+Properties:
+  Bucket:
+    To: bucket
+  Rule:
+    To: rule
+    Type: List
+    Schema:
+      Action:
+        To: action
+      Id:
+        To: id
+      Prefix:
+        To: prefix
+      Principals:
+        To: principals
+      Suffix:
+        To: suffix
+Attributes:
+  Rule:
+    Ignore: true

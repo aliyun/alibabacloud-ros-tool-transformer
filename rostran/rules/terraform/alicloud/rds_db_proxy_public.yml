@@ -16,4 +16,4 @@ Properties:
     To: Port
 Attributes:
   id:
-    Ignore: true
+    To: DBInstanceId

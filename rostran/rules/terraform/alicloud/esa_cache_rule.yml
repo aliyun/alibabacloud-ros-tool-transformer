@@ -1,0 +1,63 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_cache_rule
+  To: ALIYUN::ESA::CacheRule
+Properties:
+  additional_cacheable_ports:
+    To: AdditionalCacheablePorts
+  browser_cache_mode:
+    To: BrowserCacheMode
+  browser_cache_ttl:
+    To: BrowserCacheTtl
+  bypass_cache:
+    To: BypassCache
+  cache_deception_armor:
+    To: CacheDeceptionArmor
+  cache_reserve_eligibility:
+    To: CacheReserveEligibility
+  check_presence_cookie:
+    To: CheckPresenceCookie
+  check_presence_header:
+    To: CheckPresenceHeader
+  edge_cache_mode:
+    To: EdgeCacheMode
+  edge_cache_ttl:
+    To: EdgeCacheTtl
+  edge_status_code_cache_ttl:
+    To: EdgeStatusCodeCacheTtl
+  include_cookie:
+    To: IncludeCookie
+  include_header:
+    To: IncludeHeader
+  query_string:
+    To: QueryString
+  query_string_mode:
+    To: QueryStringMode
+  rule:
+    To: Rule
+  rule_enable:
+    To: RuleEnable
+  rule_name:
+    To: RuleName
+  sequence:
+    To: Sequence
+  serve_stale:
+    To: ServeStale
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+  sort_query_string_for_cache:
+    To: SortQueryStringForCache
+  user_device_type:
+    To: UserDeviceType
+  user_geo:
+    To: UserGeo
+  user_language:
+    To: UserLanguage
+Attributes:
+  id:
+    Ignore: true
+  cache_rule_id:
+    To: CacheRuleId

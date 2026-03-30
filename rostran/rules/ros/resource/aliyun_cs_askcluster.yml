@@ -54,6 +54,8 @@ Properties:
     Ignore: true
   DeleteOptions:
     Ignore: true
+  IpStack:
+    Ignore: true
 Attributes:
   ClusterId:
     To: id

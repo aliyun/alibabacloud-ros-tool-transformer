@@ -1,0 +1,61 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alidns_access_strategy
+  To: ALIYUN::DNS::AccessStrategy
+Properties:
+  access_mode:
+    To: AccessMode
+  default_addr_pool_type:
+    To: DefaultAddrPoolType
+  default_addr_pools:
+    To: DefaultAddrPool
+    Type: List
+    Schema:
+      addr_pool_id:
+        Ignore: true
+      lba_weight:
+        To: LbaWeight
+  default_latency_optimization:
+    To: DefaultLatencyOptimization
+  default_lba_strategy:
+    To: DefaultLbaStrategy
+  default_max_return_addr_num:
+    To: DefaultMaxReturnAddrNum
+  default_min_available_addr_num:
+    To: DefaultMinAvailableAddrNum
+  failover_addr_pool_type:
+    To: FailoverAddrPoolType
+  failover_addr_pools:
+    To: FailoverAddrPool
+    Type: List
+    Schema:
+      addr_pool_id:
+        Ignore: true
+      lba_weight:
+        To: LbaWeight
+  failover_latency_optimization:
+    To: FailoverLatencyOptimization
+  failover_lba_strategy:
+    To: FailoverLbaStrategy
+  failover_max_return_addr_num:
+    To: FailoverMaxReturnAddrNum
+  failover_min_available_addr_num:
+    To: FailoverMinAvailableAddrNum
+  instance_id:
+    To: InstanceId
+  lang:
+    Ignore: true
+  lines:
+    To: Lines
+    Type: List
+    Schema:
+      line_code:
+        Ignore: true
+  strategy_mode:
+    To: StrategyMode
+  strategy_name:
+    To: StrategyName
+Attributes:
+  id:
+    To: StrategyId

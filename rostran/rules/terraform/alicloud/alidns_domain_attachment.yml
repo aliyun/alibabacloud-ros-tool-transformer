@@ -1,0 +1,14 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alidns_domain_attachment
+  To: ALIYUN::DNS::DomainAttachment
+Properties:
+  domain_names:
+    To: DomainNames
+    Type: List
+  instance_id:
+    To: InstanceId
+Attributes:
+  id:
+    Ignore: true

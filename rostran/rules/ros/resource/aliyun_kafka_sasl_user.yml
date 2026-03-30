@@ -13,7 +13,7 @@ Properties:
   Username:
     To: username
   Mechanism:
-    Ignore: true
+    To: mechanism
 Attributes:
   InstanceId:
     To: instance_id

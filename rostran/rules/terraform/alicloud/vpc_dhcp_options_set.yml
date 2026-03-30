@@ -17,13 +17,13 @@ Properties:
   dry_run:
     Ignore: true
   ipv6_lease_time:
-    Ignore: true
+    To: Ipv6LeaseTime
   lease_time:
-    Ignore: true
+    To: LeaseTime
   owner_id:
     Ignore: true
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   status:
     Ignore: true
   tags:

@@ -2,18 +2,20 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::SLS::LogtailConfig
-  To: alicloud_logtail_config
+  To: alicloud_sls_logtail_config
 Properties:
   RawConfigData:
-    Ignore: true
+    To: input_detail
   CloneFrom:
     Ignore: true
   LogtailConfigName:
-    Ignore: true
+    To: name
   LogstoreName:
-    Ignore: true
+    To: logstore
   ProjectName:
-    Ignore: true
+    To: project
+  RawConfigData$$0:
+    To: output_type
 Attributes:
   Endpoint:
     Ignore: true

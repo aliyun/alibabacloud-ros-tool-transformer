@@ -123,7 +123,8 @@ Properties:
       type:
         To: ParameterType
   service_type:
-    Ignore: true
+    To: ServiceConfig
+    Type: Map
   stage_names:
     Ignore: true
   system_parameters:

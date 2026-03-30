@@ -16,17 +16,25 @@ Properties:
   TimePoints:
     To: time_points
   TargetCopyRegions:
-    Ignore: true
+    To: target_copy_regions
   CopyEncryptionConfiguration:
-    Ignore: true
+    To: copy_encryption_configuration
+    Type: Map
+    Schema:
+      Encrypted:
+        To: encrypted
+      KMSKeyId:
+        To: kms_key_id
   EnableCrossRegionCopy:
-    Ignore: true
+    To: enable_cross_region_copy
   CopiedSnapshotsRetentionDays:
-    Ignore: true
+    To: copied_snapshots_retention_days
   DiskIds:
     Ignore: true
   ResourceGroupId:
-    Ignore: true
+    To: resource_group_id
+  AutoSnapshotPolicyName$$0:
+    To: name
 Attributes:
   AutoSnapshotPolicyId:
     To: id

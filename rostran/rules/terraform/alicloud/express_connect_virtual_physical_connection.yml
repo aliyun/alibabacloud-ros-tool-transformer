@@ -15,9 +15,9 @@ Properties:
   parent_physical_connection_id:
     To: PhysicalConnectionId
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   spec:
-    Ignore: true
+    To: Bandwidth
   virtual_physical_connection_name:
     To: Name
   vlan_id:

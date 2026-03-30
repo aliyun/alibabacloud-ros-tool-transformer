@@ -23,13 +23,13 @@ Properties:
   TracingStorageTime:
     To: tracing_storage_time
   SupportTracing:
-    Ignore: true
+    To: support_tracing
   OrderNum:
     Ignore: true
   SupportEip:
-    Ignore: true
+    To: support_eip
   PeriodUnit:
-    Ignore: true
+    To: period_cycle
 Attributes:
   InstanceId:
     To: id

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_api_gateway_access_control_list
+  To: ALIYUN::ApiGateway::AccessControl
+Properties:
+  access_control_list_name:
+    To: AccessControlListName
+  acl_entrys:
+    To: AclEntrys
+    Type: List
+    Schema:
+      acl_entry_comment:
+        To: AclEntryComment
+      acl_entry_ip:
+        To: AclEntryIp
+  address_ip_version:
+    To: AddressIpVersion
+Attributes:
+  id:
+    To: AclId

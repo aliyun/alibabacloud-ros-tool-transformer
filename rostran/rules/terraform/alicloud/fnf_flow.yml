@@ -17,7 +17,7 @@ Properties:
   role_arn:
     To: RoleArn
   type:
-    Ignore: true
+    To: ExecutionMode
 Attributes:
   id:
     To: Name

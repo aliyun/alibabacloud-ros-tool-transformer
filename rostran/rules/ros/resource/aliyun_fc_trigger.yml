@@ -22,6 +22,8 @@ Properties:
     To: type
   Qualifier:
     Ignore: true
+  TriggerConfig$$0:
+    To: config_mns
 Attributes:
   TriggerId:
     To: trigger_id

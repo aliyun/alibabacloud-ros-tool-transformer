@@ -31,6 +31,12 @@ tpl = {
             "Properties": {
                 "Description": "test",
                 "Name": "tf-testacc-example",
+                "ResourceGroupId": {
+                    "Fn::GetAtt": [
+                        "alicloud_resource_manager_resource_group.defaultRg",
+                        "Id",
+                    ]
+                },
                 "VpcId": {"Fn::GetAtt": ["alicloud_vpc.defaultVpc", "VpcId"]},
             },
         },

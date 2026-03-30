@@ -17,7 +17,7 @@ Properties:
   Quantity:
     To: quantity
   Preference:
-    Ignore: true
+    To: components
 Attributes:
   OrderId:
     To: id

@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pai_workspace_model
+  To: ALIYUN::PAI::ModelVersion
+Properties:
+  accessibility:
+    Ignore: true
+  domain:
+    Ignore: true
+  extra_info:
+    To: ExtraInfo
+  labels:
+    To: Labels
+    Type: List
+    Schema:
+      key:
+        To: Key
+      value:
+        To: Value
+  model_description:
+    To: VersionDescription
+  model_doc:
+    Ignore: true
+  model_name:
+    Ignore: true
+  model_type:
+    Ignore: true
+  order_number:
+    Ignore: true
+  origin:
+    To: SourceType
+  task:
+    Ignore: true
+  workspace_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

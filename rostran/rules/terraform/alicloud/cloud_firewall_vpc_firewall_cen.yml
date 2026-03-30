@@ -9,7 +9,10 @@ Properties:
   lang:
     Ignore: true
   local_vpc:
-    Ignore: true
+    To: NetworkInstanceId
+    Schema:
+      network_instance_id:
+        Ignore: true
   member_uid:
     To: MemberUid
   status:

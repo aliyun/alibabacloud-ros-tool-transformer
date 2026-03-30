@@ -11,12 +11,12 @@ Properties:
   Config:
     Ignore: true
   FeatureName:
-    Ignore: true
+    To: env_feature_name
 Attributes:
   EnvironmentId:
     To: environment_id
   FeatureStatus:
-    Ignore: true
+    To: status
   Feature:
     Ignore: true
   FeatureName:

@@ -13,7 +13,13 @@ Properties:
   ZoneName:
     To: zone_name
   ForwardIp:
-    Ignore: true
+    To: forward_ips
+    Type: List
+    Schema:
+      Ip:
+        To: ip
+      Port:
+        To: port
 Attributes:
   EndpointId:
     To: endpoint_id

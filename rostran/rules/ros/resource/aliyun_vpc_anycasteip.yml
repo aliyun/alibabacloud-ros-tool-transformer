@@ -15,7 +15,9 @@ Properties:
   ServiceLocation:
     To: service_location
   Name:
-    Ignore: true
+    To: anycast_eip_address_name
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   AnycastId:
     To: id

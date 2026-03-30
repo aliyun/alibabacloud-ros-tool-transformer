@@ -19,7 +19,7 @@ Properties:
   ipv6_gateway_name:
     To: Name
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   spec:
     To: Spec
   status:

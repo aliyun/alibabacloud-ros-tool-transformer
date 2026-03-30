@@ -17,11 +17,11 @@ Properties:
   VSwitchId:
     To: vswitch_id
   Name:
-    Ignore: true
+    To: gateway_name
   EnterpriseSecurityGroup:
-    Ignore: true
+    To: enterprise_security_group
   BackupVSwitchId:
-    Ignore: true
+    To: backup_vswitch_id
 Attributes:
   GatewayUniqueId:
     To: id

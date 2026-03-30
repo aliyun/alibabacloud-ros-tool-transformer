@@ -36,13 +36,13 @@ Properties:
   VpcId:
     Ignore: true
   EndUserId:
-    Ignore: true
+    To: end_user_ids
   VolumeEncryptionKey:
     Ignore: true
   VolumeEncryptionEnabled:
     Ignore: true
   Hostname:
-    Ignore: true
+    To: host_name
   GroupId:
     Ignore: true
   DirectoryId:

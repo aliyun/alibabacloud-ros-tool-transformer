@@ -17,7 +17,7 @@ Properties:
     Type: List
 Attributes:
   id:
-    Ignore: true
+    To: SiteId
   create_time:
     To: CreateTime
   scheduled_preload_job_id:

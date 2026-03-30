@@ -12,6 +12,16 @@ Properties:
     To: bind_instance_region_id
   BindInstanceType:
     To: bind_instance_type
+  AssociationMode:
+    To: association_mode
+  PopLocations:
+    To: pop_locations
+    Type: List
+    Schema:
+      PopLocation:
+        To: pop_location
+  PrivateIpAddress:
+    To: private_ip_address
 Attributes:
   AnycastId:
     To: anycast_id

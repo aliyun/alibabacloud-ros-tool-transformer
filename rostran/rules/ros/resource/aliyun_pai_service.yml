@@ -54,7 +54,7 @@ Attributes:
   RoleAttrs:
     Ignore: true
   ServiceUid:
-    Ignore: true
+    To: id
   ExtraData:
     Ignore: true
   Labels:

@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::OriginProtection
+  To: alicloud_esa_origin_protection
+Properties:
+  OriginConverge:
+    To: origin_converge
+  SiteId:
+    To: site_id
+Attributes:
+  SiteId:
+    To: id
+  LatestIpWhitelist:
+    Ignore: true
+  CurrentIpWhitelist:
+    Ignore: true
+  OriginConverge:
+    Ignore: true
+  DiffIpWhitelist:
+    Ignore: true
+  OriginProtection:
+    Ignore: true

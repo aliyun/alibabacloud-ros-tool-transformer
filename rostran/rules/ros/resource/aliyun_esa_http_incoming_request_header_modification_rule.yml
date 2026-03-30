@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::HttpIncomingRequestHeaderModificationRule
+  To: alicloud_esa_http_incoming_request_header_modification_rule
+Properties:
+  RequestHeaderModification:
+    To: request_header_modification
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Operation:
+        To: operation
+      Type:
+        To: type
+      Value:
+        To: value
+  Rule:
+    To: rule
+  RuleEnable:
+    To: rule_enable
+  RuleName:
+    To: rule_name
+  Sequence:
+    To: sequence
+  SiteId:
+    To: site_id
+  SiteVersion:
+    To: site_version
+Attributes:
+  ConfigId:
+    To: config_id
+  RequestHeaderModification:
+    Ignore: true
+  ConfigType:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  Rule:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  RuleName:
+    Ignore: true

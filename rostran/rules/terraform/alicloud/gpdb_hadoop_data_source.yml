@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_hadoop_data_source
+  To: ALIYUN::GPDB::ExternalDataService
+Properties:
+  data_source_description:
+    To: ServiceDescription
+  data_source_name:
+    To: ServiceName
+  data_source_type:
+    Ignore: true
+  db_instance_id:
+    To: DBInstanceId
+  emr_instance_id:
+    Ignore: true
+  hadoop_core_conf:
+    Ignore: true
+  hadoop_create_type:
+    Ignore: true
+  hadoop_hosts_address:
+    Ignore: true
+  hdfs_conf:
+    Ignore: true
+  hive_conf:
+    Ignore: true
+  map_reduce_conf:
+    Ignore: true
+  yarn_conf:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime
+  data_source_id:
+    To: ServiceId
+  status:
+    Ignore: true

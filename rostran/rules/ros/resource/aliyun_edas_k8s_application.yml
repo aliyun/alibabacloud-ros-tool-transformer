@@ -45,43 +45,43 @@ Properties:
   IntranetSlbProtocol:
     Ignore: true
   MountDescs:
-    Ignore: true
+    To: mount_descs
   RepoId:
     Ignore: true
   PreStop:
-    Ignore: true
+    To: pre_stop
   ApplicationDescription:
-    Ignore: true
+    To: application_descriotion
   Liveness:
-    Ignore: true
+    To: liveness
   JDK:
-    Ignore: true
+    To: jdk
   Readiness:
-    Ignore: true
+    To: readiness
   IntranetSlbId:
     Ignore: true
   SlsConfigs:
     Ignore: true
   RequestsCpu:
-    Ignore: true
+    To: requests_m_cpu
   UriEncoding:
     Ignore: true
   AppName:
-    Ignore: true
+    To: application_name
   EnableAhas:
     Ignore: true
   IntranetSlbPort:
     Ignore: true
   LimitCpu:
-    Ignore: true
+    To: limit_m_cpu
   Envs:
-    Ignore: true
+    To: envs
   UseBodyEncoding:
     Ignore: true
   IntranetTargetPort:
     Ignore: true
   CommandArgs:
-    Ignore: true
+    To: command_args
   IsMultilingualApp:
     Ignore: true
   DeployAcrossZones:
@@ -95,11 +95,11 @@ Properties:
   StorageType:
     Ignore: true
   PostStart:
-    Ignore: true
+    To: post_start
   WebContainerConfig:
     Ignore: true
   LocalVolume:
-    Ignore: true
+    To: local_volume
 Attributes:
   AppId:
     To: id

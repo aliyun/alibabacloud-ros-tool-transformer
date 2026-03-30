@@ -34,7 +34,9 @@ Properties:
   VSwitchId:
     To: vswitch_id
   DisasterRecoveryVSwitchId:
-    Ignore: true
+    To: disaster_recovery_vswitch_id
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   VpnGatewayId:
     To: id

@@ -24,7 +24,7 @@ Properties:
   ZonePrivateIpAddressCount:
     To: zone_private_ip_address_count
   SecurityGroupId:
-    Ignore: true
+    To: security_group_ids
   Zone:
     Ignore: true
 Attributes:

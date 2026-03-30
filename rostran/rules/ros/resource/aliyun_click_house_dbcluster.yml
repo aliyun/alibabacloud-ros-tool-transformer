@@ -23,18 +23,26 @@ Properties:
   ZoneId:
     To: zone_id
   DBClusterVersion:
-    Ignore: true
+    To: db_cluster_version
   DBClusterDescription:
-    Ignore: true
+    To: db_cluster_description
   DbNodeStorageType:
-    Ignore: true
+    To: storage_type
   DBClusterNetworkType:
-    Ignore: true
+    To: db_cluster_network_type
   DBNodeStorage:
-    Ignore: true
+    To: db_node_storage
   DBNodeCount:
-    Ignore: true
+    To: db_node_group_count
   DBClusterType:
+    To: db_cluster_class
+  VSwitchBak2:
+    Ignore: true
+  ZoneIdBak:
+    Ignore: true
+  ZondIdBak2:
+    Ignore: true
+  VSwitchBak:
     Ignore: true
 Attributes:
   DBClusterId:
@@ -88,7 +96,7 @@ Attributes:
   EngineVersion:
     Ignore: true
   PublicConnectionString:
-    Ignore: true
+    To: public_connection_string
   Bid:
     Ignore: true
   CommodityCode:

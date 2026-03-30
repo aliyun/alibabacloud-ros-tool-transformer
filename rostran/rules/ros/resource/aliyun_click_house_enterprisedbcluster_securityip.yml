@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ClickHouse::EnterpriseDBClusterSecurityIP
+  To: alicloud_click_house_enterprise_db_cluster_security_ip
+Properties:
+  DbInstanceId:
+    To: db_instance_id
+  GroupName:
+    To: group_name
+  SecurityIpList:
+    To: security_ip_list
+Attributes:
+  GroupName:
+    Ignore: true
+  WhitelistNetType:
+    Ignore: true
+  SecurityIpList:
+    Ignore: true
+  SecurityIpType:
+    Ignore: true

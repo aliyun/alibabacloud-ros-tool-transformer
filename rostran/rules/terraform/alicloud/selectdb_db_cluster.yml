@@ -7,9 +7,9 @@ Properties:
   cache_size:
     To: CacheSize
   db_cluster_class:
-    Ignore: true
+    To: DBInstanceClass
   db_cluster_description:
-    Ignore: true
+    To: DBInstanceDescription
   db_instance_id:
     Ignore: true
   desired_params:
@@ -17,7 +17,7 @@ Properties:
   desired_status:
     Ignore: true
   payment_type:
-    Ignore: true
+    To: ChargeType
 Attributes:
   id:
     Ignore: true
@@ -26,7 +26,7 @@ Attributes:
   create_time:
     Ignore: true
   db_cluster_id:
-    Ignore: true
+    To: DBInstanceId
   engine:
     Ignore: true
   engine_version:

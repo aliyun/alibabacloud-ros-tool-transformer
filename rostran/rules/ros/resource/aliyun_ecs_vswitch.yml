@@ -23,6 +23,8 @@ Properties:
     Ignore: true
   ZoneType:
     Ignore: true
+  Ipv6CidrBlock$$0:
+    To: ipv6_cidr_block_mask
 Attributes:
   VSwitchId:
     To: id

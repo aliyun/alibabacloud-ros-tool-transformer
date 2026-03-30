@@ -12,9 +12,11 @@ Properties:
     To: tags
     Handler: handle_tags
   Remark:
-    Ignore: true
+    To: remark
 Attributes:
   ConsumerId:
     To: consumer_id
   Arn:
     Ignore: true
+  ConsumerId$$0:
+    To: consumer_id

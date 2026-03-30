@@ -9,11 +9,11 @@ Properties:
   EnvironmentId:
     To: environment_id
   ReleaseName:
-    Ignore: true
+    To: addon_release_name
   Name:
-    Ignore: true
+    To: addon_name
   Values:
-    Ignore: true
+    To: values
 Attributes:
   EnvironmentId:
     To: environment_id

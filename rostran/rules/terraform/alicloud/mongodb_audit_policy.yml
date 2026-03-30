@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mongodb_audit_policy
+  To: ALIYUN::MONGODB::AuditPolicy
+Properties:
+  audit_status:
+    To: AuditStatus
+  db_instance_id:
+    To: DBInstanceId
+  filter:
+    Ignore: true
+  storage_period:
+    To: StoragePeriod
+Attributes:
+  id:
+    Ignore: true

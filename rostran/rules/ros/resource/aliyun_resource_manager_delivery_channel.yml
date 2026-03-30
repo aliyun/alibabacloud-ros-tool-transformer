@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::DeliveryChannel
+  To: alicloud_resource_manager_delivery_channel
+Properties:
+  DeliveryChannelDescription:
+    To: delivery_channel_description
+  DeliveryChannelFilter:
+    To: delivery_channel_filter
+    Type: Map
+    Schema:
+      ResourceTypes:
+        To: resource_types
+      AccountScopes:
+        Ignore: true
+  DeliveryChannelName:
+    To: delivery_channel_name
+  ResourceChangeDelivery:
+    To: resource_change_delivery
+    Type: Map
+    Schema:
+      SlsProperties:
+        To: sls_properties
+      TargetArn:
+        To: target_arn
+  ResourceSnapshotDelivery:
+    To: resource_snapshot_delivery
+    Type: Map
+    Schema:
+      CustomExpression:
+        To: custom_expression
+      DeliveryTime:
+        To: delivery_time
+      SlsProperties:
+        To: sls_properties
+      TargetArn:
+        To: target_arn
+  DeliveryChannelId:
+    Ignore: true
+  EnabledResourceChangeDelivery:
+    Ignore: true
+  EnabledResourceSnapshotDelivery:
+    Ignore: true
+Attributes:
+  DeliveryChannelId:
+    To: id
+  DeliveryChannelName:
+    Ignore: true
+  DeliveryChannelDescription:
+    Ignore: true
+  ResourceChangeDelivery:
+    Ignore: true
+  DeliveryChannelFilter:
+    Ignore: true
+  ResourceSnapshotDelivery:
+    Ignore: true

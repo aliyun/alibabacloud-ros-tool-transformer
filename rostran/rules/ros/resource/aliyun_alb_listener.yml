@@ -37,17 +37,71 @@ Properties:
   SecurityPolicyId:
     To: security_policy_id
   CaCertificates:
-    Ignore: true
+    To: ca_certificates
+    Type: List
+    Schema:
+      CertificateId:
+        To: certificate_id
   XForwardedForConfig:
-    Ignore: true
+    To: x_forwarded_for_config
+    Type: Map
+    Schema:
+      XForwardedForClientCertClientVerifyAlias:
+        To: x_forwarded_for_client_cert_client_verify_alias
+      XForwardedForClientCertClientVerifyEnabled:
+        To: x_forwarded_for_client_cert_client_verify_enabled
+      XForwardedForClientCertFingerprintAlias:
+        To: x_forwarded_for_client_cert_finger_print_alias
+      XForwardedForClientCertFingerprintEnabled:
+        To: x_forwarded_for_client_cert_finger_print_enabled
+      XForwardedForClientCertIssuerDNAlias:
+        To: x_forwarded_for_client_cert_issuer_dn_alias
+      XForwardedForClientCertIssuerDNEnabled:
+        To: x_forwarded_for_client_cert_issuer_dn_enabled
+      XForwardedForClientCertSubjectDNAlias:
+        To: x_forwarded_for_client_cert_subject_dn_alias
+      XForwardedForClientCertSubjectDNEnabled:
+        To: x_forwarded_for_client_cert_subject_dn_enabled
+      XForwardedForClientSourceIpsEnabled:
+        To: x_forwarded_for_client_source_ips_enabled
+      XForwardedForClientSourceIpsTrusted:
+        To: x_forwarded_for_client_source_ips_trusted
+      XForwardedForClientSrcPortEnabled:
+        To: x_forwarded_for_client_src_port_enabled
+      XForwardedForEnabled:
+        To: x_forwarded_for_enabled
+      XForwardedForHostEnabled:
+        To: x_forwarded_for_host_enabled
+      XForwardedForProcessingMode:
+        To: x_forwarded_for_processing_mode
+      XForwardedForProtoEnabled:
+        To: x_forwarded_for_proto_enabled
+      XForwardedForSLBIdEnabled:
+        To: x_forwarded_for_slb_id_enabled
+      XForwardedForSLBPortEnabled:
+        To: x_forwarded_for_slb_port_enabled
   QuicConfig:
-    Ignore: true
+    To: quic_config
+    Type: Map
+    Schema:
+      QuicListenerId:
+        To: quic_listener_id
+      QuicUpgradeEnabled:
+        To: quic_upgrade_enabled
   CaEnabled:
-    Ignore: true
+    To: ca_enabled
   ListenerStatus:
-    Ignore: true
+    To: status
   LogConfig:
-    Ignore: true
+    To: access_log_record_customized_headers_enabled
+  LogConfig$$0:
+    To: access_log_tracing_config
+    Type: Map
+    Schema:
+      AccessLogRecordCustomizedHeadersEnabled:
+        Ignore: true
+      AccessLogTracingConfig:
+        Ignore: true
 Attributes:
   ListenerId:
     To: id

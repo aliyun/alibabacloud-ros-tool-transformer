@@ -14,7 +14,9 @@ Properties:
   VpcId:
     To: vpc_id
   Name:
-    Ignore: true
+    To: ipv6_gateway_name
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   Ipv6GatewayId:
     To: id

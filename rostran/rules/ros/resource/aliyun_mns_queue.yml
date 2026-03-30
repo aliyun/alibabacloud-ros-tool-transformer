@@ -18,6 +18,18 @@ Properties:
     To: queue_name
   VisibilityTimeout:
     To: visibility_timeout
+  DlqPolicy:
+    To: dlq_policy
+    Type: Map
+    Schema:
+      DeadLetterTargetQueue:
+        To: dead_letter_target_queue
+      Enabled:
+        To: enabled
+      MaxReceiveCount:
+        To: max_receive_count
+  Tags:
+    To: tags
 Attributes:
   QueueName:
     To: id

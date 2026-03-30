@@ -13,6 +13,8 @@ Properties:
     Handler: handle_tags
   TemplateName:
     To: template_name
+  IgnoreExisting:
+    Ignore: true
 Attributes:
   TemplateName:
     To: id

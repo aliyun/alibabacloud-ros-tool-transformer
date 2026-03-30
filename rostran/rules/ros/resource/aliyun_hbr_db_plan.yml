@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::HBR::DbPlan
-  To: alicloud_hbr_hana_backup_plan
+  To: alicloud_hbr_server_backup_plan
 Properties:
   InstanceUuid:
     To: cluster_id
@@ -21,7 +21,7 @@ Properties:
   MaxRetrySeconds:
     Ignore: true
   Options:
-    Ignore: true
+    To: detail
   HostUuid:
     Ignore: true
   MaxRateLimit:

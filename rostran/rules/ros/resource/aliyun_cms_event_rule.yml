@@ -31,7 +31,9 @@ Properties:
   EventType:
     Ignore: true
   State:
-    Ignore: true
+    To: status
+  SilenceTime:
+    To: silence_time
 Attributes:
   Data:
     Ignore: true

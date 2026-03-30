@@ -13,7 +13,7 @@ Properties:
   project:
     To: ProjectName
   topic:
-    Ignore: true
+    To: GroupAttribute
 Attributes:
   id:
     To:

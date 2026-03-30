@@ -34,17 +34,17 @@ Properties:
   ZoneId$$0:
     To: zone_id
   DiskCategory:
-    Ignore: true
+    To: category
   KMSKeyId:
-    Ignore: true
+    To: kms_key_id
   ProvisionedIops:
-    Ignore: true
+    To: provisioned_iops
   AutoSnapshotPolicyId:
     Ignore: true
   BurstingEnabled:
-    Ignore: true
+    To: bursting_enabled
   MultiAttach:
-    Ignore: true
+    To: multi_attach
 Attributes:
   DiskId:
     To: id

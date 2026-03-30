@@ -43,6 +43,10 @@ Properties:
     Handler: handle_tags
   Zone:
     To: zone
+  IpAddress:
+    To: ip_address
+  InstanceId:
+    Ignore: true
 Attributes:
   AllocationId:
     To: id

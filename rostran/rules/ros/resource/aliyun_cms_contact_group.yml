@@ -7,9 +7,11 @@ Properties:
   Describe:
     To: describe
   ContactGroupName:
-    Ignore: true
+    To: alarm_contact_group_name
   ContactNames:
-    Ignore: true
+    To: contacts
+  EnableSubscribed:
+    To: enable_subscribed
 Attributes:
   ContactGroupName:
     To: id

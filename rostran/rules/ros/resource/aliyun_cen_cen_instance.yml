@@ -14,7 +14,7 @@ Properties:
     To: tags
     Handler: handle_tags
   ResourceGroupId:
-    Ignore: true
+    To: resource_group_id
 Attributes:
   CenId:
     To: id

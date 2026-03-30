@@ -16,7 +16,7 @@ Attributes:
   CreateTime:
     To: create_time
   RunId:
-    Ignore: true
+    To: id
   SourceId:
     Ignore: true
   OwnerId:

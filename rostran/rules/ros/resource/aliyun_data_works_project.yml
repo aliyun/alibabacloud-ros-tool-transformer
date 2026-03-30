@@ -19,7 +19,9 @@ Properties:
   IsAllowDownload:
     Ignore: true
   ProjectDescription:
-    Ignore: true
+    To: description
+  ProjectName$$0:
+    To: project_name
 Attributes:
   ProjectIdentifier:
     Ignore: true

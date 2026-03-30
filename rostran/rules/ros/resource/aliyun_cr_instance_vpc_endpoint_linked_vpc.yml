@@ -13,7 +13,7 @@ Properties:
   VswitchId:
     To: vswitch_id
   EnableCreateDNSRecordInPvzt:
-    Ignore: true
+    To: enable_create_dns_record_in_pvzt
 Attributes:
   InstanceId:
     To: instance_id

@@ -123,21 +123,21 @@ Properties:
   ZoneId:
     To: zone_id
   Name:
-    Ignore: true
+    To: name
   EcsOrderManagerInstanceType:
-    Ignore: true
+    To: manager_instance_type
   EcsOrderLoginCount:
-    Ignore: true
+    To: login_count
   EcsOrderLoginInstanceType:
-    Ignore: true
+    To: login_instance_type
   EcsOrderComputeCount:
-    Ignore: true
+    To: compute_count
   EcsOrderComputeInstanceType:
-    Ignore: true
+    To: compute_instance_type
   NetworkInterfaceTrafficMode:
     Ignore: true
   EcsOrderManagerCount:
-    Ignore: true
+    To: manager_count
 Attributes:
   ClusterId:
     To: id

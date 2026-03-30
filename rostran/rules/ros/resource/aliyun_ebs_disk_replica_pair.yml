@@ -27,11 +27,11 @@ Properties:
   SourceZoneId:
     To: source_zone_id
   Tags:
-    Ignore: true
+    To: tags
   DiskReplicaPairName:
-    Ignore: true
+    To: disk_replica_pair_name
   RPO:
-    Ignore: true
+    To: rpo
 Attributes:
   ReplicaPairId:
     To: id

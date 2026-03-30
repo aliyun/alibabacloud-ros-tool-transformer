@@ -13,7 +13,15 @@ Properties:
   Remark:
     To: remark
   ConsumeRetryPolicy:
-    Ignore: true
+    To: consume_retry_policy
+    Type: Map
+    Schema:
+      DeadLetterTargetTopic:
+        To: dead_letter_target_topic
+      MaxRetryTimes:
+        To: max_retry_times
+      RetryPolicy:
+        To: retry_policy
 Attributes:
   ConsumerGroupId:
     To: consumer_group_id

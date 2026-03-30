@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alidns_address_pool
+  To: ALIYUN::DNS::AddressPool
+Properties:
+  address:
+    To: Addr
+    Type: List
+    Schema:
+      address:
+        Ignore: true
+      attribute_info:
+        To: AttributeInfo
+      lba_weight:
+        To: LbaWeight
+      mode:
+        To: Mode
+      remark:
+        To: Remark
+  address_pool_name:
+    To: Name
+  instance_id:
+    To: InstanceId
+  lba_strategy:
+    To: LbaStrategy
+  type:
+    To: Type
+Attributes:
+  id:
+    To: AddrPoolId

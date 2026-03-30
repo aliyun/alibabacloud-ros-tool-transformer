@@ -13,7 +13,7 @@ Properties:
   Priority:
     To: priority
   RWAccessType:
-    Ignore: true
+    To: rw_access_type
 Attributes:
   AccessRuleId:
     To: id

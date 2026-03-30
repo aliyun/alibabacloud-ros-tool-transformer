@@ -31,26 +31,132 @@ Properties:
   Timeout:
     To: timeout
   NasConfig:
-    Ignore: true
+    To: nas_config
+    Type: Map
+    Schema:
+      GroupId:
+        To: group_id
+      MountPoints:
+        To: mount_points
+      UserId:
+        To: user_id
   TracingConfig:
     Ignore: true
   LogConfig:
-    Ignore: true
+    To: log_config
+    Type: Map
+    Schema:
+      EnableInstanceMetrics:
+        To: enable_instance_metrics
+      EnableRequestMetrics:
+        To: enable_request_metrics
+      LogBeginRule:
+        To: log_begin_rule
+      Logstore:
+        To: logstore
+      Project:
+        To: project
   CustomDns:
-    Ignore: true
+    To: custom_dns
+    Type: Map
+    Schema:
+      DnsOptions:
+        To: dns_options
+      NameServers:
+        To: name_servers
+      Searches:
+        To: searches
   VpcConfig:
-    Ignore: true
+    To: vpc_config
+    Type: Map
+    Schema:
+      SecurityGroupId:
+        To: security_group_id
+      VpcId:
+        To: vpc_id
+      VSwitchIds:
+        To: vswitch_ids
   OssMountConfig:
-    Ignore: true
+    To: oss_mount_config
+    Type: Map
+    Schema:
+      MountPoints:
+        To: mount_points
   InstanceLifecycleConfig:
-    Ignore: true
+    To: instance_lifecycle_config
+    Type: Map
+    Schema:
+      Initializer:
+        To: initializer
+      PreStop:
+        To: pre_stop
   CustomContainerConfig:
-    Ignore: true
+    To: custom_container_config
+    Type: Map
+    Schema:
+      AccelerationType:
+        To: acceleration_type
+      AcrInstanceId:
+        To: acr_instance_id
+      Command:
+        To: command
+      Entrypoint:
+        To: entrypoint
+      HealthCheckConfig:
+        To: health_check_config
+      Image:
+        To: image
+      Port:
+        To: port
+      AccelerationInfo:
+        Ignore: true
+      ResolvedImageUri:
+        Ignore: true
+      RegistryConfig:
+        Ignore: true
   CustomRuntimeConfig:
-    Ignore: true
+    To: custom_runtime_config
+    Type: Map
+    Schema:
+      Args:
+        To: args
+      Command:
+        To: command
+      HealthCheckConfig:
+        To: health_check_config
+      Port:
+        To: port
   GpuConfig:
-    Ignore: true
+    To: gpu_config
+    Type: Map
+    Schema:
+      GpuMemorySize:
+        To: gpu_memory_size
+      GpuType:
+        To: gpu_type
   Code:
+    To: code
+    Type: Map
+    Schema:
+      Checksum:
+        To: checksum
+      OssBucketName:
+        To: oss_bucket_name
+      OssObjectName:
+        To: oss_object_name
+      ZipFile:
+        To: zip_file
+      SourceCode:
+        Ignore: true
+  InstanceIsolationMode:
+    To: instance_isolation_mode
+  SessionAffinity:
+    To: session_affinity
+  SessionAffinityConfig:
+    To: session_affinity_config
+  Tags:
+    To: tags
+  DisableOndemand:
     Ignore: true
 Attributes:
   FunctionId:
@@ -58,4 +164,6 @@ Attributes:
   FunctionName:
     To: function_name
   ARN:
-    Ignore: true
+    To: function_arn
+  FunctionId$$0:
+    To: function_id

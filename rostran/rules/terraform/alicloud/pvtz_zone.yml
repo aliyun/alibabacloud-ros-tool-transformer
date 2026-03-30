@@ -39,7 +39,7 @@ Attributes:
   creation_time:
     Ignore: true
   is_ptr:
-    Ignore: true
+    To: ZoneType
   name:
     Ignore: true
   proxy_pattern:

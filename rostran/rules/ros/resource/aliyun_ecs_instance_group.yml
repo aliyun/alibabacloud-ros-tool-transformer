@@ -226,6 +226,8 @@ Properties:
     Ignore: true
   ImageOptions:
     Ignore: true
+  SubscriptionDeletionForce:
+    Ignore: true
 Attributes:
   InstanceIds:
     To: instance_ids
@@ -244,4 +246,6 @@ Attributes:
   PublicIps:
     Ignore: true
   OrderId:
+    Ignore: true
+  RelatedOrderIds:
     Ignore: true

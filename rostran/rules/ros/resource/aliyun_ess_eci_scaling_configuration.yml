@@ -270,7 +270,13 @@ Properties:
   DnsConfigSearches:
     Ignore: true
   DnsConfigOptions:
-    Ignore: true
+    To: dns_config_options
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Value:
+        To: value
   DnsConfigNameServers:
     Ignore: true
   DataCacheBurstingEnabled:
@@ -278,17 +284,23 @@ Properties:
   DataCacheProvisionedIops:
     Ignore: true
   InstanceFamilyLevel:
-    Ignore: true
+    To: instance_family_level
   DataCacheBucket:
     Ignore: true
   CostOptimization:
-    Ignore: true
+    To: cost_optimization
   NtpServers:
     Ignore: true
   DataCachePL:
     Ignore: true
   SecurityContextSysctls:
-    Ignore: true
+    To: security_context_sysctls
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Value:
+        To: value
 Attributes:
   ScalingConfigurationId:
     To: id

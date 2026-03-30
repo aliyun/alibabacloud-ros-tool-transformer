@@ -11,7 +11,7 @@ Properties:
   TransitRouterAttachmentId:
     To: transit_router_attachment_id
   RouteTableId:
-    Ignore: true
+    To: child_instance_route_table_id
 Attributes:
   CenId:
     To: cen_id

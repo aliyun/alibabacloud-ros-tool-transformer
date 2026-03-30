@@ -7,7 +7,7 @@ Properties:
   ListenerId:
     To: listener_id
   Certificates:
-    Ignore: true
+    To: certificate_id
 Attributes:
   ListenerId:
     To: listener_id

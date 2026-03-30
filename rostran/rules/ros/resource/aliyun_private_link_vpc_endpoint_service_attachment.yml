@@ -14,7 +14,7 @@ Properties:
     Ignore: true
 Attributes:
   ResourceId:
-    Ignore: true
+    To: id
   ResourceType:
     Ignore: true
   ServiceId:

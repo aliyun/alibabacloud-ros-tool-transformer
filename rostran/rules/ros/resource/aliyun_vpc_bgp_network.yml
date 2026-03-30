@@ -8,6 +8,8 @@ Properties:
     To: dst_cidr_block
   RouterId:
     To: router_id
+  VpcId:
+    To: vpc_id
 Attributes:
   RouterId:
     To: id

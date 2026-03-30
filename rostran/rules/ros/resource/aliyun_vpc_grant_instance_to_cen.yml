@@ -9,7 +9,7 @@ Properties:
   CenOwnerId:
     To: cen_owner_id
   InstanceId:
-    Ignore: true
+    To: child_instance_id
   InstanceType:
     Ignore: true
 Attributes:

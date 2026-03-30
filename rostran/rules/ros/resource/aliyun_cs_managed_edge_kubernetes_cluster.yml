@@ -33,17 +33,17 @@ Properties:
   VpcId:
     To: vpc_id
   Tags:
-    Ignore: true
+    To: tags
   LoginPassword:
-    Ignore: true
+    To: password
   EndpointPublicAccess:
-    Ignore: true
+    To: slb_internet_enabled
   Profile:
     Ignore: true
   ContainerCidr:
-    Ignore: true
+    To: pod_cidr
   CloudMonitorFlags:
-    Ignore: true
+    To: install_cloud_monitor
   SnatEntry:
     Ignore: true
   TimeoutMins:
@@ -51,14 +51,26 @@ Properties:
   MaintenanceWindow:
     Ignore: true
   KeyPair:
-    Ignore: true
+    To: key_name
   ZoneIds:
+    To: availability_zone
+  KubernetesVersion:
+    To: version
+  NodePools:
+    Ignore: true
+  VSwitchIds:
+    Ignore: true
+  IpStack:
+    Ignore: true
+  RrsaConfig:
+    Ignore: true
+  EncryptionProviderKey:
     Ignore: true
 Attributes:
   ClusterId:
     To: id
   Nodes:
-    Ignore: true
+    To: worker_nodes
   IngressSLBId:
     Ignore: true
   ScalingConfigurationId:
@@ -70,10 +82,12 @@ Attributes:
   TaskId:
     Ignore: true
   APIServerSLBId:
-    Ignore: true
+    To: slb_internet
   DefaultUserKubeConfig:
     Ignore: true
   WorkerRamRoleName:
-    Ignore: true
+    To: worker_ram_role_name
   ScalingRuleId:
     Ignore: true
+  APIServerSLBId$$0:
+    To: slb_intranet

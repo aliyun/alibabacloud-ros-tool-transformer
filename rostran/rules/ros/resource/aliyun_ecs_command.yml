@@ -24,6 +24,8 @@ Properties:
     Ignore: true
   ResourceGroupId:
     Ignore: true
+  Launcher:
+    Ignore: true
 Attributes:
   CommandId:
     To: id

@@ -119,7 +119,7 @@ Properties:
   LoadBalancerWeight:
     Ignore: true
   SystemDiskKMSKeyId:
-    Ignore: true
+    To: system_disk_kms_key_id
   Cpu:
     Ignore: true
   ZoneId:
@@ -129,7 +129,13 @@ Properties:
   Ipv6AddressCount:
     Ignore: true
   InstanceTypeOverrides:
-    Ignore: true
+    To: instance_type_override
+    Type: List
+    Schema:
+      InstanceType:
+        To: instance_type
+      WeightedCapacity:
+        To: weighted_capacity
   HpcClusterId:
     Ignore: true
   Memory:
@@ -143,13 +149,29 @@ Properties:
   Affinity:
     Ignore: true
   SpotPriceLimit:
-    Ignore: true
+    To: spot_price_limit
   ImageFamily:
     Ignore: true
   SystemDiskDiskName:
-    Ignore: true
+    To: system_disk_name
   InstancePatternInfos:
-    Ignore: true
+    To: instance_pattern_info
+    Type: List
+    Schema:
+      Architectures:
+        To: architectures
+      BurstablePerformance:
+        To: burstable_performance
+      Cores:
+        To: cores
+      ExcludedInstanceTypes:
+        To: excluded_instance_types
+      InstanceFamilyLevel:
+        To: instance_family_level
+      MaxPrice:
+        To: max_price
+      Memory:
+        To: memory
 Attributes:
   ScalingConfigurationId:
     To: id

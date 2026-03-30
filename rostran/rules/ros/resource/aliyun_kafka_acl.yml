@@ -17,9 +17,11 @@ Properties:
   Username:
     To: username
   AclPermissionType:
-    Ignore: true
+    To: acl_permission_type
   Host:
-    Ignore: true
+    To: host
+  AclOperationTypes$$0:
+    To: acl_operation_types
 Attributes:
   Username:
     Ignore: true

@@ -16,6 +16,8 @@ Properties:
     To: period
   PlanId:
     To: plan_id
+  Tags:
+    Ignore: true
 Attributes:
   InstanceId:
     To: id

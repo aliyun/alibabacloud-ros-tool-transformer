@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_bastionhost_host_account
+  To: ALIYUN::BastionHost::HostAccount
+Properties:
+  host_account_name:
+    To: HostAccountName
+  host_id:
+    To: HostId
+  instance_id:
+    To: InstanceId
+  pass_phrase:
+    To: PassPhrase
+  password:
+    To: Password
+  private_key:
+    To: PrivateKey
+  protocol_name:
+    To: ProtocolName
+Attributes:
+  id:
+    Ignore: true
+  host_account_id:
+    To: HostAccountId

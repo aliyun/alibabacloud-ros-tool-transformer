@@ -9,21 +9,21 @@ Properties:
   ResourceGroupId:
     To: resource_group_id
   ExtraBandwidth:
-    Ignore: true
+    To: bandwidth
   Plan:
-    Ignore: true
+    To: plan_code
   AutoPay:
     Ignore: true
   AutoRenew:
-    Ignore: true
+    To: renewal_status
   ExtendedStoragePlans:
-    Ignore: true
+    To: storage
   Version:
-    Ignore: true
+    To: license_code
   StartInstanceParam:
     Ignore: true
   PeriodUnit:
-    Ignore: true
+    To: renewal_period_unit
 Attributes:
   InstanceId:
     To: id

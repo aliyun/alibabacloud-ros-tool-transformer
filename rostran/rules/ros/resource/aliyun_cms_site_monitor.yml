@@ -26,4 +26,4 @@ Properties:
     To: task_type
 Attributes:
   TaskId:
-    Ignore: true
+    To: id

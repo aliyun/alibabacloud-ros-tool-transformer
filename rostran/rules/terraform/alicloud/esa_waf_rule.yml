@@ -1,0 +1,143 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_waf_rule
+  To: ALIYUN::ESA::WafRule
+Properties:
+  action:
+    Ignore: true
+  attack_type:
+    Ignore: true
+  bypass:
+    Ignore: true
+  characteristics:
+    Ignore: true
+  code:
+    Ignore: true
+  config:
+    To: Config
+    Type: Map
+    Schema:
+      action:
+        To: Action
+      actions:
+        To: Actions
+        Type: Map
+      app_package:
+        To: AppPackage
+        Type: Map
+      app_sdk:
+        To: AppSdk
+        Type: Map
+      expression:
+        To: Expression
+      managed_list:
+        To: ManagedList
+      managed_rulesets:
+        To: ManagedRulesets
+        Type: List
+      name:
+        To: Name
+      notes:
+        To: Notes
+      rate_limit:
+        To: RateLimit
+        Type: Map
+      security_level:
+        To: SecurityLevel
+        Type: Map
+      sigchl:
+        To: Sigchl
+        Type: List
+      status:
+        To: Status
+      timer:
+        To: Timer
+        Type: Map
+      type:
+        To: Type
+      value:
+        To: Value
+  count:
+    Ignore: true
+  criteria:
+    Ignore: true
+  custom_sign:
+    Ignore: true
+  custom_sign_status:
+    Ignore: true
+  end:
+    Ignore: true
+  feature_abnormal:
+    Ignore: true
+  interval:
+    Ignore: true
+  logic:
+    Ignore: true
+  managed_rules:
+    Ignore: true
+  match_type:
+    Ignore: true
+  on_hit:
+    Ignore: true
+  package_signs:
+    Ignore: true
+  periods:
+    Ignore: true
+  phase:
+    To: Phase
+  protection_level:
+    Ignore: true
+  ratio:
+    Ignore: true
+  response:
+    Ignore: true
+  ruleset_id:
+    To: RulesetId
+  scopes:
+    Ignore: true
+  shared:
+    To: Shared
+    Type: Map
+    Schema:
+      action:
+        To: Action
+      actions:
+        To: Actions
+        Type: Map
+      cross_site_id:
+        To: CrossSiteId
+      expression:
+        To: Expression
+      match:
+        To: Match
+        Type: Map
+      mode:
+        To: Mode
+      name:
+        To: Name
+      target:
+        To: Target
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+  start:
+    Ignore: true
+  threshold:
+    Ignore: true
+  ttl:
+    Ignore: true
+  value:
+    Ignore: true
+  weekly_periods:
+    Ignore: true
+  zone:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  config:
+    To: Config
+  waf_rule_id:
+    To: WafRuleId

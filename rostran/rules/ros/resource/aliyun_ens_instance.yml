@@ -35,13 +35,13 @@ Properties:
   VSwitchId:
     To: vswitch_id
   AutoRenew:
-    Ignore: true
+    To: auto_renew
   Quantity:
-    Ignore: true
+    To: amount
   DataDiskSize:
     Ignore: true
   SystemDiskSize:
-    Ignore: true
+    To: system_disk
   AutoRenewPeriod:
     Ignore: true
 Attributes:
@@ -80,7 +80,7 @@ Attributes:
   PrivateIps:
     Ignore: true
   DataDiskSize:
-    Ignore: true
+    To: data_disk
   SystemDiskSize:
     Ignore: true
   PublicIps:

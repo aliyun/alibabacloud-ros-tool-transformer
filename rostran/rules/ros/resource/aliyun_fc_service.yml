@@ -42,9 +42,23 @@ Properties:
       ZoneId:
         Ignore: true
   TracingConfig:
-    Ignore: true
+    To: tracing_config
+    Type: Map
+    Schema:
+      Params:
+        To: params
+      Type:
+        To: type
   NasConfig:
-    Ignore: true
+    To: nas_config
+    Type: Map
+    Schema:
+      GroupId:
+        To: group_id
+      MountPoints:
+        To: mount_points
+      UserId:
+        To: user_id
   VpcBindings:
     Ignore: true
   DeletionForce:

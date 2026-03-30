@@ -19,7 +19,11 @@ Properties:
   VlanId:
     To: vlan_id
   Name:
-    Ignore: true
+    To: virtual_border_router_name
+  Bandwidth:
+    To: bandwidth
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   VbrId:
     To: id

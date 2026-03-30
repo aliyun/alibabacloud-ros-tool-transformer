@@ -25,7 +25,7 @@ Properties:
   enable_nat_traversal:
     To: EnableNatTraversal
   enable_tunnels_bgp:
-    Ignore: true
+    To: EnableTunnelsBgp
   health_check_config:
     To: HealthCheckConfig
     Type: Map
@@ -115,7 +115,7 @@ Properties:
   remote_subnet:
     To: RemoteSubnet
   resource_group_id:
-    Ignore: true
+    To: ResourceGroupId
   status:
     Ignore: true
   tags:
@@ -123,7 +123,26 @@ Properties:
   tunnel_cidr:
     Ignore: true
   tunnel_options_specification:
-    Ignore: true
+    To: TunnelOptionsSpecification
+    Type: List
+    Schema:
+      customer_gateway_id:
+        To: CustomerGatewayId
+      enable_dpd:
+        To: EnableDpd
+      enable_nat_traversal:
+        To: EnableNatTraversal
+      tunnel_bgp_config:
+        To: TunnelBgpConfig
+        Type: Map
+      tunnel_ike_config:
+        To: TunnelIkeConfig
+        Type: Map
+      tunnel_index:
+        To: TunnelIndex
+      tunnel_ipsec_config:
+        To: TunnelIpsecConfig
+        Type: Map
   vpn_attachment_name:
     To: Name
 Attributes:

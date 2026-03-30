@@ -23,7 +23,7 @@ Properties:
   AllowCopyInSameRegion:
     Ignore: true
   DestinationDescription:
-    Ignore: true
+    To: description
 Attributes:
   ImageId:
     To: id

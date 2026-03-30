@@ -32,11 +32,35 @@ Properties:
   PersistenceTimeout:
     Ignore: true
   HealthCheckConfig:
-    Ignore: true
+    To: health_check
+    Type: Map
+    Schema:
+      HealthCheckConnectPort:
+        To: health_check_connect_port
+      HealthCheckConnectTimeout:
+        To: health_check_connect_timeout
+      HealthCheckDomain:
+        To: health_check_domain
+      HealthCheckEnabled:
+        To: health_check_enabled
+      HealthCheckHttpCode:
+        To: health_check_http_code
+      HealthCheckInterval:
+        To: health_check_interval
+      HealthCheckType:
+        To: health_check_type
+      HealthCheckUrl:
+        To: health_check_url
+      HealthyThreshold:
+        To: healthy_threshold
+      HttpCheckMethod:
+        To: http_check_method
+      UnhealthyThreshold:
+        To: unhealthy_threshold
   Servers:
     Ignore: true
   AddressIPVersion:
-    Ignore: true
+    To: address_ip_version
 Attributes:
   ServerGroupId:
     To: id

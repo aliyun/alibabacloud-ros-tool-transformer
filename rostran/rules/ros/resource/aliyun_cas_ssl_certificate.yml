@@ -11,7 +11,7 @@ Properties:
   Domains:
     Ignore: true
   CertType:
-    Ignore: true
+    To: certificate_type
   CertBrand:
     Ignore: true
   Username:
@@ -19,7 +19,7 @@ Properties:
   DomainType:
     Ignore: true
   CompanyName:
-    Ignore: true
+    To: organization
   Email:
     Ignore: true
   Phone:

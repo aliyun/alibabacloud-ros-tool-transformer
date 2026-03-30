@@ -25,7 +25,7 @@ Properties:
   renew_period:
     Ignore: true
   renewal_period_unit:
-    Ignore: true
+    To: PeriodUnit
   renewal_status:
     To: AutoRenew
   resource_group_id:

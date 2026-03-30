@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ServiceCatalog::ProductVersion
+  To: alicloud_service_catalog_product_version
+Properties:
+  Active:
+    To: active
+  Description:
+    To: description
+  Guidance:
+    To: guidance
+  ProductId:
+    To: product_id
+  ProductVersionName:
+    To: product_version_name
+  TemplateType:
+    To: template_type
+  TemplateUrl:
+    To: template_url
+Attributes:
+  ProductVersionId:
+    To: id
+  CreateTime:
+    To: create_time
+  ProductId:
+    Ignore: true
+  Active:
+    Ignore: true
+  TemplateType:
+    Ignore: true
+  ProductVersionName:
+    Ignore: true
+  TemplateUrl:
+    Ignore: true
+  Guidance:
+    Ignore: true
+  Description:
+    Ignore: true

@@ -110,11 +110,37 @@ Properties:
     To: tags
     Handler: handle_tags
   NodeAttributes:
-    Ignore: true
+    To: node_attributes
+    Type: Map
+    Schema:
+      KeyPairName:
+        To: key_pair_name
+      RamRole:
+        To: ram_role
+      SecurityGroupId:
+        To: security_group_id
+      VpcId:
+        To: vpc_id
+      ZoneId:
+        To: zone_id
+      MasterRootPassword:
+        Ignore: true
   SubscriptionConfig:
-    Ignore: true
+    To: subscription_config
+    Type: Map
+    Schema:
+      AutoRenew:
+        To: auto_renew
+      AutoRenewDuration:
+        To: auto_renew_duration
+      AutoRenewDurationUnit:
+        To: auto_renew_duration_unit
+      PaymentDuration:
+        To: payment_duration
+      PaymentDurationUnit:
+        To: payment_duration_unit
   Applications:
-    Ignore: true
+    To: applications
 Attributes:
   ClusterId:
     To: id

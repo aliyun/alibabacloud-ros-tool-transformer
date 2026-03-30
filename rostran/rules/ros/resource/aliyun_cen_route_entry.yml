@@ -5,11 +5,11 @@ ResourceType:
   To: alicloud_cen_route_entry
 Properties:
   ChildInstanceRouteTableId:
-    Ignore: true
+    To: route_table_id
   DestinationCidrBlock:
-    Ignore: true
+    To: cidr_block
   CenId:
-    Ignore: true
+    To: instance_id
   ChildInstanceId:
     Ignore: true
   ChildInstanceType:

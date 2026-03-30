@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::MultiAccountDeliveryChannel
+  To: alicloud_resource_manager_multi_account_delivery_channel
+Properties:
+  DeliveryChannelDescription:
+    To: delivery_channel_description
+  DeliveryChannelFilter:
+    To: delivery_channel_filter
+    Type: Map
+    Schema:
+      AccountScopes:
+        To: account_scopes
+      ResourceTypes:
+        To: resource_types
+  MultiAccountDeliveryChannelName:
+    To: multi_account_delivery_channel_name
+  ResourceChangeDelivery:
+    To: resource_change_delivery
+    Type: Map
+    Schema:
+      SlsProperties:
+        To: sls_properties
+      TargetArn:
+        To: target_arn
+  ResourceSnapshotDelivery:
+    To: resource_snapshot_delivery
+    Type: Map
+    Schema:
+      DeliveryTime:
+        To: delivery_time
+      TargetArn:
+        To: target_arn
+  MultiAccountDeliveryChannelId:
+    Ignore: true
+Attributes:
+  MultiAccountDeliveryChannelId:
+    To: id
+  DeliveryChannelDescription:
+    Ignore: true
+  MultiAccountDeliveryChannelName:
+    Ignore: true
+  ResourceChangeDelivery:
+    Ignore: true
+  DeliveryChannelFilter:
+    Ignore: true
+  ResourceSnapshotDelivery:
+    Ignore: true

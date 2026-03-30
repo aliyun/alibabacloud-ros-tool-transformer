@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GPDB::ExternalDataService
+  To: alicloud_gpdb_external_data_service
+Properties:
+  DBInstanceId:
+    To: db_instance_id
+  ServiceDescription:
+    To: service_description
+  ServiceName:
+    To: service_name
+  ServiceSpec:
+    To: service_spec
+Attributes:
+  CreateTime:
+    To: create_time
+  ServiceId:
+    To: service_id
+  ServiceDescription:
+    Ignore: true
+  ServiceName:
+    Ignore: true
+  ModifyTime:
+    Ignore: true
+  ServiceSpec:
+    Ignore: true

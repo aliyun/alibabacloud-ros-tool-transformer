@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::OssBackupPlan
+  To: alicloud_hbr_oss_backup_plan
+Properties:
+  BackupType:
+    To: backup_type
+  Bucket:
+    To: bucket
+  CrossAccountRoleName:
+    To: cross_account_role_name
+  CrossAccountType:
+    To: cross_account_type
+  CrossAccountUserId:
+    To: cross_account_user_id
+  Disabled:
+    To: disabled
+  PlanName:
+    To: oss_backup_plan_name
+  Prefix:
+    To: prefix
+  Retention:
+    To: retention
+  Schedule:
+    To: schedule
+  VaultId:
+    To: vault_id
+Attributes:
+  PlanId:
+    To: id

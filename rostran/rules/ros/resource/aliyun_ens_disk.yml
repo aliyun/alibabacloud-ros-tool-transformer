@@ -18,8 +18,10 @@ Properties:
   SnapshotId:
     To: snapshot_id
   KMSKeyId:
-    Ignore: true
+    To: kms_key_id
   InstanceChargeType:
+    To: payment_type
+  InstanceBillingCycle:
     Ignore: true
 Attributes:
   DiskId:

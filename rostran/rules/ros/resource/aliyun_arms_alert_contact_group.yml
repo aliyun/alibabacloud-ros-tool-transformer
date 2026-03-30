@@ -9,7 +9,7 @@ Properties:
   ProxyUserId:
     Ignore: true
   ContactGroupName:
-    Ignore: true
+    To: alert_contact_group_name
   RegionId:
     Ignore: true
 Attributes:

@@ -9,5 +9,5 @@ Properties:
   KeyPairName:
     To: key_pair_name
   AutoReboot:
-    Ignore: true
+    To: force
 Attributes: {}

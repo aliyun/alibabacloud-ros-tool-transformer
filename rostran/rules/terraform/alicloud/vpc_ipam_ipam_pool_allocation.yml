@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_vpc_ipam_ipam_pool_allocation
+  To: ALIYUN::VPC::IpamPool
+Properties:
+  cidr:
+    Ignore: true
+  cidr_mask:
+    Ignore: true
+  ipam_pool_allocation_description:
+    To: IpamPoolDescription
+  ipam_pool_allocation_name:
+    To: IpamPoolName
+  ipam_pool_id:
+    To: SourceIpamPoolId
+Attributes:
+  id:
+    To: IpamPoolId
+  create_time:
+    Ignore: true
+  region_id:
+    Ignore: true
+  status:
+    Ignore: true

@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cr_scan_rule
+  To: ALIYUN::CR::ScanRule
+Properties:
+  instance_id:
+    To: InstanceId
+  namespaces:
+    To: Namespaces
+    Type: List
+  repo_names:
+    To: RepoNames
+    Type: List
+  repo_tag_filter_pattern:
+    To: RepoTagFilterPattern
+  rule_name:
+    To: RuleName
+  scan_scope:
+    To: ScanScope
+  scan_type:
+    To: ScanType
+  trigger_type:
+    To: TriggerType
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime
+  scan_rule_id:
+    To: ScanRuleId

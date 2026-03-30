@@ -51,7 +51,7 @@ Properties:
   Period:
     Ignore: true
   GatewayType:
-    Ignore: true
+    To: gateway_type
   PeriodUnit:
     Ignore: true
 Attributes:
@@ -70,7 +70,7 @@ Attributes:
   SecurityGroup:
     Ignore: true
   VSwitch:
-    Ignore: true
+    To: vswitch
   Tags:
     Ignore: true
   Version:
@@ -78,7 +78,7 @@ Attributes:
   GatewayType:
     Ignore: true
   Zones:
-    Ignore: true
+    To: zones
   GatewayName:
     Ignore: true
   LoadBalancers:
@@ -86,6 +86,6 @@ Attributes:
   UpdateTime:
     Ignore: true
   Vpc:
-    Ignore: true
+    To: vpc
   PaymentType:
     Ignore: true

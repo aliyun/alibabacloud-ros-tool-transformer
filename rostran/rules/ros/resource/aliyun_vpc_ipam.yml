@@ -38,4 +38,4 @@ Attributes:
   IpamDescription:
     Ignore: true
   PublicDefaultScopeId:
-    Ignore: true
+    To: public_default_scope_id

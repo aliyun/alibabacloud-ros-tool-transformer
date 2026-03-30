@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CEN::TransitRouterCidr
+  To: alicloud_cen_transit_router_cidr
+Properties:
+  Cidr:
+    Ignore: true
+  TransitRouterCidrName:
+    Ignore: true
+  PublishCidrRoute:
+    Ignore: true
+  TransitRouterId:
+    Ignore: true
+  Description:
+    Ignore: true
+Attributes:
+  Family:
+    Ignore: true
+  Cidr:
+    Ignore: true
+  TransitRouterCidrName:
+    Ignore: true
+  TransitRouterCidrId:
+    Ignore: true
+  PublishCidrRoute:
+    Ignore: true
+  TransitRouterId:
+    Ignore: true
+  Description:
+    Ignore: true

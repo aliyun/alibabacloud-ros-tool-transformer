@@ -19,9 +19,9 @@ Properties:
   VaultType:
     To: vault_type
   ResourceGroupId:
-    Ignore: true
+    To: resource_group_id
   Tags:
-    Ignore: true
+    To: tags
 Attributes:
   VaultId:
     To: id
@@ -62,11 +62,11 @@ Attributes:
   IndexAvailable:
     Ignore: true
   ReplicationSourceRegionId:
-    Ignore: true
+    To: region_id
   PaymentType:
     Ignore: true
   CreateTime:
-    Ignore: true
+    To: create_time
   IndexUpdateTime:
     Ignore: true
   LatestReplicationTime:

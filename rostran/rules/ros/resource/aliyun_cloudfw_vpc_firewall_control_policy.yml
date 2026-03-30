@@ -35,23 +35,25 @@ Properties:
   VpcFirewallId:
     To: vpc_firewall_id
   EndTime:
-    Ignore: true
+    To: end_time
   RepeatStartTime:
-    Ignore: true
+    To: repeat_start_time
   RepeatDays:
-    Ignore: true
+    To: repeat_days
   RepeatType:
-    Ignore: true
+    To: repeat_type
   StartTime:
-    Ignore: true
+    To: start_time
   RegionId:
     Ignore: true
   ApplicationNameList:
-    Ignore: true
+    To: application_name_list
   RepeatEndTime:
-    Ignore: true
+    To: repeat_end_time
   NewOrder:
-    Ignore: true
+    To: order
+  DomainResolveType:
+    To: domain_resolve_type
 Attributes:
   AclUuid:
     To: acl_uuid

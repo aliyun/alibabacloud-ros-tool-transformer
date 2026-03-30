@@ -1,0 +1,18 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_pai_workspace_user_config
+  To: ALIYUN::PAI::UserConfig
+Properties:
+  category_name:
+    To: CategoryName
+  config_key:
+    To: ConfigKey
+  config_value:
+    To: Configs
+    Type: List
+  scope:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

@@ -36,9 +36,14 @@ Properties:
   ocsp_enabled:
     Ignore: true
   proxy_types:
-    Ignore: true
+    To: Rules
+    Schema:
+      proxy_ports:
+        Ignore: true
+      proxy_type:
+        Ignore: true
   real_servers:
-    Ignore: true
+    To: Rules
   rs_type:
     To: RsType
   white_list:

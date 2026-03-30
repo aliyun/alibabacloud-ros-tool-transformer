@@ -17,7 +17,13 @@ Properties:
   VpcId:
     To: vpc_id
   DeletionForce:
-    Ignore: true
+    To: force_delete
+  Bandwidth:
+    To: bandwidth
+  LinkType:
+    To: link_type
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   InstanceId:
     To: id

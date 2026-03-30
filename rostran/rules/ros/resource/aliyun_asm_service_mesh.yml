@@ -35,7 +35,7 @@ Properties:
   ExcludeOutboundPorts:
     Ignore: true
   AccessLogEnabled:
-    Ignore: true
+    To: gateway_enabled
   LocalityLoadBalancing:
     Ignore: true
   Period:
@@ -47,11 +47,11 @@ Properties:
   PilotPublicEip:
     Ignore: true
   ClusterSpec:
-    Ignore: true
+    To: cluster_spec
   Proxy:
     Ignore: true
   ControlPlaneLogProject:
-    Ignore: true
+    To: project
   ExcludeInboundPorts:
     Ignore: true
   AccessLogProject:
@@ -101,7 +101,7 @@ Properties:
   EnableACMG:
     Ignore: true
   CRAggregationEnabled:
-    Ignore: true
+    To: extra_configuration
   ExistingRootCaCert:
     Ignore: true
   IncludeIPRanges:
@@ -123,7 +123,7 @@ Properties:
   AccessLogServicePort:
     Ignore: true
   IstioVersion:
-    Ignore: true
+    To: version
   AccessLogFile:
     Ignore: true
   FilterGatewayClusterConfig:

@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::SharedTarget
+  To: alicloud_resource_manager_shared_target
+Properties:
+  ResourceShareId:
+    To: resource_share_id
+  TargetId:
+    Ignore: true
+Attributes:
+  ResourceShareId:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  ResourceShareName:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  TargetId:
+    Ignore: true

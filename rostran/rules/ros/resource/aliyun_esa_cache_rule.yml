@@ -1,0 +1,113 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::CacheRule
+  To: alicloud_esa_cache_rule
+Properties:
+  AdditionalCacheablePorts:
+    To: additional_cacheable_ports
+  BrowserCacheMode:
+    To: browser_cache_mode
+  BrowserCacheTtl:
+    To: browser_cache_ttl
+  BypassCache:
+    To: bypass_cache
+  CacheDeceptionArmor:
+    To: cache_deception_armor
+  CacheReserveEligibility:
+    To: cache_reserve_eligibility
+  CheckPresenceCookie:
+    To: check_presence_cookie
+  CheckPresenceHeader:
+    To: check_presence_header
+  EdgeCacheMode:
+    To: edge_cache_mode
+  EdgeCacheTtl:
+    To: edge_cache_ttl
+  EdgeStatusCodeCacheTtl:
+    To: edge_status_code_cache_ttl
+  IncludeCookie:
+    To: include_cookie
+  IncludeHeader:
+    To: include_header
+  QueryString:
+    To: query_string
+  QueryStringMode:
+    To: query_string_mode
+  Rule:
+    To: rule
+  RuleEnable:
+    To: rule_enable
+  RuleName:
+    To: rule_name
+  Sequence:
+    To: sequence
+  ServeStale:
+    To: serve_stale
+  SiteId:
+    To: site_id
+  SiteVersion:
+    To: site_version
+  SortQueryStringForCache:
+    To: sort_query_string_for_cache
+  UserDeviceType:
+    To: user_device_type
+  UserGeo:
+    To: user_geo
+  UserLanguage:
+    To: user_language
+Attributes:
+  CacheRuleId:
+    To: cache_rule_id
+  ServeStale:
+    Ignore: true
+  IncludeCookie:
+    Ignore: true
+  EdgeCacheMode:
+    Ignore: true
+  BrowserCacheMode:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  UserDeviceType:
+    Ignore: true
+  QueryStringMode:
+    Ignore: true
+  BrowserCacheTtl:
+    Ignore: true
+  CacheReserveEligibility:
+    Ignore: true
+  SortQueryStringForCache:
+    Ignore: true
+  CacheDeceptionArmor:
+    Ignore: true
+  EdgeStatusCodeCacheTtl:
+    Ignore: true
+  ConfigType:
+    Ignore: true
+  EdgeCacheTtl:
+    Ignore: true
+  AdditionalCacheablePorts:
+    Ignore: true
+  QueryString:
+    Ignore: true
+  UserGeo:
+    Ignore: true
+  Rule:
+    Ignore: true
+  IncludeHeader:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  CheckPresenceHeader:
+    Ignore: true
+  CheckPresenceCookie:
+    Ignore: true
+  RuleName:
+    Ignore: true
+  BypassCache:
+    Ignore: true
+  UserLanguage:
+    Ignore: true

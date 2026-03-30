@@ -25,7 +25,7 @@ Properties:
   IpSetConfig:
     Ignore: true
   AutoUseCoupon:
-    Ignore: true
+    To: auto_use_coupon
 Attributes:
   AcceleratorId:
     To: id

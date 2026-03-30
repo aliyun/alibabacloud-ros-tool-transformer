@@ -28,6 +28,12 @@ Properties:
     To: tag_relation
   RegionId:
     Ignore: true
+  AckLabels:
+    Ignore: true
+  AckNamespaces:
+    Ignore: true
+  AckClusterConnectorId:
+    Ignore: true
 Attributes:
   GroupUuid:
     To: id

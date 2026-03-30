@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::SLS::OssExport
-  To: alicloud_log_oss_export
+  To: alicloud_sls_oss_export_sink
 Properties:
   DisplayName:
     To: display_name
@@ -11,11 +11,15 @@ Properties:
   ProjectName:
     To: project_name
   Configuration:
-    Ignore: true
+    To: bucket
   Description:
-    Ignore: true
+    To: description
+  Configuration$$0:
+    To: time_zone
 Attributes:
   ExportName:
     To: export_name
   ProjectName:
     To: project_name
+  ExportName$$0:
+    To: export_name

@@ -2,12 +2,48 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::SLS::Alert
-  To: alicloud_log_alert
+  To: alicloud_sls_alert
 Properties:
   Project:
     To: project_name
   Detail:
-    Ignore: true
+    To: configuration
+    Type: Map
+    Schema:
+      Type:
+        To: type
+      Description:
+        Ignore: true
+      Name:
+        Ignore: true
+      Configuration:
+        Ignore: true
+      Schedule:
+        Ignore: true
+      DisplayName:
+        Ignore: true
+      State:
+        Ignore: true
+  Project$$0:
+    To: project_name
+  Detail$$0:
+    To: schedule
+    Type: Map
+    Schema:
+      Type:
+        To: type
+      Description:
+        Ignore: true
+      Name:
+        Ignore: true
+      Configuration:
+        Ignore: true
+      Schedule:
+        Ignore: true
+      DisplayName:
+        Ignore: true
+      State:
+        Ignore: true
 Attributes:
   Name:
     To: alert_name

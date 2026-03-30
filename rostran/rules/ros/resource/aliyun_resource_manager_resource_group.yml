@@ -10,6 +10,8 @@ Properties:
     To: name
   Name$$0:
     To: resource_group_name
+  Tags:
+    To: tags
 Attributes:
   Id:
     To: id
@@ -23,3 +25,5 @@ Attributes:
     To: region_statuses
   Name$$0:
     To: resource_group_name
+  ResourceGroupId:
+    Ignore: true

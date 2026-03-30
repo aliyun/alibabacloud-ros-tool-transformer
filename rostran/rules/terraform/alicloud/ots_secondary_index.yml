@@ -5,7 +5,8 @@ ResourceType:
   To: ALIYUN::OTS::SearchIndex
 Properties:
   defined_columns:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   include_base_data:
     Ignore: true
   index_name:
@@ -20,4 +21,4 @@ Properties:
     To: TableName
 Attributes:
   id:
-    Ignore: true
+    To: IndexName

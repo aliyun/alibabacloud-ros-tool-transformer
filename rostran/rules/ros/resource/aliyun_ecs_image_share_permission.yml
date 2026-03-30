@@ -11,7 +11,9 @@ Properties:
   KeepPermission:
     Ignore: true
   Accounts:
-    Ignore: true
+    To: account_id
 Attributes:
   ImageId:
+    To: image_id
+  ImageId$$0:
     To: image_id

@@ -22,10 +22,12 @@ tpl = {
         "alicloud_vpc_bgp_peer.example": {
             "Type": "ALIYUN::VPC::BgpPeer",
             "Properties": {
+                "BfdMultiHop": 10,
                 "BgpGroupId": {
                     "Fn::GetAtt": ["alicloud_vpc_bgp_group.example", "BgpGroupId"]
                 },
                 "EnableBfd": True,
+                "IpVersion": "IPV4",
                 "PeerIpAddress": "1.1.1.1",
             },
         },

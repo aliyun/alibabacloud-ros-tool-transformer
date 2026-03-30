@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MONGODB::PrivateSrvNetworkAddress
+  To: alicloud_mongodb_private_srv_network_address
+Properties:
+  DBInstanceId:
+    To: db_instance_id
+Attributes:
+  PrivateSrvConnectionStringUri:
+    To: private_srv_connection_string_uri

@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_attack_path_sensitive_asset_config
+  To: ALIYUN::ThreatDetection::AttackPathSensitiveAssetConfig
+Properties:
+  attack_path_asset_list:
+    To: AttackPathAssetList
+    Type: List
+    Schema:
+      asset_sub_type:
+        To: AssetSubType
+      asset_type:
+        To: AssetType
+      instance_id:
+        To: InstanceId
+      region_id:
+        To: RegionId
+      vendor:
+        To: Vendor
+Attributes:
+  id:
+    To: AttackPathSensitiveAssetConfigId

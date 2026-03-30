@@ -10,6 +10,8 @@ Properties:
     To: instance_id
   Port:
     To: port
+  AddressType:
+    Ignore: true
 Attributes:
   DBInstanceId:
     Ignore: true

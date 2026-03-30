@@ -15,11 +15,17 @@ Properties:
   Policies:
     Ignore: true
   DeletionForce:
-    Ignore: true
+    To: force
   IgnoreExisting:
     Ignore: true
   PolicyAttachments:
     Ignore: true
+  AssumeRolePolicyDocument$$0:
+    To: document
+  RoleName$$0:
+    To: role_name
+  Tags:
+    To: tags
 Attributes:
   RoleName:
     To: id

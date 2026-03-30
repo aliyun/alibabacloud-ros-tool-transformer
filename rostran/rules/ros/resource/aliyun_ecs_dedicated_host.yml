@@ -34,11 +34,17 @@ Properties:
   Quantity:
     Ignore: true
   Period:
-    Ignore: true
+    To: expired_time
   ChargeType:
-    Ignore: true
+    To: payment_type
   NetworkAttributesUdpTimeout:
     Ignore: true
+  CpuOverCommitRatio:
+    To: cpu_over_commit_ratio
+  DedicatedHostClusterId:
+    To: dedicated_host_cluster_id
+  MinQuantity:
+    To: min_quantity
 Attributes:
   DedicatedHostIds:
     To: id

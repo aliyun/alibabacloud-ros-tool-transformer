@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_arms_env_custom_job
+  To: ALIYUN::ARMS::EnvCustomJob
+Properties:
+  aliyun_lang:
+    To: AliyunLang
+  config_yaml:
+    To: ConfigYaml
+  env_custom_job_name:
+    To: EnvCustomJobName
+  environment_id:
+    To: EnvironmentId
+  status:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true

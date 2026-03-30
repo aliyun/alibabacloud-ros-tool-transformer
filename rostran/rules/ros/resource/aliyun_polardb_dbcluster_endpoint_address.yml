@@ -16,4 +16,4 @@ Attributes:
   ConnectionString:
     To: connection_string
   Address:
-    Ignore: true
+    To: ip_address

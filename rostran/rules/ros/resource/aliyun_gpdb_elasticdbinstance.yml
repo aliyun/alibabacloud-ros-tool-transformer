@@ -36,14 +36,18 @@ Properties:
   VPCId:
     Ignore: true
   DBInstanceDescription:
-    Ignore: true
+    To: db_instance_description
   MasterNodeNum:
     Ignore: true
   DBInstanceCategory:
-    Ignore: true
+    To: db_instance_category
   SecurityIPList:
-    Ignore: true
+    To: security_ip_list
   PrivateIpAddress:
+    Ignore: true
+  BackupId:
+    Ignore: true
+  SrcDbInstanceName:
     Ignore: true
 Attributes:
   DBInstanceId:

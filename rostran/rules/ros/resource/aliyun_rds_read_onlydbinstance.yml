@@ -38,11 +38,11 @@ Properties:
   VPCId:
     Ignore: true
   PayType:
-    Ignore: true
+    To: instance_charge_type
   DedicatedHostGroupId:
     Ignore: true
   DBInstanceStorageType:
-    Ignore: true
+    To: db_instance_storage_type
   TargetDedicatedHostIdForMaster:
     Ignore: true
 Attributes:

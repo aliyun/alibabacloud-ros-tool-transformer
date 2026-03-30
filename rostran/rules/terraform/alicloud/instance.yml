@@ -205,7 +205,7 @@ Properties:
   system_disk_size:
     To: SystemDiskSize
   system_disk_storage_cluster_id:
-    Ignore: true
+    To: StorageSetId
   tags:
     To: Tags
     Handler: tags_dict_to_list
@@ -287,7 +287,7 @@ Attributes:
   network_card_index:
     Ignore: true
   network_interface_id:
-    Ignore: true
+    To: PrimaryNetworkInterfaceId
   network_interface_traffic_mode:
     Ignore: true
   network_interfaces:
@@ -301,7 +301,7 @@ Attributes:
   period_unit:
     Ignore: true
   primary_ip_address:
-    Ignore: true
+    To: PrivateIp
   private_ip:
     To: PrivateIp
   public_ip:

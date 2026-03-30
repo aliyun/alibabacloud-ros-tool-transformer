@@ -38,10 +38,26 @@ Properties:
   SecurityProtectionEnabled:
     Ignore: true
   DeletionForce:
-    Ignore: true
+    To: force
   PricingCycle:
     Ignore: true
   IcmpReplyEnabled:
+    To: icmp_reply_enabled
+  AccessMode:
+    To: access_mode
+    Type: Map
+    Schema:
+      ModeValue:
+        To: mode_value
+      TunnelType:
+        To: tunnel_type
+  PrivateLinkEnabled:
+    To: private_link_enabled
+  AvailabilityMode:
+    Ignore: true
+  Ipv4Prefix:
+    Ignore: true
+  NatIp:
     Ignore: true
 Attributes:
   NatGatewayId:

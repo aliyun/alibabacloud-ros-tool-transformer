@@ -68,7 +68,7 @@ Properties:
         To: EnableWAF
 Attributes:
   id:
-    Ignore: true
+    To: DomainName
   account_id:
     Ignore: true
   api_version:

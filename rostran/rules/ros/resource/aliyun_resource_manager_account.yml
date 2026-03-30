@@ -11,7 +11,7 @@ Properties:
   PayerAccountId:
     To: payer_account_id
   DeleteAccount:
-    Ignore: true
+    To: force_delete
 Attributes:
   AccountId:
     To: id

@@ -11,7 +11,7 @@ Properties:
   SecurityPolicyName:
     To: security_policy_name
   TLSVersions:
-    Ignore: true
+    To: tls_versions
 Attributes:
   SecurityPolicyId:
     To: id

@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CR::StorageDomainRoutingRule
+  To: alicloud_cr_storage_domain_routing_rule
+Properties:
+  InstanceId:
+    To: instance_id
+  Routes:
+    To: routes
+    Type: List
+    Schema:
+      EndpointType:
+        To: endpoint_type
+      InstanceDomain:
+        To: instance_domain
+      StorageDomain:
+        To: storage_domain
+Attributes:
+  CreateTime:
+    To: create_time
+  RuleId:
+    To: rule_id
+  Routes:
+    Ignore: true
+  ModifyTime:
+    Ignore: true

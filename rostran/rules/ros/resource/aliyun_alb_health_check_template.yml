@@ -26,6 +26,10 @@ Properties:
     To: healthy_threshold
   UnhealthyThreshold:
     To: unhealthy_threshold
+  HealthCheckHttpVersion:
+    To: health_check_http_version
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   HealthCheckTemplateId:
     To: id

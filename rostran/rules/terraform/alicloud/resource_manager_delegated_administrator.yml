@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_resource_manager_delegated_administrator
+  To: ALIYUN::ResourceManager::DelegatedAdministrator
+Properties:
+  account_id:
+    To: AccountId
+  service_principal:
+    To: ServicePrincipal
+Attributes:
+  id:
+    Ignore: true

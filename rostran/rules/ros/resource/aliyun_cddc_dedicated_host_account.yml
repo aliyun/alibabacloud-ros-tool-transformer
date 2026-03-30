@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CDDC::DedicatedHostAccount
+  To: alicloud_cddc_dedicated_host_account
+Properties:
+  AccountName:
+    To: account_name
+  AccountPassword:
+    To: account_password
+  AccountType:
+    To: account_type
+  DedicatedHostId:
+    To: dedicated_host_id
+  BastionInstanceId:
+    Ignore: true
+Attributes: {}

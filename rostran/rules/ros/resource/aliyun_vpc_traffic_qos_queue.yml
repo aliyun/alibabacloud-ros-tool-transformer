@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::TrafficQosQueue
+  To: alicloud_express_connect_traffic_qos_queue
+Properties:
+  BandwidthPercent:
+    To: bandwidth_percent
+  QosId:
+    To: qos_id
+  QueueDescription:
+    To: queue_description
+  QueueName:
+    To: queue_name
+  QueueType:
+    To: queue_type
+Attributes:
+  QueueId:
+    To: queue_id
+  QueueName:
+    Ignore: true
+  BandwidthPercent:
+    Ignore: true
+  QueueType:
+    Ignore: true
+  QueueDescription:
+    Ignore: true
+  QosId:
+    Ignore: true

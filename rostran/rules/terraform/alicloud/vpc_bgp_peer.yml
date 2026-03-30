@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::VPC::BgpPeer
 Properties:
   bfd_multi_hop:
-    Ignore: true
+    To: BfdMultiHop
   bgp_group_id:
     To: BgpGroupId
   bgp_peer_name:
@@ -13,7 +13,7 @@ Properties:
   enable_bfd:
     To: EnableBfd
   ip_version:
-    Ignore: true
+    To: IpVersion
   peer_ip_address:
     To: PeerIpAddress
   status:

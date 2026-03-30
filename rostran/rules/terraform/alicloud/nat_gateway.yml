@@ -5,7 +5,13 @@ ResourceType:
   To: ALIYUN::VPC::NatGateway
 Properties:
   access_mode:
-    Ignore: true
+    To: AccessMode
+    Type: Map
+    Schema:
+      mode_value:
+        To: ModeValue
+      tunnel_type:
+        To: TunnelType
   bandwidth_package_ids:
     Ignore: true
   bandwidth_packages:
@@ -41,7 +47,7 @@ Properties:
   period:
     To: Duration
   private_link_enabled:
-    Ignore: true
+    To: PrivateLinkEnabled
   snat_table_ids:
     Ignore: true
   spec:

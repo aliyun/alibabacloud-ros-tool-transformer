@@ -16,6 +16,8 @@ Properties:
     To: source_vswitch_id
   SourceCIDR:
     To: source_cidr
+  NetworkInterfaceId:
+    Ignore: true
 Attributes:
   SnatEntryIds:
     To: snat_entry_id

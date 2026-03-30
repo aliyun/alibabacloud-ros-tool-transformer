@@ -15,9 +15,11 @@ Properties:
   DefenseId:
     Ignore: true
   Rules:
-    Ignore: true
+    To: proxy_types
   ResourceGroupId:
     Ignore: true
+  Rules$$0:
+    To: real_servers
 Attributes:
   Domain:
     Ignore: true

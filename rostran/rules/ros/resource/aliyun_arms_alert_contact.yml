@@ -17,7 +17,7 @@ Properties:
   RegionId:
     Ignore: true
   ContactName:
-    Ignore: true
+    To: alert_contact_name
 Attributes:
   ContactId:
     To: id

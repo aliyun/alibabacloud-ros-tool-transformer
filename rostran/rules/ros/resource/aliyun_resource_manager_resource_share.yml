@@ -7,13 +7,19 @@ Properties:
   ResourceShareName:
     To: resource_share_name
   PermissionNames:
-    Ignore: true
+    To: permission_names
   Resources:
-    Ignore: true
+    To: resources
+    Type: List
+    Schema:
+      ResourceId:
+        To: resource_id
+      ResourceType:
+        To: resource_type
   Targets:
-    Ignore: true
+    To: targets
   AllowExternalTargets:
-    Ignore: true
+    To: allow_external_targets
 Attributes:
   ResourceShareId:
     To: id

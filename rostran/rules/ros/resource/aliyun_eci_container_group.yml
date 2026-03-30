@@ -57,19 +57,117 @@ Properties:
   ZoneId:
     To: zone_id
   Container:
-    Ignore: true
+    To: containers
+    Type: List
+    Schema:
+      Cpu:
+        To: cpu
+      Image:
+        To: image
+      ImagePullPolicy:
+        To: image_pull_policy
+      LivenessProbe:
+        To: liveness_probe
+      Memory:
+        To: memory
+      Name:
+        To: name
+      ReadinessProbe:
+        To: readiness_probe
+      SecurityContext:
+        To: security_context
+      WorkingDir:
+        To: working_dir
+      EnvironmentVar:
+        Ignore: true
+      StdinOnce:
+        Ignore: true
+      Command:
+        Ignore: true
+      Arg:
+        Ignore: true
+      Tty:
+        Ignore: true
+      VolumeMount:
+        Ignore: true
+      Stdin:
+        Ignore: true
+      Port:
+        Ignore: true
   HostAliase:
-    Ignore: true
+    To: host_aliases
+    Type: List
+    Schema:
+      Ip:
+        To: ip
+      Hostname:
+        Ignore: true
   InitContainer:
-    Ignore: true
+    To: init_containers
+    Type: List
+    Schema:
+      Cpu:
+        To: cpu
+      Image:
+        To: image
+      ImagePullPolicy:
+        To: image_pull_policy
+      Memory:
+        To: memory
+      Name:
+        To: name
+      SecurityContext:
+        To: security_context
+      WorkingDir:
+        To: working_dir
+      EnvironmentVar:
+        Ignore: true
+      Command:
+        Ignore: true
+      Arg:
+        Ignore: true
+      VolumeMount:
+        Ignore: true
+      Port:
+        Ignore: true
   DnsConfig:
-    Ignore: true
+    To: dns_config
+    Type: Map
+    Schema:
+      Option:
+        Ignore: true
+      Search:
+        Ignore: true
+      NameServer:
+        Ignore: true
   SecurityContextSysctl:
     Ignore: true
   Tag:
-    Ignore: true
+    To: tags
   Volume:
-    Ignore: true
+    To: volumes
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Type:
+        To: type
+      NFSVolume.Path:
+        Ignore: true
+      FlexVolume.Options:
+        Ignore: true
+      NFSVolume.ReadOnly:
+        Ignore: true
+      EmptyDirVolume.Medium:
+        Ignore: true
+      FlexVolume.FsType:
+        Ignore: true
+      NFSVolume.Server:
+        Ignore: true
+      FlexVolume.Driver:
+        Ignore: true
+      ConfigFileVolume.ConfigFileToPath:
+        Ignore: true
   ImageSnapshotId:
     Ignore: true
   ActiveDeadlineSeconds:

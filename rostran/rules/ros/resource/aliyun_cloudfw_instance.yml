@@ -31,7 +31,7 @@ Properties:
   NatBandwidth:
     Ignore: true
   PeriodUnit:
-    Ignore: true
+    To: renewal_duration_unit
   NatFirewallNum:
     Ignore: true
   IgnoreExisting:

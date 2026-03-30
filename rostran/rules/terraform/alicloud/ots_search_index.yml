@@ -5,19 +5,24 @@ ResourceType:
   To: ALIYUN::OTS::SearchIndex
 Properties:
   analyzer:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   create_time:
     Ignore: true
   current_sync_timestamp:
     Ignore: true
   enable_sort_and_agg:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   field_name:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   field_type:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   index:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   index_id:
     Ignore: true
   index_name:
@@ -25,7 +30,8 @@ Properties:
   instance_name:
     To: InstanceName
   is_array:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   routing_fields:
     To: IndexSetting
     Type: Map
@@ -76,7 +82,8 @@ Properties:
       sorter_type:
         Ignore: true
   store:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   sync_phase:
     Ignore: true
   table_name:
@@ -92,6 +99,6 @@ Attributes:
   current_sync_timestamp:
     Ignore: true
   index_id:
-    Ignore: true
+    To: IndexName
   sync_phase:
     Ignore: true

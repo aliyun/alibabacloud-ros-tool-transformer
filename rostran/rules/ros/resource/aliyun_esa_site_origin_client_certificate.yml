@@ -1,0 +1,51 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::SiteOriginClientCertificate
+  To: alicloud_esa_site_origin_client_certificate
+Properties:
+  SiteId:
+    To: site_id
+  ValidityDays:
+    Ignore: true
+  Certificate:
+    Ignore: true
+  SiteOriginClientCertificateName:
+    Ignore: true
+  PrivateKey:
+    Ignore: true
+Attributes:
+  CreateTime:
+    To: create_time
+  NotAfter:
+    Ignore: true
+  Type:
+    Ignore: true
+  SiteName:
+    Ignore: true
+  SAN:
+    Ignore: true
+  Certificate:
+    Ignore: true
+  SiteOriginClientCertificateId:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  NotBefore:
+    Ignore: true
+  SerialNumber:
+    Ignore: true
+  FingerprintSha256:
+    Ignore: true
+  CommonName:
+    Ignore: true
+  PubkeyAlgorithm:
+    Ignore: true
+  SignatureAlgorithm:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  Issuer:
+    Ignore: true
+  SiteOriginClientCertificateName:
+    Ignore: true

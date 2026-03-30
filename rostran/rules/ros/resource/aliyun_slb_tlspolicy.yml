@@ -9,14 +9,14 @@ Properties:
   TlsVersions:
     To: tls_versions
   TLSPolicyName:
-    Ignore: true
+    To: tls_cipher_policy_name
 Attributes:
   Ciphers:
     To: ciphers
   TlsVersions:
     To: tls_versions
   InstanceId:
-    Ignore: true
+    To: id
   CreateTime:
     Ignore: true
   TLSPolicyName:

@@ -5,11 +5,11 @@ ResourceType:
   To: ALIYUN::MaxCompute::Quota
 Properties:
   elastic_reserved_cu:
-    Ignore: true
+    To: CU
   is_effective:
     Ignore: true
   nick_name:
-    Ignore: true
+    To: QuotaNickname
   nickname:
     To: QuotaNickname
   parameter:

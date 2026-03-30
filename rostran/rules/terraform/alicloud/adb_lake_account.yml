@@ -20,6 +20,8 @@ Properties:
     Ignore: true
   db_cluster_id:
     To: DBClusterId
+  ram_user_list:
+    To: RamUser
   table:
     Ignore: true
 Attributes:

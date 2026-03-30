@@ -7,7 +7,7 @@ Properties:
   cen_id:
     To: CenId
   ecr_id:
-    Ignore: true
+    To: PeerTransitRouterId
   ecr_owner_id:
     Ignore: true
   tags:

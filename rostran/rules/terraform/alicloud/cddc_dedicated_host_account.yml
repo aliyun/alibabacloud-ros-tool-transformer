@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cddc_dedicated_host_account
+  To: ALIYUN::CDDC::DedicatedHostAccount
+Properties:
+  account_name:
+    To: AccountName
+  account_password:
+    To: AccountPassword
+  account_type:
+    To: AccountType
+  dedicated_host_id:
+    To: DedicatedHostId
+Attributes:
+  id:
+    Ignore: true

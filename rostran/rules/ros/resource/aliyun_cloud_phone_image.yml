@@ -12,7 +12,7 @@ Properties:
     Ignore: true
 Attributes:
   ImageId:
-    Ignore: true
+    To: id
   IsSelfShared:
     Ignore: true
   OsNameEn:

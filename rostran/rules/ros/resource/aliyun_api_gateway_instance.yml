@@ -21,7 +21,7 @@ Properties:
   DeletionForce:
     Ignore: true
   ChargeType:
-    Ignore: true
+    To: payment_type
   AutoPay:
     Ignore: true
 Attributes:

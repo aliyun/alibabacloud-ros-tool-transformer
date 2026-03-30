@@ -49,7 +49,7 @@ Properties:
   StartTime:
     To: start_time
   Release:
-    Ignore: true
+    To: release
 Attributes:
   AclUuid:
     To: acl_uuid

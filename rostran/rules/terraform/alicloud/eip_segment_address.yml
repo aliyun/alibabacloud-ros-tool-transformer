@@ -13,7 +13,7 @@ Properties:
   internet_charge_type:
     To: InternetChargeType
   isp:
-    Ignore: true
+    To: Isp
   netmode:
     To: Netmode
   resource_group_id:
@@ -23,7 +23,7 @@ Properties:
   status:
     Ignore: true
   zone:
-    Ignore: true
+    To: Zone
 Attributes:
   id:
     To: EipSegmentInstanceId

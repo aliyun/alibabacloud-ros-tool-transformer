@@ -40,13 +40,25 @@ Properties:
       VSwitchId:
         Ignore: true
   ModificationProtectionConfig:
-    Ignore: true
+    To: modification_protection_config
+    Type: Map
+    Schema:
+      Reason:
+        To: reason
+      Status:
+        To: status
   LoadBalancerBillingConfig:
-    Ignore: true
+    To: payment_type
   TrafficAffinityEnabled:
     Ignore: true
   DeletionProtectionConfig:
-    Ignore: true
+    To: deletion_protection_config
+    Type: Map
+    Schema:
+      Enabled:
+        To: enabled
+      Reason:
+        To: reason
 Attributes:
   LoadBalancerId:
     To: id

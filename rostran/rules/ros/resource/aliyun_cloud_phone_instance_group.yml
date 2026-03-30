@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::CloudPhone::InstanceGroup
-  To: alicloud_ecp_instance
+  To: alicloud_cloud_phone_instance_group
 Properties:
   AutoPay:
     To: auto_pay
@@ -35,9 +35,11 @@ Properties:
   VSwitchId:
     To: vswitch_id
   Amount:
-    Ignore: true
+    To: amount
   Tag:
     Ignore: true
+  VSwitchId$$0:
+    To: vswitch_id
 Attributes:
   TradePrice:
     Ignore: true

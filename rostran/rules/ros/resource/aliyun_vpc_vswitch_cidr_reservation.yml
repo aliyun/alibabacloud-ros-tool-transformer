@@ -9,17 +9,19 @@ Properties:
   VSwitchId:
     To: vswitch_id
   VSwitchCidrReservationCidr:
-    Ignore: true
+    To: cidr_reservation_cidr
   VSwitchCidrReservationDescription:
-    Ignore: true
+    To: cidr_reservation_description
   Tags:
     Ignore: true
   VSwitchCidrReservationType:
-    Ignore: true
+    To: cidr_reservation_type
   VSwitchCidrReservationMask:
-    Ignore: true
+    To: cidr_reservation_mask
   VSwitchCidrReservationName:
-    Ignore: true
+    To: vswitch_cidr_reservation_name
 Attributes:
   VSwitchCidrReservationId:
     To: id
+  VSwitchCidrReservationId$$0:
+    To: vswitch_cidr_reservation_id

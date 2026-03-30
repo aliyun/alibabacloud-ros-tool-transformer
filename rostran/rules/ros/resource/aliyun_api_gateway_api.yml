@@ -97,7 +97,37 @@ Properties:
   DisableInternet:
     Ignore: true
   ServiceConfig:
-    Ignore: true
+    To: http_service_config
+    Type: Map
+    Schema:
+      ContentTypeValue:
+        To: content_type_value
+      Mock:
+        Ignore: true
+      FunctionComputeConfig:
+        Ignore: true
+      ServiceVpcEnable:
+        Ignore: true
+      MockStatusCode:
+        Ignore: true
+      ServicePath:
+        Ignore: true
+      ServiceTimeOut:
+        Ignore: true
+      ContentTypeCatagory:
+        Ignore: true
+      MockResult:
+        Ignore: true
+      ServiceHttpMethod:
+        Ignore: true
+      ServiceProtocol:
+        Ignore: true
+      VpcConfig:
+        Ignore: true
+      ServiceAddress:
+        Ignore: true
+      MockHeaders:
+        Ignore: true
   ErrorCodeSamples:
     Ignore: true
   AppCodeAuthType:
@@ -124,6 +154,8 @@ Properties:
     Ignore: true
   ResultSample:
     Ignore: true
+  ServiceConfig$$0:
+    To: service_type
 Attributes:
   ApiId:
     To: id

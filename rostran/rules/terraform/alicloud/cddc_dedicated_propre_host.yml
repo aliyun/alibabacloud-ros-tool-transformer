@@ -76,6 +76,6 @@ Properties:
     To: VSwitchId
 Attributes:
   id:
-    Ignore: true
+    To: DedicatedHostId
   ecs_instance_id:
     To: DedicatedHostId

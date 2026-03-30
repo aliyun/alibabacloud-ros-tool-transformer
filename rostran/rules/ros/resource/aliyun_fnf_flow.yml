@@ -15,7 +15,7 @@ Properties:
   RequestId:
     Ignore: true
   ExecutionMode:
-    Ignore: true
+    To: type
   ExternalStorageLocation:
     Ignore: true
 Attributes:

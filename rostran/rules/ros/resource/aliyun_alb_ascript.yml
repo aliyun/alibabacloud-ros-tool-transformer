@@ -21,7 +21,7 @@ Properties:
   ScriptContent:
     To: script_content
   AScriptName:
-    Ignore: true
+    To: ascript_name
 Attributes:
   AScriptId:
     To: id

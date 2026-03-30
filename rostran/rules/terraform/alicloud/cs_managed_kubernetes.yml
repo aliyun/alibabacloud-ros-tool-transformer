@@ -21,7 +21,11 @@ Properties:
   audit_log_config:
     Ignore: true
   auto_mode:
-    Ignore: true
+    To: AutoMode
+    Type: Map
+    Schema:
+      enabled:
+        Ignore: true
   availability_zone:
     Ignore: true
   certificate_authority:

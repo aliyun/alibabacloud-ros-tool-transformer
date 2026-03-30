@@ -12,7 +12,7 @@ Properties:
     To: SiteId
 Attributes:
   id:
-    Ignore: true
+    To: SiteId
   client_ca_cert_id:
     To: ClientCaCertId
   create_time:

@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_bastionhost_user
+  To: ALIYUN::BastionHost::UserGroup
+Properties:
+  comment:
+    To: Comment
+  display_name:
+    Ignore: true
+  email:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  mobile:
+    Ignore: true
+  mobile_country_code:
+    Ignore: true
+  password:
+    Ignore: true
+  source:
+    Ignore: true
+  source_user_id:
+    Ignore: true
+  status:
+    Ignore: true
+  user_name:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  user_id:
+    Ignore: true

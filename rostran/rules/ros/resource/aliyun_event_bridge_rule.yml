@@ -37,7 +37,7 @@ Properties:
       Id:
         Ignore: true
   FilterPattern:
-    Ignore: true
+    To: filter_pattern
 Attributes:
   EventBusName:
     To: event_bus_name

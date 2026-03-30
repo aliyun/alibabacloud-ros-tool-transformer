@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_fcv3_vpc_binding
+  To: ALIYUN::FC3::VpcBinding
+Properties:
+  function_name:
+    To: FunctionName
+  vpc_id:
+    To: VpcId
+Attributes:
+  id:
+    Ignore: true

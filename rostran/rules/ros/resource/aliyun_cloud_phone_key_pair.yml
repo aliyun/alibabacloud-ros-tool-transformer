@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::CloudPhone::KeyPair
-  To: alicloud_ecp_key_pair
+  To: alicloud_cloud_phone_key_pair
 Properties:
   KeyPairName:
     To: key_pair_name

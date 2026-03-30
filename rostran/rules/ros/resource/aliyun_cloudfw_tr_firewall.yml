@@ -34,4 +34,4 @@ Properties:
     Ignore: true
 Attributes:
   FirewallId:
-    Ignore: true
+    To: id

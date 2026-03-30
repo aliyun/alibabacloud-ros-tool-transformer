@@ -11,7 +11,9 @@ Properties:
   DBName:
     To: name
   DBDescription:
-    Ignore: true
+    To: description
+  DBName$$0:
+    To: name
 Attributes:
   DBName:
     Ignore: true

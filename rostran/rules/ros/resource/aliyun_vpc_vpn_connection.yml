@@ -71,9 +71,33 @@ Properties:
   RemoteCaCertificate:
     Ignore: true
   BgpConfig:
-    Ignore: true
+    To: bgp_config
+    Type: Map
+    Schema:
+      LocalAsn:
+        To: local_asn
+      LocalBgpIp:
+        To: local_bgp_ip
+      TunnelCidr:
+        To: tunnel_cidr
+      EnableBgp:
+        Ignore: true
   HealthCheckConfig:
-    Ignore: true
+    To: health_check_config
+    Type: Map
+    Schema:
+      Dip:
+        To: dip
+      Enable:
+        To: enable
+      Interval:
+        To: interval
+      Retry:
+        To: retry
+      Sip:
+        To: sip
+      Policy:
+        Ignore: true
 Attributes:
   VpnConnectionId:
     To: id

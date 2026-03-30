@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ServiceCatalog::ProductPortfolioAssociation
+  To: alicloud_service_catalog_product_portfolio_association
+Properties:
+  PortfolioId:
+    To: portfolio_id
+  ProductId:
+    To: product_id
+Attributes:
+  ProductId:
+    Ignore: true

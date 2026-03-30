@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_alidns_monitor_config
+  To: ALIYUN::DNS::MonitorConfig
+Properties:
+  addr_pool_id:
+    To: AddrPoolId
+  evaluation_count:
+    To: EvaluationCount
+  interval:
+    To: Interval
+  isp_city_node:
+    To: IspCityNode
+    Type: List
+    Schema:
+      city_code:
+        To: CityCode
+      isp_code:
+        To: IspCode
+  lang:
+    Ignore: true
+  monitor_extend_info:
+    To: MonitorExtendInfo
+  protocol_type:
+    To: ProtocolType
+  timeout:
+    To: Timeout
+Attributes:
+  id:
+    To: MonitorConfigId

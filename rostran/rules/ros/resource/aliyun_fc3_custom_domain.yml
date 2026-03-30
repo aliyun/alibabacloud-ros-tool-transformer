@@ -50,4 +50,4 @@ Properties:
         To: enable_waf
 Attributes:
   DomainName:
-    Ignore: true
+    To: id

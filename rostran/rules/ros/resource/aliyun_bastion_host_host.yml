@@ -23,7 +23,7 @@ Properties:
   SourceInstanceId:
     To: source_instance_id
   OSType:
-    Ignore: true
+    To: os_type
 Attributes:
   HostId:
     To: id

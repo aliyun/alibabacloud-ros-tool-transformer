@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OSS::BucketWorm
+  To: alicloud_oss_bucket_worm
+Properties:
+  Bucket:
+    To: bucket
+  RetentionPeriodInDays:
+    To: retention_period_in_days
+Attributes:
+  CreateTime:
+    To: create_time
+  WormId:
+    To: worm_id
+  ExpirationDate:
+    Ignore: true
+  RetentionPeriodInDays:
+    Ignore: true

@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::SLS::Index
-  To: alicloud_log_store_index
+  To: alicloud_sls_index
 Properties:
   KeyIndices:
     To: field_search
@@ -51,5 +51,5 @@ Properties:
   ProjectName:
     To: project
   LogReduce:
-    Ignore: true
+    To: log_reduce
 Attributes: {}

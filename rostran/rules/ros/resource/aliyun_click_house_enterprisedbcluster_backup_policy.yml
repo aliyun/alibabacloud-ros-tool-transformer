@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ClickHouse::EnterpriseDBClusterBackupPolicy
+  To: alicloud_click_house_enterprise_db_cluster_backup_policy
+Properties:
+  BackupRetentionPeriod:
+    To: backup_retention_period
+  DbInstanceId:
+    To: db_cluster_id
+  PreferredBackupPeriod:
+    To: preferred_backup_period
+  PreferredBackupTime:
+    To: preferred_backup_time
+Attributes:
+  BackupState:
+    To: status
+  PreferredBackupPeriod:
+    Ignore: true
+  BackupRetentionPeriod:
+    Ignore: true
+  PreferredBackupTime:
+    Ignore: true

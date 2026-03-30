@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_database
+  To: ALIYUN::GPDB::Database
+Properties:
+  character_set_name:
+    To: CharacterSetName
+  collate:
+    To: Collate
+  ctype:
+    To: Ctype
+  database_name:
+    To: DatabaseName
+  db_instance_id:
+    To: DBInstanceId
+  description:
+    To: Description
+  owner:
+    To: Owner
+Attributes:
+  id:
+    Ignore: true

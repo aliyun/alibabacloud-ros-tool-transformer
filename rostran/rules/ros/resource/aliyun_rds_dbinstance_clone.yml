@@ -65,7 +65,7 @@ Properties:
   AllocatePublicConnection:
     Ignore: true
   Tags:
-    Ignore: true
+    To: tags
   DBMappings:
     Ignore: true
   MasterUsername:
@@ -90,7 +90,7 @@ Attributes:
   InnerIPAddress:
     Ignore: true
   DBInstanceId:
-    Ignore: true
+    To: id
   PublicPort:
     Ignore: true
   InnerPort:

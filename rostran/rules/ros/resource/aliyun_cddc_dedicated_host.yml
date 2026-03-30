@@ -28,7 +28,7 @@ Properties:
   ZoneId:
     To: zone_id
   AutoRenew:
-    Ignore: true
+    To: auto_renew
 Attributes:
   DedicatedHostId:
     To: id

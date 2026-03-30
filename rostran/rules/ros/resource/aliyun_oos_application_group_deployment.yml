@@ -15,3 +15,7 @@ Properties:
 Attributes:
   ExecutionId:
     Ignore: true
+  Name:
+    Ignore: true
+  ApplicationName:
+    Ignore: true

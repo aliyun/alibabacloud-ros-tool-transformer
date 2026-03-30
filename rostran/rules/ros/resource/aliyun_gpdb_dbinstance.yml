@@ -58,7 +58,7 @@ Properties:
   DeployMode:
     Ignore: true
   ServerlessMode:
-    Ignore: true
+    To: serverless_mode
   ServerlessResource:
     Ignore: true
   PeriodUnit:
@@ -68,14 +68,26 @@ Properties:
   AINodeSpecInfos:
     Ignore: true
   ProdType:
-    Ignore: true
+    To: prod_type
   MasterCU:
-    Ignore: true
+    To: master_cu
   SecurityIPList:
-    Ignore: true
+    To: security_ip_list
   IdleTime:
     Ignore: true
   SegDiskPerformanceLevel:
+    To: seg_disk_performance_level
+  ResourceGroupId:
+    To: resource_group_id
+  EnableSSL:
+    To: ssl_enabled
+  CacheStorageSize:
+    Ignore: true
+  BackupId:
+    Ignore: true
+  MasterAISpec:
+    Ignore: true
+  SrcDbInstanceName:
     Ignore: true
 Attributes:
   DBInstanceId:

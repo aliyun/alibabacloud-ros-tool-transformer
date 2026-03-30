@@ -29,6 +29,6 @@ Attributes:
   ZoneTag:
     Ignore: true
   ZoneType:
-    Ignore: true
+    To: is_ptr
   Arn:
     Ignore: true

@@ -15,11 +15,11 @@ Properties:
   RenewalStatus:
     To: renewal_status
   InstanceStorageName:
-    Ignore: true
+    To: custom_oss_bucket
   ResourceGroupId:
-    Ignore: true
+    To: resource_group_id
   ImageScanner:
-    Ignore: true
+    To: image_scanner
 Attributes:
   InstanceId:
     To: id
@@ -33,3 +33,5 @@ Attributes:
     Ignore: true
   ModifiedTime:
     Ignore: true
+  CreateTime$$0:
+    To: created_time
