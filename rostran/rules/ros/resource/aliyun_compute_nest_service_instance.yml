@@ -18,11 +18,23 @@ Properties:
   PredefinedParameterName:
     Ignore: true
   SpecificationCode:
-    Ignore: true
+    To: specification_name
   Commodity:
-    Ignore: true
+    To: commodity
+    Type: Map
+    Schema:
+      PayPeriod:
+        To: pay_period
+      PayPeriodUnit:
+        To: pay_period_unit
+      CouponId:
+        Ignore: true
+      AutoRenew:
+        Ignore: true
+      AutoPay:
+        Ignore: true
   Service:
-    Ignore: true
+    To: service_id
   ContactGroup:
     Ignore: true
   OperationName:
@@ -32,6 +44,14 @@ Properties:
   MarketInstanceId:
     Ignore: true
   Parameters:
+    To: parameters
+  ServiceInstanceName:
+    To: service_instance_name
+  Service$$0:
+    To: service_version
+  ResourceAutoPay:
+    Ignore: true
+  DryRun:
     Ignore: true
 Attributes:
   ServiceInstanceId:
@@ -61,7 +81,7 @@ Attributes:
   Service:
     Ignore: true
   StatusDetail:
-    Ignore: true
+    To: status
   Progress:
     Ignore: true
   Source:
@@ -81,4 +101,10 @@ Attributes:
   ServiceType:
     Ignore: true
   SupplierUid:
+    Ignore: true
+  MarketInstanceId:
+    Ignore: true
+  Output:
+    Ignore: true
+  ServiceInstanceName:
     Ignore: true

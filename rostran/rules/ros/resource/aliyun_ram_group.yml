@@ -11,11 +11,13 @@ Properties:
   Policies:
     Ignore: true
   DeletionForce:
-    Ignore: true
+    To: force
   IgnoreExisting:
     Ignore: true
   PolicyAttachments:
     Ignore: true
+  GroupName$$0:
+    To: name
 Attributes:
   GroupName:
     To: id

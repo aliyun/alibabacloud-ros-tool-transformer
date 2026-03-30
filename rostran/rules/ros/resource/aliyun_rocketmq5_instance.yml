@@ -25,11 +25,49 @@ Properties:
   SubSeriesCode:
     To: sub_series_code
   ProductInfo:
-    Ignore: true
+    To: product_info
+    Type: Map
+    Schema:
+      AutoScaling:
+        To: auto_scaling
+      MessageRetentionTime:
+        To: message_retention_time
+      MsgProcessSpec:
+        To: msg_process_spec
+      SendReceiveRatio:
+        To: send_receive_ratio
+      CapacityType:
+        Ignore: true
+      ProvisionedCapacity:
+        Ignore: true
   InternetInfo:
-    Ignore: true
+    To: flow_out_bandwidth
   VpcInfo:
-    Ignore: true
+    To: network_info
+    Type: Map
+    Schema:
+      SecurityGroupId:
+        Ignore: true
+      VpcId:
+        Ignore: true
+      VSwitchId:
+        Ignore: true
+      VSwitchIds:
+        Ignore: true
+  InternetInfo$$0:
+    To: internet_spec
+  VpcInfo$$0:
+    To: vswitches
+    Type: Map
+    Schema:
+      VSwitchId:
+        To: vswitch_id
+      VpcId:
+        Ignore: true
+      SecurityGroupId:
+        Ignore: true
+      VSwitchIds:
+        Ignore: true
 Attributes:
   InstanceId:
     To: id

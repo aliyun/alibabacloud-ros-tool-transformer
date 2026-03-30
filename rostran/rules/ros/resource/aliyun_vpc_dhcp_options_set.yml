@@ -12,6 +12,12 @@ Properties:
     To: domain_name
   DomainNameServers:
     To: domain_name_servers
+  Ipv6LeaseTime:
+    To: ipv6_lease_time
+  LeaseTime:
+    To: lease_time
+  ResourceGroupId:
+    To: resource_group_id
 Attributes:
   DhcpOptionsSetId:
     To: id

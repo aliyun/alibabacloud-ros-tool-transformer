@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GPDB::SupabaseProject
+  To: alicloud_gpdb_supabase_project
+Properties:
+  AccountPassword:
+    To: account_password
+  DiskPerformanceLevel:
+    To: disk_performance_level
+  ProjectName:
+    To: project_name
+  ProjectSpec:
+    To: project_spec
+  SecurityIPList:
+    To: security_ip_list
+  StorageSize:
+    To: storage_size
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+  ZoneId:
+    To: zone_id
+  Period:
+    Ignore: true
+  PayType:
+    Ignore: true
+  UsedTime:
+    Ignore: true
+Attributes:
+  ProjectId:
+    To: id

@@ -28,4 +28,4 @@ Attributes:
   TagKey:
     To: tag_key
   DynamicTagRuleId:
-    Ignore: true
+    To: id

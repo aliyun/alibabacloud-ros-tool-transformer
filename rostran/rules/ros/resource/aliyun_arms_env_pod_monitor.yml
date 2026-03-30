@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ARMS::EnvPodMonitor
+  To: alicloud_arms_env_pod_monitor
+Properties:
+  AliyunLang:
+    To: aliyun_lang
+  ConfigYaml:
+    To: config_yaml
+  EnvironmentId:
+    To: environment_id
+Attributes:
+  EnvPodMonitorName:
+    To: env_pod_monitor_name
+  Namespace:
+    To: namespace
+  EnvironmentId:
+    Ignore: true
+  ConfigYaml:
+    Ignore: true

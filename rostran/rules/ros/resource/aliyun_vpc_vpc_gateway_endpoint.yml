@@ -20,4 +20,4 @@ Properties:
     To: vpc_id
 Attributes:
   EndpointId:
-    Ignore: true
+    To: id

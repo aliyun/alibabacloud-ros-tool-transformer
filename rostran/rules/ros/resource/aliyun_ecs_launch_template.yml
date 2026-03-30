@@ -120,7 +120,7 @@ Properties:
   ZoneId:
     To: zone_id
   SystemDiskDiskName:
-    Ignore: true
+    To: system_disk_name
   SystemDiskDeleteWithInstance:
     Ignore: true
   Ipv6AddressCount:
@@ -133,6 +133,6 @@ Attributes:
   LaunchTemplateName:
     To: launch_template_name
   LatestVersionNumber:
-    Ignore: true
+    To: latest_version_number
   DefaultVersionNumber:
     Ignore: true

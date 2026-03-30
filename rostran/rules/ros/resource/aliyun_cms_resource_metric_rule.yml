@@ -67,7 +67,7 @@ Properties:
   EmailSubject:
     Ignore: true
   Webhook:
-    Ignore: true
+    To: targets
 Attributes:
   RuleId:
     To: id

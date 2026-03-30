@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::NasBackupPlan
+  To: alicloud_hbr_nas_backup_plan
+Properties:
+  BackupType:
+    To: backup_type
+  CrossAccountRoleName:
+    To: cross_account_role_name
+  CrossAccountType:
+    To: cross_account_type
+  CrossAccountUserId:
+    To: cross_account_user_id
+  Disabled:
+    To: disabled
+  FileSystemId:
+    To: file_system_id
+  PlanName:
+    To: nas_backup_plan_name
+  Options:
+    To: options
+  Paths:
+    To: path
+  Retention:
+    To: retention
+  Schedule:
+    To: schedule
+  VaultId:
+    To: vault_id
+Attributes:
+  PlanId:
+    To: id

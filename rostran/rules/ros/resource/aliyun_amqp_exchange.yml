@@ -17,9 +17,9 @@ Properties:
   Internal:
     To: internal
   XDelayedType:
-    Ignore: true
+    To: x_delayed_type
   VirtualHost:
-    Ignore: true
+    To: virtual_host_name
 Attributes:
   ExchangeName:
     To: exchange_name

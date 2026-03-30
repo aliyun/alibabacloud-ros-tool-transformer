@@ -7,23 +7,25 @@ Properties:
   Period:
     To: period
   Tags:
-    Ignore: true
+    To: tags
   PeriodUnit:
     Ignore: true
   ProtectionMode:
     Ignore: true
   NetworkProtocol:
-    Ignore: true
+    To: ip_type
   Edition:
-    Ignore: true
+    To: type
   IpAddresses:
-    Ignore: true
+    To: ip_count
   EnableLog:
     Ignore: true
   ChargeType:
     Ignore: true
   CleanBandwidth:
-    Ignore: true
+    To: bandwidth
+  CleanBandwidth$$0:
+    To: normal_bandwidth
 Attributes:
   InstanceId:
     To: id

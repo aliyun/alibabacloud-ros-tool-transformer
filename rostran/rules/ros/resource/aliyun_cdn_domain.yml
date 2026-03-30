@@ -18,7 +18,7 @@ Properties:
     To: tags
     Handler: handle_tags
   Sources:
-    Ignore: true
+    To: sources
   TopLevelDomain:
     Ignore: true
   OriginServers:

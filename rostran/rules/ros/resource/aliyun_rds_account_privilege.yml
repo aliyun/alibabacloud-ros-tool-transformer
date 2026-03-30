@@ -11,5 +11,5 @@ Properties:
   AccountPrivilege:
     To: privilege
   DBName:
-    Ignore: true
+    To: db_names
 Attributes: {}

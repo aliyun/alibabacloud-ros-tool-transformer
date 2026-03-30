@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::DNS::CustomLine
+  To: alicloud_alidns_custom_line
+Properties:
+  LineName:
+    To: custom_line_name
+  DomainName:
+    To: domain_name
+  IpSegment:
+    To: ip_segment_list
+    Type: List
+    Schema:
+      EndIp:
+        To: end_ip
+      StartIp:
+        To: start_ip
+Attributes:
+  LineId:
+    To: id

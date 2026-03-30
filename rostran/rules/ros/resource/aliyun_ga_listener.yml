@@ -33,7 +33,19 @@ Properties:
   SecurityPolicyId:
     To: security_policy_id
   XForwardedForConfig:
-    Ignore: true
+    To: forwarded_for_config
+    Type: Map
+    Schema:
+      XForwardedForProtoEnabled:
+        Ignore: true
+      XForwardedForPortEnabled:
+        Ignore: true
+      XRealIpEnabled:
+        Ignore: true
+      XForwardedForGaApEnabled:
+        Ignore: true
+      XForwardedForGaIdEnabled:
+        Ignore: true
 Attributes:
   ListenerId:
     To: id

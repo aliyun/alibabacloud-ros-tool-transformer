@@ -11,9 +11,21 @@ Properties:
   Protocol:
     To: protocol
   RouteConfig:
-    Ignore: true
+    To: route_config
+    Type: Map
+    Schema:
+      Routes:
+        Ignore: true
   CertConfig:
-    Ignore: true
+    To: cert_config
+    Type: Map
+    Schema:
+      CertName:
+        To: cert_name
+      Certificate:
+        To: certificate
+      PrivateKey:
+        To: private_key
 Attributes:
   DomainName:
     To: id

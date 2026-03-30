@@ -1,0 +1,11 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ACTIONTRAIL::HistoryDeliveryJob
+  To: alicloud_actiontrail_history_delivery_job
+Properties:
+  TrailName:
+    Ignore: true
+Attributes:
+  JobId:
+    Ignore: true

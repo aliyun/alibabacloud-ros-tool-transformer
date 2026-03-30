@@ -17,7 +17,7 @@ Properties:
   EndpointType:
     To: endpoint_type
   Name:
-    Ignore: true
+    To: basic_endpoint_group_name
 Attributes:
   EndpointGroupId:
     To: id

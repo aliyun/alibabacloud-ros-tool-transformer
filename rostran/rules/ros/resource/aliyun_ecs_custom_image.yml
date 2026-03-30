@@ -42,6 +42,12 @@ Properties:
     Ignore: true
   SourceRegionId:
     Ignore: true
+  Features:
+    To: features
+    Type: Map
+    Schema:
+      ImdsSupport:
+        Ignore: true
 Attributes:
   ImageId:
     To: id

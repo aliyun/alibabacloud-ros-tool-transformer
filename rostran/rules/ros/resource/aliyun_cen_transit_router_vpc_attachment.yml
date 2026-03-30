@@ -31,9 +31,13 @@ Properties:
       VSwitchId:
         To: vswitch_id
   DeletionForce:
-    Ignore: true
+    To: force_delete
   AutoCreateVpcRoute:
     Ignore: true
+  AutoPublishRouteEnabled:
+    To: auto_publish_route_enabled
+  TransitRouterVPCAttachmentOptions:
+    To: transit_router_vpc_attachment_options
 Attributes:
   CenId:
     To: cen_id

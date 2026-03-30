@@ -51,11 +51,11 @@ Properties:
   ExcludeResourceIdsScope:
     Ignore: true
   CompliancePackName:
-    Ignore: true
+    To: aggregate_compliance_pack_name
   RegionIdsScope:
     Ignore: true
   ExcludeRegionIdsScope:
     Ignore: true
 Attributes:
   CompliancePackId:
-    Ignore: true
+    To: aggregator_compliance_pack_id

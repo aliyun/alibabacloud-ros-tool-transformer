@@ -48,19 +48,29 @@ Properties:
   WebsiteConfigurationV2:
     Ignore: true
   LifecycleConfiguration:
-    Ignore: true
+    To: lifecycle_rule
+    Type: Map
+    Schema:
+      Rule:
+        Ignore: true
   EnableOssHdfsService:
     Ignore: true
   CORSConfiguration:
     Ignore: true
   VersioningConfiguration:
+    To: versioning
+    Type: Map
+    Schema:
+      Status:
+        To: status
+  BlockPublicAccess:
     Ignore: true
 Attributes:
   Name:
     To: id
   InternalDomainName:
-    Ignore: true
+    To: intranet_endpoint
   Arn:
     Ignore: true
   DomainName:
-    Ignore: true
+    To: extranet_endpoint

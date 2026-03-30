@@ -7,9 +7,11 @@ Properties:
   Describe:
     To: describe
   Channels:
-    Ignore: true
+    To: channels_aliim
   ContactName:
-    Ignore: true
+    To: alarm_contact_name
+  Channels$$0:
+    To: channels_sms
 Attributes:
   ContactName:
     To: id

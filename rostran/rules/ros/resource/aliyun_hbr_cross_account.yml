@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::HBR::CrossAccount
+  To: alicloud_hbr_cross_account
+Properties:
+  Alias:
+    To: alias
+  CrossAccountRoleName:
+    To: cross_account_role_name
+  CrossAccountUserId:
+    To: cross_account_user_id
+  CrossAccountType:
+    Ignore: true
+Attributes: {}

@@ -25,11 +25,11 @@ Properties:
   Connection:
     Ignore: true
   InstanceChargeType:
-    Ignore: true
+    To: payment_type
   PeriodUnit:
-    Ignore: true
+    To: renewal_period_unit
   Log:
-    Ignore: true
+    To: log
 Attributes:
   InstanceId:
     To: id

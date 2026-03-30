@@ -1,0 +1,91 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EHPC::ClusterV2
+  To: alicloud_ehpc_cluster_v2
+Properties:
+  Addons:
+    To: addons
+    Type: List
+    Schema:
+      Name:
+        To: name
+      ResourcesSpec:
+        To: resources_spec
+      ServicesSpec:
+        To: services_spec
+      Version:
+        To: version
+  ClientVersion:
+    To: client_version
+  ClusterCategory:
+    To: cluster_category
+  ClusterCredentials:
+    To: cluster_credentials
+    Type: Map
+    Schema:
+      KeyPairName:
+        To: key_pair_name
+      Password:
+        To: password
+  ClusterMode:
+    To: cluster_mode
+  ClusterName:
+    To: cluster_name
+  VpcId:
+    To: cluster_vpc_id
+  VSwitchId:
+    To: cluster_vswitch_id
+  DeletionProtection:
+    To: deletion_protection
+  Manager:
+    To: manager
+    Type: Map
+    Schema:
+      DirectoryService:
+        To: directory_service
+      DNS:
+        To: dns
+      ManagerNode:
+        To: manager_node
+      Scheduler:
+        To: scheduler
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityGroupId:
+    To: security_group_id
+  SharedStorages:
+    To: shared_storages
+    Type: List
+    Schema:
+      FileSystemId:
+        To: file_system_id
+      MountDirectory:
+        To: mount_directory
+      MountOptions:
+        To: mount_options
+      MountTargetDomain:
+        To: mount_target_domain
+      NASDirectory:
+        To: nas_directory
+      ProtocolType:
+        To: protocol_type
+  Tags:
+    Ignore: true
+  MaxCount:
+    Ignore: true
+  ClusterDescription:
+    Ignore: true
+  ClusterCustomConfiguration:
+    Ignore: true
+  AdditionalPackages:
+    Ignore: true
+  IsEnterpriseSecurityGroup:
+    Ignore: true
+  Queues:
+    Ignore: true
+  MaxCoreCount:
+    Ignore: true
+Attributes:
+  ClusterId:
+    To: id

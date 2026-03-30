@@ -15,7 +15,7 @@ Properties:
   Resources:
     To: resources
   AccessControlRules:
-    Ignore: true
+    To: access_control_rules
 Attributes:
   AccessControlRules:
     To: access_control_rules

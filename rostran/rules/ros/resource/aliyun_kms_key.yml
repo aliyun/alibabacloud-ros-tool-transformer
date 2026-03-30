@@ -25,11 +25,13 @@ Properties:
   RotationInterval:
     To: rotation_interval
   DeletionProtection:
-    Ignore: true
+    To: deletion_protection
   Policy:
-    Ignore: true
+    To: policy
   DKMSInstanceId:
-    Ignore: true
+    To: dkms_instance_id
+  Tags:
+    To: tags
 Attributes:
   KeyId:
     To: id

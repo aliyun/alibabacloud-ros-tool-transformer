@@ -15,7 +15,7 @@ Properties:
   DBClusterId:
     To: db_cluster_id
   RamUser:
-    Ignore: true
+    To: ram_user_list
   Engine:
     Ignore: true
 Attributes:

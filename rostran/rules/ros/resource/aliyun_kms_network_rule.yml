@@ -10,6 +10,8 @@ Properties:
     To: network_rule_name
   SourcePrivateIp:
     To: source_private_ip
+  Type:
+    Ignore: true
 Attributes:
   Description:
     To: description

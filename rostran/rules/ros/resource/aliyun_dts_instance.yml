@@ -40,9 +40,17 @@ Properties:
   UsedTime:
     To: used_time
   PayType:
+    To: payment_type
+  InsightModule:
+    Ignore: true
+  MaxDu:
+    Ignore: true
+  MinDu:
     Ignore: true
 Attributes:
   InstanceId:
     To: id
   JobId:
     Ignore: true
+  InstanceId$$0:
+    To: dts_instance_id

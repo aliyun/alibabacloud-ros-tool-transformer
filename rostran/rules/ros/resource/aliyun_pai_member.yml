@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::PAI::Member
+  To: alicloud_pai_workspace_member
+Properties:
+  Roles:
+    To: roles
+  UserId:
+    To: user_id
+  WorkspaceId:
+    To: workspace_id
+Attributes:
+  CreateTime:
+    To: create_time
+  MemberId:
+    To: member_id
+  MemberName:
+    Ignore: true
+  DisplayName:
+    Ignore: true
+  Roles:
+    Ignore: true
+  UserId:
+    Ignore: true

@@ -12,7 +12,7 @@ Properties:
     To: weight
     Handler: select_first
   BackendServers:
-    Ignore: true
+    To: backend_servers
 Attributes:
   LoadBalancerId:
     To: id

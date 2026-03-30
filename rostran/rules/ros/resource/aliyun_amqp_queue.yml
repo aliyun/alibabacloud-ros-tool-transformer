@@ -23,9 +23,9 @@ Properties:
   QueueName:
     To: queue_name
   MessageTTL:
-    Ignore: true
+    To: message_ttl
   VirtualHost:
-    Ignore: true
+    To: virtual_host_name
 Attributes:
   QueueName:
     To: queue_name

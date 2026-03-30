@@ -1,6 +1,7 @@
+import json
 import os
 import shutil
-from typing import Union
+from typing import Dict, List, Optional, Union
 
 import yaml
 import boto3
@@ -18,6 +19,10 @@ from tools.settings import (
 )
 from tools.resource import RosResource, TerraformResource, CloudFormationResource
 from tools.utils import snake_to_camel, camel_to_snake
+
+MULTIPLE_MAPPINGS_PATH = os.path.join(
+    os.path.dirname(ROS_RESOURCE_RULES_DIR), "multiple_mappings.json"
+)
 
 
 class BaseRuleGenerator:
@@ -429,7 +434,61 @@ class ROS2TerraformRuleGenerator(BaseRuleGenerator):
 
         return merged
 
-    def generate(self):
+    @staticmethod
+    def load_multiple_mappings() -> Dict[str, dict]:
+        if os.path.exists(MULTIPLE_MAPPINGS_PATH):
+            with open(MULTIPLE_MAPPINGS_PATH, "r") as f:
+                return json.load(f)
+        return {}
+
+    @staticmethod
+    def save_multiple_mappings(mappings: Dict[str, dict]):
+        with open(MULTIPLE_MAPPINGS_PATH, "w") as f:
+            json.dump(mappings, f, indent=2, ensure_ascii=False)
+
+    def generate(
+        self,
+        mismatch_records: Optional[Dict[str, dict]] = None,
+        multiple_mappings: Optional[Dict[str, dict]] = None,
+    ) -> bool:
+        """Write ROS→Terraform rule file. Returns True if the file was written.
+
+        If the target file already exists and ``ResourceType.To`` differs from
+        the Terraform type for this run, the file is left unchanged unless
+        ``multiple_mappings`` provides a ``CorrectTerraformResourceType`` for
+        the ROS type; when ``mismatch_records`` is provided, an entry is stored
+        for later reporting and persisted to ``multiple_mappings.json``.
+        """
+        ros_type = self.from_resource.resource_type
+        mapping_entry = (multiple_mappings or {}).get(ros_type)
+        correct_tf_type = (mapping_entry or {}).get("CorrectTerraformResourceType")
+
+        if correct_tf_type and self.to_resource.resource_type != correct_tf_type:
+            return False
+
+        path = self._get_rule_path()
+        if os.path.exists(path):
+            with open(path, "r") as f:
+                try:
+                    existing_head = yaml.safe_load(f)
+                except yaml.YAMLError:
+                    existing_head = None
+            if isinstance(existing_head, dict):
+                existing_to = (existing_head.get("ResourceType") or {}).get("To")
+                if existing_to and existing_to != self.to_resource.resource_type:
+                    tf_types = sorted({existing_to, self.to_resource.resource_type})
+                    if correct_tf_type:
+                        self.to_resource = TerraformResource(correct_tf_type)
+                    else:
+                        record = {
+                            "TerraformResourceTypes": tf_types,
+                            "TerraformResourceTypeInRuleFile": existing_to,
+                            "CorrectTerraformResourceType": "",
+                        }
+                        if mismatch_records is not None:
+                            mismatch_records[ros_type] = record
+                        return False
+
         rule = {
             "Version": "2020-06-01",
             "Type": "Resource",
@@ -441,10 +500,9 @@ class ROS2TerraformRuleGenerator(BaseRuleGenerator):
 
         name = self.to_resource.resource_type.replace("alicloud_", "")
         tf_rule_path = os.path.join(TF_ALI_RULES_DIR, f"{name}.yml")
-        path = self._get_rule_path()
 
         if not os.path.exists(tf_rule_path):
-            return
+            return False
 
         with open(tf_rule_path, "r") as f:
             tf_rule = yaml.safe_load(f)
@@ -475,6 +533,13 @@ class ROS2TerraformRuleGenerator(BaseRuleGenerator):
         with open(path, "w") as f:
             content = yaml.safe_dump(rule, sort_keys=False)
             f.write(content)
+
+        if multiple_mappings is not None and ros_type in multiple_mappings:
+            multiple_mappings[ros_type]["TerraformResourceTypeInRuleFile"] = (
+                self.to_resource.resource_type
+            )
+
+        return True
 
     def _get_rule_path(self):
         name = camel_to_snake(self.from_resource.resource_type.replace("::", "_"))

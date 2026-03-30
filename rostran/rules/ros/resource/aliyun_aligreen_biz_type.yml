@@ -18,7 +18,7 @@ Attributes:
   CiteTemplate:
     Ignore: true
   BizTypeName:
-    Ignore: true
+    To: id
   IndustryInfo:
     Ignore: true
   Description:

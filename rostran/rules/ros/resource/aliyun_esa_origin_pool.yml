@@ -46,4 +46,4 @@ Attributes:
   OriginPoolName:
     Ignore: true
   SiteId:
-    Ignore: true
+    To: id

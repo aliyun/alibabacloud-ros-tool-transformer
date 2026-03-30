@@ -9,11 +9,11 @@ Properties:
   PasswordResetRequired:
     To: password_reset_required
   UserPrincipalName:
-    Ignore: true
+    To: user_name
   Status:
     Ignore: true
   MFABindRequired:
-    Ignore: true
+    To: mfa_bind_required
   GenerateRandomPassword:
     Ignore: true
 Attributes:

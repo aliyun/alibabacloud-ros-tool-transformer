@@ -9,7 +9,7 @@ Properties:
   InstanceId:
     To: instance_id
   DeleteAfterImageUpload:
-    Ignore: true
+    To: delete_after_image_upload
 Attributes:
   ImageId:
     To: id

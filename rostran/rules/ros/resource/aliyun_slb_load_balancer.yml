@@ -32,9 +32,9 @@ Properties:
   VSwitchId:
     To: vswitch_id
   DeletionProtection:
-    Ignore: true
+    To: delete_protection
   AddressIPVersion:
-    Ignore: true
+    To: address_ip_version
   VpcId:
     Ignore: true
 Attributes:
@@ -57,7 +57,7 @@ Attributes:
   VSwitchId:
     To: vswitch_id
   IpAddress:
-    Ignore: true
+    To: address
   AddressIPVersion:
     Ignore: true
   OrderId:

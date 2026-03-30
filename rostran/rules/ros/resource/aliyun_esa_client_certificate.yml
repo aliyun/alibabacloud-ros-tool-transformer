@@ -44,4 +44,4 @@ Attributes:
   SignatureAlgorithm:
     Ignore: true
   SiteId:
-    Ignore: true
+    To: id

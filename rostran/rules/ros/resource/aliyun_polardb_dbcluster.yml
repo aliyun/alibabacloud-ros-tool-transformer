@@ -80,13 +80,13 @@ Properties:
   SSLEnabled:
     Ignore: true
   LooseXEngine:
-    Ignore: true
+    To: loose_xengine
   DeletionProtection:
-    Ignore: true
+    To: deletion_lock
   DBMinorVersion:
-    Ignore: true
+    To: db_minor_version
   LooseXEngineUseMemoryPct:
-    Ignore: true
+    To: loose_xengine_use_memory_pct
   Architecture:
     Ignore: true
   StorageUpperBound:
@@ -96,27 +96,35 @@ Properties:
   ColdStorageOption:
     Ignore: true
   GDNId:
-    Ignore: true
+    To: gdn_id
   TDEStatus:
-    Ignore: true
+    To: tde_status
   DBClusterParameters:
-    Ignore: true
+    To: parameters
+    Type: Map
+    Schema:
+      Parameters:
+        Ignore: true
+      EffectiveTime:
+        Ignore: true
   StorageAutoScale:
     Ignore: true
   StandbyAZ:
-    Ignore: true
+    To: standby_az
   PeriodUnit:
     Ignore: true
   AllowShutDown:
-    Ignore: true
+    To: allow_shut_down
   SecurityIPList:
-    Ignore: true
+    To: db_cluster_ip_array
   StrictConsistency:
-    Ignore: true
+    To: strict_consistency
   DBNodeNum:
-    Ignore: true
+    To: db_node_num
   RestartMasterNode:
     Ignore: true
+  SecurityIPList$$0:
+    To: security_ips
 Attributes:
   PrimaryEndpointIds:
     Ignore: true
@@ -145,4 +153,4 @@ Attributes:
   DBNodeIds:
     Ignore: true
   PrimaryConnectionString:
-    Ignore: true
+    To: connection_string

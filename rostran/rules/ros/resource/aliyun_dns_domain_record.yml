@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::DNS::DomainRecord
-  To: alicloud_dns_record
+  To: alicloud_alidns_record
 Properties:
   RR:
     To: host_record
@@ -15,9 +15,9 @@ Properties:
   Value:
     To: value
   Line:
-    Ignore: true
+    To: routing
   TTL:
-    Ignore: true
+    To: ttl
 Attributes:
   RecordId:
     To: id

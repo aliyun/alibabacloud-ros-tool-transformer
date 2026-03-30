@@ -11,7 +11,7 @@ Properties:
   NamespaceId:
     To: namespace_id
   Data:
-    Ignore: true
+    To: data
 Attributes:
   ConfigMapId:
     To: id

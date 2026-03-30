@@ -15,7 +15,7 @@ Properties:
   InstanceId:
     To: instance_id
   AccountDescription:
-    Ignore: true
+    To: description
 Attributes:
   AccountName:
     To: account_name

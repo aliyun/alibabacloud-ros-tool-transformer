@@ -12,6 +12,8 @@ Properties:
     Ignore: true
   SecurityGroupEgress:
     Ignore: true
+  Permissions:
+    Ignore: true
 Attributes:
   SecurityGroupId:
     To: id

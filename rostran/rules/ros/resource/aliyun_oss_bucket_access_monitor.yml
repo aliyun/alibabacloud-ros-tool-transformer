@@ -1,0 +1,9 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::OSS::BucketAccessMonitor
+  To: alicloud_oss_bucket_access_monitor
+Properties:
+  Bucket:
+    To: bucket
+Attributes: {}

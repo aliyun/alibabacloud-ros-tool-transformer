@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::MONGODB::ShardingNetworkPublicAddress
+  To: alicloud_mongodb_sharding_network_public_address
+Properties:
+  DBInstanceId:
+    To: db_instance_id
+  NodeId:
+    To: node_id
+Attributes:
+  NetworkAddresses:
+    To: network_address

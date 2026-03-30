@@ -61,7 +61,7 @@ Properties:
   LocalLogRetentionHours:
     Ignore: true
   SSLSetting:
-    Ignore: true
+    To: ssl_action
   ArchiveBackupKeepPolicy:
     Ignore: true
   MasterUserPassword:
@@ -71,7 +71,7 @@ Properties:
   TargetDedicatedHostIdForLog:
     Ignore: true
   DBTimeZone:
-    Ignore: true
+    To: db_time_zone
   LogBackupFrequency:
     Ignore: true
   DBInstanceNetType:
@@ -79,13 +79,13 @@ Properties:
   PreferredBackupTime:
     Ignore: true
   SQLCollectorStatus:
-    Ignore: true
+    To: sql_collector_status
   InstanceNetworkType:
     Ignore: true
   LogBackupRetentionPeriod:
     Ignore: true
   RoleARN:
-    Ignore: true
+    To: role_arn
   EnableBackupLog:
     Ignore: true
   MasterUserType:
@@ -105,21 +105,31 @@ Properties:
   AllocatePublicConnection:
     Ignore: true
   ServerlessConfig:
-    Ignore: true
+    To: serverless_config
+    Type: Map
+    Schema:
+      AutoPause:
+        To: auto_pause
+      MaxCapacity:
+        To: max_capacity
+      MinCapacity:
+        To: min_capacity
+      SwitchForce:
+        To: switch_force
   DBIsIgnoreCase:
-    Ignore: true
+    To: db_is_ignore_case
   DBMappings:
     Ignore: true
   SlaveZoneIds:
-    Ignore: true
+    To: zone_id_slave_a
   HighSpaceUsageProtection:
     Ignore: true
   DeletionProtection:
-    Ignore: true
+    To: deletion_protection
   IoAccelerationEnabled:
     Ignore: true
   BurstingEnabled:
-    Ignore: true
+    To: bursting_enabled
   DedicatedHostGroupId:
     Ignore: true
   CompressType:
@@ -127,7 +137,7 @@ Properties:
   PreferredBackupPeriod:
     Ignore: true
   DBParamGroupId:
-    Ignore: true
+    To: db_param_group_id
   LocalLogRetentionSpace:
     Ignore: true
   ArchiveBackupKeepCount:
@@ -135,14 +145,20 @@ Properties:
   MasterUsername:
     Ignore: true
   ColdDataEnabled:
-    Ignore: true
+    To: cold_data_enabled
   ArchiveBackupRetentionPeriod:
     Ignore: true
   ConnectionStringType:
-    Ignore: true
+    To: ssl_connection_string
   ConnectionMode:
-    Ignore: true
+    To: security_ip_mode
   MultiAZ:
+    Ignore: true
+  AutoUpgradeMinorVersion:
+    To: auto_upgrade_minor_version
+  SlaveZoneIds$$0:
+    To: zone_id_slave_b
+  SubscriptionDeletionForce:
     Ignore: true
 Attributes:
   DBInstanceId:
@@ -150,7 +166,7 @@ Attributes:
   InnerIPAddress:
     Ignore: true
   PublicConnectionString:
-    Ignore: true
+    To: connection_string
   InnerConnectionString:
     To: connection_string
   InnerPort:

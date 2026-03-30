@@ -23,6 +23,6 @@ Attributes:
   PrivateKeyBody:
     Ignore: true
   KeyPairFingerPrint:
-    Ignore: true
+    To: finger_print
   Arn:
     Ignore: true

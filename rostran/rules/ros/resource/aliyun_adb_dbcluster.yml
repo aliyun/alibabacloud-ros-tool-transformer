@@ -40,9 +40,15 @@ Properties:
   ExecutorCount:
     Ignore: true
   ElasticIOResource:
-    Ignore: true
+    To: elastic_io_resource
   PeriodType:
     Ignore: true
+  DiskEncryption:
+    To: disk_encryption
+  EnableSSL:
+    To: enable_ssl
+  KmsId:
+    To: kms_id
 Attributes:
   DBClusterId:
     To: id

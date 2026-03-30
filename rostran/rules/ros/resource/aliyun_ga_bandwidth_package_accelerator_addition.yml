@@ -15,3 +15,5 @@ Attributes:
     To: accelerator_id
   BandwidthPackageId$$0:
     To: bandwidth_package_id
+  AcceleratorId$$0:
+    To: accelerators

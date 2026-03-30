@@ -26,7 +26,7 @@ Properties:
     To: tags
     Handler: handle_tags
   ChargeType:
-    Ignore: true
+    To: payment_type
 Attributes:
   AcceleratorId:
     To: id

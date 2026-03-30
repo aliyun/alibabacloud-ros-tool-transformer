@@ -5,7 +5,13 @@ ResourceType:
   To: alicloud_rds_parameter_group
 Properties:
   Parameters:
-    Ignore: true
+    To: param_detail
+    Type: List
+    Schema:
+      Key:
+        Ignore: true
+      Value:
+        Ignore: true
   DBInstanceId:
     Ignore: true
   Forcerestart:

@@ -21,7 +21,7 @@ Properties:
   VpcId:
     To: vpc_id
   OpenPermission:
-    Ignore: true
+    To: open_permission
 Attributes:
   DedicatedHostGroupId:
     To: id

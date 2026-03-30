@@ -15,7 +15,7 @@ Properties:
   Tags:
     Ignore: true
   VpcIntranetEnable:
-    Ignore: true
+    To: vpc_intranet_enable
   PassthroughHeaders:
     Ignore: true
   InternetEnable:

@@ -7,7 +7,7 @@ Properties:
   BandwidthPackageId:
     To: bandwidth_package_id
   Eips:
-    Ignore: true
+    To: instance_id
 Attributes:
   AllocationIds:
     Ignore: true

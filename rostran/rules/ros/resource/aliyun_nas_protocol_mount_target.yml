@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::NAS::ProtocolMountTarget
-  To: alicloud_nas_access_point
+  To: alicloud_nas_protocol_mount_target
 Properties:
   AccessGroupName:
     To: access_group
@@ -17,15 +17,15 @@ Properties:
   VSwitchId:
     To: vswitch_id
   ProtocolServiceId:
-    Ignore: true
+    To: protocol_service_id
   FsetId:
-    Ignore: true
+    To: fset_id
 Attributes:
   ProtocolServiceId:
     To: access_point_id
   FileSystemId:
     Ignore: true
   ExportId:
-    Ignore: true
+    To: export_id
   ProtocolMountTargetDomain:
     Ignore: true

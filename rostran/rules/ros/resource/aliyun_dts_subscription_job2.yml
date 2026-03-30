@@ -31,7 +31,7 @@ Properties:
   MinDu:
     Ignore: true
   SubscriptionDataType:
-    Ignore: true
+    To: subscription_data_type_ddl
   SubscriptionInstance:
     Ignore: true
   SrcSecondaryVswId:
@@ -52,10 +52,12 @@ Properties:
     Ignore: true
   DedicatedClusterId:
     Ignore: true
+  SubscriptionDataType$$0:
+    To: subscription_data_type_dml
 Attributes:
   DtsJobName:
     Ignore: true
   DtsJobId:
-    Ignore: true
+    To: id
   DtsInstanceId:
     Ignore: true

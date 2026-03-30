@@ -20,7 +20,7 @@ Properties:
     To: tags
     Handler: handle_tags
   AddressIPVersion:
-    Ignore: true
+    To: address_ip_version
 Attributes:
   AclId:
     To: id

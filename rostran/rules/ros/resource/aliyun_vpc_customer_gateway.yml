@@ -12,6 +12,8 @@ Properties:
     To: ip_address
   Name:
     To: name
+  ResourceGroupId:
+    Ignore: true
 Attributes:
   CustomerGatewayId:
     To: id

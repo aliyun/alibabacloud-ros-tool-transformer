@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::WaitingRoomRule
+  To: alicloud_esa_waiting_room_rule
+Properties:
+  SiteId:
+    To: site_id
+  RuleName:
+    Ignore: true
+  Rule:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  WaitingRoomId:
+    Ignore: true
+Attributes:
+  Rule:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  WaitingRoomRuleId:
+    Ignore: true
+  RuleName:
+    Ignore: true

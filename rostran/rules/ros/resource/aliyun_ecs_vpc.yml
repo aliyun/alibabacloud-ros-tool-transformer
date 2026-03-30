@@ -24,7 +24,9 @@ Properties:
   VpcName:
     To: vpc_name
   UserCidr:
-    Ignore: true
+    To: user_cidrs
+  VpcName$$0:
+    To: vpc_name
 Attributes:
   VpcId:
     To: id
@@ -33,4 +35,4 @@ Attributes:
   VpcName:
     To: vpc_name
   VRouterId:
-    Ignore: true
+    To: router_id

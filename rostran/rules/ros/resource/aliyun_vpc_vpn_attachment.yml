@@ -19,18 +19,96 @@ Properties:
   RemoteSubnet:
     To: remote_subnet
   IpsecConfig:
-    Ignore: true
+    To: ipsec_config
+    Type: Map
+    Schema:
+      IpsecAuthAlg:
+        To: ipsec_auth_alg
+      IpsecEncAlg:
+        To: ipsec_enc_alg
+      IpsecLifetime:
+        To: ipsec_lifetime
+      IpsecPfs:
+        To: ipsec_pfs
   HealthCheckConfig:
-    Ignore: true
+    To: health_check_config
+    Type: Map
+    Schema:
+      Dip:
+        To: dip
+      Enable:
+        To: enable
+      Interval:
+        To: interval
+      Policy:
+        To: policy
+      Retry:
+        To: retry
+      Sip:
+        To: sip
   AutoConfigRoute:
     Ignore: true
   BgpConfig:
-    Ignore: true
+    To: bgp_config
+    Type: Map
+    Schema:
+      LocalAsn:
+        To: local_asn
+      LocalBgpIp:
+        To: local_bgp_ip
+      TunnelCidr:
+        To: tunnel_cidr
+      EnableBgp:
+        Ignore: true
   RemoteCaCert:
     Ignore: true
   Name:
-    Ignore: true
+    To: vpn_attachment_name
   IkeConfig:
+    To: ike_config
+    Type: Map
+    Schema:
+      IkeAuthAlg:
+        To: ike_auth_alg
+      IkeEncAlg:
+        To: ike_enc_alg
+      IkeLifetime:
+        To: ike_lifetime
+      IkeMode:
+        To: ike_mode
+      IkePfs:
+        To: ike_pfs
+      IkeVersion:
+        To: ike_version
+      LocalId:
+        To: local_id
+      Psk:
+        To: psk
+      RemoteId:
+        To: remote_id
+  EnableTunnelsBgp:
+    To: enable_tunnels_bgp
+  ResourceGroupId:
+    To: resource_group_id
+  TunnelOptionsSpecification:
+    To: tunnel_options_specification
+    Type: List
+    Schema:
+      CustomerGatewayId:
+        To: customer_gateway_id
+      EnableDpd:
+        To: enable_dpd
+      EnableNatTraversal:
+        To: enable_nat_traversal
+      TunnelBgpConfig:
+        To: tunnel_bgp_config
+      TunnelIkeConfig:
+        To: tunnel_ike_config
+      TunnelIndex:
+        To: tunnel_index
+      TunnelIpsecConfig:
+        To: tunnel_ipsec_config
+  TunnelBandwidth:
     Ignore: true
 Attributes:
   VpnAttachmentId:

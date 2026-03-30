@@ -22,7 +22,7 @@ Properties:
     To: resource_type
 Attributes:
   KeywordLibId:
-    Ignore: true
+    To: id
   Category:
     Ignore: true
   Enable:

@@ -13,7 +13,7 @@ Properties:
   Description:
     Ignore: true
   Charts:
-    Ignore: true
+    To: char_list
 Attributes:
   DashboardName:
     To: id

@@ -23,15 +23,21 @@ Properties:
   TemplateVersion:
     To: template_version
   ResourceGroupId:
-    Ignore: true
+    To: resource_group_id
   DynamicTemplateBody:
     Ignore: true
   AutoDeployment:
-    Ignore: true
+    To: auto_deployment
+    Type: Map
+    Schema:
+      Enabled:
+        To: enabled
+      RetainStacksOnAccountRemoval:
+        To: retain_stacks_on_account_removal
   TemplateId:
-    Ignore: true
+    To: template_id
   PermissionModel:
-    Ignore: true
+    To: permission_model
 Attributes:
   StackGroupId:
     To: stack_group_id

@@ -1,0 +1,85 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::WafRule
+  To: alicloud_esa_waf_rule
+Properties:
+  Config:
+    To: config
+    Type: Map
+    Schema:
+      Action:
+        To: action
+      Actions:
+        To: actions
+      AppPackage:
+        To: app_package
+      AppSdk:
+        To: app_sdk
+      Expression:
+        To: expression
+      ManagedList:
+        To: managed_list
+      ManagedRulesets:
+        To: managed_rulesets
+      Name:
+        To: name
+      Notes:
+        To: notes
+      RateLimit:
+        To: rate_limit
+      SecurityLevel:
+        To: security_level
+      Sigchl:
+        To: sigchl
+      Status:
+        To: status
+      Timer:
+        To: timer
+      Type:
+        To: type
+      Value:
+        To: value
+      Id:
+        Ignore: true
+      ManagedGroupId:
+        Ignore: true
+  Phase:
+    To: phase
+  RulesetId:
+    To: ruleset_id
+  Shared:
+    To: shared
+    Type: Map
+    Schema:
+      Action:
+        To: action
+      Actions:
+        To: actions
+      CrossSiteId:
+        To: cross_site_id
+      Expression:
+        To: expression
+      Match:
+        To: match
+      Mode:
+        To: mode
+      Name:
+        To: name
+      Target:
+        To: target
+  SiteId:
+    To: site_id
+  SiteVersion:
+    To: site_version
+Attributes:
+  Config:
+    To: config
+  WafRuleId:
+    To: waf_rule_id
+  UpdateTime:
+    Ignore: true
+  Phase:
+    Ignore: true
+  RulesetId:
+    Ignore: true

@@ -21,13 +21,13 @@ Properties:
   PricingCycle:
     Ignore: true
   CbnGeographicRegionIdA:
-    Ignore: true
+    To: cbn_geographic_region_ida
   CbnGeographicRegionIdB:
-    Ignore: true
+    To: cbn_geographic_region_idb
   ChargeType:
-    Ignore: true
+    To: payment_type
   AutoUseCoupon:
-    Ignore: true
+    To: auto_use_coupon
 Attributes:
   BandwidthPackageId:
     To: id

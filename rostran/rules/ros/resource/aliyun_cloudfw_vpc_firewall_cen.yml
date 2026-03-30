@@ -21,7 +21,7 @@ Properties:
   FirewallVpcZoneId:
     Ignore: true
   NetworkInstanceId:
-    Ignore: true
+    To: local_vpc
   FirewallVSwitchCidrBlock:
     Ignore: true
 Attributes:

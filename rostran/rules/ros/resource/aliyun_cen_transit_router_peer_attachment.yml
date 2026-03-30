@@ -22,6 +22,20 @@ Properties:
     To: transit_router_attachment_name
   TransitRouterId:
     To: transit_router_id
+  BandwidthType:
+    To: bandwidth_type
+  DefaultLinkType:
+    To: default_link_type
+  RouteTableAssociationEnabled:
+    To: route_table_association_enabled
+  RouteTablePropagationEnabled:
+    To: route_table_propagation_enabled
+  Tags:
+    To: tags
+  TransitRouterAttachmentName$$0:
+    To: transit_router_peer_attachment_name
+  DeletionForce:
+    Ignore: true
 Attributes:
   AutoPublishRouteEnabled:
     To: auto_publish_route_enabled

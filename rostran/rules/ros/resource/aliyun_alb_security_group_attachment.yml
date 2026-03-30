@@ -7,5 +7,5 @@ Properties:
   LoadBalancerId:
     To: load_balancer_id
   SecurityGroupIds:
-    Ignore: true
+    To: security_group_id
 Attributes: {}

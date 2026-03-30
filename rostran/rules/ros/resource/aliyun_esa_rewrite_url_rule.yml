@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::RewriteUrlRule
+  To: alicloud_esa_rewrite_url_rule
+Properties:
+  QueryString:
+    To: query_string
+  RewriteQueryStringType:
+    To: rewrite_query_string_type
+  RewriteUriType:
+    To: rewrite_uri_type
+  Rule:
+    To: rule
+  RuleEnable:
+    To: rule_enable
+  RuleName:
+    To: rule_name
+  SiteId:
+    To: site_id
+  SiteVersion:
+    To: site_version
+  Uri:
+    To: uri
+Attributes:
+  ConfigId:
+    To: config_id
+  Uri:
+    Ignore: true
+  RewriteQueryStringType:
+    Ignore: true
+  RewriteUriType:
+    Ignore: true
+  QueryString:
+    Ignore: true
+  ConfigType:
+    Ignore: true
+  Rule:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  RuleName:
+    Ignore: true

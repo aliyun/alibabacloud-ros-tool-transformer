@@ -14,6 +14,10 @@ Properties:
     To: netmode
   ResourceGroupId:
     To: resource_group_id
+  Isp:
+    To: isp
+  Zone:
+    To: zone
 Attributes:
   EipSegmentInstanceId:
     To: id

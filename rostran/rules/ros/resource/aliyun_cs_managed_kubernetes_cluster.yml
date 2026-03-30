@@ -31,7 +31,7 @@ Properties:
   EncryptionProviderKey:
     To: encryption_provider_key
   CloudMonitorFlags:
-    Ignore: true
+    To: install_cloud_monitor
   IsEnterpriseSecurityGroup:
     To: is_enterprise_security_group
   KeyPair:
@@ -65,48 +65,78 @@ Properties:
   KubernetesVersion:
     To: version
   VpcId:
-    Ignore: true
+    To: vpc_id
   VSwitchIds:
     To: vswitch_ids
   SocEnabled:
     Ignore: true
   Tags:
-    Ignore: true
+    To: tags
   KeepInstanceName:
     Ignore: true
   EndpointPublicAccess:
-    Ignore: true
+    To: slb_internet_enabled
   ControlPlaneLogProject:
-    Ignore: true
+    To: control_plane_log_project
   ContainerCidr:
-    Ignore: true
+    To: pod_cidr
   SnatEntry:
-    Ignore: true
+    To: new_nat_gateway
   Runtime:
-    Ignore: true
+    To: runtime
   TimeoutMins:
     Ignore: true
   ControlPlaneLogTtl:
-    Ignore: true
+    To: control_plane_log_ttl
   ZoneIds:
-    Ignore: true
+    To: zone_ids
   MaintenanceWindow:
-    Ignore: true
+    To: maintenance_window
+    Type: Map
+    Schema:
+      Duration:
+        To: duration
+      Enable:
+        To: enable
+      MaintenanceTime:
+        To: maintenance_time
+      WeeklyPeriod:
+        To: weekly_period
+      Recurrence:
+        Ignore: true
   ControlPlaneLogComponents:
-    Ignore: true
+    To: control_plane_log_components
   SecurityHardeningOs:
     Ignore: true
   Taint:
-    Ignore: true
+    To: taints
   NodePools:
     Ignore: true
   FormatDisk:
     Ignore: true
+  AutoMode:
+    To: auto_mode
+    Type: Map
+    Schema:
+      Enable:
+        Ignore: true
+  RrsaConfig:
+    To: enable_rrsa
+    Type: Map
+    Schema:
+      Enabled:
+        To: enabled
+  IpStack:
+    To: ip_stack
+  LoginPassword$$0:
+    To: password
+  TimeZone:
+    To: timezone
 Attributes:
   ClusterId:
     To: id
   Nodes:
-    Ignore: true
+    To: worker_nodes
   IngressSLBId:
     Ignore: true
   ScalingConfigurationId:
@@ -118,10 +148,10 @@ Attributes:
   TaskId:
     Ignore: true
   APIServerSLBId:
-    Ignore: true
+    To: slb_id
   DefaultUserKubeConfig:
     Ignore: true
   WorkerRamRoleName:
-    Ignore: true
+    To: worker_ram_role_name
   ScalingRuleId:
     Ignore: true

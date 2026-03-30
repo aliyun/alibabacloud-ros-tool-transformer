@@ -18,4 +18,4 @@ Attributes:
   FileSystemPath:
     To: file_system_path
   FsetId:
-    Ignore: true
+    To: fileset_id

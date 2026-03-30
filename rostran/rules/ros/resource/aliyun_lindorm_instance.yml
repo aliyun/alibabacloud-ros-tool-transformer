@@ -41,17 +41,17 @@ Properties:
   ZoneId:
     To: zone_id
   LindormNum:
-    Ignore: true
+    To: table_engine_node_count
   LindormSpec:
-    Ignore: true
+    To: table_engine_specification
   SecurityIpList:
-    Ignore: true
+    To: ip_white_list
   TsdbSpec:
-    Ignore: true
+    To: time_series_engine_specification
   DeletionProtection:
-    Ignore: true
+    To: deletion_proection
   TsdbNum:
-    Ignore: true
+    To: time_series_engine_node_count
 Attributes:
   InstanceId:
     To: id

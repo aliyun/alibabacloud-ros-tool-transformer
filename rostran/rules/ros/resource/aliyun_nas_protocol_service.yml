@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::NAS::ProtocolService
+  To: alicloud_nas_protocol_service
+Properties:
+  Description:
+    To: description
+  FileSystemId:
+    To: file_system_id
+  ProtocolSpec:
+    To: protocol_spec
+  Throughput:
+    To: protocol_throughput
+  ProtocolType:
+    To: protocol_type
+  VpcId:
+    To: vpc_id
+  VSwitchId:
+    To: vswitch_id
+Attributes:
+  ProtocolServiceId:
+    To: protocol_service_id
+  FileSystemId:
+    Ignore: true

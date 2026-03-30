@@ -7,19 +7,65 @@ Properties:
   ClusterId:
     To: cluster_id
   AutoScaling:
-    Ignore: true
+    To: compensate_with_on_demand
   Count:
-    Ignore: true
+    To: desired_size
   ScalingGroup:
-    Ignore: true
+    To: auto_renew
   KubernetesConfig:
-    Ignore: true
+    To: cpu_policy
   Management:
-    Ignore: true
+    To: management
+    Type: Map
+    Schema:
+      AutoRepair:
+        To: auto_repair
+      Enable:
+        To: enable
+      UpgradeConfig:
+        Ignore: true
   NodePoolInfo:
-    Ignore: true
+    To: auto_mode
+    Type: Map
+    Schema:
+      Name:
+        Ignore: true
+      ResourceGroupId:
+        Ignore: true
   TeeConfig:
-    Ignore: true
+    To: tee_config
+    Type: Map
+    Schema:
+      TeeEnable:
+        To: tee_enable
+  ScalingGroup$$0:
+    To: vswitch_ids
+  NodePoolInfo$$0:
+    To: vul_level
+  KubernetesConfig$$0:
+    To: taints
+    Type: Map
+    Schema:
+      NodeNameMode:
+        Ignore: true
+      Runtime:
+        Ignore: true
+      Unschedulable:
+        Ignore: true
+      RuntimeVersion:
+        Ignore: true
+      Taints:
+        Ignore: true
+      UserData:
+        Ignore: true
+      CmsEnabled:
+        Ignore: true
+      CpuPolicy:
+        Ignore: true
+      Labels:
+        Ignore: true
+  AutoScaling$$0:
+    To: spot_strategy
 Attributes:
   NodePoolId:
     To: id

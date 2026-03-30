@@ -44,8 +44,18 @@ Properties:
     To: tags
     Handler: handle_tags
   Enable:
-    Ignore: true
+    To: status
   ProxyProtocolV2Config:
+    To: proxy_protocol_config
+    Type: Map
+    Schema:
+      Ppv2PrivateLinkEpIdEnabled:
+        To: proxy_protocol_config_private_link_ep_id_enabled
+      Ppv2PrivateLinkEpsIdEnabled:
+        To: proxy_protocol_config_private_link_eps_id_enabled
+      Ppv2VpcIdEnabled:
+        To: proxy_protocol_config_vpc_id_enabled
+  ServerGroupTuples:
     Ignore: true
 Attributes:
   ListenerId:

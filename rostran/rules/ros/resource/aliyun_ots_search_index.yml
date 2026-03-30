@@ -11,11 +11,19 @@ Properties:
   TableName:
     To: table_name
   IndexSort:
-    Ignore: true
+    To: sorter
+    Type: Map
+    Schema:
+      Sorters:
+        Ignore: true
   FieldSchemas:
-    Ignore: true
+    To: analyzer
   IndexSetting:
-    Ignore: true
+    To: routing_fields
+  FieldSchemas$$0:
+    To: store
+  IndexSetting$$0:
+    To: time_to_live
 Attributes:
   IndexName:
-    Ignore: true
+    To: index_id

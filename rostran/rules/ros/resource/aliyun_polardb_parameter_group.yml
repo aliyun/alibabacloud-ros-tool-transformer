@@ -22,6 +22,8 @@ Properties:
         To: param_value
   ResourceGroupId:
     Ignore: true
+  ParameterGroupName$$0:
+    To: parameter_group_name
 Attributes:
   ParameterGroupId:
     To: id
@@ -40,6 +42,6 @@ Attributes:
   ParameterGroupType:
     Ignore: true
   CreateTime:
-    Ignore: true
+    To: create_time
   ParameterCounts:
     Ignore: true

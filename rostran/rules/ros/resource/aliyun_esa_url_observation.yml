@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::UrlObservation
+  To: alicloud_esa_url_observation
+Properties:
+  SdkType:
+    To: sdk_type
+  SiteId:
+    To: site_id
+  Url:
+    To: url
+Attributes:
+  ConfigId:
+    To: config_id
+  Url:
+    Ignore: true
+  SdkType:
+    Ignore: true

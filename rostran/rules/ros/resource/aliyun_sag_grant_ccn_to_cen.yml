@@ -7,9 +7,9 @@ Properties:
   CenUid:
     To: cen_uid
   CenInstanceId:
-    Ignore: true
+    To: cen_id
   CcnInstanceId:
-    Ignore: true
+    To: ccn_id
 Attributes:
   CcnInstanceId:
     To: ccn_id

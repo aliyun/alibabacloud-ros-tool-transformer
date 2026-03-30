@@ -11,7 +11,7 @@ Properties:
   ServiceName:
     To: service_name
   VersionId:
-    Ignore: true
+    To: service_version
   AdditionalWeight:
     Ignore: true
   AdditionalVersion:

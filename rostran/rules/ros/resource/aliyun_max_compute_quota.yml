@@ -13,7 +13,7 @@ Properties:
   PeriodUnit:
     Ignore: true
   CU:
-    Ignore: true
+    To: max_cu
   AutoRenew:
     Ignore: true
   AutoPay:

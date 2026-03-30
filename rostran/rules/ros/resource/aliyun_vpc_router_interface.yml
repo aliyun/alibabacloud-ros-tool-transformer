@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::VPC::RouterInterface
-  To: alicloud_router_interface
+  To: alicloud_express_connect_router_interface
 Properties:
   AccessPointId:
     To: access_point_id
@@ -39,9 +39,17 @@ Properties:
   Spec:
     To: specification
   PricingCycle:
-    Ignore: true
+    To: pricing_cycle
   AutoPay:
-    Ignore: true
+    To: auto_pay
+  ResourceGroupId:
+    To: resource_group_id
+  AutoRenew:
+    To: auto_renew
+  FastLinkMode:
+    To: fast_link_mode
 Attributes:
   RouterInterfaceId:
     To: id
+  RouterInterfaceId$$0:
+    To: router_interface_id

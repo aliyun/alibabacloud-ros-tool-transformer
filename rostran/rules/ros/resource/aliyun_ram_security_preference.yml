@@ -18,6 +18,8 @@ Properties:
     To: login_session_duration
   AllowUserToManagePublicKeys:
     Ignore: true
+  EnableSaveMFATicket$$0:
+    To: enforce_mfa_for_login
 Attributes:
   AllowUserToChangePassword:
     To: allow_user_to_change_password

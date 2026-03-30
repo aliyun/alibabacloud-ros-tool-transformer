@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::Ipv6EgressRule
+  To: alicloud_vpc_ipv6_egress_rule
+Properties:
+  Description:
+    To: description
+  InstanceId:
+    To: instance_id
+  InstanceType:
+    To: instance_type
+  Ipv6EgressRuleName:
+    To: ipv6_egress_rule_name
+  Ipv6GatewayId:
+    To: ipv6_gateway_id
+Attributes:
+  Ipv6EgressRuleId:
+    To: ipv6_egress_rule_id
+  Ipv6EgressRuleName:
+    Ignore: true
+  InstanceType:
+    Ignore: true
+  InstanceId:
+    Ignore: true
+  Description:
+    Ignore: true

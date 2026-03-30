@@ -27,7 +27,13 @@ Properties:
   ReservedThroughput:
     Ignore: true
   Columns:
-    Ignore: true
+    To: defined_column
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Type:
+        To: type
 Attributes:
   TableName:
     To: table_name

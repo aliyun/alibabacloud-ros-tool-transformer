@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::MessageContact
+  To: alicloud_resource_manager_message_contact
+Properties:
+  EmailAddress:
+    To: email_address
+  MessageContactName:
+    To: message_contact_name
+  MessageTypes:
+    To: message_types
+  PhoneNumber:
+    To: phone_number
+  Title:
+    To: title
+Attributes:
+  MessageContactId:
+    To: id
+  CreateTime:
+    To: create_time
+  MessageContactName:
+    Ignore: true
+  MessageTypes:
+    Ignore: true
+  Title:
+    Ignore: true
+  EmailAddress:
+    Ignore: true
+  PhoneNumber:
+    Ignore: true

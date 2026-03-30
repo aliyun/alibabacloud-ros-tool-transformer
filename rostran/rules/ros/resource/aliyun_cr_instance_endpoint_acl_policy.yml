@@ -16,6 +16,8 @@ Properties:
     To: module_name
   RegionId:
     Ignore: true
+  AutoEnableType:
+    Ignore: true
 Attributes:
   Entry:
     To: entry

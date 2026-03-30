@@ -9,9 +9,9 @@ Properties:
   Port:
     To: port
   ConnectionStringPrefix:
-    Ignore: true
+    To: connection_prefix
   DBInstanceId:
-    Ignore: true
+    To: instance_id
   GeneralGroupName:
     Ignore: true
 Attributes:

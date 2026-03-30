@@ -10,7 +10,7 @@ import typer
 
 from tools import exceptions
 from tools.formatter import RuleFormatter
-from tools.generator import TerraformRuleGenerator, CloudFormationRuleGenerator, ROS2TerraformRuleGenerator
+from tools.generator import TerraformRuleGenerator, CloudFormationRuleGenerator, ROS2TerraformRuleGenerator, MULTIPLE_MAPPINGS_PATH
 from tools.settings import TF_ALI_ROS_GENERATE_MAPPINGS, CF_ROS_GENERATE_MAPPINGS
 
 from tools.settings import TF_ALI_RULES_DIR, CF_RESOURCE_RULES_DIR
@@ -65,17 +65,18 @@ def generate(
         )
 
     if tf:
-        alicloud_local = os.getenv("TERRAFORM_PROVIDER_ALICLOUD")
-        if alicloud_local:
-            typer.echo(
-                f"Found env TERRAFORM_PROVIDER_ALICLOUD={alicloud_local}. "
-                f"The rule generator will use local alicloud provider as the source to parse."
-            )
-        else:
-            typer.echo(
-                f"Env TERRAFORM_PROVIDER_ALICLOUD not found. "
-                f"The rule generator will use the alicloud provider on github as the source to parse."
-            )
+        if not ros2tf:
+            alicloud_local = os.getenv("TERRAFORM_PROVIDER_ALICLOUD")
+            if alicloud_local:
+                typer.echo(
+                    f"Found env TERRAFORM_PROVIDER_ALICLOUD={alicloud_local}. "
+                    f"The rule generator will use local alicloud provider as the source to parse."
+                )
+            else:
+                typer.echo(
+                    f"Env TERRAFORM_PROVIDER_ALICLOUD not found. "
+                    f"The rule generator will use the alicloud provider on github as the source to parse."
+                )
 
         if tf == 'all' and ros == 'all':
             generate_mapping = TF_ALI_ROS_GENERATE_MAPPINGS
@@ -89,24 +90,47 @@ def generate(
                 )
             generate_mapping = {tf: r}
 
+        if ros2tf:
+            multiple_mappings = ROS2TerraformRuleGenerator.load_multiple_mappings()
+            ros_tf_mismatches: dict = {}
+        else:
+            multiple_mappings = None
+            ros_tf_mismatches = None
+
         for tf, ros in generate_mapping.items():
             tf_filename = None
             if isinstance(ros, (list, tuple)):
                 tf_filename, ros = ros
             msg = "Generating Terraform rule: {} -> {}".format
             if ros2tf:
-                typer.echo(msg(ros, tf))
                 generator = ROS2TerraformRuleGenerator.initialize(ros, tf)
+                wrote = generator.generate(
+                    mismatch_records=ros_tf_mismatches,
+                    multiple_mappings=multiple_mappings,
+                )
+                msg_ok = "Generate Terraform rule success: {} -> {}".format
+                if wrote:
+                    typer.echo(msg_ok(ros, tf))
             else:
                 typer.echo(msg(tf, ros))
                 generator = TerraformRuleGenerator.initialize(tf, ros, tf_filename)
+                generator.generate()
+                typer.echo("Generate Terraform rule success: {} -> {}".format(tf, ros))
 
-            generator.generate()
-            msg = "Generate Terraform rule success: {} -> {}".format
-            if ros2tf:
-                typer.echo(msg(ros, tf))
-            else:
-                typer.echo(msg(tf, ros))
+        if multiple_mappings:
+            if ros_tf_mismatches:
+                multiple_mappings.update(ros_tf_mismatches)
+            ROS2TerraformRuleGenerator.save_multiple_mappings(multiple_mappings)
+            if ros_tf_mismatches:
+                typer.secho(
+                    f"Found {len(ros_tf_mismatches)} ROS resource type(s) mapping to multiple "
+                    f"Terraform resource types. Records saved to:\n"
+                    f"  {MULTIPLE_MAPPINGS_PATH}\n"
+                    f"Please manually set the 'CorrectTerraformResourceType' field "
+                    f"in the file above, then re-run to apply.",
+                    fg=typer.colors.YELLOW,
+                )
+                raise typer.Exit(code=1)
     if cf:
         generate_mapping = CF_ROS_GENERATE_MAPPINGS if cf == "all" else {cf: ros}
         for cf, ros in generate_mapping.items():
@@ -130,6 +154,8 @@ def format():
 
 def main():
     logging.basicConfig(level=logging.INFO, format="%(message)s")
+    # Silence APScheduler INFO logs produced by alibabacloud-credentials.
+    logging.getLogger("apscheduler").setLevel(logging.WARNING)
     try:
         typer.main.get_command(app)(prog_name="rostool")
     except exceptions.RosToolWarning as e:

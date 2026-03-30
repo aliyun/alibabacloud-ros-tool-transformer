@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::FC::Function
-  To: alicloud_fc_function
+  To: alicloud_fcv2_function
 Properties:
   Description:
     To: description
@@ -31,37 +31,87 @@ Properties:
   Timeout:
     To: timeout
   Cpu:
-    Ignore: true
+    To: cpu
   CustomHealthCheckConfig:
-    Ignore: true
+    To: custom_health_check_config
+    Type: Map
+    Schema:
+      FailureThreshold:
+        To: failure_threshold
+      HttpGetUrl:
+        To: http_get_url
+      InitialDelaySeconds:
+        To: initial_delay_seconds
+      PeriodSeconds:
+        To: period_seconds
+      SuccessThreshold:
+        To: success_threshold
+      TimeoutSeconds:
+        To: timeout_seconds
   CAPort:
-    Ignore: true
+    To: ca_port
   AsyncConfiguration:
     Ignore: true
   DiskSize:
-    Ignore: true
+    To: disk_size
   InstanceLifecycleConfig:
-    Ignore: true
+    To: instance_lifecycle_config
+    Type: Map
+    Schema:
+      PreFreeze:
+        To: pre_freeze
+      PreStop:
+        To: pre_stop
   CustomContainerConfig:
-    Ignore: true
+    To: custom_container_config
+    Type: Map
+    Schema:
+      Args:
+        To: args
+      Command:
+        To: command
+      Image:
+        To: image
+      WebServerMode:
+        Ignore: true
+      InstanceId:
+        Ignore: true
+      AccelerationType:
+        Ignore: true
   CustomRuntimeConfig:
-    Ignore: true
+    To: custom_runtime_config
+    Type: Map
+    Schema:
+      Args:
+        To: args
+      Command:
+        To: command
   CustomDNS:
-    Ignore: true
+    To: custom_dns
+    Type: Map
+    Schema:
+      DnsOptions:
+        To: dns_options
+      NameServers:
+        To: name_servers
+      Searches:
+        To: searches
   GpuMemorySize:
-    Ignore: true
+    To: gpu_memory_size
   Code:
-    Ignore: true
+    To: filename
   InstanceSoftConcurrency:
     Ignore: true
+  Code$$0:
+    To: oss_key
 Attributes:
   FunctionId:
     To: function_id
   FunctionName:
-    Ignore: true
+    To: function_name
   ServiceName:
-    Ignore: true
+    To: service_name
   ARN:
-    Ignore: true
+    To: function_arn
   ServiceId:
     Ignore: true

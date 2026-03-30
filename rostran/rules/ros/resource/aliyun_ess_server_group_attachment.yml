@@ -2,14 +2,16 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::ESS::ServerGroupAttachment
-  To: alicloud_ess_alb_server_group_attachment
+  To: alicloud_ess_server_group_attachment
 Properties:
   ForceAttach:
     To: force_attach
   ScalingGroupId:
     To: scaling_group_id
   ServerGroups:
-    Ignore: true
+    To: alb_server_group_id
+  ServerGroups$$0:
+    To: weight
 Attributes:
   ScalingActivityId:
     Ignore: true

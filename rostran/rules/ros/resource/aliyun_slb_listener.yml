@@ -47,9 +47,9 @@ Properties:
   TLSCipherPolicy:
     To: tls_cipher_policy
   AclIds:
-    Ignore: true
+    To: acl_ids
   ConnectionDrainTimeout:
-    Ignore: true
+    To: established_timeout
   ConnectionDrain:
     Ignore: true
   FullNatEnabled:

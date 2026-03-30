@@ -16,6 +16,16 @@ Properties:
     To: subscription_name
   TopicName:
     To: topic_name
+  DlqPolicy:
+    To: dlq_policy
+    Type: Map
+    Schema:
+      DeadLetterTargetQueue:
+        To: dead_letter_target_queue
+      Enabled:
+        To: enabled
+  PushType:
+    To: push_type
 Attributes:
   SubscriptionName:
     To: id

@@ -2,7 +2,7 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: ALIYUN::VPC::FlowLog
-  To: alicloud_cen_flowlog
+  To: alicloud_vpc_flow_log
 Properties:
   Description:
     To: description
@@ -13,11 +13,11 @@ Properties:
   ProjectName:
     To: project_name
   TrafficType:
-    Ignore: true
+    To: traffic_type
   ResourceType:
-    Ignore: true
+    To: resource_type
   ResourceId:
-    Ignore: true
+    To: resource_id
 Attributes:
   FlowLogId:
     To: id
@@ -30,8 +30,10 @@ Attributes:
   ProjectName:
     To: project_name
   TrafficType:
-    Ignore: true
+    To: traffic_type
   ResourceType:
-    Ignore: true
+    To: resource_type
   ResourceId:
-    Ignore: true
+    To: resource_id
+  FlowLogId$$0:
+    To: flow_log_id

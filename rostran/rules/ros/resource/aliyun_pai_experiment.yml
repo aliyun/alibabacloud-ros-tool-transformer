@@ -22,7 +22,7 @@ Attributes:
   ExperimentName:
     Ignore: true
   ExperimentId:
-    Ignore: true
+    To: id
   TensorboardLogUri:
     Ignore: true
   Labels:

@@ -33,6 +33,8 @@ Properties:
     Ignore: true
   ResourceGroupId:
     Ignore: true
+  Launcher:
+    Ignore: true
 Attributes:
   InvokeId:
     To: id

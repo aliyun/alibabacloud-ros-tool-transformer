@@ -11,7 +11,9 @@ Properties:
   LayerName:
     To: layer_name
   Code:
-    Ignore: true
+    To: oss_bucket_name
+  Code$$0:
+    To: zip_file
 Attributes:
   Arn:
     To: arn

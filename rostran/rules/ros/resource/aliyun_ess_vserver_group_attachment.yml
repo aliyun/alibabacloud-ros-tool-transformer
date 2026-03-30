@@ -18,4 +18,4 @@ Properties:
         Ignore: true
 Attributes:
   ScalingGroupId:
-    Ignore: true
+    To: id

@@ -50,16 +50,24 @@ Properties:
   PeriodUnit:
     Ignore: true
   AutoRenewDuration:
-    Ignore: true
+    To: auto_renew_period
   DeletionProtection:
     Ignore: true
   ProductType:
     Ignore: true
   InstanceMaintainTime:
-    Ignore: true
+    To: maintain_end_time
   Connections:
     Ignore: true
   BackupPolicy:
+    Ignore: true
+  InstanceClass$$0:
+    To: instance_type
+  InstanceMaintainTime$$0:
+    To: maintain_start_time
+  ReadOnlyCount:
+    To: read_only_count
+  SubscriptionDeletionForce:
     Ignore: true
 Attributes:
   InstanceId:
@@ -97,7 +105,7 @@ Attributes:
   PublicConnectionString:
     Ignore: true
   QPS:
-    Ignore: true
+    To: qps
   VpcId:
     Ignore: true
   VpcPrivateConnectionPort:

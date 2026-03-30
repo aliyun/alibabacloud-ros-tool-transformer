@@ -26,9 +26,15 @@ Properties:
   TopicQuota:
     To: topic_quota
   ServerlessConfig:
-    Ignore: true
+    To: serverless_config
+    Type: Map
+    Schema:
+      ReservedPublishCapacity:
+        To: reserved_publish_capacity
+      ReservedSubscribeCapacity:
+        To: reserved_subscribe_capacity
   PayType:
-    Ignore: true
+    To: paid_type
   OpenConnector:
     Ignore: true
   DeployOption:
@@ -41,16 +47,16 @@ Attributes:
   Name:
     To: name
   Endpoint:
-    Ignore: true
+    To: end_point
   DomainEndpoint:
-    Ignore: true
+    To: domain_endpoint
   SslEndpoint:
-    Ignore: true
+    To: ssl_endpoint
   SslDomainEndpoint:
-    Ignore: true
+    To: ssl_domain_endpoint
   Arn:
     Ignore: true
   SaslDomainEndpoint:
-    Ignore: true
+    To: sasl_domain_endpoint
   OrderId:
     Ignore: true

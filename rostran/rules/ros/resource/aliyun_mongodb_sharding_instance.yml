@@ -52,17 +52,23 @@ Properties:
   ZoneId:
     To: zone_id
   SrcDBInstanceId:
-    Ignore: true
+    To: src_db_instance_id
   ConfigServer:
-    Ignore: true
+    To: config_server_list
+    Type: List
+    Schema:
+      Storage:
+        Ignore: true
+      Class:
+        Ignore: true
   SecondaryZoneId:
-    Ignore: true
+    To: secondary_zone_id
   HiddenZoneId:
-    Ignore: true
+    To: hidden_zone_id
   RestoreTime:
-    Ignore: true
+    To: restore_time
   TDEStatus:
-    Ignore: true
+    To: tde_status
 Attributes:
   DBInstanceId:
     To: id

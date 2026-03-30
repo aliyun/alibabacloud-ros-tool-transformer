@@ -57,7 +57,7 @@ Properties:
   VulSwitch:
     To: vul_switch
   SasSc:
-    Ignore: true
+    To: sas_sc
   ProductType:
     Ignore: true
 Attributes:

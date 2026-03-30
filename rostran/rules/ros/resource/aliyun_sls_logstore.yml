@@ -29,7 +29,15 @@ Properties:
   PreserveStorage:
     Ignore: true
   EncryptConf:
-    Ignore: true
+    To: encrypt_conf
+    Type: Map
+    Schema:
+      Enable:
+        To: enable
+      EncryptType:
+        To: encrypt_type
+      UserCmkInfo:
+        To: user_cmk_info
 Attributes:
   LogstoreName:
     To: logstore_name

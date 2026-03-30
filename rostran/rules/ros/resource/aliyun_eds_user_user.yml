@@ -18,6 +18,16 @@ Properties:
     Ignore: true
   OwnerType:
     Ignore: true
+  IsLocalAdmin:
+    Ignore: true
+  BusinessChannel:
+    Ignore: true
+  AutoLockTime:
+    Ignore: true
+  RealNickName:
+    Ignore: true
+  PasswordExpireDays:
+    Ignore: true
 Attributes:
   EndUserId:
     To: id

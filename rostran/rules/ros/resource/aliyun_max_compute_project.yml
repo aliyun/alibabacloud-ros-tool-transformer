@@ -9,13 +9,35 @@ Properties:
   DefaultQuota:
     To: default_quota
   Name:
-    Ignore: true
+    To: project_name
   IpWhiteList:
-    Ignore: true
+    To: ip_white_list
+    Type: Map
+    Schema:
+      IpList:
+        To: ip_list
+      VpcIpList:
+        To: vpc_ip_list
   ChargeType:
     Ignore: true
   Properties:
-    Ignore: true
+    To: properties
+    Type: Map
+    Schema:
+      AllowFullScan:
+        To: allow_full_scan
+      EnableDecimal2:
+        To: enable_decimal2
+      Encryption:
+        To: encryption
+      RetentionDays:
+        To: retention_days
+      SqlMeteringMax:
+        To: sql_metering_max
+      TypeSystem:
+        To: type_system
+  SupportSchemaLevels:
+    To: three_tier_model
 Attributes:
   Name:
     Ignore: true

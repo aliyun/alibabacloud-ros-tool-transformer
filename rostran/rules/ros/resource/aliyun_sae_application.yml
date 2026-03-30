@@ -106,11 +106,11 @@ Properties:
   SaeVersion:
     Ignore: true
   PvtzDiscoverySvc:
-    Ignore: true
+    To: pvtz_discovery_svc
   Python:
     Ignore: true
   NasConfigs:
-    Ignore: true
+    To: nas_configs
   PythonModules:
     Ignore: true
   BaseAppId:
@@ -118,7 +118,7 @@ Properties:
   MicroRegistrationConfig:
     Ignore: true
   KafkaConfigs:
-    Ignore: true
+    To: kafka_configs
   AssociateEip:
     Ignore: true
   AppSource:
@@ -128,6 +128,16 @@ Properties:
   EnableEbpf:
     Ignore: true
   OssMountDescs:
+    To: oss_mount_descs
+  InitContainersConfig:
+    Ignore: true
+  SidecarContainersConfig:
+    Ignore: true
+  EnableSidecarResourceIsolated:
+    Ignore: true
+  NewSaeVersion:
+    Ignore: true
+  EnableNewArms:
     Ignore: true
 Attributes:
   AppId:

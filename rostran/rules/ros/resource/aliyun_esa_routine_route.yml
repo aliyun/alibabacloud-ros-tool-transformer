@@ -1,0 +1,45 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ESA::RoutineRoute
+  To: alicloud_esa_routine_route
+Properties:
+  Bypass:
+    To: bypass
+  Fallback:
+    To: fallback
+  RouteEnable:
+    To: route_enable
+  RouteName:
+    To: route_name
+  RoutineName:
+    To: routine_name
+  Rule:
+    To: rule
+  Sequence:
+    To: sequence
+  SiteId:
+    To: site_id
+Attributes:
+  ConfigId:
+    To: config_id
+  RouteEnable:
+    Ignore: true
+  RouteName:
+    Ignore: true
+  Bypass:
+    Ignore: true
+  Fallback:
+    Ignore: true
+  ConfigType:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  Rule:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  RoutineName:
+    Ignore: true
+  Mode:
+    Ignore: true

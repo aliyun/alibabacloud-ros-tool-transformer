@@ -33,7 +33,7 @@ Properties:
   VSwitchId:
     To: vswitch_id
   Tags:
-    Ignore: true
+    To: tags
   ExecutePipeline:
     Ignore: true
 Attributes:

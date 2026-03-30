@@ -38,6 +38,18 @@ Properties:
     To: vswitch_id
   AcceptLanguage:
     Ignore: true
+  ChargeType:
+    To: payment_type
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+  ClusterVersion$$0:
+    To: version_code
+  SecurityGroupType:
+    Ignore: true
+  EipEnabled:
+    Ignore: true
 Attributes:
   ClusterId:
     To: id
@@ -88,7 +100,7 @@ Attributes:
   IntranetAddress:
     Ignore: true
   HealthStatus:
-    Ignore: true
+    To: status
   InternetDomain:
     Ignore: true
   ConfigAuthEnabled:
@@ -104,4 +116,6 @@ Attributes:
   DiskType:
     Ignore: true
   DiskCapacity:
+    Ignore: true
+  Arn:
     Ignore: true

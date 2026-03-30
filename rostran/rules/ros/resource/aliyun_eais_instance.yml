@@ -13,13 +13,19 @@ Properties:
   VSwitchId:
     To: vswitch_id
   ResourceGroupId:
-    Ignore: true
+    To: resource_group_id
   PaymentType:
     Ignore: true
   EnvironmentVar:
-    Ignore: true
+    To: environment_var
+    Type: List
+    Schema:
+      Key:
+        To: key
+      Value:
+        To: value
   CreateWithNotebook:
-    Ignore: true
+    To: category
 Attributes:
   InstanceId:
     To: id
@@ -28,7 +34,7 @@ Attributes:
   InstanceType:
     To: instance_type
   ZoneId:
-    Ignore: true
+    To: region_id
   JupyterUrl:
     Ignore: true
   SecurityGroupId:
@@ -40,7 +46,7 @@ Attributes:
   ClientInstanceName:
     Ignore: true
   CreateTime:
-    Ignore: true
+    To: create_time
   ClientInstanceId:
     Ignore: true
   ResourceGroupId:

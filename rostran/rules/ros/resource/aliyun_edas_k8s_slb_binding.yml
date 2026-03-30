@@ -17,7 +17,17 @@ Properties:
   LoadBalancerId:
     Ignore: true
   ServicePortInfos:
-    Ignore: true
+    To: service_port
+    Type: List
+    Schema:
+      Port:
+        To: port
+      TargetPort:
+        To: target_port
+      LoadBalancerProtocol:
+        Ignore: true
+      CertId:
+        Ignore: true
 Attributes:
   AppId:
     To: app_id
@@ -29,3 +39,5 @@ Attributes:
     Ignore: true
   LoadBalancerName:
     Ignore: true
+  AppId$$0:
+    To: app_id

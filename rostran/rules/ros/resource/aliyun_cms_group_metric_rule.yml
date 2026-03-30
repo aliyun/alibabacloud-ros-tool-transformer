@@ -31,8 +31,24 @@ Properties:
   Webhook:
     To: webhook
   RuleName:
-    Ignore: true
+    To: group_metric_rule_name
   Escalations:
+    To: escalations
+    Type: Map
+    Schema:
+      Critical:
+        To: critical
+      Info:
+        To: info
+      Warn:
+        To: warn
+  ContactGroups:
+    To: contact_groups
+  ExtraDimensionJson:
+    Ignore: true
+  Options:
+    Ignore: true
+  NoDataPolicy:
     Ignore: true
 Attributes:
   RuleId:

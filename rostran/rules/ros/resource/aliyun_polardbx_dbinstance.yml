@@ -19,9 +19,9 @@ Properties:
   VSwitchId:
     To: vswitch_id
   DBInstanceDescription:
-    Ignore: true
+    To: description
   EngineVersion:
-    Ignore: true
+    To: engine_version
   SecurityIpConfig:
     Ignore: true
   AutoRenew:
@@ -29,13 +29,13 @@ Properties:
   PayType:
     Ignore: true
   DBNodeClass:
-    Ignore: true
+    To: cn_class
   UsedTime:
     Ignore: true
   Period:
     Ignore: true
   DBNodeCount:
-    Ignore: true
+    To: cn_node_count
 Attributes:
   DBInstanceName:
     To: id

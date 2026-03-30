@@ -20,9 +20,9 @@ Properties:
     To: tags
     Handler: handle_tags
   PrivatePoolOptions:
-    Ignore: true
+    To: match_criteria
   ZoneId:
-    Ignore: true
+    To: zone_ids
 Attributes:
   PrivatePoolOptionsId:
     To: id

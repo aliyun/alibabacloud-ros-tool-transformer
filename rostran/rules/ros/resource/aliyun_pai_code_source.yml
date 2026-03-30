@@ -40,7 +40,7 @@ Attributes:
   MountPath:
     Ignore: true
   CodeSourcesId:
-    Ignore: true
+    To: id
   DisplayName:
     Ignore: true
   Accessibility:

@@ -19,9 +19,9 @@ Properties:
   RouterId:
     To: router_id
   RouteQuota:
-    Ignore: true
+    To: route_limit
   IpVersion:
-    Ignore: true
+    To: ip_version
 Attributes:
   BgpGroupId:
     To: id

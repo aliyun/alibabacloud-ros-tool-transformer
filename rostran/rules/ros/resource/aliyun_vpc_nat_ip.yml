@@ -16,6 +16,10 @@ Properties:
     To: nat_ip_description
   NatIpName:
     To: nat_ip_name
+  Ipv4Prefix:
+    Ignore: true
+  Ipv4PrefixCount:
+    Ignore: true
 Attributes:
   NatIpId:
     To: id

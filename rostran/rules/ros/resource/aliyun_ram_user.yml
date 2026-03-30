@@ -21,7 +21,7 @@ Properties:
   Policies:
     Ignore: true
   DeletionForce:
-    Ignore: true
+    To: force
   Groups:
     Ignore: true
 Attributes:

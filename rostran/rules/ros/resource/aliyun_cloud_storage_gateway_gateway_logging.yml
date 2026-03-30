@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CloudStorageGateway::GatewayLogging
+  To: alicloud_cloud_storage_gateway_gateway_logging
+Properties:
+  GatewayId:
+    To: gateway_id
+  SlsLogstore:
+    To: sls_logstore
+  SlsProject:
+    To: sls_project
+Attributes: {}

@@ -34,20 +34,42 @@ Properties:
   ZoneId:
     Ignore: true
   InstanceCategory:
-    Ignore: true
+    To: instance_category
   MasterNode:
-    Ignore: true
+    To: master_configuration
+    Type: Map
+    Schema:
+      Amount:
+        To: amount
+      DiskType:
+        To: disk_type
+      Spec:
+        To: spec
+      DiskSize:
+        Ignore: true
   YMLConfig:
-    Ignore: true
+    To: setting_config
   DataNode:
-    Ignore: true
+    To: data_node_amount
   PeriodUnit:
-    Ignore: true
+    To: renewal_duration_unit
   KibanaNode:
-    Ignore: true
+    To: kibana_configuration
+    Type: Map
+    Schema:
+      Spec:
+        To: spec
   EnableKibanaPrivate:
-    Ignore: true
+    To: enable_kibana_private_network
   EnableKibanaPublic:
+    To: enable_kibana_public_network
+  DataNode$$0:
+    To: data_node_spec
+  KibanaNode$$0:
+    To: kibana_node_spec
+  MasterNode$$0:
+    To: master_node_spec
+  DeleteType:
     Ignore: true
 Attributes:
   InstanceId:

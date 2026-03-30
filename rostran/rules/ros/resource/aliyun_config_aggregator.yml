@@ -21,7 +21,7 @@ Properties:
   Description:
     To: description
   FolderId:
-    Ignore: true
+    To: folder_id
 Attributes:
   AggregatorId:
     To: id

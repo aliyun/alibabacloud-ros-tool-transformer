@@ -19,7 +19,7 @@ Properties:
   TriggerType:
     To: trigger_type
   TriggerConfig:
-    Ignore: true
+    To: trigger_config
 Attributes:
   TriggerId:
     To: id
@@ -31,3 +31,5 @@ Attributes:
     Ignore: true
   UrlIntranet:
     Ignore: true
+  TriggerId$$0:
+    To: trigger_id

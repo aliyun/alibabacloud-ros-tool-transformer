@@ -23,35 +23,41 @@ Properties:
   ZoneId:
     To: zone_id
   DBClusterVersion:
-    Ignore: true
+    To: db_cluster_version
   Tags:
     Ignore: true
   DBClusterDescription:
-    Ignore: true
+    To: db_cluster_description
   PeriodType:
     Ignore: true
   KmsId:
-    Ignore: true
+    To: kms_id
   VPCId:
-    Ignore: true
+    To: vpc_id
   ProductForm:
-    Ignore: true
+    To: product_form
   EnableDefaultResourcePool:
-    Ignore: true
+    To: enable_default_resource_group
   PayType:
-    Ignore: true
+    To: payment_type
   DBClusterNetworkType:
     Ignore: true
   DiskEncryption:
-    Ignore: true
+    To: disk_encryption
   ReservedNodeSize:
-    Ignore: true
+    To: reserved_node_size
   ReservedNodeCount:
-    Ignore: true
+    To: reserved_node_count
   Period:
-    Ignore: true
+    To: period
   CloneSourceRegionId:
     Ignore: true
+  ProductVersion:
+    To: product_version
+  SecondaryVSwitchId:
+    To: secondary_vswitch_id
+  SecondaryZoneId:
+    To: secondary_zone_id
 Attributes:
   DBClusterId:
     To: id

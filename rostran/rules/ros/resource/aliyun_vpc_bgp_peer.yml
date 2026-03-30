@@ -10,6 +10,10 @@ Properties:
     To: enable_bfd
   PeerIpAddress:
     To: peer_ip_address
+  BfdMultiHop:
+    To: bfd_multi_hop
+  IpVersion:
+    To: ip_version
 Attributes:
   BgpPeerId:
     To: id

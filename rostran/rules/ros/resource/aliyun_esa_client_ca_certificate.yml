@@ -38,6 +38,6 @@ Attributes:
   PubkeyAlgorithm:
     Ignore: true
   SiteId:
-    Ignore: true
+    To: id
   SAN:
     Ignore: true

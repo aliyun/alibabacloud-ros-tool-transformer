@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::CDN::FcTrigger
+  To: alicloud_cdn_fc_trigger
+Properties:
+  EventMetaName:
+    To: event_meta_name
+  EventMetaVersion:
+    To: event_meta_version
+  FunctionARN:
+    To: function_arn
+  Notes:
+    To: notes
+  RoleARN:
+    To: role_arn
+  SourceARN:
+    To: source_arn
+  TriggerARN:
+    To: trigger_arn
+Attributes: {}

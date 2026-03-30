@@ -6,7 +6,6 @@ ResourceType:
 Properties:
   AllocatePublicIP:
     To: allocate_public_ip
-    Ignore: true
   AutoRenewPeriod:
     To: auto_renew_period
   ZoneId:
@@ -64,7 +63,6 @@ Properties:
     To: internet_max_bandwidth_out
   IoOptimized:
     To: io_optimized
-    Ignore: true
   KeyPairName:
     To: key_name
   Password:
@@ -112,27 +110,31 @@ Properties:
   SpotInterruptionBehavior:
     Ignore: true
   SystemDiskDiskName:
-    Ignore: true
+    To: system_disk_name
   Tenancy:
     Ignore: true
   PasswordInherit:
-    Ignore: true
+    To: password_inherit
   ImageFamily:
     Ignore: true
   StorageSetId:
-    Ignore: true
+    To: system_disk_storage_cluster_id
   AutoRenew:
-    Ignore: true
+    To: renewal_status
   SecurityGroupIds:
     To: security_groups
   PrivatePoolOptions:
-    Ignore: true
+    To: private_pool_options_id
   ZoneIds:
     Ignore: true
   UseAdditionalService:
     Ignore: true
   Affinity:
     Ignore: true
+  SubscriptionDeletionForce:
+    To: force_delete
+  PrivatePoolOptions$$0:
+    To: private_pool_options_match_criteria
 Attributes:
   InstanceId:
     To: id
@@ -147,6 +149,8 @@ Attributes:
   InnerIp:
     Ignore: true
   PrimaryNetworkInterfaceId:
-    Ignore: true
+    To: network_interface_id
   SecurityGroupIds:
     Ignore: true
+  PrivateIp$$0:
+    To: private_ip

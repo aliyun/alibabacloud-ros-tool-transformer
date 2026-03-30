@@ -25,7 +25,7 @@ Properties:
   Roles:
     Ignore: true
   IgnoreExisting:
-    Ignore: true
+    To: force
 Attributes:
   PolicyName:
     To: id

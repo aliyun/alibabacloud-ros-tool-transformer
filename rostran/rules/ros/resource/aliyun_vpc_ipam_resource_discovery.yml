@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::VPC::IpamResourceDiscovery
+  To: alicloud_vpc_ipam_ipam_resource_discovery
+Properties:
+  OperatingRegionList:
+    To: operating_region_list
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+  IpamResourceDiscoveryName:
+    Ignore: true
+  IpamResourceDiscoveryDescription:
+    Ignore: true
+Attributes:
+  CreateTime:
+    To: create_time
+  OperatingRegionList:
+    To: region_id
+  ResourceGroupId:
+    Ignore: true
+  Tags:
+    Ignore: true
+  Type:
+    Ignore: true
+  IpamResourceDiscoveryId:
+    Ignore: true
+  IpamResourceDiscoveryDescription:
+    Ignore: true
+  IpamResourceDiscoveryName:
+    Ignore: true

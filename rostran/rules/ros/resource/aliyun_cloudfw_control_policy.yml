@@ -31,25 +31,25 @@ Properties:
   SourceType:
     To: source_type
   EndTime:
-    Ignore: true
+    To: end_time
   DomainResolveType:
-    Ignore: true
+    To: domain_resolve_type
   Release:
-    Ignore: true
+    To: release
   RepeatStartTime:
-    Ignore: true
+    To: repeat_start_time
   RepeatDays:
-    Ignore: true
+    To: repeat_days
   RepeatType:
-    Ignore: true
+    To: repeat_type
   StartTime:
-    Ignore: true
+    To: start_time
   RegionId:
     Ignore: true
   ApplicationNameList:
-    Ignore: true
+    To: application_name_list
   RepeatEndTime:
-    Ignore: true
+    To: repeat_end_time
   NewOrder:
     Ignore: true
 Attributes:

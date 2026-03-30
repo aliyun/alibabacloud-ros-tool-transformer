@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::GPDB::DBInstanceIPArray
+  To: alicloud_gpdb_db_instance_ip_array
+Properties:
+  DBInstanceId:
+    To: db_instance_id
+  DBInstanceIPArrayAttribute:
+    To: db_instance_ip_array_attribute
+  DBInstanceIPArrayName:
+    To: db_instance_ip_array_name
+  SecurityIpList:
+    To: security_ip_list
+Attributes:
+  DBInstanceIPArrayAttribute:
+    Ignore: true
+  SecurityIpList:
+    Ignore: true
+  DBInstanceIPArrayName:
+    Ignore: true

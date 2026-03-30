@@ -20,11 +20,23 @@ Properties:
     To: tags
     Handler: handle_tags
   PrivatePoolOptions:
-    Ignore: true
+    To: private_pool_options_match_criteria
   ZoneId:
-    Ignore: true
+    To: zone_ids
   InstanceTypes:
+    To: instance_type
+  AutoRenew:
+    To: auto_renew
+  AutoRenewPeriod:
+    To: auto_renew_period
+  PrivatePoolOptions$$0:
+    To: private_pool_options_name
+  RecurrenceRules:
+    Ignore: true
+  InstanceCpuCoreCount:
     Ignore: true
 Attributes:
   PrivatePoolOptionsId:
     To: id
+  PrivatePoolOptionsId$$0:
+    To: elasticity_assurance_id

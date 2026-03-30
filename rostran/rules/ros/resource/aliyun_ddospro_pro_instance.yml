@@ -30,15 +30,15 @@ Properties:
     To: service_bandwidth
     Handler: to_int
   Tags:
-    Ignore: true
+    To: tags
   Edition:
-    Ignore: true
+    To: edition_sale
   ServicePartner:
     Ignore: true
   PeriodUnit:
     Ignore: true
   BurstBandwidthMode:
-    Ignore: true
+    To: bandwidth_mode
 Attributes:
   InstanceId:
     To: id

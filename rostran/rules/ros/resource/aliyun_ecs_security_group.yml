@@ -91,6 +91,8 @@ Properties:
           To: source_security_group_id
         SourceGroupOwnerId:
           To: source_group_owner_account
+  SecurityGroupName$$0:
+    To: security_group_name
 Attributes:
   SecurityGroupId:
     To: id

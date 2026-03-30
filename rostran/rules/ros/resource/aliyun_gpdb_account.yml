@@ -11,7 +11,9 @@ Properties:
   AccountPassword:
     To: account_password
   DBInstanceId:
-    Ignore: true
+    To: db_instance_id
+  AccountType:
+    To: account_type
 Attributes:
   AccountName:
     To: account_name

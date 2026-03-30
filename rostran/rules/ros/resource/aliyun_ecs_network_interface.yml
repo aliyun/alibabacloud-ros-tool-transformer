@@ -48,7 +48,7 @@ Properties:
   SecurityGroupId:
     Ignore: true
   DeleteOnRelease:
-    Ignore: true
+    To: delete_on_release
   RxQueueSize:
     Ignore: true
   TxQueueSize:

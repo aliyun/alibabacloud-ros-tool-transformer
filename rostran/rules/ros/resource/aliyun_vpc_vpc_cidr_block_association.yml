@@ -18,6 +18,8 @@ Properties:
     Ignore: true
   Ipv6Isp:
     Ignore: true
+  Ipv6CidrMask:
+    Ignore: true
 Attributes:
   VpcId:
     Ignore: true

@@ -56,14 +56,36 @@ Properties:
   BackupId:
     Ignore: true
   SrcDBInstanceId:
-    Ignore: true
+    To: src_db_instance_id
   DBInstanceStorage:
     Ignore: true
   PrivateConnections:
     Ignore: true
   RestoreTime:
-    Ignore: true
+    To: restore_time
   TDEStatus:
+    To: tde_status
+  DBInstanceReleaseProtection:
+    To: db_instance_release_protection
+  DBInstanceClass$$0:
+    To: db_instance_storage
+  Encrypted:
+    To: encrypted
+  EncryptionKey:
+    To: encryption_key
+  ProvisionedIops:
+    To: provisioned_iops
+  ClusterId:
+    Ignore: true
+  SSLOptions:
+    Ignore: true
+  AuditPolicyOptions:
+    Ignore: true
+  SrcRegion:
+    Ignore: true
+  BackupPolicyOptions:
+    Ignore: true
+  RestoreType:
     Ignore: true
 Attributes:
   DBInstanceId:

@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC3::FunctionVersion
+  To: alicloud_fcv3_function_version
+Properties:
+  Description:
+    To: description
+  FunctionName:
+    To: function_name
+Attributes:
+  CreateTime:
+    Ignore: true
+  FunctionName:
+    Ignore: true
+  LastModifiedTime:
+    Ignore: true
+  Description:
+    Ignore: true
