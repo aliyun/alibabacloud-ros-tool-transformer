@@ -33,6 +33,7 @@ tpl = {
         "alicloud_log_machine_group.sls_machine_group": {
             "Type": "ALIYUN::SLS::MachineGroup",
             "Properties": {
+                "GroupAttribute": "terraform",
                 "MachineIdentifyType": "ip",
                 "GroupName": "tf-machine-group",
                 "ProjectName": "tf-log",

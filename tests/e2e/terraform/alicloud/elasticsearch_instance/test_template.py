@@ -11,8 +11,10 @@ tpl = {
         "alicloud_elasticsearch_instance.default": {
             "Type": "ALIYUN::ElasticSearch::Instance",
             "Properties": {
+                "DataNode": "elasticsearch.sn2ne.large",
                 "Description": "tf-example",
                 "InstanceChargeType": "PostPaid",
+                "KibanaNode": "elasticsearch.sn2ne.large",
                 "Password": "******",
                 "Tags": [
                     {"Key": "Created", "Value": "TF"},
