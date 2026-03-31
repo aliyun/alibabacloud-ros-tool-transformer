@@ -8,4 +8,5 @@ Properties:
     To: load_balancer_id
   SecurityGroupIds:
     To: security_group_id
+    Handler: select_first
 Attributes: {}

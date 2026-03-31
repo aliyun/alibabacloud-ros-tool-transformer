@@ -12,6 +12,7 @@ Properties:
     To: server_group_id
   Tags:
     To: tags
+    Handler: handle_tags
 Attributes:
   ListenerId:
     To: id

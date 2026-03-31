@@ -42,7 +42,7 @@ Properties:
     To: security_group_id
   SecurityIPList:
     To: security_ips
-    Handler: handle_one_line_list
+    Handler: handle_to_list
   StorageAutoScale:
     To: storage_auto_scale
   StorageThreshold:

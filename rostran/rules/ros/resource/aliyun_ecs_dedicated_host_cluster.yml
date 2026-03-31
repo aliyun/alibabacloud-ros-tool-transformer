@@ -10,6 +10,7 @@ Properties:
     To: description
   Tags:
     To: tags
+    Handler: handle_tags
   ZoneId:
     To: zone_id
   ResourceGroupId:

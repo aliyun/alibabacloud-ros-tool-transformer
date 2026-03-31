@@ -52,6 +52,7 @@ Attributes:
     To: sources
   Tags:
     To: tags
+    Handler: handle_tags
   ApprovedPatchesEnableNonSecurity:
     Ignore: true
   UpdatedBy:

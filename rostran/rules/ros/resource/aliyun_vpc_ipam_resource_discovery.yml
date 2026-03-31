@@ -10,6 +10,7 @@ Properties:
     To: resource_group_id
   Tags:
     To: tags
+    Handler: handle_tags
   IpamResourceDiscoveryName:
     Ignore: true
   IpamResourceDiscoveryDescription:

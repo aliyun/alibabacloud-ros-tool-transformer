@@ -28,6 +28,7 @@ Properties:
     To: source_zone_id
   Tags:
     To: tags
+    Handler: handle_tags
   DiskReplicaPairName:
     To: disk_replica_pair_name
   RPO:

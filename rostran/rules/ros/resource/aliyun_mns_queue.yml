@@ -30,6 +30,7 @@ Properties:
         To: max_receive_count
   Tags:
     To: tags
+    Handler: handle_tags
 Attributes:
   QueueName:
     To: id

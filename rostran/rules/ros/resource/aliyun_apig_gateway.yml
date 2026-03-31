@@ -26,6 +26,7 @@ Properties:
     To: spec
   Tags:
     To: tags
+    Handler: handle_tags
   Vpc:
     To: vpc
     Type: Map

@@ -31,3 +31,9 @@ Properties:
 Attributes:
   ProjectId:
     To: id
+  PrivateConnectUrl:
+    Ignore: true
+  PublicConnectUrl:
+    Ignore: true
+  ApiKeys:
+    Ignore: true

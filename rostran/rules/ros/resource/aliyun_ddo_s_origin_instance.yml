@@ -8,6 +8,7 @@ Properties:
     To: period
   Tags:
     To: tags
+    Handler: handle_tags
   PeriodUnit:
     Ignore: true
   ProtectionMode:

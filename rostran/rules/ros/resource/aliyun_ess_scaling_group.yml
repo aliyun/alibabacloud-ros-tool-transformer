@@ -28,7 +28,6 @@ Properties:
     To: launch_template_version
   LoadBalancerIds:
     To: loadbalancer_ids
-    Handler: handle_to_list
   MaxInstanceLifetime:
     To: max_instance_lifetime
   MaxSize:

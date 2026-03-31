@@ -16,6 +16,7 @@ Properties:
     To: service_name
   Tags:
     To: tags
+    Handler: handle_tags
   VpcId:
     To: vpc_id
 Attributes:

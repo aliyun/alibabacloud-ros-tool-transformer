@@ -10,6 +10,7 @@ Properties:
     To: service_config
   Labels:
     To: tags
+    Handler: handle_tags
 Attributes:
   CreateTime:
     To: create_time

@@ -18,6 +18,7 @@ Properties:
     To: security_protection_types
   Tags:
     To: tags
+    Handler: handle_tags
   Zones:
     Ignore: true
 Attributes:

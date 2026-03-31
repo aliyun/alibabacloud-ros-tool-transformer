@@ -94,6 +94,7 @@ Properties:
     To: run_mode
   Tags:
     To: tags
+    Handler: handle_tags
   Version:
     To: version
   VpcId:

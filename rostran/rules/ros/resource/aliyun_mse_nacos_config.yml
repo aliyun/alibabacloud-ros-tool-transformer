@@ -20,6 +20,7 @@ Properties:
     To: namespace_id
   Tags:
     To: tags
+    Handler: handle_tags
   Type:
     To: type
   BetaIps:

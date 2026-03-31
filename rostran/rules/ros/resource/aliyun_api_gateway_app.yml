@@ -22,6 +22,7 @@ Attributes:
     To: id
   Tags:
     To: tags
+    Handler: handle_tags
   AppCode:
     Ignore: true
   AppSecret:

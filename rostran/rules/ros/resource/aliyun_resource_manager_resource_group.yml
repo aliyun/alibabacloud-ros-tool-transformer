@@ -12,6 +12,7 @@ Properties:
     To: resource_group_name
   Tags:
     To: tags
+    Handler: handle_tags
 Attributes:
   Id:
     To: id

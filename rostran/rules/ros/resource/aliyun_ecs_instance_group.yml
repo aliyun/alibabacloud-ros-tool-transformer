@@ -152,7 +152,7 @@ Properties:
     To: zone_id
   SecurityGroupId:
     To: security_group_ids
-    Handler: handle_one_line_list
+    Handler: handle_to_list
   PrivateIpAddress:
     Ignore: true
   SystemDiskBurstingEnabled:

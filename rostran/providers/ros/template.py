@@ -495,8 +495,6 @@ class ROS2TerraformTemplate(Template):
 
             return tf_argument
         elif isinstance(values, list):
-            if len(values) == 1 and not schema:
-                return self._get_tf_argument(res_type, values[0], schema, prop_name, res_name)
             return tf.JsonType([self._get_tf_argument(res_type, item, schema, prop_name, res_name) for item in values])
         else:
             return self.resolve_values(values)

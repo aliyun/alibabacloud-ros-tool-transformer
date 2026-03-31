@@ -30,6 +30,7 @@ Attributes:
     To: resource_group_id
   Tags:
     To: tags
+    Handler: handle_tags
   AddressIPVersion:
     Ignore: true
   AclEntries:

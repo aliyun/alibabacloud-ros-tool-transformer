@@ -44,6 +44,7 @@ Properties:
     To: resource_group_id
   Tags:
     To: tags
+    Handler: handle_tags
   ClusterVersion$$0:
     To: version_code
   SecurityGroupType:

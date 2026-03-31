@@ -16,6 +16,7 @@ Properties:
     To: site_name
   Tags:
     To: tags
+    Handler: handle_tags
   PaymentType:
     Ignore: true
 Attributes:

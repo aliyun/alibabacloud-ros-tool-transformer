@@ -30,6 +30,7 @@ Properties:
     To: source_ipam_pool_id
   Tags:
     To: tags
+    Handler: handle_tags
 Attributes:
   IpamPoolId:
     To: id

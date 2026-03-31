@@ -82,6 +82,7 @@ Attributes:
     To: storage_size
   Tags:
     To: tags
+    Handler: handle_tags
   ZoneId:
     To: zone_id
   CommodityCode:

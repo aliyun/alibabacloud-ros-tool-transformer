@@ -262,12 +262,6 @@ def handle_tags(ros2tf: "ROS2TerraformTemplate", args: Any, tag_key="Key", tag_v
     return tf.JsonType(args)
 
 
-def handle_one_line_list(ros2tf: "ROS2TerraformTemplate", args: Any):
-    if not isinstance(args, list):
-        args = [args]
-    return tf.ListOneLineType(args)
-
-
 def select_first(ros2tf: "ROS2TerraformTemplate", args: Any):
     if isinstance(args, tf.LiteralType):
         return args
