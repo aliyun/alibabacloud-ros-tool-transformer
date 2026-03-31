@@ -6,6 +6,7 @@ ResourceType:
 Properties:
   BackendServerList:
     To: instance_ids
+    Handler: handle_to_list
   LoadBalancerId:
     To: load_balancer_id
   BackendServerWeightList:

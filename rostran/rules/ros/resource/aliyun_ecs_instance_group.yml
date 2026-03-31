@@ -56,6 +56,7 @@ Properties:
     To: hpc_cluster_id
   ImageId:
     To: image_id
+    Handler: handle_image_id
   InstanceChargeType:
     To: instance_charge_type
   InstanceName:

@@ -137,6 +137,7 @@ class ROS2TerraformTemplate(Template):
         self._check_resources()
         self.uid = uuid.uuid4().hex
         self.data_for_pseudo_param = {}
+        self.image_data_sources = {}
         self.tf_region_parameter = None
         self.resources_from_properties: List[ResourcesInProperty] = []
 
@@ -547,7 +548,7 @@ class ROS2TerraformTemplate(Template):
                     else:
                         n = f"{tf_name}_{t_type}"
                     return tf.LiteralType(f"{t_type}.{n}.{expr}")
-                return tf.QuotedString(ret)
+                return tf.convert_to_tf_type(ret)
 
             if ',' in tf_res_type:
                 built_in_res_args = defaultdict(dict)
