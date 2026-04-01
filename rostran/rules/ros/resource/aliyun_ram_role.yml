@@ -26,6 +26,7 @@ Properties:
     To: role_name
   Tags:
     To: tags
+    Handler: handle_tags
 Attributes:
   RoleName:
     To: id

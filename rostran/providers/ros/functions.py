@@ -262,12 +262,6 @@ def handle_tags(ros2tf: "ROS2TerraformTemplate", args: Any, tag_key="Key", tag_v
     return tf.JsonType(args)
 
 
-def handle_one_line_list(ros2tf: "ROS2TerraformTemplate", args: Any):
-    if not isinstance(args, list):
-        args = [args]
-    return tf.ListOneLineType(args)
-
-
 def select_first(ros2tf: "ROS2TerraformTemplate", args: Any):
     if isinstance(args, tf.LiteralType):
         return args
@@ -586,6 +580,51 @@ def format_time(ros2tf: "ROS2TerraformTemplate", args: Union[list, str]):
 
 def marketplace_image(ros2tf: "ROS2TerraformTemplate", args: Any):
     return tf.CommentType(f"Terraform does not support Fn::GetStackOutput function. Args: {args}")
+
+
+def _is_image_id_literal(value):
+    """Check if the value is a concrete image ID (m-* prefix or *.vhd suffix)."""
+    if isinstance(value, str):
+        return value.startswith("m-") or value.endswith(".vhd")
+    return False
+
+
+def handle_image_id(ros2tf: "ROS2TerraformTemplate", args: Any):
+    """Transform ROS ImageId to an alicloud_images data source lookup.
+
+    Skip datasource when:
+    - The value is a variable/resource reference (LiteralType)
+    - The literal string looks like a real image ID (m-* prefix or *.vhd suffix)
+    """
+    if isinstance(args, tf.LiteralType):
+        return args
+
+    raw = args.value if isinstance(args, tf.TerraformType) else args
+    if _is_image_id_literal(raw):
+        return tf.convert_to_tf_type(raw)
+
+    if isinstance(args, tf.QuotedString):
+        name_regex = tf.QuotedString(f"*{args.value}*")
+    elif isinstance(args, str):
+        name_regex = tf.QuotedString(f"*{args}*")
+    else:
+        name_regex = args
+
+    cache_key = name_regex.render() if isinstance(name_regex, tf.TerraformType) else str(name_regex)
+    if cache_key in ros2tf.image_data_sources:
+        tf_name = ros2tf.image_data_sources[cache_key]
+    else:
+        tf_name = f"image_{uuid.uuid4().hex[:8]}"
+        ros2tf.image_data_sources[cache_key] = tf_name
+        data_args = {
+            "name_regex": name_regex,
+            "owners": tf.QuotedString("system"),
+            "most_recent": tf.BooleanType(True),
+        }
+        ros2tf.data_for_pseudo_param[f"alicloud_images_{tf_name}"] = tf.Data(
+            tf_name, "alicloud_images", data_args
+        )
+    return tf.LiteralType(f"data.alicloud_images.{tf_name}.images[0].id")
 
 
 def any_fn(ros2tf: "ROS2TerraformTemplate", args: list):

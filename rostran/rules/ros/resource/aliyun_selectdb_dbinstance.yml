@@ -25,6 +25,7 @@ Properties:
     To: period_time
   Tags:
     To: tags
+    Handler: handle_tags
   VpcId:
     To: vpc_id
   VSwitchId:

@@ -34,6 +34,7 @@ Properties:
     To: vswitch_id
   Tags:
     To: tags
+    Handler: handle_tags
   ExecutePipeline:
     Ignore: true
 Attributes:

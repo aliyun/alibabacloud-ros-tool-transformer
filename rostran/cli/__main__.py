@@ -496,7 +496,8 @@ def update(
 
 
 def main():
-    logging.basicConfig(level=logging.INFO, format="%(message)s")
+    logging.basicConfig(level=logging.WARNING, format="%(message)s")
+    logging.getLogger("rostran").setLevel(logging.INFO)
     try:
         typer.main.get_command(app)(prog_name="rostran")
     except exceptions.RosTranWarning as e:

@@ -8,4 +8,5 @@ Properties:
     To: group_name
   Users:
     To: user_name
+    Handler: select_first
 Attributes: {}

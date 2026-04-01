@@ -78,11 +78,30 @@ class BooleanType(TerraformType):
 class JsonType(TerraformType):
     value: Union[List[Union[TerraformType, "Block"]], Dict[Union[TerraformType, str], TerraformType]]
 
+    def _is_simple_list(self) -> bool:
+        if not isinstance(self.value, list):
+            return False
+        for item in self.value:
+            if isinstance(item, (JsonType, Block, CommentType)):
+                return False
+            if isinstance(item, TerraformType):
+                continue
+            if isinstance(item, (dict, list)):
+                return False
+        return True
+
     def render(self, indent=0):
         suffix = " " * indent
         indent += 2
         space = " " * indent
         if isinstance(self.value, list):
+            if self._is_simple_list():
+                rendered = []
+                for item in self.value:
+                    if not isinstance(item, TerraformType):
+                        item = LiteralType(item)
+                    rendered.append(item.render(indent))
+                return f"[{', '.join(rendered)}]"
             result = "[\n"
             for item in self.value:
                 comma = "" if item is self.value[-1] else ","
@@ -109,8 +128,11 @@ class ListOneLineType(TerraformType):
     value: list
 
     def render(self, _: int = 0) -> str:
-        result = [i.render() if isinstance(i, TerraformType) else i for i in self.value]
-        return f"[{', '.join(result)}]"
+        rendered = []
+        for i in self.value:
+            v = i.render() if hasattr(i, 'render') else i
+            rendered.append(v.render() if hasattr(v, 'render') else str(v))
+        return f"[{', '.join(rendered)}]"
 
 
 @dataclass

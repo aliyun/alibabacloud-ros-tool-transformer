@@ -34,6 +34,7 @@ Properties:
     To: vpc_id
   Tags:
     To: tags
+    Handler: handle_tags
   LoginPassword:
     To: password
   EndpointPublicAccess:

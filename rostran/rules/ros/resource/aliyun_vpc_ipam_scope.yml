@@ -14,6 +14,7 @@ Properties:
     To: ipam_scope_type
   Tags:
     To: tags
+    Handler: handle_tags
 Attributes:
   IpamScopeId:
     To: id

@@ -16,6 +16,7 @@ Properties:
     To: source_region_id
   Tag:
     To: tags
+    Handler: handle_tags
   ResourceGroupId:
     Ignore: true
   DestinationRegionId:

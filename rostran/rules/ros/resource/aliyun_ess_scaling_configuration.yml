@@ -106,6 +106,7 @@ Properties:
     To: system_disk_size
   TagList:
     To: tags
+    Handler: handle_tags
   UserData:
     To: user_data
   SystemDiskCategories:

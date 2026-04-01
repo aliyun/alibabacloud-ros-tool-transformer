@@ -76,6 +76,7 @@ Attributes:
     To: service_id
   Tags:
     To: tags
+    Handler: handle_tags
   VpcId:
     Ignore: true
   ServiceName:

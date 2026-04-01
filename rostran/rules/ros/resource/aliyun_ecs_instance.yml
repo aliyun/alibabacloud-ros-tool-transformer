@@ -50,6 +50,7 @@ Properties:
     To: http_tokens
   ImageId:
     To: image_id
+    Handler: handle_image_id
   InstanceChargeType:
     To: instance_charge_type
     Handler: handle_instance_charge_type

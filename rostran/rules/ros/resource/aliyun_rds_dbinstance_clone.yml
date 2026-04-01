@@ -66,6 +66,7 @@ Properties:
     Ignore: true
   Tags:
     To: tags
+    Handler: handle_tags
   DBMappings:
     Ignore: true
   MasterUsername:

@@ -156,6 +156,7 @@ Properties:
     To: session_affinity_config
   Tags:
     To: tags
+    Handler: handle_tags
   DisableOndemand:
     Ignore: true
 Attributes:

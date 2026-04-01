@@ -28,6 +28,7 @@ Properties:
     To: service_cidr
   Tags:
     To: tags
+    Handler: handle_tags
   VpcId:
     To: vpc_id
   ZoneId:

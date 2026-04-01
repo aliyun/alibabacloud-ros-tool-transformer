@@ -18,6 +18,7 @@ Properties:
     Ignore: true
   end_user_ids:
     To: EndUserId
+    Type: List
   host_name:
     To: Hostname
   office_site_id:

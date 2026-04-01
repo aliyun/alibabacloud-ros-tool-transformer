@@ -137,6 +137,7 @@ class ROS2TerraformTemplate(Template):
         self._check_resources()
         self.uid = uuid.uuid4().hex
         self.data_for_pseudo_param = {}
+        self.image_data_sources = {}
         self.tf_region_parameter = None
         self.resources_from_properties: List[ResourcesInProperty] = []
 
@@ -494,8 +495,6 @@ class ROS2TerraformTemplate(Template):
 
             return tf_argument
         elif isinstance(values, list):
-            if len(values) == 1 and not schema:
-                return self._get_tf_argument(res_type, values[0], schema, prop_name, res_name)
             return tf.JsonType([self._get_tf_argument(res_type, item, schema, prop_name, res_name) for item in values])
         else:
             return self.resolve_values(values)
@@ -547,7 +546,7 @@ class ROS2TerraformTemplate(Template):
                     else:
                         n = f"{tf_name}_{t_type}"
                     return tf.LiteralType(f"{t_type}.{n}.{expr}")
-                return tf.QuotedString(ret)
+                return tf.convert_to_tf_type(ret)
 
             if ',' in tf_res_type:
                 built_in_res_args = defaultdict(dict)

@@ -19,7 +19,7 @@ def test_renders():
     a2 = QuotedString("a2")
     a3 = QuotedString("a3")
     json_type1 = JsonType([a, a2, a3])
-    assert json_type1.render() == json.dumps(["a", "a2", "a3"], indent=2)
+    assert json_type1.render() == '["a", "a2", "a3"]'
 
 
 def test_base_block():

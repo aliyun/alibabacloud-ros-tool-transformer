@@ -42,5 +42,6 @@ Attributes:
     To: share_type
   Tags:
     To: tags
+    Handler: handle_tags
   OwnerId:
     Ignore: true

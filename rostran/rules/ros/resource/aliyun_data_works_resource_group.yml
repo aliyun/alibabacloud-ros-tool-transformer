@@ -24,6 +24,7 @@ Properties:
     To: specification
   Tags:
     To: tags
+    Handler: handle_tags
   ResourceGroupId:
     To: resource_group_id
 Attributes:

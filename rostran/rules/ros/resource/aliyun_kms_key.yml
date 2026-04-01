@@ -32,6 +32,7 @@ Properties:
     To: dkms_instance_id
   Tags:
     To: tags
+    Handler: handle_tags
 Attributes:
   KeyId:
     To: id
