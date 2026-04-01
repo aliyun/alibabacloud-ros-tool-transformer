@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 from rostran import __version__
 
-NAME = "alibabacloud-ros-tran"
+NAME = "alibabacloud_ros_tran"
 DESCRIPTION = "Resource Orchestration Service Template Transformer."
 AUTHOR = "AlibabaCloud"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
