@@ -7,12 +7,8 @@ Properties:
   acl_entry_list:
     To: AclEntryList
     Type: List
-  app_version:
-    Ignore: true
   cluster_alias_name:
     To: ClusterAliasName
-  cluster_id:
-    Ignore: true
   cluster_specification:
     To: ClusterSpecification
   cluster_type:
@@ -22,7 +18,7 @@ Properties:
   connection_type:
     To: ConnectionType
   disk_type:
-    To: DiskType
+    Ignore: true
   instance_count:
     To: InstanceCount
   mse_version:
@@ -32,17 +28,15 @@ Properties:
   payment_type:
     To: ChargeType
   private_slb_specification:
-    To: PrivateSlbSpecification
+    Ignore: true
   pub_network_flow:
     To: PubNetworkFlow
   pub_slb_specification:
-    To: PubSlbSpecification
+    Ignore: true
   request_pars:
     To: RequestPars
   resource_group_id:
     To: ResourceGroupId
-  status:
-    Ignore: true
   tags:
     To: Tags
     Type: List
@@ -57,35 +51,7 @@ Attributes:
     To: ClusterId
   app_version:
     To: AppVersion
-  cluster_alias_name:
-    To: ClusterAliasName
   cluster_id:
     To: ClusterId
-  cluster_specification:
-    To: ClusterSpecification
-  cluster_type:
-    To: ClusterType
-  cluster_version:
-    To: ClusterVersion
-  connection_type:
-    To: ConnectionType
-  instance_count:
-    To: InstanceCount
-  mse_version:
-    To: MseVersion
-  net_type:
-    To: NetType
-  payment_type:
-    Ignore: true
-  pub_network_flow:
-    To: PubNetworkFlow
-  resource_group_id:
-    Ignore: true
   status:
     To: HealthStatus
-  tags:
-    Ignore: true
-  vpc_id:
-    To: VpcId
-  vswitch_id:
-    To: VSwitchId

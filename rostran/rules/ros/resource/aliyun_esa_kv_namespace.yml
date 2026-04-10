@@ -9,17 +9,17 @@ Properties:
   KvNamespace:
     To: kv_namespace
 Attributes:
-  NamespaceId:
-    To: id
+  Description:
+    Ignore: true
   KvCapacity:
     Ignore: true
-  KvCapacityUsed:
+  KvCapacityString:
     Ignore: true
-  Description:
+  KvCapacityUsed:
     Ignore: true
   KvCapacityUsedString:
     Ignore: true
   KvNamespace:
     Ignore: true
-  KvCapacityString:
-    Ignore: true
+  NamespaceId:
+    To: id

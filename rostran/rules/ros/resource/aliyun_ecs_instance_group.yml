@@ -4,59 +4,113 @@ ResourceType:
   From: ALIYUN::ECS::InstanceGroup
   To: alicloud_ecs_instance_set
 Properties:
-  MaxAmount:
-    To: amount
+  Affinity:
+    Ignore: true
+  AllocatePublicIP:
+    Ignore: true
   AutoReleaseTime:
     To: auto_release_time
   AutoRenew:
     To: auto_renew
   AutoRenewPeriod:
     To: auto_renew_period
+  CpuOptions:
+    Ignore: true
+  CreditSpecification:
+    Ignore: true
+  DedicatedHostId:
+    To: dedicated_host_id
+  DeletionForce:
+    Ignore: true
+  DeletionProtection:
+    To: deletion_protection
+  DeploymentSetGroupNo:
+    Ignore: true
+  DeploymentSetId:
+    To: deployment_set_id
+  Description:
+    To: description
   DiskMappings:
     To: data_disks
     Type: List
     Schema:
       AutoSnapshotPolicyId:
         To: auto_snapshot_policy_id
+      BurstingEnabled:
+        Ignore: true
       Category:
         To: disk_category
       Description:
         To: disk_description
+      Device:
+        Ignore: true
       DiskName:
         To: disk_name
-      Size:
-        To: disk_size
       Encrypted:
         To: encrypted
       KMSKeyId:
         To: kms_key_id
       PerformanceLevel:
         To: performance_level
+      ProvisionedIops:
+        Ignore: true
+      Size:
+        To: disk_size
       SnapshotId:
         To: snapshot_id
       StorageClusterId:
         Ignore: true
-      BurstingEnabled:
+  EniMappings:
+    To: network_interfaces
+    Type: List
+    Schema:
+      DeleteOnRelease:
         Ignore: true
-      Device:
+      Description:
+        To: description
+      InstanceType:
         Ignore: true
-      ProvisionedIops:
+      Ipv6AddressCount:
         Ignore: true
-  DedicatedHostId:
-    To: dedicated_host_id
-  DeletionProtection:
-    To: deletion_protection
-  DeploymentSetId:
-    To: deployment_set_id
-  Description:
-    To: description
+      Ipv6Addresses:
+        Ignore: true
+      NetworkCardIndex:
+        Ignore: true
+      NetworkInterfaceId:
+        Ignore: true
+      NetworkInterfaceName:
+        To: network_interface_name
+      NetworkInterfaceTrafficMode:
+        Ignore: true
+      PrimaryIpAddress:
+        To: primary_ip_address
+      QueueNumber:
+        Ignore: true
+      QueuePairNumber:
+        Ignore: true
+      SecurityGroupId:
+        To: security_group_id
+      SecurityGroupIds:
+        Ignore: true
+      VSwitchId:
+        To: vswitch_id
   HostName:
     To: host_name
+  HostNames:
+    Ignore: true
   HpcClusterId:
     To: hpc_cluster_id
+  HttpEndpoint:
+    Ignore: true
+  HttpTokens:
+    Ignore: true
+  ImageFamily:
+    Ignore: true
   ImageId:
     To: image_id
     Handler: handle_image_id
+  ImageOptions:
+    Ignore: true
   InstanceChargeType:
     To: instance_charge_type
   InstanceName:
@@ -67,6 +121,12 @@ Properties:
     To: internet_charge_type
   InternetMaxBandwidthOut:
     To: internet_max_bandwidth_out
+  IoOptimized:
+    Ignore: true
+  Ipv6AddressCount:
+    Ignore: true
+  Ipv6Addresses:
+    Ignore: true
   KeyPairName:
     To: key_pair_name
   LaunchTemplateId:
@@ -75,40 +135,14 @@ Properties:
     To: launch_template_name
   LaunchTemplateVersion:
     To: launch_template_version
-  EniMappings:
-    To: network_interfaces
-    Type: List
-    Schema:
-      Description:
-        To: description
-      NetworkInterfaceName:
-        To: network_interface_name
-      PrimaryIpAddress:
-        To: primary_ip_address
-      SecurityGroupId:
-        To: security_group_id
-      VSwitchId:
-        To: vswitch_id
-      SecurityGroupIds:
-        Ignore: true
-      Ipv6Addresses:
-        Ignore: true
-      DeleteOnRelease:
-        Ignore: true
-      InstanceType:
-        Ignore: true
-      NetworkInterfaceId:
-        Ignore: true
-      QueueNumber:
-        Ignore: true
-      NetworkInterfaceTrafficMode:
-        Ignore: true
-      QueuePairNumber:
-        Ignore: true
-      NetworkCardIndex:
-        Ignore: true
-      Ipv6AddressCount:
-        Ignore: true
+  MaxAmount:
+    To: amount
+  NetworkInterfaceQueueNumber:
+    Ignore: true
+  NetworkOptions:
+    Ignore: true
+  NetworkType:
+    Ignore: true
   Password:
     To: password
   PasswordInherit:
@@ -117,136 +151,102 @@ Properties:
     To: period
   PeriodUnit:
     To: period_unit
+  PrivateIpAddress:
+    Ignore: true
+  PrivatePoolOptions:
+    Ignore: true
   RamRoleName:
     To: ram_role_name
   ResourceGroupId:
     To: resource_group_id
+  SchedulerOptions:
+    Ignore: true
   SecurityEnhancementStrategy:
     To: security_enhancement_strategy
+  SecurityGroupId:
+    To: security_group_ids
+    Handler: handle_to_list
   SecurityGroupIds:
     To: security_group_ids
+  SecurityOptions:
+    Ignore: true
+  SpotDuration:
+    Ignore: true
+  SpotInterruptionBehavior:
+    Ignore: true
   SpotPriceLimit:
     To: spot_price_limit
   SpotStrategy:
     To: spot_strategy
+  StorageSetId:
+    Ignore: true
+  StorageSetPartitionNumber:
+    Ignore: true
+  SubscriptionDeletionForce:
+    Ignore: true
   SystemDiskAutoSnapshotPolicyId:
     To: system_disk_auto_snapshot_policy_id
+  SystemDiskBurstingEnabled:
+    Ignore: true
   SystemDiskCategory:
     To: system_disk_category
   SystemDiskDescription:
     To: system_disk_description
   SystemDiskDiskName:
     To: system_disk_name
-  SystemDiskPerformanceLevel:
-    To: system_disk_performance_level
-  SystemDiskSize:
-    To: system_disk_size
-  Tags:
-    To: tags
-    Handler: handle_tags
-  UniqueSuffix:
-    To: unique_suffix
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  SecurityGroupId:
-    To: security_group_ids
-    Handler: handle_to_list
-  PrivateIpAddress:
-    Ignore: true
-  SystemDiskBurstingEnabled:
-    Ignore: true
-  StorageSetPartitionNumber:
-    Ignore: true
-  UserData:
-    Ignore: true
-  HttpEndpoint:
-    Ignore: true
-  PrivatePoolOptions:
-    Ignore: true
-  SystemDiskKMSKeyId:
-    Ignore: true
-  Ipv6AddressCount:
-    Ignore: true
-  Tenancy:
-    Ignore: true
-  DeploymentSetGroupNo:
-    Ignore: true
-  HttpTokens:
-    Ignore: true
-  SpotInterruptionBehavior:
-    Ignore: true
-  VpcId:
-    Ignore: true
-  CpuOptions:
-    Ignore: true
-  UpdatePolicy:
-    Ignore: true
-  SystemDiskStorageClusterId:
-    Ignore: true
-  StorageSetId:
-    Ignore: true
-  UseAdditionalService:
-    Ignore: true
-  SecurityOptions:
-    Ignore: true
-  AllocatePublicIP:
-    Ignore: true
-  SystemDiskProvisionedIops:
+  SystemDiskEncryptAlgorithm:
     Ignore: true
   SystemDiskEncrypted:
     Ignore: true
-  ImageFamily:
+  SystemDiskKMSKeyId:
     Ignore: true
-  Ipv6Addresses:
+  SystemDiskPerformanceLevel:
+    To: system_disk_performance_level
+  SystemDiskProvisionedIops:
     Ignore: true
-  SchedulerOptions:
+  SystemDiskSize:
+    To: system_disk_size
+  SystemDiskStorageClusterId:
     Ignore: true
-  Affinity:
+  Tags:
+    To: tags
+    Handler: handle_tags
+  Tenancy:
     Ignore: true
-  SystemDiskEncryptAlgorithm:
+  UniqueSuffix:
+    To: unique_suffix
+  UpdatePolicy:
     Ignore: true
-  NetworkType:
+  UseAdditionalService:
     Ignore: true
-  CreditSpecification:
+  UserData:
     Ignore: true
-  HostNames:
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
     Ignore: true
-  DeletionForce:
-    Ignore: true
-  SpotDuration:
-    Ignore: true
-  IoOptimized:
-    Ignore: true
-  NetworkOptions:
-    Ignore: true
-  NetworkInterfaceQueueNumber:
-    Ignore: true
+  ZoneId:
+    To: zone_id
   ZoneIds:
     Ignore: true
-  ImageOptions:
-    Ignore: true
-  SubscriptionDeletionForce:
-    Ignore: true
 Attributes:
-  InstanceIds:
-    To: instance_ids
-  Ipv6Addresses:
+  HostNames:
     Ignore: true
   InnerIps:
     Ignore: true
+  InstanceIds:
+    To: instance_ids
   Ipv6AddressIds:
     Ignore: true
-  PrivateIps:
-    Ignore: true
-  HostNames:
-    Ignore: true
-  ZoneIds:
-    Ignore: true
-  PublicIps:
+  Ipv6Addresses:
     Ignore: true
   OrderId:
     Ignore: true
+  PrivateIps:
+    Ignore: true
+  PublicIps:
+    Ignore: true
   RelatedOrderIds:
+    Ignore: true
+  ZoneIds:
     Ignore: true

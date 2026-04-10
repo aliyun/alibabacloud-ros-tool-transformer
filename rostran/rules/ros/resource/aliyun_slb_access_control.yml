@@ -12,15 +12,6 @@ Properties:
         To: comment
       Entry:
         To: entry
-  AddressIPVersion:
-    To: ip_version
-  AclName:
-    To: name
-  ResourceGroupId:
-    To: resource_group_id
-  Tags:
-    To: tags
-    Handler: handle_tags
   AclEntries$$0:
     To: entry_list
     Type: List
@@ -29,6 +20,15 @@ Properties:
         To: comment
       Entry:
         To: entry
+  AclName:
+    To: name
+  AddressIPVersion:
+    To: ip_version
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
 Attributes:
   AclId:
     To: id

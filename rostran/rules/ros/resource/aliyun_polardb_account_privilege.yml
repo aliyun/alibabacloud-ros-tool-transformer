@@ -13,4 +13,3 @@ Properties:
   DBName:
     To: db_names
     Handler: select_first
-Attributes: {}

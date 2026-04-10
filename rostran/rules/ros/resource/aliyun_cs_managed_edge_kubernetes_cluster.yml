@@ -14,81 +14,81 @@ Properties:
         To: disabled
       Name:
         To: name
+  CloudMonitorFlags:
+    To: install_cloud_monitor
   ClusterSpec:
     To: cluster_spec
+  ContainerCidr:
+    To: pod_cidr
   DeletionProtection:
     To: deletion_protection
+  EncryptionProviderKey:
+    Ignore: true
+  EndpointPublicAccess:
+    To: slb_internet_enabled
+  IpStack:
+    Ignore: true
   IsEnterpriseSecurityGroup:
     To: is_enterprise_security_group
+  KeyPair:
+    To: key_name
+  KubernetesVersion:
+    To: version
+  LoginPassword:
+    To: password
+  MaintenanceWindow:
+    Ignore: true
   Name:
     To: name
   NodeCidrMask:
     To: node_cidr_mask
+  NodePools:
+    Ignore: true
+  Profile:
+    Ignore: true
   ProxyMode:
     To: proxy_mode
   ResourceGroupId:
     To: resource_group_id
+  RrsaConfig:
+    Ignore: true
   ServiceCidr:
     To: service_cidr
-  VpcId:
-    To: vpc_id
+  SnatEntry:
+    To: new_nat_gateway
   Tags:
     To: tags
     Handler: handle_tags
-  LoginPassword:
-    To: password
-  EndpointPublicAccess:
-    To: slb_internet_enabled
-  Profile:
-    Ignore: true
-  ContainerCidr:
-    To: pod_cidr
-  CloudMonitorFlags:
-    To: install_cloud_monitor
-  SnatEntry:
-    Ignore: true
   TimeoutMins:
     Ignore: true
-  MaintenanceWindow:
-    Ignore: true
-  KeyPair:
-    To: key_name
+  VSwitchIds:
+    To: worker_vswitch_ids
+  VpcId:
+    To: vpc_id
   ZoneIds:
     To: availability_zone
-  KubernetesVersion:
-    To: version
-  NodePools:
-    Ignore: true
-  VSwitchIds:
-    Ignore: true
-  IpStack:
-    Ignore: true
-  RrsaConfig:
-    Ignore: true
-  EncryptionProviderKey:
-    Ignore: true
 Attributes:
+  APIServerSLBId:
+    To: slb_internet
+  APIServerSLBId$$0:
+    To: slb_intranet
   ClusterId:
     To: id
+  DefaultUserKubeConfig:
+    Ignore: true
+  IngressSLBId:
+    Ignore: true
   Nodes:
     To: worker_nodes
-  IngressSLBId:
+  PrivateUserKubConfig:
     Ignore: true
   ScalingConfigurationId:
     Ignore: true
   ScalingGroupId:
     Ignore: true
-  PrivateUserKubConfig:
+  ScalingRuleId:
     Ignore: true
   TaskId:
     Ignore: true
-  APIServerSLBId:
-    To: slb_internet
-  DefaultUserKubeConfig:
-    Ignore: true
   WorkerRamRoleName:
     To: worker_ram_role_name
-  ScalingRuleId:
-    Ignore: true
-  APIServerSLBId$$0:
-    To: slb_intranet

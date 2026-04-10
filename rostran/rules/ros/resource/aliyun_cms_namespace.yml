@@ -11,15 +11,15 @@ Properties:
   Specification:
     To: specification
 Attributes:
-  Namespace:
-    To: id
+  CreateTime:
+    Ignore: true
   Description:
     To: description
+  ModifyTime:
+    Ignore: true
+  Namespace:
+    To: id
   Namespace$$0:
     To: namespace
   Specification:
     To: specification
-  CreateTime:
-    Ignore: true
-  ModifyTime:
-    Ignore: true

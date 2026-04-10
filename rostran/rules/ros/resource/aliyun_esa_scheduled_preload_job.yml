@@ -4,40 +4,40 @@ ResourceType:
   From: ALIYUN::ESA::ScheduledPreloadJob
   To: alicloud_esa_scheduled_preload_job
 Properties:
-  ScheduledPreloadJobName:
-    To: scheduled_preload_job_name
-  OssUrl:
-    To: oss_url
   InsertWay:
     To: insert_way
+  OssUrl:
+    To: oss_url
+  ScheduledPreloadJobName:
+    To: scheduled_preload_job_name
   SiteId:
     To: site_id
   UrlList:
     To: url_list
 Attributes:
+  CreateTime:
+    To: create_time
+  Domains:
+    Ignore: true
+  ErrorInfo:
+    Ignore: true
+  FailedFileOss:
+    Ignore: true
+  FileId:
+    Ignore: true
+  InsertWay:
+    Ignore: true
   ScheduledPreloadJobId:
     To: scheduled_preload_execution_id
+  ScheduledPreloadJobName:
+    Ignore: true
+  SiteId:
+    To: id
   TaskSubmitted:
     Ignore: true
   TaskType:
     Ignore: true
   UrlCount:
     Ignore: true
-  Domains:
-    Ignore: true
-  CreateTime:
-    To: create_time
-  ErrorInfo:
-    Ignore: true
   UrlSubmitted:
-    Ignore: true
-  ScheduledPreloadJobName:
-    Ignore: true
-  FileId:
-    Ignore: true
-  InsertWay:
-    Ignore: true
-  SiteId:
-    To: id
-  FailedFileOss:
     Ignore: true

@@ -4,38 +4,38 @@ ResourceType:
   From: ALIYUN::HBR::EcsBackupPlan
   To: alicloud_hbr_ecs_backup_plan
 Properties:
-  Options:
-    To: options
-  VaultId:
-    To: vault_id
-  Detail:
-    Ignore: true
-  Exclude:
-    Ignore: true
-  SpeedLimit:
-    Ignore: true
-  Include:
-    Ignore: true
-  Schedule:
-    Ignore: true
-  PlanName:
-    Ignore: true
-  InstanceId:
-    Ignore: true
-  CrossAccountUserId:
-    Ignore: true
   BackupType:
-    Ignore: true
-  CrossAccountType:
     Ignore: true
   CrossAccountRoleName:
     Ignore: true
-  Retention:
+  CrossAccountType:
+    Ignore: true
+  CrossAccountUserId:
+    Ignore: true
+  Detail:
     Ignore: true
   Disabled:
     Ignore: true
+  Exclude:
+    Ignore: true
+  Include:
+    Ignore: true
+  InstanceId:
+    Ignore: true
+  Options:
+    To: options
   Paths:
     Ignore: true
+  PlanName:
+    Ignore: true
+  Retention:
+    Ignore: true
+  Schedule:
+    Ignore: true
+  SpeedLimit:
+    Ignore: true
+  VaultId:
+    To: vault_id
 Attributes:
   PlanId:
     To: id

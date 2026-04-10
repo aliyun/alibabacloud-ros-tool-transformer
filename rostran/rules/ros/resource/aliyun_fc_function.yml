@@ -4,34 +4,42 @@ ResourceType:
   From: ALIYUN::FC::Function
   To: alicloud_fcv2_function
 Properties:
-  Description:
-    To: description
-  EnvironmentVariables:
-    To: environment_variables
-  Handler:
-    To: handler
-  InitializationTimeout:
-    To: initialization_timeout
-  Initializer:
-    To: initializer
-  InstanceConcurrency:
-    To: instance_concurrency
-  InstanceType:
-    To: instance_type
-  MemorySize:
-    To: memory_size
-  FunctionName:
-    To: name
-  FunctionName$$0:
-    To: name_prefix
-  Runtime:
-    To: runtime
-  ServiceName:
-    To: service
-  Timeout:
-    To: timeout
+  AsyncConfiguration:
+    Ignore: true
+  CAPort:
+    To: ca_port
+  Code:
+    To: filename
+  Code$$0:
+    To: oss_key
   Cpu:
     To: cpu
+  CustomContainerConfig:
+    To: custom_container_config
+    Type: Map
+    Schema:
+      AccelerationType:
+        Ignore: true
+      Args:
+        To: args
+      Command:
+        To: command
+      Image:
+        To: image
+      InstanceId:
+        Ignore: true
+      WebServerMode:
+        Ignore: true
+  CustomDNS:
+    To: custom_dns
+    Type: Map
+    Schema:
+      DnsOptions:
+        To: dns_options
+      NameServers:
+        To: name_servers
+      Searches:
+        To: searches
   CustomHealthCheckConfig:
     To: custom_health_check_config
     Type: Map
@@ -48,36 +56,6 @@ Properties:
         To: success_threshold
       TimeoutSeconds:
         To: timeout_seconds
-  CAPort:
-    To: ca_port
-  AsyncConfiguration:
-    Ignore: true
-  DiskSize:
-    To: disk_size
-  InstanceLifecycleConfig:
-    To: instance_lifecycle_config
-    Type: Map
-    Schema:
-      PreFreeze:
-        To: pre_freeze
-      PreStop:
-        To: pre_stop
-  CustomContainerConfig:
-    To: custom_container_config
-    Type: Map
-    Schema:
-      Args:
-        To: args
-      Command:
-        To: command
-      Image:
-        To: image
-      WebServerMode:
-        Ignore: true
-      InstanceId:
-        Ignore: true
-      AccelerationType:
-        Ignore: true
   CustomRuntimeConfig:
     To: custom_runtime_config
     Type: Map
@@ -86,32 +64,54 @@ Properties:
         To: args
       Command:
         To: command
-  CustomDNS:
-    To: custom_dns
-    Type: Map
-    Schema:
-      DnsOptions:
-        To: dns_options
-      NameServers:
-        To: name_servers
-      Searches:
-        To: searches
+  Description:
+    To: description
+  DiskSize:
+    To: disk_size
+  EnvironmentVariables:
+    To: environment_variables
+  FunctionName:
+    To: name
+  FunctionName$$0:
+    To: name_prefix
   GpuMemorySize:
     To: gpu_memory_size
-  Code:
-    To: filename
+  Handler:
+    To: handler
+  InitializationTimeout:
+    To: initialization_timeout
+  Initializer:
+    To: initializer
+  InstanceConcurrency:
+    To: instance_concurrency
+  InstanceLifecycleConfig:
+    To: instance_lifecycle_config
+    Type: Map
+    Schema:
+      PreFreeze:
+        To: pre_freeze
+      PreStop:
+        To: pre_stop
   InstanceSoftConcurrency:
     Ignore: true
-  Code$$0:
-    To: oss_key
+  InstanceType:
+    To: instance_type
+  MemorySize:
+    To: memory_size
+  Runtime:
+    To: runtime
+  ServiceName:
+    To: service
+  Timeout:
+    To: timeout
 Attributes:
+  ARN:
+    To: function_arn
   FunctionId:
     To: function_id
   FunctionName:
     To: function_name
-  ServiceName:
-    To: service_name
-  ARN:
-    To: function_arn
   ServiceId:
     Ignore: true
+  ServiceName:
+    To: service_name

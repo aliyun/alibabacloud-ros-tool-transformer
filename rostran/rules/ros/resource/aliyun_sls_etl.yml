@@ -4,6 +4,10 @@ ResourceType:
   From: ALIYUN::SLS::Etl
   To: alicloud_log_etl
 Properties:
+  Configuration:
+    To: access_key_id
+  Configuration$$0:
+    To: kms_encryption_access_key_secret_context
   Description:
     To: description
   DisplayName:
@@ -14,10 +18,6 @@ Properties:
     To: project
   Schedule:
     Ignore: true
-  Configuration:
-    To: access_key_id
-  Configuration$$0:
-    To: kms_encryption_access_key_secret_context
 Attributes:
   Name:
     To: etl_name

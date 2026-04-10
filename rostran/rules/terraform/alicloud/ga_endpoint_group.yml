@@ -13,7 +13,7 @@ Properties:
     Type: List
     Schema:
       enable_clientip_preservation:
-        Ignore: true
+        To: EnableClientIPPreservation
       enable_proxy_protocol:
         To: EnableProxyProtocol
       endpoint:
@@ -22,8 +22,6 @@ Properties:
         To: Type
       weight:
         To: Weight
-  endpoint_group_ip_list:
-    Ignore: true
   endpoint_group_region:
     To: EndpointGroupRegion
   endpoint_group_type:
@@ -48,8 +46,6 @@ Properties:
     To: Name
   port_overrides:
     Ignore: true
-  status:
-    Ignore: true
   tags:
     Ignore: true
   threshold_count:
@@ -59,39 +55,7 @@ Properties:
 Attributes:
   id:
     To: EndpointGroupId
-  accelerator_id:
-    Ignore: true
-  description:
-    Ignore: true
   endpoint_group_ip_list:
     Ignore: true
-  endpoint_group_region:
-    Ignore: true
-  endpoint_group_type:
-    Ignore: true
-  endpoint_protocol_version:
-    Ignore: true
-  endpoint_request_protocol:
-    Ignore: true
-  health_check_enabled:
-    Ignore: true
-  health_check_interval_seconds:
-    Ignore: true
-  health_check_path:
-    Ignore: true
-  health_check_port:
-    Ignore: true
-  health_check_protocol:
-    Ignore: true
-  listener_id:
-    Ignore: true
-  name:
-    Ignore: true
   status:
-    Ignore: true
-  tags:
-    Ignore: true
-  threshold_count:
-    Ignore: true
-  traffic_percentage:
     Ignore: true

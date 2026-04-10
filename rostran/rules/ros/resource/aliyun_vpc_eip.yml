@@ -4,8 +4,6 @@ ResourceType:
   From: ALIYUN::VPC::EIP
   To: alicloud_eip_address
 Properties:
-  Name:
-    To: address_name
   AutoPay:
     To: auto_pay
   Bandwidth:
@@ -17,17 +15,23 @@ Properties:
   InstanceChargeType:
     To: instance_charge_type
     Handler: handle_instance_charge_type
+  InstanceChargeType$$0:
+    To: payment_type
+    Handler: handle_pay_type(PayAsYouGo,Subscription)
+  InstanceId:
+    Ignore: true
   InternetChargeType:
     To: internet_charge_type
+  IpAddress:
+    To: ip_address
   Isp:
     To: isp
+  Name:
+    To: address_name
   Name$$0:
     To: name
   Netmode:
     To: netmode
-  InstanceChargeType$$0:
-    To: payment_type
-    Handler: handle_pay_type(PayAsYouGo,Subscription)
   Period:
     To: period
   PricingCycle:
@@ -43,18 +47,14 @@ Properties:
     Handler: handle_tags
   Zone:
     To: zone
-  IpAddress:
-    To: ip_address
-  InstanceId:
-    Ignore: true
 Attributes:
   AllocationId:
     To: id
   AllocationId$$0:
     To: allocation_id
-  Isp:
-    To: isp
   EipAddress:
     Ignore: true
+  Isp:
+    To: isp
   OrderId:
     Ignore: true

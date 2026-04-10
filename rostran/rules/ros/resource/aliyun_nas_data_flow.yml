@@ -4,6 +4,12 @@ ResourceType:
   From: ALIYUN::NAS::DataFlow
   To: alicloud_nas_data_flow
 Properties:
+  AutoRefreshInterval:
+    Ignore: true
+  AutoRefreshPolicy:
+    Ignore: true
+  AutoRefreshs:
+    Ignore: true
   Description:
     To: description
   FileSystemId:
@@ -16,12 +22,6 @@ Properties:
     To: source_storage
   Throughput:
     To: throughput
-  AutoRefreshPolicy:
-    Ignore: true
-  AutoRefreshInterval:
-    Ignore: true
-  AutoRefreshs:
-    Ignore: true
 Attributes:
   DataFlowId:
     To: id

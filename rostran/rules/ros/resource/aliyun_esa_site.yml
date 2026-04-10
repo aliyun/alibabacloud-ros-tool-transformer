@@ -10,6 +10,8 @@ Properties:
     To: coverage
   InstanceId:
     To: instance_id
+  PaymentType:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   SiteName:
@@ -17,26 +19,24 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  PaymentType:
-    Ignore: true
 Attributes:
-  SiteId:
-    To: id
+  AccessType:
+    Ignore: true
+  Coverage:
+    Ignore: true
   CreateTime:
     To: create_time
+  InstanceId:
+    Ignore: true
   ModifyTime:
-    Ignore: true
-  SiteName:
-    Ignore: true
-  ResourceGroupId:
     Ignore: true
   NameServerList:
     Ignore: true
-  InstanceId:
+  ResourceGroupId:
     Ignore: true
-  AccessType:
+  SiteId:
+    To: id
+  SiteName:
     Ignore: true
   Tags:
-    Ignore: true
-  Coverage:
     Ignore: true

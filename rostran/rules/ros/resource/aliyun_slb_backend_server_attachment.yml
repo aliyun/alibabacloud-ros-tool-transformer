@@ -6,17 +6,17 @@ ResourceType:
 Properties:
   BackendServerList:
     To: instance_ids
-  LoadBalancerId:
-    To: load_balancer_id
   BackendServerWeightList:
     To: weight
     Handler: select_first
   BackendServers:
     To: backend_servers
-Attributes:
   LoadBalancerId:
-    To: id
+    To: load_balancer_id
+Attributes:
   BackendServers:
     To: backend_servers
+  LoadBalancerId:
+    To: id
   LoadBalancerId$$0:
     To: load_balancer_id

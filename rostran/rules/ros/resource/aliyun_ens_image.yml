@@ -4,32 +4,32 @@ ResourceType:
   From: ALIYUN::ENS::Image
   To: alicloud_ens_image
 Properties:
-  ImageName:
-    To: image_name
-  InstanceId:
-    To: instance_id
   DeleteAfterImageUpload:
     To: delete_after_image_upload
-Attributes:
-  ImageId:
-    To: id
-  CreateTime:
-    To: create_time
   ImageName:
     To: image_name
   InstanceId:
     To: instance_id
-  ImageSize:
-    Ignore: true
+Attributes:
   Architecture:
-    Ignore: true
-  ImageOwnerAlias:
-    Ignore: true
-  OsVersion:
-    Ignore: true
-  SnapshotId:
     Ignore: true
   ComputeType:
     Ignore: true
+  CreateTime:
+    To: create_time
+  ImageId:
+    To: id
+  ImageName:
+    To: image_name
+  ImageOwnerAlias:
+    Ignore: true
+  ImageSize:
+    Ignore: true
+  InstanceId:
+    To: instance_id
+  OsVersion:
+    Ignore: true
   Platform:
+    Ignore: true
+  SnapshotId:
     Ignore: true

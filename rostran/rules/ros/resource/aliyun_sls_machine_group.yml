@@ -4,18 +4,18 @@ ResourceType:
   From: ALIYUN::SLS::MachineGroup
   To: alicloud_sls_machine_group
 Properties:
-  MachineIdentifyType:
-    To: identify_type
-  GroupName:
-    To: name
-  ProjectName:
-    To: project
   GroupAttribute:
     To: topic
-  MachineList:
-    To: machine_list
+  GroupName:
+    To: name
   GroupType:
     To: group_type
+  MachineIdentifyType:
+    To: identify_type
+  MachineList:
+    To: machine_list
+  ProjectName:
+    To: project
 Attributes:
   GroupName:
     To: name

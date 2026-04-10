@@ -12,23 +12,23 @@ Properties:
     To: cen_owner_id
   CidrBlock:
     To: cidr_block
+  CloudBoxOfficeSite:
+    Ignore: true
   DesktopAccessType:
     To: desktop_access_type
   EnableAdminAccess:
     To: enable_admin_access
   EnableInternetAccess:
     To: enable_internet_access
+  NeedVerifyZeroDevice:
+    Ignore: true
   OfficeSiteName:
     To: office_site_name
-  VpcType:
-    Ignore: true
   VSwitchId:
     Ignore: true
   VerifyCode:
     Ignore: true
-  NeedVerifyZeroDevice:
-    Ignore: true
-  CloudBoxOfficeSite:
+  VpcType:
     Ignore: true
 Attributes:
   OfficeSiteId:

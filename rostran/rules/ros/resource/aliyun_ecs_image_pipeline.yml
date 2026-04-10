@@ -16,6 +16,8 @@ Properties:
     To: delete_instance_on_failure
   Description:
     To: description
+  ExecutePipeline:
+    Ignore: true
   ImageName:
     To: image_name
   InstanceType:
@@ -28,15 +30,13 @@ Properties:
     To: resource_group_id
   SystemDiskSize:
     To: system_disk_size
+  Tags:
+    To: tags
+    Handler: handle_tags
   ToRegionId:
     To: to_region_id
   VSwitchId:
     To: vswitch_id
-  Tags:
-    To: tags
-    Handler: handle_tags
-  ExecutePipeline:
-    Ignore: true
 Attributes:
   ImagePipelineId:
     To: id

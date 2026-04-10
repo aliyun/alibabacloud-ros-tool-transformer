@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::CMS::MonitoringAgentProcess
   To: alicloud_cloud_monitor_service_monitoring_agent_process
 Properties:
+  InstanceId:
+    To: instance_id
   ProcessName:
     To: process_name
   ProcessUser:
     To: process_user
-  InstanceId:
-    To: instance_id
 Attributes:
   Id:
     To: id

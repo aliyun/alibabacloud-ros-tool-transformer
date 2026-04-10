@@ -6,56 +6,56 @@ ResourceType:
 Properties:
   AutoRenew:
     To: auto_renew
+  DedicatedHostGroupDescription:
+    Ignore: true
   DedicatedHostGroupId:
     To: dedicated_host_group_id
-  ZoneId:
-    To: ecs_zone_id
-  OsPassword:
-    To: os_password
-  Period:
-    To: period
-  VSwitchId:
-    To: vswitch_id
-  ResourceGroupId:
-    Ignore: true
-  PasswordInherit:
-    Ignore: true
-  UserData:
-    Ignore: true
-  PayType:
+  ECSClassList:
     Ignore: true
   EcsDeploymentSetId:
-    Ignore: true
-  VpcId:
-    Ignore: true
-  EcsUniqueSuffix:
-    Ignore: true
-  InternetChargeType:
-    Ignore: true
-  ImageId:
-    Ignore: true
-  UserDataInBase64:
     Ignore: true
   EcsHostName:
     Ignore: true
   EcsInstanceName:
     Ignore: true
-  InternetMaxBandwidthOut:
+  EcsUniqueSuffix:
     Ignore: true
   Engine:
     Ignore: true
-  DedicatedHostGroupDescription:
+  ImageId:
     Ignore: true
-  PeriodType:
+  InternetChargeType:
     Ignore: true
-  SecurityGroupId:
-    Ignore: true
-  ECSClassList:
+  InternetMaxBandwidthOut:
     Ignore: true
   KeyPairName:
     Ignore: true
-Attributes:
-  OrderIds:
+  OsPassword:
+    To: os_password
+  PasswordInherit:
     Ignore: true
+  PayType:
+    Ignore: true
+  Period:
+    To: period
+  PeriodType:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  SecurityGroupId:
+    Ignore: true
+  UserData:
+    Ignore: true
+  UserDataInBase64:
+    Ignore: true
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    Ignore: true
+  ZoneId:
+    To: ecs_zone_id
+Attributes:
   InstanceIds:
+    Ignore: true
+  OrderIds:
     Ignore: true

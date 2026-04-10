@@ -111,23 +111,23 @@ Properties:
   TaskName:
     To: task_name
 Attributes:
-  TaskName:
+  BusinessType:
     Ignore: true
-  SiteName:
+  DataCenter:
+    Ignore: true
+  DeliveryType:
     Ignore: true
   DiscardRate:
     Ignore: true
   FieldName:
     Ignore: true
-  SinkConfig:
-    Ignore: true
   FilterRules:
     Ignore: true
-  DeliveryType:
-    Ignore: true
-  BusinessType:
+  SinkConfig:
     Ignore: true
   SiteId:
     Ignore: true
-  DataCenter:
+  SiteName:
+    Ignore: true
+  TaskName:
     Ignore: true

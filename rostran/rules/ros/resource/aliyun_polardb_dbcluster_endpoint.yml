@@ -17,9 +17,9 @@ Properties:
   ReadWriteMode:
     To: read_write_mode
 Attributes:
-  DBEndpointId:
-    To: db_endpoint_id
-  ConnectionString:
-    Ignore: true
   Addresses:
     Ignore: true
+  ConnectionString:
+    Ignore: true
+  DBEndpointId:
+    To: db_endpoint_id

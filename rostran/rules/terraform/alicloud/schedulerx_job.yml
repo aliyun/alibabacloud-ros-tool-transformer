@@ -1,0 +1,90 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_schedulerx_job
+  To: ALIYUN::SchedulerX::Job
+Properties:
+  attempt_interval:
+    To: AttemptInterval
+  class_name:
+    To: ClassName
+  content:
+    To: Content
+  description:
+    To: Description
+  ding:
+    To: ContactInfo
+    Type: List
+  execute_mode:
+    To: ExecuteMode
+  fail_enable:
+    To: FailEnable
+  fail_times:
+    To: FailTimes
+  group_id:
+    To: GroupId
+  job_monitor_info:
+    Ignore: true
+  job_name:
+    To: Name
+  job_type:
+    To: JobType
+  map_task_xattrs:
+    Ignore: true
+  max_attempt:
+    To: MaxAttempt
+  max_concurrency:
+    To: MaxConcurrency
+  miss_worker_enable:
+    To: MissWorkerEnable
+  namespace:
+    To: Namespace
+  namespace_source:
+    To: NamespaceSource
+  parameters:
+    To: Parameters
+  send_channel:
+    To: SendChannel
+  status:
+    Ignore: true
+  success_notice_enable:
+    To: SuccessNoticeEnable
+  task_dispatch_mode:
+    Ignore: true
+  template:
+    Ignore: true
+  time_config:
+    To: TimeExpression
+    Schema:
+      calendar:
+        Ignore: true
+      data_offset:
+        Ignore: true
+      time_expression:
+        Ignore: true
+      time_type:
+        Ignore: true
+  timeout:
+    To: Timeout
+  timeout_enable:
+    To: TimeoutEnable
+  timeout_kill_enable:
+    To: TimeoutKillEnable
+  timezone:
+    To: Timezone
+  user_mail:
+    To: ContactInfo
+    Type: List
+  user_name:
+    To: ContactInfo
+    Type: List
+  user_phone:
+    To: ContactInfo
+    Type: List
+  x_attrs:
+    To: XAttrs
+Attributes:
+  id:
+    Ignore: true
+  job_id:
+    To: JobId

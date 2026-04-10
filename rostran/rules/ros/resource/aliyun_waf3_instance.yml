@@ -4,47 +4,47 @@ ResourceType:
   From: ALIYUN::WAF3::Instance
   To: alicloud_wafv3_instance
 Properties:
-  BotAppProtection:
-    Ignore: true
-  Region:
-    Ignore: true
-  ElasticQps:
-    Ignore: true
-  IntelligentLoadBalancing:
-    Ignore: true
-  ExclusiveIPAddress:
-    Ignore: true
-  AutoPay:
-    Ignore: true
-  PayType:
-    Ignore: true
-  WafVersion:
+  AdditionalProtectionNodes:
     Ignore: true
   ApiSecurity:
     Ignore: true
-  Period:
-    Ignore: true
-  AdditionalProtectionNodes:
-    Ignore: true
-  PeriodUnit:
-    Ignore: true
-  BotWebProtection:
-    Ignore: true
-  LogService:
-    Ignore: true
-  IgnoreExisting:
-    Ignore: true
-  DomainsExtension:
-    Ignore: true
-  FraudDetection:
+  AutoPay:
     Ignore: true
   AutoRenew:
     Ignore: true
+  BotAppProtection:
+    Ignore: true
+  BotWebProtection:
+    Ignore: true
+  DomainsExtension:
+    Ignore: true
+  ElasticQps:
+    Ignore: true
+  ExclusiveIPAddress:
+    Ignore: true
+  FraudDetection:
+    Ignore: true
+  IgnoreExisting:
+    Ignore: true
+  IntelligentLoadBalancing:
+    Ignore: true
+  LogService:
+    Ignore: true
+  LogStorage:
+    Ignore: true
+  PayType:
+    Ignore: true
+  Period:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
   QpsExtension:
+    Ignore: true
+  Region:
     Ignore: true
   TrafficBillingProtectionThreshold:
     Ignore: true
-  LogStorage:
+  WafVersion:
     Ignore: true
 Attributes:
   InstanceId:

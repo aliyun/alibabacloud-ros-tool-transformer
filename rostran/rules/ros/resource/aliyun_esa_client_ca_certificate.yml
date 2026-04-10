@@ -11,33 +11,33 @@ Properties:
   SiteId:
     To: site_id
 Attributes:
+  Certificate:
+    Ignore: true
   ClientCaCertId:
     To: client_ca_cert_id
+  ClientCaCertName:
+    Ignore: true
+  CommonName:
+    Ignore: true
   CreateTime:
     To: create_time
+  Issuer:
+    Ignore: true
   NotAfter:
     Ignore: true
   NotBefore:
     Ignore: true
-  Type:
+  PubkeyAlgorithm:
     Ignore: true
-  SiteName:
-    Ignore: true
-  Issuer:
-    Ignore: true
-  UpdateTime:
-    Ignore: true
-  CommonName:
-    Ignore: true
-  ClientCaCertName:
+  SAN:
     Ignore: true
   SignatureAlgorithm:
     Ignore: true
-  Certificate:
-    Ignore: true
-  PubkeyAlgorithm:
-    Ignore: true
   SiteId:
     To: id
-  SAN:
+  SiteName:
+    Ignore: true
+  Type:
+    Ignore: true
+  UpdateTime:
     Ignore: true

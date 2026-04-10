@@ -48,7 +48,21 @@ Properties:
       execution_moment:
         To: ExecutionMoment
       node_selector:
-        Ignore: true
+        To: NodeSelector
+        Type: Map
+        Schema:
+          node_group_ids:
+            To: NodeGroupId
+          node_group_names:
+            To: NodeGroupName
+          node_group_types:
+            To: NodeGroupTypes
+            Type: List
+          node_names:
+            To: NodeNames
+            Type: List
+          node_select_type:
+            To: NodeSelectType
       priority:
         To: Priority
       script_args:
@@ -141,13 +155,23 @@ Properties:
     To: NodeGroups
     Type: List
     Schema:
+      ack_config:
+        Ignore: true
       additional_security_group_ids:
         To: AdditionalSecurityGroupIds
         Type: List
       auto_scaling_policy:
         Ignore: true
       cost_optimized_config:
-        Ignore: true
+        To: CostOptimizedConfig
+        Type: Map
+        Schema:
+          on_demand_base_capacity:
+            To: OnDemandBaseCapacity
+          on_demand_percentage_above_base_capacity:
+            To: OnDemandPercentageAboveBaseCapacity
+          spot_instance_pools:
+            To: SpotInstancePools
       data_disks:
         To: DataDisks
         Type: List
@@ -177,6 +201,8 @@ Properties:
         To: NodeResizeStrategy
       payment_type:
         Ignore: true
+      private_pool_options:
+        Ignore: true
       spot_bid_prices:
         To: SpotBidPrices
         Type: List
@@ -187,12 +213,25 @@ Properties:
             To: InstanceType
       spot_instance_remedy:
         To: SpotInstanceRemedy
+      spot_strategy:
+        To: SpotStrategy
       subscription_config:
         Ignore: true
       system_disk:
-        Ignore: true
+        To: SystemDisk
+        Type: Map
+        Schema:
+          category:
+            To: Category
+          count:
+            To: Count
+          performance_level:
+            To: PerformanceLevel
+          size:
+            To: Size
       vswitch_ids:
-        Ignore: true
+        To: VSwitchIds
+        Type: List
       with_public_ip:
         To: WithPublicIp
   node_names:
@@ -279,31 +318,3 @@ Properties:
 Attributes:
   id:
     To: ClusterId
-  applications:
-    Ignore: true
-  bootstrap_scripts:
-    Ignore: true
-  cluster_name:
-    Ignore: true
-  cluster_type:
-    Ignore: true
-  deploy_mode:
-    Ignore: true
-  log_collect_strategy:
-    Ignore: true
-  node_attributes:
-    Ignore: true
-  node_groups:
-    Ignore: true
-  payment_type:
-    Ignore: true
-  release_version:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  security_mode:
-    Ignore: true
-  subscription_config:
-    Ignore: true
-  tags:
-    Ignore: true

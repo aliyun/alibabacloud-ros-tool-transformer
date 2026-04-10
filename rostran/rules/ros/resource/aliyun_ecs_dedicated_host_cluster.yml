@@ -8,23 +8,23 @@ Properties:
     To: dedicated_host_cluster_name
   Description:
     To: description
+  ResourceGroupId:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
   ZoneId:
     To: zone_id
-  ResourceGroupId:
-    Ignore: true
 Attributes:
   DedicatedHostClusterId:
     To: id
+  DedicatedHostClusterName:
+    Ignore: true
+  Description:
+    Ignore: true
   ResourceGroupId:
     Ignore: true
   Tags:
     Ignore: true
-  DedicatedHostClusterName:
-    Ignore: true
   ZoneId:
-    Ignore: true
-  Description:
     Ignore: true

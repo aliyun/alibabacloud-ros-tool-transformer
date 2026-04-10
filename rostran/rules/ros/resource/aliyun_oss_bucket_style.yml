@@ -13,13 +13,13 @@ Properties:
   StyleName:
     To: style_name
 Attributes:
-  CreateTime:
-    To: create_time
-  Content:
-    Ignore: true
-  StyleName:
-    Ignore: true
   Category:
     Ignore: true
+  Content:
+    Ignore: true
+  CreateTime:
+    To: create_time
   LastModifyTime:
+    Ignore: true
+  StyleName:
     Ignore: true

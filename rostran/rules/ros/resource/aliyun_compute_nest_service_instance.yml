@@ -4,108 +4,108 @@ ResourceType:
   From: ALIYUN::ComputeNest::ServiceInstance
   To: alicloud_compute_nest_service_instance
 Properties:
-  EnableInstanceOps:
-    To: enable_instance_ops
-  EnableUserPrometheus:
-    To: enable_user_prometheus
-  ResourceGroupId:
-    To: resource_group_id
-  Tags:
-    To: tags
-    Handler: handle_tags
-  TemplateName:
-    To: template_name
-  PredefinedParameterName:
-    Ignore: true
-  SpecificationCode:
-    To: specification_name
   Commodity:
     To: commodity
     Type: Map
     Schema:
+      AutoPay:
+        Ignore: true
+      AutoRenew:
+        Ignore: true
+      CouponId:
+        Ignore: true
       PayPeriod:
         To: pay_period
       PayPeriodUnit:
         To: pay_period_unit
-      CouponId:
-        Ignore: true
-      AutoRenew:
-        Ignore: true
-      AutoPay:
-        Ignore: true
-  Service:
-    To: service_id
   ContactGroup:
-    Ignore: true
-  OperationName:
-    Ignore: true
-  Name:
-    Ignore: true
-  MarketInstanceId:
-    Ignore: true
-  Parameters:
-    To: parameters
-  ServiceInstanceName:
-    To: service_instance_name
-  Service$$0:
-    To: service_version
-  ResourceAutoPay:
     Ignore: true
   DryRun:
     Ignore: true
-Attributes:
-  ServiceInstanceId:
-    To: id
   EnableInstanceOps:
     To: enable_instance_ops
   EnableUserPrometheus:
     To: enable_user_prometheus
+  MarketInstanceId:
+    Ignore: true
+  Name:
+    Ignore: true
+  OperationName:
+    Ignore: true
+  Parameters:
+    To: parameters
+  PredefinedParameterName:
+    Ignore: true
+  ResourceAutoPay:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
-  ServiceInstanceId$$0:
+  Service:
     To: service_id
-  Name:
+  Service$$0:
+    To: service_version
+  ServiceInstanceName:
     To: service_instance_name
+  SpecificationCode:
+    To: specification_name
   Tags:
     To: tags
     Handler: handle_tags
   TemplateName:
     To: template_name
-  PredefinedParameterName:
-    Ignore: true
+Attributes:
   Components:
-    Ignore: true
-  UpdateTime:
-    Ignore: true
-  Outputs:
-    Ignore: true
-  Service:
-    Ignore: true
-  StatusDetail:
-    To: status
-  Progress:
-    Ignore: true
-  Source:
     Ignore: true
   CreateTime:
     Ignore: true
-  NetworkConfig:
-    Ignore: true
-  UserId:
+  EnableInstanceOps:
+    To: enable_instance_ops
+  EnableUserPrometheus:
+    To: enable_user_prometheus
+  IsOperated:
     Ignore: true
   LicenseEndTime:
     Ignore: true
-  Parameters:
-    Ignore: true
-  IsOperated:
-    Ignore: true
-  ServiceType:
-    Ignore: true
-  SupplierUid:
-    Ignore: true
   MarketInstanceId:
+    Ignore: true
+  Name:
+    To: service_instance_name
+  NetworkConfig:
     Ignore: true
   Output:
     Ignore: true
+  Outputs:
+    Ignore: true
+  Parameters:
+    Ignore: true
+  PredefinedParameterName:
+    Ignore: true
+  Progress:
+    Ignore: true
+  ResourceGroupId:
+    To: resource_group_id
+  Service:
+    Ignore: true
+  ServiceInstanceId:
+    To: id
+  ServiceInstanceId$$0:
+    To: service_id
   ServiceInstanceName:
+    Ignore: true
+  ServiceType:
+    Ignore: true
+  Source:
+    Ignore: true
+  StatusDetail:
+    To: status
+  SupplierUid:
+    Ignore: true
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TemplateName:
+    To: template_name
+  UpdateTime:
+    Ignore: true
+  UserId:
     Ignore: true

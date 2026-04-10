@@ -4,14 +4,14 @@ ResourceType:
   From: ALIYUN::GPDB::JdbcDataSource
   To: alicloud_gpdb_jdbc_data_source
 Properties:
+  DBInstanceId:
+    To: db_instance_id
   DataSourceDescription:
     To: data_source_description
   DataSourceName:
     To: data_source_name
   DataSourceType:
     To: data_source_type
-  DBInstanceId:
-    To: db_instance_id
   JdbcConnectionString:
     To: jdbc_connection_string
   JdbcPassword:
@@ -19,29 +19,29 @@ Properties:
   JdbcUserName:
     To: jdbc_user_name
 Attributes:
-  CreateTime:
-    To: create_time
-  DataSourceId:
-    To: data_source_id
-  ConnectionStatus:
-    To: status
-  JdbcConnectionString:
-    Ignore: true
-  JdbcPassword:
-    Ignore: true
   ConnectionMessage:
     Ignore: true
-  JdbcUserName:
-    Ignore: true
+  ConnectionStatus:
+    To: status
+  CreateTime:
+    To: create_time
   DataSourceDescription:
+    Ignore: true
+  DataSourceId:
+    To: data_source_id
+  DataSourceName:
     Ignore: true
   DataSourceType:
     Ignore: true
   ExternalDataServiceId:
     Ignore: true
-  ModifyTime:
+  JdbcConnectionString:
     Ignore: true
-  DataSourceName:
+  JdbcPassword:
+    Ignore: true
+  JdbcUserName:
+    Ignore: true
+  ModifyTime:
     Ignore: true
   StatusMessage:
     Ignore: true

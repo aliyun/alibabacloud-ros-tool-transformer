@@ -9,7 +9,7 @@ Properties:
 Attributes:
   AccessKeyId:
     To: id
-  Status:
-    To: status
   AccessKeySecret:
     To: secret
+  Status:
+    To: status

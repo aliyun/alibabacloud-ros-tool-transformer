@@ -6,26 +6,26 @@ ResourceType:
 Properties:
   AclOperationTypes:
     To: acl_operation_type
+  AclOperationTypes$$0:
+    To: acl_operation_types
+  AclPermissionType:
+    To: acl_permission_type
   AclResourceName:
     To: acl_resource_name
   AclResourcePatternType:
     To: acl_resource_pattern_type
   AclResourceType:
     To: acl_resource_type
+  Host:
+    To: host
   InstanceId:
     To: instance_id
   Username:
     To: username
-  AclPermissionType:
-    To: acl_permission_type
-  Host:
-    To: host
-  AclOperationTypes$$0:
-    To: acl_operation_types
 Attributes:
-  Username:
+  AclResourceType:
     Ignore: true
   InstanceId:
     Ignore: true
-  AclResourceType:
+  Username:
     Ignore: true

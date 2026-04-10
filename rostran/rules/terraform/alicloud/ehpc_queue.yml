@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ehpc_queue
+  To: ALIYUN::EHPC::AutoScaleConfig
+Properties:
+  category:
+    Ignore: true
+  cluster_id:
+    To: ClusterId
+  compute_nodes:
+    Ignore: true
+  enable_scale_in:
+    To: EnableAutoShrink
+  enable_scale_out:
+    To: EnableAutoGrow
+  hostname_prefix:
+    Ignore: true
+  hostname_suffix:
+    Ignore: true
+  initial_count:
+    Ignore: true
+  inter_connect:
+    Ignore: true
+  level:
+    Ignore: true
+  max_count:
+    To: MaxNodesInCluster
+  min_count:
+    Ignore: true
+  queue_name:
+    Ignore: true
+  size:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true

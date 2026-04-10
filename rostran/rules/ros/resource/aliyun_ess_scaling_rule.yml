@@ -51,7 +51,7 @@ Properties:
   TargetValue:
     To: target_value
 Attributes:
-  ScalingRuleId:
-    To: id
   ScalingRuleAri:
     Ignore: true
+  ScalingRuleId:
+    To: id

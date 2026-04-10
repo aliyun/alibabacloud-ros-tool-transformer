@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_image_event_operation
+  To: ALIYUN::ThreatDetection::ImageEventOperation
+Properties:
+  conditions:
+    To: Conditions
+  event_key:
+    To: EventKey
+  event_name:
+    To: EventName
+  event_type:
+    To: EventType
+  note:
+    To: Note
+  operation_code:
+    To: OperationCode
+  scenarios:
+    To: Scenarios
+  source:
+    To: Source
+Attributes:
+  id:
+    To: ImageEventOperationId

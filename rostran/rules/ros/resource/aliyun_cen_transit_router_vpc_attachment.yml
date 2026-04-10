@@ -4,10 +4,16 @@ ResourceType:
   From: ALIYUN::CEN::TransitRouterVpcAttachment
   To: alicloud_cen_transit_router_vpc_attachment
 Properties:
+  AutoCreateVpcRoute:
+    Ignore: true
+  AutoPublishRouteEnabled:
+    To: auto_publish_route_enabled
   CenId:
     To: cen_id
   ChargeType:
     To: payment_type
+  DeletionForce:
+    To: force_delete
   RouteTableAssociationEnabled:
     To: route_table_association_enabled
   RouteTablePropagationEnabled:
@@ -18,6 +24,8 @@ Properties:
     To: transit_router_attachment_name
   TransitRouterId:
     To: transit_router_id
+  TransitRouterVPCAttachmentOptions:
+    To: transit_router_vpc_attachment_options
   VpcId:
     To: vpc_id
   VpcOwnerId:
@@ -26,21 +34,15 @@ Properties:
     To: zone_mappings
     Type: List
     Schema:
-      ZoneId:
-        To: zone_id
       VSwitchId:
         To: vswitch_id
-  DeletionForce:
-    To: force_delete
-  AutoCreateVpcRoute:
-    Ignore: true
-  AutoPublishRouteEnabled:
-    To: auto_publish_route_enabled
-  TransitRouterVPCAttachmentOptions:
-    To: transit_router_vpc_attachment_options
+      ZoneId:
+        To: zone_id
 Attributes:
   CenId:
     To: cen_id
+  ClientToken:
+    Ignore: true
   ResourceType:
     To: resource_type
   TransitRouterAttachmentDescription:
@@ -55,5 +57,3 @@ Attributes:
     To: vpc_id
   VpcOwnerId:
     To: vpc_owner_id
-  ClientToken:
-    Ignore: true

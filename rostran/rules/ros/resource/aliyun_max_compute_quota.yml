@@ -4,22 +4,22 @@ ResourceType:
   From: ALIYUN::MaxCompute::Quota
   To: alicloud_max_compute_quota
 Properties:
-  Specification:
-    To: commodity_code
-  QuotaNickname:
-    To: part_nick_name
-  PayType:
-    To: payment_type
-  PeriodUnit:
+  AutoPay:
+    Ignore: true
+  AutoRenew:
     Ignore: true
   CU:
     To: max_cu
-  AutoRenew:
-    Ignore: true
-  AutoPay:
-    Ignore: true
+  PayType:
+    To: payment_type
   Period:
     Ignore: true
+  PeriodUnit:
+    Ignore: true
+  QuotaNickname:
+    To: part_nick_name
+  Specification:
+    To: commodity_code
   Tunnel:
     Ignore: true
 Attributes:

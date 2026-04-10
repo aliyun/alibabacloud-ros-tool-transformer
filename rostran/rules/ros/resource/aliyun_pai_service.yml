@@ -6,71 +6,71 @@ ResourceType:
 Properties:
   Develop:
     To: develop
-  ServiceConfig:
-    To: service_config
   Labels:
     To: tags
     Handler: handle_tags
+  ServiceConfig:
+    To: service_config
 Attributes:
-  CreateTime:
-    To: create_time
-  TotalInstance:
-    Ignore: true
-  Namespace:
-    Ignore: true
-  Image:
-    Ignore: true
   AccessToken:
     Ignore: true
-  InternetEndpoint:
-    Ignore: true
-  ServiceConfig:
-    Ignore: true
-  Message:
-    Ignore: true
-  SafetyLock:
-    Ignore: true
-  PendingInstance:
+  CallerUid:
     Ignore: true
   Cpu:
     Ignore: true
-  Role:
-    Ignore: true
+  CreateTime:
+    To: create_time
   CurrentVersion:
     Ignore: true
-  ResourceAlias:
+  ExtraData:
+    Ignore: true
+  Gpu:
+    Ignore: true
+  Image:
+    Ignore: true
+  InternetEndpoint:
     Ignore: true
   IntranetEndpoint:
-    Ignore: true
-  Weight:
-    Ignore: true
-  Reason:
-    Ignore: true
-  ServiceGroup:
-    Ignore: true
-  Memory:
-    Ignore: true
-  Resource:
-    Ignore: true
-  RoleAttrs:
-    Ignore: true
-  ServiceUid:
-    To: id
-  ExtraData:
     Ignore: true
   Labels:
     Ignore: true
   LatestVersion:
     Ignore: true
+  Memory:
+    Ignore: true
+  Message:
+    Ignore: true
+  Namespace:
+    Ignore: true
   ParentUid:
+    Ignore: true
+  PendingInstance:
+    Ignore: true
+  Reason:
+    Ignore: true
+  Resource:
+    Ignore: true
+  ResourceAlias:
+    Ignore: true
+  Role:
+    Ignore: true
+  RoleAttrs:
     Ignore: true
   RunningInstance:
     Ignore: true
-  UpdateTime:
+  SafetyLock:
     Ignore: true
-  Gpu:
+  ServiceConfig:
+    Ignore: true
+  ServiceGroup:
     Ignore: true
   ServiceName:
     Ignore: true
-  CallerUid:
+  ServiceUid:
+    To: id
+  TotalInstance:
+    Ignore: true
+  UpdateTime:
+    Ignore: true
+  Weight:
     Ignore: true

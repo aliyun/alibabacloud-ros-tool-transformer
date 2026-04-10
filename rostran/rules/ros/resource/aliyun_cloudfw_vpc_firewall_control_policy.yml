@@ -8,6 +8,8 @@ Properties:
     To: acl_action
   ApplicationName:
     To: application_name
+  ApplicationNameList:
+    To: application_name_list
   Description:
     To: description
   DestPort:
@@ -20,40 +22,38 @@ Properties:
     To: destination
   DestinationType:
     To: destination_type
+  DomainResolveType:
+    To: domain_resolve_type
+  EndTime:
+    To: end_time
   Lang:
     To: lang
   MemberUid:
     To: member_uid
+  NewOrder:
+    To: order
   Proto:
     To: proto
+  RegionId:
+    Ignore: true
   Release:
     To: release
+  RepeatDays:
+    To: repeat_days
+  RepeatEndTime:
+    To: repeat_end_time
+  RepeatStartTime:
+    To: repeat_start_time
+  RepeatType:
+    To: repeat_type
   Source:
     To: source
   SourceType:
     To: source_type
-  VpcFirewallId:
-    To: vpc_firewall_id
-  EndTime:
-    To: end_time
-  RepeatStartTime:
-    To: repeat_start_time
-  RepeatDays:
-    To: repeat_days
-  RepeatType:
-    To: repeat_type
   StartTime:
     To: start_time
-  RegionId:
-    Ignore: true
-  ApplicationNameList:
-    To: application_name_list
-  RepeatEndTime:
-    To: repeat_end_time
-  NewOrder:
-    To: order
-  DomainResolveType:
-    To: domain_resolve_type
+  VpcFirewallId:
+    To: vpc_firewall_id
 Attributes:
   AclUuid:
     To: acl_uuid

@@ -4,16 +4,16 @@ ResourceType:
   From: ALIYUN::VPC::BgpPeer
   To: alicloud_vpc_bgp_peer
 Properties:
+  BfdMultiHop:
+    To: bfd_multi_hop
   BgpGroupId:
     To: bgp_group_id
   EnableBfd:
     To: enable_bfd
-  PeerIpAddress:
-    To: peer_ip_address
-  BfdMultiHop:
-    To: bfd_multi_hop
   IpVersion:
     To: ip_version
+  PeerIpAddress:
+    To: peer_ip_address
 Attributes:
   BgpPeerId:
     To: id

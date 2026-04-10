@@ -6,20 +6,20 @@ ResourceType:
 Properties:
   IpVersion:
     To: ip_version
-  VSwitchId:
-    To: vswitch_id
+  Tags:
+    Ignore: true
   VSwitchCidrReservationCidr:
     To: cidr_reservation_cidr
   VSwitchCidrReservationDescription:
     To: cidr_reservation_description
-  Tags:
-    Ignore: true
-  VSwitchCidrReservationType:
-    To: cidr_reservation_type
   VSwitchCidrReservationMask:
     To: cidr_reservation_mask
   VSwitchCidrReservationName:
     To: vswitch_cidr_reservation_name
+  VSwitchCidrReservationType:
+    To: cidr_reservation_type
+  VSwitchId:
+    To: vswitch_id
 Attributes:
   VSwitchCidrReservationId:
     To: id

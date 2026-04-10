@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::KAFKA::Instance
 Properties:
   config:
-    Ignore: true
+    To: DeployOption.Config
   confluent_config:
     Ignore: true
   default_topic_partition_num:
@@ -22,40 +22,28 @@ Properties:
     Ignore: true
   enable_auto_topic:
     Ignore: true
-  end_point:
-    Ignore: true
-  group_left:
-    Ignore: true
-  group_used:
-    Ignore: true
   instance_type:
     Ignore: true
   io_max:
     To: IoMax
   io_max_spec:
     To: IoMaxSpec
-  is_partition_buy:
-    Ignore: true
   kms_key_id:
-    Ignore: true
+    To: DeployOption.KMSKeyId
   name:
-    Ignore: true
+    To: DeployOption.Name
   paid_type:
     To: PayType
-  partition_left:
-    Ignore: true
   partition_num:
     To: PartitionNum
-  partition_used:
-    Ignore: true
   password:
-    Ignore: true
+    To: DeployOption.Password
   resource_group_id:
     Ignore: true
   security_group:
-    Ignore: true
+    To: DeployOption.SecurityGroup
   selected_zones:
-    Ignore: true
+    To: DeployOption.SelectedZones
   serverless_config:
     To: ServerlessConfig
     Type: Map
@@ -65,98 +53,50 @@ Properties:
       reserved_subscribe_capacity:
         To: ReservedSubscribeCapacity
   service_version:
-    Ignore: true
+    To: DeployOption.ServiceVersion
   spec_type:
     To: SpecType
-  status:
-    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
-  topic_left:
-    Ignore: true
-  topic_num_of_buy:
-    Ignore: true
   topic_quota:
     To: TopicQuota
-  topic_used:
-    Ignore: true
   vpc_id:
-    Ignore: true
+    To: DeployOption.VpcId
   vswitch_id:
-    Ignore: true
+    To: DeployOption.VSwitchId
   vswitch_ids:
-    Ignore: true
+    To: DeployOption.VSwitchIds
   zone_id:
-    Ignore: true
+    To: DeployOption.ZoneId
 Attributes:
   id:
     To: InstanceId
-  config:
-    Ignore: true
-  deploy_type:
-    Ignore: true
-  disk_size:
-    Ignore: true
-  disk_type:
-    Ignore: true
   domain_endpoint:
     To: DomainEndpoint
-  eip_max:
-    Ignore: true
   end_point:
     To: Endpoint
   group_left:
     Ignore: true
   group_used:
     Ignore: true
-  io_max:
-    Ignore: true
-  io_max_spec:
-    Ignore: true
   is_partition_buy:
-    Ignore: true
-  kms_key_id:
-    Ignore: true
-  name:
-    To: Name
-  paid_type:
     Ignore: true
   partition_left:
     Ignore: true
-  partition_num:
-    Ignore: true
   partition_used:
-    Ignore: true
-  resource_group_id:
     Ignore: true
   sasl_domain_endpoint:
     To: SaslDomainEndpoint
-  security_group:
-    Ignore: true
-  service_version:
-    Ignore: true
-  spec_type:
-    Ignore: true
   ssl_domain_endpoint:
     To: SslDomainEndpoint
   ssl_endpoint:
     To: SslEndpoint
   status:
     Ignore: true
-  tags:
-    Ignore: true
   topic_left:
     Ignore: true
   topic_num_of_buy:
     Ignore: true
-  topic_quota:
-    Ignore: true
   topic_used:
-    Ignore: true
-  vpc_id:
-    Ignore: true
-  vswitch_id:
-    Ignore: true
-  zone_id:
     Ignore: true

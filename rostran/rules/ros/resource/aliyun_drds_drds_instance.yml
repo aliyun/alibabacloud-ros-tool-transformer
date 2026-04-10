@@ -6,40 +6,40 @@ ResourceType:
 Properties:
   Description:
     To: description
+  Duration:
+    Ignore: true
   InstanceSeries:
     To: instance_series
+  IsAutoRenew:
+    Ignore: true
+  MySQLVersion:
+    To: mysql_version
+  PayType:
+    To: instance_charge_type
+  PricingCycle:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
   Specification:
     To: specification
+  Tags:
+    Ignore: true
+  Type:
+    Ignore: true
   VpcId:
     To: vpc_id
   VswitchId:
     To: vswitch_id
   ZoneId:
     To: zone_id
-  Tags:
-    Ignore: true
-  Type:
-    Ignore: true
-  MySQLVersion:
-    To: mysql_version
-  IsAutoRenew:
-    Ignore: true
-  PricingCycle:
-    Ignore: true
-  Duration:
-    Ignore: true
-  PayType:
-    To: instance_charge_type
-  ResourceGroupId:
-    Ignore: true
 Attributes:
-  DrdsInstanceId:
-    To: id
-  IntranetEndpoint:
-    Ignore: true
   Arn:
     Ignore: true
+  DrdsInstanceId:
+    To: id
   InternetEndpoint:
     To: connection_string
+  IntranetEndpoint:
+    Ignore: true
   OrderId:
     Ignore: true

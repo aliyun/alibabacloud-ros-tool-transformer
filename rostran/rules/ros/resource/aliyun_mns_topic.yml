@@ -6,21 +6,21 @@ ResourceType:
 Properties:
   LoggingEnabled:
     To: logging_enabled
-  TopicName:
-    To: topic_name
-  MaximumMessageSize:
-    To: max_message_size
   LoggingEnabled$$0:
     To: logging_enabled
+  MaximumMessageSize:
+    To: max_message_size
   Tags:
     To: tags
     Handler: handle_tags
+  TopicName:
+    To: topic_name
 Attributes:
+  ARN.WithSlash:
+    Ignore: true
   TopicName:
     To: id
   TopicName$$0:
     To: topic_name
   TopicUrl:
-    Ignore: true
-  ARN.WithSlash:
     Ignore: true

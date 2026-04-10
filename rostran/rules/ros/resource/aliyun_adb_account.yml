@@ -17,7 +17,7 @@ Properties:
 Attributes:
   AccountName:
     To: account_name
-  DBClusterId:
-    To: db_cluster_id
   AccountType:
     Ignore: true
+  DBClusterId:
+    To: db_cluster_id

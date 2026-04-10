@@ -22,3 +22,6 @@ Properties:
         To: RoleType
   uid:
     To: UserId
+Attributes:
+  id:
+    Ignore: true

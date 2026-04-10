@@ -9,11 +9,11 @@ Properties:
   BandwidthPackageId:
     To: bandwidth_package_id
 Attributes:
-  BandwidthPackageId:
-    To: id
   AcceleratorId:
     To: accelerator_id
-  BandwidthPackageId$$0:
-    To: bandwidth_package_id
   AcceleratorId$$0:
     To: accelerators
+  BandwidthPackageId:
+    To: id
+  BandwidthPackageId$$0:
+    To: bandwidth_package_id

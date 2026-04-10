@@ -183,7 +183,7 @@ Properties:
       server:
         To: Server
       username:
-        Ignore: true
+        To: UserName
   image_snapshot_id:
     To: ImageSnapshotId
   ingress_bandwidth:
@@ -315,81 +315,13 @@ Properties:
       name:
         To: Name
       nfs_volume_path:
-        Ignore: true
+        To: NFSVolumePath
       nfs_volume_read_only:
-        Ignore: true
+        To: NFSVolumeReadOnly
       nfs_volume_server:
-        Ignore: true
+        To: NFSVolumeServer
       type:
         To: Type
 Attributes:
   id:
     To: ScalingConfigurationId
-  acr_registry_infos:
-    Ignore: true
-  active:
-    Ignore: true
-  active_deadline_seconds:
-    Ignore: true
-  auto_create_eip:
-    Ignore: true
-  auto_match_image_cache:
-    Ignore: true
-  container_group_name:
-    Ignore: true
-  cpu:
-    Ignore: true
-  cpu_options_core:
-    Ignore: true
-  cpu_options_threads_per_core:
-    Ignore: true
-  description:
-    Ignore: true
-  dns_policy:
-    Ignore: true
-  egress_bandwidth:
-    Ignore: true
-  eip_bandwidth:
-    Ignore: true
-  enable_sls:
-    Ignore: true
-  ephemeral_storage:
-    Ignore: true
-  force_delete:
-    Ignore: true
-  host_name:
-    Ignore: true
-  image_registry_credentials:
-    Ignore: true
-  image_snapshot_id:
-    Ignore: true
-  ingress_bandwidth:
-    Ignore: true
-  instance_types:
-    Ignore: true
-  ipv6_address_count:
-    Ignore: true
-  load_balancer_weight:
-    Ignore: true
-  memory:
-    Ignore: true
-  ram_role_name:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  restart_policy:
-    Ignore: true
-  scaling_configuration_name:
-    Ignore: true
-  scaling_group_id:
-    Ignore: true
-  security_group_id:
-    Ignore: true
-  spot_price_limit:
-    Ignore: true
-  spot_strategy:
-    Ignore: true
-  tags:
-    Ignore: true
-  termination_grace_period_seconds:
-    Ignore: true

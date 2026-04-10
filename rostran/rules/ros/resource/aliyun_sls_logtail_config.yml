@@ -4,22 +4,22 @@ ResourceType:
   From: ALIYUN::SLS::LogtailConfig
   To: alicloud_sls_logtail_config
 Properties:
-  RawConfigData:
-    To: input_detail
   CloneFrom:
     Ignore: true
-  LogtailConfigName:
-    To: name
   LogstoreName:
     To: logstore
+  LogtailConfigName:
+    To: name
   ProjectName:
     To: project
+  RawConfigData:
+    To: input_detail
   RawConfigData$$0:
     To: output_type
 Attributes:
+  AppliedMachineGroups:
+    Ignore: true
   Endpoint:
     Ignore: true
   LogtailConfigName:
-    Ignore: true
-  AppliedMachineGroups:
     Ignore: true

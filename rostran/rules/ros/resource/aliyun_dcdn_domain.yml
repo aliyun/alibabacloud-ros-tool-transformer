@@ -32,11 +32,11 @@ Properties:
   TopLevelDomain:
     To: top_level_domain
 Attributes:
-  DomainName:
-    To: id
-  Cname:
-    To: cname
-  DomainName$$0:
-    To: domain_name
   Arn:
     Ignore: true
+  Cname:
+    To: cname
+  DomainName:
+    To: id
+  DomainName$$0:
+    To: domain_name

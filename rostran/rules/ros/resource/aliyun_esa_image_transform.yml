@@ -6,34 +6,34 @@ ResourceType:
 Properties:
   Enable:
     To: enable
+  PaymentType:
+    Ignore: true
   Rule:
     To: rule
   RuleEnable:
     To: rule_enable
   RuleName:
     To: rule_name
+  Sequence:
+    To: sequence
   SiteId:
     To: site_id
   SiteVersion:
     To: site_version
-  Sequence:
-    To: sequence
-  PaymentType:
-    Ignore: true
 Attributes:
   ConfigId:
     To: config_id
-  RuleEnable:
-    Ignore: true
-  SiteVersion:
-    Ignore: true
   ConfigType:
+    Ignore: true
+  Enable:
     Ignore: true
   Rule:
     Ignore: true
-  Enable:
+  RuleEnable:
     Ignore: true
   RuleName:
     Ignore: true
   Sequence:
+    Ignore: true
+  SiteVersion:
     Ignore: true

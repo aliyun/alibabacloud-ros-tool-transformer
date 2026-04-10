@@ -14,13 +14,13 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
-  ListenerId:
-    To: id
-  ServerGroupId:
-    Ignore: true
   ListenerDescription:
     Ignore: true
+  ListenerId:
+    To: id
   LoadBalancerId:
+    Ignore: true
+  ServerGroupId:
     Ignore: true
   Tags:
     Ignore: true

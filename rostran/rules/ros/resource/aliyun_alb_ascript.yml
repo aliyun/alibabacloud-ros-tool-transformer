@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::ALB::AScript
   To: alicloud_alb_ascript
 Properties:
+  AScriptName:
+    To: ascript_name
   Enabled:
     To: enabled
   ExtAttributeEnabled:
@@ -20,8 +22,6 @@ Properties:
     To: listener_id
   ScriptContent:
     To: script_content
-  AScriptName:
-    To: ascript_name
 Attributes:
   AScriptId:
     To: id

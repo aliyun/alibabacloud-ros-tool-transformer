@@ -6,14 +6,14 @@ ResourceType:
 Properties:
   BabelfishPort:
     To: babelfish_port
-  Port:
-    To: port
   ConnectionStringPrefix:
     To: connection_prefix
   DBInstanceId:
     To: instance_id
   GeneralGroupName:
     Ignore: true
+  Port:
+    To: port
 Attributes:
   BabelfishPort:
     To: babelfish_port

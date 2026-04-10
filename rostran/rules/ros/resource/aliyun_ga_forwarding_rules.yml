@@ -6,10 +6,10 @@ ResourceType:
 Properties:
   AcceleratorId:
     To: accelerator_id
-  ListenerId:
-    To: listener_id
   ForwardingRules:
     Ignore: true
+  ListenerId:
+    To: listener_id
 Attributes:
   ForwardingRuleIds:
     To: forwarding_rule_id

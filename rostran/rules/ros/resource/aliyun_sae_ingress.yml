@@ -6,6 +6,18 @@ ResourceType:
 Properties:
   CertId:
     To: cert_id
+  CertIds:
+    To: cert_ids
+  DefaultRule:
+    To: default_rule
+    Type: Map
+    Schema:
+      AppId:
+        To: app_id
+      BackendProtocol:
+        Ignore: true
+      ContainerPort:
+        To: container_port
   Description:
     To: description
   ListenerPort:
@@ -34,18 +46,6 @@ Properties:
         To: rewrite_path
   SlbId:
     To: slb_id
-  CertIds:
-    To: cert_ids
-  DefaultRule:
-    To: default_rule
-    Type: Map
-    Schema:
-      AppId:
-        To: app_id
-      ContainerPort:
-        To: container_port
-      BackendProtocol:
-        Ignore: true
 Attributes:
   IngressId:
     To: id

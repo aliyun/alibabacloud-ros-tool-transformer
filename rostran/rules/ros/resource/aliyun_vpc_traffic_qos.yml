@@ -14,6 +14,10 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
+  Progressing:
+    Ignore: true
+  QosDescription:
+    Ignore: true
   QosId:
     To: id
   QosName:
@@ -21,8 +25,4 @@ Attributes:
   ResourceGroupId:
     Ignore: true
   Tags:
-    Ignore: true
-  QosDescription:
-    Ignore: true
-  Progressing:
     Ignore: true

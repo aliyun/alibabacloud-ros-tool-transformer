@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::CDDC::DedicatedHost
   To: alicloud_cddc_dedicated_host
 Properties:
+  AutoRenew:
+    To: auto_renew
   DedicatedHostGroupId:
     To: dedicated_host_group_id
   HostClass:
@@ -27,54 +29,52 @@ Properties:
     To: vswitch_id
   ZoneId:
     To: zone_id
-  AutoRenew:
-    To: auto_renew
 Attributes:
-  DedicatedHostId:
-    To: id
-  DedicatedHostGroupId:
-    To: dedicated_host_group_id
-  DedicatedHostId$$0:
-    To: dedicated_host_id
-  HostClass:
-    To: host_class
-  HostName:
-    To: host_name
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  VpcId:
-    Ignore: true
-  HostType:
-    Ignore: true
-  HostMem:
-    Ignore: true
-  MemoryUsed:
+  AutoRenew:
     Ignore: true
   CpuAllocationRatio:
     Ignore: true
-  ImageCategory:
+  CpuUsed:
+    Ignore: true
+  DedicatedHostGroupId:
+    To: dedicated_host_group_id
+  DedicatedHostId:
+    To: id
+  DedicatedHostId$$0:
+    To: dedicated_host_id
+  DiskAllocationRatio:
     Ignore: true
   EcsClassCode:
     Ignore: true
+  HostClass:
+    To: host_class
+  HostCpu:
+    Ignore: true
+  HostMem:
+    Ignore: true
+  HostName:
+    To: host_name
+  HostStorage:
+    Ignore: true
+  HostType:
+    Ignore: true
+  ImageCategory:
+    Ignore: true
+  IpAddress:
+    Ignore: true
   MemAllocationRatio:
+    Ignore: true
+  MemoryUsed:
+    Ignore: true
+  OpenPermission:
     Ignore: true
   PaymentType:
     Ignore: true
   StorageUsed:
     Ignore: true
-  CpuUsed:
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
     Ignore: true
-  DiskAllocationRatio:
-    Ignore: true
-  AutoRenew:
-    Ignore: true
-  IpAddress:
-    Ignore: true
-  HostCpu:
-    Ignore: true
-  HostStorage:
-    Ignore: true
-  OpenPermission:
-    Ignore: true
+  ZoneId:
+    To: zone_id

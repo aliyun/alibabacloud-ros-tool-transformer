@@ -13,7 +13,7 @@ Properties:
 Attributes:
   ConfigId:
     To: config_id
-  Url:
-    Ignore: true
   SdkType:
+    Ignore: true
+  Url:
     Ignore: true

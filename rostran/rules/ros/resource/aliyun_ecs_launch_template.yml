@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   AutoReleaseTime:
     To: auto_release_time
+  DeploymentSetId:
+    To: deployment_set_id
+  Description:
+    To: description
   DiskMappings:
     To: data_disks
     Type: List
@@ -16,6 +20,8 @@ Properties:
         To: delete_with_instance
       Description:
         To: description
+      DiskName:
+        Ignore: true
       Encrypted:
         To: encrypted
       PerformanceLevel:
@@ -24,12 +30,6 @@ Properties:
         To: size
       SnapshotId:
         To: snapshot_id
-      DiskName:
-        Ignore: true
-  DeploymentSetId:
-    To: deployment_set_id
-  Description:
-    To: description
   HostName:
     To: host_name
   ImageId:
@@ -48,6 +48,8 @@ Properties:
     To: internet_max_bandwidth_out
   IoOptimized:
     To: io_optimized
+  Ipv6AddressCount:
+    Ignore: true
   KeyPairName:
     To: key_pair_name
   LaunchTemplateName:
@@ -58,14 +60,14 @@ Properties:
     Schema:
       Description:
         To: description
+      NetworkInterfaceName:
+        Ignore: true
+      PrimaryIpAddress:
+        Ignore: true
       SecurityGroupId:
         To: security_group_id
       VSwitchId:
         To: vswitch_id
-      PrimaryIpAddress:
-        Ignore: true
-      NetworkInterfaceName:
-        Ignore: true
   NetworkType:
     To: network_type
   PasswordInherit:
@@ -92,8 +94,14 @@ Properties:
     To: spot_strategy
   SystemDiskCategory:
     To: system_disk_category
+  SystemDiskDeleteWithInstance:
+    Ignore: true
   SystemDiskDescription:
     To: system_disk_description
+  SystemDiskDiskName:
+    To: system_disk_name
+  SystemDiskPerformanceLevel:
+    Ignore: true
   SystemDiskSize:
     To: system_disk_size
   Tags:
@@ -113,26 +121,18 @@ Properties:
     To: user_data
   UserData$$0:
     To: userdata
-  VersionDescription:
-    To: version_description
   VSwitchId:
     To: vswitch_id
+  VersionDescription:
+    To: version_description
   ZoneId:
     To: zone_id
-  SystemDiskDiskName:
-    To: system_disk_name
-  SystemDiskDeleteWithInstance:
-    Ignore: true
-  Ipv6AddressCount:
-    Ignore: true
-  SystemDiskPerformanceLevel:
-    Ignore: true
 Attributes:
+  DefaultVersionNumber:
+    Ignore: true
+  LatestVersionNumber:
+    To: latest_version_number
   LaunchTemplateId:
     To: id
   LaunchTemplateName:
     To: launch_template_name
-  LatestVersionNumber:
-    To: latest_version_number
-  DefaultVersionNumber:
-    Ignore: true

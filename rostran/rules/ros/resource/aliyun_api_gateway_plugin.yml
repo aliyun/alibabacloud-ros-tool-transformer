@@ -16,12 +16,12 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
-  PluginId:
-    To: id
   Description:
     To: description
   PluginData:
     To: plugin_data
+  PluginId:
+    To: id
   PluginName:
     To: plugin_name
   PluginType:

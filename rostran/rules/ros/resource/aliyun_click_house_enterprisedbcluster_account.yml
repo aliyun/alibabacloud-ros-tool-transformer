@@ -4,24 +4,24 @@ ResourceType:
   From: ALIYUN::ClickHouse::EnterpriseDBClusterAccount
   To: alicloud_click_house_enterprise_db_cluster_account
 Properties:
-  Description:
-    To: account_description
   Account:
     To: account_name
-  Password:
-    To: account_password
-  DBInstanceId:
-    To: db_cluster_id
-  DmlAuthSetting:
-    To: dml_authority
   AccountType:
     To: type
-Attributes:
+  DBInstanceId:
+    To: db_cluster_id
+  Description:
+    To: account_description
   DmlAuthSetting:
+    To: dml_authority
+  Password:
+    To: account_password
+Attributes:
+  Account:
     Ignore: true
   AccountType:
     Ignore: true
-  Account:
-    Ignore: true
   Description:
+    Ignore: true
+  DmlAuthSetting:
     Ignore: true

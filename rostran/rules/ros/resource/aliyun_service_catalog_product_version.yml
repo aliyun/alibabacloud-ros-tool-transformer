@@ -19,21 +19,21 @@ Properties:
   TemplateUrl:
     To: template_url
 Attributes:
-  ProductVersionId:
-    To: id
-  CreateTime:
-    To: create_time
-  ProductId:
-    Ignore: true
   Active:
     Ignore: true
-  TemplateType:
-    Ignore: true
-  ProductVersionName:
-    Ignore: true
-  TemplateUrl:
+  CreateTime:
+    To: create_time
+  Description:
     Ignore: true
   Guidance:
     Ignore: true
-  Description:
+  ProductId:
+    Ignore: true
+  ProductVersionId:
+    To: id
+  ProductVersionName:
+    Ignore: true
+  TemplateType:
+    Ignore: true
+  TemplateUrl:
     Ignore: true

@@ -4,49 +4,28 @@ ResourceType:
   From: ALIYUN::DTS::MigrationJob2
   To: alicloud_dts_migration_job
 Properties:
-  DtsJobName:
-    To: dts_job_name
-  DtsInstanceId:
-    To: dts_instance_id
-  SourceEndpoint:
-    To: source_endpoint_instance_type
-    Handler: handle_dict_value(InstanceType)
-  SourceEndpoint$$1:
-    To: source_endpoint_instance_id
-    Handler: handle_dict_value(InstanceID)
-  SourceEndpoint$$2:
-    To: source_endpoint_engine_name
-    Handler: handle_dict_value(EngineName)
-  SourceEndpoint$$3:
-    To: source_endpoint_region
-    Handler: handle_dict_value(Region)
-  SourceEndpoint$$4:
-    To: source_endpoint_ip
-    Handler: handle_dict_value(IP)
-  SourceEndpoint$$5:
-    To: source_endpoint_port
-    Handler: handle_dict_value(Port)
-  SourceEndpoint$$6:
-    To: source_endpoint_database_name
-    Handler: handle_dict_value(DatabaseName)
-  SourceEndpoint$$7:
-    To: source_endpoint_user_name
-    Handler: handle_dict_value(UserName)
-  SourceEndpoint$$8:
-    To: source_endpoint_password
-    Handler: handle_dict_value(Password)
-  SourceEndpoint$$9:
-    To: source_endpoint_owner_id
-    Handler: handle_dict_value(OwnerID)
-  SourceEndpoint$$10:
-    To: source_endpoint_role
-    Handler: handle_dict_value(Role)
-  SourceEndpoint$$11:
-    To: source_endpoint_oracle_sid
-    Handler: handle_dict_value(OracleSID)
-  SourceEndpoint$$12:
-    To: source_endpoint_vswitch_id
-    Handler: handle_dict_value(VSwitchID)
+  Checkpoint:
+    To: checkpoint
+  DataCheckConfigure:
+    Ignore: true
+  DataInitialization:
+    To: data_initialization
+  DataSynchronization:
+    To: data_synchronization
+  DbList:
+    To: db_list
+  DedicatedClusterId:
+    Ignore: true
+  DelayNotice:
+    Ignore: true
+  DelayPhone:
+    Ignore: true
+  DelayRuleTime:
+    Ignore: true
+  DestPrimaryVswId:
+    Ignore: true
+  DestSecondaryVswId:
+    Ignore: true
   DestinationEndpoint:
     To: destination_endpoint_instance_type
     Handler: handle_dict_value(InstanceType)
@@ -77,60 +56,81 @@ Properties:
   DestinationEndpoint$$9:
     To: destination_endpoint_oracle_sid
     Handler: handle_dict_value(OracleSID)
-  StructureInitialization:
-    To: structure_initialization
-  DataInitialization:
-    To: data_initialization
-  DataSynchronization:
-    To: data_synchronization
-  DbList:
-    To: db_list
-  Checkpoint:
-    To: checkpoint
-  Status:
-    To: status
-  MinDu:
-    Ignore: true
-  MaxDu:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
-  DestPrimaryVswId:
-    Ignore: true
-  DestSecondaryVswId:
-    Ignore: true
-  SrcPrimaryVswId:
-    Ignore: true
-  SrcSecondaryVswId:
-    Ignore: true
-  Reserve:
-    Ignore: true
-  DtsJobId:
-    Ignore: true
-  DelayPhone:
-    Ignore: true
-  DelayRuleTime:
-    Ignore: true
-  DelayNotice:
-    Ignore: true
-  ErrorPhone:
-    Ignore: true
-  ErrorNotice:
-    Ignore: true
-  DedicatedClusterId:
-    Ignore: true
-  FileOssUrl:
-    Ignore: true
-  DataCheckConfigure:
-    Ignore: true
   DisasterRecoveryJob:
     Ignore: true
   DtsBisLabel:
     Ignore: true
-Attributes:
+  DtsInstanceId:
+    To: dts_instance_id
+  DtsJobId:
+    Ignore: true
   DtsJobName:
+    To: dts_job_name
+  ErrorNotice:
+    Ignore: true
+  ErrorPhone:
+    Ignore: true
+  FileOssUrl:
+    Ignore: true
+  MaxDu:
+    Ignore: true
+  MinDu:
+    Ignore: true
+  Reserve:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  SourceEndpoint:
+    To: source_endpoint_instance_type
+    Handler: handle_dict_value(InstanceType)
+  SourceEndpoint$$1:
+    To: source_endpoint_instance_id
+    Handler: handle_dict_value(InstanceID)
+  SourceEndpoint$$10:
+    To: source_endpoint_role
+    Handler: handle_dict_value(Role)
+  SourceEndpoint$$11:
+    To: source_endpoint_oracle_sid
+    Handler: handle_dict_value(OracleSID)
+  SourceEndpoint$$12:
+    To: source_endpoint_vswitch_id
+    Handler: handle_dict_value(VSwitchID)
+  SourceEndpoint$$2:
+    To: source_endpoint_engine_name
+    Handler: handle_dict_value(EngineName)
+  SourceEndpoint$$3:
+    To: source_endpoint_region
+    Handler: handle_dict_value(Region)
+  SourceEndpoint$$4:
+    To: source_endpoint_ip
+    Handler: handle_dict_value(IP)
+  SourceEndpoint$$5:
+    To: source_endpoint_port
+    Handler: handle_dict_value(Port)
+  SourceEndpoint$$6:
+    To: source_endpoint_database_name
+    Handler: handle_dict_value(DatabaseName)
+  SourceEndpoint$$7:
+    To: source_endpoint_user_name
+    Handler: handle_dict_value(UserName)
+  SourceEndpoint$$8:
+    To: source_endpoint_password
+    Handler: handle_dict_value(Password)
+  SourceEndpoint$$9:
+    To: source_endpoint_owner_id
+    Handler: handle_dict_value(OwnerID)
+  SrcPrimaryVswId:
+    Ignore: true
+  SrcSecondaryVswId:
+    Ignore: true
+  Status:
+    To: status
+  StructureInitialization:
+    To: structure_initialization
+Attributes:
+  DtsInstanceId:
     Ignore: true
   DtsJobId:
     To: id
-  DtsInstanceId:
+  DtsJobName:
     Ignore: true

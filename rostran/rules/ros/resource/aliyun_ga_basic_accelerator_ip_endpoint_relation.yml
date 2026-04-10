@@ -11,9 +11,9 @@ Properties:
   EndpointId:
     To: endpoint_id
 Attributes:
-  EndpointId:
+  AccelerateIpId:
     Ignore: true
   AcceleratorId:
     Ignore: true
-  AccelerateIpId:
+  EndpointId:
     Ignore: true

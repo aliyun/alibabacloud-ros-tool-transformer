@@ -4,14 +4,26 @@ ResourceType:
   From: ALIYUN::ECS::Instance
   To: alicloud_instance
 Properties:
+  Affinity:
+    Ignore: true
   AllocatePublicIP:
     To: allocate_public_ip
+  AutoRenew:
+    To: renewal_status
   AutoRenewPeriod:
     To: auto_renew_period
-  ZoneId:
-    To: availability_zone
   CreditSpecification:
     To: credit_specification
+  DedicatedHostId:
+    To: dedicated_host_id
+  DeletionProtection:
+    To: deletion_protection
+  DeploymentSetGroupNo:
+    To: deployment_set_group_no
+  DeploymentSetId:
+    To: deployment_set_id
+  Description:
+    To: description
   DiskMappings:
     To: data_disks
     Type: List
@@ -30,16 +42,6 @@ Properties:
         To: size
       SnapshotId:
         To: snapshot_id
-  DedicatedHostId:
-    To: dedicated_host_id
-  DeletionProtection:
-    To: deletion_protection
-  DeploymentSetGroupNo:
-    To: deployment_set_group_no
-  DeploymentSetId:
-    To: deployment_set_id
-  Description:
-    To: description
   HostName:
     To: host_name
   HpcClusterId:
@@ -48,6 +50,8 @@ Properties:
     To: http_endpoint
   HttpTokens:
     To: http_tokens
+  ImageFamily:
+    To: image_options
   ImageId:
     To: image_id
     Handler: handle_image_id
@@ -68,31 +72,49 @@ Properties:
     To: key_name
   Password:
     To: password
+  PasswordInherit:
+    To: password_inherit
   Period:
     To: period
   PeriodUnit:
     To: period_unit
   PrivateIpAddress:
     To: private_ip
-  ResourceGroupId:
-    To: resource_group_id
+  PrivatePoolOptions:
+    To: private_pool_options_id
+  PrivatePoolOptions$$0:
+    To: private_pool_options_match_criteria
   RamRoleName:
     To: role_name
+  ResourceGroupId:
+    To: resource_group_id
   SecurityEnhancementStrategy:
     To: security_enhancement_strategy
   SecurityGroupId:
     To: security_groups
     Handler: handle_to_list
+  SecurityGroupIds:
+    To: security_groups
   SpotDuration:
     To: spot_duration
+  SpotInterruptionBehavior:
+    To: spot_interruption_behavior
   SpotPriceLimit:
     To: spot_price_limit
   SpotStrategy:
     To: spot_strategy
+  StorageSetId:
+    To: system_disk_storage_cluster_id
+  StorageSetPartitionNumber:
+    Ignore: true
+  SubscriptionDeletionForce:
+    To: force_delete
   SystemDiskCategory:
     To: system_disk_category
   SystemDiskDescription:
     To: system_disk_description
+  SystemDiskDiskName:
+    To: system_disk_name
   SystemDiskPerformanceLevel:
     To: system_disk_performance_level
   SystemDiskSize:
@@ -100,58 +122,36 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  UserData:
-    To: user_data
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  StorageSetPartitionNumber:
-    Ignore: true
-  SpotInterruptionBehavior:
-    Ignore: true
-  SystemDiskDiskName:
-    To: system_disk_name
   Tenancy:
-    Ignore: true
-  PasswordInherit:
-    To: password_inherit
-  ImageFamily:
-    Ignore: true
-  StorageSetId:
-    To: system_disk_storage_cluster_id
-  AutoRenew:
-    To: renewal_status
-  SecurityGroupIds:
-    To: security_groups
-  PrivatePoolOptions:
-    To: private_pool_options_id
-  ZoneIds:
     Ignore: true
   UseAdditionalService:
     Ignore: true
-  Affinity:
-    Ignore: true
-  SubscriptionDeletionForce:
-    To: force_delete
-  PrivatePoolOptions$$0:
-    To: private_pool_options_match_criteria
-Attributes:
-  InstanceId:
-    To: id
+  UserData:
+    To: user_data
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
   ZoneId:
     To: availability_zone
+  ZoneIds:
+    Ignore: true
+Attributes:
   HostName:
     To: host_name
+  InnerIp:
+    Ignore: true
+  InstanceId:
+    To: id
+  PrimaryNetworkInterfaceId:
+    To: network_interface_id
   PrivateIp:
+    To: private_ip
+  PrivateIp$$0:
     To: private_ip
   PublicIp:
     To: public_ip
-  InnerIp:
-    Ignore: true
-  PrimaryNetworkInterfaceId:
-    To: network_interface_id
   SecurityGroupIds:
     Ignore: true
-  PrivateIp$$0:
-    To: private_ip
+  ZoneId:
+    To: availability_zone

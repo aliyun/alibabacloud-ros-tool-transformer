@@ -34,6 +34,8 @@ Properties:
     To: new_order
   Proto:
     To: proto
+  Release:
+    To: release
   RepeatDays:
     To: repeat_days
   RepeatEndTime:
@@ -48,8 +50,6 @@ Properties:
     To: source_type
   StartTime:
     To: start_time
-  Release:
-    To: release
 Attributes:
   AclUuid:
     To: acl_uuid

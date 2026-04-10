@@ -4,18 +4,54 @@ ResourceType:
   From: ALIYUN::ElasticSearch::Instance
   To: alicloud_elasticsearch_instance
 Properties:
+  DataNode:
+    To: data_node_amount
+  DataNode$$0:
+    To: data_node_spec
+  DeleteType:
+    Ignore: true
   Description:
     To: description
+  EnableKibanaPrivate:
+    To: enable_kibana_private_network
+  EnableKibanaPublic:
+    To: enable_kibana_public_network
   EnablePublic:
     To: enable_public
+  InstanceCategory:
+    To: instance_category
   InstanceChargeType:
     To: instance_charge_type
+  KibanaNode:
+    To: kibana_configuration
+    Type: Map
+    Schema:
+      Spec:
+        To: spec
+  KibanaNode$$0:
+    To: kibana_node_spec
   KibanaWhitelist:
     To: kibana_whitelist
+  MasterNode:
+    To: master_configuration
+    Type: Map
+    Schema:
+      Amount:
+        To: amount
+      DiskSize:
+        Ignore: true
+      DiskType:
+        To: disk_type
+      Spec:
+        To: spec
+  MasterNode$$0:
+    To: master_node_spec
   Password:
     To: password
   Period:
     To: period
+  PeriodUnit:
+    To: renewal_duration_unit
   PrivateWhitelist:
     To: private_whitelist
   PublicWhitelist:
@@ -25,59 +61,25 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  Version:
-    To: version
   VSwitchId:
     To: vswitch_id
+  Version:
+    To: version
+  YMLConfig:
+    To: setting_config
   ZoneCount:
     To: zone_count
   ZoneId:
     Ignore: true
-  InstanceCategory:
-    To: instance_category
-  MasterNode:
-    To: master_configuration
-    Type: Map
-    Schema:
-      Amount:
-        To: amount
-      DiskType:
-        To: disk_type
-      Spec:
-        To: spec
-      DiskSize:
-        Ignore: true
-  YMLConfig:
-    To: setting_config
-  DataNode:
-    To: data_node_amount
-  PeriodUnit:
-    To: renewal_duration_unit
-  KibanaNode:
-    To: kibana_configuration
-    Type: Map
-    Schema:
-      Spec:
-        To: spec
-  EnableKibanaPrivate:
-    To: enable_kibana_private_network
-  EnableKibanaPublic:
-    To: enable_kibana_public_network
-  DataNode$$0:
-    To: data_node_spec
-  KibanaNode$$0:
-    To: kibana_node_spec
-  MasterNode$$0:
-    To: master_node_spec
-  DeleteType:
-    Ignore: true
 Attributes:
-  InstanceId:
-    To: id
+  Arn:
+    Ignore: true
   Domain:
     To: domain
   InstanceChargeType:
     To: instance_charge_type
+  InstanceId:
+    To: id
   KibanaDomain:
     To: kibana_domain
   KibanaPort:
@@ -88,9 +90,7 @@ Attributes:
     To: public_domain
   Status:
     To: status
-  Version:
-    To: version
   VSwitchId:
     To: vswitch_id
-  Arn:
-    Ignore: true
+  Version:
+    To: version

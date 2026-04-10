@@ -4,14 +4,14 @@ ResourceType:
   From: ALIYUN::SAE::ConfigMap
   To: alicloud_sae_config_map
 Properties:
+  Data:
+    To: data
   Description:
     To: description
   Name:
     To: name
   NamespaceId:
     To: namespace_id
-  Data:
-    To: data
 Attributes:
   ConfigMapId:
     To: id

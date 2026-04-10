@@ -8,73 +8,73 @@ Properties:
     To: account_password
   AutoRenew:
     To: auto_renew
-  EngineVersion:
-    To: engine_version
   ChargeType:
     To: instance_charge_type
+  ConfigServer:
+    To: config_server_list
+    Type: List
+    Schema:
+      Class:
+        Ignore: true
+      Storage:
+        Ignore: true
+  DBInstanceDescription:
+    To: name
+  EngineVersion:
+    To: engine_version
+  HiddenZoneId:
+    To: hidden_zone_id
   Mongos:
     To: mongo_list
     Type: List
     Schema:
       Class:
         To: node_class
-  DBInstanceDescription:
-    To: name
   Period:
     To: period
   ProtocolType:
     To: protocol_type
-  ResourceGroupId:
-    To: resource_group_id
-  SecurityIPArray:
-    To: security_ip_list
   ReplicaSet:
     To: shard_list
     Type: List
     Schema:
       Class:
         To: node_class
-      Storage:
-        To: node_storage
       ReadonlyReplicas:
         Ignore: true
+      Storage:
+        To: node_storage
+  ResourceGroupId:
+    To: resource_group_id
+  RestoreTime:
+    To: restore_time
+  SecondaryZoneId:
+    To: secondary_zone_id
+  SecurityIPArray:
+    To: security_ip_list
+  SrcDBInstanceId:
+    To: src_db_instance_id
   StorageEngine:
     To: storage_engine
   StorageType:
     To: storage_type
+  TDEStatus:
+    To: tde_status
   Tags:
     To: tags
     Handler: handle_tags
-  VpcId:
-    To: vpc_id
   VSwitchId:
     To: vswitch_id
+  VpcId:
+    To: vpc_id
   ZoneId:
     To: zone_id
-  SrcDBInstanceId:
-    To: src_db_instance_id
-  ConfigServer:
-    To: config_server_list
-    Type: List
-    Schema:
-      Storage:
-        Ignore: true
-      Class:
-        Ignore: true
-  SecondaryZoneId:
-    To: secondary_zone_id
-  HiddenZoneId:
-    To: hidden_zone_id
-  RestoreTime:
-    To: restore_time
-  TDEStatus:
-    To: tde_status
 Attributes:
+  Arn:
+    Ignore: true
   DBInstanceId:
     To: id
-  OrderId:
-    Ignore: true
   DBInstanceStatus:
     Ignore: true
-  Arn:
+  OrderId:
     Ignore: true

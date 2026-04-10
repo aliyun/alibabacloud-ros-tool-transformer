@@ -6,20 +6,20 @@ ResourceType:
 Properties:
   DNSSecurity:
     To: dns_security
+  Domain:
+    Ignore: true
   DomainNumbers:
     To: domain_numbers
+  InstanceType:
+    Ignore: true
   Period:
     To: period
+  PeriodUnit:
+    Ignore: true
   RenewalStatus:
     To: renewal_status
   Version:
     To: version_code
-  Domain:
-    Ignore: true
-  InstanceType:
-    Ignore: true
-  PeriodUnit:
-    Ignore: true
 Attributes:
   InstanceId:
     To: id

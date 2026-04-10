@@ -1,0 +1,23 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_mongodb_replica_set_role
+  To: ALIYUN::MONGODB::PrivateSrvNetworkAddress
+Properties:
+  connection_port:
+    Ignore: true
+  connection_prefix:
+    Ignore: true
+  db_instance_id:
+    To: DBInstanceId
+  network_type:
+    Ignore: true
+  role_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  connection_domain:
+    To: PrivateSrvConnectionStringUri
+  replica_set_role:
+    Ignore: true

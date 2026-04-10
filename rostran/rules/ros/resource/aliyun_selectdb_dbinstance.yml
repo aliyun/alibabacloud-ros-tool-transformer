@@ -8,36 +8,36 @@ Properties:
     To: admin_pass
   CacheSize:
     To: cache_size
+  ChargeType:
+    To: payment_type
+  ConnectionString:
+    Ignore: true
   DBInstanceClass:
     To: db_instance_class
   DBInstanceDescription:
     To: db_instance_description
+  Engine:
+    Ignore: true
+  EngineVersion:
+    To: engine_minor_version
+  Period:
+    To: period
+  ResourceGroupId:
+    Ignore: true
   SecurityIPList:
     To: desired_security_ip_lists
     Type: List
-  EngineVersion:
-    To: engine_minor_version
-  ChargeType:
-    To: payment_type
-  Period:
-    To: period
-  UsedTime:
-    To: period_time
   Tags:
     To: tags
     Handler: handle_tags
-  VpcId:
-    To: vpc_id
+  UsedTime:
+    To: period_time
   VSwitchId:
     To: vswitch_id
+  VpcId:
+    To: vpc_id
   ZoneId:
     To: zone_id
-  ConnectionString:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
-  Engine:
-    Ignore: true
 Attributes:
   DBInstanceId:
     To: id

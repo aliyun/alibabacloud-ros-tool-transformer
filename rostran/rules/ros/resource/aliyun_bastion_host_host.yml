@@ -18,12 +18,12 @@ Properties:
     To: instance_id
   InstanceRegionId:
     To: instance_region_id
+  OSType:
+    To: os_type
   Source:
     To: source
   SourceInstanceId:
     To: source_instance_id
-  OSType:
-    To: os_type
 Attributes:
   HostId:
     To: id

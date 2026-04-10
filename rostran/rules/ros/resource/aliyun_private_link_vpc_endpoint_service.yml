@@ -8,8 +8,12 @@ Properties:
     To: auto_accept_connection
   ConnectBandwidth:
     To: connect_bandwidth
+  DeletionForce:
+    Ignore: true
   Payer:
     To: payer
+  Resource:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   ServiceDescription:
@@ -19,26 +23,22 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  ZoneAffinityEnabled:
-    To: zone_affinity_enabled
   User:
     Ignore: true
-  Resource:
-    Ignore: true
-  DeletionForce:
-    Ignore: true
+  ZoneAffinityEnabled:
+    To: zone_affinity_enabled
 Attributes:
-  ServiceId:
-    To: id
+  Arn:
+    Ignore: true
+  MaxBandwidth:
+    Ignore: true
+  MinBandwidth:
+    Ignore: true
   ServiceDescription:
     To: service_description
   ServiceDomain:
     To: service_domain
-  MaxBandwidth:
-    Ignore: true
+  ServiceId:
+    To: id
   ServiceName:
     To: vpc_endpoint_service_name
-  MinBandwidth:
-    Ignore: true
-  Arn:
-    Ignore: true

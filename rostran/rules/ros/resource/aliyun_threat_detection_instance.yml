@@ -20,6 +20,8 @@ Properties:
     To: payment_type
   Period:
     To: period
+  ProductType:
+    Ignore: true
   RaspCount:
     To: rasp_count
   RenewPeriod:
@@ -34,6 +36,8 @@ Properties:
     To: sas_cspm
   SasCspmSwitch:
     To: sas_cspm_switch
+  SasSc:
+    To: sas_sc
   SasSdk:
     To: sas_sdk
   SasSdkSwitch:
@@ -56,13 +60,7 @@ Properties:
     To: vul_count
   VulSwitch:
     To: vul_switch
-  SasSc:
-    To: sas_sc
-  ProductType:
-    Ignore: true
 Attributes:
-  InstanceId:
-    To: id
   BuyNumber:
     To: buy_number
   ContainerImageScan:
@@ -75,6 +73,8 @@ Attributes:
     To: honeypot
   HoneypotSwitch:
     To: honeypot_switch
+  InstanceId:
+    To: id
   PaymentType:
     To: payment_type
   RaspCount:

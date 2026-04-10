@@ -13,11 +13,11 @@ Properties:
   PreferredBackupTime:
     To: preferred_backup_time
 Attributes:
+  BackupRetentionPeriod:
+    Ignore: true
   BackupState:
     To: status
   PreferredBackupPeriod:
-    Ignore: true
-  BackupRetentionPeriod:
     Ignore: true
   PreferredBackupTime:
     Ignore: true

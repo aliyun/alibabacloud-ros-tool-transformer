@@ -10,4 +10,3 @@ Properties:
     To: instance_id
   InstanceType:
     To: instance_type
-Attributes: {}

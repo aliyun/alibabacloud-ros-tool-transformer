@@ -10,14 +10,24 @@ Properties:
     To: db_cluster_category
   DBClusterClass:
     To: db_cluster_class
+  DBClusterDescription:
+    To: description
   DBClusterVersion:
     To: db_cluster_version
   DBNodeGroupCount:
     To: db_node_count
   DBNodeStorage:
     To: db_node_storage
-  DBClusterDescription:
-    To: description
+  DiskEncryption:
+    To: disk_encryption
+  ElasticIOResource:
+    To: elastic_io_resource
+  EnableSSL:
+    To: enable_ssl
+  ExecutorCount:
+    Ignore: true
+  KmsId:
+    To: kms_id
   Mode:
     To: mode
   PayType:
@@ -26,6 +36,8 @@ Properties:
     To: payment_type
   Period:
     To: period
+  PeriodType:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   Tags:
@@ -37,24 +49,12 @@ Properties:
     To: vswitch_id
   ZoneId:
     To: zone_id
-  ExecutorCount:
-    Ignore: true
-  ElasticIOResource:
-    To: elastic_io_resource
-  PeriodType:
-    Ignore: true
-  DiskEncryption:
-    To: disk_encryption
-  EnableSSL:
-    To: enable_ssl
-  KmsId:
-    To: kms_id
 Attributes:
-  DBClusterId:
-    To: id
-  ConnectionString:
-    To: connection_string
   Arn:
     Ignore: true
+  ConnectionString:
+    To: connection_string
+  DBClusterId:
+    To: id
   OrderId:
     Ignore: true

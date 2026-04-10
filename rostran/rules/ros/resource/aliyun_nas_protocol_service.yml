@@ -10,16 +10,16 @@ Properties:
     To: file_system_id
   ProtocolSpec:
     To: protocol_spec
-  Throughput:
-    To: protocol_throughput
   ProtocolType:
     To: protocol_type
-  VpcId:
-    To: vpc_id
+  Throughput:
+    To: protocol_throughput
   VSwitchId:
     To: vswitch_id
+  VpcId:
+    To: vpc_id
 Attributes:
-  ProtocolServiceId:
-    To: protocol_service_id
   FileSystemId:
     Ignore: true
+  ProtocolServiceId:
+    To: protocol_service_id

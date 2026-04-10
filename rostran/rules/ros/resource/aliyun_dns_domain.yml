@@ -14,12 +14,14 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
-  DomainName:
-    To: id
+  Arn:
+    Ignore: true
   DnsServers:
     To: dns_servers
   DomainId:
     To: domain_id
+  DomainName:
+    To: id
   DomainName$$0:
     To: domain_name
   GroupId:
@@ -28,5 +30,3 @@ Attributes:
     To: group_name
   PunyCode:
     To: puny_code
-  Arn:
-    Ignore: true

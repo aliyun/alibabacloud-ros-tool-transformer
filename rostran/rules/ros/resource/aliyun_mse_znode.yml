@@ -8,10 +8,9 @@ Properties:
     To: cluster_id
   Data:
     To: data
-  Path:
-    To: path
   InstanceId:
     Ignore: true
+  Path:
+    To: path
   Type:
     Ignore: true
-Attributes: {}

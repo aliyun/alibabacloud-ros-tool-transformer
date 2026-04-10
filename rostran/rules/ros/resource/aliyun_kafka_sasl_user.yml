@@ -6,14 +6,14 @@ ResourceType:
 Properties:
   InstanceId:
     To: instance_id
+  Mechanism:
+    To: mechanism
   Password:
     To: password
   Type:
     To: type
   Username:
     To: username
-  Mechanism:
-    To: mechanism
 Attributes:
   InstanceId:
     To: instance_id

@@ -13,35 +13,35 @@ Properties:
   ValidityDays:
     To: validity_days
 Attributes:
+  CACertificateId:
+    Ignore: true
+  Certificate:
+    Ignore: true
   ClientCertId:
     To: client_cert_id
-  CreateTime:
-    To: create_time
-  NotAfter:
-    Ignore: true
-  NotBefore:
-    Ignore: true
-  SiteName:
-    Ignore: true
   ClientCertificateName:
-    Ignore: true
-  UpdateTime:
     Ignore: true
   CommonName:
     Ignore: true
-  Certificate:
+  CreateTime:
+    To: create_time
+  Issuer:
+    Ignore: true
+  NotAfter:
+    Ignore: true
+  NotBefore:
     Ignore: true
   PubkeyAlgorithm:
     Ignore: true
   SAN:
     Ignore: true
-  CACertificateId:
-    Ignore: true
-  Type:
-    Ignore: true
-  Issuer:
-    Ignore: true
   SignatureAlgorithm:
     Ignore: true
   SiteId:
     To: id
+  SiteName:
+    Ignore: true
+  Type:
+    Ignore: true
+  UpdateTime:
+    Ignore: true

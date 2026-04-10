@@ -12,30 +12,30 @@ Properties:
     To: max_eip_tps
   MaxTps:
     To: max_tps
+  OrderNum:
+    Ignore: true
   PayType:
     To: payment_type
   Period:
     To: period
+  PeriodUnit:
+    To: period_cycle
   QueueCapacity:
     To: queue_capacity
   StorageSize:
     To: storage_size
-  TracingStorageTime:
-    To: tracing_storage_time
-  SupportTracing:
-    To: support_tracing
-  OrderNum:
-    Ignore: true
   SupportEip:
     To: support_eip
-  PeriodUnit:
-    To: period_cycle
+  SupportTracing:
+    To: support_tracing
+  TracingStorageTime:
+    To: tracing_storage_time
 Attributes:
-  InstanceId:
-    To: id
   ClassicEndpoint:
     Ignore: true
-  PublicEndpoint:
-    Ignore: true
+  InstanceId:
+    To: id
   PrivateEndpoint:
+    Ignore: true
+  PublicEndpoint:
     Ignore: true

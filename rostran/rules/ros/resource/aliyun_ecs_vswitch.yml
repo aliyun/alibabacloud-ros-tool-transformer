@@ -10,27 +10,27 @@ Properties:
     To: description
   Ipv6CidrBlock:
     To: ipv6_cidr_block
+  Ipv6CidrBlock$$0:
+    To: ipv6_cidr_block_mask
   Tags:
     To: tags
     Handler: handle_tags
-  VpcId:
-    To: vpc_id
   VSwitchName:
     To: vswitch_name
-  ZoneId:
-    To: zone_id
+  VpcId:
+    To: vpc_id
   VpcIpv6CidrBlock:
     Ignore: true
+  ZoneId:
+    To: zone_id
   ZoneType:
     Ignore: true
-  Ipv6CidrBlock$$0:
-    To: ipv6_cidr_block_mask
 Attributes:
-  VSwitchId:
-    To: id
   CidrBlock:
     To: cidr_block
   Ipv6CidrBlock:
     To: ipv6_cidr_block
+  VSwitchId:
+    To: id
   VSwitchName:
     To: vswitch_name

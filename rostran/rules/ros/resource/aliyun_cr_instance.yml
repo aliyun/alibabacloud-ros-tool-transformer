@@ -4,8 +4,12 @@ ResourceType:
   From: ALIYUN::CR::Instance
   To: alicloud_cr_ee_instance
 Properties:
+  ImageScanner:
+    To: image_scanner
   InstanceName:
     To: instance_name
+  InstanceStorageName:
+    To: custom_oss_bucket
   InstanceType:
     To: instance_type
   Period:
@@ -14,24 +18,20 @@ Properties:
     To: renew_period
   RenewalStatus:
     To: renewal_status
-  InstanceStorageName:
-    To: custom_oss_bucket
   ResourceGroupId:
     To: resource_group_id
-  ImageScanner:
-    To: image_scanner
 Attributes:
-  InstanceId:
-    To: id
   CreateTime:
     To: created_time
+  CreateTime$$0:
+    To: created_time
+  InstanceId:
+    To: id
   InstanceName:
     To: instance_name
   InstanceSpecification:
     Ignore: true
-  ResourceGroupId:
-    Ignore: true
   ModifiedTime:
     Ignore: true
-  CreateTime$$0:
-    To: created_time
+  ResourceGroupId:
+    Ignore: true

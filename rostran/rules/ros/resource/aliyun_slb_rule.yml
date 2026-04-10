@@ -6,10 +6,10 @@ ResourceType:
 Properties:
   ListenerPort:
     To: frontend_port
-  LoadBalancerId:
-    To: load_balancer_id
   ListenerProtocol:
     Ignore: true
+  LoadBalancerId:
+    To: load_balancer_id
   RuleList:
     Ignore: true
 Attributes:

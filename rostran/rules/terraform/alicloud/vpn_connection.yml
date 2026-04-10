@@ -11,15 +11,13 @@ Properties:
     Type: Map
     Schema:
       enable:
-        Ignore: true
+        To: EnableBgp
       local_asn:
         To: LocalAsn
       local_bgp_ip:
         To: LocalBgpIp
       tunnel_cidr:
         To: TunnelCidr
-  create_time:
-    Ignore: true
   customer_gateway_id:
     To: CustomerGatewayId
   effect_immediately:
@@ -45,7 +43,7 @@ Properties:
       sip:
         To: Sip
   ike_auth_alg:
-    Ignore: true
+    To: IkeConfig.IkeAuthAlg
   ike_config:
     To: IkeConfig
     Type: Map
@@ -57,31 +55,32 @@ Properties:
       ike_lifetime:
         To: IkeLifetime
       ike_local_id:
-        To: LocalIdIPsec
+        To: LocalId
       ike_mode:
         To: IkeMode
       ike_pfs:
         To: IkePfs
       ike_remote_id:
-        Ignore: true
+        To: RemoteId
       ike_version:
         To: IkeVersion
       psk:
         To: Psk
   ike_enc_alg:
-    Ignore: true
+    To: IkeConfig.IkeEncAlg
   ike_lifetime:
-    Ignore: true
+    To: IkeConfig.IkeLifetime
   ike_mode:
-    Ignore: true
+    To: IkeConfig.IkeMode
   ike_pfs:
-    Ignore: true
+    To: IkeConfig.IkePfs
   ike_version:
-    Ignore: true
+    To: IkeConfig.IkeVersion
   ipsec_auth_alg:
-    Ignore: true
+    To: IpsecConfig.IpsecAuthAlg
   ipsec_config:
     To: IpsecConfig
+    Type: Map
     Schema:
       ipsec_auth_alg:
         To: IpsecAuthAlg
@@ -92,17 +91,17 @@ Properties:
       ipsec_pfs:
         To: IpsecPfs
   ipsec_enc_alg:
-    Ignore: true
+    To: IpsecConfig.IpsecEncAlg
   ipsec_lifetime:
-    Ignore: true
+    To: IpsecConfig.IpsecLifetime
   ipsec_pfs:
-    Ignore: true
+    To: IpsecConfig.IpsecPfs
   local_asn:
-    Ignore: true
+    To: BgpConfig.LocalAsn
   local_bgp_ip:
-    Ignore: true
+    To: BgpConfig.LocalBgpIp
   local_id:
-    Ignore: true
+    To: IkeConfig.LocalId
   local_subnet:
     To: LocalSubnet
   name:
@@ -110,19 +109,15 @@ Properties:
   network_type:
     Ignore: true
   psk:
-    Ignore: true
+    To: IkeConfig.Psk
   remote_id:
-    Ignore: true
+    To: IkeConfig.RemoteId
   remote_subnet:
     To: RemoteSubnet
-  resource_group_id:
-    Ignore: true
-  status:
-    Ignore: true
   tags:
     Ignore: true
   tunnel_cidr:
-    Ignore: true
+    To: BgpConfig.TunnelCidr
   tunnel_options_specification:
     To: TunnelOptionsSpecification
     Type: List
@@ -142,13 +137,51 @@ Properties:
       status:
         Ignore: true
       tunnel_bgp_config:
-        Ignore: true
+        To: TunnelBgpConfig
+        Type: Map
+        Schema:
+          local_asn:
+            To: LocalAsn
+          local_bgp_ip:
+            To: LocalBgpIp
+          tunnel_cidr:
+            To: TunnelCidr
       tunnel_id:
         Ignore: true
       tunnel_ike_config:
-        Ignore: true
+        To: TunnelIkeConfig
+        Type: Map
+        Schema:
+          ike_auth_alg:
+            To: IkeAuthAlg
+          ike_enc_alg:
+            To: IkeEncAlg
+          ike_lifetime:
+            To: IkeLifetime
+          ike_mode:
+            To: IkeMode
+          ike_pfs:
+            To: IkePfs
+          ike_version:
+            To: IkeVersion
+          local_id:
+            To: LocalId
+          psk:
+            To: Psk
+          remote_id:
+            To: RemoteId
       tunnel_ipsec_config:
-        Ignore: true
+        To: TunnelIpsecConfig
+        Type: Map
+        Schema:
+          ipsec_auth_alg:
+            To: IpsecAuthAlg
+          ipsec_enc_alg:
+            To: IpsecEncAlg
+          ipsec_lifetime:
+            To: IpsecLifetime
+          ipsec_pfs:
+            To: IpsecPfs
       zone_no:
         Ignore: true
   vpn_connection_name:
@@ -162,37 +195,9 @@ Attributes:
     Ignore: true
   create_time:
     Ignore: true
-  customer_gateway_id:
-    Ignore: true
-  effect_immediately:
-    Ignore: true
-  enable_dpd:
-    Ignore: true
-  enable_nat_traversal:
-    Ignore: true
-  enable_tunnels_bgp:
-    Ignore: true
-  health_check_config:
-    Ignore: true
-  ike_config:
-    Ignore: true
-  ipsec_config:
-    Ignore: true
-  local_subnet:
-    Ignore: true
-  name:
-    Ignore: true
-  remote_subnet:
-    Ignore: true
   resource_group_id:
     Ignore: true
   status:
     To: Status
-  tags:
-    Ignore: true
   tunnel_options_specification:
-    Ignore: true
-  vpn_connection_name:
-    Ignore: true
-  vpn_gateway_id:
     Ignore: true

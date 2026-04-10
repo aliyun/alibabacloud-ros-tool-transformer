@@ -6,10 +6,22 @@ ResourceType:
 Properties:
   AccessControl:
     To: acl
+  BlockPublicAccess:
+    Ignore: true
   BucketName:
     To: bucket
+  CORSConfiguration:
+    Ignore: true
   DeletionForce:
     To: force_destroy
+  EnableOssHdfsService:
+    Ignore: true
+  LifecycleConfiguration:
+    To: lifecycle_rule
+    Type: Map
+    Schema:
+      Rule:
+        Ignore: true
   LoggingConfiguration:
     To: logging
     Type: Map
@@ -45,32 +57,28 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  WebsiteConfigurationV2:
-    Ignore: true
-  LifecycleConfiguration:
-    To: lifecycle_rule
-    Type: Map
-    Schema:
-      Rule:
-        Ignore: true
-  EnableOssHdfsService:
-    Ignore: true
-  CORSConfiguration:
-    Ignore: true
   VersioningConfiguration:
     To: versioning
     Type: Map
     Schema:
       Status:
         To: status
-  BlockPublicAccess:
-    Ignore: true
+  WebsiteConfigurationV2:
+    To: website
+    Type: Map
+    Schema:
+      ErrorDocument:
+        Ignore: true
+      IndexDocument:
+        Ignore: true
+      RoutingRules:
+        Ignore: true
 Attributes:
-  Name:
-    To: id
-  InternalDomainName:
-    To: intranet_endpoint
   Arn:
     Ignore: true
   DomainName:
     To: extranet_endpoint
+  InternalDomainName:
+    To: intranet_endpoint
+  Name:
+    To: id

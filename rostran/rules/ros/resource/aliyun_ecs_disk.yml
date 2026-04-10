@@ -4,20 +4,30 @@ ResourceType:
   From: ALIYUN::ECS::Disk
   To: alicloud_ecs_disk
 Properties:
-  ZoneId:
-    To: availability_zone
+  AutoSnapshotPolicyId:
+    Ignore: true
+  BurstingEnabled:
+    To: bursting_enabled
   DeleteAutoSnapshot:
     To: delete_auto_snapshot
   Description:
     To: description
+  DiskCategory:
+    To: category
   DiskName:
     To: disk_name
   Encrypted:
     To: encrypted
   InstanceId:
     To: instance_id
+  KMSKeyId:
+    To: kms_key_id
+  MultiAttach:
+    To: multi_attach
   PerformanceLevel:
     To: performance_level
+  ProvisionedIops:
+    To: provisioned_iops
   ResourceGroupId:
     To: resource_group_id
   Size:
@@ -31,20 +41,10 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
+  ZoneId:
+    To: availability_zone
   ZoneId$$0:
     To: zone_id
-  DiskCategory:
-    To: category
-  KMSKeyId:
-    To: kms_key_id
-  ProvisionedIops:
-    To: provisioned_iops
-  AutoSnapshotPolicyId:
-    Ignore: true
-  BurstingEnabled:
-    To: bursting_enabled
-  MultiAttach:
-    To: multi_attach
 Attributes:
   DiskId:
     To: id

@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   AclId:
     To: acl_id
+  AclIds:
+    To: acl_ids
   AclStatus:
     To: acl_status
   AclType:
@@ -16,20 +18,34 @@ Properties:
     To: bandwidth
   CACertificateId:
     To: ca_certificate_id
+  ConnectionDrain:
+    Ignore: true
+  ConnectionDrainTimeout:
+    To: established_timeout
   Description:
     To: description
   EnableHttp2:
     To: enable_http2
-  ListenerPort:
-    To: frontend_port
+  FullNatEnabled:
+    Ignore: true
   Gzip:
     To: gzip
+  HealthCheck:
+    Ignore: true
+  HttpConfig:
+    Ignore: true
   IdleTimeout:
     To: idle_timeout
+  ListenerPort:
+    To: frontend_port
   LoadBalancerId:
     To: load_balancer_id
   MasterSlaveServerGroupId:
     To: master_slave_server_group_id
+  Persistence:
+    Ignore: true
+  PortRange:
+    Ignore: true
   Protocol:
     To: protocol
   ProxyProtocolV2Enabled:
@@ -40,36 +56,20 @@ Properties:
     To: scheduler
   ServerCertificateId:
     To: server_certificate_id
-  VServerGroupId:
-    To: server_group_id
   ServerCertificateId$$0:
     To: ssl_certificate_id
-  TLSCipherPolicy:
-    To: tls_cipher_policy
-  AclIds:
-    To: acl_ids
-  ConnectionDrainTimeout:
-    To: established_timeout
-  ConnectionDrain:
-    Ignore: true
-  FullNatEnabled:
-    Ignore: true
-  HttpConfig:
-    Ignore: true
-  Tags:
-    Ignore: true
-  HealthCheck:
-    Ignore: true
   StartListener:
     Ignore: true
-  PortRange:
+  TLSCipherPolicy:
+    To: tls_cipher_policy
+  Tags:
     Ignore: true
-  Persistence:
-    Ignore: true
+  VServerGroupId:
+    To: server_group_id
 Attributes:
-  LoadBalancerId:
-    To: load_balancer_id
-  ListenerPortsAndProtocol:
-    Ignore: true
   Arn:
     Ignore: true
+  ListenerPortsAndProtocol:
+    Ignore: true
+  LoadBalancerId:
+    To: load_balancer_id

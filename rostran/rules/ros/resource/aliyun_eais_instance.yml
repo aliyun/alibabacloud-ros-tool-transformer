@@ -4,18 +4,8 @@ ResourceType:
   From: ALIYUN::EAIS::Instance
   To: alicloud_eais_instance
 Properties:
-  InstanceName:
-    To: instance_name
-  InstanceType:
-    To: instance_type
-  SecurityGroupId:
-    To: security_group_id
-  VSwitchId:
-    To: vswitch_id
-  ResourceGroupId:
-    To: resource_group_id
-  PaymentType:
-    Ignore: true
+  CreateWithNotebook:
+    To: category
   EnvironmentVar:
     To: environment_var
     Type: List
@@ -24,30 +14,40 @@ Properties:
         To: key
       Value:
         To: value
-  CreateWithNotebook:
-    To: category
+  InstanceName:
+    To: instance_name
+  InstanceType:
+    To: instance_type
+  PaymentType:
+    Ignore: true
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityGroupId:
+    To: security_group_id
+  VSwitchId:
+    To: vswitch_id
 Attributes:
+  ClientInstanceId:
+    Ignore: true
+  ClientInstanceName:
+    Ignore: true
+  ClientInstanceType:
+    Ignore: true
+  CreateTime:
+    To: create_time
   InstanceId:
     To: id
   InstanceName:
     To: instance_name
   InstanceType:
     To: instance_type
-  ZoneId:
-    To: region_id
   JupyterUrl:
+    Ignore: true
+  ResourceGroupId:
     Ignore: true
   SecurityGroupId:
     Ignore: true
   VSwitchId:
     Ignore: true
-  ClientInstanceType:
-    Ignore: true
-  ClientInstanceName:
-    Ignore: true
-  CreateTime:
-    To: create_time
-  ClientInstanceId:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
+  ZoneId:
+    To: region_id

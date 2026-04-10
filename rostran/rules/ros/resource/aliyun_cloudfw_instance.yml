@@ -6,42 +6,42 @@ ResourceType:
 Properties:
   AccountNum:
     To: account_number
-  Bandwidth:
-    To: band_width
-  MultiAccountManagement:
-    To: cfw_account
-  LogAnalysis:
-    To: cfw_log
-  LogStorage:
-    To: cfw_log_storage
-  VpcFirewallNum:
-    To: fw_vpc_number
-  IpNum:
-    To: ip_number
-  PayType:
-    To: payment_type
-  Period:
-    To: period
+  AclExtension:
+    Ignore: true
+  AutoPay:
+    Ignore: true
   AutoRenew:
     To: renewal_duration
   AutoRenew$$0:
     To: renewal_status
-  Spec:
-    To: spec
-  NatBandwidth:
-    Ignore: true
-  PeriodUnit:
-    To: renewal_duration_unit
-  NatFirewallNum:
-    Ignore: true
+  Bandwidth:
+    To: band_width
   IgnoreExisting:
     Ignore: true
-  AutoPay:
+  IpNum:
+    To: ip_number
+  LogAnalysis:
+    To: cfw_log
+  LogStorage:
+    To: cfw_log_storage
+  MultiAccountManagement:
+    To: cfw_account
+  NatBandwidth:
     Ignore: true
-  AclExtension:
+  NatFirewallNum:
     Ignore: true
+  PayType:
+    To: payment_type
+  Period:
+    To: period
+  PeriodUnit:
+    To: renewal_duration_unit
+  Spec:
+    To: spec
   VpcBandwidth:
     Ignore: true
+  VpcFirewallNum:
+    To: fw_vpc_number
 Attributes:
   InstanceId:
     To: status

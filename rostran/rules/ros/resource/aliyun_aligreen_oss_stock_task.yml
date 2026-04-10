@@ -42,6 +42,8 @@ Properties:
     To: image_scenes
   ImageTerrorismFreezeConfig:
     To: image_terrorism_freeze_config
+  OssStockTaskName:
+    Ignore: true
   ScanImageNoFileType:
     To: scan_image_no_file_type
   StartDate:
@@ -70,72 +72,70 @@ Properties:
     To: video_terrorism_freeze_config
   VideoVoiceAntispamFreezeConfig:
     To: video_voice_antispam_freeze_config
-  OssStockTaskName:
-    Ignore: true
 Attributes:
-  CallbackId:
-    Ignore: true
-  ImageAutoFreezeOpened:
-    Ignore: true
-  AudioOpened:
-    Ignore: true
-  BizType:
+  AudioAntispamFreezeConfig:
     Ignore: true
   AudioAutoFreezeOpened:
     Ignore: true
-  ImageScenes:
+  AudioMaxSize:
     Ignore: true
-  VideoMaxSize:
+  AudioOpened:
     Ignore: true
-  VideoFrameInterval:
+  AudioScanLimit:
+    Ignore: true
+  AudioScenes:
+    Ignore: true
+  AutoFreezeType:
+    Ignore: true
+  BizType:
     Ignore: true
   Buckets:
     Ignore: true
-  VideoScenes:
-    Ignore: true
-  ImageAdFreezeConfig:
-    Ignore: true
-  ImageTerrorismFreezeConfig:
-    Ignore: true
-  AudioAntispamFreezeConfig:
+  CallbackId:
     Ignore: true
   EndDate:
     Ignore: true
-  VideoPornFreezeConfig:
+  ImageAdFreezeConfig:
+    Ignore: true
+  ImageAutoFreezeOpened:
     Ignore: true
   ImageLiveFreezeConfig:
     Ignore: true
-  StartDate:
+  ImageOpened:
     Ignore: true
   ImagePornFreezeConfig:
     Ignore: true
   ImageScanLimit:
     Ignore: true
-  VideoTerrorismFreezeConfig:
+  ImageScenes:
     Ignore: true
-  VideoOpened:
-    Ignore: true
-  AudioScenes:
-    Ignore: true
-  VideoLiveFreezeConfig:
-    Ignore: true
-  VideoAdFreezeConfig:
-    Ignore: true
-  ImageOpened:
-    Ignore: true
-  AudioScanLimit:
+  ImageTerrorismFreezeConfig:
     Ignore: true
   ScanImageNoFileType:
     Ignore: true
-  AudioMaxSize:
+  StartDate:
+    Ignore: true
+  VideoAdFreezeConfig:
     Ignore: true
   VideoAutoFreezeOpened:
     Ignore: true
-  VideoVoiceAntispamFreezeConfig:
+  VideoFrameInterval:
     Ignore: true
-  AutoFreezeType:
+  VideoLiveFreezeConfig:
+    Ignore: true
+  VideoMaxFrames:
+    Ignore: true
+  VideoMaxSize:
+    Ignore: true
+  VideoOpened:
+    Ignore: true
+  VideoPornFreezeConfig:
     Ignore: true
   VideoScanLimit:
     Ignore: true
-  VideoMaxFrames:
+  VideoScenes:
+    Ignore: true
+  VideoTerrorismFreezeConfig:
+    Ignore: true
+  VideoVoiceAntispamFreezeConfig:
     Ignore: true

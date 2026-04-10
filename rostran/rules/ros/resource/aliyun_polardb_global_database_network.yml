@@ -11,17 +11,17 @@ Properties:
   ResourceGroupId:
     Ignore: true
 Attributes:
-  GdnId:
-    To: id
-  DbVersion:
-    Ignore: true
-  DbClusters:
+  Connections:
     Ignore: true
   CreateTime:
     Ignore: true
+  DbClusters:
+    Ignore: true
   DbType:
+    Ignore: true
+  DbVersion:
     Ignore: true
   GdnDescription:
     Ignore: true
-  Connections:
-    Ignore: true
+  GdnId:
+    To: id

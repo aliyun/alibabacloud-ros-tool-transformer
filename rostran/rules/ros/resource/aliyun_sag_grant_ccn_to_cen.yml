@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::SAG::GrantCcnToCen
   To: alicloud_cloud_connect_network_grant
 Properties:
-  CenUid:
-    To: cen_uid
-  CenInstanceId:
-    To: cen_id
   CcnInstanceId:
     To: ccn_id
+  CenInstanceId:
+    To: cen_id
+  CenUid:
+    To: cen_uid
 Attributes:
   CcnInstanceId:
     To: ccn_id

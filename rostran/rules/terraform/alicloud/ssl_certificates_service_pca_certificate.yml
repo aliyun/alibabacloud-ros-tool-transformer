@@ -2,14 +2,14 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_ssl_certificates_service_pca_certificate
-  To: ALIYUN::CAS::SslCertificate
+  To: ALIYUN::CAS::Certificate
 Properties:
   algorithm:
     Ignore: true
   alias_name:
-    Ignore: true
+    To: Name
   certificate_type:
-    To: CertType
+    Ignore: true
   common_name:
     Ignore: true
   country_code:
@@ -23,7 +23,7 @@ Properties:
   locality:
     Ignore: true
   organization:
-    To: CompanyName
+    Ignore: true
   organization_unit:
     Ignore: true
   parent_identifier:
@@ -40,6 +40,6 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    To: CertificateId
+    To: CertId
   status:
     Ignore: true

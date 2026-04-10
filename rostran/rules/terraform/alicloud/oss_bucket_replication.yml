@@ -5,24 +5,92 @@ ResourceType:
   To: ALIYUN::OSS::BucketReplication
 Properties:
   action:
-    Ignore: true
+    To: ReplicationConfiguration.Rule.Action
   bucket:
     To: BucketName
   destination:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      bucket:
+        To: Rule
+        Type: Map
+        Schema:
+          Destination:
+            To: Bucket
+      location:
+        To: Rule
+        Type: Map
+        Schema:
+          Destination:
+            To: Location
+      transfer_type:
+        To: Rule
+        Type: Map
+        Schema:
+          Destination:
+            To: TransferType
   encryption_configuration:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      replica_kms_key_id:
+        To: Rule
+        Type: Map
+        Schema:
+          EncryptionConfiguration:
+            To: ReplicaKmsKeyID
   historical_object_replication:
-    Ignore: true
+    To: ReplicationConfiguration.Rule.HistoricalObjectReplication
   prefix_set:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      prefixes:
+        To: Rule
+        Type: Map
+        Schema:
+          PrefixSet:
+            Type: List
   progress:
     Ignore: true
   rtc:
-    Ignore: true
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      enabled:
+        To: Rule
+        Type: Map
+        Schema:
+          RTC:
+            To: Status
+      status:
+        Ignore: true
   source_selection_criteria:
+    To: ReplicationConfiguration
+    Type: Map
+    Schema:
+      sse_kms_encrypted_objects:
+        To: Rule
+        Type: Map
+        Schema:
+          SourceSelectionCriteria:
+            To: SseKmsEncryptedObjects
+            Type: List
+            Schema:
+              status:
+                To: Status
+  status:
+    To: 
+      ReplicationConfiguration.Rule.SourceSelectionCriteria.SseKmsEncryptedObjects.Status
+  sync_role:
+    To: ReplicationConfiguration.Rule.SyncRole
+Attributes:
+  id:
+    Ignore: true
+  progress:
+    Ignore: true
+  rule_id:
     Ignore: true
   status:
-    Ignore: true
-  sync_role:
     Ignore: true

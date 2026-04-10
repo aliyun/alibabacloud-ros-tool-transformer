@@ -10,4 +10,3 @@ Properties:
     To: policy_type
   RoleName:
     To: role_name
-Attributes: {}

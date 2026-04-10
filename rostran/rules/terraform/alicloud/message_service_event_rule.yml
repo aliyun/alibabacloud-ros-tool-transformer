@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_message_service_event_rule
+  To: ALIYUN::MNS::Subscription
+Properties:
+  delivery_mode:
+    To: PushType
+  endpoint:
+    To: Endpoint
+    Schema:
+      endpoint_type:
+        Ignore: true
+      endpoint_value:
+        Ignore: true
+  event_types:
+    Ignore: true
+  match_rules:
+    To: FilterTag
+    Schema:
+      match_name:
+        Ignore: true
+      match_state:
+        Ignore: true
+      prefix:
+        Ignore: true
+      suffix:
+        Ignore: true
+  rule_name:
+    To: SubscriptionName
+Attributes:
+  id:
+    To: SubscriptionUrl

@@ -4,8 +4,10 @@ ResourceType:
   From: ALIYUN::PVTZ::Zone
   To: alicloud_pvtz_zone
 Properties:
-  ZoneName:
-    To: name
+  DnsGroup:
+    Ignore: true
+  IgnoredStackTagKeys:
+    Ignore: true
   ProxyPattern:
     To: proxy_pattern
   Remark:
@@ -15,13 +17,13 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
+  ZoneName:
+    To: name
   ZoneName$$0:
     To: zone_name
-  DnsGroup:
-    Ignore: true
-  IgnoredStackTagKeys:
-    Ignore: true
 Attributes:
+  Arn:
+    Ignore: true
   ZoneId:
     To: id
   ZoneName:
@@ -30,5 +32,3 @@ Attributes:
     Ignore: true
   ZoneType:
     To: is_ptr
-  Arn:
-    Ignore: true

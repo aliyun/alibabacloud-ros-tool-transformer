@@ -13,7 +13,8 @@ Properties:
   lifecycle_hook:
     Ignore: true
   load_balancer_weights:
-    Ignore: true
+    To: ServerGroups
+    Type: List
   scaling_group_id:
     To: ScalingGroupId
 Attributes:

@@ -2,23 +2,23 @@ Version: '2020-06-01'
 Type: Resource
 ResourceType:
   From: alicloud_express_connect_router_express_connect_router
-  To: ALIYUN::VPC::VirtualBorderRouter
+  To: ALIYUN::CEN::TransitRouter
 Properties:
   alibaba_side_asn:
     Ignore: true
   description:
-    To: Description
+    To: TransitRouterDescription
   ecr_name:
-    To: Name
+    To: TransitRouterName
   regions:
     Ignore: true
   resource_group_id:
-    To: ResourceGroupId
+    Ignore: true
   tags:
     Ignore: true
 Attributes:
   id:
-    To: VbrId
+    To: TransitRouterId
   create_time:
     Ignore: true
   status:

@@ -14,6 +14,8 @@ Properties:
     To: InstanceName
   instance_type:
     To: InstanceType
+  listener_mode:
+    Ignore: true
   max_connections:
     Ignore: true
   max_eip_tps:
@@ -38,6 +40,8 @@ Properties:
     Ignore: true
   renewal_status:
     Ignore: true
+  security_group_id:
+    Ignore: true
   serverless_charge_type:
     Ignore: true
   status:
@@ -50,6 +54,10 @@ Properties:
     To: SupportTracing
   tracing_storage_time:
     To: TracingStorageTime
+  vpc_id:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true
 Attributes:
   id:
     To: InstanceId

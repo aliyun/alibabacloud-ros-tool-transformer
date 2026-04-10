@@ -6,10 +6,6 @@ ResourceType:
 Properties:
   acl_action:
     To: AclAction
-  acl_uuid:
-    To: AclUuid
-  application_id:
-    Ignore: true
   application_name:
     To: ApplicationName
   application_name_list:
@@ -21,24 +17,16 @@ Properties:
     To: DestPort
   dest_port_group:
     To: DestPortGroup
-  dest_port_group_ports:
-    Ignore: true
   dest_port_type:
     To: DestPortType
   destination:
     To: Destination
-  destination_group_cidrs:
-    Ignore: true
-  destination_group_type:
-    Ignore: true
   destination_type:
     To: DestinationType
   domain_resolve_type:
     To: DomainResolveType
   end_time:
     To: EndTime
-  hit_times:
-    Ignore: true
   lang:
     To: Lang
   member_uid:
@@ -60,10 +48,6 @@ Properties:
     To: RepeatType
   source:
     To: Source
-  source_group_cidrs:
-    Ignore: true
-  source_group_type:
-    Ignore: true
   source_type:
     To: SourceType
   start_time:
@@ -73,51 +57,21 @@ Properties:
 Attributes:
   id:
     Ignore: true
-  acl_action:
-    Ignore: true
   acl_uuid:
     To: AclUuid
   application_id:
     Ignore: true
-  application_name:
-    Ignore: true
   create_time:
     Ignore: true
-  description:
-    Ignore: true
-  dest_port:
-    Ignore: true
-  dest_port_group:
-    Ignore: true
   dest_port_group_ports:
-    Ignore: true
-  dest_port_type:
-    Ignore: true
-  destination:
     Ignore: true
   destination_group_cidrs:
     Ignore: true
   destination_group_type:
     Ignore: true
-  destination_type:
-    Ignore: true
   hit_times:
-    Ignore: true
-  member_uid:
-    Ignore: true
-  order:
-    Ignore: true
-  proto:
-    Ignore: true
-  release:
-    Ignore: true
-  source:
     Ignore: true
   source_group_cidrs:
     Ignore: true
   source_group_type:
-    Ignore: true
-  source_type:
-    Ignore: true
-  vpc_firewall_id:
     Ignore: true

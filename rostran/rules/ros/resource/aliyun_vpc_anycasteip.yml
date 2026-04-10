@@ -8,22 +8,22 @@ Properties:
     To: bandwidth
   Description:
     To: description
-  InternetChargeType:
-    To: internet_charge_type
   InstanceChargeType:
     To: payment_type
-  ServiceLocation:
-    To: service_location
+  InternetChargeType:
+    To: internet_charge_type
   Name:
     To: anycast_eip_address_name
   ResourceGroupId:
     To: resource_group_id
+  ServiceLocation:
+    To: service_location
 Attributes:
   AnycastId:
     To: id
-  Name:
-    To: anycast_eip_address_name
   IpAddress:
     Ignore: true
+  Name:
+    To: anycast_eip_address_name
   OrderId:
     Ignore: true

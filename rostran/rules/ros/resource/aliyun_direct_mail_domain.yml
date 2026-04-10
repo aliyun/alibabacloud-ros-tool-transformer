@@ -7,39 +7,39 @@ Properties:
   DomainName:
     To: domain_name
 Attributes:
-  DomainId:
-    To: id
-  DomainName:
-    To: domain_name
-  SpfAuthStatus:
-    Ignore: true
-  IcpStatus:
-    Ignore: true
-  MxAuthStatus:
+  CnameAuthStatus:
     Ignore: true
   CnameConfirmStatus:
+    Ignore: true
+  CnameRecord:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  DefaultDomain:
     Ignore: true
   DnsMx:
     Ignore: true
   DnsSpf:
     Ignore: true
+  DnsTxt:
+    Ignore: true
+  DomainId:
+    To: id
+  DomainName:
+    To: domain_name
   DomainType:
     Ignore: true
-  CnameAuthStatus:
+  IcpStatus:
     Ignore: true
-  CreateTime:
-    Ignore: true
-  CnameRecord:
-    Ignore: true
-  TlDomainName:
+  MxAuthStatus:
     Ignore: true
   MxRecord:
     Ignore: true
-  DefaultDomain:
+  SpfAuthStatus:
     Ignore: true
   SpfRecord:
     Ignore: true
-  TracefRecord:
+  TlDomainName:
     Ignore: true
-  DnsTxt:
+  TracefRecord:
     Ignore: true

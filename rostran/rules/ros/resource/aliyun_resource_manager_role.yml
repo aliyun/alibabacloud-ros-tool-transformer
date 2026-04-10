@@ -1,0 +1,33 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ResourceManager::Role
+  To: alicloud_resource_manager_role
+Properties:
+  AssumeRolePolicyDocument:
+    To: assume_role_policy_document
+  Description:
+    To: description
+  MaxSessionDuration:
+    To: max_session_duration
+  RoleName:
+    To: role_name
+Attributes:
+  Arn:
+    To: arn
+  AssumeRolePolicyDocument:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  Description:
+    Ignore: true
+  MaxSessionDuration:
+    Ignore: true
+  RoleId:
+    To: id
+  RoleId$$0:
+    To: role_id
+  RoleName:
+    Ignore: true
+  UpdateDate:
+    Ignore: true

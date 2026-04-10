@@ -4,70 +4,70 @@ ResourceType:
   From: ALIYUN::DTS::SynchronizationJob2
   To: alicloud_dts_synchronization_job
 Properties:
-  DataInitialization:
-    To: data_initialization
-  StructureInitialization:
-    To: structure_initialization
-  Status:
-    Ignore: true
-  MinDu:
-    Ignore: true
-  ErrorPhone:
-    Ignore: true
-  DisasterRecoveryJob:
+  Checkpoint:
     Ignore: true
   DataCheckConfigure:
     Ignore: true
-  SrcSecondaryVswId:
-    Ignore: true
-  DestSecondaryVswId:
-    Ignore: true
-  DelayRuleTime:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
-  FileOssUrl:
-    Ignore: true
-  DtsJobId:
-    Ignore: true
-  DtsBisLabel:
+  DataInitialization:
+    To: data_initialization
+  DataSynchronization:
     Ignore: true
   DbList:
     Ignore: true
-  ErrorNotice:
-    Ignore: true
-  MaxDu:
-    Ignore: true
-  DataSynchronization:
-    Ignore: true
-  SynchronizationDirection:
-    Ignore: true
-  DelayPhone:
-    Ignore: true
-  DestinationEndpoint:
-    Ignore: true
-  DestPrimaryVswId:
-    Ignore: true
-  SrcPrimaryVswId:
-    Ignore: true
-  DtsJobName:
+  DedicatedClusterId:
     Ignore: true
   DelayNotice:
     Ignore: true
-  SourceEndpoint:
+  DelayPhone:
     Ignore: true
-  Reserve:
+  DelayRuleTime:
     Ignore: true
-  Checkpoint:
+  DestPrimaryVswId:
     Ignore: true
-  DedicatedClusterId:
+  DestSecondaryVswId:
+    Ignore: true
+  DestinationEndpoint:
+    Ignore: true
+  DisasterRecoveryJob:
+    Ignore: true
+  DtsBisLabel:
     Ignore: true
   DtsInstanceId:
-    Ignore: true
-Attributes:
-  DtsJobName:
     Ignore: true
   DtsJobId:
     Ignore: true
+  DtsJobName:
+    Ignore: true
+  ErrorNotice:
+    Ignore: true
+  ErrorPhone:
+    Ignore: true
+  FileOssUrl:
+    Ignore: true
+  MaxDu:
+    Ignore: true
+  MinDu:
+    Ignore: true
+  Reserve:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  SourceEndpoint:
+    Ignore: true
+  SrcPrimaryVswId:
+    Ignore: true
+  SrcSecondaryVswId:
+    Ignore: true
+  Status:
+    Ignore: true
+  StructureInitialization:
+    To: structure_initialization
+  SynchronizationDirection:
+    Ignore: true
+Attributes:
   DtsInstanceId:
+    Ignore: true
+  DtsJobId:
+    Ignore: true
+  DtsJobName:
     Ignore: true

@@ -4,10 +4,10 @@ ResourceType:
   From: ALIYUN::SAG::Qos
   To: alicloud_sag_qos
 Properties:
-  QosName:
-    To: name
   QosDescription:
     Ignore: true
+  QosName:
+    To: name
 Attributes:
   QosId:
     To: id

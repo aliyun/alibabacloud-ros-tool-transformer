@@ -36,4 +36,4 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: VersionName

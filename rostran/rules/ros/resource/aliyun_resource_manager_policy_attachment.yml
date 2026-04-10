@@ -15,6 +15,10 @@ Properties:
   ResourceGroupId:
     To: resource_group_id
 Attributes:
+  AttachDate:
+    Ignore: true
+  Description:
+    Ignore: true
   PolicyName:
     To: policy_name
   PolicyType:
@@ -25,7 +29,3 @@ Attributes:
     To: principal_type
   ResourceGroupId:
     To: resource_group_id
-  AttachDate:
-    Ignore: true
-  Description:
-    Ignore: true

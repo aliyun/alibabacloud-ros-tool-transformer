@@ -17,17 +17,17 @@ Properties:
   UserName:
     To: user_name
 Attributes:
-  UserId:
-    To: id
   Mobile:
     To: mobile
+  ParentUid:
+    Ignore: true
+  RoleIds:
+    Ignore: true
   RoleNames:
     To: role_names
   Uid:
     To: uid
+  UserId:
+    To: id
   UserName:
     To: user_name
-  RoleIds:
-    Ignore: true
-  ParentUid:
-    Ignore: true

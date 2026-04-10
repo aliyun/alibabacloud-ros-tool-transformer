@@ -1,0 +1,20 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cdn_real_time_log_delivery
+  To: ALIYUN::CDN::DeliverTask
+Properties:
+  domain:
+    To: DomainNames
+    Type: List
+  logstore:
+    Ignore: true
+  project:
+    Ignore: true
+  sls_region:
+    Ignore: true
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: DeliverId

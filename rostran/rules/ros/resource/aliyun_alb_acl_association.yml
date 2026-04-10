@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::ALB::AclAssociation
   To: alicloud_alb_listener_acl_attachment
 Properties:
+  AclIds:
+    To: acl_id
   AclType:
     To: acl_type
   ListenerId:
     To: listener_id
-  AclIds:
-    To: acl_id
 Attributes:
   ListenerId:
     To: listener_id

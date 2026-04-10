@@ -35,7 +35,8 @@ Properties:
     To: DataNode
     Type: Map
   data_node_disk_performance_level:
-    Ignore: true
+    To: DataNode
+    Type: Map
   data_node_disk_size:
     To: DataNode
     Type: Map

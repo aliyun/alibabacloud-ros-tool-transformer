@@ -4,10 +4,12 @@ ResourceType:
   From: ALIYUN::ResourceManager::ResourceShare
   To: alicloud_resource_manager_resource_share
 Properties:
-  ResourceShareName:
-    To: resource_share_name
+  AllowExternalTargets:
+    To: allow_external_targets
   PermissionNames:
     To: permission_names
+  ResourceShareName:
+    To: resource_share_name
   Resources:
     To: resources
     Type: List
@@ -18,8 +20,6 @@ Properties:
         To: resource_type
   Targets:
     To: targets
-  AllowExternalTargets:
-    To: allow_external_targets
 Attributes:
   ResourceShareId:
     To: id

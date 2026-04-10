@@ -12,6 +12,8 @@ Properties:
     To: description
   ParameterGroupName:
     To: name
+  ParameterGroupName$$0:
+    To: parameter_group_name
   Parameters:
     To: parameters
     Type: List
@@ -22,26 +24,24 @@ Properties:
         To: param_value
   ResourceGroupId:
     Ignore: true
-  ParameterGroupName$$0:
-    To: parameter_group_name
 Attributes:
-  ParameterGroupId:
-    To: id
+  CreateTime:
+    To: create_time
   DbType:
     To: db_type
   DbVersion:
     To: db_version
-  ParameterGroupDesc:
-    To: description
-  ParameterGroupName:
-    To: name
-  Parameters:
-    To: parameters
   ForceRestart:
     Ignore: true
-  ParameterGroupType:
-    Ignore: true
-  CreateTime:
-    To: create_time
   ParameterCounts:
     Ignore: true
+  ParameterGroupDesc:
+    To: description
+  ParameterGroupId:
+    To: id
+  ParameterGroupName:
+    To: name
+  ParameterGroupType:
+    Ignore: true
+  Parameters:
+    To: parameters

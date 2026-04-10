@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_cycle_task
+  To: ALIYUN::ThreatDetection::CycleTask
+Properties:
+  enable:
+    To: Enable
+  first_date_str:
+    To: FirstDateStr
+  interval_period:
+    To: IntervalPeriod
+  param:
+    To: Param
+  period_unit:
+    To: PeriodUnit
+  source:
+    To: Source
+  target_end_time:
+    To: TargetEndTime
+  target_start_time:
+    To: TargetStartTime
+  task_name:
+    To: TaskName
+  task_type:
+    To: TaskType
+Attributes:
+  id:
+    To: ConfigId

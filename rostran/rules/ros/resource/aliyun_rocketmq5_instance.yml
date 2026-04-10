@@ -10,12 +10,32 @@ Properties:
     To: auto_renew_period
   InstanceName:
     To: instance_name
+  InternetInfo:
+    To: flow_out_bandwidth
+  InternetInfo$$0:
+    To: internet_spec
   PaymentType:
     To: payment_type
   Period:
     To: period
   PeriodUnit:
     To: period_unit
+  ProductInfo:
+    To: product_info
+    Type: Map
+    Schema:
+      AutoScaling:
+        To: auto_scaling
+      CapacityType:
+        Ignore: true
+      MessageRetentionTime:
+        To: message_retention_time
+      MsgProcessSpec:
+        To: msg_process_spec
+      ProvisionedCapacity:
+        Ignore: true
+      SendReceiveRatio:
+        To: send_receive_ratio
   Remark:
     To: remark
   ResourceGroupId:
@@ -24,49 +44,29 @@ Properties:
     To: series_code
   SubSeriesCode:
     To: sub_series_code
-  ProductInfo:
-    To: product_info
-    Type: Map
-    Schema:
-      AutoScaling:
-        To: auto_scaling
-      MessageRetentionTime:
-        To: message_retention_time
-      MsgProcessSpec:
-        To: msg_process_spec
-      SendReceiveRatio:
-        To: send_receive_ratio
-      CapacityType:
-        Ignore: true
-      ProvisionedCapacity:
-        Ignore: true
-  InternetInfo:
-    To: flow_out_bandwidth
   VpcInfo:
     To: network_info
     Type: Map
     Schema:
       SecurityGroupId:
         Ignore: true
-      VpcId:
-        Ignore: true
       VSwitchId:
         Ignore: true
       VSwitchIds:
         Ignore: true
-  InternetInfo$$0:
-    To: internet_spec
+      VpcId:
+        Ignore: true
   VpcInfo$$0:
     To: vswitches
     Type: Map
     Schema:
-      VSwitchId:
-        To: vswitch_id
-      VpcId:
-        Ignore: true
       SecurityGroupId:
         Ignore: true
+      VSwitchId:
+        To: vswitch_id
       VSwitchIds:
+        Ignore: true
+      VpcId:
         Ignore: true
 Attributes:
   InstanceId:

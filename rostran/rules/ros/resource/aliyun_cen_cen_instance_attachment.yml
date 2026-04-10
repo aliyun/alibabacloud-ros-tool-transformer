@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::CEN::CenInstanceAttachment
   To: alicloud_cen_instance_attachment
 Properties:
+  CenId:
+    To: instance_id
   ChildInstanceId:
     To: child_instance_id
   ChildInstanceOwnerId:
@@ -12,6 +14,3 @@ Properties:
     To: child_instance_region_id
   ChildInstanceType:
     To: child_instance_type
-  CenId:
-    To: instance_id
-Attributes: {}

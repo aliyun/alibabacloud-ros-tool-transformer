@@ -13,9 +13,9 @@ Properties:
 Attributes:
   GroupName:
     Ignore: true
-  WhitelistNetType:
-    Ignore: true
   SecurityIpList:
     Ignore: true
   SecurityIpType:
+    Ignore: true
+  WhitelistNetType:
     Ignore: true

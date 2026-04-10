@@ -10,26 +10,26 @@ Properties:
     Schema:
       Category:
         To: category
+      Escalations:
+        Ignore: true
       MetricName:
         To: metric_name
       Namespace:
         To: namespace
-      RuleName:
-        To: rule_name
-      Webhook:
-        To: webhook
-      Escalations:
-        Ignore: true
       Period:
         Ignore: true
+      RuleName:
+        To: rule_name
       Selector:
         Ignore: true
+      Webhook:
+        To: webhook
   Description:
     To: description
-  RestVersion:
-    To: rest_version
   Name:
     To: metric_rule_template_name
+  RestVersion:
+    To: rest_version
   TemplateId:
     Ignore: true
 Attributes:

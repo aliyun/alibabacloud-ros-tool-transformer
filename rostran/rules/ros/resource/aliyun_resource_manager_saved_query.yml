@@ -11,15 +11,15 @@ Properties:
   SavedQueryName:
     To: saved_query_name
 Attributes:
-  SavedQueryId:
-    To: id
   CreateTime:
     To: create_time
-  UpdateTime:
-    Ignore: true
   Description:
     Ignore: true
   Expression:
     Ignore: true
+  SavedQueryId:
+    To: id
   SavedQueryName:
+    Ignore: true
+  UpdateTime:
     Ignore: true

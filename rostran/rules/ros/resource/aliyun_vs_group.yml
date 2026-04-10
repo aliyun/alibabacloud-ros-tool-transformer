@@ -4,16 +4,20 @@ ResourceType:
   From: ALIYUN::VS::Group
   To: alicloud_video_surveillance_system_group
 Properties:
+  App:
+    Ignore: true
   Callback:
     To: callback
   Description:
     To: description
   Enabled:
     To: enabled
-  Name:
-    To: group_name
   InProtocol:
     To: in_protocol
+  LazyPull:
+    Ignore: true
+  Name:
+    To: group_name
   OutProtocol:
     To: out_protocol
   PlayDomain:
@@ -22,16 +26,12 @@ Properties:
     To: push_domain
   Region:
     Ignore: true
-  App:
-    Ignore: true
-  LazyPull:
-    Ignore: true
 Attributes:
-  Id:
-    To: id
-  GbIp:
-    Ignore: true
   GbId:
+    Ignore: true
+  GbIp:
     Ignore: true
   GbPort:
     Ignore: true
+  Id:
+    To: id

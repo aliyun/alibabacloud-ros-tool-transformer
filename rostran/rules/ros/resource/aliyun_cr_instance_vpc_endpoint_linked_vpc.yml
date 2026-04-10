@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::CR::InstanceVpcEndpointLinkedVpc
   To: alicloud_cr_vpc_endpoint_linked_vpc
 Properties:
+  EnableCreateDNSRecordInPvzt:
+    To: enable_create_dns_record_in_pvzt
   InstanceId:
     To: instance_id
   ModuleName:
@@ -12,8 +14,6 @@ Properties:
     To: vpc_id
   VswitchId:
     To: vswitch_id
-  EnableCreateDNSRecordInPvzt:
-    To: enable_create_dns_record_in_pvzt
 Attributes:
   InstanceId:
     To: instance_id

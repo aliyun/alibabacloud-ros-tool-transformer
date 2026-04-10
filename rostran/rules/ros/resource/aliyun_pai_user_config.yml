@@ -11,9 +11,9 @@ Properties:
   Configs:
     To: config_value
 Attributes:
-  Configs:
-    Ignore: true
   CategoryName:
     Ignore: true
   ConfigKey:
+    Ignore: true
+  Configs:
     Ignore: true

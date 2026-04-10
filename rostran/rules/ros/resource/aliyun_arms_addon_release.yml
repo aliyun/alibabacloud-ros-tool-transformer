@@ -8,18 +8,18 @@ Properties:
     To: addon_version
   EnvironmentId:
     To: environment_id
-  ReleaseName:
-    To: addon_release_name
   Name:
     To: addon_name
+  ReleaseName:
+    To: addon_release_name
   Values:
     To: values
 Attributes:
-  EnvironmentId:
-    To: environment_id
   Config:
     Ignore: true
-  ReleaseName:
-    Ignore: true
+  EnvironmentId:
+    To: environment_id
   Release:
+    Ignore: true
+  ReleaseName:
     Ignore: true

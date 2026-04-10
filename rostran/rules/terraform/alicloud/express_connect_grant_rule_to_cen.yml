@@ -3,3 +3,15 @@ Type: Resource
 ResourceType:
   From: alicloud_express_connect_grant_rule_to_cen
   To: ALIYUN::VPC::GrantInstanceToCen
+Properties:
+  cen_id:
+    To: CenId
+  cen_owner_id:
+    To: CenOwnerId
+  instance_id:
+    To: InstanceId
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true

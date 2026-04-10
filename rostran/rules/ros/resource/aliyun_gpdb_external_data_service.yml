@@ -15,13 +15,13 @@ Properties:
 Attributes:
   CreateTime:
     To: create_time
-  ServiceId:
-    To: service_id
+  ModifyTime:
+    Ignore: true
   ServiceDescription:
     Ignore: true
+  ServiceId:
+    To: service_id
   ServiceName:
-    Ignore: true
-  ModifyTime:
     Ignore: true
   ServiceSpec:
     Ignore: true

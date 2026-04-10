@@ -33,15 +33,15 @@ Attributes:
     To: config_id
   ConfigType:
     Ignore: true
-  RuleName:
-    Ignore: true
-  SiteVersion:
+  ResponseHeaderModification:
     Ignore: true
   Rule:
     Ignore: true
-  Sequence:
-    Ignore: true
   RuleEnable:
     Ignore: true
-  ResponseHeaderModification:
+  RuleName:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  SiteVersion:
     Ignore: true

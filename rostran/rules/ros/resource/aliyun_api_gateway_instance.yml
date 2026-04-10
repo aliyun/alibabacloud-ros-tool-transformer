@@ -4,6 +4,12 @@ ResourceType:
   From: ALIYUN::ApiGateway::Instance
   To: alicloud_api_gateway_instance
 Properties:
+  AutoPay:
+    Ignore: true
+  ChargeType:
+    To: payment_type
+  DeletionForce:
+    Ignore: true
   Duration:
     To: duration
   HttpsPolicy:
@@ -14,32 +20,26 @@ Properties:
     To: instance_spec
   PricingCycle:
     To: pricing_cycle
-  ZoneId:
-    To: zone_id
   Tags:
     Ignore: true
-  DeletionForce:
-    Ignore: true
-  ChargeType:
-    To: payment_type
-  AutoPay:
-    Ignore: true
+  ZoneId:
+    To: zone_id
 Attributes:
-  InstanceId:
-    To: id
+  Arn:
+    Ignore: true
   EgressIpv6Enable:
     To: egress_ipv6_enable
+  InstanceId:
+    To: id
   InstanceType:
     To: instance_type
+  InternetEgressAddress:
+    Ignore: true
   SupportIpv6:
     To: support_ipv6
-  VpcSlbIntranetEnable:
-    To: vpc_slb_intranet_enable
   VpcEgressAddress:
-    Ignore: true
-  InternetEgressAddress:
     Ignore: true
   VpcIntranetEnable:
     Ignore: true
-  Arn:
-    Ignore: true
+  VpcSlbIntranetEnable:
+    To: vpc_slb_intranet_enable

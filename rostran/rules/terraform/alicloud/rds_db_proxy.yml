@@ -42,3 +42,16 @@ Properties:
     To: VPCId
   vswitch_id:
     To: VSwitchId
+Attributes:
+  id:
+    Ignore: true
+  db_proxy_connection_string:
+    Ignore: true
+  db_proxy_endpoint_aliases:
+    Ignore: true
+  db_proxy_endpoint_id:
+    Ignore: true
+  net_type:
+    Ignore: true
+  ssl_expired_time:
+    Ignore: true

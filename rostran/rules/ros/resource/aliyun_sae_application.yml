@@ -12,8 +12,14 @@ Properties:
     To: app_description
   AppName:
     To: app_name
+  AppSource:
+    Ignore: true
+  AssociateEip:
+    Ignore: true
   AutoConfig:
     To: auto_config
+  BaseAppId:
+    Ignore: true
   Command:
     To: command
   CommandArgs:
@@ -28,36 +34,54 @@ Properties:
     To: deploy
   EdasContainerVersion:
     To: edas_container_version
+  EnableEbpf:
+    Ignore: true
+  EnableNewArms:
+    Ignore: true
+  EnableSidecarResourceIsolated:
+    Ignore: true
   Envs:
     To: envs
   ImagePullSecrets:
     To: image_pull_secrets
   ImageUrl:
     To: image_url
+  InitContainersConfig:
+    Ignore: true
   JarStartArgs:
     To: jar_start_args
   JarStartOptions:
     To: jar_start_options
   Jdk:
     To: jdk
+  KafkaConfigs:
+    To: kafka_configs
   Liveness:
     To: liveness
   Memory:
     To: memory
   MicroRegistration:
     To: micro_registration
+  MicroRegistrationConfig:
+    Ignore: true
   MountDesc:
     To: mount_desc
   MountHost:
     To: mount_host
   NamespaceId:
     To: namespace_id
+  NasConfigs:
+    To: nas_configs
   NasId:
     To: nas_id
+  NewSaeVersion:
+    Ignore: true
   OssAkId:
     To: oss_ak_id
   OssAkSecret:
     To: oss_ak_secret
+  OssMountDescs:
+    To: oss_mount_descs
   PackageType:
     To: package_type
   PackageUrl:
@@ -78,12 +102,24 @@ Properties:
     To: pre_stop
   ProgrammingLanguage:
     To: programming_language
+  PvtzDiscoverySvc:
+    To: pvtz_discovery_svc
+  Python:
+    Ignore: true
+  PythonModules:
+    Ignore: true
   Readiness:
     To: readiness
   Replicas:
     To: replicas
+  SaeVersion:
+    Ignore: true
   SecurityGroupId:
     To: security_group_id
+  ServiceTags:
+    Ignore: true
+  SidecarContainersConfig:
+    Ignore: true
   SlsConfigs:
     To: sls_configs
   Tags:
@@ -95,50 +131,14 @@ Properties:
     To: timezone
   TomcatConfig:
     To: tomcat_config
-  VpcId:
-    To: vpc_id
   VSwitchId:
     To: vswitch_id
+  VpcId:
+    To: vpc_id
   WarStartOptions:
     To: war_start_options
   WebContainer:
     To: web_container
-  SaeVersion:
-    Ignore: true
-  PvtzDiscoverySvc:
-    To: pvtz_discovery_svc
-  Python:
-    Ignore: true
-  NasConfigs:
-    To: nas_configs
-  PythonModules:
-    Ignore: true
-  BaseAppId:
-    Ignore: true
-  MicroRegistrationConfig:
-    Ignore: true
-  KafkaConfigs:
-    To: kafka_configs
-  AssociateEip:
-    Ignore: true
-  AppSource:
-    Ignore: true
-  ServiceTags:
-    Ignore: true
-  EnableEbpf:
-    Ignore: true
-  OssMountDescs:
-    To: oss_mount_descs
-  InitContainersConfig:
-    Ignore: true
-  SidecarContainersConfig:
-    Ignore: true
-  EnableSidecarResourceIsolated:
-    Ignore: true
-  NewSaeVersion:
-    Ignore: true
-  EnableNewArms:
-    Ignore: true
 Attributes:
   AppId:
     To: id

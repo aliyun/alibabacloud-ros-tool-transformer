@@ -23,23 +23,23 @@ Properties:
 Attributes:
   CreateTime:
     To: create_time
-  ScanRuleId:
-    To: scan_rule_id
+  InstanceId:
+    Ignore: true
   Namespaces:
     Ignore: true
-  ScanScope:
-    Ignore: true
-  ScanType:
+  RepoNames:
     Ignore: true
   RepoTagFilterPattern:
     Ignore: true
   RuleName:
     Ignore: true
-  UpdateTime:
+  ScanRuleId:
+    To: scan_rule_id
+  ScanScope:
+    Ignore: true
+  ScanType:
     Ignore: true
   TriggerType:
     Ignore: true
-  RepoNames:
-    Ignore: true
-  InstanceId:
+  UpdateTime:
     Ignore: true

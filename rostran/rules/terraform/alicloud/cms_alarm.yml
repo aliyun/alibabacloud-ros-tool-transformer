@@ -5,8 +5,7 @@ ResourceType:
   To: ALIYUN::CMS::ResourceMetricRule
 Properties:
   comparison_operator:
-    To: Escalations
-    Type: Map
+    To: Escalations.Critical.ComparisonOperator
   composite_expression:
     To: CompositeExpression
     Type: Map
@@ -35,41 +34,41 @@ Properties:
   end_time:
     Ignore: true
   escalations_critical:
-    To: Escalations
+    To: Escalations.Critical
     Type: Map
     Schema:
       comparison_operator:
-        Ignore: true
+        To: ComparisonOperator
       statistics:
-        Ignore: true
+        To: Statistics
       threshold:
-        Ignore: true
+        To: Threshold
       times:
-        Ignore: true
+        To: Times
   escalations_info:
-    To: Escalations
+    To: Escalations.Info
     Type: Map
     Schema:
       comparison_operator:
-        Ignore: true
+        To: ComparisonOperator
       statistics:
-        Ignore: true
+        To: Statistics
       threshold:
-        Ignore: true
+        To: Threshold
       times:
-        Ignore: true
+        To: Times
   escalations_warn:
-    To: Escalations
+    To: Escalations.Warn
     Type: Map
     Schema:
       comparison_operator:
-        Ignore: true
+        To: ComparisonOperator
       statistics:
-        Ignore: true
+        To: Statistics
       threshold:
-        Ignore: true
+        To: Threshold
       times:
-        Ignore: true
+        To: Times
   metric:
     Ignore: true
   metric_dimensions:
@@ -105,8 +104,7 @@ Properties:
   start_time:
     Ignore: true
   statistics:
-    To: Escalations
-    Type: Map
+    To: Escalations.Critical.Statistics
   tags:
     Ignore: true
   targets:
@@ -121,8 +119,7 @@ Properties:
       target_id:
         Ignore: true
   threshold:
-    To: Escalations
-    Type: Map
+    To: Escalations.Critical.Threshold
   triggered_count:
     Ignore: true
 Attributes:

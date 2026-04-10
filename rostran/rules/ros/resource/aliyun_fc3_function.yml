@@ -4,96 +4,28 @@ ResourceType:
   From: ALIYUN::FC3::Function
   To: alicloud_fcv3_function
 Properties:
+  Code:
+    To: code
+    Type: Map
+    Schema:
+      Checksum:
+        To: checksum
+      OssBucketName:
+        To: oss_bucket_name
+      OssObjectName:
+        To: oss_object_name
+      SourceCode:
+        Ignore: true
+      ZipFile:
+        To: zip_file
   Cpu:
     To: cpu
-  Description:
-    To: description
-  DiskSize:
-    To: disk_size
-  EnvironmentVariables:
-    To: environment_variables
-  FunctionName:
-    To: function_name
-  Handler:
-    To: handler
-  InstanceConcurrency:
-    To: instance_concurrency
-  InternetAccess:
-    To: internet_access
-  Layers:
-    To: layers
-  MemorySize:
-    To: memory_size
-  Role:
-    To: role
-  Runtime:
-    To: runtime
-  Timeout:
-    To: timeout
-  NasConfig:
-    To: nas_config
-    Type: Map
-    Schema:
-      GroupId:
-        To: group_id
-      MountPoints:
-        To: mount_points
-      UserId:
-        To: user_id
-  TracingConfig:
-    Ignore: true
-  LogConfig:
-    To: log_config
-    Type: Map
-    Schema:
-      EnableInstanceMetrics:
-        To: enable_instance_metrics
-      EnableRequestMetrics:
-        To: enable_request_metrics
-      LogBeginRule:
-        To: log_begin_rule
-      Logstore:
-        To: logstore
-      Project:
-        To: project
-  CustomDns:
-    To: custom_dns
-    Type: Map
-    Schema:
-      DnsOptions:
-        To: dns_options
-      NameServers:
-        To: name_servers
-      Searches:
-        To: searches
-  VpcConfig:
-    To: vpc_config
-    Type: Map
-    Schema:
-      SecurityGroupId:
-        To: security_group_id
-      VpcId:
-        To: vpc_id
-      VSwitchIds:
-        To: vswitch_ids
-  OssMountConfig:
-    To: oss_mount_config
-    Type: Map
-    Schema:
-      MountPoints:
-        To: mount_points
-  InstanceLifecycleConfig:
-    To: instance_lifecycle_config
-    Type: Map
-    Schema:
-      Initializer:
-        To: initializer
-      PreStop:
-        To: pre_stop
   CustomContainerConfig:
     To: custom_container_config
     Type: Map
     Schema:
+      AccelerationInfo:
+        Ignore: true
       AccelerationType:
         To: acceleration_type
       AcrInstanceId:
@@ -108,12 +40,20 @@ Properties:
         To: image
       Port:
         To: port
-      AccelerationInfo:
+      RegistryConfig:
         Ignore: true
       ResolvedImageUri:
         Ignore: true
-      RegistryConfig:
-        Ignore: true
+  CustomDns:
+    To: custom_dns
+    Type: Map
+    Schema:
+      DnsOptions:
+        To: dns_options
+      NameServers:
+        To: name_servers
+      Searches:
+        To: searches
   CustomRuntimeConfig:
     To: custom_runtime_config
     Type: Map
@@ -126,6 +66,16 @@ Properties:
         To: health_check_config
       Port:
         To: port
+  Description:
+    To: description
+  DisableOndemand:
+    Ignore: true
+  DiskSize:
+    To: disk_size
+  EnvironmentVariables:
+    To: environment_variables
+  FunctionName:
+    To: function_name
   GpuConfig:
     To: gpu_config
     Type: Map
@@ -134,22 +84,60 @@ Properties:
         To: gpu_memory_size
       GpuType:
         To: gpu_type
-  Code:
-    To: code
-    Type: Map
-    Schema:
-      Checksum:
-        To: checksum
-      OssBucketName:
-        To: oss_bucket_name
-      OssObjectName:
-        To: oss_object_name
-      ZipFile:
-        To: zip_file
-      SourceCode:
-        Ignore: true
+  Handler:
+    To: handler
+  InstanceConcurrency:
+    To: instance_concurrency
   InstanceIsolationMode:
     To: instance_isolation_mode
+  InstanceLifecycleConfig:
+    To: instance_lifecycle_config
+    Type: Map
+    Schema:
+      Initializer:
+        To: initializer
+      PreStop:
+        To: pre_stop
+  InternetAccess:
+    To: internet_access
+  Layers:
+    To: layers
+  LogConfig:
+    To: log_config
+    Type: Map
+    Schema:
+      EnableInstanceMetrics:
+        To: enable_instance_metrics
+      EnableRequestMetrics:
+        To: enable_request_metrics
+      LogBeginRule:
+        To: log_begin_rule
+      Logstore:
+        To: logstore
+      Project:
+        To: project
+  MemorySize:
+    To: memory_size
+  NasConfig:
+    To: nas_config
+    Type: Map
+    Schema:
+      GroupId:
+        To: group_id
+      MountPoints:
+        To: mount_points
+      UserId:
+        To: user_id
+  OssMountConfig:
+    To: oss_mount_config
+    Type: Map
+    Schema:
+      MountPoints:
+        To: mount_points
+  Role:
+    To: role
+  Runtime:
+    To: runtime
   SessionAffinity:
     To: session_affinity
   SessionAffinityConfig:
@@ -157,14 +145,26 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  DisableOndemand:
+  Timeout:
+    To: timeout
+  TracingConfig:
     Ignore: true
+  VpcConfig:
+    To: vpc_config
+    Type: Map
+    Schema:
+      SecurityGroupId:
+        To: security_group_id
+      VSwitchIds:
+        To: vswitch_ids
+      VpcId:
+        To: vpc_id
 Attributes:
-  FunctionId:
-    To: id
-  FunctionName:
-    To: function_name
   ARN:
     To: function_arn
+  FunctionId:
+    To: id
   FunctionId$$0:
     To: function_id
+  FunctionName:
+    To: function_name

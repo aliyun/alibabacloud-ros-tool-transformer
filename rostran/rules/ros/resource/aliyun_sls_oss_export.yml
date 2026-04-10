@@ -4,22 +4,22 @@ ResourceType:
   From: ALIYUN::SLS::OssExport
   To: alicloud_sls_oss_export_sink
 Properties:
+  Configuration:
+    To: bucket
+  Configuration$$0:
+    To: time_zone
+  Description:
+    To: description
   DisplayName:
     To: display_name
   ExportName:
     To: export_name
   ProjectName:
     To: project_name
-  Configuration:
-    To: bucket
-  Description:
-    To: description
-  Configuration$$0:
-    To: time_zone
 Attributes:
   ExportName:
     To: export_name
-  ProjectName:
-    To: project_name
   ExportName$$0:
     To: export_name
+  ProjectName:
+    To: project_name

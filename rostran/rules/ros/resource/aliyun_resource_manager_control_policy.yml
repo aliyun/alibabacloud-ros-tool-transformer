@@ -13,8 +13,8 @@ Properties:
   PolicyDocument:
     To: policy_document
 Attributes:
-  PolicyId:
-    To: id
+  AttachmentCount:
+    Ignore: true
   ControlPolicyName:
     To: control_policy_name
   Description:
@@ -23,7 +23,7 @@ Attributes:
     To: effect_scope
   PolicyDocument:
     To: policy_document
+  PolicyId:
+    To: id
   PolicyType:
-    Ignore: true
-  AttachmentCount:
     Ignore: true

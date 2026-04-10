@@ -4,8 +4,14 @@ ResourceType:
   From: ALIYUN::VPC::VpnPbrRouteEntry
   To: alicloud_vpn_pbr_route_entry
 Properties:
+  Description:
+    Ignore: true
   NextHop:
     To: next_hop
+  OverlayMode:
+    Ignore: true
+  Priority:
+    Ignore: true
   PublishVpc:
     To: publish_vpc
   RouteDest:
@@ -16,12 +22,6 @@ Properties:
     To: vpn_gateway_id
   Weight:
     To: weight
-  OverlayMode:
-    Ignore: true
-  Description:
-    Ignore: true
-  Priority:
-    Ignore: true
 Attributes:
   NextHop:
     To: next_hop

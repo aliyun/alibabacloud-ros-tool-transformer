@@ -36,15 +36,15 @@ Properties:
     To: forwarded_for_config
     Type: Map
     Schema:
-      XForwardedForProtoEnabled:
-        Ignore: true
-      XForwardedForPortEnabled:
-        Ignore: true
-      XRealIpEnabled:
-        Ignore: true
       XForwardedForGaApEnabled:
         Ignore: true
       XForwardedForGaIdEnabled:
+        Ignore: true
+      XForwardedForPortEnabled:
+        Ignore: true
+      XForwardedForProtoEnabled:
+        Ignore: true
+      XRealIpEnabled:
         Ignore: true
 Attributes:
   ListenerId:

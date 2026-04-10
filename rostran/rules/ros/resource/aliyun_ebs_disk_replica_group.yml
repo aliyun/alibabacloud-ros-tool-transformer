@@ -10,6 +10,12 @@ Properties:
     To: destination_region_id
   DestinationZoneId:
     To: destination_zone_id
+  DiskReplicaGroupName:
+    To: disk_replica_group_name
+  RPO:
+    To: rpo
+  ResourceGroupId:
+    To: resource_group_id
   SourceRegionId:
     To: source_region_id
   SourceZoneId:
@@ -17,15 +23,7 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  ResourceGroupId:
-    To: resource_group_id
-  RPO:
-    To: rpo
-  DiskReplicaGroupName:
-    To: disk_replica_group_name
 Attributes:
-  ReplicaGroupId:
-    To: id
   Description:
     To: description
   DestinationRegionId:
@@ -34,29 +32,31 @@ Attributes:
     To: destination_zone_id
   DiskReplicaGroupName:
     To: group_name
+  LastRecoverPoint:
+    Ignore: true
+  PairIds:
+    Ignore: true
+  PairNumber:
+    Ignore: true
+  PrimaryRegion:
+    Ignore: true
+  PrimaryZone:
+    Ignore: true
   RPO:
     To: rpo
+  ReplicaGroupId:
+    To: id
+  ResourceGroupId:
+    Ignore: true
+  Site:
+    Ignore: true
   SourceRegionId:
     To: source_region_id
   SourceZoneId:
     To: source_zone_id
-  PrimaryRegion:
-    Ignore: true
-  Tags:
-    Ignore: true
   StandbyRegion:
     Ignore: true
   StandbyZone:
     Ignore: true
-  PairNumber:
-    Ignore: true
-  PairIds:
-    Ignore: true
-  Site:
-    Ignore: true
-  LastRecoverPoint:
-    Ignore: true
-  PrimaryZone:
-    Ignore: true
-  ResourceGroupId:
+  Tags:
     Ignore: true

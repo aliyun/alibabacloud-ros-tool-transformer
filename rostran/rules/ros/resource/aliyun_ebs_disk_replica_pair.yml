@@ -16,12 +16,16 @@ Properties:
     To: destination_zone_id
   DiskId:
     To: disk_id
+  DiskReplicaPairName:
+    To: disk_replica_pair_name
   PaymentType:
     To: payment_type
   Period:
     To: period
   PeriodUnit:
     To: period_unit
+  RPO:
+    To: rpo
   ResourceGroupId:
     To: resource_group_id
   SourceZoneId:
@@ -29,13 +33,7 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  DiskReplicaPairName:
-    To: disk_replica_pair_name
-  RPO:
-    To: rpo
 Attributes:
-  ReplicaPairId:
-    To: id
   Bandwidth:
     To: bandwidth
   CreateTime:
@@ -50,15 +48,17 @@ Attributes:
     To: destination_zone_id
   DiskId:
     To: disk_id
+  DiskReplicaPairName:
+    Ignore: true
   PaymentType:
     To: payment_type
-  ResourceGroupId:
-    To: resource_group_id
   RPO:
     To: rpo
+  ReplicaPairId:
+    To: id
+  ResourceGroupId:
+    To: resource_group_id
   SourceZoneId:
     To: source_zone_id
   Tags:
-    Ignore: true
-  DiskReplicaPairName:
     Ignore: true

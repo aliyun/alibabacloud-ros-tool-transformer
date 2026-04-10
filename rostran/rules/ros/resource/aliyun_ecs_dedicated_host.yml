@@ -14,41 +14,41 @@ Properties:
     To: auto_renew
   AutoRenewPeriod:
     To: auto_renew_period
+  ChargeType:
+    To: payment_type
+  CpuOverCommitRatio:
+    To: cpu_over_commit_ratio
+  DedicatedHostClusterId:
+    To: dedicated_host_cluster_id
   DedicatedHostName:
     To: dedicated_host_name
   DedicatedHostType:
     To: dedicated_host_type
   Description:
     To: description
-  ResourceGroupId:
-    To: resource_group_id
+  MinQuantity:
+    To: min_quantity
+  NetworkAttributesSlbUdpTimeout:
+    Ignore: true
+  NetworkAttributesUdpTimeout:
+    Ignore: true
+  Period:
+    To: expired_time
   PeriodUnit:
     To: sale_cycle
+  Quantity:
+    Ignore: true
+  ResourceGroupId:
+    To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
   ZoneId:
     To: zone_id
-  NetworkAttributesSlbUdpTimeout:
-    Ignore: true
-  Quantity:
-    Ignore: true
-  Period:
-    To: expired_time
-  ChargeType:
-    To: payment_type
-  NetworkAttributesUdpTimeout:
-    Ignore: true
-  CpuOverCommitRatio:
-    To: cpu_over_commit_ratio
-  DedicatedHostClusterId:
-    To: dedicated_host_cluster_id
-  MinQuantity:
-    To: min_quantity
 Attributes:
-  DedicatedHostIds:
-    To: id
   Arn:
     Ignore: true
+  DedicatedHostIds:
+    To: id
   OrderId:
     Ignore: true

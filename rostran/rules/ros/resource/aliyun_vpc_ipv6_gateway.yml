@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   Description:
     To: description
+  Name:
+    To: ipv6_gateway_name
+  ResourceGroupId:
+    To: resource_group_id
   Spec:
     To: spec
   Tags:
@@ -13,14 +17,10 @@ Properties:
     Handler: handle_tags
   VpcId:
     To: vpc_id
-  Name:
-    To: ipv6_gateway_name
-  ResourceGroupId:
-    To: resource_group_id
 Attributes:
+  Arn:
+    Ignore: true
   Ipv6GatewayId:
     To: id
   Ipv6GatewayId$$0:
     To: ipv6_gateway_id
-  Arn:
-    Ignore: true

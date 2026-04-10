@@ -15,11 +15,11 @@ Properties:
   IndustryInfo:
     To: industry_info
 Attributes:
-  CiteTemplate:
-    Ignore: true
   BizTypeName:
     To: id
-  IndustryInfo:
+  CiteTemplate:
     Ignore: true
   Description:
+    Ignore: true
+  IndustryInfo:
     Ignore: true

@@ -4,8 +4,16 @@ ResourceType:
   From: ALIYUN::PAI::ModelVersion
   To: alicloud_pai_workspace_model_version
 Properties:
+  ApprovalStatus:
+    To: approval_status
   ExtraInfo:
     To: extra_info
+  FormatType:
+    To: format_type
+  FrameworkType:
+    To: framework_type
+  InferenceSpec:
+    To: inference_spec
   Labels:
     To: labels
     Type: List
@@ -14,66 +22,58 @@ Properties:
         To: key
       Value:
         To: value
-  VersionDescription:
-    To: model_description
-  SourceType:
-    To: origin
-  VersionName:
-    To: version_name
-  ApprovalStatus:
-    To: approval_status
-  FrameworkType:
-    To: framework_type
-  TrainingSpec:
-    To: training_spec
-  Uri:
-    To: uri
+  Metrics:
+    To: metrics
   ModelId:
     To: model_id
   Options:
     To: options
-  InferenceSpec:
-    To: inference_spec
-  Metrics:
-    To: metrics
-  FormatType:
-    To: format_type
   SourceId:
     To: source_id
-Attributes:
-  VersionName:
-    Ignore: true
-  OwnerId:
-    Ignore: true
+  SourceType:
+    To: origin
   TrainingSpec:
+    To: training_spec
+  Uri:
+    To: uri
+  VersionDescription:
+    To: model_description
+  VersionName:
+    To: version_name
+Attributes:
+  ApprovalStatus:
     Ignore: true
   ExtraInfo:
     Ignore: true
-  Uri:
+  FormatType:
+    Ignore: true
+  FrameworkType:
     Ignore: true
   GmtCreateTime:
     Ignore: true
-  VersionDescription:
-    Ignore: true
-  Options:
+  GmtModifiedTime:
     Ignore: true
   InferenceSpec:
     Ignore: true
   Labels:
     Ignore: true
-  GmtModifiedTime:
-    Ignore: true
-  ApprovalStatus:
-    Ignore: true
-  FrameworkType:
-    Ignore: true
-  UserId:
-    Ignore: true
   Metrics:
     Ignore: true
-  FormatType:
+  Options:
+    Ignore: true
+  OwnerId:
+    Ignore: true
+  SourceId:
     Ignore: true
   SourceType:
     Ignore: true
-  SourceId:
+  TrainingSpec:
+    Ignore: true
+  Uri:
+    Ignore: true
+  UserId:
+    Ignore: true
+  VersionDescription:
+    Ignore: true
+  VersionName:
     Ignore: true
