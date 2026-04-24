@@ -6,24 +6,24 @@ ResourceType:
 Properties:
   CenId:
     To: cen_id
-  MemberUid:
-    To: member_uid
   FirewallSwitch:
     To: status
-  VpcFirewallName:
-    To: vpc_firewall_name
-  VpcRegion:
-    To: vpc_region
-  VSwitchId:
+  FirewallVSwitchCidrBlock:
     Ignore: true
   FirewallVpcCidrBlock:
     Ignore: true
   FirewallVpcZoneId:
     Ignore: true
+  MemberUid:
+    To: member_uid
   NetworkInstanceId:
     To: local_vpc
-  FirewallVSwitchCidrBlock:
+  VSwitchId:
     Ignore: true
+  VpcFirewallName:
+    To: vpc_firewall_name
+  VpcRegion:
+    To: vpc_region
 Attributes:
   VpcFirewallId:
     To: vpc_firewall_id

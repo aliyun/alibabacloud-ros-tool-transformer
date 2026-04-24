@@ -36,4 +36,4 @@ Properties:
     To: ScheduleBusyWorkers
 Attributes:
   id:
-    Ignore: true
+    To: AppGroupId

@@ -6,8 +6,14 @@ ResourceType:
 Properties:
   AccessPointId:
     To: access_point_id
+  AutoPay:
+    To: auto_pay
+  AutoRenew:
+    To: auto_renew
   Description:
     To: description
+  FastLinkMode:
+    To: fast_link_mode
   HealthCheckSourceIp:
     To: health_check_source_ip
   HealthCheckTargetIp:
@@ -30,6 +36,10 @@ Properties:
     To: opposite_router_type
   Period:
     To: period
+  PricingCycle:
+    To: pricing_cycle
+  ResourceGroupId:
+    To: resource_group_id
   Role:
     To: role
   RouterId:
@@ -38,16 +48,6 @@ Properties:
     To: router_type
   Spec:
     To: specification
-  PricingCycle:
-    To: pricing_cycle
-  AutoPay:
-    To: auto_pay
-  ResourceGroupId:
-    To: resource_group_id
-  AutoRenew:
-    To: auto_renew
-  FastLinkMode:
-    To: fast_link_mode
 Attributes:
   RouterInterfaceId:
     To: id

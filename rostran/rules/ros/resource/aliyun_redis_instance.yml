@@ -4,133 +4,137 @@ ResourceType:
   From: ALIYUN::REDIS::Instance
   To: alicloud_kvstore_instance
 Properties:
-  ZoneId:
-    To: availability_zone
+  AutoRenewDuration:
+    To: auto_renew_period
+  BackupPolicy:
+    Ignore: true
+  ChargeType:
+    To: payment_type
+  Connections:
+    To: connection_string
+  DeletionForce:
+    Ignore: true
+  DeletionProtection:
+    Ignore: true
   EngineVersion:
     To: engine_version
+  EvictionPolicy:
+    Ignore: true
   InstanceClass:
     To: instance_class
+  InstanceClass$$0:
+    To: instance_type
+  InstanceMaintainTime:
+    To: maintain_end_time
+  InstanceMaintainTime$$0:
+    To: maintain_start_time
   InstanceName:
+    To: instance_name
+  InstanceName$$0:
     To: instance_name
   NodeType:
     To: node_type
   Password:
     To: password
-  ChargeType:
-    To: payment_type
   Period:
     To: period
+  PeriodUnit:
+    Ignore: true
+  ProductType:
+    Ignore: true
+  ReadOnlyCount:
+    To: read_only_count
   ResourceGroupId:
     To: resource_group_id
+  SSLEnabled:
+    Ignore: true
   SecondaryZoneId:
     To: secondary_zone_id
   SecurityGroupId:
     To: security_group_id
   ShardCount:
     To: shard_count
+  SubscriptionDeletionForce:
+    Ignore: true
+  TLSProtocol:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
-  VpcPasswordFree:
-    To: vpc_auth_mode
-  VSwitchId:
-    To: vswitch_id
-  ZoneId$$0:
-    To: zone_id
   TairConfig:
     Ignore: true
+  VSwitchId:
+    To: vswitch_id
   VpcId:
     Ignore: true
-  SSLEnabled:
-    Ignore: true
-  EvictionPolicy:
-    Ignore: true
-  DeletionForce:
-    Ignore: true
-  PeriodUnit:
-    Ignore: true
-  AutoRenewDuration:
-    To: auto_renew_period
-  DeletionProtection:
-    Ignore: true
-  ProductType:
-    Ignore: true
-  InstanceMaintainTime:
-    To: maintain_end_time
-  Connections:
-    Ignore: true
-  BackupPolicy:
-    Ignore: true
-  InstanceClass$$0:
-    To: instance_type
-  InstanceMaintainTime$$0:
-    To: maintain_start_time
-  ReadOnlyCount:
-    To: read_only_count
-  SubscriptionDeletionForce:
-    Ignore: true
-Attributes:
-  InstanceId:
-    To: id
+  VpcPasswordFree:
+    To: vpc_auth_mode
   ZoneId:
     To: availability_zone
+  ZoneId$$0:
+    To: zone_id
+Attributes:
+  ArchitectureType:
+    Ignore: true
   Bandwidth:
     To: bandwidth
   Capacity:
     To: capacity
+  ChargeType:
+    Ignore: true
+  ClassicInnerConnectionPort:
+    Ignore: true
+  ClassicInnerConnectionString:
+    Ignore: true
   ConnectionDomain:
     To: connection_domain
+  Connections:
+    Ignore: true
+  DirectConnectionPort:
+    Ignore: true
+  DirectConnectionString:
+    Ignore: true
   EngineVersion:
     To: engine_version
+  HasRenewChangeOrder:
+    Ignore: true
   InstanceClass:
     To: instance_class
+  InstanceId:
+    To: id
   InstanceName:
     To: instance_name
   InstanceType:
     To: instance_type
+  NetworkType:
+    Ignore: true
   NodeType:
     To: node_type
+  OrderId:
+    Ignore: true
+  PackageType:
+    Ignore: true
+  Port:
+    Ignore: true
   PrivateIp:
     To: private_ip
-  ResourceGroupId:
-    To: resource_group_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId$$0:
-    To: zone_id
-  ClassicInnerConnectionString:
-    Ignore: true
-  Connections:
+  PublicConnectionPort:
     Ignore: true
   PublicConnectionString:
     Ignore: true
   QPS:
     To: qps
+  ResourceGroupId:
+    To: resource_group_id
+  VSwitchId:
+    To: vswitch_id
   VpcId:
     Ignore: true
   VpcPrivateConnectionPort:
     Ignore: true
   VpcPrivateConnectionString:
     Ignore: true
-  DirectConnectionString:
-    Ignore: true
-  DirectConnectionPort:
-    Ignore: true
-  PublicConnectionPort:
-    Ignore: true
-  PackageType:
-    Ignore: true
-  ClassicInnerConnectionPort:
-    Ignore: true
-  HasRenewChangeOrder:
-    Ignore: true
-  ArchitectureType:
-    Ignore: true
-  OrderId:
-    Ignore: true
-  Port:
-    Ignore: true
-  NetworkType:
-    Ignore: true
-  ChargeType:
-    Ignore: true
+  ZoneId:
+    To: availability_zone
+  ZoneId$$0:
+    To: zone_id

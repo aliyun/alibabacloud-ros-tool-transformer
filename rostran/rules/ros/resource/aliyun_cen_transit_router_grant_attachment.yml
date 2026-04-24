@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::CEN::TransitRouterGrantAttachment
   To: alicloud_cen_transit_router_grant_attachment
 Properties:
+  CenId:
+    Ignore: true
   CenOwnerId:
     To: cen_owner_id
   InstanceId:
@@ -12,6 +14,3 @@ Properties:
     To: instance_type
   OrderType:
     To: order_type
-  CenId:
-    Ignore: true
-Attributes: {}

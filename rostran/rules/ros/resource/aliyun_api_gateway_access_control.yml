@@ -17,11 +17,11 @@ Properties:
   AddressIpVersion:
     To: address_ip_version
 Attributes:
-  AclId:
-    To: id
   AccessControlListName:
     Ignore: true
-  AddressIpVersion:
-    Ignore: true
   AclEntrys:
+    Ignore: true
+  AclId:
+    To: id
+  AddressIpVersion:
     Ignore: true

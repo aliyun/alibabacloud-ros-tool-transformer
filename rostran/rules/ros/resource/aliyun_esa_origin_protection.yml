@@ -9,15 +9,15 @@ Properties:
   SiteId:
     To: site_id
 Attributes:
-  SiteId:
-    To: id
-  LatestIpWhitelist:
-    Ignore: true
   CurrentIpWhitelist:
-    Ignore: true
-  OriginConverge:
     Ignore: true
   DiffIpWhitelist:
     Ignore: true
+  LatestIpWhitelist:
+    Ignore: true
+  OriginConverge:
+    Ignore: true
   OriginProtection:
     Ignore: true
+  SiteId:
+    To: id

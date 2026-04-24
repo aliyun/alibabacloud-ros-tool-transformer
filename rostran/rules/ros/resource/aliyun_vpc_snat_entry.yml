@@ -4,20 +4,20 @@ ResourceType:
   From: ALIYUN::VPC::SnatEntry
   To: alicloud_snat_entry
 Properties:
-  SnatEntryName:
-    To: snat_entry_name
   EipAffinity:
     To: eip_affinity
-  SnatTableId:
-    To: snat_table_id
-  SnatIp:
-    To: snat_ip
-  SourceVSwitchIds:
-    To: source_vswitch_id
-  SourceCIDR:
-    To: source_cidr
   NetworkInterfaceId:
     Ignore: true
+  SnatEntryName:
+    To: snat_entry_name
+  SnatIp:
+    To: snat_ip
+  SnatTableId:
+    To: snat_table_id
+  SourceCIDR:
+    To: source_cidr
+  SourceVSwitchIds:
+    To: source_vswitch_id
 Attributes:
   SnatEntryIds:
     To: snat_entry_id

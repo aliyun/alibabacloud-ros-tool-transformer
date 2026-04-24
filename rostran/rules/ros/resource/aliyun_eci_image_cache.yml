@@ -4,8 +4,14 @@ ResourceType:
   From: ALIYUN::ECI::ImageCache
   To: alicloud_eci_image_cache
 Properties:
+  AcrRegistryInfo:
+    Ignore: true
+  AutoMatchImageCache:
+    Ignore: true
   EipInstanceId:
     To: eip_instance_id
+  Image:
+    To: images
   ImageCacheName:
     To: image_cache_name
   ImageCacheSize:
@@ -13,8 +19,6 @@ Properties:
   ImageRegistryCredential:
     To: image_registry_credential
     Type: List
-  Image:
-    To: images
   ResourceGroupId:
     To: resource_group_id
   RetentionDays:
@@ -25,10 +29,6 @@ Properties:
     To: vswitch_id
   ZoneId:
     To: zone_id
-  AcrRegistryInfo:
-    Ignore: true
-  AutoMatchImageCache:
-    Ignore: true
 Attributes:
   ImageCacheId:
     To: id

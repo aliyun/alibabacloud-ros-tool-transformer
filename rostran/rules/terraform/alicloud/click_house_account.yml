@@ -11,16 +11,17 @@ Properties:
   account_password:
     To: Password
   allow_databases:
-    Ignore: true
+    To: DmlAuthSetting.AllowDatabases
+    Type: List
   allow_dictionaries:
-    Ignore: true
+    To: DmlAuthSetting.AllowDictionaries
+    Type: List
   db_cluster_id:
     To: DBInstanceId
   ddl_authority:
-    Ignore: true
+    To: DmlAuthSetting.DdlAuthority
   dml_authority:
-    To: DmlAuthSetting
-    Type: Map
+    To: DmlAuthSetting.DmlAuthority
   total_databases:
     Ignore: true
   total_dictionaries:

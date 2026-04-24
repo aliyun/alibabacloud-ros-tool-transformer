@@ -4,22 +4,22 @@ ResourceType:
   From: ALIYUN::VPC::VpcCidrBlockAssociation
   To: alicloud_vpc_ipv4_cidr_block
 Properties:
+  IPv6CidrBlock:
+    Ignore: true
+  IpVersion:
+    Ignore: true
   IpamPoolId:
     To: ipv4_ipam_pool_id
+  Ipv6CidrMask:
+    Ignore: true
+  Ipv6Isp:
+    Ignore: true
   SecondaryCidrBlock:
     To: secondary_cidr_block
   SecondaryCidrMask:
     To: secondary_cidr_mask
   VpcId:
     To: vpc_id
-  IPv6CidrBlock:
-    Ignore: true
-  IpVersion:
-    Ignore: true
-  Ipv6Isp:
-    Ignore: true
-  Ipv6CidrMask:
-    Ignore: true
 Attributes:
   VpcId:
     Ignore: true

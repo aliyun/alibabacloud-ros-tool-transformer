@@ -11,7 +11,7 @@ Properties:
   PolicyType:
     To: policy_type
 Attributes:
-  PolicyName:
-    Ignore: true
   GroupName:
+    Ignore: true
+  PolicyName:
     Ignore: true

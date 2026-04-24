@@ -4,6 +4,10 @@ ResourceType:
   From: ALIYUN::RDS::DBInstanceParameterGroup
   To: alicloud_rds_parameter_group
 Properties:
+  DBInstanceId:
+    Ignore: true
+  Forcerestart:
+    Ignore: true
   Parameters:
     To: param_detail
     Type: List
@@ -12,8 +16,3 @@ Properties:
         Ignore: true
       Value:
         Ignore: true
-  DBInstanceId:
-    Ignore: true
-  Forcerestart:
-    Ignore: true
-Attributes: {}

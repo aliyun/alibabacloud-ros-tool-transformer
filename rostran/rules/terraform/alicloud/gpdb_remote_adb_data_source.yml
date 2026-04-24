@@ -1,0 +1,31 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_remote_adb_data_source
+  To: ALIYUN::GPDB::ExternalDataService
+Properties:
+  data_source_name:
+    To: ServiceName
+  local_database:
+    Ignore: true
+  local_db_instance_id:
+    To: DBInstanceId
+  manager_user_name:
+    Ignore: true
+  manager_user_password:
+    Ignore: true
+  remote_database:
+    Ignore: true
+  remote_db_instance_id:
+    Ignore: true
+  user_name:
+    Ignore: true
+  user_password:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  remote_adb_data_source_id:
+    To: ServiceId
+  status:
+    Ignore: true

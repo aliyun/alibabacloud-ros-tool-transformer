@@ -9,11 +9,11 @@ Properties:
   TransitRouterRouteTableId:
     To: transit_router_route_table_id
 Attributes:
+  ResourceId:
+    Ignore: true
+  ResourceType:
+    Ignore: true
   TransitRouterAttachmentId:
     To: transit_router_attachment_id
   TransitRouterRouteTableId:
     To: transit_router_route_table_id
-  ResourceType:
-    Ignore: true
-  ResourceId:
-    Ignore: true

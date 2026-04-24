@@ -11,19 +11,19 @@ Properties:
   TransitRouterName:
     To: transit_router_name
 Attributes:
-  TransitRouterId:
-    To: id
+  AliUid:
+    Ignore: true
   CenId:
     To: cen_id
+  SystemTransitRouterRouteTableId:
+    Ignore: true
   TransitRouterDescription:
     To: transit_router_description
+  TransitRouterId:
+    To: id
   TransitRouterId$$0:
     To: transit_router_id
   TransitRouterName:
     To: transit_router_name
   Type:
     To: type
-  AliUid:
-    Ignore: true
-  SystemTransitRouterRouteTableId:
-    Ignore: true

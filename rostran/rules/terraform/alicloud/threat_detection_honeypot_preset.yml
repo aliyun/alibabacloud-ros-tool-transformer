@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_honeypot_preset
+  To: ALIYUN::ThreatDetection::HoneypotPreset
+Properties:
+  honeypot_image_name:
+    To: HoneypotImageName
+  meta:
+    To: Meta
+    Type: Map
+    Schema:
+      burp:
+        To: Burp
+      portrait_option:
+        To: PortraitOption
+      trojan_git:
+        To: TrojanGit
+  node_id:
+    To: NodeId
+  preset_name:
+    To: PresetName
+Attributes:
+  id:
+    Ignore: true
+  honeypot_preset_id:
+    To: HoneypotPresetId

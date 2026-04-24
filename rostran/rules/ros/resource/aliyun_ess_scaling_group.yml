@@ -8,6 +8,14 @@ Properties:
     To: allocation_strategy
   AzBalance:
     To: az_balance
+  CompensateWithOnDemand:
+    To: capacity_options_compensate_with_on_demand
+  CompensateWithOnDemand$$0:
+    To: compensate_with_on_demand
+  ContainerGroupId:
+    To: container_group_id
+  CustomPolicyARN:
+    Ignore: true
   DBInstanceIds:
     To: db_instance_ids
   DefaultCooldown:
@@ -20,10 +28,22 @@ Properties:
     To: group_type
   HealthCheckType:
     To: health_check_type
+  HealthCheckTypes:
+    To: health_check_types
   InstanceId:
     To: instance_id
   LaunchTemplateId:
     To: launch_template_id
+  LaunchTemplateOverrides:
+    To: launch_template_override
+    Type: List
+    Schema:
+      InstanceType:
+        To: instance_type
+      SpotPriceLimit:
+        To: spot_price_limit
+      WeightedCapacity:
+        To: weighted_capacity
   LaunchTemplateVersion:
     To: launch_template_version
   LoadBalancerIds:
@@ -36,9 +56,15 @@ Properties:
     To: min_size
   MultiAZPolicy:
     To: multi_az_policy
+  NotificationConfigurations:
+    Ignore: true
   OnDemandBaseCapacity:
     To: on_demand_base_capacity
+  OnDemandBaseCapacity$$0:
+    To: on_demand_base_capacity
   OnDemandPercentageAboveBaseCapacity:
+    To: on_demand_percentage_above_base_capacity
+  OnDemandPercentageAboveBaseCapacity$$0:
     To: on_demand_percentage_above_base_capacity
   ProtectedInstances:
     To: protected_instances
@@ -50,12 +76,26 @@ Properties:
     To: scaling_group_name
   ScalingPolicy:
     To: scaling_policy
+  ServerGroups:
+    To: alb_server_group
+    Type: List
+    Schema:
+      Port:
+        To: port
+      ServerGroupId:
+        Ignore: true
+      Type:
+        Ignore: true
+      Weight:
+        To: weight
   SpotAllocationStrategy:
     To: spot_allocation_strategy
   SpotInstancePools:
     To: spot_instance_pools
   SpotInstanceRemedy:
     To: spot_instance_remedy
+  StandbyInstances:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
@@ -63,50 +103,10 @@ Properties:
     To: vswitch_id
   VSwitchIds:
     To: vswitch_ids
-  ServerGroups:
-    To: alb_server_group
-    Type: List
-    Schema:
-      Port:
-        To: port
-      Weight:
-        To: weight
-      ServerGroupId:
-        Ignore: true
-      Type:
-        Ignore: true
-  LaunchTemplateOverrides:
-    To: launch_template_override
-    Type: List
-    Schema:
-      InstanceType:
-        To: instance_type
-      SpotPriceLimit:
-        To: spot_price_limit
-      WeightedCapacity:
-        To: weighted_capacity
-  StandbyInstances:
-    Ignore: true
-  NotificationConfigurations:
-    Ignore: true
-  ContainerGroupId:
-    To: container_group_id
-  CompensateWithOnDemand:
-    To: capacity_options_compensate_with_on_demand
-  CustomPolicyARN:
-    Ignore: true
-  CompensateWithOnDemand$$0:
-    To: compensate_with_on_demand
-  HealthCheckTypes:
-    To: health_check_types
-  OnDemandBaseCapacity$$0:
-    To: on_demand_base_capacity
-  OnDemandPercentageAboveBaseCapacity$$0:
-    To: on_demand_percentage_above_base_capacity
 Attributes:
+  Arn:
+    Ignore: true
   ScalingGroupId:
     To: id
   ScalingGroupName:
     To: scaling_group_name
-  Arn:
-    Ignore: true

@@ -15,7 +15,7 @@ Properties:
   delete_protection:
     To: DeletionProtection
   instance_charge_type:
-    To: PayType
+    To: InstanceChargeType
   internet:
     To: AddressType
   internet_charge_type:
@@ -35,7 +35,7 @@ Properties:
   payment_type:
     Ignore: true
   period:
-    To: Duration
+    Ignore: true
   resource_group_id:
     To: ResourceGroupId
   slave_zone_id:
@@ -51,5 +51,3 @@ Properties:
 Attributes:
   id:
     To: LoadBalancerId
-  address:
-    To: IpAddress

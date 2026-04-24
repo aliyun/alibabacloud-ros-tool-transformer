@@ -11,11 +11,11 @@ Properties:
   GatewayId:
     To: gateway_id
 Attributes:
+  Description:
+    Ignore: true
   EnvironmentId:
     To: id
   EnvironmentName:
     Ignore: true
   GatewayId:
-    Ignore: true
-  Description:
     Ignore: true

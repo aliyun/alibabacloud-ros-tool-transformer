@@ -4,8 +4,6 @@ ResourceType:
   From: ALIYUN::CMS::ResourceMetricRule
   To: alicloud_cms_alarm
 Properties:
-  Escalations:
-    To: comparison_operator
   CompositeExpression:
     To: composite_expression
     Type: Map
@@ -22,22 +20,30 @@ Properties:
         To: times
   ContactGroups:
     To: contact_groups
-  Resources:
-    To: dimensions
+  DeletionForce:
+    Ignore: true
   EffectiveInterval:
     To: effective_interval
+  EmailSubject:
+    Ignore: true
+  Escalations:
+    To: comparison_operator
   Escalations$$0:
     To: threshold
-  Resources$$0:
-    To: metric_dimensions
+  Interval:
+    Ignore: true
+  Labels:
+    Ignore: true
   MetricName:
     To: metric_name
-  RuleName:
-    To: name
-  Period:
-    To: period
   Namespace:
     To: project
+  NoDataPolicy:
+    Ignore: true
+  NoEffectiveInterval:
+    Ignore: true
+  Period:
+    To: period
   Prometheus:
     To: prometheus
     Type: Map
@@ -50,22 +56,16 @@ Properties:
         To: prom_ql
       Times:
         To: times
-  SilenceTime:
-    To: silence_time
+  Resources:
+    To: dimensions
+  Resources$$0:
+    To: metric_dimensions
   RuleId:
     Ignore: true
-  DeletionForce:
-    Ignore: true
-  Interval:
-    Ignore: true
-  NoDataPolicy:
-    Ignore: true
-  NoEffectiveInterval:
-    Ignore: true
-  Labels:
-    Ignore: true
-  EmailSubject:
-    Ignore: true
+  RuleName:
+    To: name
+  SilenceTime:
+    To: silence_time
   Webhook:
     To: targets
 Attributes:

@@ -6,8 +6,14 @@ ResourceType:
 Properties:
   AccountPassword:
     To: account_password
+  DatabaseIPList:
+    Ignore: true
   DiskPerformanceLevel:
     To: disk_performance_level
+  PayType:
+    Ignore: true
+  Period:
+    Ignore: true
   ProjectName:
     To: project_name
   ProjectSpec:
@@ -16,24 +22,22 @@ Properties:
     To: security_ip_list
   StorageSize:
     To: storage_size
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  Period:
-    Ignore: true
-  PayType:
-    Ignore: true
   UsedTime:
     Ignore: true
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
 Attributes:
-  ProjectId:
-    To: id
+  ApiKeys:
+    Ignore: true
+  Eni:
+    Ignore: true
   PrivateConnectUrl:
     Ignore: true
+  ProjectId:
+    To: id
   PublicConnectUrl:
-    Ignore: true
-  ApiKeys:
     Ignore: true

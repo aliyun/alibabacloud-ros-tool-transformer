@@ -4,16 +4,15 @@ ResourceType:
   From: ALIYUN::ApiGateway::Authorization
   To: alicloud_api_gateway_app_attachment
 Properties:
+  ApiIds:
+    Ignore: true
+  AppIds:
+    Ignore: true
+  AuthValidTime:
+    Ignore: true
+  Description:
+    Ignore: true
   GroupId:
     To: group_id
   StageName:
     To: stage_name
-  AuthValidTime:
-    Ignore: true
-  ApiIds:
-    Ignore: true
-  Description:
-    Ignore: true
-  AppIds:
-    Ignore: true
-Attributes: {}

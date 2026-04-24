@@ -4,6 +4,10 @@ ResourceType:
   From: ALIYUN::VPC::NatIp
   To: alicloud_vpc_nat_ip
 Properties:
+  Ipv4Prefix:
+    Ignore: true
+  Ipv4PrefixCount:
+    Ignore: true
   NatGatewayId:
     To: nat_gateway_id
   NatIp:
@@ -16,14 +20,10 @@ Properties:
     To: nat_ip_description
   NatIpName:
     To: nat_ip_name
-  Ipv4Prefix:
-    Ignore: true
-  Ipv4PrefixCount:
-    Ignore: true
 Attributes:
-  NatIpId:
-    To: id
   NatIp:
     To: nat_ip
+  NatIpId:
+    To: id
   NatIpId$$0:
     To: nat_ip_id

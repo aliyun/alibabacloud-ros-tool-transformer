@@ -4,8 +4,6 @@ ResourceType:
   From: ALIYUN::DNS::CustomLine
   To: alicloud_alidns_custom_line
 Properties:
-  LineName:
-    To: custom_line_name
   DomainName:
     To: domain_name
   IpSegment:
@@ -16,6 +14,8 @@ Properties:
         To: end_ip
       StartIp:
         To: start_ip
+  LineName:
+    To: custom_line_name
 Attributes:
   LineId:
     To: id

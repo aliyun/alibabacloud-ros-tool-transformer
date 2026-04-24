@@ -13,11 +13,11 @@ Properties:
 Attributes:
   CreateTime:
     To: create_time
+  DisplayName:
+    Ignore: true
   MemberId:
     To: member_id
   MemberName:
-    Ignore: true
-  DisplayName:
     Ignore: true
   Roles:
     Ignore: true

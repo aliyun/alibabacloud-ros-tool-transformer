@@ -12,6 +12,8 @@ Properties:
     To: endpoint_configurations
     Type: List
     Schema:
+      EnableClientIPPreservation:
+        Ignore: true
       EnableProxyProtocol:
         To: enable_proxy_protocol
       Endpoint:
@@ -20,8 +22,6 @@ Properties:
         To: type
       Weight:
         To: weight
-      EnableClientIPPreservation:
-        Ignore: true
   EndpointGroupRegion:
     To: endpoint_group_region
   EndpointGroupType:

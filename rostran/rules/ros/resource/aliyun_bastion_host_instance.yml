@@ -4,26 +4,26 @@ ResourceType:
   From: ALIYUN::BastionHost::Instance
   To: alicloud_bastionhost_instance
 Properties:
-  Period:
-    To: period
-  ResourceGroupId:
-    To: resource_group_id
-  ExtraBandwidth:
-    To: bandwidth
-  Plan:
-    To: plan_code
   AutoPay:
     Ignore: true
   AutoRenew:
     To: renewal_status
   ExtendedStoragePlans:
     To: storage
-  Version:
-    To: license_code
-  StartInstanceParam:
-    Ignore: true
+  ExtraBandwidth:
+    To: bandwidth
+  Period:
+    To: period
   PeriodUnit:
     To: renewal_period_unit
+  Plan:
+    To: plan_code
+  ResourceGroupId:
+    To: resource_group_id
+  StartInstanceParam:
+    Ignore: true
+  Version:
+    To: license_code
 Attributes:
   InstanceId:
     To: id

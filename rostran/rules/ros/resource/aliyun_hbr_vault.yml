@@ -12,71 +12,71 @@ Properties:
     To: kms_key_id
   RedundancyType:
     To: redundancy_type
-  VaultName:
-    To: vault_name
-  VaultStorageClass:
-    To: vault_storage_class
-  VaultType:
-    To: vault_type
   ResourceGroupId:
     To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-Attributes:
-  VaultId:
-    To: id
-  Description:
-    To: description
   VaultName:
     To: vault_name
   VaultStorageClass:
     To: vault_storage_class
   VaultType:
     To: vault_type
-  ResourceGroupId:
-    Ignore: true
-  UpdatedTime:
-    Ignore: true
-  ReplicationProgress:
-    Ignore: true
-  ReplicationSourceVaultId:
-    Ignore: true
-  TrialInfo:
-    Ignore: true
-  Replication:
-    Ignore: true
-  IndexLevel:
+Attributes:
+  BackupPlanStatistics:
     Ignore: true
   BytesDone:
     Ignore: true
-  SearchEnabled:
-    Ignore: true
-  BackupPlanStatistics:
-    Ignore: true
-  RedundancyType:
-    Ignore: true
-  Tags:
-    Ignore: true
-  VaultStatusMessage:
-    Ignore: true
-  IndexAvailable:
-    Ignore: true
-  ReplicationSourceRegionId:
-    To: region_id
-  PaymentType:
-    Ignore: true
   CreateTime:
     To: create_time
+  Dedup:
+    Ignore: true
+  Description:
+    To: description
+  IndexAvailable:
+    Ignore: true
+  IndexLevel:
+    Ignore: true
   IndexUpdateTime:
     Ignore: true
   LatestReplicationTime:
     Ignore: true
-  SourceTypes:
+  PaymentType:
     Ignore: true
-  Dedup:
+  RedundancyType:
     Ignore: true
-  StorageSize:
+  Replication:
+    Ignore: true
+  ReplicationProgress:
+    Ignore: true
+  ReplicationSourceRegionId:
+    To: region_id
+  ReplicationSourceVaultId:
+    Ignore: true
+  ResourceGroupId:
     Ignore: true
   Retention:
     Ignore: true
+  SearchEnabled:
+    Ignore: true
+  SourceTypes:
+    Ignore: true
+  StorageSize:
+    Ignore: true
+  Tags:
+    Ignore: true
+  TrialInfo:
+    Ignore: true
+  UpdatedTime:
+    Ignore: true
+  VaultId:
+    To: id
+  VaultName:
+    To: vault_name
+  VaultStatusMessage:
+    Ignore: true
+  VaultStorageClass:
+    To: vault_storage_class
+  VaultType:
+    To: vault_type

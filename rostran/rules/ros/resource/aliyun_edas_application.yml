@@ -10,6 +10,10 @@ Properties:
     To: build_pack_id
   ClusterId:
     To: cluster_id
+  ComponentIds:
+    Ignore: true
+  Deployment:
+    Ignore: true
   Description:
     To: descriotion
   EcuInfo:
@@ -20,10 +24,6 @@ Properties:
     To: logical_region_id
   PackageType:
     To: package_type
-  Deployment:
-    Ignore: true
-  ComponentIds:
-    Ignore: true
   ResourceGroupId:
     Ignore: true
 Attributes:

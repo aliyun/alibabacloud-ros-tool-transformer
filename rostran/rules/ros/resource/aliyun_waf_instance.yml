@@ -31,15 +31,15 @@ Properties:
   WafLog:
     To: waf_log
 Attributes:
-  InstanceId:
-    To: id
-  SubscriptionType:
-    To: subscription_type
-  RemainDay:
+  EndDate:
     Ignore: true
   InDebt:
     Ignore: true
-  Trial:
+  InstanceId:
+    To: id
+  RemainDay:
     Ignore: true
-  EndDate:
+  SubscriptionType:
+    To: subscription_type
+  Trial:
     Ignore: true

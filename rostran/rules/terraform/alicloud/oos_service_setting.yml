@@ -14,3 +14,6 @@ Properties:
     To: DeliverySlsEnabled
   delivery_sls_project_name:
     To: DeliverySlsProjectName
+Attributes:
+  id:
+    Ignore: true

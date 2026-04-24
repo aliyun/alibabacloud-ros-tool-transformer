@@ -5,11 +5,9 @@ ResourceType:
   To: ALIYUN::SLS::Etl
 Properties:
   access_key_id:
-    To: Configuration
-    Type: Map
+    Ignore: true
   access_key_secret:
-    To: Configuration
-    Type: Map
+    Ignore: true
   create_time:
     Ignore: true
   description:
@@ -40,23 +38,22 @@ Properties:
         To: Project
       role_arn:
         To: RoleArn
+      type:
+        To: Type
+      datasets:
+        Ignore: true
   etl_type:
-    To: Configuration
-    Type: Map
+    Ignore: true
   from_time:
     To: Configuration.FromTime
   kms_encrypted_access_key_id:
-    To: Configuration
-    Type: Map
+    Ignore: true
   kms_encrypted_access_key_secret:
-    To: Configuration
-    Type: Map
+    Ignore: true
   kms_encryption_access_key_id_context:
-    To: Configuration
-    Type: Map
+    Ignore: true
   kms_encryption_access_key_secret_context:
-    To: Configuration
-    Type: Map
+    Ignore: true
   lang:
     Ignore: true
   last_modified_time:
@@ -70,7 +67,7 @@ Properties:
   role_arn:
     To: Configuration.RoleArn
   schedule:
-    To: Schedule.Type
+    Ignore: true
   script:
     To: Configuration.Script
   status:
@@ -81,38 +78,4 @@ Properties:
     To: Configuration.Version
 Attributes:
   id:
-    Ignore: true
-  create_time:
-    Ignore: true
-  description:
-    Ignore: true
-  display_name:
-    Ignore: true
-  etl_name:
-    To: Name
-  etl_sinks:
-    Ignore: true
-  etl_type:
-    Ignore: true
-  from_time:
-    Ignore: true
-  last_modified_time:
-    Ignore: true
-  logstore:
-    Ignore: true
-  parameters:
-    Ignore: true
-  project:
-    Ignore: true
-  role_arn:
-    Ignore: true
-  schedule:
-    Ignore: true
-  script:
-    Ignore: true
-  status:
-    Ignore: true
-  to_time:
-    Ignore: true
-  version:
     Ignore: true

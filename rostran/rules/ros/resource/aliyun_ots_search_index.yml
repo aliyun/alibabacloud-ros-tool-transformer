@@ -4,26 +4,26 @@ ResourceType:
   From: ALIYUN::OTS::SearchIndex
   To: alicloud_ots_search_index
 Properties:
+  FieldSchemas:
+    To: analyzer
+  FieldSchemas$$0:
+    To: store
   IndexName:
     To: index_name
-  InstanceName:
-    To: instance_name
-  TableName:
-    To: table_name
+  IndexSetting:
+    To: routing_fields
+  IndexSetting$$0:
+    To: time_to_live
   IndexSort:
     To: sorter
     Type: Map
     Schema:
       Sorters:
         Ignore: true
-  FieldSchemas:
-    To: analyzer
-  IndexSetting:
-    To: routing_fields
-  FieldSchemas$$0:
-    To: store
-  IndexSetting$$0:
-    To: time_to_live
+  InstanceName:
+    To: instance_name
+  TableName:
+    To: table_name
 Attributes:
   IndexName:
     To: index_id

@@ -31,17 +31,17 @@ Properties:
 Attributes:
   ConfigId:
     To: config_id
-  RuleEnable:
+  ConfigType:
     Ignore: true
   RequestHeaderModification:
     Ignore: true
-  SiteVersion:
-    Ignore: true
   Rule:
+    Ignore: true
+  RuleEnable:
     Ignore: true
   RuleName:
     Ignore: true
-  ConfigType:
-    Ignore: true
   Sequence:
+    Ignore: true
+  SiteVersion:
     Ignore: true

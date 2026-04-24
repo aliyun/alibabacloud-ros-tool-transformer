@@ -13,7 +13,7 @@ Properties:
   NetType:
     To: net_type
 Attributes:
-  ConnectionString:
-    To: connection_string
   Address:
     To: ip_address
+  ConnectionString:
+    To: connection_string

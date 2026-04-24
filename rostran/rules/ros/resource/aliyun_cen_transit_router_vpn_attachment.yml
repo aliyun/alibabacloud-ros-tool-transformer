@@ -8,6 +8,12 @@ Properties:
     To: auto_publish_route_enabled
   CenId:
     To: cen_id
+  DeletionForce:
+    Ignore: true
+  RouteTableAssociationEnabled:
+    Ignore: true
+  RouteTablePropagationEnabled:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
@@ -23,12 +29,6 @@ Properties:
     To: vpn_owner_id
   ZoneId:
     To: zone
-  RouteTablePropagationEnabled:
-    Ignore: true
-  DeletionForce:
-    Ignore: true
-  RouteTableAssociationEnabled:
-    Ignore: true
 Attributes:
   TransitRouterAttachmentId:
     To: id

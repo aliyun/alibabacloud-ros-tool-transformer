@@ -6,35 +6,37 @@ ResourceType:
 Properties:
   AutoPay:
     To: auto_pay
+  AutoUseCoupon:
+    To: auto_use_coupon
   Bandwidth:
     To: bandwidth
   BandwidthType:
     To: bandwidth_type
   BillingType:
     To: billing_type
-  Duration:
-    To: duration
-  Ratio:
-    To: ratio
-  Type:
-    To: type
-  PricingCycle:
-    Ignore: true
   CbnGeographicRegionIdA:
     To: cbn_geographic_region_ida
   CbnGeographicRegionIdB:
     To: cbn_geographic_region_idb
   ChargeType:
     To: payment_type
-  AutoUseCoupon:
-    To: auto_use_coupon
+  Duration:
+    To: duration
+  PricingCycle:
+    Ignore: true
+  Ratio:
+    To: ratio
+  Type:
+    To: type
 Attributes:
-  BandwidthPackageId:
-    To: id
+  AutoPay:
+    Ignore: true
   AutoUseCoupon:
     To: auto_use_coupon
   Bandwidth:
     To: bandwidth
+  BandwidthPackageId:
+    To: id
   BandwidthPackageName:
     To: bandwidth_package_name
   BandwidthType:
@@ -45,13 +47,11 @@ Attributes:
     To: cbn_geographic_region_ida
   CbnGeographicRegionIdB:
     To: cbn_geographic_region_idb
+  ChargeType:
+    Ignore: true
   PaymentType:
     To: payment_type
   Ratio:
     To: ratio
   Type:
     To: type
-  AutoPay:
-    Ignore: true
-  ChargeType:
-    Ignore: true

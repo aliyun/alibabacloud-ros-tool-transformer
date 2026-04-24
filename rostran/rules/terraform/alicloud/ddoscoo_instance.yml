@@ -41,7 +41,7 @@ Properties:
   product_plan:
     Ignore: true
   product_type:
-    Ignore: true
+    To: ServicePartner
   service_bandwidth:
     To: ServiceBandwidth
     Handler: to_int

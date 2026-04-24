@@ -27,7 +27,7 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: CertId
   create_time:
     To: CreateTime
   status:

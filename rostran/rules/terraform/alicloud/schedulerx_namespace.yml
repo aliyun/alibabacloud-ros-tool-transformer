@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_schedulerx_namespace
+  To: ALIYUN::SchedulerX::Namespace
+Properties:
+  description:
+    To: Description
+  namespace_name:
+    To: Name
+  namespace_uid:
+    To: Uid
+Attributes:
+  id:
+    To: NamespaceUid

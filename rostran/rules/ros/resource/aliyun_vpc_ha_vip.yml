@@ -6,12 +6,12 @@ ResourceType:
 Properties:
   Description:
     To: description
+  IpAddress:
+    To: ip_address
   Name:
     To: ha_vip_name
   Name$$0:
     To: havip_name
-  IpAddress:
-    To: ip_address
   ResourceGroupId:
     To: resource_group_id
   Tags:
@@ -20,11 +20,11 @@ Properties:
   VSwitchId:
     To: vswitch_id
 Attributes:
+  Arn:
+    Ignore: true
   HaVipId:
     To: id
   HaVipId$$0:
     To: ha_vip_id
   IpAddress:
     To: ip_address
-  Arn:
-    Ignore: true

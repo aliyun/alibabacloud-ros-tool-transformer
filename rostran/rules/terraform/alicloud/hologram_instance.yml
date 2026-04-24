@@ -10,8 +10,6 @@ Properties:
     To: ColdStorageSize
   cpu:
     To: Cpu
-  create_time:
-    Ignore: true
   duration:
     To: Duration
   enable_ssl:
@@ -33,7 +31,7 @@ Properties:
       vpc_instance_id:
         To: VpcInstanceId
       vswitch_id:
-        Ignore: true
+        To: VSwitchId
   gateway_count:
     To: GatewayCount
   initial_databases:
@@ -64,33 +62,19 @@ Properties:
 Attributes:
   id:
     To: InstanceId
-  cold_storage_size:
-    To: ColdStorageSize
-  cpu:
-    To: Cpu
   create_time:
     To: CreateTime
   endpoints:
     To: Endpoints
-  gateway_count:
-    To: GatewayCount
-  instance_name:
-    To: InstanceName
-  instance_type:
-    To: InstanceType
-  leader_instance_id:
-    Ignore: true
-  payment_type:
-    To: PaymentType
+    Type: List
+    Schema:
+      alternative_endpoints:
+        To: AlternativeEndpoints
+      enabled:
+        To: Enabled
+      endpoint:
+        To: Endpoint
+      vpc_instance_id:
+        To: VpcInstanceId
   region_id:
     Ignore: true
-  resource_group_id:
-    To: ResourceGroupId
-  status:
-    Ignore: true
-  storage_size:
-    To: StorageSize
-  tags:
-    To: Tags
-  zone_id:
-    To: ZoneId

@@ -12,8 +12,6 @@ Properties:
     To: BandwidthPackageId
   cps:
     Ignore: true
-  create_time:
-    Ignore: true
   cross_zone_enabled:
     To: CrossZoneEnabled
   deletion_protection_config:
@@ -28,11 +26,7 @@ Properties:
     To: DeletionProtectionConfig.Enabled
   deletion_protection_reason:
     To: DeletionProtectionConfig.Reason
-  dns_name:
-    To: DNSName
   ipv6_address_type:
-    Ignore: true
-  load_balancer_business_status:
     Ignore: true
   load_balancer_name:
     To: LoadBalancerName
@@ -51,13 +45,10 @@ Properties:
   modification_protection_status:
     To: ModificationProtectionConfig.Status
   payment_type:
-    To: LoadBalancerBillingConfig
-    Type: Map
+    To: LoadBalancerBillingConfig.PayType
   resource_group_id:
     To: ResourceGroupId
   security_group_ids:
-    Ignore: true
-  status:
     Ignore: true
   tags:
     To: Tags
@@ -75,61 +66,31 @@ Properties:
       ipv6_address:
         Ignore: true
       private_ipv4_address:
-        Ignore: true
+        To: PrivateIPv4Address
       public_ipv4_address:
         Ignore: true
       status:
         Ignore: true
       vswitch_id:
-        Ignore: true
+        To: VSwitchId
       zone_id:
         To: ZoneId
 Attributes:
   id:
     To: LoadBalancerId
-  address_ip_version:
-    To: AddressIpVersion
-  address_type:
-    To: AddressType
-  bandwidth_package_id:
-    Ignore: true
   create_time:
-    Ignore: true
-  cross_zone_enabled:
     Ignore: true
   deletion_protection_config:
     Ignore: true
-  deletion_protection_enabled:
-    Ignore: true
-  deletion_protection_reason:
-    Ignore: true
   dns_name:
     To: DNSName
-  ipv6_address_type:
-    Ignore: true
   load_balancer_business_status:
     Ignore: true
-  load_balancer_name:
-    Ignore: true
-  load_balancer_type:
-    To: LoadBalancerType
   modification_protection_config:
-    Ignore: true
-  modification_protection_reason:
-    Ignore: true
-  modification_protection_status:
     Ignore: true
   region_id:
     Ignore: true
-  resource_group_id:
-    Ignore: true
-  security_group_ids:
-    Ignore: true
   status:
     Ignore: true
-  tags:
-    Ignore: true
-  vpc_id:
-    To: VpcId
   zone_mappings:
     To: ZoneMappings

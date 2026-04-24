@@ -9,11 +9,11 @@ Properties:
   StorageBundleName:
     To: storage_bundle_name
 Attributes:
-  StorageBundleId:
-    To: id
-  Description:
-    To: description
-  StorageBundleName:
-    To: storage_bundle_name
   CreateTime:
     Ignore: true
+  Description:
+    To: description
+  StorageBundleId:
+    To: id
+  StorageBundleName:
+    To: storage_bundle_name

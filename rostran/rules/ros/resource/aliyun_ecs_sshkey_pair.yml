@@ -16,13 +16,13 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
+  Arn:
+    Ignore: true
+  KeyPairFingerPrint:
+    To: finger_print
   KeyPairName:
     To: id
   KeyPairName$$0:
     To: key_pair_name
   PrivateKeyBody:
-    Ignore: true
-  KeyPairFingerPrint:
-    To: finger_print
-  Arn:
     Ignore: true

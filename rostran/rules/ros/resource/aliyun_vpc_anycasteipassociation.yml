@@ -6,14 +6,14 @@ ResourceType:
 Properties:
   AnycastId:
     To: anycast_id
+  AssociationMode:
+    To: association_mode
   BindInstanceId:
     To: bind_instance_id
   BindInstanceRegionId:
     To: bind_instance_region_id
   BindInstanceType:
     To: bind_instance_type
-  AssociationMode:
-    To: association_mode
   PopLocations:
     To: pop_locations
     Type: List

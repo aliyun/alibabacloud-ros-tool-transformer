@@ -16,10 +16,10 @@ Properties:
     To: disabled
   InstanceName:
     To: instance_name
-  PlanName:
-    To: ots_backup_plan_name
   OtsDetail:
     To: ots_detail
+  PlanName:
+    To: ots_backup_plan_name
   Retention:
     To: retention
   Rules:

@@ -19,9 +19,9 @@ Properties:
 Attributes:
   CreateTime:
     To: create_time
-  RuleId:
-    To: rule_id
-  Routes:
-    Ignore: true
   ModifyTime:
     Ignore: true
+  Routes:
+    Ignore: true
+  RuleId:
+    To: rule_id

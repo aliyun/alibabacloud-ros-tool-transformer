@@ -4,39 +4,39 @@ ResourceType:
   From: ALIYUN::NAS::FileSystem
   To: alicloud_nas_file_system
 Properties:
+  Bandwidth:
+    Ignore: true
   Capacity:
     To: capacity
+  ChargeType:
+    Ignore: true
+  DeletionForce:
+    Ignore: true
   Description:
     To: description
+  Duration:
+    Ignore: true
   EncryptType:
     To: encrypt_type
   FileSystemType:
     To: file_system_type
   ProtocolType:
     To: protocol_type
+  ResourceGroupId:
+    To: resource_group_id
+  SnapshotId:
+    To: snapshot_id
   StorageType:
     To: storage_type
   Tags:
     To: tags
     Handler: handle_tags
-  VpcId:
-    To: vpc_id
   VSwitchId:
     To: vswitch_id
+  VpcId:
+    To: vpc_id
   ZoneId:
     To: zone_id
-  Duration:
-    Ignore: true
-  Bandwidth:
-    Ignore: true
-  DeletionForce:
-    Ignore: true
-  SnapshotId:
-    To: snapshot_id
-  ChargeType:
-    Ignore: true
-  ResourceGroupId:
-    To: resource_group_id
 Attributes:
   FileSystemId:
     To: id

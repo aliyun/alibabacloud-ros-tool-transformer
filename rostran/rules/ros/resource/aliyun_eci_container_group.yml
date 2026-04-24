@@ -8,60 +8,30 @@ Properties:
     To: acr_registry_info
     Type: List
     Schema:
+      Domain:
+        Ignore: true
       InstanceId:
         To: instance_id
       InstanceName:
         To: instance_name
       RegionId:
         To: region_id
-      Domain:
-        Ignore: true
+  ActiveDeadlineSeconds:
+    Ignore: true
   AutoMatchImageCache:
     To: auto_match_image_cache
-  ContainerGroupName:
-    To: container_group_name
-  Cpu:
-    To: cpu
-  EipInstanceId:
-    To: eip_instance_id
-  ImageRegistryCredential:
-    To: image_registry_credential
-    Type: List
-    Schema:
-      Password:
-        To: password
-      Server:
-        To: server
-      UserName:
-        To: user_name
-  InstanceType:
-    To: instance_type
-  Memory:
-    To: memory
-  RamRoleName:
-    To: ram_role_name
-  ResourceGroupId:
-    To: resource_group_id
-  RestartPolicy:
-    To: restart_policy
-  SecurityGroupId:
-    To: security_group_id
-  SpotPriceLimit:
-    To: spot_price_limit
-  SpotStrategy:
-    To: spot_strategy
-  TerminationGracePeriodSeconds:
-    To: termination_grace_period_seconds
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
   Container:
     To: containers
     Type: List
     Schema:
+      Arg:
+        Ignore: true
+      Command:
+        Ignore: true
       Cpu:
         To: cpu
+      EnvironmentVar:
+        Ignore: true
       Image:
         To: image
       ImagePullPolicy:
@@ -72,42 +42,70 @@ Properties:
         To: memory
       Name:
         To: name
+      Port:
+        Ignore: true
       ReadinessProbe:
         To: readiness_probe
       SecurityContext:
         To: security_context
-      WorkingDir:
-        To: working_dir
-      EnvironmentVar:
+      Stdin:
         Ignore: true
       StdinOnce:
-        Ignore: true
-      Command:
-        Ignore: true
-      Arg:
         Ignore: true
       Tty:
         Ignore: true
       VolumeMount:
         Ignore: true
-      Stdin:
+      WorkingDir:
+        To: working_dir
+  ContainerGroupName:
+    To: container_group_name
+  Cpu:
+    To: cpu
+  DnsConfig:
+    To: dns_config
+    Type: Map
+    Schema:
+      NameServer:
         Ignore: true
-      Port:
+      Option:
         Ignore: true
+      Search:
+        Ignore: true
+  EipInstanceId:
+    To: eip_instance_id
   HostAliase:
     To: host_aliases
     Type: List
     Schema:
-      Ip:
-        To: ip
       Hostname:
         Ignore: true
+      Ip:
+        To: ip
+  ImageRegistryCredential:
+    To: image_registry_credential
+    Type: List
+    Schema:
+      Password:
+        To: password
+      Server:
+        To: server
+      UserName:
+        To: user_name
+  ImageSnapshotId:
+    Ignore: true
   InitContainer:
     To: init_containers
     Type: List
     Schema:
+      Arg:
+        Ignore: true
+      Command:
+        Ignore: true
       Cpu:
         To: cpu
+      EnvironmentVar:
+        Ignore: true
       Image:
         To: image
       ImagePullPolicy:
@@ -116,85 +114,87 @@ Properties:
         To: memory
       Name:
         To: name
-      SecurityContext:
-        To: security_context
-      WorkingDir:
-        To: working_dir
-      EnvironmentVar:
-        Ignore: true
-      Command:
-        Ignore: true
-      Arg:
-        Ignore: true
-      VolumeMount:
-        Ignore: true
       Port:
         Ignore: true
-  DnsConfig:
-    To: dns_config
-    Type: Map
-    Schema:
-      Option:
+      SecurityContext:
+        To: security_context
+      VolumeMount:
         Ignore: true
-      Search:
-        Ignore: true
-      NameServer:
-        Ignore: true
+      WorkingDir:
+        To: working_dir
+  InstanceType:
+    To: instance_type
+  Ipv6AddressCount:
+    Ignore: true
+  Memory:
+    To: memory
+  RamRoleName:
+    To: ram_role_name
+  ResourceGroupId:
+    To: resource_group_id
+  RestartPolicy:
+    To: restart_policy
   SecurityContextSysctl:
     Ignore: true
+  SecurityGroupId:
+    To: security_group_id
+  SlsEnable:
+    Ignore: true
+  SpotPriceLimit:
+    To: spot_price_limit
+  SpotStrategy:
+    To: spot_strategy
   Tag:
     To: tags
     Handler: handle_tags
+  TerminationGracePeriodSeconds:
+    To: termination_grace_period_seconds
+  VSwitchId:
+    To: vswitch_id
   Volume:
     To: volumes
     Type: List
     Schema:
+      ConfigFileVolume.ConfigFileToPath:
+        Ignore: true
+      EmptyDirVolume.Medium:
+        Ignore: true
+      FlexVolume.Driver:
+        Ignore: true
+      FlexVolume.FsType:
+        Ignore: true
+      FlexVolume.Options:
+        Ignore: true
+      NFSVolume.Path:
+        Ignore: true
+      NFSVolume.ReadOnly:
+        Ignore: true
+      NFSVolume.Server:
+        Ignore: true
       Name:
         To: name
       Type:
         To: type
-      NFSVolume.Path:
-        Ignore: true
-      FlexVolume.Options:
-        Ignore: true
-      NFSVolume.ReadOnly:
-        Ignore: true
-      EmptyDirVolume.Medium:
-        Ignore: true
-      FlexVolume.FsType:
-        Ignore: true
-      NFSVolume.Server:
-        Ignore: true
-      FlexVolume.Driver:
-        Ignore: true
-      ConfigFileVolume.ConfigFileToPath:
-        Ignore: true
-  ImageSnapshotId:
-    Ignore: true
-  ActiveDeadlineSeconds:
-    Ignore: true
-  SlsEnable:
-    Ignore: true
-  Ipv6AddressCount:
-    Ignore: true
+  ZoneId:
+    To: zone_id
 Attributes:
   ContainerGroupId:
     To: id
   ContainerGroupName:
     To: container_group_name
+  EniInstanceId:
+    Ignore: true
   InternetIp:
     To: internet_ip
   IntranetIp:
     To: intranet_ip
+  Ipv6Address:
+    Ignore: true
+  RegionId:
+    Ignore: true
   SecurityGroupId:
     To: security_group_id
   VSwitchId:
     To: vswitch_id
   ZoneId:
     To: zone_id
-  EniInstanceId:
-    Ignore: true
-  Ipv6Address:
-    Ignore: true
-  RegionId:
-    Ignore: true

@@ -12,4 +12,3 @@ Properties:
     To: port
   VpcId:
     To: vpc_id
-Attributes: {}

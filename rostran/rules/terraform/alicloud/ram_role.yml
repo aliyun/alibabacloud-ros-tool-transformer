@@ -4,11 +4,8 @@ ResourceType:
   From: alicloud_ram_role
   To: ALIYUN::RAM::Role
 Properties:
-  arn:
-    Ignore: true
   assume_role_policy_document:
     To: AssumeRolePolicyDocument
-    Type: Map
   description:
     To: Description
   document:
@@ -20,8 +17,6 @@ Properties:
   name:
     To: RoleName
   ram_users:
-    Ignore: true
-  role_id:
     Ignore: true
   role_name:
     To: RoleName
@@ -39,19 +34,5 @@ Attributes:
     To: Arn
   create_time:
     Ignore: true
-  description:
-    Ignore: true
-  document:
-    Ignore: true
-  max_session_duration:
-    Ignore: true
-  name:
-    Ignore: true
-  ram_users:
-    Ignore: true
   role_id:
     To: RoleId
-  services:
-    Ignore: true
-  version:
-    Ignore: true

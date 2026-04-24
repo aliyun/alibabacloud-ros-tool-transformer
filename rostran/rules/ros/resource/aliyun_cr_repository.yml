@@ -6,28 +6,28 @@ ResourceType:
 Properties:
   Detail:
     To: detail
+  InstanceId:
+    Ignore: true
   RepoName:
     To: name
   RepoNamespace:
     To: namespace
+  RepoSource:
+    Ignore: true
   RepoType:
     To: repo_type
   Summary:
     To: summary
   TagImmutability:
     Ignore: true
+Attributes:
   InstanceId:
     Ignore: true
-  RepoSource:
+  RepoId:
     Ignore: true
-Attributes:
   RepoName:
     To: name
   RepoNamespace:
     To: namespace
   RepoType:
     To: repo_type
-  RepoId:
-    Ignore: true
-  InstanceId:
-    Ignore: true

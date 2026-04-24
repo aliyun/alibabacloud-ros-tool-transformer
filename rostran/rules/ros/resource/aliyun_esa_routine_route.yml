@@ -21,25 +21,25 @@ Properties:
   SiteId:
     To: site_id
 Attributes:
+  Bypass:
+    Ignore: true
   ConfigId:
     To: config_id
+  ConfigType:
+    Ignore: true
+  Fallback:
+    Ignore: true
+  Mode:
+    Ignore: true
   RouteEnable:
     Ignore: true
   RouteName:
     Ignore: true
-  Bypass:
-    Ignore: true
-  Fallback:
-    Ignore: true
-  ConfigType:
-    Ignore: true
-  SiteVersion:
+  RoutineName:
     Ignore: true
   Rule:
     Ignore: true
   Sequence:
     Ignore: true
-  RoutineName:
-    Ignore: true
-  Mode:
+  SiteVersion:
     Ignore: true

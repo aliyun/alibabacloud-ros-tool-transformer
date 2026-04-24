@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::MaxCompute::Project
   To: alicloud_maxcompute_project
 Properties:
+  ChargeType:
+    Ignore: true
   Comment:
     To: comment
   DefaultQuota:
     To: default_quota
-  Name:
-    To: project_name
   IpWhiteList:
     To: ip_white_list
     Type: Map
@@ -18,8 +18,8 @@ Properties:
         To: ip_list
       VpcIpList:
         To: vpc_ip_list
-  ChargeType:
-    Ignore: true
+  Name:
+    To: project_name
   Properties:
     To: properties
     Type: Map
@@ -40,4 +40,4 @@ Properties:
     To: three_tier_model
 Attributes:
   Name:
-    Ignore: true
+    To: id

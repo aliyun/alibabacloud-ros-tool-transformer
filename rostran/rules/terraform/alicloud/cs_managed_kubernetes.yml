@@ -24,11 +24,11 @@ Properties:
     To: AutoMode
     Type: Map
     Schema:
-      enabled:
+      channel:
         Ignore: true
+      enabled:
+        To: Enable
   availability_zone:
-    Ignore: true
-  certificate_authority:
     Ignore: true
   client_cert:
     Ignore: true
@@ -42,8 +42,6 @@ Properties:
     Ignore: true
   cluster_spec:
     To: ClusterSpec
-  connections:
-    Ignore: true
   control_plane_log_components:
     To: ControlPlaneLogComponents
     Type: List
@@ -74,9 +72,11 @@ Properties:
       enabled:
         To: Enabled
   enable_ssh:
-    To: SshFlags
+    Ignore: true
   encryption_provider_key:
     To: EncryptionProviderKey
+  disable_encryption:
+    Ignore: true
   exclude_autoscaler_nodes:
     Ignore: true
   force_update:
@@ -117,16 +117,12 @@ Properties:
     To: Name
   name_prefix:
     Ignore: true
-  nat_gateway_id:
-    Ignore: true
   new_nat_gateway:
     To: SnatEntry
   node_cidr_mask:
     To: NodeCidrMask
   node_name_mode:
     To: NodeNameMode
-  node_port_range:
-    Ignore: true
   operation_policy:
     Ignore: true
   os_type:
@@ -150,11 +146,14 @@ Properties:
     To: ResourceGroupId
   retain_resources:
     Ignore: true
-  rrsa_metadata:
-    Ignore: true
   runtime:
-    To: Runtime
+    To: NodePools.KubernetesConfig.Runtime
     Type: Map
+    Schema:
+      name:
+        To: Name
+      version:
+        To: Version
   security_group_id:
     To: SecurityGroupId
   service_account_issuer:
@@ -163,14 +162,8 @@ Properties:
     To: ServiceCidr
   skip_set_certificate_authority:
     Ignore: true
-  slb_id:
-    Ignore: true
-  slb_internet:
-    Ignore: true
   slb_internet_enabled:
     To: EndpointPublicAccess
-  slb_intranet:
-    Ignore: true
   tags:
     To: Tags
     Type: List
@@ -187,8 +180,6 @@ Properties:
     To: UserData
   version:
     To: KubernetesVersion
-  vpc_id:
-    To: VpcId
   vswitch_ids:
     To: VSwitchIds
     Type: List
@@ -201,17 +192,17 @@ Properties:
   worker_data_disk_size:
     Ignore: true
   worker_data_disks:
-    To: WorkerDataDisks
+    To: NodePools.ScalingGroup.DataDisks
     Type: List
     Schema:
       auto_snapshot_policy_id:
-        Ignore: true
+        To: AutoSnapshotPolicyId
       category:
         To: Category
       device:
         Ignore: true
       encrypted:
-        Ignore: true
+        To: Encrypted
       kms_key_id:
         Ignore: true
       name:
@@ -235,10 +226,8 @@ Properties:
   worker_instance_type:
     Ignore: true
   worker_instance_types:
-    To: WorkerInstanceTypes
+    To: NodePools.ScalingGroup.InstanceTypes
     Type: List
-  worker_nodes:
-    Ignore: true
   worker_number:
     Ignore: true
   worker_numbers:
@@ -247,10 +236,8 @@ Properties:
     Ignore: true
   worker_period_unit:
     Ignore: true
-  worker_ram_role_name:
-    Ignore: true
   worker_vswitch_ids:
-    To: WorkerVSwitchIds
+    To: VSwitchIds
     Type: List
   zone_ids:
     To: ZoneIds
@@ -261,12 +248,6 @@ Attributes:
   certificate_authority:
     Ignore: true
   connections:
-    Ignore: true
-  control_plane_log_components:
-    Ignore: true
-  control_plane_log_project:
-    Ignore: true
-  control_plane_log_ttl:
     Ignore: true
   nat_gateway_id:
     Ignore: true

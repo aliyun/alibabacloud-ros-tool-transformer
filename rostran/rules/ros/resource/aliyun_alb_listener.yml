@@ -4,6 +4,14 @@ ResourceType:
   From: ALIYUN::ALB::Listener
   To: alicloud_alb_listener
 Properties:
+  CaCertificates:
+    To: ca_certificates
+    Type: List
+    Schema:
+      CertificateId:
+        To: certificate_id
+  CaEnabled:
+    To: ca_enabled
   Certificates:
     To: certificates
     Type: List
@@ -14,10 +22,10 @@ Properties:
     To: default_actions
     Type: List
     Schema:
-      Type:
-        To: type
       ForwardGroupConfig:
         Ignore: true
+      Type:
+        To: type
   GzipEnabled:
     To: gzip_enabled
   Http2Enabled:
@@ -30,18 +38,32 @@ Properties:
     To: listener_port
   ListenerProtocol:
     To: listener_protocol
+  ListenerStatus:
+    To: status
   LoadBalancerId:
     To: load_balancer_id
+  LogConfig:
+    To: access_log_record_customized_headers_enabled
+  LogConfig$$0:
+    To: access_log_tracing_config
+    Type: Map
+    Schema:
+      AccessLogRecordCustomizedHeadersEnabled:
+        Ignore: true
+      AccessLogTracingConfig:
+        Ignore: true
+  QuicConfig:
+    To: quic_config
+    Type: Map
+    Schema:
+      QuicListenerId:
+        To: quic_listener_id
+      QuicUpgradeEnabled:
+        To: quic_upgrade_enabled
   RequestTimeout:
     To: request_timeout
   SecurityPolicyId:
     To: security_policy_id
-  CaCertificates:
-    To: ca_certificates
-    Type: List
-    Schema:
-      CertificateId:
-        To: certificate_id
   XForwardedForConfig:
     To: x_forwarded_for_config
     Type: Map
@@ -80,28 +102,44 @@ Properties:
         To: x_forwarded_for_slb_id_enabled
       XForwardedForSLBPortEnabled:
         To: x_forwarded_for_slb_port_enabled
-  QuicConfig:
-    To: quic_config
+  XForwardedForConfig$$0:
+    To: xforwarded_for_config
     Type: Map
     Schema:
-      QuicListenerId:
-        To: quic_listener_id
-      QuicUpgradeEnabled:
-        To: quic_upgrade_enabled
-  CaEnabled:
-    To: ca_enabled
-  ListenerStatus:
-    To: status
-  LogConfig:
-    To: access_log_record_customized_headers_enabled
-  LogConfig$$0:
-    To: access_log_tracing_config
-    Type: Map
-    Schema:
-      AccessLogRecordCustomizedHeadersEnabled:
+      XForwardedForClientCertClientVerifyAlias:
+        To: xforwardedforclientcertclientverifyalias
+      XForwardedForClientCertClientVerifyEnabled:
+        To: xforwardedforclientcertclientverifyenabled
+      XForwardedForClientCertFingerprintAlias:
+        To: xforwardedforclientcertfingerprintalias
+      XForwardedForClientCertFingerprintEnabled:
+        To: xforwardedforclientcertfingerprintenabled
+      XForwardedForClientCertIssuerDNAlias:
+        To: xforwardedforclientcert_issuerdnalias
+      XForwardedForClientCertIssuerDNEnabled:
+        To: xforwardedforclientcert_issuerdnenabled
+      XForwardedForClientCertSubjectDNAlias:
+        To: xforwardedforclientcertsubjectdnalias
+      XForwardedForClientCertSubjectDNEnabled:
+        To: xforwardedforclientcertsubjectdnenabled
+      XForwardedForClientSourceIpsEnabled:
         Ignore: true
-      AccessLogTracingConfig:
+      XForwardedForClientSourceIpsTrusted:
         Ignore: true
+      XForwardedForClientSrcPortEnabled:
+        To: xforwardedforclientsrcportenabled
+      XForwardedForEnabled:
+        To: xforwardedforenabled
+      XForwardedForHostEnabled:
+        Ignore: true
+      XForwardedForProcessingMode:
+        Ignore: true
+      XForwardedForProtoEnabled:
+        To: xforwardedforprotoenabled
+      XForwardedForSLBIdEnabled:
+        To: xforwardedforslbidenabled
+      XForwardedForSLBPortEnabled:
+        To: xforwardedforslbportenabled
 Attributes:
   ListenerId:
     To: id

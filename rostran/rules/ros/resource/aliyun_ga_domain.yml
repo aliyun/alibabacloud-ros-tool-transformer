@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::GA::Domain
   To: alicloud_ga_domain
 Properties:
-  Domain:
-    To: domain
   AcceleratorIds:
     Ignore: true
+  Domain:
+    To: domain
 Attributes:
-  Domain:
-    To: domain
   AcceleratorIds:
     Ignore: true
+  Domain:
+    To: domain

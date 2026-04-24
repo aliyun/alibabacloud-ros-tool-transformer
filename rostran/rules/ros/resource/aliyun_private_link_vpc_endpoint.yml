@@ -6,10 +6,14 @@ ResourceType:
 Properties:
   EndpointDescription:
     To: endpoint_description
+  EndpointName:
+    To: vpc_endpoint_name
   EndpointType:
     To: endpoint_type
   ProtectedEnabled:
     To: protected_enabled
+  SecurityGroupId:
+    To: security_group_ids
   ServiceId:
     To: service_id
   ServiceName:
@@ -17,32 +21,28 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  EndpointName:
-    To: vpc_endpoint_name
   VpcId:
     To: vpc_id
-  ZonePrivateIpAddressCount:
-    To: zone_private_ip_address_count
-  SecurityGroupId:
-    To: security_group_ids
   Zone:
     Ignore: true
+  ZonePrivateIpAddressCount:
+    To: zone_private_ip_address_count
 Attributes:
-  EndpointId:
-    To: id
+  Arn:
+    Ignore: true
   Bandwidth:
     To: bandwidth
   EndpointDomain:
     To: endpoint_domain
+  EndpointId:
+    To: id
+  EndpointName:
+    To: vpc_endpoint_name
   ServiceId:
     To: service_id
   ServiceName:
     To: service_name
-  EndpointName:
-    To: vpc_endpoint_name
   VpcId:
     To: vpc_id
   ZoneDomains:
-    Ignore: true
-  Arn:
     Ignore: true

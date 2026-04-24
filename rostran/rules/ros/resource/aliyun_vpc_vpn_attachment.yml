@@ -4,6 +4,20 @@ ResourceType:
   From: ALIYUN::VPC::VpnAttachment
   To: alicloud_vpn_gateway_vpn_attachment
 Properties:
+  AutoConfigRoute:
+    Ignore: true
+  BgpConfig:
+    To: bgp_config
+    Type: Map
+    Schema:
+      EnableBgp:
+        Ignore: true
+      LocalAsn:
+        To: local_asn
+      LocalBgpIp:
+        To: local_bgp_ip
+      TunnelCidr:
+        To: tunnel_cidr
   CustomerGatewayId:
     To: customer_gateway_id
   EffectImmediately:
@@ -12,24 +26,8 @@ Properties:
     To: enable_dpd
   EnableNatTraversal:
     To: enable_nat_traversal
-  LocalSubnet:
-    To: local_subnet
-  NetworkType:
-    To: network_type
-  RemoteSubnet:
-    To: remote_subnet
-  IpsecConfig:
-    To: ipsec_config
-    Type: Map
-    Schema:
-      IpsecAuthAlg:
-        To: ipsec_auth_alg
-      IpsecEncAlg:
-        To: ipsec_enc_alg
-      IpsecLifetime:
-        To: ipsec_lifetime
-      IpsecPfs:
-        To: ipsec_pfs
+  EnableTunnelsBgp:
+    To: enable_tunnels_bgp
   HealthCheckConfig:
     To: health_check_config
     Type: Map
@@ -46,24 +44,6 @@ Properties:
         To: retry
       Sip:
         To: sip
-  AutoConfigRoute:
-    Ignore: true
-  BgpConfig:
-    To: bgp_config
-    Type: Map
-    Schema:
-      LocalAsn:
-        To: local_asn
-      LocalBgpIp:
-        To: local_bgp_ip
-      TunnelCidr:
-        To: tunnel_cidr
-      EnableBgp:
-        Ignore: true
-  RemoteCaCert:
-    Ignore: true
-  Name:
-    To: vpn_attachment_name
   IkeConfig:
     To: ike_config
     Type: Map
@@ -86,10 +66,32 @@ Properties:
         To: psk
       RemoteId:
         To: remote_id
-  EnableTunnelsBgp:
-    To: enable_tunnels_bgp
+  IpsecConfig:
+    To: ipsec_config
+    Type: Map
+    Schema:
+      IpsecAuthAlg:
+        To: ipsec_auth_alg
+      IpsecEncAlg:
+        To: ipsec_enc_alg
+      IpsecLifetime:
+        To: ipsec_lifetime
+      IpsecPfs:
+        To: ipsec_pfs
+  LocalSubnet:
+    To: local_subnet
+  Name:
+    To: vpn_attachment_name
+  NetworkType:
+    To: network_type
+  RemoteCaCert:
+    Ignore: true
+  RemoteSubnet:
+    To: remote_subnet
   ResourceGroupId:
     To: resource_group_id
+  TunnelBandwidth:
+    Ignore: true
   TunnelOptionsSpecification:
     To: tunnel_options_specification
     Type: List
@@ -108,12 +110,10 @@ Properties:
         To: tunnel_index
       TunnelIpsecConfig:
         To: tunnel_ipsec_config
-  TunnelBandwidth:
-    Ignore: true
 Attributes:
-  VpnAttachmentId:
-    To: id
   InternetIp:
     To: internet_ip
   PeerVpnAttachmentConfig:
     Ignore: true
+  VpnAttachmentId:
+    To: id

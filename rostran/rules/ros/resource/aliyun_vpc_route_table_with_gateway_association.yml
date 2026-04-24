@@ -6,12 +6,12 @@ ResourceType:
 Properties:
   GatewayId:
     To: ipv4_gateway_id
-  RouteTableId:
-    To: route_table_id
   GatewayType:
     Ignore: true
-Attributes:
   RouteTableId:
-    Ignore: true
+    To: route_table_id
+Attributes:
   GatewayId:
+    Ignore: true
+  RouteTableId:
     Ignore: true

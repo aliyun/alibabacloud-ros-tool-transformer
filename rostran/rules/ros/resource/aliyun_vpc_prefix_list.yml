@@ -20,8 +20,6 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
-  PrefixListId:
-    To: id
   CreateTime:
     To: create_time
   Entries:
@@ -30,8 +28,12 @@ Attributes:
     To: ip_version
   MaxEntries:
     To: max_entries
+  OwnerId:
+    Ignore: true
   PrefixListDescription:
     To: prefix_list_description
+  PrefixListId:
+    To: id
   PrefixListId$$0:
     To: prefix_list_id
   PrefixListName:
@@ -43,5 +45,3 @@ Attributes:
   Tags:
     To: tags
     Handler: handle_tags
-  OwnerId:
-    Ignore: true

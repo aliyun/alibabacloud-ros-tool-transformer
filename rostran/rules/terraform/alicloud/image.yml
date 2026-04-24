@@ -8,8 +8,6 @@ Properties:
     To: Architecture
   boot_mode:
     To: BootMode
-  create_time:
-    Ignore: true
   delete_auto_snapshot:
     Ignore: true
   description:
@@ -64,38 +62,15 @@ Properties:
     To: ResourceGroupId
   snapshot_id:
     To: SnapshotId
-  status:
-    Ignore: true
   tags:
-    To: Tags
+    To: Tag
+    Handler: tags_dict_to_list
 Attributes:
   id:
     To: ImageId
-  architecture:
-    Ignore: true
-  boot_mode:
-    Ignore: true
   create_time:
-    Ignore: true
-  description:
     Ignore: true
   disk_device_mapping:
     Ignore: true
-  features:
-    Ignore: true
-  image_family:
-    Ignore: true
-  image_name:
-    Ignore: true
-  image_version:
-    Ignore: true
-  name:
-    Ignore: true
-  platform:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
   status:
-    Ignore: true
-  tags:
     Ignore: true

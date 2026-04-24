@@ -9,9 +9,9 @@ Properties:
   Tags:
     Ignore: true
 Attributes:
-  InstanceIds:
+  Arn:
     Ignore: true
   ClientIds:
     Ignore: true
-  Arn:
+  InstanceIds:
     Ignore: true

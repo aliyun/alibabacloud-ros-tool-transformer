@@ -29,25 +29,25 @@ Properties:
 Attributes:
   ConfigId:
     To: config_id
-  RuleEnable:
+  ConfigType:
     Ignore: true
   Grpc:
     Ignore: true
   Http2Origin:
     Ignore: true
-  SiteVersion:
-    Ignore: true
   Rule:
     Ignore: true
-  Websocket:
+  RuleEnable:
     Ignore: true
   RuleName:
     Ignore: true
-  ConfigType:
+  Sequence:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  SmartRouting:
     Ignore: true
   UploadMaxFilesize:
     Ignore: true
-  Sequence:
-    Ignore: true
-  SmartRouting:
+  Websocket:
     Ignore: true

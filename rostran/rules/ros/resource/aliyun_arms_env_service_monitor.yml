@@ -11,11 +11,11 @@ Properties:
   EnvironmentId:
     To: environment_id
 Attributes:
-  EnvServiceMonitorName:
-    To: env_service_monitor_name
-  Namespace:
-    To: namespace
-  EnvironmentId:
-    Ignore: true
   ConfigYaml:
     Ignore: true
+  EnvServiceMonitorName:
+    To: env_service_monitor_name
+  EnvironmentId:
+    Ignore: true
+  Namespace:
+    To: namespace

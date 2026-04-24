@@ -4,6 +4,10 @@ ResourceType:
   From: ALIYUN::EMR::Cluster
   To: alicloud_emr_cluster
 Properties:
+  AuthorizeContent:
+    Ignore: true
+  AutoRenew:
+    To: auto_renew
   BootstrapAction:
     To: bootstrap_action
     Type: List
@@ -16,8 +20,14 @@ Properties:
         To: path
   ChargeType:
     To: charge_type
+  ClickHouseConf:
+    Ignore: true
   ClusterType:
     To: cluster_type
+  Config:
+    Ignore: true
+  Configurations:
+    To: configs
   DepositType:
     To: deposit_type
   EasEnable:
@@ -34,6 +44,12 @@ Properties:
         To: auto_renew
       ChargeType:
         To: charge_type
+      ClusterId:
+        Ignore: true
+      Comment:
+        Ignore: true
+      CreateType:
+        Ignore: true
       DiskCapacity:
         To: disk_capacity
       DiskCount:
@@ -42,10 +58,16 @@ Properties:
         To: disk_type
       GpuDriver:
         To: gpu_driver
+      HostGroupId:
+        Ignore: true
       HostGroupName:
         To: host_group_name
       HostGroupType:
         To: host_group_type
+      HostKeyPairName:
+        Ignore: true
+      HostPassword:
+        Ignore: true
       InstanceType:
         To: instance_type
       NodeCount:
@@ -56,95 +78,75 @@ Properties:
         To: sys_disk_capacity
       SysDiskType:
         To: sys_disk_type
-      ClusterId:
-        Ignore: true
-      HostPassword:
-        Ignore: true
       VSwitchId:
         Ignore: true
-      Comment:
-        Ignore: true
-      CreateType:
-        Ignore: true
-      HostKeyPairName:
-        Ignore: true
-      HostGroupId:
-        Ignore: true
+  InitCustomHiveMetaDB:
+    Ignore: true
+  InstanceGeneration:
+    Ignore: true
+  IoOptimized:
+    Ignore: true
   IsOpenPublicIp:
     To: is_open_public_ip
   KeyPairName:
     To: key_pair_name
+  LogPath:
+    Ignore: true
+  MachineType:
+    To: instance_type
   MasterPwd:
     To: master_pwd
+  MetaStoreConf:
+    To: meta_store_conf
   MetaStoreType:
     To: meta_store_type
   Name:
     To: name
+  NetType:
+    Ignore: true
   OptionSoftWareList:
     To: option_software_list
   Period:
     To: period
   RelatedClusterId:
     To: related_cluster_id
+  RelatedClusterId$$0:
+    To: related_cluster_id
   ResourceGroupId:
     To: resource_group_id
   SecurityGroupId:
     To: security_group_id
+  SecurityGroupName:
+    Ignore: true
   SshEnable:
     To: ssh_enable
   Tags:
     To: tags
     Handler: handle_tags
+  UseCustomHiveMetaDB:
+    Ignore: true
   UseLocalMetaDb:
     To: use_local_metadb
   UserDefinedEmrEcsRole:
     To: user_defined_emr_ecs_role
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  IoOptimized:
-    Ignore: true
-  VpcId:
-    Ignore: true
-  UseCustomHiveMetaDB:
-    Ignore: true
-  Configurations:
-    To: configs
-  MetaStoreConf:
-    To: meta_store_conf
-  Config:
-    Ignore: true
-  SecurityGroupName:
-    Ignore: true
-  InitCustomHiveMetaDB:
-    Ignore: true
-  InstanceGeneration:
-    Ignore: true
-  ClickHouseConf:
-    Ignore: true
-  AutoRenew:
-    To: auto_renew
-  WhiteListType:
-    Ignore: true
-  MachineType:
-    Ignore: true
-  NetType:
-    Ignore: true
   UserInfo:
     Ignore: true
-  AuthorizeContent:
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
     Ignore: true
-  LogPath:
+  WhiteListType:
     Ignore: true
+  ZoneId:
+    To: zone_id
 Attributes:
+  Arn:
+    Ignore: true
   ClusterId:
     To: id
   HostGroups:
     Ignore: true
-  MasterNodePubIps:
-    Ignore: true
-  Arn:
-    Ignore: true
   MasterNodeInnerIps:
+    Ignore: true
+  MasterNodePubIps:
     Ignore: true

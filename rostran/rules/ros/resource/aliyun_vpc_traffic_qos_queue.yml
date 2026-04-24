@@ -15,15 +15,15 @@ Properties:
   QueueType:
     To: queue_type
 Attributes:
+  BandwidthPercent:
+    Ignore: true
+  QosId:
+    Ignore: true
+  QueueDescription:
+    Ignore: true
   QueueId:
     To: queue_id
   QueueName:
     Ignore: true
-  BandwidthPercent:
-    Ignore: true
   QueueType:
-    Ignore: true
-  QueueDescription:
-    Ignore: true
-  QosId:
     Ignore: true

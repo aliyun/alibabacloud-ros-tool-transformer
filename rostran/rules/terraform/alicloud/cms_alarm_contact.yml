@@ -9,15 +9,27 @@ Properties:
   channels_aliim:
     To: Channels
     Type: Map
+    Schema:
+      aliim:
+        To: AliIM
   channels_ding_web_hook:
     To: Channels
     Type: Map
+    Schema:
+      ding_web_hook:
+        To: DingWebHook
   channels_mail:
     To: Channels
     Type: Map
+    Schema:
+      mail:
+        To: Mail
   channels_sms:
     To: Channels
     Type: Map
+    Schema:
+      sms:
+        To: SMS
   describe:
     To: Describe
   lang:
@@ -25,17 +37,3 @@ Properties:
 Attributes:
   id:
     To: ContactName
-  alarm_contact_name:
-    Ignore: true
-  channels_aliim:
-    Ignore: true
-  channels_ding_web_hook:
-    Ignore: true
-  channels_mail:
-    Ignore: true
-  channels_sms:
-    Ignore: true
-  describe:
-    Ignore: true
-  lang:
-    Ignore: true

@@ -21,7 +21,7 @@ Properties:
         Handler: select_first
         Warning: Only first server_id can be used
       type:
-        Ignore: true
+        To: Type
       weight:
         To: Weight
   tags:
@@ -30,9 +30,3 @@ Properties:
 Attributes:
   id:
     To: VServerGroupId
-  load_balancer_id:
-    To: LoadBalancerId
-  name:
-    Ignore: true
-  tags:
-    Ignore: true

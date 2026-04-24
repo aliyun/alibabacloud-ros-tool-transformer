@@ -11,9 +11,9 @@ Properties:
 Attributes:
   CreateTime:
     Ignore: true
+  Description:
+    Ignore: true
   FunctionName:
     Ignore: true
   LastModifiedTime:
-    Ignore: true
-  Description:
     Ignore: true

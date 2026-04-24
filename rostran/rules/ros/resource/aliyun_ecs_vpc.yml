@@ -21,18 +21,18 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  VpcName:
-    To: vpc_name
   UserCidr:
     To: user_cidrs
+  VpcName:
+    To: vpc_name
   VpcName$$0:
     To: vpc_name
 Attributes:
-  VpcId:
-    To: id
   RouteTableId:
     To: route_table_id
-  VpcName:
-    To: vpc_name
   VRouterId:
     To: router_id
+  VpcId:
+    To: id
+  VpcName:
+    To: vpc_name

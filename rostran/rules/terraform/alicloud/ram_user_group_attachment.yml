@@ -8,3 +8,6 @@ Properties:
     To: GroupName
   user_name:
     To: Users
+Attributes:
+  id:
+    Ignore: true

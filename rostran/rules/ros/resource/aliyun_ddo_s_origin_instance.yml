@@ -4,31 +4,31 @@ ResourceType:
   From: ALIYUN::DDoS::OriginInstance
   To: alicloud_ddosbgp_instance
 Properties:
-  Period:
-    To: period
-  Tags:
-    To: tags
-    Handler: handle_tags
-  PeriodUnit:
-    Ignore: true
-  ProtectionMode:
-    Ignore: true
-  NetworkProtocol:
-    To: ip_type
-  Edition:
-    To: type
-  IpAddresses:
-    To: ip_count
-  EnableLog:
-    Ignore: true
   ChargeType:
     Ignore: true
   CleanBandwidth:
     To: bandwidth
   CleanBandwidth$$0:
     To: normal_bandwidth
+  Edition:
+    To: type
+  EnableLog:
+    Ignore: true
+  IpAddresses:
+    To: ip_count
+  NetworkProtocol:
+    To: ip_type
+  Period:
+    To: period
+  PeriodUnit:
+    Ignore: true
+  ProtectionMode:
+    Ignore: true
+  Tags:
+    To: tags
+    Handler: handle_tags
 Attributes:
-  InstanceId:
-    To: id
   Arn:
     Ignore: true
+  InstanceId:
+    To: id

@@ -73,7 +73,7 @@ Properties:
   file_name:
     Ignore: true
   gateway_cluster_id_list:
-    Ignore: true
+    To: RelatedClusterId
   group_id:
     Ignore: true
   high_availability_enable:
@@ -123,7 +123,7 @@ Properties:
   instance_list:
     Ignore: true
   instance_type:
-    Ignore: true
+    To: MachineType
   is_open_public_ip:
     To: IsOpenPublicIp
   key_pair_name:

@@ -18,6 +18,10 @@ Properties:
         To: app_sdk
       Expression:
         To: expression
+      Id:
+        Ignore: true
+      ManagedGroupId:
+        Ignore: true
       ManagedList:
         To: managed_list
       ManagedRulesets:
@@ -40,10 +44,6 @@ Properties:
         To: type
       Value:
         To: value
-      Id:
-        Ignore: true
-      ManagedGroupId:
-        Ignore: true
   Phase:
     To: phase
   RulesetId:
@@ -75,11 +75,11 @@ Properties:
 Attributes:
   Config:
     To: config
-  WafRuleId:
-    To: waf_rule_id
-  UpdateTime:
-    Ignore: true
   Phase:
     Ignore: true
   RulesetId:
     Ignore: true
+  UpdateTime:
+    Ignore: true
+  WafRuleId:
+    To: waf_rule_id

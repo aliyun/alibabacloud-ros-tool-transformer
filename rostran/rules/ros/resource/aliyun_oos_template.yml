@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   Content:
     To: content
+  IgnoreExisting:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   Tags:
@@ -13,14 +15,12 @@ Properties:
     Handler: handle_tags
   TemplateName:
     To: template_name
-  IgnoreExisting:
-    Ignore: true
 Attributes:
-  TemplateName:
-    To: id
-  TemplateId:
-    To: template_id
-  TemplateName$$0:
-    To: template_name
   ExecutionPolicy:
     Ignore: true
+  TemplateId:
+    To: template_id
+  TemplateName:
+    To: id
+  TemplateName$$0:
+    To: template_name

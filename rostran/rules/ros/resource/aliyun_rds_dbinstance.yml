@@ -4,106 +4,123 @@ ResourceType:
   From: ALIYUN::RDS::DBInstance
   To: alicloud_db_instance
 Properties:
+  AllocatePublicConnection:
+    Ignore: true
+  ArchiveBackupKeepCount:
+    Ignore: true
+  ArchiveBackupKeepPolicy:
+    Ignore: true
+  ArchiveBackupRetentionPeriod:
+    Ignore: true
   AutoRenew:
     To: auto_renew
+  AutoUpgradeMinorVersion:
+    To: auto_upgrade_minor_version
+  BackUpCategory:
+    Ignore: true
+  BackupPolicyMode:
+    Ignore: true
+  BackupRetentionPeriod:
+    Ignore: true
+  BurstingEnabled:
+    To: bursting_enabled
   Category:
     To: category
+  ColdDataEnabled:
+    To: cold_data_enabled
+  CompressType:
+    Ignore: true
+  ConnectionMode:
+    To: security_ip_mode
   ConnectionStringPrefix:
     To: connection_string_prefix
+  ConnectionStringType:
+    To: ssl_connection_string
+  DBInstanceClass:
+    To: instance_type
+  DBInstanceDescription:
+    To: instance_name
+  DBInstanceNetType:
+    Ignore: true
+  DBInstanceStorage:
+    To: instance_storage
   DBInstanceStorageType:
     To: db_instance_storage_type
+  DBIsIgnoreCase:
+    To: db_is_ignore_case
+  DBMappings:
+    Ignore: true
+  DBParamGroupId:
+    To: db_param_group_id
+  DBTimeZone:
+    To: db_time_zone
+  DedicatedHostGroupId:
+    Ignore: true
+  DeletionProtection:
+    To: deletion_protection
+  EnableBackupLog:
+    Ignore: true
   EncryptionKey:
     To: encryption_key
   Engine:
     To: engine
   EngineVersion:
     To: engine_version
-  PayType:
-    To: instance_charge_type
-  DBInstanceDescription:
-    To: instance_name
-  DBInstanceStorage:
-    To: instance_storage
-  DBInstanceClass:
-    To: instance_type
+  HighSpaceUsageProtection:
+    Ignore: true
+  InstanceNetworkType:
+    Ignore: true
+  IoAccelerationEnabled:
+    Ignore: true
+  LocalLogRetentionHours:
+    Ignore: true
+  LocalLogRetentionSpace:
+    Ignore: true
+  LogBackupFrequency:
+    Ignore: true
+  LogBackupLocalRetentionNumber:
+    Ignore: true
+  LogBackupRetentionPeriod:
+    Ignore: true
   MaintainTime:
     To: maintain_time
+  MasterUserPassword:
+    Ignore: true
+  MasterUserType:
+    Ignore: true
+  MasterUsername:
+    Ignore: true
+  MultiAZ:
+    Ignore: true
+  PayType:
+    To: instance_charge_type
   Period:
     To: period
+  PeriodType:
+    Ignore: true
   Port:
     To: port
+  PreferredBackupPeriod:
+    Ignore: true
+  PreferredBackupTime:
+    Ignore: true
   PrivateIpAddress:
     To: private_ip_address
   ReleasedKeepPolicy:
     To: released_keep_policy
   ResourceGroupId:
     To: resource_group_id
+  RoleARN:
+    To: role_arn
+  SQLCollectorStatus:
+    To: sql_collector_status
+  SSLSetting:
+    To: ssl_action
   SecurityGroupId:
     To: security_group_id
   SecurityIPList:
     To: security_ips
     Handler: handle_to_list
-  StorageAutoScale:
-    To: storage_auto_scale
-  StorageThreshold:
-    To: storage_threshold
-  StorageUpperBound:
-    To: storage_upper_bound
-  Tags:
-    To: tags
-    Handler: handle_tags
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  LocalLogRetentionHours:
-    Ignore: true
-  SSLSetting:
-    To: ssl_action
-  ArchiveBackupKeepPolicy:
-    Ignore: true
-  MasterUserPassword:
-    Ignore: true
-  LogBackupLocalRetentionNumber:
-    Ignore: true
-  TargetDedicatedHostIdForLog:
-    Ignore: true
-  DBTimeZone:
-    To: db_time_zone
-  LogBackupFrequency:
-    Ignore: true
-  DBInstanceNetType:
-    Ignore: true
-  PreferredBackupTime:
-    Ignore: true
-  SQLCollectorStatus:
-    To: sql_collector_status
-  InstanceNetworkType:
-    Ignore: true
-  LogBackupRetentionPeriod:
-    Ignore: true
-  RoleARN:
-    To: role_arn
-  EnableBackupLog:
-    Ignore: true
-  MasterUserType:
-    Ignore: true
-  BackUpCategory:
-    Ignore: true
-  BackupRetentionPeriod:
-    Ignore: true
-  BackupPolicyMode:
-    Ignore: true
-  TargetDedicatedHostIdForMaster:
-    Ignore: true
-  TargetDedicatedHostIdForSlave:
-    Ignore: true
-  PeriodType:
-    Ignore: true
-  AllocatePublicConnection:
-    Ignore: true
   ServerlessConfig:
     To: serverless_config
     Type: Map
@@ -116,61 +133,44 @@ Properties:
         To: min_capacity
       SwitchForce:
         To: switch_force
-  DBIsIgnoreCase:
-    To: db_is_ignore_case
-  DBMappings:
-    Ignore: true
   SlaveZoneIds:
     To: zone_id_slave_a
-  HighSpaceUsageProtection:
-    Ignore: true
-  DeletionProtection:
-    To: deletion_protection
-  IoAccelerationEnabled:
-    Ignore: true
-  BurstingEnabled:
-    To: bursting_enabled
-  DedicatedHostGroupId:
-    Ignore: true
-  CompressType:
-    Ignore: true
-  PreferredBackupPeriod:
-    Ignore: true
-  DBParamGroupId:
-    To: db_param_group_id
-  LocalLogRetentionSpace:
-    Ignore: true
-  ArchiveBackupKeepCount:
-    Ignore: true
-  MasterUsername:
-    Ignore: true
-  ColdDataEnabled:
-    To: cold_data_enabled
-  ArchiveBackupRetentionPeriod:
-    Ignore: true
-  ConnectionStringType:
-    To: ssl_connection_string
-  ConnectionMode:
-    To: security_ip_mode
-  MultiAZ:
-    Ignore: true
-  AutoUpgradeMinorVersion:
-    To: auto_upgrade_minor_version
   SlaveZoneIds$$0:
     To: zone_id_slave_b
+  StorageAutoScale:
+    To: storage_auto_scale
+  StorageThreshold:
+    To: storage_threshold
+  StorageUpperBound:
+    To: storage_upper_bound
   SubscriptionDeletionForce:
     Ignore: true
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TargetDedicatedHostIdForLog:
+    Ignore: true
+  TargetDedicatedHostIdForMaster:
+    Ignore: true
+  TargetDedicatedHostIdForSlave:
+    Ignore: true
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
 Attributes:
   DBInstanceId:
     To: id
+  InnerConnectionString:
+    To: connection_string
   InnerIPAddress:
+    Ignore: true
+  InnerPort:
     Ignore: true
   PublicConnectionString:
     To: connection_string
-  InnerConnectionString:
-    To: connection_string
-  InnerPort:
-    Ignore: true
   PublicIPAddress:
     Ignore: true
   PublicPort:

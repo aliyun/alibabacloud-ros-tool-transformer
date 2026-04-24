@@ -10,12 +10,18 @@ Properties:
     To: delivery_channel_filter
     Type: Map
     Schema:
-      ResourceTypes:
-        To: resource_types
       AccountScopes:
         Ignore: true
+      ResourceTypes:
+        To: resource_types
+  DeliveryChannelId:
+    Ignore: true
   DeliveryChannelName:
     To: delivery_channel_name
+  EnabledResourceChangeDelivery:
+    Ignore: true
+  EnabledResourceSnapshotDelivery:
+    Ignore: true
   ResourceChangeDelivery:
     To: resource_change_delivery
     Type: Map
@@ -36,22 +42,16 @@ Properties:
         To: sls_properties
       TargetArn:
         To: target_arn
-  DeliveryChannelId:
-    Ignore: true
-  EnabledResourceChangeDelivery:
-    Ignore: true
-  EnabledResourceSnapshotDelivery:
-    Ignore: true
 Attributes:
+  DeliveryChannelDescription:
+    Ignore: true
+  DeliveryChannelFilter:
+    Ignore: true
   DeliveryChannelId:
     To: id
   DeliveryChannelName:
     Ignore: true
-  DeliveryChannelDescription:
-    Ignore: true
   ResourceChangeDelivery:
-    Ignore: true
-  DeliveryChannelFilter:
     Ignore: true
   ResourceSnapshotDelivery:
     Ignore: true

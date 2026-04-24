@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::ARMS::AlertContactGroup
   To: alicloud_arms_alert_contact_group
 Properties:
+  ContactGroupName:
+    To: alert_contact_group_name
   ContactIds:
     To: contact_ids
   ProxyUserId:
     Ignore: true
-  ContactGroupName:
-    To: alert_contact_group_name
   RegionId:
     Ignore: true
 Attributes:

@@ -10,74 +10,74 @@ Properties:
     To: description
   DisableSessionRenewalEnable:
     To: disable_session_renewal_enable
+  EndTime:
+    Ignore: true
   JsonResponseEnable:
     To: json_response_enable
   Language:
     To: language
   NewUsersPerMinute:
     To: new_users_per_minute
+  PreQueueEnable:
+    Ignore: true
+  PreQueueStartTime:
+    Ignore: true
   QueuingMethod:
     To: queuing_method
   QueuingStatusCode:
     To: queuing_status_code
+  RandomPreQueueEnable:
+    Ignore: true
   SessionDuration:
     To: session_duration
   SiteId:
     To: site_id
-  TotalActiveUsers:
-    To: total_active_users
-  WaitingRoomType:
-    To: waiting_room_type
-  WaitingRoomId:
-    Ignore: true
-  PreQueueEnable:
-    Ignore: true
-  EndTime:
-    Ignore: true
-  PreQueueStartTime:
-    Ignore: true
   StartTime:
     Ignore: true
+  TotalActiveUsers:
+    To: total_active_users
   WaitingRoomEventName:
     Ignore: true
-  RandomPreQueueEnable:
+  WaitingRoomId:
     Ignore: true
+  WaitingRoomType:
+    To: waiting_room_type
 Attributes:
   CustomPageHtml:
     Ignore: true
-  WaitingRoomId:
+  Description:
     Ignore: true
-  PreQueueEnable:
+  DisableSessionRenewalEnable:
     Ignore: true
   EndTime:
     Ignore: true
   JsonResponseEnable:
     Ignore: true
+  Language:
+    Ignore: true
+  NewUsersPerMinute:
+    Ignore: true
+  PreQueueEnable:
+    Ignore: true
+  PreQueueStartTime:
+    Ignore: true
   QueuingMethod:
+    Ignore: true
+  QueuingStatusCode:
+    Ignore: true
+  RandomPreQueueEnable:
+    Ignore: true
+  SessionDuration:
     Ignore: true
   StartTime:
     Ignore: true
   TotalActiveUsers:
     Ignore: true
-  WaitingRoomType:
-    Ignore: true
-  QueuingStatusCode:
-    Ignore: true
-  Language:
-    Ignore: true
-  Description:
-    Ignore: true
-  RandomPreQueueEnable:
+  WaitingRoomEventId:
     Ignore: true
   WaitingRoomEventName:
     Ignore: true
-  NewUsersPerMinute:
+  WaitingRoomId:
     Ignore: true
-  PreQueueStartTime:
-    Ignore: true
-  WaitingRoomEventId:
-    Ignore: true
-  SessionDuration:
-    Ignore: true
-  DisableSessionRenewalEnable:
+  WaitingRoomType:
     Ignore: true

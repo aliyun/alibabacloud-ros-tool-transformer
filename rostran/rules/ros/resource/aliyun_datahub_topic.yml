@@ -8,8 +8,6 @@ Properties:
     To: comment
   Lifecycle:
     To: life_cycle
-  TopicName:
-    To: name
   ProjectName:
     To: project_name
   RecordSchema:
@@ -18,8 +16,10 @@ Properties:
     To: record_type
   ShardCount:
     To: shard_count
-Attributes:
   TopicName:
     To: name
+Attributes:
   ProjectName:
     To: project_name
+  TopicName:
+    To: name

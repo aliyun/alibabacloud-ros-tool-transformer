@@ -4,20 +4,20 @@ ResourceType:
   From: ALIYUN::ARMS::EnvironmentFeature
   To: alicloud_arms_env_feature
 Properties:
-  EnvironmentId:
-    To: environment_id
-  FeatureVersion:
-    To: feature_version
   Config:
     Ignore: true
+  EnvironmentId:
+    To: environment_id
   FeatureName:
     To: env_feature_name
+  FeatureVersion:
+    To: feature_version
 Attributes:
   EnvironmentId:
     To: environment_id
-  FeatureStatus:
-    To: status
   Feature:
     Ignore: true
   FeatureName:
     Ignore: true
+  FeatureStatus:
+    To: status

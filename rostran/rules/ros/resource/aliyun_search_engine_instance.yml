@@ -4,28 +4,28 @@ ResourceType:
   From: ALIYUN::SearchEngine::Instance
   To: alicloud_open_search_app_group
 Properties:
-  SearcherDocSize:
-    To: doc_size
   ChargeType:
     To: payment_type
-  SearcherSpec:
-    To: spec
   Password:
-    Ignore: true
-  SearcherNum:
     Ignore: true
   QrsNum:
     Ignore: true
-  UserName:
+  QrsSpec:
     Ignore: true
-  VpcId:
+  SearcherDocSize:
+    To: doc_size
+  SearcherNum:
+    Ignore: true
+  SearcherSpec:
+    To: spec
+  UserName:
     Ignore: true
   VSwitchId:
     Ignore: true
-  QrsSpec:
+  VpcId:
     Ignore: true
 Attributes:
-  InstanceId:
-    To: instance_id
   Endpoint:
     Ignore: true
+  InstanceId:
+    To: instance_id

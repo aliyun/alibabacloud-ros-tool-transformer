@@ -20,10 +20,18 @@ Properties:
     To: du
   FeeType:
     To: fee_type
+  InsightModule:
+    Ignore: true
   InstanceClass:
     To: instance_class
   JobId:
     To: job_id
+  MaxDu:
+    Ignore: true
+  MinDu:
+    Ignore: true
+  PayType:
+    To: payment_type
   Period:
     To: period
   ResourceGroupId:
@@ -39,18 +47,10 @@ Properties:
     Handler: handle_lower
   UsedTime:
     To: used_time
-  PayType:
-    To: payment_type
-  InsightModule:
-    Ignore: true
-  MaxDu:
-    Ignore: true
-  MinDu:
-    Ignore: true
 Attributes:
   InstanceId:
     To: id
-  JobId:
-    Ignore: true
   InstanceId$$0:
     To: dts_instance_id
+  JobId:
+    Ignore: true

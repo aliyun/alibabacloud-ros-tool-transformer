@@ -10,42 +10,42 @@ Properties:
     To: cluster_type
   GrafanaInstanceId:
     To: grafana_instance_id
-  SecurityGroupId:
-    To: security_group_id
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ResourceGroupId:
-    Ignore: true
-  Tags:
-    Ignore: true
   PrometheusName:
     Ignore: true
-  SubClustersJson:
-    Ignore: true
-Attributes:
-  ClusterType:
-    To: cluster_type
-  VpcId:
-    To: vpc_id
-  ClusterId:
-    Ignore: true
   ResourceGroupId:
+    Ignore: true
+  SecurityGroupId:
+    To: security_group_id
+  SubClustersJson:
     Ignore: true
   Tags:
     Ignore: true
-  SecurityGroupId:
-    Ignore: true
-  UserId:
-    Ignore: true
   VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+Attributes:
+  ClusterId:
+    Ignore: true
+  ClusterType:
+    To: cluster_type
+  GrafanaInstanceId:
     Ignore: true
   PaymentType:
     Ignore: true
   PrometheusName:
     Ignore: true
-  GrafanaInstanceId:
+  ResourceGroupId:
+    Ignore: true
+  SecurityGroupId:
     Ignore: true
   SubClustersJson:
     Ignore: true
+  Tags:
+    Ignore: true
+  UserId:
+    Ignore: true
+  VSwitchId:
+    Ignore: true
+  VpcId:
+    To: vpc_id

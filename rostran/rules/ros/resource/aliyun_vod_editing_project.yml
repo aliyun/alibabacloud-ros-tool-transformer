@@ -11,15 +11,15 @@ Properties:
   Title:
     To: title
 Attributes:
+  CreateTime:
+    Ignore: true
   EditingProjectId:
     To: id
   EditingProjectName:
     To: editing_project_name
+  ModifiedTime:
+    Ignore: true
   Timeline:
     To: timeline
   Title:
     To: title
-  CreateTime:
-    Ignore: true
-  ModifiedTime:
-    Ignore: true

@@ -10,13 +10,13 @@ Properties:
     To: name
   ProtectionLevel:
     To: protection_level
+  ResourceGroupId:
+    To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-  ResourceGroupId:
-    To: resource_group_id
 Attributes:
-  CenId:
-    To: id
   Arn:
     Ignore: true
+  CenId:
+    To: id

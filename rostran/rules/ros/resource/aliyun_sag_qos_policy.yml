@@ -10,6 +10,10 @@ Properties:
     To: dest_cidr
   DestPortRange:
     To: dest_port_range
+  DpiGroupIds:
+    Ignore: true
+  DpiSignatureIds:
+    Ignore: true
   EndTime:
     To: end_time
   IpProtocol:
@@ -26,10 +30,6 @@ Properties:
     To: source_port_range
   StartTime:
     To: start_time
-  DpiGroupIds:
-    Ignore: true
-  DpiSignatureIds:
-    Ignore: true
 Attributes:
   QosPolicyId:
     To: id

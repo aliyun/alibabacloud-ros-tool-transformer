@@ -7,7 +7,7 @@ Properties:
   auto_release_time:
     To: AutoReleaseTime
   category:
-    Ignore: true
+    To: Category
   data_disks:
     To: DiskMappings
     Type: List
@@ -15,7 +15,7 @@ Properties:
       category:
         To: Category
       delete_with_instance:
-        Ignore: true
+        To: DeleteWithInstance
       description:
         To: Description
       encrypted:
@@ -27,7 +27,7 @@ Properties:
       snapshot_id:
         To: SnapshotId
   delete_with_instance:
-    Ignore: true
+    To: DeleteWithInstance
   description:
     To: Description
   host_name:
@@ -43,7 +43,7 @@ Properties:
   internet_charge_type:
     To: InternetChargeType
   internet_max_bandwidth_in:
-    To: InternetMaxBandwidthIn
+    Ignore: true
   internet_max_bandwidth_out:
     To: InternetMaxBandwidthOut
   io_optimized:
@@ -77,11 +77,9 @@ Properties:
   security_group_id:
     To: SecurityGroupId
   size:
-    Ignore: true
+    To: Size
   snapshot_id:
-    Ignore: true
-  spot_price_limit:
-    To: SpotPriceLimit
+    To: SnapshotId
   spot_strategy:
     To: SpotStrategy
   system_disk_category:

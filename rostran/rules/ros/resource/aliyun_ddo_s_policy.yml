@@ -4,6 +4,10 @@ ResourceType:
   From: ALIYUN::DDoS::Policy
   To: alicloud_ddos_bgp_policy
 Properties:
+  ActionType:
+    Ignore: true
+  BlackIpList:
+    Ignore: true
   Content:
     To: content
     Type: Map
@@ -40,18 +44,14 @@ Properties:
     To: policy_name
   Type:
     To: type
-  ActionType:
-    Ignore: true
-  BlackIpList:
-    Ignore: true
   WhiteIpList:
     Ignore: true
 Attributes:
+  Content:
+    Ignore: true
   PolicyId:
     To: id
   PolicyName:
     Ignore: true
   Type:
-    Ignore: true
-  Content:
     Ignore: true

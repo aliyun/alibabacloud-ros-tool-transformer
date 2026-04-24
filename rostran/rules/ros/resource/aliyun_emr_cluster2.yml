@@ -22,6 +22,8 @@ Properties:
         To: node_group_id
       NodeGroupName:
         To: node_group_name
+  Applications:
+    To: applications
   BootstrapScripts:
     To: bootstrap_scripts
     Type: List
@@ -30,6 +32,8 @@ Properties:
         To: execution_fail_strategy
       ExecutionMoment:
         To: execution_moment
+      NodeSelector:
+        Ignore: true
       Priority:
         To: priority
       ScriptArgs:
@@ -38,20 +42,36 @@ Properties:
         To: script_name
       ScriptPath:
         To: script_path
-      NodeSelector:
-        Ignore: true
   ClusterName:
     To: cluster_name
   ClusterType:
     To: cluster_type
   DeployMode:
     To: deploy_mode
+  NodeAttributes:
+    To: node_attributes
+    Type: Map
+    Schema:
+      KeyPairName:
+        To: key_pair_name
+      MasterRootPassword:
+        Ignore: true
+      RamRole:
+        To: ram_role
+      SecurityGroupId:
+        To: security_group_id
+      VpcId:
+        To: vpc_id
+      ZoneId:
+        To: zone_id
   NodeGroups:
     To: node_groups
     Type: List
     Schema:
       AdditionalSecurityGroupIds:
         To: additional_security_group_ids
+      CostOptimizedConfig:
+        Ignore: true
       DataDisks:
         To: data_disks
         Type: List
@@ -88,16 +108,14 @@ Properties:
             To: instance_type
       SpotInstanceRemedy:
         To: spot_instance_remedy
-      WithPublicIp:
-        To: with_public_ip
-      SystemDisk:
-        Ignore: true
       SpotStrategy:
+        Ignore: true
+      SystemDisk:
         Ignore: true
       VSwitchIds:
         Ignore: true
-      CostOptimizedConfig:
-        Ignore: true
+      WithPublicIp:
+        To: with_public_ip
   PaymentType:
     To: payment_type
   ReleaseVersion:
@@ -106,25 +124,6 @@ Properties:
     To: resource_group_id
   SecurityMode:
     To: security_mode
-  Tags:
-    To: tags
-    Handler: handle_tags
-  NodeAttributes:
-    To: node_attributes
-    Type: Map
-    Schema:
-      KeyPairName:
-        To: key_pair_name
-      RamRole:
-        To: ram_role
-      SecurityGroupId:
-        To: security_group_id
-      VpcId:
-        To: vpc_id
-      ZoneId:
-        To: zone_id
-      MasterRootPassword:
-        Ignore: true
   SubscriptionConfig:
     To: subscription_config
     Type: Map
@@ -139,10 +138,11 @@ Properties:
         To: payment_duration
       PaymentDurationUnit:
         To: payment_duration_unit
-  Applications:
-    To: applications
+  Tags:
+    To: tags
+    Handler: handle_tags
 Attributes:
-  ClusterId:
-    To: id
   ApplicationLinks:
     Ignore: true
+  ClusterId:
+    To: id

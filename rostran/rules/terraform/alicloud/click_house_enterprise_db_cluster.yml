@@ -4,11 +4,23 @@ ResourceType:
   From: alicloud_click_house_enterprise_db_cluster
   To: ALIYUN::ClickHouse::DBCluster
 Properties:
+  description:
+    To: DBClusterDescription
   multi_zones:
+    Ignore: true
+  node_count:
+    To: DBNodeCount
+  node_scale_max:
+    Ignore: true
+  node_scale_min:
+    Ignore: true
+  resource_group_id:
     Ignore: true
   scale_max:
     Ignore: true
   scale_min:
+    Ignore: true
+  tags:
     Ignore: true
   vpc_id:
     To: VpcId
@@ -19,9 +31,27 @@ Properties:
 Attributes:
   id:
     To: DBClusterId
+  category:
+    To: Category
+  charge_type:
+    To: PaymentType
+  computing_group_ids:
+    Ignore: true
   create_time:
     Ignore: true
+  endpoints:
+    Ignore: true
+  engine_minor_version:
+    To: EngineVersion
+  instance_network_type:
+    To: DBClusterNetworkType
   region_id:
     Ignore: true
   status:
     Ignore: true
+  storage_quota:
+    Ignore: true
+  storage_size:
+    To: DBNodeStorage
+  storage_type:
+    To: StorageType

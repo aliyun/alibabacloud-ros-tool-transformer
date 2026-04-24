@@ -8,40 +8,40 @@ Properties:
     To: brotli
   Gzip:
     To: gzip
+  PaymentType:
+    Ignore: true
   Rule:
     To: rule
   RuleEnable:
     To: rule_enable
   RuleName:
     To: rule_name
+  Sequence:
+    To: sequence
   SiteId:
     To: site_id
   SiteVersion:
     To: site_version
   Zstd:
     To: zstd
-  Sequence:
-    To: sequence
-  PaymentType:
-    Ignore: true
 Attributes:
+  Brotli:
+    Ignore: true
   ConfigId:
     To: config_id
-  RuleEnable:
-    Ignore: true
-  SiteVersion:
-    Ignore: true
-  Zstd:
-    Ignore: true
   ConfigType:
     Ignore: true
   Gzip:
     Ignore: true
   Rule:
     Ignore: true
+  RuleEnable:
+    Ignore: true
   RuleName:
     Ignore: true
   Sequence:
     Ignore: true
-  Brotli:
+  SiteVersion:
+    Ignore: true
+  Zstd:
     Ignore: true

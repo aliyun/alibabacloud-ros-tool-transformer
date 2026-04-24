@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::HBR::DbPlan
 Properties:
   app_consistent:
-    Ignore: true
+    To: Options
   cross_account_role_name:
     Ignore: true
   cross_account_type:
@@ -27,21 +27,21 @@ Properties:
   ecs_server_backup_plan_name:
     To: DbPlanName
   enable_fs_freeze:
-    Ignore: true
+    To: Options
   instance_id:
     Ignore: true
   post_script_path:
-    Ignore: true
+    To: Options
   pre_script_path:
-    Ignore: true
+    To: Options
   retention:
     Ignore: true
   schedule:
     Ignore: true
   snapshot_group:
-    Ignore: true
+    To: Options
   timeout_in_seconds:
-    Ignore: true
+    To: Options
 Attributes:
   id:
     To: PlanId

@@ -16,12 +16,12 @@ Properties:
     To: url
 Attributes:
   AuditCallbackName:
+    To: id
+  CallbackSuggestions:
     Ignore: true
   CallbackTypes:
     Ignore: true
-  Url:
-    Ignore: true
-  CallbackSuggestions:
-    Ignore: true
   CryptType:
+    Ignore: true
+  Url:
     Ignore: true

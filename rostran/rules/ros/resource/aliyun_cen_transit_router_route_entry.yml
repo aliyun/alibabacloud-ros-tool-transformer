@@ -17,12 +17,12 @@ Properties:
   TransitRouterRouteTableId:
     To: transit_router_route_table_id
 Attributes:
-  TransitRouterRouteEntryId:
-    To: id
   TransitRouterRouteEntryDescription:
     To: transit_router_route_entry_description
   TransitRouterRouteEntryDestinationCidrBlock:
     To: transit_router_route_entry_destination_cidr_block
+  TransitRouterRouteEntryId:
+    To: id
   TransitRouterRouteEntryId$$0:
     To: transit_router_route_entry_id
   TransitRouterRouteEntryName:
@@ -31,7 +31,7 @@ Attributes:
     To: transit_router_route_entry_next_hop_id
   TransitRouterRouteEntryNextHopType:
     To: transit_router_route_entry_next_hop_type
-  TransitRouterRouteTableId:
-    To: transit_router_route_table_id
   TransitRouterRouteEntryType:
     Ignore: true
+  TransitRouterRouteTableId:
+    To: transit_router_route_table_id

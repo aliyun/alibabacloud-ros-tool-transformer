@@ -12,4 +12,3 @@ Properties:
     To: instance_id
   UserGroupId:
     To: user_group_id
-Attributes: {}

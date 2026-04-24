@@ -6,6 +6,18 @@ ResourceType:
 Properties:
   AutoConfigRoute:
     To: auto_config_route
+  BgpConfig:
+    To: bgp_config
+    Type: Map
+    Schema:
+      EnableBgp:
+        Ignore: true
+      LocalAsn:
+        To: local_asn
+      LocalBgpIp:
+        To: local_bgp_ip
+      TunnelCidr:
+        To: tunnel_cidr
   CustomerGatewayId:
     To: customer_gateway_id
   EffectImmediately:
@@ -16,6 +28,22 @@ Properties:
     To: enable_nat_traversal
   EnableTunnelsBgp:
     To: enable_tunnels_bgp
+  HealthCheckConfig:
+    To: health_check_config
+    Type: Map
+    Schema:
+      Dip:
+        To: dip
+      Enable:
+        To: enable
+      Interval:
+        To: interval
+      Policy:
+        Ignore: true
+      Retry:
+        To: retry
+      Sip:
+        To: sip
   IkeConfig:
     To: ike_config
     Type: Map
@@ -32,10 +60,10 @@ Properties:
         To: ike_pfs
       IkeVersion:
         To: ike_version
-      Psk:
-        To: psk
       LocalId:
         Ignore: true
+      Psk:
+        To: psk
       RemoteId:
         Ignore: true
   IpsecConfig:
@@ -44,6 +72,8 @@ Properties:
     To: local_subnet
   Name:
     To: name
+  RemoteCaCertificate:
+    Ignore: true
   RemoteSubnet:
     To: remote_subnet
   TunnelOptionsSpecification:
@@ -56,52 +86,22 @@ Properties:
         To: enable_dpd
       EnableNatTraversal:
         To: enable_nat_traversal
+      RemoteCaCertificate:
+        Ignore: true
       Role:
         To: role
       TunnelBgpConfig:
         Ignore: true
-      RemoteCaCertificate:
+      TunnelIkeConfig:
         Ignore: true
       TunnelIpsecConfig:
         Ignore: true
-      TunnelIkeConfig:
-        Ignore: true
   VpnGatewayId:
     To: vpn_gateway_id
-  RemoteCaCertificate:
-    Ignore: true
-  BgpConfig:
-    To: bgp_config
-    Type: Map
-    Schema:
-      LocalAsn:
-        To: local_asn
-      LocalBgpIp:
-        To: local_bgp_ip
-      TunnelCidr:
-        To: tunnel_cidr
-      EnableBgp:
-        Ignore: true
-  HealthCheckConfig:
-    To: health_check_config
-    Type: Map
-    Schema:
-      Dip:
-        To: dip
-      Enable:
-        To: enable
-      Interval:
-        To: interval
-      Retry:
-        To: retry
-      Sip:
-        To: sip
-      Policy:
-        Ignore: true
 Attributes:
-  VpnConnectionId:
-    To: id
-  Status:
-    To: status
   PeerVpnConnectionConfig:
     Ignore: true
+  Status:
+    To: status
+  VpnConnectionId:
+    To: id

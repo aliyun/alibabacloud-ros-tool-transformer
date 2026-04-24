@@ -6,12 +6,12 @@ ResourceType:
 Properties:
   Cert:
     To: cert
-  Name:
-    To: certificate_name
   Key:
     To: key
   Lang:
     To: lang
+  Name:
+    To: certificate_name
   Name$$0:
     To: name
   SourceIp:

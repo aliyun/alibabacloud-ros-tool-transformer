@@ -11,7 +11,7 @@ Properties:
   Vpcs$$0:
     To: vswitch_id
 Attributes:
-  Endpoints:
-    Ignore: true
   Domains:
+    Ignore: true
+  Endpoints:
     Ignore: true

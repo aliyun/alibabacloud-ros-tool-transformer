@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::CR::InstanceEndpointAclPolicy
   To: alicloud_cr_endpoint_acl_policy
 Properties:
+  AutoEnableType:
+    Ignore: true
   Comment:
     To: description
   EndpointType:
@@ -15,8 +17,6 @@ Properties:
   ModuleName:
     To: module_name
   RegionId:
-    Ignore: true
-  AutoEnableType:
     Ignore: true
 Attributes:
   Entry:

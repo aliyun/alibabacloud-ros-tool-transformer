@@ -12,8 +12,6 @@ Properties:
     To: AutoRenewPeriod
   availability_zone:
     To: ZoneId
-  cpu:
-    Ignore: true
   cpu_options:
     Ignore: true
   credit_specification:
@@ -48,8 +46,6 @@ Properties:
     To: DedicatedHostId
   deletion_protection:
     To: DeletionProtection
-  deployment_set_group_no:
-    To: DeploymentSetGroupNo
   deployment_set_id:
     To: DeploymentSetId
   description:
@@ -73,7 +69,10 @@ Properties:
   image_id:
     To: ImageId
   image_options:
-    Ignore: true
+    To: ImageFamily
+    Schema:
+      login_as_non_root:
+        Ignore: true
   include_data_disks:
     Ignore: true
   instance_charge_type:
@@ -85,7 +84,7 @@ Properties:
   internet_charge_type:
     To: InternetChargeType
   internet_max_bandwidth_in:
-    To: InternetMaxBandwidthIn
+    Ignore: true
   internet_max_bandwidth_out:
     To: InternetMaxBandwidthOut
   io_optimized:
@@ -114,21 +113,13 @@ Properties:
     Ignore: true
   maintenance_time:
     Ignore: true
-  memory:
-    Ignore: true
   network_card_index:
-    Ignore: true
-  network_interface_id:
     Ignore: true
   network_interface_traffic_mode:
     Ignore: true
   network_interfaces:
     Ignore: true
   operator_type:
-    Ignore: true
-  os_name:
-    Ignore: true
-  os_type:
     Ignore: true
   password:
     To: Password
@@ -138,18 +129,12 @@ Properties:
     To: Period
   period_unit:
     To: PeriodUnit
-  primary_ip_address:
-    Ignore: true
   private_ip:
     To: PrivateIpAddress
   private_pool_options_id:
-    To: PrivatePoolOptions
-    Type: Map
+    To: PrivatePoolOptions.Id
   private_pool_options_match_criteria:
-    To: PrivatePoolOptions
-    Type: Map
-  public_ip:
-    Ignore: true
+    To: PrivatePoolOptions.MatchCriteria
   queue_pair_number:
     Ignore: true
   renewal_status:
@@ -170,6 +155,8 @@ Properties:
     Warning: Only first security group id can be used
   spot_duration:
     To: SpotDuration
+  spot_interruption_behavior:
+    To: SpotInterruptionBehavior
   spot_price_limit:
     To: SpotPriceLimit
   spot_strategy:
@@ -191,8 +178,6 @@ Properties:
   system_disk_encrypt_algorithm:
     Ignore: true
   system_disk_encrypted:
-    Ignore: true
-  system_disk_id:
     Ignore: true
   system_disk_kms_key_id:
     Ignore: true
@@ -220,145 +205,27 @@ Properties:
 Attributes:
   id:
     To: InstanceId
-  auto_release_time:
-    Ignore: true
-  auto_renew_period:
-    Ignore: true
-  availability_zone:
-    To: ZoneId
   cpu:
     Ignore: true
   create_time:
     Ignore: true
-  credit_specification:
-    Ignore: true
-  dedicated_host_id:
-    Ignore: true
-  deletion_protection:
-    Ignore: true
   deployment_set_group_no:
-    Ignore: true
-  deployment_set_id:
-    Ignore: true
-  description:
-    Ignore: true
-  enable_jumbo_frame:
     Ignore: true
   expired_time:
     Ignore: true
-  host_name:
-    To: HostName
-  hpc_cluster_id:
-    Ignore: true
-  http_endpoint:
-    Ignore: true
-  http_put_response_hop_limit:
-    Ignore: true
-  http_tokens:
-    Ignore: true
-  image_id:
-    Ignore: true
-  instance_charge_type:
-    Ignore: true
-  instance_name:
-    Ignore: true
-  instance_type:
-    Ignore: true
-  internet_charge_type:
-    Ignore: true
-  internet_max_bandwidth_in:
-    Ignore: true
-  internet_max_bandwidth_out:
-    Ignore: true
-  ipv6_address_count:
-    Ignore: true
-  ipv6_addresses:
-    Ignore: true
-  key_name:
-    Ignore: true
-  maintenance_action:
-    Ignore: true
-  maintenance_notify:
-    Ignore: true
-  maintenance_time:
-    Ignore: true
   memory:
-    Ignore: true
-  network_card_index:
     Ignore: true
   network_interface_id:
     To: PrimaryNetworkInterfaceId
-  network_interface_traffic_mode:
-    Ignore: true
-  network_interfaces:
-    Ignore: true
   os_name:
     Ignore: true
   os_type:
     Ignore: true
-  password:
-    Ignore: true
-  period_unit:
-    Ignore: true
   primary_ip_address:
-    To: PrivateIp
-  private_ip:
     To: PrivateIp
   public_ip:
     To: PublicIp
-  queue_pair_number:
-    Ignore: true
-  renewal_status:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  role_name:
-    Ignore: true
-  secondary_private_ip_address_count:
-    Ignore: true
-  secondary_private_ips:
-    Ignore: true
-  spot_duration:
-    Ignore: true
-  spot_price_limit:
-    Ignore: true
-  spot_strategy:
-    Ignore: true
   start_time:
     Ignore: true
-  status:
-    Ignore: true
-  stopped_mode:
-    Ignore: true
-  subnet_id:
-    Ignore: true
-  system_disk_auto_snapshot_policy_id:
-    Ignore: true
-  system_disk_category:
-    Ignore: true
-  system_disk_description:
-    Ignore: true
-  system_disk_encrypted:
-    Ignore: true
   system_disk_id:
-    Ignore: true
-  system_disk_kms_key_id:
-    Ignore: true
-  system_disk_name:
-    Ignore: true
-  system_disk_performance_level:
-    Ignore: true
-  system_disk_size:
-    Ignore: true
-  system_disk_storage_cluster_id:
-    Ignore: true
-  tags:
-    Ignore: true
-  user_data:
-    Ignore: true
-  volume_tags:
-    Ignore: true
-  vpc_id:
-    Ignore: true
-  vswitch_id:
     Ignore: true

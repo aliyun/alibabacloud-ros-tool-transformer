@@ -4,10 +4,10 @@ ResourceType:
   From: ALIYUN::ALB::AdditionalCertificateAssociation
   To: alicloud_alb_listener_additional_certificate_attachment
 Properties:
-  ListenerId:
-    To: listener_id
   Certificates:
     To: certificate_id
+  ListenerId:
+    To: listener_id
 Attributes:
   ListenerId:
     To: listener_id

@@ -4,6 +4,12 @@ ResourceType:
   From: ALIYUN::CLOUDFW::AddressBook
   To: alicloud_cloud_firewall_address_book
 Properties:
+  AckClusterConnectorId:
+    Ignore: true
+  AckLabels:
+    Ignore: true
+  AckNamespaces:
+    Ignore: true
   AddressList:
     To: address_list
     Handler: comma_join
@@ -12,6 +18,12 @@ Properties:
     Handler: to_boolean
   Description:
     To: description
+  GroupName:
+    To: group_name
+  GroupType:
+    To: group_type
+  RegionId:
+    Ignore: true
   TagList:
     To: ecs_tags
     Type: List
@@ -20,20 +32,8 @@ Properties:
         To: tag_key
       TagValue:
         To: tag_value
-  GroupName:
-    To: group_name
-  GroupType:
-    To: group_type
   TagRelation:
     To: tag_relation
-  RegionId:
-    Ignore: true
-  AckLabels:
-    Ignore: true
-  AckNamespaces:
-    Ignore: true
-  AckClusterConnectorId:
-    Ignore: true
 Attributes:
   GroupUuid:
     To: id

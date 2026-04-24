@@ -24,6 +24,12 @@ Properties:
         To: size
       SnapshotId:
         To: snapshot_id
+  Features:
+    To: features
+    Type: Map
+    Schema:
+      ImdsSupport:
+        Ignore: true
   ImageFamily:
     To: image_family
   ImageName:
@@ -38,16 +44,11 @@ Properties:
     To: resource_group_id
   SnapshotId:
     To: snapshot_id
-  Tag:
-    Ignore: true
   SourceRegionId:
     Ignore: true
-  Features:
-    To: features
-    Type: Map
-    Schema:
-      ImdsSupport:
-        Ignore: true
+  Tag:
+    To: tags
+    Handler: handle_tags
 Attributes:
   ImageId:
     To: id

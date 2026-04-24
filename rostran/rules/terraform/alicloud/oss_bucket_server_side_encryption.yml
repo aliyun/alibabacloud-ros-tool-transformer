@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_server_side_encryption
+  To: ALIYUN::OSS::Bucket
+Properties:
+  bucket:
+    To: BucketName
+  kms_data_encryption:
+    Ignore: true
+  kms_master_key_id:
+    To: ServerSideEncryptionConfiguration.KMSMasterKeyID
+  sse_algorithm:
+    To: ServerSideEncryptionConfiguration.SSEAlgorithm
+Attributes:
+  id:
+    To: Name

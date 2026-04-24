@@ -4,23 +4,23 @@ ResourceType:
   From: ALIYUN::ECD::NetworkPackage
   To: alicloud_ecd_network_package
 Properties:
+  AutoPay:
+    Ignore: true
+  AutoRenew:
+    Ignore: true
   Bandwidth:
     To: bandwidth
   InternetChargeType:
     To: internet_charge_type
   OfficeSiteId:
     To: office_site_id
-  PromotionId:
-    Ignore: true
-  AutoPay:
-    Ignore: true
   PayType:
     Ignore: true
-  AutoRenew:
+  Period:
     Ignore: true
   PeriodUnit:
     Ignore: true
-  Period:
+  PromotionId:
     Ignore: true
 Attributes:
   NetworkPackageId:

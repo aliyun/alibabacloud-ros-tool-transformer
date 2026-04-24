@@ -4,10 +4,14 @@ ResourceType:
   From: ALIYUN::SLB::LoadBalancer
   To: alicloud_slb_load_balancer
 Properties:
+  AddressIPVersion:
+    To: address_ip_version
   AddressType:
     To: address_type
   Bandwidth:
     To: bandwidth
+  DeletionProtection:
+    To: delete_protection
   InstanceChargeType:
     To: instance_charge_type
   InternetChargeType:
@@ -31,40 +35,36 @@ Properties:
     Handler: handle_tags
   VSwitchId:
     To: vswitch_id
-  DeletionProtection:
-    To: delete_protection
-  AddressIPVersion:
-    To: address_ip_version
   VpcId:
     Ignore: true
 Attributes:
-  LoadBalancerId:
-    To: id
+  AddressIPVersion:
+    Ignore: true
   AddressType:
     To: address_type
   Bandwidth:
     To: bandwidth
+  IpAddress:
+    To: address
+  LoadBalancerId:
+    To: id
   LoadBalancerName:
     To: load_balancer_name
   LoadBalancerSpec:
     To: load_balancer_spec
   MasterZoneId:
     To: master_zone_id
+  NetworkType:
+    Ignore: true
+  OrderId:
+    Ignore: true
+  PayType:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   SlaveZoneId:
     To: slave_zone_id
   VSwitchId:
     To: vswitch_id
-  IpAddress:
-    To: address
-  AddressIPVersion:
-    Ignore: true
-  OrderId:
-    Ignore: true
-  NetworkType:
-    Ignore: true
   VpcId:
-    Ignore: true
-  PayType:
     Ignore: true

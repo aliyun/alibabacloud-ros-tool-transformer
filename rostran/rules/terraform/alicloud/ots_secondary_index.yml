@@ -16,7 +16,8 @@ Properties:
   instance_name:
     To: InstanceName
   primary_keys:
-    Ignore: true
+    To: FieldSchemas
+    Type: List
   table_name:
     To: TableName
 Attributes:

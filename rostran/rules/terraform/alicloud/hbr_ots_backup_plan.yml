@@ -19,8 +19,7 @@ Properties:
   ots_backup_plan_name:
     To: PlanName
   ots_detail:
-    To: OtsDetail
-    Type: Map
+    To: OtsDetail.TableNames
   retention:
     To: Retention
   rule_name:

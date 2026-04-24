@@ -9,15 +9,15 @@ Properties:
   TargetId:
     To: target_id
 Attributes:
-  PolicyId:
-    To: policy_id
-  TargetId:
-    To: target_id
   AttachDate:
     Ignore: true
   Description:
     Ignore: true
-  PolicyType:
-    Ignore: true
+  PolicyId:
+    To: policy_id
   PolicyName:
     Ignore: true
+  PolicyType:
+    Ignore: true
+  TargetId:
+    To: target_id

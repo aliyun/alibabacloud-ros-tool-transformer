@@ -24,7 +24,7 @@ Properties:
   Timeout:
     Ignore: true
 Attributes:
-  SnapshotId:
-    To: id
   Arn:
     Ignore: true
+  SnapshotId:
+    To: id

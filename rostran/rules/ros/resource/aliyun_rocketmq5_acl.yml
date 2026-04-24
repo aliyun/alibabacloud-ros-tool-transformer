@@ -19,17 +19,19 @@ Properties:
   Username:
     To: username
 Attributes:
-  ResourceName:
+  ALIYUN::ROCKETMQ5::Acl:
+    Ignore: true
+  Actions:
     Ignore: true
   Decision:
-    Ignore: true
-  Username:
     Ignore: true
   InstanceId:
     Ignore: true
   IpWhitelists:
     Ignore: true
-  Actions:
+  ResourceName:
     Ignore: true
-  ALIYUN::ROCKETMQ5::Acl:
+  ResourceType:
+    Ignore: true
+  Username:
     Ignore: true

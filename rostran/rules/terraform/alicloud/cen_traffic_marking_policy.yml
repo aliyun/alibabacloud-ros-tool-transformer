@@ -1,0 +1,29 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_cen_traffic_marking_policy
+  To: ALIYUN::CEN::InterRegionTrafficQosPolicy
+Properties:
+  description:
+    To: InterRegionTrafficQosPolicyDescription
+  dry_run:
+    Ignore: true
+  force:
+    Ignore: true
+  marking_dscp:
+    Ignore: true
+  priority:
+    Ignore: true
+  traffic_marking_policy_name:
+    To: InterRegionTrafficQosPolicyName
+  traffic_match_rules:
+    Ignore: true
+  transit_router_id:
+    To: TransitRouterId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true
+  traffic_marking_policy_id:
+    To: InterRegionTrafficQosPolicyId

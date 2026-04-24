@@ -57,57 +57,57 @@ Properties:
   UserLanguage:
     To: user_language
 Attributes:
-  CacheRuleId:
-    To: cache_rule_id
-  ServeStale:
-    Ignore: true
-  IncludeCookie:
-    Ignore: true
-  EdgeCacheMode:
+  AdditionalCacheablePorts:
     Ignore: true
   BrowserCacheMode:
     Ignore: true
-  SiteVersion:
-    Ignore: true
-  Sequence:
-    Ignore: true
-  UserDeviceType:
-    Ignore: true
-  QueryStringMode:
-    Ignore: true
   BrowserCacheTtl:
     Ignore: true
-  CacheReserveEligibility:
-    Ignore: true
-  SortQueryStringForCache:
+  BypassCache:
     Ignore: true
   CacheDeceptionArmor:
     Ignore: true
-  EdgeStatusCodeCacheTtl:
+  CacheReserveEligibility:
     Ignore: true
-  ConfigType:
-    Ignore: true
-  EdgeCacheTtl:
-    Ignore: true
-  AdditionalCacheablePorts:
-    Ignore: true
-  QueryString:
-    Ignore: true
-  UserGeo:
-    Ignore: true
-  Rule:
-    Ignore: true
-  IncludeHeader:
-    Ignore: true
-  RuleEnable:
+  CacheRuleId:
+    To: cache_rule_id
+  CheckPresenceCookie:
     Ignore: true
   CheckPresenceHeader:
     Ignore: true
-  CheckPresenceCookie:
+  ConfigType:
+    Ignore: true
+  EdgeCacheMode:
+    Ignore: true
+  EdgeCacheTtl:
+    Ignore: true
+  EdgeStatusCodeCacheTtl:
+    Ignore: true
+  IncludeCookie:
+    Ignore: true
+  IncludeHeader:
+    Ignore: true
+  QueryString:
+    Ignore: true
+  QueryStringMode:
+    Ignore: true
+  Rule:
+    Ignore: true
+  RuleEnable:
     Ignore: true
   RuleName:
     Ignore: true
-  BypassCache:
+  Sequence:
+    Ignore: true
+  ServeStale:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  SortQueryStringForCache:
+    Ignore: true
+  UserDeviceType:
+    Ignore: true
+  UserGeo:
     Ignore: true
   UserLanguage:
     Ignore: true

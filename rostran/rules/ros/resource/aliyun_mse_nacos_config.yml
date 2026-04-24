@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   AppName:
     To: app_name
+  BetaIps:
+    Ignore: true
   Content:
     To: content
   DataId:
@@ -23,6 +25,3 @@ Properties:
     Handler: handle_tags
   Type:
     To: type
-  BetaIps:
-    Ignore: true
-Attributes: {}

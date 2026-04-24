@@ -4,6 +4,12 @@ ResourceType:
   From: ALIYUN::ROS::StackInstances
   To: alicloud_ros_stack_instance
 Properties:
+  AccountIds:
+    Ignore: true
+  DeploymentTargets:
+    Ignore: true
+  DisableRollback:
+    Ignore: true
   OperationDescription:
     To: operation_description
   OperationPreferences:
@@ -12,20 +18,14 @@ Properties:
   ParameterOverrides:
     To: parameter_overrides
     Handler: ros_parameters
+  RegionIds:
+    Ignore: true
   RetainStacks:
     To: retain_stacks
   StackGroupName:
     To: stack_group_name
   TimeoutInMinutes:
     To: timeout_in_minutes
-  AccountIds:
-    Ignore: true
-  DisableRollback:
-    Ignore: true
-  RegionIds:
-    Ignore: true
-  DeploymentTargets:
-    Ignore: true
 Attributes:
   LastOperationId:
     Ignore: true

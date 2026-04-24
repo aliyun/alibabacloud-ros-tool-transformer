@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::MaxCompute::Role
   To: alicloud_max_compute_role
 Properties:
+  Acl:
+    Ignore: true
   Policy:
     To: policy
   ProjectName:
@@ -12,10 +14,8 @@ Properties:
     To: role_name
   Type:
     To: type
-  Acl:
-    Ignore: true
 Attributes:
-  RoleName:
-    Ignore: true
   ProjectName:
+    Ignore: true
+  RoleName:
     Ignore: true

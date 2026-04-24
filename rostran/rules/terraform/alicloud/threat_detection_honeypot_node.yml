@@ -1,0 +1,22 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_honeypot_node
+  To: ALIYUN::ThreatDetection::HoneypotNode
+Properties:
+  allow_honeypot_access_internet:
+    To: AllowHoneypotAccessInternet
+  available_probe_num:
+    To: AvailableProbeNum
+  node_name:
+    To: NodeName
+  security_group_probe_ip_list:
+    To: SecurityGroupProbeIpList
+    Type: List
+Attributes:
+  id:
+    To: NodeId
+  create_time:
+    To: CreateTime
+  status:
+    Ignore: true

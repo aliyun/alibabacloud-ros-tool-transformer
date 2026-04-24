@@ -6,42 +6,42 @@ ResourceType:
 Properties:
   Certificate:
     To: certificate
-  SiteId:
-    To: site_id
   Name:
     Ignore: true
+  SiteId:
+    To: site_id
   ValidityDays:
     Ignore: true
 Attributes:
-  CreateTime:
-    To: create_time
-  NotAfter:
-    Ignore: true
-  Type:
-    Ignore: true
-  SAN:
-    Ignore: true
   Certificate:
-    Ignore: true
-  SiteId:
-    Ignore: true
-  NotBefore:
-    Ignore: true
-  SerialNumber:
-    Ignore: true
-  FingerprintSha256:
-    Ignore: true
-  Name:
     Ignore: true
   CommonName:
     Ignore: true
-  PubkeyAlgorithm:
+  CreateTime:
+    To: create_time
+  FingerprintSha256:
     Ignore: true
-  SignatureAlgorithm:
+  Issuer:
+    Ignore: true
+  Name:
+    Ignore: true
+  NotAfter:
+    Ignore: true
+  NotBefore:
     Ignore: true
   OriginCaCertificateId:
     Ignore: true
-  UpdateTime:
+  PubkeyAlgorithm:
     Ignore: true
-  Issuer:
+  SAN:
+    Ignore: true
+  SerialNumber:
+    Ignore: true
+  SignatureAlgorithm:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  Type:
+    Ignore: true
+  UpdateTime:
     Ignore: true

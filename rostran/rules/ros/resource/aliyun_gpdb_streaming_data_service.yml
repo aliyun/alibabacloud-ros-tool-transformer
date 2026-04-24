@@ -15,21 +15,21 @@ Properties:
 Attributes:
   CreateTime:
     To: create_time
-  ServiceId:
-    To: service_id
+  ModifyTime:
+    Ignore: true
   ServiceDescription:
     Ignore: true
+  ServiceId:
+    To: service_id
   ServiceIp:
-    Ignore: true
-  ServiceOwnerId:
     Ignore: true
   ServiceManaged:
     Ignore: true
-  ServiceSpec:
+  ServiceName:
+    Ignore: true
+  ServiceOwnerId:
     Ignore: true
   ServicePort:
     Ignore: true
-  ServiceName:
-    Ignore: true
-  ModifyTime:
+  ServiceSpec:
     Ignore: true

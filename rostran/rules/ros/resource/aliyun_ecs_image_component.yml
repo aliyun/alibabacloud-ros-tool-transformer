@@ -10,6 +10,8 @@ Properties:
     To: content
   Description:
     To: description
+  Name:
+    To: image_component_name
   ResourceGroupId:
     To: resource_group_id
   SystemType:
@@ -17,8 +19,6 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  Name:
-    To: image_component_name
 Attributes:
   ImageComponentId:
     To: id

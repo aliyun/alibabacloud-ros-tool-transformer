@@ -4,18 +4,17 @@ ResourceType:
   From: ALIYUN::OSS::Website
   To: alicloud_oss_bucket_website
 Properties:
+  BucketName:
+    To: bucket
   WebsiteConfiguration:
     To: access_key_id
   WebsiteConfiguration$$0:
     To: taggings
     Type: Map
     Schema:
+      ErrorDocument:
+        Ignore: true
       IndexDocument:
         Ignore: true
       RoutingRules:
         Ignore: true
-      ErrorDocument:
-        Ignore: true
-  BucketName:
-    To: bucket
-Attributes: {}

@@ -8,8 +8,6 @@ Properties:
     To: AutoPublishRouteEnabled
   cen_id:
     To: CenId
-  create_time:
-    Ignore: true
   dry_run:
     Ignore: true
   force_delete:
@@ -22,14 +20,10 @@ Properties:
     To: RouteTableAssociationEnabled
   route_table_propagation_enabled:
     To: RouteTablePropagationEnabled
-  status:
-    Ignore: true
   tags:
     Ignore: true
   transit_router_attachment_description:
     To: TransitRouterAttachmentDescription
-  transit_router_attachment_id:
-    Ignore: true
   transit_router_attachment_name:
     To: TransitRouterAttachmentName
   transit_router_id:
@@ -47,41 +41,17 @@ Properties:
     Type: List
     Schema:
       vswitch_id:
-        Ignore: true
+        To: VSwitchId
       zone_id:
         To: ZoneId
 Attributes:
   id:
     Ignore: true
-  auto_publish_route_enabled:
-    Ignore: true
-  cen_id:
-    To: CenId
   create_time:
-    Ignore: true
-  payment_type:
     Ignore: true
   region_id:
     Ignore: true
-  resource_type:
-    To: ResourceType
   status:
     Ignore: true
-  tags:
-    Ignore: true
-  transit_router_attachment_description:
-    To: TransitRouterAttachmentDescription
   transit_router_attachment_id:
     To: TransitRouterAttachmentId
-  transit_router_attachment_name:
-    To: TransitRouterAttachmentName
-  transit_router_id:
-    To: TransitRouterId
-  transit_router_vpc_attachment_name:
-    Ignore: true
-  transit_router_vpc_attachment_options:
-    Ignore: true
-  vpc_id:
-    To: VpcId
-  vpc_owner_id:
-    To: VpcOwnerId

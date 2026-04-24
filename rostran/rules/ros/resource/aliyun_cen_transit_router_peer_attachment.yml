@@ -8,24 +8,20 @@ Properties:
     To: auto_publish_route_enabled
   Bandwidth:
     To: bandwidth
+  BandwidthType:
+    To: bandwidth_type
   CenBandwidthPackageId:
     To: cen_bandwidth_package_id
   CenId:
     To: cen_id
+  DefaultLinkType:
+    To: default_link_type
+  DeletionForce:
+    Ignore: true
   PeerTransitRouterId:
     To: peer_transit_router_id
   PeerTransitRouterRegionId:
     To: peer_transit_router_region_id
-  TransitRouterAttachmentDescription:
-    To: transit_router_attachment_description
-  TransitRouterAttachmentName:
-    To: transit_router_attachment_name
-  TransitRouterId:
-    To: transit_router_id
-  BandwidthType:
-    To: bandwidth_type
-  DefaultLinkType:
-    To: default_link_type
   RouteTableAssociationEnabled:
     To: route_table_association_enabled
   RouteTablePropagationEnabled:
@@ -33,10 +29,14 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
+  TransitRouterAttachmentDescription:
+    To: transit_router_attachment_description
+  TransitRouterAttachmentName:
+    To: transit_router_attachment_name
   TransitRouterAttachmentName$$0:
     To: transit_router_peer_attachment_name
-  DeletionForce:
-    Ignore: true
+  TransitRouterId:
+    To: transit_router_id
 Attributes:
   AutoPublishRouteEnabled:
     To: auto_publish_route_enabled
@@ -46,8 +46,14 @@ Attributes:
     To: cen_bandwidth_package_id
   CenId:
     To: cen_id
+  ClientToken:
+    Ignore: true
+  GeographicSpanId:
+    Ignore: true
   PeerTransitRouterId:
     To: peer_transit_router_id
+  PeerTransitRouterOwnerId:
+    Ignore: true
   PeerTransitRouterRegionId:
     To: peer_transit_router_region_id
   ResourceType:
@@ -60,9 +66,3 @@ Attributes:
     To: transit_router_attachment_name
   TransitRouterId:
     To: transit_router_id
-  GeographicSpanId:
-    Ignore: true
-  ClientToken:
-    Ignore: true
-  PeerTransitRouterOwnerId:
-    Ignore: true

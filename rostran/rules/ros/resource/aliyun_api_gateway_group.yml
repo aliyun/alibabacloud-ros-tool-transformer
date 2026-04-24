@@ -8,18 +8,18 @@ Properties:
     To: base_path
   Description:
     To: description
-  InstanceId:
-    To: instance_id
   GroupName:
     To: name
+  InstanceId:
+    To: instance_id
+  InternetEnable:
+    Ignore: true
+  PassthroughHeaders:
+    Ignore: true
   Tags:
     Ignore: true
   VpcIntranetEnable:
     To: vpc_intranet_enable
-  PassthroughHeaders:
-    Ignore: true
-  InternetEnable:
-    Ignore: true
 Attributes:
   GroupId:
     To: id

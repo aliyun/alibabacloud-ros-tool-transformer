@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_ai_instance
+  To: ALIYUN::RDS::DBInstance
+Properties:
+  app_name:
+    Ignore: true
+  app_type:
+    Ignore: true
+  auth_config_list:
+    Ignore: true
+  ca_type:
+    Ignore: true
+  dashboard_password:
+    Ignore: true
+  database_password:
+    To: MasterUserPassword
+  db_instance_name:
+    Ignore: true
+  initialize_with_existing_data:
+    Ignore: true
+  public_endpoint_enabled:
+    To: AllocatePublicConnection
+  public_network_access_enabled:
+    Ignore: true
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  ssl_enabled:
+    Ignore: true
+  status:
+    Ignore: true
+  storage_config_list:
+    Ignore: true
+Attributes:
+  id:
+    To: DBInstanceId

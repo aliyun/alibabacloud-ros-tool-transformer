@@ -6,10 +6,8 @@ ResourceType:
 Properties:
   AutoRenewEnabled:
     To: auto_renew
-  VpcId:
-    To: default_vpc_id
-  VSwitchId:
-    To: default_vswitch_id
+  Name:
+    To: resource_group_name
   PaymentDuration:
     To: payment_duration
   PaymentDurationUnit:
@@ -18,15 +16,17 @@ Properties:
     To: payment_type
   Remark:
     To: remark
-  Name:
-    To: resource_group_name
+  ResourceGroupId:
+    To: resource_group_id
   Spec:
     To: specification
   Tags:
     To: tags
     Handler: handle_tags
-  ResourceGroupId:
-    To: resource_group_id
+  VSwitchId:
+    To: default_vswitch_id
+  VpcId:
+    To: default_vpc_id
 Attributes:
   Id:
     To: id

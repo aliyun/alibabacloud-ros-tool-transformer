@@ -8,6 +8,8 @@ Properties:
     To: description
   EventBusName:
     To: event_bus_name
+  FilterPattern:
+    To: filter_pattern
   RuleName:
     To: rule_name
   Status:
@@ -18,6 +20,8 @@ Properties:
     Schema:
       Endpoint:
         To: endpoint
+      Id:
+        Ignore: true
       ParamList:
         To: param_list
         Type: List
@@ -34,14 +38,10 @@ Properties:
         To: push_retry_strategy
       Type:
         To: type
-      Id:
-        Ignore: true
-  FilterPattern:
-    To: filter_pattern
 Attributes:
   EventBusName:
     To: event_bus_name
-  RuleName:
-    To: rule_name
   RuleARN:
     Ignore: true
+  RuleName:
+    To: rule_name

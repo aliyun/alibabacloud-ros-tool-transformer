@@ -21,13 +21,13 @@ Properties:
   SlsGroupName:
     To: sls_group_name
 Attributes:
-  SlsGroupName:
-    To: id
+  CreateTime:
+    Ignore: true
   SlsGroupConfig:
     To: sls_group_config
   SlsGroupDescription:
     To: sls_group_description
+  SlsGroupName:
+    To: id
   SlsGroupName$$0:
     To: sls_group_name
-  CreateTime:
-    Ignore: true

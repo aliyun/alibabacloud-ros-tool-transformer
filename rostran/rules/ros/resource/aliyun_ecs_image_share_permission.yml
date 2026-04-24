@@ -4,14 +4,14 @@ ResourceType:
   From: ALIYUN::ECS::ImageSharePermission
   To: alicloud_image_share_permission
 Properties:
+  Accounts:
+    To: account_id
   ImageId:
     To: image_id
   IsPublic:
     Ignore: true
   KeepPermission:
     Ignore: true
-  Accounts:
-    To: account_id
 Attributes:
   ImageId:
     To: image_id
