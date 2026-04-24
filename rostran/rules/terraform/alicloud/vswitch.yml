@@ -36,3 +36,5 @@ Attributes:
     To: Ipv6CidrBlock
   status:
     Ignore: true
+  vpc_id:
+    To: VpcId

@@ -13,7 +13,7 @@ Properties:
   client_node_spec:
     Ignore: true
   data_node_amount:
-    Ignore: true
+    To: DataNode.Amount
   data_node_configuration:
     To: DataNode
     Type: Map
@@ -31,15 +31,15 @@ Properties:
       spec:
         To: Spec
   data_node_disk_encrypted:
-    Ignore: true
+    To: DataNode.DiskEncryption
   data_node_disk_performance_level:
-    Ignore: true
+    To: DataNode.PerformanceLevel
   data_node_disk_size:
-    Ignore: true
+    To: DataNode.DiskSize
   data_node_disk_type:
-    Ignore: true
+    To: DataNode.DiskType
   data_node_spec:
-    Ignore: true
+    To: DataNode.Spec
   description:
     To: Description
   enable_kibana_private_network:
@@ -65,7 +65,7 @@ Properties:
       spec:
         To: Spec
   kibana_node_spec:
-    Ignore: true
+    To: KibanaNode.Spec
   kibana_private_security_group_id:
     Ignore: true
   kibana_private_whitelist:

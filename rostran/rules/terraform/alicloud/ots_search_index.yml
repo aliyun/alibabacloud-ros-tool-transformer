@@ -62,7 +62,6 @@ Properties:
           sorter:
             To: Sorters
             Handler: ots_search_index_sorters
-    Ignore: true
   sorter:
     To: IndexSort
     Type: Map
