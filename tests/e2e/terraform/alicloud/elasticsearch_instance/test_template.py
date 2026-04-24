@@ -11,10 +11,17 @@ tpl = {
         "alicloud_elasticsearch_instance.default": {
             "Type": "ALIYUN::ElasticSearch::Instance",
             "Properties": {
-                "DataNode": "elasticsearch.sn2ne.large",
+                "DataNode": {
+                    "Amount": 2,
+                    "DiskSize": 20,
+                    "Spec": "elasticsearch.sn2ne.large",
+                    "DiskType": "cloud_ssd"
+                },
                 "Description": "tf-example",
                 "InstanceChargeType": "PostPaid",
-                "KibanaNode": "elasticsearch.sn2ne.large",
+                "KibanaNode": {
+                    "Spec": "elasticsearch.sn2ne.large"
+                },
                 "Password": "******",
                 "Tags": [
                     {"Key": "Created", "Value": "TF"},
