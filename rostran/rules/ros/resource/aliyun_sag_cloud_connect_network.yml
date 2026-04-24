@@ -13,7 +13,7 @@ Properties:
   Tags:
     Ignore: true
 Attributes:
-  CcnId:
-    To: id
   Arn:
     Ignore: true
+  CcnId:
+    To: id

@@ -33,33 +33,33 @@ Properties:
   SrcPortRange:
     To: src_port_range
 Attributes:
-  RuleId:
-    To: rule_id
+  DstCidr:
+    Ignore: true
+  DstIpv6Cidr:
+    Ignore: true
   DstPortRange:
+    Ignore: true
+  MatchDscp:
+    Ignore: true
+  Priority:
+    Ignore: true
+  Protocol:
+    Ignore: true
+  QosId:
     Ignore: true
   QueueId:
     Ignore: true
   RemarkingDscp:
     Ignore: true
-  SrcCidr:
-    Ignore: true
-  DstIpv6Cidr:
-    Ignore: true
-  DstCidr:
-    Ignore: true
   RuleDescription:
+    Ignore: true
+  RuleId:
+    To: rule_id
+  RuleName:
+    Ignore: true
+  SrcCidr:
     Ignore: true
   SrcIpv6Cidr:
     Ignore: true
-  Protocol:
-    Ignore: true
-  RuleName:
-    Ignore: true
-  Priority:
-    Ignore: true
   SrcPortRange:
-    Ignore: true
-  QosId:
-    Ignore: true
-  MatchDscp:
     Ignore: true

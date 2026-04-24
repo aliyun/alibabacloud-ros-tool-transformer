@@ -4,22 +4,22 @@ ResourceType:
   From: ALIYUN::DataWorks::Route
   To: alicloud_data_works_network
 Properties:
-  DwResourceGroupId:
-    To: dw_resource_group_id
   DestinationCidr:
     Ignore: true
+  DwResourceGroupId:
+    To: dw_resource_group_id
   NetworkId:
     Ignore: true
 Attributes:
-  RouteId:
-    To: id
   CreateTime:
     To: create_time
-  ResourceId:
-    Ignore: true
   DestinationCidr:
     Ignore: true
   DwResourceGroupId:
     Ignore: true
   NetworkId:
     Ignore: true
+  ResourceId:
+    Ignore: true
+  RouteId:
+    To: id

@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::VPC::PeeringRouterInterfaceConnection
   To: alicloud_router_interface_connection
 Properties:
+  OppositeInterfaceId:
+    To: opposite_interface_id
   RouterInterfaceId:
     To: interface_id
+Attributes:
   OppositeInterfaceId:
     To: opposite_interface_id
-Attributes:
   RouterInterfaceId:
     To: id
-  OppositeInterfaceId:
-    To: opposite_interface_id

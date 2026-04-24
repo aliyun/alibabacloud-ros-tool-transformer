@@ -8,6 +8,8 @@ Properties:
     To: access_region_id
   CenId:
     To: cen_id
+  ConflictIgnore:
+    Ignore: true
   Description:
     To: description
   Host:
@@ -16,8 +18,6 @@ Properties:
     To: host_region_id
   HostVpcId:
     To: host_vpc_id
-  ConflictIgnore:
-    Ignore: true
 Attributes:
   Id:
     To: id

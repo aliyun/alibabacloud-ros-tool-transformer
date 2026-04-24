@@ -16,6 +16,22 @@ Properties:
         To: name
       Version:
         Ignore: true
+  ClusterSpec:
+    Ignore: true
+  DeleteOptions:
+    Ignore: true
+  DeletionProtection:
+    Ignore: true
+  EncryptionProviderKey:
+    Ignore: true
+  EndpointPublicAccess:
+    Ignore: true
+  IpStack:
+    Ignore: true
+  KubernetesVersion:
+    Ignore: true
+  MaintenanceWindow:
+    Ignore: true
   Name:
     To: name
   PrivateZone:
@@ -26,57 +42,41 @@ Properties:
     To: security_group_id
   ServiceCidr:
     To: service_cidr
+  ServiceDiscoveryTypes:
+    Ignore: true
+  SnatEntry:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
+  TimeZone:
+    Ignore: true
+  VSwitchIds:
+    Ignore: true
   VpcId:
     To: vpc_id
   ZoneId:
     To: zone_id
-  VSwitchIds:
-    Ignore: true
-  EncryptionProviderKey:
-    Ignore: true
-  KubernetesVersion:
-    Ignore: true
-  ServiceDiscoveryTypes:
-    Ignore: true
-  ClusterSpec:
-    Ignore: true
-  TimeZone:
-    Ignore: true
-  MaintenanceWindow:
-    Ignore: true
-  DeletionProtection:
-    Ignore: true
-  SnatEntry:
-    Ignore: true
-  EndpointPublicAccess:
-    Ignore: true
-  DeleteOptions:
-    Ignore: true
-  IpStack:
-    Ignore: true
 Attributes:
+  APIServerSLBId:
+    Ignore: true
   ClusterId:
     To: id
-  TaskId:
-    Ignore: true
-  WorkerRamRoleName:
+  DefaultUserKubeConfig:
     Ignore: true
   IngressSLBId:
-    Ignore: true
-  ScalingConfigurationId:
-    Ignore: true
-  APIServerSLBId:
     Ignore: true
   Nodes:
     Ignore: true
   PrivateUserKubConfig:
     Ignore: true
+  ScalingConfigurationId:
+    Ignore: true
   ScalingGroupId:
     Ignore: true
   ScalingRuleId:
     Ignore: true
-  DefaultUserKubeConfig:
+  TaskId:
+    Ignore: true
+  WorkerRamRoleName:
     Ignore: true

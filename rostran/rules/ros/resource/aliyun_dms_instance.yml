@@ -47,10 +47,10 @@ Properties:
   VpcId:
     To: vpc_id
 Attributes:
-  InstanceId:
-    To: id
   Host:
     To: host
+  InstanceId:
+    To: id
   InstanceId$$0:
     To: instance_id
   Port:

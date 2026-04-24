@@ -16,7 +16,7 @@ Properties:
   TlsVersions:
     To: tls_versions
 Attributes:
-  SecurityPolicyId:
-    To: id
   Arn:
     Ignore: true
+  SecurityPolicyId:
+    To: id

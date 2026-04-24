@@ -11,9 +11,9 @@ Properties:
   VpcId:
     To: vpc_id
 Attributes:
-  RouterId:
-    To: id
   DstCidrBlock:
     To: dst_cidr_block
+  RouterId:
+    To: id
   RouterId$$0:
     To: router_id

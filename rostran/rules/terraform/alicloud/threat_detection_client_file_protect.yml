@@ -1,0 +1,28 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_client_file_protect
+  To: ALIYUN::ThreatDetection::ClientFileProtect
+Properties:
+  alert_level:
+    To: AlertLevel
+  file_ops:
+    To: FileOps
+    Type: List
+  file_paths:
+    To: FilePaths
+    Type: List
+  proc_paths:
+    To: ProcPaths
+    Type: List
+  rule_action:
+    To: RuleAction
+  rule_name:
+    To: RuleName
+  status:
+    To: Status
+  switch_id:
+    To: SwitchId
+Attributes:
+  id:
+    To: RuleId

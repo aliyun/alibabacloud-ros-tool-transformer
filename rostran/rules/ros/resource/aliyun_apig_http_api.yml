@@ -15,17 +15,17 @@ Properties:
   Type:
     To: type
 Attributes:
-  HttpApiId:
-    To: id
-  Protocols:
+  BasePath:
     Ignore: true
   Description:
     Ignore: true
-  HttpApiName:
-    Ignore: true
   Environments:
     Ignore: true
-  BasePath:
+  HttpApiId:
+    To: id
+  HttpApiName:
+    Ignore: true
+  Protocols:
     Ignore: true
   Type:
     Ignore: true

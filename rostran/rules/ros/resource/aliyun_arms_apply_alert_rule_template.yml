@@ -6,8 +6,7 @@ ResourceType:
 Properties:
   ClusterIds:
     To: cluster_id
-  Update:
-    Ignore: true
   TemplateIds:
     Ignore: true
-Attributes: {}
+  Update:
+    Ignore: true

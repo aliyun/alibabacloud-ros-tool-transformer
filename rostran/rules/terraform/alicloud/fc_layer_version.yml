@@ -12,16 +12,13 @@ Properties:
   layer_name:
     To: LayerName
   oss_bucket_name:
-    To: Code
-    Type: Map
+    To: Code.OssBucketName
   oss_object_name:
-    To: Code
-    Type: Map
+    To: Code.OssObjectName
   skip_destroy:
     Ignore: true
   zip_file:
-    To: Code
-    Type: Map
+    To: Code.ZipFile
 Attributes:
   id:
     Ignore: true

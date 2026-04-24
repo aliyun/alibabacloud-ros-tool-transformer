@@ -4,10 +4,18 @@ ResourceType:
   From: ALIYUN::CEN::CenBandwidthPackage
   To: alicloud_cen_bandwidth_package
 Properties:
+  AutoPay:
+    Ignore: true
+  AutoRenew:
+    To: auto_renew
+  AutoRenewDuration:
+    Ignore: true
   Bandwidth:
     To: bandwidth
   BandwidthPackageChargeType:
     To: charge_type
+  BandwidthPackageChargeType$$0:
+    To: payment_type
   Description:
     To: description
   GeographicRegionAId:
@@ -16,24 +24,16 @@ Properties:
     To: geographic_region_b_id
   Name:
     To: name
-  BandwidthPackageChargeType$$0:
-    To: payment_type
   Period:
     To: period
-  Tags:
-    Ignore: true
-  AutoPay:
-    Ignore: true
-  AutoRenew:
-    To: auto_renew
   PricingCycle:
-    Ignore: true
-  AutoRenewDuration:
     Ignore: true
   ResourceGroupId:
     Ignore: true
+  Tags:
+    Ignore: true
 Attributes:
-  CenBandwidthPackageId:
-    To: id
   Arn:
     Ignore: true
+  CenBandwidthPackageId:
+    To: id

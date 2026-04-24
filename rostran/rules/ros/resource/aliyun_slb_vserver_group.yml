@@ -4,36 +4,36 @@ ResourceType:
   From: ALIYUN::SLB::VServerGroup
   To: alicloud_slb_server_group
 Properties:
-  LoadBalancerId:
-    To: load_balancer_id
-  VServerGroupName:
-    To: name
   BackendServers:
     To: servers
     Type: List
     Schema:
+      Description:
+        Ignore: true
       Port:
         To: port
       ServerId:
         To: server_ids
         Handler: select_first
-      Weight:
-        To: weight
-      Description:
+      ServerIp:
         Ignore: true
       Type:
         Ignore: true
-      ServerIp:
-        Ignore: true
+      Weight:
+        To: weight
+  LoadBalancerId:
+    To: load_balancer_id
   Tags:
     To: tags
     Handler: handle_tags
+  VServerGroupName:
+    To: name
 Attributes:
-  VServerGroupId:
-    To: id
-  LoadBalancerId:
-    To: load_balancer_id
   Arn:
     Ignore: true
   BackendServers:
     Ignore: true
+  LoadBalancerId:
+    To: load_balancer_id
+  VServerGroupId:
+    To: id

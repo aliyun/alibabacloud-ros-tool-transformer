@@ -8,8 +8,7 @@ Properties:
     To: domain
   InstanceId:
     To: instance_id
-  ServiceOn:
-    To: status
   Region:
     Ignore: true
-Attributes: {}
+  ServiceOn:
+    To: status

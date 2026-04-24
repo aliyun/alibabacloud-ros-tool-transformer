@@ -8,12 +8,12 @@ Properties:
     To: destination_cidrblock
   NextHopId:
     To: nexthop_id
+  NextHopList:
+    Ignore: true
   NextHopType:
     To: nexthop_type
   RouteTableId:
     To: route_table_id
-  NextHopList:
-    Ignore: true
 Attributes:
   RouteEntryId:
     To: id

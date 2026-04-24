@@ -1,0 +1,19 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::SLS::EtlV2
+  To: alicloud_log_ingestion
+Properties:
+  Configuration:
+    Ignore: true
+  Description:
+    To: description
+  DisplayName:
+    To: display_name
+  Name:
+    To: ingestion_name
+  Project:
+    Ignore: true
+Attributes:
+  Name:
+    To: id

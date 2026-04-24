@@ -10,6 +10,8 @@ Properties:
     To: health_check_connect_port
   HealthCheckHost:
     To: health_check_host
+  HealthCheckHttpVersion:
+    To: health_check_http_version
   HealthCheckInterval:
     To: health_check_interval
   HealthCheckMethod:
@@ -24,12 +26,10 @@ Properties:
     To: health_check_timeout
   HealthyThreshold:
     To: healthy_threshold
-  UnhealthyThreshold:
-    To: unhealthy_threshold
-  HealthCheckHttpVersion:
-    To: health_check_http_version
   ResourceGroupId:
     To: resource_group_id
+  UnhealthyThreshold:
+    To: unhealthy_threshold
 Attributes:
   HealthCheckTemplateId:
     To: id

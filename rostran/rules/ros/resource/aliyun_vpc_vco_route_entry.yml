@@ -4,18 +4,18 @@ ResourceType:
   From: ALIYUN::VPC::VcoRouteEntry
   To: alicloud_vpn_gateway_vco_route
 Properties:
+  Description:
+    Ignore: true
   NextHop:
     To: next_hop
+  OverlayMode:
+    To: overlay_mode
   RouteDest:
     To: route_dest
   VpnConnectionId:
     To: vpn_connection_id
   Weight:
     To: weight
-  Description:
-    Ignore: true
-  OverlayMode:
-    To: overlay_mode
 Attributes:
   VpnConnectionId:
     Ignore: true

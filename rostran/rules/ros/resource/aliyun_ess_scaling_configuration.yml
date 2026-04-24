@@ -4,42 +4,54 @@ ResourceType:
   From: ALIYUN::ESS::ScalingConfiguration
   To: alicloud_ess_scaling_configuration
 Properties:
+  Affinity:
+    Ignore: true
+  Cpu:
+    Ignore: true
   CreditSpecification:
     To: credit_specification
+  DedicatedHostId:
+    Ignore: true
+  DeploymentSetId:
+    Ignore: true
   DiskMappings:
     To: data_disk
     Type: List
     Schema:
-      Size:
-        To: Size
       AutoSnapshotPolicyId:
         To: auto_snapshot_policy_id
+      BurstingEnabled:
+        Ignore: true
+      Categories:
+        Ignore: true
       Category:
         To: category
+      DeleteWithInstance:
+        Ignore: true
       Description:
         To: description
       Device:
         To: device
+      DiskName:
+        To: name
       Encrypted:
         To: encrypted
       KMSKeyId:
         To: kms_key_id
-      DiskName:
-        To: name
-      SnapshotId:
-        To: snapshot_id
-      BurstingEnabled:
-        Ignore: true
       PerformanceLevel:
-        Ignore: true
-      Categories:
         Ignore: true
       ProvisionedIops:
         Ignore: true
-      DeleteWithInstance:
-        Ignore: true
+      Size:
+        To: Size
+      SnapshotId:
+        To: snapshot_id
   HostName:
     To: host_name
+  HpcClusterId:
+    Ignore: true
+  ImageFamily:
+    Ignore: true
   ImageId:
     To: image_id
   ImageName:
@@ -52,109 +64,6 @@ Properties:
     To: instance_ids
   InstanceName:
     To: instance_name
-  InstanceType:
-    To: instance_type
-  InstanceTypes:
-    To: instance_types
-  InternetChargeType:
-    To: internet_charge_type
-  InternetMaxBandwidthIn:
-    To: internet_max_bandwidth_in
-  InternetMaxBandwidthOut:
-    To: internet_max_bandwidth_out
-  IoOptimized:
-    To: io_optimized
-  KeyPairName:
-    To: key_name
-  Password:
-    To: password
-  PasswordInherit:
-    To: password_inherit
-  ResourceGroupId:
-    To: resource_group_id
-  RamRoleName:
-    To: role_name
-  ScalingConfigurationName:
-    To: scaling_configuration_name
-  ScalingGroupId:
-    To: scaling_group_id
-  SecurityEnhancementStrategy:
-    To: security_enhancement_strategy
-  SecurityGroupId:
-    To: security_group_id
-  SecurityGroupIds:
-    To: security_group_ids
-  SpotDuration:
-    To: spot_duration
-  SpotStrategy:
-    To: spot_strategy
-  SystemDiskAutoSnapshotPolicyId:
-    To: system_disk_auto_snapshot_policy_id
-  SystemDiskCategory:
-    To: system_disk_category
-  SystemDiskDescription:
-    To: system_disk_description
-  SystemDiskEncryptAlgorithm:
-    To: system_disk_encrypt_algorithm
-  SystemDiskEncrypted:
-    To: system_disk_encrypted
-  SystemDiskPerformanceLevel:
-    To: system_disk_performance_level
-  SystemDiskProvisionedIops:
-    To: system_disk_provisioned_iops
-  SystemDiskSize:
-    To: system_disk_size
-  TagList:
-    To: tags
-    Handler: handle_tags
-  UserData:
-    To: user_data
-  SystemDiskCategories:
-    Ignore: true
-  DeploymentSetId:
-    Ignore: true
-  PrivatePoolOptions:
-    Ignore: true
-  Tenancy:
-    Ignore: true
-  LoadBalancerWeight:
-    Ignore: true
-  SystemDiskKMSKeyId:
-    To: system_disk_kms_key_id
-  Cpu:
-    Ignore: true
-  ZoneId:
-    Ignore: true
-  SpotPriceLimitForInstanceType:
-    Ignore: true
-  Ipv6AddressCount:
-    Ignore: true
-  InstanceTypeOverrides:
-    To: instance_type_override
-    Type: List
-    Schema:
-      InstanceType:
-        To: instance_type
-      WeightedCapacity:
-        To: weighted_capacity
-  HpcClusterId:
-    Ignore: true
-  Memory:
-    Ignore: true
-  SpotInterruptionBehavior:
-    Ignore: true
-  DedicatedHostId:
-    Ignore: true
-  SystemDiskBurstingEnabled:
-    Ignore: true
-  Affinity:
-    Ignore: true
-  SpotPriceLimit:
-    To: spot_price_limit
-  ImageFamily:
-    Ignore: true
-  SystemDiskDiskName:
-    To: system_disk_name
   InstancePatternInfos:
     To: instance_pattern_info
     Type: List
@@ -173,6 +82,97 @@ Properties:
         To: max_price
       Memory:
         To: memory
+  InstanceType:
+    To: instance_type
+  InstanceTypeOverrides:
+    To: instance_type_override
+    Type: List
+    Schema:
+      InstanceType:
+        To: instance_type
+      WeightedCapacity:
+        To: weighted_capacity
+  InstanceTypes:
+    To: instance_types
+  InternetChargeType:
+    To: internet_charge_type
+  InternetMaxBandwidthIn:
+    To: internet_max_bandwidth_in
+  InternetMaxBandwidthOut:
+    To: internet_max_bandwidth_out
+  IoOptimized:
+    To: io_optimized
+  Ipv6AddressCount:
+    Ignore: true
+  KeyPairName:
+    To: key_name
+  LoadBalancerWeight:
+    Ignore: true
+  Memory:
+    Ignore: true
+  Password:
+    To: password
+  PasswordInherit:
+    To: password_inherit
+  PrivatePoolOptions:
+    Ignore: true
+  RamRoleName:
+    To: role_name
+  ResourceGroupId:
+    To: resource_group_id
+  ScalingConfigurationName:
+    To: scaling_configuration_name
+  ScalingGroupId:
+    To: scaling_group_id
+  SecurityEnhancementStrategy:
+    To: security_enhancement_strategy
+  SecurityGroupId:
+    To: security_group_id
+  SecurityGroupIds:
+    To: security_group_ids
+  SpotDuration:
+    To: spot_duration
+  SpotInterruptionBehavior:
+    Ignore: true
+  SpotPriceLimit:
+    To: spot_price_limit
+  SpotPriceLimitForInstanceType:
+    Ignore: true
+  SpotStrategy:
+    To: spot_strategy
+  SystemDiskAutoSnapshotPolicyId:
+    To: system_disk_auto_snapshot_policy_id
+  SystemDiskBurstingEnabled:
+    Ignore: true
+  SystemDiskCategories:
+    Ignore: true
+  SystemDiskCategory:
+    To: system_disk_category
+  SystemDiskDescription:
+    To: system_disk_description
+  SystemDiskDiskName:
+    To: system_disk_name
+  SystemDiskEncryptAlgorithm:
+    To: system_disk_encrypt_algorithm
+  SystemDiskEncrypted:
+    To: system_disk_encrypted
+  SystemDiskKMSKeyId:
+    To: system_disk_kms_key_id
+  SystemDiskPerformanceLevel:
+    To: system_disk_performance_level
+  SystemDiskProvisionedIops:
+    To: system_disk_provisioned_iops
+  SystemDiskSize:
+    To: system_disk_size
+  TagList:
+    To: tags
+    Handler: handle_tags
+  Tenancy:
+    Ignore: true
+  UserData:
+    To: user_data
+  ZoneId:
+    Ignore: true
 Attributes:
   ScalingConfigurationId:
     To: id

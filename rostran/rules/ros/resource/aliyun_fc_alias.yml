@@ -4,6 +4,10 @@ ResourceType:
   From: ALIYUN::FC::Alias
   To: alicloud_fc_alias
 Properties:
+  AdditionalVersion:
+    Ignore: true
+  AdditionalWeight:
+    Ignore: true
   AliasName:
     To: alias_name
   Description:
@@ -12,10 +16,6 @@ Properties:
     To: service_name
   VersionId:
     To: service_version
-  AdditionalWeight:
-    Ignore: true
-  AdditionalVersion:
-    Ignore: true
 Attributes:
   AliasName:
     To: alias_name

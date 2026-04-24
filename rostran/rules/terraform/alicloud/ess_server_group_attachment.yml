@@ -7,16 +7,19 @@ Properties:
   force_attach:
     To: ForceAttach
   port:
-    Ignore: true
+    To: ServerGroups
+    Type: List
   scaling_group_id:
     To: ScalingGroupId
   server_group_id:
     To: ServerGroups
     Type: List
   type:
-    Ignore: true
+    To: ServerGroups
+    Type: List
   weight:
-    Ignore: true
+    To: ServerGroups
+    Type: List
 Attributes:
   id:
     Ignore: true

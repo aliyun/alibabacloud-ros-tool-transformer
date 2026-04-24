@@ -8,14 +8,14 @@ Properties:
     To: auto_create
   DefaultVisibility:
     To: default_visibility
+  InstanceId:
+    Ignore: true
   Namespace:
     To: name
-  InstanceId:
-    Ignore: true
 Attributes:
-  NamespaceId:
-    To: id
   InstanceId:
     Ignore: true
   Namespace:
     Ignore: true
+  NamespaceId:
+    To: id

@@ -4,48 +4,48 @@ ResourceType:
   From: ALIYUN::ESA::SiteOriginClientCertificate
   To: alicloud_esa_site_origin_client_certificate
 Properties:
-  SiteId:
-    To: site_id
-  ValidityDays:
-    Ignore: true
   Certificate:
-    Ignore: true
-  SiteOriginClientCertificateName:
     Ignore: true
   PrivateKey:
     Ignore: true
-Attributes:
-  CreateTime:
-    To: create_time
-  NotAfter:
-    Ignore: true
-  Type:
-    Ignore: true
-  SiteName:
-    Ignore: true
-  SAN:
-    Ignore: true
-  Certificate:
-    Ignore: true
-  SiteOriginClientCertificateId:
-    Ignore: true
   SiteId:
+    To: site_id
+  SiteOriginClientCertificateName:
     Ignore: true
-  NotBefore:
+  ValidityDays:
     Ignore: true
-  SerialNumber:
-    Ignore: true
-  FingerprintSha256:
+Attributes:
+  Certificate:
     Ignore: true
   CommonName:
     Ignore: true
-  PubkeyAlgorithm:
-    Ignore: true
-  SignatureAlgorithm:
-    Ignore: true
-  UpdateTime:
+  CreateTime:
+    To: create_time
+  FingerprintSha256:
     Ignore: true
   Issuer:
     Ignore: true
+  NotAfter:
+    Ignore: true
+  NotBefore:
+    Ignore: true
+  PubkeyAlgorithm:
+    Ignore: true
+  SAN:
+    Ignore: true
+  SerialNumber:
+    Ignore: true
+  SignatureAlgorithm:
+    Ignore: true
+  SiteId:
+    Ignore: true
+  SiteName:
+    Ignore: true
+  SiteOriginClientCertificateId:
+    Ignore: true
   SiteOriginClientCertificateName:
+    Ignore: true
+  Type:
+    Ignore: true
+  UpdateTime:
     Ignore: true

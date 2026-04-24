@@ -10,3 +10,6 @@ Properties:
     To: GroupName
   project:
     To: ProjectName
+Attributes:
+  id:
+    Ignore: true

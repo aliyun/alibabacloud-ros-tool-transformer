@@ -17,19 +17,19 @@ Properties:
   TrafficQosPolicyId:
     To: traffic_qos_policy_id
 Attributes:
-  InterRegionTrafficQosQueueId:
-    To: id
-  RemainBandwidthPercent:
-    Ignore: true
-  InterRegionTrafficQosQueueDescription:
-    Ignore: true
-  TrafficQosPolicyId:
-    Ignore: true
-  InterRegionTrafficQosQueueName:
+  Bandwidth:
     Ignore: true
   Dscps:
     Ignore: true
-  Bandwidth:
-    Ignore: true
   EffectiveBandwidth:
+    Ignore: true
+  InterRegionTrafficQosQueueDescription:
+    Ignore: true
+  InterRegionTrafficQosQueueId:
+    To: id
+  InterRegionTrafficQosQueueName:
+    Ignore: true
+  RemainBandwidthPercent:
+    Ignore: true
+  TrafficQosPolicyId:
     Ignore: true

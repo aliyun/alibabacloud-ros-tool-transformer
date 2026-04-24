@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   GatewayName:
     To: gateway_name
+  GatewayType:
+    To: gateway_type
   LogConfig:
     To: log_config
     Type: Map
@@ -20,6 +22,10 @@ Properties:
         To: type
   PaymentType:
     To: payment_type
+  Period:
+    Ignore: true
+  PeriodUnit:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   Spec:
@@ -27,66 +33,60 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  Vpc:
-    To: vpc
-    Type: Map
-    Schema:
-      VpcId:
-        To: vpc_id
-      Name:
-        Ignore: true
   VSwitch:
     To: vswitch
     Type: Map
     Schema:
-      VSwitchId:
-        To: vswitch_id
       Name:
         Ignore: true
+      VSwitchId:
+        To: vswitch_id
+  Vpc:
+    To: vpc
+    Type: Map
+    Schema:
+      Name:
+        Ignore: true
+      VpcId:
+        To: vpc_id
   ZoneConfig:
     To: zone_config
     Type: Map
     Schema:
       SelectOption:
         To: select_option
-  Period:
-    Ignore: true
-  GatewayType:
-    To: gateway_type
-  PeriodUnit:
-    Ignore: true
 Attributes:
-  GatewayId:
-    To: id
   CreateTime:
     To: create_time
-  ExpireTime:
-    Ignore: true
-  Spec:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
   Environments:
     Ignore: true
-  SecurityGroup:
+  ExpireTime:
     Ignore: true
-  VSwitch:
-    To: vswitch
-  Tags:
-    Ignore: true
-  Version:
+  GatewayId:
+    To: id
+  GatewayName:
     Ignore: true
   GatewayType:
-    Ignore: true
-  Zones:
-    To: zones
-  GatewayName:
     Ignore: true
   LoadBalancers:
     Ignore: true
+  PaymentType:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  SecurityGroup:
+    Ignore: true
+  Spec:
+    Ignore: true
+  Tags:
+    Ignore: true
   UpdateTime:
+    Ignore: true
+  VSwitch:
+    To: vswitch
+  Version:
     Ignore: true
   Vpc:
     To: vpc
-  PaymentType:
-    Ignore: true
+  Zones:
+    To: zones

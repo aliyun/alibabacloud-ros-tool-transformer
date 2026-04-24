@@ -51,47 +51,47 @@ Properties:
 Attributes:
   ConfigId:
     To: config_id
-  OriginMtls:
+  ConfigType:
     Ignore: true
-  OriginSni:
+  DnsRecord:
     Ignore: true
-  SiteVersion:
-    Ignore: true
-  Range:
-    Ignore: true
-  Rule:
-    Ignore: true
-  RuleName:
+  Follow302Enable:
     Ignore: true
   Follow302MaxTries:
     Ignore: true
   Follow302RetainArgs:
     Ignore: true
-  OriginHttpsPort:
+  Follow302RetainHeader:
     Ignore: true
-  OriginReadTimeout:
-    Ignore: true
-  Sequence:
-    Ignore: true
-  Follow302Enable:
-    Ignore: true
-  RuleEnable:
-    Ignore: true
-  OriginScheme:
+  Follow302TargetHost:
     Ignore: true
   OriginHost:
     Ignore: true
   OriginHttpPort:
     Ignore: true
-  DnsRecord:
+  OriginHttpsPort:
     Ignore: true
-  Follow302RetainHeader:
+  OriginMtls:
+    Ignore: true
+  OriginReadTimeout:
+    Ignore: true
+  OriginScheme:
+    Ignore: true
+  OriginSni:
+    Ignore: true
+  OriginVerify:
+    Ignore: true
+  Range:
     Ignore: true
   RangeChunkSize:
     Ignore: true
-  Follow302TargetHost:
+  Rule:
     Ignore: true
-  ConfigType:
+  RuleEnable:
     Ignore: true
-  OriginVerify:
+  RuleName:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  SiteVersion:
     Ignore: true

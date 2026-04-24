@@ -8,16 +8,16 @@ Properties:
     To: cen_id
   DestinationCidrBlock:
     To: destination_cidr_block
-  TransitRouterAttachmentId:
-    To: transit_router_attachment_id
   RouteTableId:
     To: child_instance_route_table_id
+  TransitRouterAttachmentId:
+    To: transit_router_attachment_id
 Attributes:
   CenId:
     To: cen_id
   DestinationCidrBlock:
     To: destination_cidr_block
-  TransitRouterAttachmentId:
-    To: transit_router_attachment_id
   RouteTableId:
     Ignore: true
+  TransitRouterAttachmentId:
+    To: transit_router_attachment_id

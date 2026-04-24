@@ -4,99 +4,99 @@ ResourceType:
   From: ALIYUN::GPDB::DBInstance
   To: alicloud_gpdb_instance
 Properties:
-  ZoneId:
-    To: availability_zone
+  AINodeSpecInfos:
+    Ignore: true
+  BackupId:
+    Ignore: true
+  CacheStorageSize:
+    Ignore: true
   CreateSampleData:
     To: create_sample_data
   DBInstanceCategory:
     To: db_instance_category
   DBInstanceClass:
     To: db_instance_class
-  DBInstanceMode:
-    To: db_instance_mode
   DBInstanceDescription:
     To: description
+  DBInstanceGroupCount:
+    To: instance_group_count
+  DBInstanceMode:
+    To: db_instance_mode
+  DeployMode:
+    Ignore: true
+  EnableSSL:
+    To: ssl_enabled
   EncryptionKey:
     To: encryption_key
   EncryptionType:
     To: encryption_type
   EngineVersion:
     To: engine_version
-  PayType:
-    To: instance_charge_type
-  DBInstanceGroupCount:
-    To: instance_group_count
+  IdleTime:
+    Ignore: true
   InstanceSpec:
     To: instance_spec
+  MasterAISpec:
+    Ignore: true
+  MasterCU:
+    To: master_cu
   MasterNodeNum:
     To: master_node_num
+  PayType:
+    To: instance_charge_type
   PayType$$0:
     To: payment_type
   Period:
     To: period
+  PeriodUnit:
+    Ignore: true
   PrivateIpAddress:
     To: private_ip_address
+  ProdType:
+    To: prod_type
+  ResourceGroupId:
+    To: resource_group_id
+  SecurityIPList:
+    To: security_ip_list
+  SegDiskPerformanceLevel:
+    To: seg_disk_performance_level
   SegNodeNum:
     To: seg_node_num
   SegStorageType:
     To: seg_storage_type
+  ServerlessMode:
+    To: serverless_mode
+  ServerlessResource:
+    Ignore: true
+  SrcDbInstanceName:
+    Ignore: true
+  StandbyVSwitchId:
+    Ignore: true
+  StandbyZoneId:
+    Ignore: true
   StorageSize:
     To: storage_size
   Tags:
     To: tags
     Handler: handle_tags
-  VectorConfigurationStatus:
-    To: vector_configuration_status
   VPCId:
     To: vpc_id
   VSwitchId:
     To: vswitch_id
+  VectorConfigurationStatus:
+    To: vector_configuration_status
+  ZoneId:
+    To: availability_zone
   ZoneId$$0:
     To: zone_id
-  StandbyZoneId:
-    Ignore: true
-  DeployMode:
-    Ignore: true
-  ServerlessMode:
-    To: serverless_mode
-  ServerlessResource:
-    Ignore: true
-  PeriodUnit:
-    Ignore: true
-  StandbyVSwitchId:
-    Ignore: true
-  AINodeSpecInfos:
-    Ignore: true
-  ProdType:
-    To: prod_type
-  MasterCU:
-    To: master_cu
-  SecurityIPList:
-    To: security_ip_list
-  IdleTime:
-    Ignore: true
-  SegDiskPerformanceLevel:
-    To: seg_disk_performance_level
-  ResourceGroupId:
-    To: resource_group_id
-  EnableSSL:
-    To: ssl_enabled
-  CacheStorageSize:
-    Ignore: true
-  BackupId:
-    Ignore: true
-  MasterAISpec:
-    Ignore: true
-  SrcDbInstanceName:
-    Ignore: true
 Attributes:
-  DBInstanceId:
-    To: id
-  ConnectionString:
-    To: connection_string
-  Port:
-    To: port
-  OrderId:
-    Ignore: true
   Arn:
     Ignore: true
+  ConnectionString:
+    To: connection_string
+  DBInstanceId:
+    To: id
+  OrderId:
+    Ignore: true
+  Port:
+    To: port

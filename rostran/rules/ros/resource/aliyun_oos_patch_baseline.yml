@@ -28,18 +28,26 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
-  PatchBaselineName:
-    To: id
   ApprovalRules:
     To: approval_rules
   ApprovedPatches:
     To: approved_patches
+  ApprovedPatchesEnableNonSecurity:
+    Ignore: true
   CreateTime:
     To: create_time
+  CreatedBy:
+    Ignore: true
   Description:
     To: description
+  IsDefault:
+    Ignore: true
   OperationSystem:
     To: operation_system
+  PatchBaselineId:
+    Ignore: true
+  PatchBaselineName:
+    To: id
   PatchBaselineName$$0:
     To: patch_baseline_name
   RejectedPatches:
@@ -48,22 +56,14 @@ Attributes:
     To: rejected_patches_action
   ResourceGroupId:
     To: resource_group_id
+  ShareType:
+    Ignore: true
   Sources:
     To: sources
   Tags:
     To: tags
     Handler: handle_tags
-  ApprovedPatchesEnableNonSecurity:
-    Ignore: true
   UpdatedBy:
-    Ignore: true
-  ShareType:
-    Ignore: true
-  PatchBaselineId:
-    Ignore: true
-  CreatedBy:
-    Ignore: true
-  IsDefault:
     Ignore: true
   UpdatedDate:
     Ignore: true

@@ -6,30 +6,30 @@ ResourceType:
 Properties:
   Comments:
     To: comments
+  DeletionForce:
+    To: force
   DisplayName:
     To: display_name
   Email:
     To: email
+  Groups:
+    Ignore: true
+  LoginProfile:
+    Ignore: true
   MobilePhone:
     To: mobile
-  UserName:
-    To: name
-  LoginProfile:
+  Policies:
     Ignore: true
   PolicyAttachments:
     Ignore: true
-  Policies:
-    Ignore: true
-  DeletionForce:
-    To: force
-  Groups:
-    Ignore: true
+  UserName:
+    To: name
 Attributes:
+  CreateDate:
+    Ignore: true
+  LastLoginDate:
+    Ignore: true
   UserId:
     To: id
   UserName:
     To: name
-  LastLoginDate:
-    Ignore: true
-  CreateDate:
-    Ignore: true

@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_vul_whitelist
+  To: ALIYUN::ThreatDetection::VulWhitelist
+Properties:
+  reason:
+    To: Reason
+  target_info:
+    To: TargetInfo
+  whitelist:
+    To: Whitelist
+Attributes:
+  id:
+    To: VulWhitelistId

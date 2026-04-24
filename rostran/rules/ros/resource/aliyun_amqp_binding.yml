@@ -18,4 +18,3 @@ Properties:
     To: source_exchange
   VirtualHost:
     To: virtual_host_name
-Attributes: {}

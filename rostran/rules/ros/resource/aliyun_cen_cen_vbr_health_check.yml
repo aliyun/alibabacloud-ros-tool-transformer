@@ -33,7 +33,7 @@ Attributes:
     To: healthy_threshold
   VbrInstanceId:
     To: vbr_instance_id
-  VbrInstanceRegionId:
-    To: vbr_instance_region_id
   VbrInstanceOwnerId:
     Ignore: true
+  VbrInstanceRegionId:
+    To: vbr_instance_region_id

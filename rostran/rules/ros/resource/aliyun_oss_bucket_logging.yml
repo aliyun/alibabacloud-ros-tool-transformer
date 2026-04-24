@@ -13,9 +13,9 @@ Properties:
   TargetPrefix:
     To: target_prefix
 Attributes:
-  TargetPrefix:
+  LoggingRole:
     Ignore: true
   TargetBucket:
     Ignore: true
-  LoggingRole:
+  TargetPrefix:
     Ignore: true

@@ -4,6 +4,12 @@ ResourceType:
   From: ALIYUN::KAFKA::Instance
   To: alicloud_alikafka_instance
 Properties:
+  DeletionForce:
+    Ignore: true
+  DeployOption:
+    To: selected_zones
+  DeployOption$$0:
+    To: zone_id
   DeployType:
     To: deploy_type
   DiskSize:
@@ -16,15 +22,12 @@ Properties:
     To: io_max
   IoMaxSpec:
     To: io_max_spec
+  OpenConnector:
+    Ignore: true
   PartitionNum:
     To: partition_num
-  SpecType:
-    To: spec_type
-  Tags:
-    To: tags
-    Handler: handle_tags
-  TopicQuota:
-    To: topic_quota
+  PayType:
+    To: paid_type
   ServerlessConfig:
     To: serverless_config
     Type: Map
@@ -33,30 +36,29 @@ Properties:
         To: reserved_publish_capacity
       ReservedSubscribeCapacity:
         To: reserved_subscribe_capacity
-  PayType:
-    To: paid_type
-  OpenConnector:
-    Ignore: true
-  DeployOption:
-    Ignore: true
-  DeletionForce:
-    Ignore: true
+  SpecType:
+    To: spec_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TopicQuota:
+    To: topic_quota
 Attributes:
+  Arn:
+    Ignore: true
+  DomainEndpoint:
+    To: domain_endpoint
+  Endpoint:
+    To: end_point
   InstanceId:
     To: id
   Name:
     To: name
-  Endpoint:
-    To: end_point
-  DomainEndpoint:
-    To: domain_endpoint
-  SslEndpoint:
-    To: ssl_endpoint
-  SslDomainEndpoint:
-    To: ssl_domain_endpoint
-  Arn:
+  OrderId:
     Ignore: true
   SaslDomainEndpoint:
     To: sasl_domain_endpoint
-  OrderId:
-    Ignore: true
+  SslDomainEndpoint:
+    To: ssl_domain_endpoint
+  SslEndpoint:
+    To: ssl_endpoint

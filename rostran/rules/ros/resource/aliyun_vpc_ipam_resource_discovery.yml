@@ -4,6 +4,10 @@ ResourceType:
   From: ALIYUN::VPC::IpamResourceDiscovery
   To: alicloud_vpc_ipam_ipam_resource_discovery
 Properties:
+  IpamResourceDiscoveryDescription:
+    Ignore: true
+  IpamResourceDiscoveryName:
+    Ignore: true
   OperatingRegionList:
     To: operating_region_list
   ResourceGroupId:
@@ -11,13 +15,15 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  IpamResourceDiscoveryName:
-    Ignore: true
-  IpamResourceDiscoveryDescription:
-    Ignore: true
 Attributes:
   CreateTime:
     To: create_time
+  IpamResourceDiscoveryDescription:
+    Ignore: true
+  IpamResourceDiscoveryId:
+    Ignore: true
+  IpamResourceDiscoveryName:
+    Ignore: true
   OperatingRegionList:
     To: region_id
   ResourceGroupId:
@@ -25,10 +31,4 @@ Attributes:
   Tags:
     Ignore: true
   Type:
-    Ignore: true
-  IpamResourceDiscoveryId:
-    Ignore: true
-  IpamResourceDiscoveryDescription:
-    Ignore: true
-  IpamResourceDiscoveryName:
     Ignore: true

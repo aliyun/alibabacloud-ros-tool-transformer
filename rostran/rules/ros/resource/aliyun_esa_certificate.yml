@@ -21,45 +21,45 @@ Properties:
   SiteId:
     To: site_id
 Attributes:
+  ApplyCode:
+    Ignore: true
+  ApplyMessage:
+    Ignore: true
+  CasId:
+    Ignore: true
+  CertId:
+    To: id
+  CertName:
+    Ignore: true
+  Certificate:
+    Ignore: true
+  CommonName:
+    Ignore: true
   CreateTime:
     To: create_time
+  DCV:
+    Ignore: true
+  Domains:
+    Ignore: true
+  FingerprintSha256:
+    Ignore: true
+  Issuer:
+    Ignore: true
+  IssuerCN:
+    Ignore: true
   NotAfter:
     Ignore: true
   NotBefore:
     Ignore: true
   PubAlg:
     Ignore: true
-  IssuerCN:
-    Ignore: true
-  SiteName:
-    Ignore: true
-  Domains:
-    Ignore: true
   SerialNumber:
-    Ignore: true
-  CertName:
-    Ignore: true
-  UpdateTime:
-    Ignore: true
-  CommonName:
     Ignore: true
   SigAlg:
     Ignore: true
-  Certificate:
-    Ignore: true
-  FingerprintSha256:
-    Ignore: true
-  CertId:
-    Ignore: true
-  ApplyMessage:
-    Ignore: true
-  Issuer:
-    Ignore: true
-  DCV:
-    Ignore: true
-  ApplyCode:
-    Ignore: true
-  CasId:
-    Ignore: true
   SiteId:
+    Ignore: true
+  SiteName:
+    Ignore: true
+  UpdateTime:
     Ignore: true

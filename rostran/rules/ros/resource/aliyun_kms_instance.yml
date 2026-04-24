@@ -4,12 +4,20 @@ ResourceType:
   From: ALIYUN::KMS::Instance
   To: alicloud_kms_instance
 Properties:
+  Connection:
+    Ignore: true
+  InstanceChargeType:
+    To: payment_type
   KeyNum:
     To: key_num
+  Log:
+    To: log
   LogStorage:
     To: log_storage
   Period:
     To: period
+  PeriodUnit:
+    To: renewal_period_unit
   ProductVersion:
     To: product_version
   RenewPeriod:
@@ -22,14 +30,6 @@ Properties:
     To: spec
   VpcNum:
     To: vpc_num
-  Connection:
-    Ignore: true
-  InstanceChargeType:
-    To: payment_type
-  PeriodUnit:
-    To: renewal_period_unit
-  Log:
-    To: log
 Attributes:
   InstanceId:
     To: id

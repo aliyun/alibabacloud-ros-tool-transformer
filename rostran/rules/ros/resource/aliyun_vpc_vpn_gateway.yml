@@ -10,6 +10,8 @@ Properties:
     To: bandwidth
   Description:
     To: description
+  DisasterRecoveryVSwitchId:
+    To: disaster_recovery_vswitch_id
   EnableIpsec:
     To: enable_ipsec
   EnableSsl:
@@ -22,43 +24,41 @@ Properties:
     To: network_type
   Period:
     To: period
+  ResourceGroupId:
+    To: resource_group_id
   SslConnections:
     To: ssl_connections
   Tags:
     To: tags
     Handler: handle_tags
+  VSwitchId:
+    To: vswitch_id
   VpcId:
     To: vpc_id
   VpnType:
     To: vpn_type
-  VSwitchId:
-    To: vswitch_id
-  DisasterRecoveryVSwitchId:
-    To: disaster_recovery_vswitch_id
-  ResourceGroupId:
-    To: resource_group_id
 Attributes:
-  VpnGatewayId:
-    To: id
-  DisasterRecoveryInternetIp:
-    To: disaster_recovery_internet_ip
-  InternetIp:
-    To: internet_ip
-  SslVpnInternetIp:
-    To: ssl_vpn_internet_ip
-  VpcId:
-    To: vpc_id
-  VpnType:
-    To: vpn_type
-  VSwitchId:
-    To: vswitch_id
   Arn:
     Ignore: true
-  SslMaxConnections:
+  DisasterRecoveryInternetIp:
+    To: disaster_recovery_internet_ip
+  DisasterRecoveryVSwitchId:
     Ignore: true
+  InternetIp:
+    To: internet_ip
   OrderId:
     Ignore: true
   Spec:
     Ignore: true
-  DisasterRecoveryVSwitchId:
+  SslMaxConnections:
     Ignore: true
+  SslVpnInternetIp:
+    To: ssl_vpn_internet_ip
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  VpnGatewayId:
+    To: id
+  VpnType:
+    To: vpn_type

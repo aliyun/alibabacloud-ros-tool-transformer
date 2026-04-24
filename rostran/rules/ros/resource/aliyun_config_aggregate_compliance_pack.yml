@@ -6,12 +6,18 @@ ResourceType:
 Properties:
   AggregatorId:
     To: aggregator_id
+  CompliancePackName:
+    To: aggregate_compliance_pack_name
   CompliancePackTemplateId:
     To: compliance_pack_template_id
   ConfigRules:
     To: config_rules
     Type: List
     Schema:
+      ConfigRuleId:
+        Ignore: true
+      ConfigRuleName:
+        Ignore: true
       ConfigRuleParameters:
         To: config_rule_parameters
         Type: List
@@ -20,41 +26,35 @@ Properties:
             To: parameter_name
           ParameterValue:
             To: parameter_value
+      Description:
+        Ignore: true
       ManagedRuleIdentifier:
         To: managed_rule_identifier
       RiskLevel:
         Ignore: true
-      ConfigRuleName:
-        Ignore: true
-      Description:
-        Ignore: true
-      ConfigRuleId:
-        Ignore: true
+  DefaultEnable:
+    Ignore: true
   Description:
     To: description
-  RiskLevel:
-    To: risk_level
-  TagValueScope:
-    Ignore: true
-  ResourceIdsScope:
-    Ignore: true
-  DefaultEnable:
+  ExcludeRegionIdsScope:
     Ignore: true
   ExcludeResourceGroupIdsScope:
     Ignore: true
-  TagKeyScope:
+  ExcludeResourceIdsScope:
+    Ignore: true
+  RegionIdsScope:
     Ignore: true
   ResourceGroupIdsScope:
     Ignore: true
+  ResourceIdsScope:
+    Ignore: true
+  RiskLevel:
+    To: risk_level
+  TagKeyScope:
+    Ignore: true
+  TagValueScope:
+    Ignore: true
   TemplateContent:
-    Ignore: true
-  ExcludeResourceIdsScope:
-    Ignore: true
-  CompliancePackName:
-    To: aggregate_compliance_pack_name
-  RegionIdsScope:
-    Ignore: true
-  ExcludeRegionIdsScope:
     Ignore: true
 Attributes:
   CompliancePackId:

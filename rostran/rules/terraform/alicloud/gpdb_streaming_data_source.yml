@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_streaming_data_source
+  To: ALIYUN::GPDB::StreamingDataService
+Properties:
+  data_source_config:
+    To: ServiceSpec
+  data_source_description:
+    To: ServiceDescription
+  data_source_name:
+    To: ServiceName
+  data_source_type:
+    Ignore: true
+  db_instance_id:
+    To: DBInstanceId
+  service_id:
+    Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    To: CreateTime
+  data_source_id:
+    To: ServiceId
+  status:
+    Ignore: true

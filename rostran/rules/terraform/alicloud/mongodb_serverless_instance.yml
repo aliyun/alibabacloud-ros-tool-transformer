@@ -25,7 +25,7 @@ Properties:
   period:
     To: Period
   period_price_type:
-    Ignore: true
+    To: ChargeType
   resource_group_id:
     To: ResourceGroupId
   security_ip_group_attribute:

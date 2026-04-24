@@ -6,14 +6,14 @@ ResourceType:
 Properties:
   auto_renew:
     Ignore: true
-  create_time:
-    Ignore: true
   edition:
     Ignore: true
   instance_name:
     To: InstanceName
   instance_type:
     To: InstanceType
+  listener_mode:
+    Ignore: true
   max_connections:
     Ignore: true
   max_eip_tps:
@@ -38,9 +38,9 @@ Properties:
     Ignore: true
   renewal_status:
     Ignore: true
-  serverless_charge_type:
+  security_group_id:
     Ignore: true
-  status:
+  serverless_charge_type:
     Ignore: true
   storage_size:
     To: StorageSize
@@ -50,38 +50,14 @@ Properties:
     To: SupportTracing
   tracing_storage_time:
     To: TracingStorageTime
+  vpc_id:
+    Ignore: true
+  vswitch_ids:
+    Ignore: true
 Attributes:
   id:
     To: InstanceId
   create_time:
     Ignore: true
-  instance_name:
-    Ignore: true
-  instance_type:
-    Ignore: true
-  max_connections:
-    Ignore: true
-  max_eip_tps:
-    Ignore: true
-  max_tps:
-    Ignore: true
-  payment_type:
-    Ignore: true
-  queue_capacity:
-    Ignore: true
-  renewal_duration:
-    Ignore: true
-  renewal_duration_unit:
-    Ignore: true
-  renewal_status:
-    Ignore: true
   status:
-    Ignore: true
-  storage_size:
-    Ignore: true
-  support_eip:
-    Ignore: true
-  support_tracing:
-    Ignore: true
-  tracing_storage_time:
     Ignore: true

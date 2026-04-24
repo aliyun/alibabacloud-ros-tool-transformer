@@ -1,0 +1,15 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_asset_selection_config
+  To: ALIYUN::ThreatDetection::AttackPathSensitiveAssetConfig
+Properties:
+  business_type:
+    Ignore: true
+  platform:
+    Ignore: true
+  target_type:
+    Ignore: true
+Attributes:
+  id:
+    To: AttackPathSensitiveAssetConfigId

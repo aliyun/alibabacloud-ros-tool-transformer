@@ -17,3 +17,8 @@ Properties:
     To: SlsProjectName
   sls_region_id:
     To: SlsRegionId
+Attributes:
+  id:
+    Ignore: true
+  status:
+    Ignore: true

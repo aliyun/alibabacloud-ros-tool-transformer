@@ -78,6 +78,8 @@ Properties:
         To: storage_size
       ZoneId:
         To: zone_id
+  OrderId:
+    Ignore: true
   OssAccessingRoleName:
     To: oss_accessing_role_name
   PackageType:
@@ -90,6 +92,8 @@ Properties:
     To: promotion_option_no
   ResourceGroupId:
     To: resource_group_id
+  ResourceType:
+    Ignore: true
   RunMode:
     To: run_mode
   Tags:
@@ -107,62 +111,58 @@ Properties:
         To: vswitch_id
       ZoneId:
         To: zone_id
-  OrderId:
-    Ignore: true
-  ResourceType:
-    Ignore: true
 Attributes:
-  InstanceId:
-    To: id
-  CreateTime:
-    To: create_time
-  EnableSsl:
-    Ignore: true
-  ExpireTime:
-    Ignore: true
-  MinorVersion:
-    Ignore: true
-  InstanceName:
-    Ignore: true
-  MaintainablePeriod:
-    Ignore: true
-  EnabledAuditLoader:
+  AclId:
     Ignore: true
   Architecture:
     Ignore: true
-  VpcId:
-    Ignore: true
-  PayType:
-    Ignore: true
-  RunMode:
-    Ignore: true
-  PackageType:
-    Ignore: true
-  MonitorType:
-    Ignore: true
-  AclId:
-    Ignore: true
+  CreateTime:
+    To: create_time
   EnableAutoMinorVersionUpgrade:
+    Ignore: true
+  EnableSsl:
+    Ignore: true
+  EnabledAuditLoader:
     Ignore: true
   Encrypted:
     Ignore: true
-  Version:
+  ExpireTime:
     Ignore: true
-  Vswitches:
+  InstanceId:
+    To: id
+  InstanceName:
     Ignore: true
-  RunningTime:
+  IsolateLeader:
+    Ignore: true
+  KmsKeyId:
+    Ignore: true
+  MaintainablePeriod:
+    Ignore: true
+  MinorVersion:
+    Ignore: true
+  MonitorType:
+    Ignore: true
+  OssLocation:
+    Ignore: true
+  PackageType:
+    Ignore: true
+  PayType:
     Ignore: true
   ResourceGroupId:
+    Ignore: true
+  RunMode:
+    Ignore: true
+  RunningTime:
     Ignore: true
   SecurityGroupManaged:
     Ignore: true
   SgId:
     Ignore: true
-  IsolateLeader:
-    Ignore: true
   Tags:
     Ignore: true
-  KmsKeyId:
+  Version:
     Ignore: true
-  OssLocation:
+  VpcId:
+    Ignore: true
+  Vswitches:
     Ignore: true

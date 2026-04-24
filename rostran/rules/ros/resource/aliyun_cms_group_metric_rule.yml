@@ -6,32 +6,14 @@ ResourceType:
 Properties:
   Category:
     To: category
+  ContactGroups:
+    To: contact_groups
   Dimensions:
     To: dimensions
   EffectiveInterval:
     To: effective_interval
   EmailSubject:
     To: email_subject
-  GroupId:
-    To: group_id
-  Interval:
-    To: interval
-  MetricName:
-    To: metric_name
-  Namespace:
-    To: namespace
-  NoEffectiveInterval:
-    To: no_effective_interval
-  Period:
-    To: period
-  RuleId:
-    To: rule_id
-  SilenceTime:
-    To: silence_time
-  Webhook:
-    To: webhook
-  RuleName:
-    To: group_metric_rule_name
   Escalations:
     To: escalations
     Type: Map
@@ -42,14 +24,32 @@ Properties:
         To: info
       Warn:
         To: warn
-  ContactGroups:
-    To: contact_groups
   ExtraDimensionJson:
     Ignore: true
-  Options:
-    Ignore: true
+  GroupId:
+    To: group_id
+  Interval:
+    To: interval
+  MetricName:
+    To: metric_name
+  Namespace:
+    To: namespace
   NoDataPolicy:
     Ignore: true
+  NoEffectiveInterval:
+    To: no_effective_interval
+  Options:
+    Ignore: true
+  Period:
+    To: period
+  RuleId:
+    To: rule_id
+  RuleName:
+    To: group_metric_rule_name
+  SilenceTime:
+    To: silence_time
+  Webhook:
+    To: webhook
 Attributes:
   RuleId:
     To: id

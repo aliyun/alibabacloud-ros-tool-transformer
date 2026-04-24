@@ -13,17 +13,17 @@ Properties:
   PageName:
     To: page_name
 Attributes:
-  PageId:
-    To: id
   Content:
     Ignore: true
-  UpdateTime:
-    Ignore: true
-  Kind:
+  ContentType:
     Ignore: true
   Description:
     Ignore: true
+  Kind:
+    Ignore: true
+  PageId:
+    To: id
   PageName:
     Ignore: true
-  ContentType:
+  UpdateTime:
     Ignore: true

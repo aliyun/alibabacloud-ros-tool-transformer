@@ -8,6 +8,8 @@ Properties:
     To: host_account_name
   HostId:
     To: host_id
+  HostShareKeyId:
+    Ignore: true
   InstanceId:
     To: instance_id
   PassPhrase:
@@ -16,12 +18,10 @@ Properties:
     To: password
   PrivateKey:
     To: private_key
-  ProtocolName:
-    To: protocol_name
-  HostShareKeyId:
-    Ignore: true
   PrivilegeType:
     Ignore: true
+  ProtocolName:
+    To: protocol_name
   RotationMode:
     Ignore: true
 Attributes:

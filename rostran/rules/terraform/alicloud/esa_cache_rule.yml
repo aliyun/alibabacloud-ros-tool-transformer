@@ -30,6 +30,12 @@ Properties:
     To: IncludeCookie
   include_header:
     To: IncludeHeader
+  post_body_cache_key:
+    Ignore: true
+  post_body_size_limit:
+    Ignore: true
+  post_cache:
+    Ignore: true
   query_string:
     To: QueryString
   query_string_mode:

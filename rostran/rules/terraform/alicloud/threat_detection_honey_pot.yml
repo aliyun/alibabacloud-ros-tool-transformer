@@ -1,0 +1,25 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_threat_detection_honey_pot
+  To: ALIYUN::ThreatDetection::HoneyPot
+Properties:
+  honeypot_image_id:
+    To: HoneypotImageId
+  honeypot_image_name:
+    To: HoneypotImageName
+  honeypot_name:
+    To: HoneypotName
+  node_id:
+    To: NodeId
+Attributes:
+  id:
+    Ignore: true
+  honeypot_id:
+    To: HoneypotId
+  preset_id:
+    Ignore: true
+  state:
+    To: State
+  status:
+    Ignore: true

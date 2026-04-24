@@ -6,27 +6,27 @@ ResourceType:
 Properties:
   BindResourceId:
     To: bind_resource_id
+  DeletePromInstance:
+    Ignore: true
   EnvironmentName:
     To: environment_name
   EnvironmentSubType:
     To: environment_sub_type
   EnvironmentType:
     To: environment_type
+  FeePackage:
+    Ignore: true
+  GrafanaWorkspaceId:
+    Ignore: true
   ManagedType:
     To: managed_type
+  PrometheusInstanceId:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-  GrafanaWorkspaceId:
-    Ignore: true
-  PrometheusInstanceId:
-    Ignore: true
-  FeePackage:
-    Ignore: true
-  DeletePromInstance:
-    Ignore: true
 Attributes:
   EnvironmentId:
     To: id
@@ -38,13 +38,13 @@ Attributes:
     To: environment_sub_type
   EnvironmentType:
     To: environment_type
-  ManagedType:
-    To: managed_type
-  ResourceGroupId:
-    To: resource_group_id
-  GrafanaWorkspaceId:
-    Ignore: true
-  PrometheusInstanceId:
-    Ignore: true
   FeePackage:
     Ignore: true
+  GrafanaWorkspaceId:
+    Ignore: true
+  ManagedType:
+    To: managed_type
+  PrometheusInstanceId:
+    Ignore: true
+  ResourceGroupId:
+    To: resource_group_id

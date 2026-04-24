@@ -12,20 +12,20 @@ Properties:
     To: instance_name
   IpAddressRange:
     To: ip_address_range
-  TimeToLiveInHours:
-    To: time_to_live_in_hours
-  Tags:
-    Ignore: true
   ResourceGroupId:
     Ignore: true
-Attributes:
-  ActivationId:
-    To: id
-  RegisteredCount:
+  Tags:
     Ignore: true
+  TimeToLiveInHours:
+    To: time_to_live_in_hours
+Attributes:
   ActivationCode:
     Ignore: true
+  ActivationId:
+    To: id
   Arn:
     Ignore: true
   DeregisteredCount:
+    Ignore: true
+  RegisteredCount:
     Ignore: true

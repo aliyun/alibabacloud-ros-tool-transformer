@@ -6,26 +6,26 @@ ResourceType:
 Properties:
   CommandContent:
     To: command_content
+  ContentEncoding:
+    Ignore: true
   Description:
     To: description
   EnableParameter:
     To: enable_parameter
+  Launcher:
+    Ignore: true
   Name:
     To: name
+  ResourceGroupId:
+    Ignore: true
+  Tags:
+    Ignore: true
   Timeout:
     To: timeout
   Type:
     To: type
   WorkingDir:
     To: working_dir
-  Tags:
-    Ignore: true
-  ContentEncoding:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
-  Launcher:
-    Ignore: true
 Attributes:
   CommandId:
     To: id

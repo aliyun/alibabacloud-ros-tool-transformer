@@ -16,28 +16,28 @@ Properties:
     To: instance_storage
   PayType:
     To: payment_type
+  PricingCycle:
+    Ignore: true
+  SecurityIpList:
+    Ignore: true
+  VPCId:
+    Ignore: true
   VSwitchId:
     To: vswitch_id
   ZoneId:
     To: zone_id
-  PricingCycle:
-    Ignore: true
-  VPCId:
-    Ignore: true
-  SecurityIpList:
-    Ignore: true
 Attributes:
-  InstanceId:
-    To: id
-  EngineType:
-    To: engine_type
   ConnectionString:
     Ignore: true
-  ReverseVpcPort:
-    Ignore: true
+  EngineType:
+    To: engine_type
+  InstanceId:
+    To: id
   OrderId:
+    Ignore: true
+  PublicConnectionString:
     Ignore: true
   ReverseVpcIp:
     Ignore: true
-  PublicConnectionString:
+  ReverseVpcPort:
     Ignore: true

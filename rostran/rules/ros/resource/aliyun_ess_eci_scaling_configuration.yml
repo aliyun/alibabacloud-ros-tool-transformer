@@ -100,38 +100,60 @@ Properties:
         To: readiness_probe_tcp_socket_port
       ReadinessProbeTimeoutSeconds:
         To: readiness_probe_timeout_seconds
+      SecurityContextCapabilitiesAdd:
+        Ignore: true
       SecurityContextRunAsUser:
         To: security_context_run_as_user
+      Stdin:
+        Ignore: true
+      StdinOnce:
+        Ignore: true
+      Tty:
+        Ignore: true
       VolumeMounts:
         To: volume_mounts
         Type: List
         Schema:
           MountPath:
             To: mount_path
+          MountPropagation:
+            Ignore: true
           Name:
             To: name
           ReadOnly:
             To: read_only
-          MountPropagation:
-            Ignore: true
           SubPath:
             Ignore: true
       WorkingDir:
         To: working_dir
-      Stdin:
-        Ignore: true
-      SecurityContextCapabilitiesAdd:
-        Ignore: true
-      Tty:
-        Ignore: true
-      StdinOnce:
-        Ignore: true
+  CostOptimization:
+    To: cost_optimization
   Cpu:
     To: cpu
   CpuOptionsCore:
     To: cpu_options_core
   CpuOptionsThreadsPerCore:
     To: cpu_options_threads_per_core
+  DataCacheBucket:
+    Ignore: true
+  DataCacheBurstingEnabled:
+    Ignore: true
+  DataCachePL:
+    Ignore: true
+  DataCacheProvisionedIops:
+    Ignore: true
+  DnsConfigNameServers:
+    Ignore: true
+  DnsConfigOptions:
+    To: dns_config_options
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Value:
+        To: value
+  DnsConfigSearches:
+    Ignore: true
   DnsPolicy:
     To: dns_policy
   EgressBandwidth:
@@ -180,20 +202,22 @@ Properties:
         To: image
       ImagePullPolicy:
         To: image_pull_policy
+      InitContainerEnvironmentVars:
+        Ignore: true
+      InitContainerVolumeMounts:
+        Ignore: true
       Memory:
         To: memory
       Name:
         To: name
+      SecurityContextCapabilitiesAdd:
+        Ignore: true
       SecurityContextRunAsUser:
         To: security_context_run_as_user
       WorkingDir:
         To: working_dir
-      InitContainerVolumeMounts:
-        Ignore: true
-      SecurityContextCapabilitiesAdd:
-        Ignore: true
-      InitContainerEnvironmentVars:
-        Ignore: true
+  InstanceFamilyLevel:
+    To: instance_family_level
   InstanceTypes:
     To: instance_types
   Ipv6AddressCount:
@@ -202,6 +226,8 @@ Properties:
     To: load_balancer_weight
   Memory:
     To: memory
+  NtpServers:
+    Ignore: true
   RamRoleName:
     To: ram_role_name
   ResourceGroupId:
@@ -212,6 +238,14 @@ Properties:
     To: scaling_configuration_name
   ScalingGroupId:
     To: scaling_group_id
+  SecurityContextSysctls:
+    To: security_context_sysctls
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Value:
+        To: value
   SecurityGroupId:
     To: security_group_id
   SpotPriceLimit:
@@ -233,74 +267,40 @@ Properties:
         Schema:
           Content:
             To: content
-          Path:
-            To: path
           Mode:
             Ignore: true
+          Path:
+            To: path
+      ConfigFileVolumeDefaultMode:
+        Ignore: true
       DiskVolumeDiskId:
         To: disk_volume_disk_id
       DiskVolumeDiskSize:
         To: disk_volume_disk_size
+      EmptyDirVolumeMedium:
+        Ignore: true
+      EmptyDirVolumeSizeLimit:
+        Ignore: true
       FlexVolumeDriver:
         To: flex_volume_driver
       FlexVolumeFsType:
         To: flex_volume_fs_type
       FlexVolumeOptions:
         To: flex_volume_options
+      HostPathVolumePath:
+        Ignore: true
+      HostPathVolumeType:
+        Ignore: true
+      NFSVolumePath:
+        Ignore: true
+      NFSVolumeReadOnly:
+        Ignore: true
+      NFSVolumeServer:
+        Ignore: true
       Name:
         To: name
       Type:
         To: type
-      NFSVolumeServer:
-        Ignore: true
-      EmptyDirVolumeSizeLimit:
-        Ignore: true
-      HostPathVolumePath:
-        Ignore: true
-      EmptyDirVolumeMedium:
-        Ignore: true
-      HostPathVolumeType:
-        Ignore: true
-      NFSVolumeReadOnly:
-        Ignore: true
-      ConfigFileVolumeDefaultMode:
-        Ignore: true
-      NFSVolumePath:
-        Ignore: true
-  DnsConfigSearches:
-    Ignore: true
-  DnsConfigOptions:
-    To: dns_config_options
-    Type: List
-    Schema:
-      Name:
-        To: name
-      Value:
-        To: value
-  DnsConfigNameServers:
-    Ignore: true
-  DataCacheBurstingEnabled:
-    Ignore: true
-  DataCacheProvisionedIops:
-    Ignore: true
-  InstanceFamilyLevel:
-    To: instance_family_level
-  DataCacheBucket:
-    Ignore: true
-  CostOptimization:
-    To: cost_optimization
-  NtpServers:
-    Ignore: true
-  DataCachePL:
-    Ignore: true
-  SecurityContextSysctls:
-    To: security_context_sysctls
-    Type: List
-    Schema:
-      Name:
-        To: name
-      Value:
-        To: value
 Attributes:
   ScalingConfigurationId:
     To: id

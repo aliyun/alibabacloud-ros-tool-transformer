@@ -1,0 +1,41 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::ImageEventOperation
+  To: alicloud_threat_detection_image_event_operation
+Properties:
+  Conditions:
+    To: conditions
+  EventKey:
+    To: event_key
+  EventName:
+    To: event_name
+  EventType:
+    To: event_type
+  Note:
+    To: note
+  OperationCode:
+    To: operation_code
+  Scenarios:
+    To: scenarios
+  Source:
+    To: source
+Attributes:
+  Conditions:
+    Ignore: true
+  EventKey:
+    Ignore: true
+  EventName:
+    Ignore: true
+  EventType:
+    Ignore: true
+  ImageEventOperationId:
+    To: id
+  Note:
+    Ignore: true
+  OperationCode:
+    Ignore: true
+  Scenarios:
+    Ignore: true
+  Source:
+    Ignore: true

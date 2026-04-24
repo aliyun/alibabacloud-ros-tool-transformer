@@ -18,4 +18,3 @@ Properties:
     To: source_arn
   TriggerARN:
     To: trigger_arn
-Attributes: {}

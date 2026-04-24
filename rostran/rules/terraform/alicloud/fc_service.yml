@@ -8,8 +8,6 @@ Properties:
     To: Description
   internet_access:
     To: InternetAccess
-  last_modified:
-    Ignore: true
   log_config:
     To: LogConfig
     Type: Map
@@ -41,8 +39,6 @@ Properties:
     To: Role
   server_addr:
     Ignore: true
-  service_id:
-    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
@@ -54,8 +50,6 @@ Properties:
         To: Params
       type:
         To: Type
-  version:
-    Ignore: true
   vpc_config:
     To: VpcConfig
     Type: Map
@@ -65,23 +59,14 @@ Properties:
       vpc_id:
         To: VpcId
       vswitch_ids:
-        Ignore: true
+        To: VSwitchIds
+        Type: List
 Attributes:
   id:
     To: ServiceId
-  description:
-    Ignore: true
-  internet_access:
-    To: InternetAccess
   last_modified:
     Ignore: true
-  name:
-    Ignore: true
-  role:
-    To: Role
   service_id:
     To: ServiceId
-  tags:
-    To: Tags
   version:
     Ignore: true

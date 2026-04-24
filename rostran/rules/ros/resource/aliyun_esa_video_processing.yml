@@ -31,27 +31,27 @@ Properties:
 Attributes:
   ConfigId:
     To: config_id
-  VideoSeekEnable:
-    Ignore: true
-  FlvSeekStart:
-    Ignore: true
   ConfigType:
-    Ignore: true
-  SiteVersion:
-    Ignore: true
-  Rule:
-    Ignore: true
-  Sequence:
-    Ignore: true
-  RuleEnable:
-    Ignore: true
-  Mp4SeekEnd:
-    Ignore: true
-  RuleName:
     Ignore: true
   FlvSeekEnd:
     Ignore: true
-  Mp4SeekStart:
+  FlvSeekStart:
     Ignore: true
   FlvVideoSeekMode:
+    Ignore: true
+  Mp4SeekEnd:
+    Ignore: true
+  Mp4SeekStart:
+    Ignore: true
+  Rule:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  RuleName:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  VideoSeekEnable:
     Ignore: true

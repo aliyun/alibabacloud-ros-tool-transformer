@@ -16,4 +16,3 @@ Properties:
     To: sls_project_name
   SlsRegionId:
     To: sls_region_id
-Attributes: {}

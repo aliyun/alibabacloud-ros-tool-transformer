@@ -4,34 +4,48 @@ ResourceType:
   From: ALIYUN::ApiGateway::Api
   To: alicloud_api_gateway_api
 Properties:
+  AllowSignatureMethod:
+    Ignore: true
+  ApiName:
+    To: name
+  AppCodeAuthType:
+    Ignore: true
   AuthType:
     To: auth_type
   ConstParameters:
     To: constant_parameters
     Type: List
     Schema:
+      ConstValue:
+        Ignore: true
       Description:
         To: description
       Location:
         Ignore: true
       ServiceParameterName:
         Ignore: true
-      ConstValue:
-        Ignore: true
   Description:
     To: description
+  DisableInternet:
+    Ignore: true
+  ErrorCodeSamples:
+    Ignore: true
+  FailResultSample:
+    Ignore: true
   ForceNonceCheck:
     To: force_nonce_check
   GroupId:
     To: group_id
-  ApiName:
-    To: name
+  OpenIdConnectConfig:
+    Ignore: true
   RequestConfig:
     To: request_config
     Type: Map
     Schema:
       BodyFormat:
         To: body_format
+      PostBodyDescription:
+        Ignore: true
       RequestHttpMethod:
         To: method
       RequestMode:
@@ -40,122 +54,108 @@ Properties:
         To: path
       RequestProtocol:
         To: protocol
-      PostBodyDescription:
-        Ignore: true
   RequestParameters:
     To: request_parameters
     Type: List
     Schema:
-      DefaultValue:
-        To: default_value
-      Description:
-        To: description
-      Location:
-        To: in
       ApiParameterName:
         To: name
-      Required:
-        To: required
-      ParameterType:
-        To: type
-      JsonScheme:
+      DefaultValue:
+        To: default_value
+      DemoValue:
         Ignore: true
-      MaxValue:
+      Description:
+        To: description
+      DocOrder:
         Ignore: true
       DocShow:
         Ignore: true
-      MinValue:
+      EnumValue:
+        Ignore: true
+      JsonScheme:
+        Ignore: true
+      Location:
+        To: in
+      MaxLength:
+        Ignore: true
+      MaxValue:
         Ignore: true
       MinLength:
         Ignore: true
-      MaxLength:
+      MinValue:
         Ignore: true
-      EnumValue:
-        Ignore: true
-      DemoValue:
-        Ignore: true
-      DocOrder:
-        Ignore: true
+      ParameterType:
+        To: type
       RegularExpression:
         Ignore: true
+      Required:
+        To: required
+  ResultBodyModel:
+    Ignore: true
+  ResultDescriptions:
+    Ignore: true
+  ResultSample:
+    Ignore: true
+  ResultType:
+    Ignore: true
+  ServiceConfig:
+    To: http_service_config
+    Type: Map
+    Schema:
+      ContentTypeCatagory:
+        Ignore: true
+      ContentTypeValue:
+        To: content_type_value
+      FunctionComputeConfig:
+        Ignore: true
+      Mock:
+        Ignore: true
+      MockHeaders:
+        Ignore: true
+      MockResult:
+        Ignore: true
+      MockStatusCode:
+        Ignore: true
+      ServiceAddress:
+        Ignore: true
+      ServiceHttpMethod:
+        Ignore: true
+      ServicePath:
+        Ignore: true
+      ServiceProtocol:
+        Ignore: true
+      ServiceTimeOut:
+        Ignore: true
+      ServiceVpcEnable:
+        Ignore: true
+      VpcConfig:
+        Ignore: true
+  ServiceConfig$$0:
+    To: service_type
+  ServiceParameters:
+    Ignore: true
+  ServiceParametersMap:
+    Ignore: true
   SystemParameters:
     To: system_parameters
     Type: List
     Schema:
+      DemoValue:
+        Ignore: true
+      Description:
+        Ignore: true
       Location:
         To: in
       ParameterName:
         To: name
       ServiceParameterName:
         To: name_service
-      Description:
-        Ignore: true
-      DemoValue:
-        Ignore: true
   Tags:
-    Ignore: true
-  DisableInternet:
-    Ignore: true
-  ServiceConfig:
-    To: http_service_config
-    Type: Map
-    Schema:
-      ContentTypeValue:
-        To: content_type_value
-      Mock:
-        Ignore: true
-      FunctionComputeConfig:
-        Ignore: true
-      ServiceVpcEnable:
-        Ignore: true
-      MockStatusCode:
-        Ignore: true
-      ServicePath:
-        Ignore: true
-      ServiceTimeOut:
-        Ignore: true
-      ContentTypeCatagory:
-        Ignore: true
-      MockResult:
-        Ignore: true
-      ServiceHttpMethod:
-        Ignore: true
-      ServiceProtocol:
-        Ignore: true
-      VpcConfig:
-        Ignore: true
-      ServiceAddress:
-        Ignore: true
-      MockHeaders:
-        Ignore: true
-  ErrorCodeSamples:
-    Ignore: true
-  AppCodeAuthType:
-    Ignore: true
-  ResultDescriptions:
     Ignore: true
   Visibility:
     Ignore: true
-  ServiceParameters:
-    Ignore: true
-  ResultBodyModel:
-    Ignore: true
-  FailResultSample:
-    Ignore: true
-  ServiceParametersMap:
-    Ignore: true
-  OpenIdConnectConfig:
-    Ignore: true
   WebSocketApiType:
     Ignore: true
-  AllowSignatureMethod:
-    Ignore: true
-  ResultType:
-    Ignore: true
-  ResultSample:
-    Ignore: true
-  ServiceConfig$$0:
-    To: service_type
 Attributes:
   ApiId:
     To: id

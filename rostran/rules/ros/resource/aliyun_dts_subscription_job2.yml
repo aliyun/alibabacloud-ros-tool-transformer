@@ -8,56 +8,56 @@ Properties:
     To: checkpoint
   DbList:
     To: db_list
+  DedicatedClusterId:
+    Ignore: true
   DelayNotice:
     To: delay_notice
   DelayPhone:
     To: delay_phone
   DelayRuleTime:
     To: delay_rule_time
+  DestPrimaryVswId:
+    Ignore: true
+  DestSecondaryVswId:
+    Ignore: true
+  DtsBisLabel:
+    Ignore: true
   DtsInstanceId:
     To: dts_instance_id
+  DtsJobId:
+    Ignore: true
   DtsJobName:
     To: dts_job_name
   ErrorNotice:
     To: error_notice
   ErrorPhone:
     To: error_phone
-  Reserve:
-    To: reserve
-  Status:
-    To: status
   MaxDu:
     Ignore: true
   MinDu:
     Ignore: true
-  SubscriptionDataType:
-    To: subscription_data_type_ddl
-  SubscriptionInstance:
-    Ignore: true
-  SrcSecondaryVswId:
-    Ignore: true
-  DestPrimaryVswId:
-    Ignore: true
-  SrcPrimaryVswId:
+  Reserve:
+    To: reserve
+  ResourceGroupId:
     Ignore: true
   SourceEndpoint:
     Ignore: true
-  DestSecondaryVswId:
+  SrcPrimaryVswId:
     Ignore: true
-  ResourceGroupId:
+  SrcSecondaryVswId:
     Ignore: true
-  DtsJobId:
-    Ignore: true
-  DtsBisLabel:
-    Ignore: true
-  DedicatedClusterId:
-    Ignore: true
+  Status:
+    To: status
+  SubscriptionDataType:
+    To: subscription_data_type_ddl
   SubscriptionDataType$$0:
     To: subscription_data_type_dml
+  SubscriptionInstance:
+    Ignore: true
 Attributes:
-  DtsJobName:
+  DtsInstanceId:
     Ignore: true
   DtsJobId:
     To: id
-  DtsInstanceId:
+  DtsJobName:
     Ignore: true

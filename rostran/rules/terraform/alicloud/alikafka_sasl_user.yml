@@ -22,11 +22,5 @@ Attributes:
   id:
     To:
     - InstanceId
-    - UserName
+    - Username
     Handler: colon_join
-  instance_id:
-    To: InstanceId
-  type:
-    Ignore: true
-  username:
-    To: Username

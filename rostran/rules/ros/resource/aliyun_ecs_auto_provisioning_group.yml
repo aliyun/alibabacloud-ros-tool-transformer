@@ -8,50 +8,62 @@ Properties:
     To: auto_provisioning_group_name
   AutoProvisioningGroupType:
     To: auto_provisioning_group_type
+  CheckExecutionStatus:
+    Ignore: true
+  DataDiskConfig:
+    Ignore: true
   DefaultTargetCapacityType:
     To: default_target_capacity_type
   Description:
     To: description
   ExcessCapacityTerminationPolicy:
     To: excess_capacity_termination_policy
+  LaunchConfiguration:
+    Ignore: true
   LaunchTemplateConfig:
     To: launch_template_config
     Type: List
     Schema:
+      Architectures:
+        Ignore: true
+      BurstablePerformance:
+        Ignore: true
+      Cores:
+        Ignore: true
+      ExcludedInstanceTypes:
+        Ignore: true
+      ImageId:
+        Ignore: true
+      InstanceFamilyLevel:
+        Ignore: true
       InstanceType:
         To: instance_type
       MaxPrice:
         To: max_price
+      Memories:
+        Ignore: true
       Priority:
         To: priority
       VSwitchId:
         To: vswitch_id
       WeightedCapacity:
         To: weighted_capacity
-      Memories:
-        Ignore: true
-      ExcludedInstanceTypes:
-        Ignore: true
-      BurstablePerformance:
-        Ignore: true
-      Cores:
-        Ignore: true
-      ImageId:
-        Ignore: true
-      InstanceFamilyLevel:
-        Ignore: true
-      Architectures:
-        Ignore: true
   LaunchTemplateId:
     To: launch_template_id
   LaunchTemplateVersion:
     To: launch_template_version
   MaxSpotPrice:
     To: max_spot_price
+  MinTargetCapacity:
+    Ignore: true
   PayAsYouGoAllocationStrategy:
     To: pay_as_you_go_allocation_strategy
   PayAsYouGoTargetCapacity:
     To: pay_as_you_go_target_capacity
+  ResourceGroupId:
+    Ignore: true
+  ResourcePoolOptions:
+    Ignore: true
   SpotAllocationStrategy:
     To: spot_allocation_strategy
   SpotInstanceInterruptionBehavior:
@@ -60,6 +72,8 @@ Properties:
     To: spot_instance_pools_to_use_count
   SpotTargetCapacity:
     To: spot_target_capacity
+  SystemDiskConfig:
+    Ignore: true
   TerminateInstances:
     To: terminate_instances
   TerminateInstancesWithExpiration:
@@ -70,20 +84,6 @@ Properties:
     To: valid_from
   ValidUntil:
     To: valid_until
-  LaunchConfiguration:
-    Ignore: true
-  ResourcePoolOptions:
-    Ignore: true
-  CheckExecutionStatus:
-    Ignore: true
-  SystemDiskConfig:
-    Ignore: true
-  DataDiskConfig:
-    Ignore: true
-  MinTargetCapacity:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
 Attributes:
   AutoProvisioningGroupId:
     To: id

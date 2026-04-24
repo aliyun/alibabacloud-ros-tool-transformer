@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::EHPC::ClusterV2
   To: alicloud_ehpc_cluster_v2
 Properties:
+  AdditionalPackages:
+    Ignore: true
   Addons:
     To: addons
     Type: List
@@ -28,28 +30,36 @@ Properties:
         To: key_pair_name
       Password:
         To: password
+  ClusterCustomConfiguration:
+    Ignore: true
+  ClusterDescription:
+    Ignore: true
   ClusterMode:
     To: cluster_mode
   ClusterName:
     To: cluster_name
-  VpcId:
-    To: cluster_vpc_id
-  VSwitchId:
-    To: cluster_vswitch_id
   DeletionProtection:
     To: deletion_protection
+  IsEnterpriseSecurityGroup:
+    Ignore: true
   Manager:
     To: manager
     Type: Map
     Schema:
-      DirectoryService:
-        To: directory_service
       DNS:
         To: dns
+      DirectoryService:
+        To: directory_service
       ManagerNode:
         To: manager_node
       Scheduler:
         To: scheduler
+  MaxCoreCount:
+    Ignore: true
+  MaxCount:
+    Ignore: true
+  Queues:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   SecurityGroupId:
@@ -72,20 +82,10 @@ Properties:
         To: protocol_type
   Tags:
     Ignore: true
-  MaxCount:
-    Ignore: true
-  ClusterDescription:
-    Ignore: true
-  ClusterCustomConfiguration:
-    Ignore: true
-  AdditionalPackages:
-    Ignore: true
-  IsEnterpriseSecurityGroup:
-    Ignore: true
-  Queues:
-    Ignore: true
-  MaxCoreCount:
-    Ignore: true
+  VSwitchId:
+    To: cluster_vswitch_id
+  VpcId:
+    To: cluster_vpc_id
 Attributes:
   ClusterId:
     To: id

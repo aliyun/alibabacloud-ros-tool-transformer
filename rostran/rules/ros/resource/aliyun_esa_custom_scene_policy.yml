@@ -15,15 +15,15 @@ Properties:
   Template:
     To: template
 Attributes:
-  PolicyId:
-    To: id
-  Template:
-    Ignore: true
-  Objects:
-    Ignore: true
-  EndTime:
-    Ignore: true
   CreateTime:
     Ignore: true
   CustomScenePolicyName:
+    Ignore: true
+  EndTime:
+    Ignore: true
+  Objects:
+    Ignore: true
+  PolicyId:
+    To: id
+  Template:
     Ignore: true

@@ -6,18 +6,17 @@ ResourceType:
 Properties:
   AccountName:
     To: account_name
+  AccountPrivilege:
+    Ignore: true
   CharacterSetName:
     To: character_set_name
+  Collate:
+    Ignore: true
+  Ctype:
+    Ignore: true
   DBClusterId:
     To: db_cluster_id
   DBDescription:
     To: db_description
   DBName:
     To: db_name
-  Ctype:
-    Ignore: true
-  Collate:
-    Ignore: true
-  AccountPrivilege:
-    Ignore: true
-Attributes: {}

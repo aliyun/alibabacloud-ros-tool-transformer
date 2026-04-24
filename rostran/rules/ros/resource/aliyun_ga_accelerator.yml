@@ -6,36 +6,34 @@ ResourceType:
 Properties:
   AcceleratorName:
     To: accelerator_name
+  AutoPay:
+    Ignore: true
+  AutoUseCoupon:
+    To: auto_use_coupon
   BandwidthBillingType:
     To: bandwidth_billing_type
   Duration:
     To: duration
+  EnableCrossBorder:
+    To: cross_border_status
+  InstanceChargeType:
+    To: payment_type
+  IpSetConfig:
+    Ignore: true
   PricingCycle:
     To: pricing_cycle
   ResourceGroupId:
     To: resource_group_id
   Spec:
     To: spec
-  AutoPay:
-    Ignore: true
-  EnableCrossBorder:
-    Ignore: true
-  InstanceChargeType:
-    Ignore: true
-  IpSetConfig:
-    Ignore: true
-  AutoUseCoupon:
-    To: auto_use_coupon
 Attributes:
   AcceleratorId:
     To: id
   AcceleratorName:
     To: accelerator_name
-  PaymentType:
-    To: payment_type
-  Spec:
-    To: spec
   AutoPay:
+    Ignore: true
+  AutoUseCoupon:
     Ignore: true
   DnsName:
     Ignore: true
@@ -43,7 +41,9 @@ Attributes:
     Ignore: true
   OrderId:
     Ignore: true
+  PaymentType:
+    To: payment_type
   PricingCycle:
     Ignore: true
-  AutoUseCoupon:
-    Ignore: true
+  Spec:
+    To: spec

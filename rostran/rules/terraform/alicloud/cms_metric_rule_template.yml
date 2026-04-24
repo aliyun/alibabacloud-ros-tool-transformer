@@ -11,7 +11,45 @@ Properties:
       category:
         To: Category
       escalations:
-        Ignore: true
+        To: Escalations
+        Type: Map
+        Schema:
+          critical:
+            To: Critical
+            Type: Map
+            Schema:
+              comparison_operator:
+                To: ComparisonOperator
+              statistics:
+                To: Statistics
+              threshold:
+                To: Threshold
+              times:
+                To: Times
+          info:
+            To: Info
+            Type: Map
+            Schema:
+              comparison_operator:
+                To: ComparisonOperator
+              statistics:
+                To: Statistics
+              threshold:
+                To: Threshold
+              times:
+                To: Times
+          warn:
+            To: Warn
+            Type: Map
+            Schema:
+              comparison_operator:
+                To: ComparisonOperator
+              statistics:
+                To: Statistics
+              threshold:
+                To: Threshold
+              times:
+                To: Times
       metric_name:
         To: MetricName
       namespace:
@@ -38,8 +76,6 @@ Properties:
     To: Name
   notify_level:
     Ignore: true
-  rest_version:
-    To: RestVersion
   silence_time:
     Ignore: true
   warn:
@@ -49,11 +85,5 @@ Properties:
 Attributes:
   id:
     To: Id
-  alert_templates:
-    Ignore: true
-  description:
-    Ignore: true
-  metric_rule_template_name:
-    Ignore: true
   rest_version:
     Ignore: true

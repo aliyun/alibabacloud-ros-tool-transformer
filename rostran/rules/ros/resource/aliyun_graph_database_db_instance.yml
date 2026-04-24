@@ -4,10 +4,10 @@ ResourceType:
   From: ALIYUN::GraphDatabase::DbInstance
   To: alicloud_graph_database_db_instance
 Properties:
-  DbInstanceCategory:
-    To: db_instance_category
-  DbInstanceDescription:
-    To: db_instance_description
+  BackupSetId:
+    Ignore: true
+  CreateType:
+    Ignore: true
   DBInstanceIPArray:
     To: db_instance_ip_array
     Type: List
@@ -16,6 +16,10 @@ Properties:
         To: db_instance_ip_array_name
       SecurityIps:
         To: security_ips
+  DbInstanceCategory:
+    To: db_instance_category
+  DbInstanceDescription:
+    To: db_instance_description
   DbInstanceNetworkType:
     To: db_instance_network_type
   DbInstanceStorageType:
@@ -26,94 +30,90 @@ Properties:
     To: db_node_storage
   DbVersion:
     To: db_version
-  PaymentType:
-    To: payment_type
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  Tags:
+  EcsSecurityGroupRelations:
     Ignore: true
   MaintainTime:
     Ignore: true
-  CreateType:
-    Ignore: true
-  BackupSetId:
-    Ignore: true
-  SourceDbInstanceId:
-    Ignore: true
+  PaymentType:
+    To: payment_type
   ResourceGroupId:
-    Ignore: true
-  EcsSecurityGroupRelations:
     Ignore: true
   RestoreType:
     Ignore: true
-Attributes:
-  DbInstanceId:
-    To: id
-  ConnectionString:
-    To: connection_string
-  Port:
-    To: port
-  LockReason:
-    To: status
-  DbNodeCount:
-    Ignore: true
-  MaintainTime:
-    Ignore: true
-  VpcId:
-    Ignore: true
-  PublicPort:
-    Ignore: true
-  DbInstanceDescription:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
-  CreateTime:
-    Ignore: true
-  DbInstanceCategory:
-    Ignore: true
-  DBInstanceIPArray:
-    Ignore: true
-  DbNodeStorage:
+  SourceDbInstanceId:
     Ignore: true
   Tags:
     Ignore: true
-  DbInstanceMemory:
-    Ignore: true
-  DbInstanceType:
-    Ignore: true
-  LockMode:
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
+Attributes:
+  ConnectionString:
+    To: connection_string
+  CreateTime:
     Ignore: true
   CurrentMinorVersion:
     Ignore: true
-  DbNodeClass:
+  DBInstanceIPArray:
     Ignore: true
-  EcsSecurityGroupRelations:
+  DbInstanceCategory:
     Ignore: true
   DbInstanceCpu:
     Ignore: true
-  ExpireTime:
+  DbInstanceDescription:
     Ignore: true
-  DbInstanceStorageType:
-    Ignore: true
-  LatestMinorVersion:
-    Ignore: true
-  VSwitchId:
-    Ignore: true
-  DbVersion:
-    Ignore: true
-  Expired:
-    Ignore: true
-  ReadOnlyDbInstanceIds:
-    Ignore: true
-  ZoneId:
-    Ignore: true
-  PublicConnectionString:
+  DbInstanceId:
+    To: id
+  DbInstanceMemory:
     Ignore: true
   DbInstanceNetworkType:
     Ignore: true
+  DbInstanceStorageType:
+    Ignore: true
+  DbInstanceType:
+    Ignore: true
+  DbNodeClass:
+    Ignore: true
+  DbNodeCount:
+    Ignore: true
+  DbNodeStorage:
+    Ignore: true
+  DbVersion:
+    Ignore: true
+  EcsSecurityGroupRelations:
+    Ignore: true
+  ExpireTime:
+    Ignore: true
+  Expired:
+    Ignore: true
+  LatestMinorVersion:
+    Ignore: true
+  LockMode:
+    Ignore: true
+  LockReason:
+    To: status
+  MaintainTime:
+    Ignore: true
   PaymentType:
+    Ignore: true
+  Port:
+    To: port
+  PublicConnectionString:
+    Ignore: true
+  PublicPort:
+    Ignore: true
+  ReadOnlyDbInstanceIds:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  Tags:
+    Ignore: true
+  VSwitchId:
+    Ignore: true
+  VpcId:
+    Ignore: true
+  ZoneId:
     Ignore: true

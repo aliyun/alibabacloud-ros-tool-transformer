@@ -22,28 +22,28 @@ Properties:
         To: header
       Name:
         To: name
+      OriginId:
+        Ignore: true
       Type:
         To: type
       Weight:
         To: weight
-      OriginId:
-        Ignore: true
   SiteId:
     To: site_id
 Attributes:
+  Enabled:
+    Ignore: true
   OriginPoolId:
     To: origin_pool_id
+  OriginPoolName:
+    Ignore: true
   Origins:
     To: origins
-  References:
-    Ignore: true
   RecordName:
     Ignore: true
   ReferenceLBCount:
     Ignore: true
-  Enabled:
-    Ignore: true
-  OriginPoolName:
+  References:
     Ignore: true
   SiteId:
     To: id

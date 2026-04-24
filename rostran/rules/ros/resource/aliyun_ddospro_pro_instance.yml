@@ -12,9 +12,13 @@ Properties:
   BaseBandwidth:
     To: base_bandwidth
     Handler: to_int
+  BurstBandwidthMode:
+    To: bandwidth_mode
   DomainCount:
     To: domain_count
     Handler: to_int
+  Edition:
+    To: edition_sale
   FunctionVersion:
     To: function_version
   NormalQps:
@@ -23,25 +27,21 @@ Properties:
   Period:
     To: period
     Handler: to_int
+  PeriodUnit:
+    Ignore: true
   PortCount:
     To: port_count
     Handler: to_int
   ServiceBandwidth:
     To: service_bandwidth
     Handler: to_int
+  ServicePartner:
+    To: product_type
   Tags:
     To: tags
     Handler: handle_tags
-  Edition:
-    To: edition_sale
-  ServicePartner:
-    Ignore: true
-  PeriodUnit:
-    Ignore: true
-  BurstBandwidthMode:
-    To: bandwidth_mode
 Attributes:
-  InstanceId:
-    To: id
   Arn:
     Ignore: true
+  InstanceId:
+    To: id

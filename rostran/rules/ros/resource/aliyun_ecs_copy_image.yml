@@ -4,31 +4,31 @@ ResourceType:
   From: ALIYUN::ECS::CopyImage
   To: alicloud_image_copy
 Properties:
-  Encrypted:
-    To: encrypted
+  AllowCopyInSameRegion:
+    Ignore: true
+  DestinationDescription:
+    To: description
   DestinationImageName:
     To: image_name
-  KMSKeyId:
-    To: kms_key_id
+  DestinationRegionId:
+    Ignore: true
+  Encrypted:
+    To: encrypted
   ImageId:
     To: source_image_id
+  KMSKeyId:
+    To: kms_key_id
+  ResourceGroupId:
+    Ignore: true
   SourceRegionId:
     To: source_region_id
   Tag:
     To: tags
     Handler: handle_tags
-  ResourceGroupId:
-    Ignore: true
+Attributes:
   DestinationRegionId:
     Ignore: true
-  AllowCopyInSameRegion:
-    Ignore: true
-  DestinationDescription:
-    To: description
-Attributes:
   ImageId:
     To: id
-  DestinationRegionId:
-    Ignore: true
   SourceRegionId:
     Ignore: true

@@ -25,7 +25,11 @@ Properties:
     Type: List
     Schema:
       dead_letter_queue:
-        Ignore: true
+        To: DeadLetterQueue
+        Type: Map
+        Schema:
+          arn:
+            To: Arn
       endpoint:
         To: Endpoint
       param_list:
@@ -56,15 +60,3 @@ Attributes:
     - EventBusName
     - RuleName
     Handler: colon_join
-  description:
-    Ignore: true
-  event_bus_name:
-    To: EventBusName
-  filter_pattern:
-    Ignore: true
-  rule_name:
-    To: RuleName
-  status:
-    Ignore: true
-  targets:
-    Ignore: true

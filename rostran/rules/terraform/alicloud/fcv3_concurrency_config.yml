@@ -8,3 +8,8 @@ Properties:
     To: FunctionName
   reserved_concurrency:
     To: ReservedConcurrency
+Attributes:
+  id:
+    Ignore: true
+  function_arn:
+    Ignore: true

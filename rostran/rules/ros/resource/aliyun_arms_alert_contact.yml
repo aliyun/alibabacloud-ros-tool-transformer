@@ -4,20 +4,20 @@ ResourceType:
   From: ALIYUN::ARMS::AlertContact
   To: alicloud_arms_alert_contact
 Properties:
+  ContactName:
+    To: alert_contact_name
   DingRobotWebhookUrl:
     To: ding_robot_webhook_url
   Email:
     To: email
   PhoneNum:
     To: phone_num
-  SystemNoc:
-    To: system_noc
   ProxyUserId:
     Ignore: true
   RegionId:
     Ignore: true
-  ContactName:
-    To: alert_contact_name
+  SystemNoc:
+    To: system_noc
 Attributes:
   ContactId:
     To: id

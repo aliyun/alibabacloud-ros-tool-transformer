@@ -35,35 +35,35 @@ Properties:
   Tls13:
     To: tls13
 Attributes:
-  ConfigId:
-    To: config_id
-  OcspStapling:
-    Ignore: true
-  Tls12:
-    Ignore: true
-  Https:
-    Ignore: true
-  Http2:
-    Ignore: true
-  Rule:
-    Ignore: true
-  RuleName:
-    Ignore: true
-  Tls11:
-    Ignore: true
-  Tls10:
-    Ignore: true
-  Sequence:
-    Ignore: true
-  RuleEnable:
+  Ciphersuite:
     Ignore: true
   CiphersuiteGroup:
     Ignore: true
-  Tls13:
-    Ignore: true
+  ConfigId:
+    To: config_id
   ConfigType:
+    Ignore: true
+  Http2:
     Ignore: true
   Http3:
     Ignore: true
-  Ciphersuite:
+  Https:
+    Ignore: true
+  OcspStapling:
+    Ignore: true
+  Rule:
+    Ignore: true
+  RuleEnable:
+    Ignore: true
+  RuleName:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  Tls10:
+    Ignore: true
+  Tls11:
+    Ignore: true
+  Tls12:
+    Ignore: true
+  Tls13:
     Ignore: true

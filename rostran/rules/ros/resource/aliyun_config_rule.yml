@@ -28,12 +28,12 @@ Properties:
     To: source_identifier
   SourceOwner:
     To: source_owner
+  TagKeyLogicScope:
+    Ignore: true
   TagKeyScope:
     To: tag_key_scope
   TagValueScope:
     To: tag_value_scope
-  TagKeyLogicScope:
-    Ignore: true
 Attributes:
   ConfigRuleArn:
     To: config_rule_arn

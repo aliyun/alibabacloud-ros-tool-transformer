@@ -4,36 +4,36 @@ ResourceType:
   From: ALIYUN::FC::Trigger
   To: alicloud_fc_trigger
 Properties:
-  TriggerConfig:
-    To: config
   FunctionName:
     To: function
-  TriggerName:
-    To: name
-  TriggerName$$0:
-    To: name_prefix
   InvocationRole:
     To: role
+  Qualifier:
+    Ignore: true
   ServiceName:
     To: service
   SourceArn:
     To: source_arn
-  TriggerType:
-    To: type
-  Qualifier:
-    Ignore: true
+  TriggerConfig:
+    To: config
   TriggerConfig$$0:
     To: config_mns
+  TriggerName:
+    To: name
+  TriggerName$$0:
+    To: name_prefix
+  TriggerType:
+    To: type
 Attributes:
-  TriggerId:
-    To: trigger_id
+  FunctionName:
+    Ignore: true
   ServiceName:
     Ignore: true
+  TriggerId:
+    To: trigger_id
   TriggerName:
     Ignore: true
   UrlInternet:
-    Ignore: true
-  FunctionName:
     Ignore: true
   UrlIntranet:
     Ignore: true

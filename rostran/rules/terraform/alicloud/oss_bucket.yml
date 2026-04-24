@@ -26,49 +26,91 @@ Properties:
         To: MaxAgeSeconds
   created_before_date:
     Ignore: true
-  creation_date:
-    Ignore: true
   date:
     Ignore: true
   days:
     Ignore: true
   expired_object_delete_marker:
     Ignore: true
-  extranet_endpoint:
-    Ignore: true
   force_destroy:
     To: DeletionForce
-  intranet_endpoint:
-    Ignore: true
   is_access_time:
     Ignore: true
   lifecycle_rule:
-    To: LifecycleConfiguration
-    Type: Map
+    To: LifecycleConfiguration.Rule
+    Type: List
     Schema:
       abort_multipart_upload:
-        Ignore: true
+        To: AbortMultipartUpload
+        Type: Map
+        Schema:
+          created_before_date:
+            To: CreatedBeforeDate
+          days:
+            To: Days
       enabled:
-        Ignore: true
+        To: Status
       expiration:
-        Ignore: true
+        To: Expiration
+        Type: Map
+        Schema:
+          created_before_date:
+            To: CreatedBeforeDate
+          date:
+            To: CreatedBeforeDate
+          days:
+            To: Days
+          expired_object_delete_marker:
+            To: ExpiredObjectDeleteMarker
       filter:
-        Ignore: true
+        To: Filter
+        Type: Map
+        Schema:
+          not:
+            To: Not
+            Type: Map
+            Schema:
+              prefix:
+                To: Prefix
+              tag:
+                To: Tag
+                Type: List
+                Schema:
+                  key:
+                    To: Key
+                  value:
+                    To: Value
+          object_size_greater_than:
+            Ignore: true
+          object_size_less_than:
+            Ignore: true
       id:
-        Ignore: true
+        To: ID
       noncurrent_version_expiration:
         Ignore: true
       noncurrent_version_transition:
         Ignore: true
       prefix:
-        Ignore: true
+        To: Prefix
       tags:
         Ignore: true
       transitions:
-        Ignore: true
+        To: Transition
+        Type: List
+        Schema:
+          created_before_date:
+            To: CreatedBeforeDate
+          date:
+            To: CreatedBeforeDate
+          days:
+            To: Days
+          is_access_time:
+            To: IsAccessTime
+          return_to_std_when_visit:
+            To: ReturnToStdWhenVisit
+          storage_class:
+            To: StorageClass
   lifecycle_rule_allow_same_action_overlap:
-    Ignore: true
-  location:
     Ignore: true
   logging:
     To: LoggingConfiguration
@@ -83,8 +125,6 @@ Properties:
   object_size_greater_than:
     Ignore: true
   object_size_less_than:
-    Ignore: true
-  owner:
     Ignore: true
   policy:
     To: Policy
@@ -128,7 +168,7 @@ Properties:
       status:
         To: Status
   website:
-    To: WebsiteConfiguration
+    To: WebsiteConfigurationV2
     Type: Map
     Schema:
       error_document:
@@ -138,12 +178,6 @@ Properties:
 Attributes:
   id:
     To: Name
-  access_monitor:
-    Ignore: true
-  acl:
-    Ignore: true
-  bucket:
-    Ignore: true
   creation_date:
     Ignore: true
   extranet_endpoint:
@@ -153,14 +187,4 @@ Attributes:
   location:
     Ignore: true
   owner:
-    Ignore: true
-  redundancy_type:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  server_side_encryption_rule:
-    Ignore: true
-  storage_class:
-    Ignore: true
-  versioning:
     Ignore: true

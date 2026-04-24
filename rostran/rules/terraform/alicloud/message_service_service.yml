@@ -1,0 +1,10 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_message_service_service
+  To: ALIYUN::MNS::Topic
+Attributes:
+  id:
+    To: TopicName
+  status:
+    Ignore: true

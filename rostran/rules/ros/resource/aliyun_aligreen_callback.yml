@@ -17,13 +17,13 @@ Properties:
 Attributes:
   CallbackId:
     To: id
-  CallbackUrl:
+  CallbackName:
     Ignore: true
   CallbackSuggestions:
     Ignore: true
-  CallbackName:
-    Ignore: true
   CallbackTypes:
+    Ignore: true
+  CallbackUrl:
     Ignore: true
   CryptType:
     Ignore: true

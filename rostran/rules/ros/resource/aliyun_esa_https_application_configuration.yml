@@ -24,64 +24,64 @@ Properties:
     To: https_force
   HttpsForceCode:
     To: https_force_code
+  HttpsNoSniDeny:
+    To: https_no_sni_deny
+  HttpsSniVerify:
+    To: https_sni_verify
+  HttpsSniWhitelist:
+    To: https_sni_whitelist
+  PaymentType:
+    Ignore: true
   Rule:
     To: rule
   RuleEnable:
     To: rule_enable
   RuleName:
     To: rule_name
+  Sequence:
+    To: sequence
   SiteId:
     To: site_id
   SiteVersion:
     To: site_version
-  HttpsSniVerify:
-    To: https_sni_verify
-  HttpsSniWhitelist:
-    To: https_sni_whitelist
-  Sequence:
-    To: sequence
-  PaymentType:
-    Ignore: true
-  HttpsNoSniDeny:
-    To: https_no_sni_deny
 Attributes:
-  ConfigId:
-    To: config_id
-  SiteVersion:
+  AltSvc:
     Ignore: true
-  HstsMaxAge:
+  AltSvcClear:
     Ignore: true
   AltSvcMa:
     Ignore: true
-  HstsIncludeSubdomains:
-    Ignore: true
-  ConfigType:
-    Ignore: true
-  Rule:
-    Ignore: true
   AltSvcPersist:
     Ignore: true
-  HstsPreload:
-    Ignore: true
-  HttpsSniWhitelist:
-    Ignore: true
-  HttpsForce:
-    Ignore: true
-  HttpsNoSniDeny:
-    Ignore: true
-  RuleEnable:
+  ConfigId:
+    To: config_id
+  ConfigType:
     Ignore: true
   Hsts:
     Ignore: true
-  AltSvc:
+  HstsIncludeSubdomains:
     Ignore: true
-  HttpsSniVerify:
+  HstsMaxAge:
+    Ignore: true
+  HstsPreload:
+    Ignore: true
+  HttpsForce:
     Ignore: true
   HttpsForceCode:
     Ignore: true
-  AltSvcClear:
+  HttpsNoSniDeny:
+    Ignore: true
+  HttpsSniVerify:
+    Ignore: true
+  HttpsSniWhitelist:
+    Ignore: true
+  Rule:
+    Ignore: true
+  RuleEnable:
     Ignore: true
   RuleName:
     Ignore: true
   Sequence:
+    Ignore: true
+  SiteVersion:
     Ignore: true

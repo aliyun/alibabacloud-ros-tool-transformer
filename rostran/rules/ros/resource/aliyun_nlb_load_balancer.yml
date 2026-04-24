@@ -12,45 +12,6 @@ Properties:
     To: bandwidth_package_id
   CrossZoneEnabled:
     To: cross_zone_enabled
-  LoadBalancerName:
-    To: load_balancer_name
-  LoadBalancerType:
-    To: load_balancer_type
-  ResourceGroupId:
-    To: resource_group_id
-  Tags:
-    To: tags
-    Handler: handle_tags
-  VpcId:
-    To: vpc_id
-  ZoneMappings:
-    To: zone_mappings
-    Type: List
-    Schema:
-      AllocationId:
-        To: allocation_id
-      ZoneId:
-        To: zone_id
-      EipType:
-        Ignore: true
-      PrivateIPv4Address:
-        Ignore: true
-      LoadBalancerAddresses:
-        Ignore: true
-      VSwitchId:
-        Ignore: true
-  ModificationProtectionConfig:
-    To: modification_protection_config
-    Type: Map
-    Schema:
-      Reason:
-        To: reason
-      Status:
-        To: status
-  LoadBalancerBillingConfig:
-    To: payment_type
-  TrafficAffinityEnabled:
-    Ignore: true
   DeletionProtectionConfig:
     To: deletion_protection_config
     Type: Map
@@ -59,20 +20,59 @@ Properties:
         To: enabled
       Reason:
         To: reason
+  LoadBalancerBillingConfig:
+    To: payment_type
+  LoadBalancerName:
+    To: load_balancer_name
+  LoadBalancerType:
+    To: load_balancer_type
+  ModificationProtectionConfig:
+    To: modification_protection_config
+    Type: Map
+    Schema:
+      Reason:
+        To: reason
+      Status:
+        To: status
+  ResourceGroupId:
+    To: resource_group_id
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TrafficAffinityEnabled:
+    Ignore: true
+  VpcId:
+    To: vpc_id
+  ZoneMappings:
+    To: zone_mappings
+    Type: List
+    Schema:
+      AllocationId:
+        To: allocation_id
+      EipType:
+        Ignore: true
+      LoadBalancerAddresses:
+        Ignore: true
+      PrivateIPv4Address:
+        Ignore: true
+      VSwitchId:
+        Ignore: true
+      ZoneId:
+        To: zone_id
 Attributes:
-  LoadBalancerId:
-    To: id
   AddressIpVersion:
     To: address_ip_version
   AddressType:
     To: address_type
+  Arn:
+    Ignore: true
   DNSName:
     To: dns_name
+  LoadBalancerId:
+    To: id
   LoadBalancerType:
     To: load_balancer_type
   VpcId:
     To: vpc_id
   ZoneMappings:
     To: zone_mappings
-  Arn:
-    Ignore: true

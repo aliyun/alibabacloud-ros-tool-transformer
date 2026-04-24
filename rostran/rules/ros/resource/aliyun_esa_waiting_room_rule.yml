@@ -4,14 +4,14 @@ ResourceType:
   From: ALIYUN::ESA::WaitingRoomRule
   To: alicloud_esa_waiting_room_rule
 Properties:
-  SiteId:
-    To: site_id
-  RuleName:
-    Ignore: true
   Rule:
     Ignore: true
   RuleEnable:
     Ignore: true
+  RuleName:
+    Ignore: true
+  SiteId:
+    To: site_id
   WaitingRoomId:
     Ignore: true
 Attributes:
@@ -19,7 +19,7 @@ Attributes:
     Ignore: true
   RuleEnable:
     Ignore: true
-  WaitingRoomRuleId:
-    Ignore: true
   RuleName:
+    Ignore: true
+  WaitingRoomRuleId:
     Ignore: true

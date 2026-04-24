@@ -4,6 +4,18 @@ ResourceType:
   From: ALIYUN::SLS::Index
   To: alicloud_sls_index
 Properties:
+  FullTextIndex:
+    To: full_text
+    Type: Map
+    Schema:
+      CaseSensitive:
+        To: case_sensitive
+      Delimiter:
+        Ignore: true
+      Enable:
+        Ignore: true
+      IncludeChinese:
+        To: include_chinese
   KeyIndices:
     To: field_search
     Type: List
@@ -12,6 +24,8 @@ Properties:
         To: alias
       CaseSensitive:
         To: case_sensitive
+      Delimiter:
+        Ignore: true
       EnableAnalytics:
         To: enable_analytics
       IncludeChinese:
@@ -32,24 +46,9 @@ Properties:
         To: name
       Type:
         To: type
-      Delimiter:
-        Ignore: true
-  FullTextIndex:
-    To: full_text
-    Type: Map
-    Schema:
-      CaseSensitive:
-        To: case_sensitive
-      IncludeChinese:
-        To: include_chinese
-      Enable:
-        Ignore: true
-      Delimiter:
-        Ignore: true
+  LogReduce:
+    To: log_reduce
   LogstoreName:
     To: logstore
   ProjectName:
     To: project
-  LogReduce:
-    To: log_reduce
-Attributes: {}

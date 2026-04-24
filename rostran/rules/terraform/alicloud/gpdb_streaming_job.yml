@@ -1,0 +1,57 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_gpdb_streaming_job
+  To: ALIYUN::GPDB::StreamingDataService
+Properties:
+  account:
+    Ignore: true
+  consistency:
+    Ignore: true
+  data_source_id:
+    Ignore: true
+  db_instance_id:
+    To: DBInstanceId
+  dest_columns:
+    Ignore: true
+  dest_database:
+    Ignore: true
+  dest_schema:
+    Ignore: true
+  dest_table:
+    Ignore: true
+  error_limit_count:
+    Ignore: true
+  fallback_offset:
+    Ignore: true
+  group_name:
+    Ignore: true
+  job_config:
+    Ignore: true
+  job_description:
+    To: ServiceDescription
+  job_name:
+    To: ServiceName
+  match_columns:
+    Ignore: true
+  mode:
+    Ignore: true
+  password:
+    Ignore: true
+  src_columns:
+    Ignore: true
+  try_run:
+    Ignore: true
+  update_columns:
+    Ignore: true
+  write_mode:
+    Ignore: true
+Attributes:
+  id:
+    To: ServiceId
+  create_time:
+    To: CreateTime
+  job_id:
+    To: ServiceId
+  status:
+    Ignore: true

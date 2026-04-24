@@ -4,14 +4,14 @@ ResourceType:
   From: ALIYUN::ResourceManager::Account
   To: alicloud_resource_manager_account
 Properties:
+  DeleteAccount:
+    To: force_delete
   DisplayName:
     To: display_name
   FolderId:
     To: folder_id
   PayerAccountId:
     To: payer_account_id
-  DeleteAccount:
-    To: force_delete
 Attributes:
   AccountId:
     To: id

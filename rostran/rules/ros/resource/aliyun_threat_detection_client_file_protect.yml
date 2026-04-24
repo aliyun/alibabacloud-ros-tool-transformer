@@ -1,0 +1,43 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::ClientFileProtect
+  To: alicloud_threat_detection_client_file_protect
+Properties:
+  AlertLevel:
+    To: alert_level
+  FileOps:
+    To: file_ops
+  FilePaths:
+    To: file_paths
+  Platform:
+    Ignore: true
+  ProcPaths:
+    To: proc_paths
+  RuleAction:
+    To: rule_action
+  RuleName:
+    To: rule_name
+  Status:
+    To: status
+  SwitchId:
+    To: switch_id
+Attributes:
+  AlertLevel:
+    Ignore: true
+  FileOps:
+    Ignore: true
+  FilePaths:
+    Ignore: true
+  Platform:
+    Ignore: true
+  ProcPaths:
+    Ignore: true
+  RuleAction:
+    Ignore: true
+  RuleId:
+    To: id
+  RuleName:
+    Ignore: true
+  SwitchId:
+    Ignore: true

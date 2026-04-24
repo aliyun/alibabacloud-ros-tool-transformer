@@ -15,17 +15,17 @@ Properties:
   Title:
     To: title
 Attributes:
-  MessageContactId:
-    To: id
   CreateTime:
     To: create_time
+  EmailAddress:
+    Ignore: true
+  MessageContactId:
+    To: id
   MessageContactName:
     Ignore: true
   MessageTypes:
     Ignore: true
-  Title:
-    Ignore: true
-  EmailAddress:
-    Ignore: true
   PhoneNumber:
+    Ignore: true
+  Title:
     Ignore: true

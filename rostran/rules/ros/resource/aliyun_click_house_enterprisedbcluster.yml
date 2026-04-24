@@ -4,46 +4,46 @@ ResourceType:
   From: ALIYUN::ClickHouse::EnterpriseDBCluster
   To: alicloud_click_house_enterprise_db_cluster
 Properties:
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  NodeScaleMax:
-    Ignore: true
-  MultiZone:
-    Ignore: true
-  DeploySchema:
-    Ignore: true
-  NodeScaleMin:
-    Ignore: true
-  SourceDBInstanceId:
-    Ignore: true
-  StorageQuota:
+  BackupSetId:
     Ignore: true
   DBInstanceDescription:
     Ignore: true
   DBTimeZone:
     Ignore: true
-  StorageType:
-    Ignore: true
-  ResourceGroupId:
+  DeploySchema:
     Ignore: true
   Engine:
     Ignore: true
+  MultiZone:
+    Ignore: true
   NodeCount:
+    Ignore: true
+  NodeScaleMax:
+    Ignore: true
+  NodeScaleMin:
     Ignore: true
   PublicConnectionSetting:
     Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  SourceDBInstanceId:
+    Ignore: true
+  StorageQuota:
+    Ignore: true
+  StorageType:
+    Ignore: true
   Tags:
     Ignore: true
-  BackupSetId:
-    Ignore: true
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
 Attributes:
-  PrivateConnectionString:
-    Ignore: true
   DBInstanceId:
+    Ignore: true
+  PrivateConnectionString:
     Ignore: true
   PublicConnectionString:
     Ignore: true

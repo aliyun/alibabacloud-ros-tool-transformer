@@ -4,8 +4,12 @@ ResourceType:
   From: ALIYUN::MSE::Cluster
   To: alicloud_mse_cluster
 Properties:
+  AcceptLanguage:
+    Ignore: true
   AclEntryList:
     To: acl_entry_list
+  ChargeType:
+    To: payment_type
   ClusterAliasName:
     To: cluster_alias_name
   ClusterSpecification:
@@ -14,10 +18,14 @@ Properties:
     To: cluster_type
   ClusterVersion:
     To: cluster_version
+  ClusterVersion$$0:
+    To: version_code
   ConnectionType:
     To: connection_type
   DiskType:
     To: disk_type
+  EipEnabled:
+    Ignore: true
   InstanceCount:
     To: instance_count
   MseVersion:
@@ -32,91 +40,83 @@ Properties:
     To: pub_slb_specification
   RequestPars:
     To: request_pars
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  AcceptLanguage:
-    Ignore: true
-  ChargeType:
-    To: payment_type
   ResourceGroupId:
     To: resource_group_id
+  SecurityGroupType:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
-  ClusterVersion$$0:
-    To: version_code
-  SecurityGroupType:
-    Ignore: true
-  EipEnabled:
-    Ignore: true
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
 Attributes:
-  ClusterId:
-    To: id
+  AclEntryList:
+    Ignore: true
+  AclId:
+    Ignore: true
   AppVersion:
     To: app_version
+  Arn:
+    Ignore: true
   ClusterAliasName:
     To: cluster_alias_name
+  ClusterId:
+    To: id
   ClusterId$$0:
     To: cluster_id
+  ClusterName:
+    Ignore: true
   ClusterSpecification:
     To: cluster_specification
   ClusterType:
     To: cluster_type
   ClusterVersion:
     To: cluster_version
+  ConfigAuthEnabled:
+    Ignore: true
+  ConfigSecretEnabled:
+    Ignore: true
   ConnectionType:
     To: connection_type
+  Cpu:
+    Ignore: true
+  DiskCapacity:
+    Ignore: true
+  DiskType:
+    Ignore: true
+  HealthStatus:
+    To: status
   InstanceCount:
     To: instance_count
+  InstanceId:
+    Ignore: true
+  InternetAddress:
+    Ignore: true
+  InternetDomain:
+    Ignore: true
+  InternetPort:
+    Ignore: true
+  IntranetAddress:
+    Ignore: true
+  IntranetDomain:
+    Ignore: true
+  IntranetPort:
+    Ignore: true
+  MCPEnabled:
+    Ignore: true
+  MemoryCapacity:
+    Ignore: true
   MseVersion:
     To: mse_version
   NetType:
     To: net_type
-  PubNetworkFlow:
-    To: pub_network_flow
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
   PayInfo:
     Ignore: true
-  InstanceId:
-    Ignore: true
-  MCPEnabled:
-    Ignore: true
-  InternetAddress:
-    Ignore: true
-  IntranetPort:
-    Ignore: true
-  ClusterName:
-    Ignore: true
-  Cpu:
-    Ignore: true
-  InternetPort:
-    Ignore: true
-  MemoryCapacity:
-    Ignore: true
-  IntranetAddress:
-    Ignore: true
-  HealthStatus:
-    To: status
-  InternetDomain:
-    Ignore: true
-  ConfigAuthEnabled:
-    Ignore: true
-  AclEntryList:
-    Ignore: true
-  IntranetDomain:
-    Ignore: true
-  ConfigSecretEnabled:
-    Ignore: true
-  AclId:
-    Ignore: true
-  DiskType:
-    Ignore: true
-  DiskCapacity:
-    Ignore: true
-  Arn:
-    Ignore: true
+  PubNetworkFlow:
+    To: pub_network_flow
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id

@@ -4,17 +4,17 @@ ResourceType:
   From: ALIYUN::CS::ClusterAddons
   To: alicloud_cs_kubernetes_addon
 Properties:
+  Addons:
+    Ignore: true
   ClusterId:
     To: cluster_id
-  RolePolicy:
-    Ignore: true
   InstalledIgnore:
     Ignore: true
-  WaitUntil:
+  RolePolicy:
     Ignore: true
   ValidationMode:
     Ignore: true
-  Addons:
+  WaitUntil:
     Ignore: true
 Attributes:
   ClusterId:

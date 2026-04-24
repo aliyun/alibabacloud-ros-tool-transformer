@@ -4,14 +4,20 @@ ResourceType:
   From: ALIYUN::Flink::Instance
   To: alicloud_realtime_compute_vvp_instance
 Properties:
+  AutoRenew:
+    Ignore: true
   Bucket:
     To: bucket
-  Duration:
-    To: duration
   ChargeType:
     To: payment_type
+  Duration:
+    To: duration
+  InstanceName:
+    To: vvp_instance_name
   PricingCycle:
     To: pricing_cycle
+  PromotionCode:
+    Ignore: true
   ResourceSpec:
     To: resource_spec
     Type: Map
@@ -20,20 +26,14 @@ Properties:
         To: cpu
       MemoryGB:
         To: memory_gb
-  VpcId:
-    To: vpc_id
-  VSwitchIds:
-    To: vswitch_ids
-  InstanceName:
-    To: vvp_instance_name
-  ZoneId:
-    To: zone_id
-  AutoRenew:
-    Ignore: true
-  PromotionCode:
-    Ignore: true
   UsePromotionCode:
     Ignore: true
+  VSwitchIds:
+    To: vswitch_ids
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
 Attributes:
   InstanceId:
     To: id

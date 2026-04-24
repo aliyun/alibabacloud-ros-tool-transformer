@@ -5,124 +5,55 @@ ResourceType:
   To: ALIYUN::SLS::OssExport
 Properties:
   bucket:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.Bucket
   buffer_interval:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.BufferInterval
   buffer_size:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.BufferSize
   compress_type:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.CompressionType
   config_columns:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.Columns
   content_type:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentType
   csv_config_columns:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.Columns
   csv_config_delimiter:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.Delimiter
   csv_config_escape:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.Escape
   csv_config_header:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.Header
   csv_config_linefeed:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.LineFeed
   csv_config_null:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.Null
   csv_config_quote:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.Quote
   display_name:
     To: DisplayName
   export_name:
     To: ExportName
   from_time:
-    To: Configuration
-    Type: Map
+    To: Configuration.FromTime
   json_enable_tag:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.ContentDetail.EnableTag
   log_read_role_arn:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.RoleArn
   logstore_name:
-    Ignore: true
+    To: Configuration.Logstore
   path_format:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.PathFormat
   prefix:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.Prefix
   project_name:
     To: ProjectName
   role_arn:
-    To: Configuration
-    Type: Map
+    To: Configuration.RoleArn
   suffix:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.Suffix
   time_zone:
-    To: Configuration
-    Type: Map
+    To: Configuration.Sink.TimeZone
 Attributes:
   id:
     To: ExportName
-  bucket:
-    Ignore: true
-  buffer_interval:
-    Ignore: true
-  buffer_size:
-    Ignore: true
-  compress_type:
-    Ignore: true
-  config_columns:
-    Ignore: true
-  content_type:
-    Ignore: true
-  csv_config_columns:
-    Ignore: true
-  csv_config_delimiter:
-    Ignore: true
-  csv_config_header:
-    Ignore: true
-  csv_config_linefeed:
-    Ignore: true
-  csv_config_null:
-    Ignore: true
-  csv_config_quote:
-    Ignore: true
-  display_name:
-    Ignore: true
-  export_name:
-    To: ExportName
-  from_time:
-    Ignore: true
-  json_enable_tag:
-    Ignore: true
-  log_read_role_arn:
-    Ignore: true
-  logstore_name:
-    Ignore: true
-  path_format:
-    Ignore: true
-  prefix:
-    Ignore: true
-  project_name:
-    To: ProjectName
-  role_arn:
-    Ignore: true
-  suffix:
-    Ignore: true
-  time_zone:
-    Ignore: true

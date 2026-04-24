@@ -23,6 +23,10 @@ Attributes:
     To: auto_publish_route_enabled
   CenId:
     To: cen_id
+  ClientToken:
+    Ignore: true
+  ResourceType:
+    Ignore: true
   TransitRouterAttachmentDescription:
     To: transit_router_attachment_description
   TransitRouterAttachmentId:
@@ -35,7 +39,3 @@ Attributes:
     To: vbr_id
   VbrOwnerId:
     To: vbr_owner_id
-  ClientToken:
-    Ignore: true
-  ResourceType:
-    Ignore: true

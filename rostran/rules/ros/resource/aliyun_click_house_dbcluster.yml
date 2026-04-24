@@ -6,6 +6,20 @@ ResourceType:
 Properties:
   Category:
     To: category
+  DBClusterDescription:
+    To: db_cluster_description
+  DBClusterNetworkType:
+    To: db_cluster_network_type
+  DBClusterType:
+    To: db_cluster_class
+  DBClusterVersion:
+    To: db_cluster_version
+  DBNodeCount:
+    To: db_node_group_count
+  DBNodeStorage:
+    To: db_node_storage
+  DbNodeStorageType:
+    To: storage_type
   EncryptionKey:
     To: encryption_key
   EncryptionType:
@@ -16,94 +30,80 @@ Properties:
     To: period
   UsedTime:
     To: used_time
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  DBClusterVersion:
-    To: db_cluster_version
-  DBClusterDescription:
-    To: db_cluster_description
-  DbNodeStorageType:
-    To: storage_type
-  DBClusterNetworkType:
-    To: db_cluster_network_type
-  DBNodeStorage:
-    To: db_node_storage
-  DBNodeCount:
-    To: db_node_group_count
-  DBClusterType:
-    To: db_cluster_class
-  VSwitchBak2:
-    Ignore: true
-  ZoneIdBak:
-    Ignore: true
-  ZondIdBak2:
-    Ignore: true
   VSwitchBak:
     Ignore: true
+  VSwitchBak2:
+    Ignore: true
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZondIdBak2:
+    Ignore: true
+  ZoneId:
+    To: zone_id
+  ZoneIdBak:
+    Ignore: true
 Attributes:
-  DBClusterId:
-    To: id
+  AliUid:
+    Ignore: true
+  Bid:
+    Ignore: true
   Category:
     To: category
+  CommodityCode:
+    Ignore: true
   ConnectionString:
     To: connection_string
+  DBClusterDescription:
+    Ignore: true
+  DBClusterId:
+    To: id
+  DBClusterNetworkType:
+    Ignore: true
+  DBClusterType:
+    Ignore: true
+  DBClusterVersion:
+    Ignore: true
+  DBNodeClass:
+    Ignore: true
+  DBNodeCount:
+    Ignore: true
+  DBNodeStorage:
+    Ignore: true
+  DbNodeStorageType:
+    Ignore: true
   EncryptionKey:
     To: encryption_key
   EncryptionType:
     To: encryption_type
-  PaymentType:
-    To: payment_type
-  Port:
-    To: port
-  StorageType:
-    To: storage_type
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  LockMode:
-    Ignore: true
-  IsExpired:
-    Ignore: true
-  DBClusterNetworkType:
-    Ignore: true
-  Period:
-    Ignore: true
-  DbNodeStorageType:
-    Ignore: true
-  AliUid:
-    Ignore: true
-  PublicPort:
-    Ignore: true
-  DBNodeStorage:
-    Ignore: true
-  DBClusterVersion:
-    Ignore: true
-  VpcCloudInstanceId:
-    Ignore: true
-  DBNodeCount:
-    Ignore: true
-  DBClusterType:
-    Ignore: true
   Engine:
     Ignore: true
   EngineVersion:
     Ignore: true
-  PublicConnectionString:
-    To: public_connection_string
-  Bid:
+  IsExpired:
     Ignore: true
-  CommodityCode:
+  LockMode:
     Ignore: true
   LockReason:
     Ignore: true
-  DBNodeClass:
+  PaymentType:
+    To: payment_type
+  Period:
     Ignore: true
-  DBClusterDescription:
+  Port:
+    To: port
+  PublicConnectionString:
+    To: public_connection_string
+  PublicPort:
     Ignore: true
+  StorageType:
+    To: storage_type
+  VSwitchId:
+    To: vswitch_id
+  VpcCloudInstanceId:
+    Ignore: true
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id

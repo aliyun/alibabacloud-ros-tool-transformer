@@ -4,22 +4,32 @@ ResourceType:
   From: ALIYUN::RDS::DBInstanceClone
   To: alicloud_rds_clone_db_instance
 Properties:
+  AllocatePublicConnection:
+    Ignore: true
   BackupId:
     To: backup_id
+  BackupRetentionPeriod:
+    Ignore: true
   BackupType:
     To: backup_type
   Category:
     To: category
   ConnectionStringPrefix:
     To: connection_string_prefix
+  ConnectionStringType:
+    Ignore: true
   DBInstanceClass:
     To: db_instance_class
   DBInstanceDescription:
     To: db_instance_description
+  DBInstanceId:
+    To: source_db_instance_id
   DBInstanceStorage:
     To: db_instance_storage
   DBInstanceStorageType:
     To: db_instance_storage_type
+  DBMappings:
+    Ignore: true
   DbNames:
     To: db_names
   DedicatedHostGroupId:
@@ -30,73 +40,63 @@ Properties:
     To: maintain_time
   MasterUserPassword:
     To: password
+  MasterUserType:
+    Ignore: true
+  MasterUsername:
+    Ignore: true
   PayType:
     To: payment_type
+  Period:
+    To: used_time
   PeriodType:
     To: period
   Port:
     To: port
+  PreferredBackupPeriod:
+    Ignore: true
+  PreferredBackupTime:
+    Ignore: true
   PrivateIpAddress:
     To: private_ip_address
   RestoreTable:
     To: restore_table
   RestoreTime:
     To: restore_time
-  SecurityIPList:
-    To: security_ips
-  DBInstanceId:
-    To: source_db_instance_id
+  SQLCollectorStatus:
+    Ignore: true
   SSLSetting:
     To: ssl_enabled
-  TableMeta:
-    To: table_meta
-  Period:
-    To: used_time
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
+  SecurityGroupId:
+    Ignore: true
+  SecurityIPList:
+    To: security_ips
   SlaveZoneIds:
     To: zone_id_slave_a
-  MasterUserType:
-    Ignore: true
-  AllocatePublicConnection:
-    Ignore: true
+  TableMeta:
+    To: table_meta
   Tags:
     To: tags
     Handler: handle_tags
-  DBMappings:
-    Ignore: true
-  MasterUsername:
-    Ignore: true
   TimeoutInMinutes:
     Ignore: true
-  PreferredBackupTime:
-    Ignore: true
-  PreferredBackupPeriod:
-    Ignore: true
-  SQLCollectorStatus:
-    Ignore: true
-  SecurityGroupId:
-    Ignore: true
-  BackupRetentionPeriod:
-    Ignore: true
-  ConnectionStringType:
-    Ignore: true
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
 Attributes:
-  PublicConnectionString:
-    To: connection_string
-  InnerIPAddress:
-    Ignore: true
   DBInstanceId:
     To: id
-  PublicPort:
+  InnerConnectionString:
+    Ignore: true
+  InnerIPAddress:
     Ignore: true
   InnerPort:
     Ignore: true
+  PublicConnectionString:
+    To: connection_string
   PublicIPAddress:
     Ignore: true
-  InnerConnectionString:
+  PublicPort:
     Ignore: true

@@ -14,56 +14,56 @@ Properties:
     To: rule_actions
     Type: List
     Schema:
-      Order:
-        To: order
-      Type:
-        To: type
-      RedirectConfig:
+      CorsConfig:
         Ignore: true
-      RewriteConfig:
-        Ignore: true
-      TrafficMirrorConfig:
+      FixedResponseConfig:
         Ignore: true
       ForwardGroupConfig:
         Ignore: true
       InsertHeaderConfig:
         Ignore: true
-      FixedResponseConfig:
-        Ignore: true
-      CorsConfig:
+      Order:
+        To: order
+      RedirectConfig:
         Ignore: true
       RemoveHeaderConfig:
         Ignore: true
+      RewriteConfig:
+        Ignore: true
       TrafficLimitConfig:
         Ignore: true
+      TrafficMirrorConfig:
+        Ignore: true
+      Type:
+        To: type
   RuleConditions:
     To: rule_conditions
     Type: List
     Schema:
-      Type:
-        To: type
-      QueryStringConfig:
+      CookieConfig:
         Ignore: true
       HeaderConfig:
         Ignore: true
-      CookieConfig:
+      HostConfig:
         Ignore: true
       MethodConfig:
         Ignore: true
-      ResponseHeaderConfig:
-        Ignore: true
-      HostConfig:
-        Ignore: true
       PathConfig:
         Ignore: true
-      SourceIpConfig:
+      QueryStringConfig:
+        Ignore: true
+      ResponseHeaderConfig:
         Ignore: true
       ResponseStatusCodeConfig:
         Ignore: true
+      SourceIpConfig:
+        Ignore: true
+      Type:
+        To: type
   RuleName:
     To: rule_name
 Attributes:
-  RuleId:
-    To: id
   ListenerId:
     Ignore: true
+  RuleId:
+    To: id

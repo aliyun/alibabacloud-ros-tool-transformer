@@ -18,3 +18,12 @@ Properties:
     Ignore: true
   qualifier:
     Ignore: true
+Attributes:
+  id:
+    Ignore: true
+  create_time:
+    Ignore: true
+  function_arn:
+    Ignore: true
+  last_modified_time:
+    Ignore: true

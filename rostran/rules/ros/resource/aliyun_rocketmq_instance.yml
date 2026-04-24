@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::ROCKETMQ::Instance
   To: alicloud_ons_instance
 Properties:
+  DeletionForce:
+    Ignore: true
   InstanceName:
     To: instance_name
   Remark:
@@ -11,24 +13,22 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  DeletionForce:
-    Ignore: true
 Attributes:
-  InstanceId:
-    To: id
-  InstanceName:
-    To: instance_name
-  InstanceType:
-    To: instance_type
-  InstanceName$$0:
-    To: name
+  Arn:
+    Ignore: true
   HttpInternalEndpoint:
     Ignore: true
   HttpInternetEndpoint:
     Ignore: true
-  Arn:
-    Ignore: true
   HttpInternetSecureEndpoint:
     Ignore: true
+  InstanceId:
+    To: id
+  InstanceName:
+    To: instance_name
+  InstanceName$$0:
+    To: name
+  InstanceType:
+    To: instance_type
   TcpEndpoint:
     Ignore: true

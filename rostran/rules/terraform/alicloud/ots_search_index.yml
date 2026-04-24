@@ -7,10 +7,6 @@ Properties:
   analyzer:
     To: FieldSchemas
     Type: List
-  create_time:
-    Ignore: true
-  current_sync_timestamp:
-    Ignore: true
   enable_sort_and_agg:
     To: FieldSchemas
     Type: List
@@ -23,8 +19,6 @@ Properties:
   index:
     To: FieldSchemas
     Type: List
-  index_id:
-    Ignore: true
   index_name:
     To: IndexName
   instance_name:
@@ -33,8 +27,7 @@ Properties:
     To: FieldSchemas
     Type: List
   routing_fields:
-    To: IndexSetting
-    Type: Map
+    To: IndexSetting.RoutingFields
   schema:
     Type: Map
     Schema:
@@ -84,16 +77,11 @@ Properties:
   store:
     To: FieldSchemas
     Type: List
-  sync_phase:
-    Ignore: true
   table_name:
     To: TableName
   time_to_live:
-    To: IndexSetting
-    Type: Map
-Attributes:
-  id:
     Ignore: true
+Attributes:
   create_time:
     Ignore: true
   current_sync_timestamp:

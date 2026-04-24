@@ -16,14 +16,26 @@ Properties:
     Schema:
       ArchiveDays:
         To: archive_days
+      ArchiveVaultId:
+        Ignore: true
       BackupType:
         To: backup_type
+      ColdArchiveDays:
+        Ignore: true
+      Continuous:
+        Ignore: true
       DataSourceFilters:
         To: data_source_filters
+      DoDetect:
+        Ignore: true
+      Immutable:
+        Ignore: true
       KeepLatestSnapshots:
         To: keep_latest_snapshots
       ReplicationRegionId:
         To: replication_region_id
+      ReplicationVaultId:
+        Ignore: true
       Retention:
         To: retention
       RetentionRules:
@@ -32,24 +44,12 @@ Properties:
         To: rule_type
       Schedule:
         To: schedule
+      Selector:
+        Ignore: true
       TagFilters:
         To: tag_filters
       VaultId:
         To: vault_id
-      Selector:
-        Ignore: true
-      DoDetect:
-        Ignore: true
-      ReplicationVaultId:
-        Ignore: true
-      ArchiveVaultId:
-        Ignore: true
-      Immutable:
-        Ignore: true
-      ColdArchiveDays:
-        Ignore: true
-      Continuous:
-        Ignore: true
 Attributes:
   PolicyId:
     To: id

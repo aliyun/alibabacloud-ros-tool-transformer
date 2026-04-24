@@ -15,7 +15,7 @@ Properties:
   ZoneId:
     To: zone_id
 Attributes:
-  NetworkAddresses:
-    To: network_address
   CompatibleConnections:
     Ignore: true
+  NetworkAddresses:
+    To: network_address

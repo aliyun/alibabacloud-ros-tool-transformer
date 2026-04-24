@@ -12,17 +12,17 @@ Properties:
     To: encrypted
   EnsRegionId:
     To: ens_region_id
+  InstanceBillingCycle:
+    Ignore: true
+  InstanceChargeType:
+    To: payment_type
+  KMSKeyId:
+    To: kms_key_id
   Size:
     To: size
     Handler: to_int
   SnapshotId:
     To: snapshot_id
-  KMSKeyId:
-    To: kms_key_id
-  InstanceChargeType:
-    To: payment_type
-  InstanceBillingCycle:
-    Ignore: true
 Attributes:
   DiskId:
     To: id

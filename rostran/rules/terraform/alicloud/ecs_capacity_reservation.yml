@@ -5,7 +5,7 @@ ResourceType:
   To: ALIYUN::ECS::CapacityReservation
 Properties:
   capacity_reservation_name:
-    Ignore: true
+    To: PrivatePoolOptions.Name
   description:
     To: Description
   dry_run:
@@ -19,49 +19,20 @@ Properties:
   instance_type:
     To: InstanceType
   match_criteria:
-    To: PrivatePoolOptions
-    Type: Map
-  payment_type:
-    Ignore: true
+    To: PrivatePoolOptions.MatchCriteria
   platform:
     Ignore: true
   resource_group_id:
     To: ResourceGroupId
-  start_time:
-    Ignore: true
-  start_time_type:
-    Ignore: true
-  status:
-    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
-  time_slot:
-    Ignore: true
   zone_ids:
     To: ZoneId
 Attributes:
   id:
     To: PrivatePoolOptionsId
-  capacity_reservation_name:
-    Ignore: true
-  description:
-    Ignore: true
-  end_time:
-    Ignore: true
-  end_time_type:
-    Ignore: true
-  instance_amount:
-    Ignore: true
-  instance_type:
-    Ignore: true
-  match_criteria:
-    Ignore: true
   payment_type:
-    Ignore: true
-  platform:
-    Ignore: true
-  resource_group_id:
     Ignore: true
   start_time:
     Ignore: true
@@ -69,9 +40,5 @@ Attributes:
     Ignore: true
   status:
     Ignore: true
-  tags:
-    Ignore: true
   time_slot:
-    Ignore: true
-  zone_ids:
     Ignore: true

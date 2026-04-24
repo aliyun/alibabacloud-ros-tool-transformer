@@ -4,20 +4,20 @@ ResourceType:
   From: ALIYUN::FC::Layer
   To: alicloud_fc_layer_version
 Properties:
+  Code:
+    To: oss_bucket_name
+  Code$$0:
+    To: zip_file
   CompatibleRuntime:
     To: compatible_runtime
   Description:
     To: description
   LayerName:
     To: layer_name
-  Code:
-    To: oss_bucket_name
-  Code$$0:
-    To: zip_file
 Attributes:
   Arn:
     To: arn
-  Version:
-    To: version
   LayerName:
     Ignore: true
+  Version:
+    To: version

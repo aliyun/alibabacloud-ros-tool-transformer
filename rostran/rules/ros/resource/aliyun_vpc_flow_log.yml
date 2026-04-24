@@ -12,28 +12,28 @@ Properties:
     To: log_store_name
   ProjectName:
     To: project_name
-  TrafficType:
-    To: traffic_type
-  ResourceType:
-    To: resource_type
   ResourceId:
     To: resource_id
+  ResourceType:
+    To: resource_type
+  TrafficType:
+    To: traffic_type
 Attributes:
-  FlowLogId:
-    To: id
   Description:
     To: description
+  FlowLogId:
+    To: id
+  FlowLogId$$0:
+    To: flow_log_id
   FlowLogName:
     To: flow_log_name
   LogStoreName:
     To: log_store_name
   ProjectName:
     To: project_name
-  TrafficType:
-    To: traffic_type
-  ResourceType:
-    To: resource_type
   ResourceId:
     To: resource_id
-  FlowLogId$$0:
-    To: flow_log_id
+  ResourceType:
+    To: resource_type
+  TrafficType:
+    To: traffic_type

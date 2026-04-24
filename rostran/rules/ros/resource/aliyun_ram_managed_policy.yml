@@ -6,26 +6,26 @@ ResourceType:
 Properties:
   Description:
     To: description
-  PolicyDocument:
-    To: document
-    Handler: json_load
-  PolicyName:
-    To: name
-  PolicyDocument$$0:
-    To: policy_document
-    Handler: json_load
-  PolicyName$$0:
-    To: policy_name
-  PolicyDocumentUnchecked:
-    Ignore: true
-  Users:
-    Ignore: true
   Groups:
-    Ignore: true
-  Roles:
     Ignore: true
   IgnoreExisting:
     To: force
+  PolicyDocument:
+    To: document
+    Handler: json_load
+  PolicyDocument$$0:
+    To: policy_document
+    Handler: json_load
+  PolicyDocumentUnchecked:
+    Ignore: true
+  PolicyName:
+    To: name
+  PolicyName$$0:
+    To: policy_name
+  Roles:
+    Ignore: true
+  Users:
+    Ignore: true
 Attributes:
   PolicyName:
     To: id

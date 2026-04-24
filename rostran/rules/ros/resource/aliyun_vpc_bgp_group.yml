@@ -6,22 +6,22 @@ ResourceType:
 Properties:
   AuthKey:
     To: auth_key
-  Name:
-    To: bgp_group_name
   Description:
     To: description
+  IpVersion:
+    To: ip_version
   IsFakeAsn:
     To: is_fake_asn
   LocalAsn:
     To: local_asn
+  Name:
+    To: bgp_group_name
   PeerAsn:
     To: peer_asn
-  RouterId:
-    To: router_id
   RouteQuota:
     To: route_limit
-  IpVersion:
-    To: ip_version
+  RouterId:
+    To: router_id
 Attributes:
   BgpGroupId:
     To: id

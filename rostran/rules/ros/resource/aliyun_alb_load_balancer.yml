@@ -8,12 +8,12 @@ Properties:
     To: access_log_config
     Type: Map
     Schema:
+      Enable:
+        Ignore: true
       LogProject:
         To: log_project
       LogStore:
         To: log_store
-      Enable:
-        Ignore: true
   AddressAllocatedMode:
     To: address_allocated_mode
   AddressIpVersion:
@@ -24,6 +24,8 @@ Properties:
     To: bandwidth_package_id
   DeletionProtectionEnabled:
     To: deletion_protection_enabled
+  Ipv6AddressType:
+    To: ipv6_address_type
   LoadBalancerBillingConfig:
     To: load_balancer_billing_config
     Type: Map
@@ -45,6 +47,8 @@ Properties:
         To: status
   ResourceGroupId:
     To: resource_group_id
+  SecurityGroupIds:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
@@ -54,42 +58,38 @@ Properties:
     To: zone_mappings
     Type: List
     Schema:
-      LoadBalancerAddresses:
-        To: load_balancer_addresses
-        Type: List
-        Schema:
-          IntranetAddress:
-            To: address
-          AllocationId:
-            To: allocation_id
-          EipType:
-            To: eip_type
-      VSwitchId:
-        To: vswitch_id
-      ZoneId:
-        To: zone_id
+      AllocationId:
+        Ignore: true
       EipType:
         Ignore: true
       IntranetAddress:
         Ignore: true
-      AllocationId:
-        Ignore: true
-  SecurityGroupIds:
-    Ignore: true
-  Ipv6AddressType:
-    To: ipv6_address_type
+      LoadBalancerAddresses:
+        To: load_balancer_addresses
+        Type: List
+        Schema:
+          AllocationId:
+            To: allocation_id
+          EipType:
+            To: eip_type
+          IntranetAddress:
+            To: address
+      VSwitchId:
+        To: vswitch_id
+      ZoneId:
+        To: zone_id
 Attributes:
-  LoadBalancerId:
-    To: id
   AddressType:
     To: address_type
+  Arn:
+    Ignore: true
   DNSName:
     To: dns_name
   LoadBalancerEdition:
     To: load_balancer_edition
+  LoadBalancerId:
+    To: id
   VpcId:
     To: vpc_id
   ZoneMappings:
     To: zone_mappings
-  Arn:
-    Ignore: true

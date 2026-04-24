@@ -4,17 +4,17 @@ ResourceType:
   From: ALIYUN::SLS::Project
   To: alicloud_log_project
 Properties:
+  DataRedundancyType:
+    Ignore: true
   Description:
     To: description
   Name:
     To: name
+  ResourceGroupId:
+    To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-  ResourceGroupId:
-    To: resource_group_id
-  DataRedundancyType:
-    Ignore: true
 Attributes:
   Name:
     To: id

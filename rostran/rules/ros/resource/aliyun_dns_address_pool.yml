@@ -8,6 +8,8 @@ Properties:
     To: address
     Type: List
     Schema:
+      Addr:
+        Ignore: true
       AttributeInfo:
         To: attribute_info
       LbaWeight:
@@ -16,30 +18,28 @@ Properties:
         To: mode
       Remark:
         To: remark
-      Addr:
-        Ignore: true
-  Name:
-    To: address_pool_name
+  EvaluationCount:
+    Ignore: true
   InstanceId:
     To: instance_id
-  LbaStrategy:
-    To: lba_strategy
-  Type:
-    To: type
-  Timeout:
+  Interval:
     Ignore: true
   IspCityNode:
     Ignore: true
-  ProtocolType:
+  LbaStrategy:
+    To: lba_strategy
+  MonitorExtendInfo:
     Ignore: true
   MonitorStatus:
     Ignore: true
-  Interval:
+  Name:
+    To: address_pool_name
+  ProtocolType:
     Ignore: true
-  EvaluationCount:
+  Timeout:
     Ignore: true
-  MonitorExtendInfo:
-    Ignore: true
+  Type:
+    To: type
 Attributes:
   AddrPoolId:
     To: id

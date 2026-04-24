@@ -1,0 +1,21 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_esa_waf_ruleset
+  To: ALIYUN::ESA::WafRule
+Properties:
+  name:
+    Ignore: true
+  phase:
+    To: Phase
+  site_id:
+    To: SiteId
+  site_version:
+    To: SiteVersion
+  status:
+    Ignore: true
+Attributes:
+  id:
+    To: WafRuleId
+  ruleset_id:
+    To: RulesetId

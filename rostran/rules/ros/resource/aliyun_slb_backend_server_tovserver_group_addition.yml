@@ -4,10 +4,10 @@ ResourceType:
   From: ALIYUN::SLB::BackendServerToVServerGroupAddition
   To: alicloud_slb_server_group_server_attachment
 Properties:
-  VServerGroupId:
-    To: server_group_id
   BackendServers:
     Ignore: true
+  VServerGroupId:
+    To: server_group_id
 Attributes:
   VServerGroupId:
     To: server_group_id

@@ -11,15 +11,15 @@ Properties:
   auto_renew_duration:
     Ignore: true
   backup_interval:
-    Ignore: true
+    To: BackupPolicyOptions.BackupInterval
   backup_period:
-    Ignore: true
+    To: BackupPolicyOptions.PreferredBackupPeriod
   backup_retention_period:
-    Ignore: true
+    To: BackupPolicyOptions.BackupRetentionPeriod
   backup_retention_policy_on_cluster_deletion:
-    Ignore: true
+    To: BackupPolicyOptions.BackupRetentionPolicyOnClusterDeletion
   backup_time:
-    Ignore: true
+    To: BackupPolicyOptions.PreferredBackupTime
   cloud_disk_encryption_key:
     Ignore: true
   db_instance_class:
@@ -27,11 +27,11 @@ Properties:
   db_instance_release_protection:
     To: DBInstanceReleaseProtection
   db_instance_storage:
-    To: DBInstanceClass
+    To: DBInstanceStorage
   effective_time:
     Ignore: true
   enable_backup_log:
-    Ignore: true
+    To: BackupPolicyOptions.EnableBackupLog
   encrypted:
     To: Encrypted
   encryption_key:
@@ -41,7 +41,7 @@ Properties:
   engine_version:
     To: EngineVersion
   force_encryption:
-    Ignore: true
+    To: SSLOptions.ForceEncryption
   global_security_group_list:
     Ignore: true
   hidden_zone_id:
@@ -53,7 +53,7 @@ Properties:
   kms_encryption_context:
     Ignore: true
   log_backup_retention_period:
-    Ignore: true
+    To: BackupPolicyOptions.LogBackupRetentionPeriod
   maintain_end_time:
     Ignore: true
   maintain_start_time:
@@ -61,7 +61,7 @@ Properties:
   name:
     To: DBInstanceDescription
   network_type:
-    To: NetworkType
+    Ignore: true
   order_type:
     Ignore: true
   parameters:
@@ -72,18 +72,12 @@ Properties:
     To: ProvisionedIops
   readonly_replicas:
     To: ReadonlyReplicas
-  replica_set_name:
-    Ignore: true
-  replica_sets:
-    Ignore: true
   replication_factor:
     To: ReplicationFactor
   resource_group_id:
     To: ResourceGroupId
   restore_time:
     To: RestoreTime
-  retention_period:
-    Ignore: true
   role_arn:
     Ignore: true
   secondary_zone_id:
@@ -93,15 +87,11 @@ Properties:
   security_ip_list:
     To: SecurityIPArray
   snapshot_backup_type:
-    Ignore: true
+    To: BackupPolicyOptions.SnapshotBackupType
   src_db_instance_id:
     To: SrcDBInstanceId
   ssl_action:
-    Ignore: true
-  ssl_status:
-    Ignore: true
-  storage_engine:
-    To: StorageEngine
+    To: SSLOptions.SSLAction
   storage_type:
     To: StorageType
   tags:
@@ -118,87 +108,15 @@ Properties:
 Attributes:
   id:
     To: DBInstanceId
-  backup_interval:
-    Ignore: true
-  backup_period:
-    Ignore: true
-  backup_retention_period:
-    Ignore: true
-  backup_time:
-    Ignore: true
-  cloud_disk_encryption_key:
-    Ignore: true
-  db_instance_class:
-    Ignore: true
-  db_instance_storage:
-    Ignore: true
-  enable_backup_log:
-    Ignore: true
-  encrypted:
-    Ignore: true
-  encryption_key:
-    Ignore: true
-  encryptor_name:
-    Ignore: true
-  engine_version:
-    Ignore: true
-  hidden_zone_id:
-    Ignore: true
-  instance_charge_type:
-    Ignore: true
   key_ids:
-    Ignore: true
-  log_backup_retention_period:
-    Ignore: true
-  maintain_end_time:
-    Ignore: true
-  maintain_start_time:
-    Ignore: true
-  name:
-    Ignore: true
-  network_type:
-    Ignore: true
-  period:
-    Ignore: true
-  provisioned_iops:
-    Ignore: true
-  readonly_replicas:
     Ignore: true
   replica_set_name:
     To: ReplicaSetName
   replica_sets:
     Ignore: true
-  replication_factor:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
   retention_period:
     Ignore: true
-  role_arn:
-    Ignore: true
-  secondary_zone_id:
-    Ignore: true
-  security_group_id:
-    Ignore: true
-  security_ip_list:
-    Ignore: true
-  snapshot_backup_type:
-    Ignore: true
   ssl_status:
-    Ignore: true
-  storage_engine:
-    Ignore: true
-  storage_type:
-    Ignore: true
-  tags:
-    Ignore: true
-  tde_status:
-    Ignore: true
-  vpc_id:
-    Ignore: true
-  vswitch_id:
-    Ignore: true
-  zone_id:
     Ignore: true
   zone_infos:
     Ignore: true

@@ -6,34 +6,34 @@ ResourceType:
 Properties:
   CommandId:
     To: command_id
+  CommandName:
+    Ignore: true
+  ContainerId:
+    Ignore: true
+  ContainerName:
+    Ignore: true
   Frequency:
     To: frequency
   InstanceIds:
     To: instance_id
+  Launcher:
+    Ignore: true
   Parameters:
     To: parameters
   RepeatMode:
     To: repeat_mode
+  ResourceGroupId:
+    Ignore: true
+  Sync:
+    Ignore: true
+  Tags:
+    Ignore: true
+  Timeout:
+    Ignore: true
   Username:
     To: username
   WindowsPasswordName:
     To: windows_password_name
-  Tags:
-    Ignore: true
-  ContainerId:
-    Ignore: true
-  Sync:
-    Ignore: true
-  Timeout:
-    Ignore: true
-  CommandName:
-    Ignore: true
-  ContainerName:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
-  Launcher:
-    Ignore: true
 Attributes:
   InvokeId:
     To: id

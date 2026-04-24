@@ -4,33 +4,14 @@ ResourceType:
   From: ALIYUN::NLB::ServerGroup
   To: alicloud_nlb_server_group
 Properties:
+  AddressIPVersion:
+    To: address_ip_version
   AnyPortEnabled:
     To: any_port_enabled
   ConnectionDrainEnabled:
     To: connection_drain_enabled
   ConnectionDrainTimeout:
     To: connection_drain_timeout
-  PreserveClientIpEnabled:
-    To: preserve_client_ip_enabled
-  Protocol:
-    To: protocol
-  ResourceGroupId:
-    To: resource_group_id
-  Scheduler:
-    To: scheduler
-  ServerGroupName:
-    To: server_group_name
-  ServerGroupType:
-    To: server_group_type
-  Tags:
-    To: tags
-    Handler: handle_tags
-  VpcId:
-    To: vpc_id
-  PersistenceEnabled:
-    Ignore: true
-  PersistenceTimeout:
-    Ignore: true
   HealthCheckConfig:
     To: health_check
     Type: Map
@@ -57,10 +38,29 @@ Properties:
         To: http_check_method
       UnhealthyThreshold:
         To: unhealthy_threshold
+  PersistenceEnabled:
+    Ignore: true
+  PersistenceTimeout:
+    Ignore: true
+  PreserveClientIpEnabled:
+    To: preserve_client_ip_enabled
+  Protocol:
+    To: protocol
+  ResourceGroupId:
+    To: resource_group_id
+  Scheduler:
+    To: scheduler
+  ServerGroupName:
+    To: server_group_name
+  ServerGroupType:
+    To: server_group_type
   Servers:
     Ignore: true
-  AddressIPVersion:
-    To: address_ip_version
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
 Attributes:
   ServerGroupId:
     To: id

@@ -6,18 +6,18 @@ ResourceType:
 Properties:
   Comments:
     To: comments
-  GroupName:
-    To: name
-  Policies:
-    Ignore: true
   DeletionForce:
     To: force
+  GroupName:
+    To: name
+  GroupName$$0:
+    To: name
   IgnoreExisting:
+    Ignore: true
+  Policies:
     Ignore: true
   PolicyAttachments:
     Ignore: true
-  GroupName$$0:
-    To: name
 Attributes:
   GroupName:
     To: id

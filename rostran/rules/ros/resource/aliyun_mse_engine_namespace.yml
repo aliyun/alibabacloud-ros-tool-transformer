@@ -4,14 +4,14 @@ ResourceType:
   From: ALIYUN::MSE::EngineNamespace
   To: alicloud_mse_engine_namespace
 Properties:
-  InstanceId:
-    To: instance_id
-  Name:
-    To: namespace_show_name
   Desc:
     To: namespace_desc
   Id:
     To: namespace_id
+  InstanceId:
+    To: instance_id
+  Name:
+    To: namespace_show_name
 Attributes:
   NamespaceId:
     To: id

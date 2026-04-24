@@ -8,36 +8,36 @@ Properties:
     To: app_id
   ClusterId:
     Ignore: true
-  Specification:
-    Ignore: true
-  Type:
+  LoadBalancerId:
     Ignore: true
   Scheduler:
-    Ignore: true
-  LoadBalancerId:
     Ignore: true
   ServicePortInfos:
     To: service_port
     Type: List
     Schema:
+      CertId:
+        Ignore: true
+      LoadBalancerProtocol:
+        Ignore: true
       Port:
         To: port
       TargetPort:
         To: target_port
-      LoadBalancerProtocol:
-        Ignore: true
-      CertId:
-        Ignore: true
-Attributes:
-  AppId:
-    To: app_id
-  LoadBalancerId:
+  Specification:
     Ignore: true
+  Type:
+    Ignore: true
+Attributes:
   Address:
     Ignore: true
+  AppId:
+    To: app_id
+  AppId$$0:
+    To: app_id
   ChangeOrderId:
+    Ignore: true
+  LoadBalancerId:
     Ignore: true
   LoadBalancerName:
     Ignore: true
-  AppId$$0:
-    To: app_id

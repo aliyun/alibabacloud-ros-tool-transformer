@@ -8,20 +8,20 @@ Properties:
     To: debug_enable
   Description:
     To: description
-  RegionTag:
-    To: namespace_logical_id
   RegionName:
     To: namespace_name
+  RegionTag:
+    To: namespace_logical_id
 Attributes:
-  Id:
-    To: id
+  BelongRegion:
+    Ignore: true
   DebugEnable:
     To: debug_enable
+  Id:
+    To: id
   Id$$0:
     To: namespace_logical_id
   RegionName:
     To: namespace_name
-  BelongRegion:
-    Ignore: true
   UserId:
     Ignore: true

@@ -5,199 +5,321 @@ ResourceType:
   To: ALIYUN::OSS::Website
 Properties:
   access_key_id:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   access_key_secret:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   auth_type:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   bucket:
     To: BucketName
   condition:
-    To: WebsiteConfiguration
+    To: WebsiteConfiguration.RoutingRules.Condition
     Type: Map
     Schema:
       http_error_code_returned_equals:
-        Ignore: true
+        To: HttpErrorCodeReturnedEquals
       include_headers:
         Ignore: true
+        Type: List
       key_prefix_equals:
-        Ignore: true
+        To: KeyPrefixEquals
       key_suffix_equals:
-        Ignore: true
+        To: KeySuffixEquals
   ends_with:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   equals:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   error_document:
-    To: WebsiteConfiguration
+    To: WebsiteConfiguration.ErrorDocument
     Type: Map
     Schema:
       http_status:
-        Ignore: true
+        To: HttpStatus
       key:
-        Ignore: true
+        To: Key
   index_document:
-    To: WebsiteConfiguration
+    To: WebsiteConfiguration.IndexDocument
     Type: Map
     Schema:
       suffix:
-        Ignore: true
+        To: Suffix
       support_sub_dir:
-        Ignore: true
+        To: SupportSubDir
       type:
-        Ignore: true
+        To: Type
   key:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   lua_config:
-    To: WebsiteConfiguration
+    Ignore: true
+  mirror_headers:
+    To: WebsiteConfiguration.RoutingRules.Redirect.MirrorHeaders
     Type: Map
     Schema:
-      script:
-        Ignore: true
+      pass:
+        To: Pass
+        Type: List
+      pass_all:
+        To: PassAll
+      remove:
+        To: Remove
+        Type: List
+      set:
+        To: Sets
+        Type: List
+        Schema:
+          key:
+            To: Key
+          value:
+            To: Value
   mirror_multi_alternate:
-    To: WebsiteConfiguration
-    Type: Map
-    Schema:
-      mirror_multi_alternate_dst_region:
-        Ignore: true
-      mirror_multi_alternate_number:
-        Ignore: true
-      mirror_multi_alternate_url:
-        Ignore: true
-      mirror_multi_alternate_vpc_id:
-        Ignore: true
+    Ignore: true
   pass:
-    To: WebsiteConfiguration
-    Type: Map
+    To: WebsiteConfiguration.RoutingRules.Redirect.MirrorHeaders.Pass
+    Type: List
   pass_all:
-    To: WebsiteConfiguration
-    Type: Map
+    To: WebsiteConfiguration.RoutingRules.Redirect.MirrorHeaders.PassAll
   redirect:
-    To: WebsiteConfiguration
+    To: WebsiteConfiguration.RoutingRules.Redirect
     Type: Map
     Schema:
       enable_replace_prefix:
-        Ignore: true
+        To: EnableReplacePrefix
       host_name:
-        Ignore: true
+        To: HostName
       http_redirect_code:
-        Ignore: true
+        To: HttpRedirectCode
       mirror_allow_get_image_info:
-        Ignore: true
+        To: MirrorAllowGetImageInfo
       mirror_allow_head_object:
-        Ignore: true
+        To: MirrorAllowHeadObject
       mirror_allow_video_snapshot:
-        Ignore: true
+        To: MirrorAllowVideoSnapshot
       mirror_async_status:
         Ignore: true
       mirror_auth:
         Ignore: true
       mirror_check_md5:
-        Ignore: true
+        To: MirrorCheckMd5
       mirror_dst_region:
-        Ignore: true
+        To: MirrorDstRegion
       mirror_dst_slave_vpc_id:
-        Ignore: true
+        To: MirrorDstSlaveVpcId
       mirror_dst_vpc_id:
-        Ignore: true
+        To: MirrorDstVpcId
       mirror_follow_redirect:
-        Ignore: true
+        To: MirrorFollowRedirect
       mirror_headers:
-        Ignore: true
+        To: MirrorHeaders
+        Type: Map
+        Schema:
+          pass:
+            To: Pass
+            Type: List
+          pass_all:
+            To: PassAll
+          remove:
+            To: Remove
+            Type: List
+          set:
+            To: Sets
+            Type: List
+            Schema:
+              key:
+                To: Key
+              value:
+                To: Value
       mirror_is_express_tunnel:
-        Ignore: true
+        To: MirrorIsExpressTunnel
       mirror_multi_alternates:
         Ignore: true
       mirror_pass_original_slashes:
         Ignore: true
       mirror_pass_query_string:
-        Ignore: true
+        To: MirrorPassQueryString
       mirror_proxy_pass:
-        Ignore: true
+        To: MirrorProxyPass
       mirror_return_headers:
         Ignore: true
       mirror_role:
-        Ignore: true
+        To: MirrorRole
       mirror_save_oss_meta:
         Ignore: true
       mirror_sni:
-        Ignore: true
+        To: MirrorSni
       mirror_switch_all_errors:
-        Ignore: true
+        To: MirrorSwitchAllErrors
       mirror_taggings:
         Ignore: true
       mirror_tunnel_id:
-        Ignore: true
+        To: MirrorTunnelId
       mirror_url:
-        Ignore: true
+        To: MirrorURL
       mirror_url_probe:
-        Ignore: true
+        To: MirrorUrlProbe
       mirror_url_slave:
-        Ignore: true
+        To: MirrorUrlSlave
       mirror_user_last_modified:
-        Ignore: true
+        To: MirrorUserLastModified
       mirror_using_role:
-        Ignore: true
+        To: MirrorUsingRole
       pass_query_string:
-        Ignore: true
+        To: PassQueryString
       protocol:
-        Ignore: true
+        To: Protocol
       redirect_type:
-        Ignore: true
+        To: RedirectType
       replace_key_prefix_with:
-        Ignore: true
+        To: ReplaceKeyPrefixWith
       replace_key_with:
-        Ignore: true
+        To: ReplaceKeyWith
       transparent_mirror_response_codes:
         Ignore: true
   region:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   remove:
-    To: WebsiteConfiguration
-    Type: Map
+    To: WebsiteConfiguration.RoutingRules.Redirect.MirrorHeaders.Remove
+    Type: List
   return_header:
-    To: WebsiteConfiguration
-    Type: Map
-    Schema:
-      key:
-        Ignore: true
-      value:
-        Ignore: true
+    Ignore: true
   routing_rules:
-    To: WebsiteConfiguration
-    Type: Map
+    To: WebsiteConfiguration.RoutingRules
+    Type: List
     Schema:
       routing_rule:
-        Ignore: true
+        To: ''
+        Type: List
+        Schema:
+          Condition:
+            To: Condition
+            Type: Map
+            Schema:
+              http_error_code_returned_equals:
+                To: HttpErrorCodeReturnedEquals
+              include_headers:
+                Ignore: true
+                Type: List
+              key_prefix_equals:
+                To: KeyPrefixEquals
+              key_suffix_equals:
+                To: KeySuffixEquals
+          LuaConfig:
+            To: LuaConfig
+            Type: Map
+            Schema:
+              script:
+                To: Script
+          Redirect:
+            To: Redirect
+            Type: Map
+            Schema:
+              enable_replace_prefix:
+                To: EnableReplacePrefix
+              host_name:
+                To: HostName
+              http_redirect_code:
+                To: HttpRedirectCode
+              mirror_allow_get_image_info:
+                To: MirrorAllowGetImageInfo
+              mirror_allow_head_object:
+                To: MirrorAllowHeadObject
+              mirror_allow_video_snapshot:
+                To: MirrorAllowVideoSnapshot
+              mirror_async_status:
+                Ignore: true
+              mirror_auth:
+                Ignore: true
+              mirror_check_md5:
+                To: MirrorCheckMd5
+              mirror_dst_region:
+                To: MirrorDstRegion
+              mirror_dst_slave_vpc_id:
+                To: MirrorDstSlaveVpcId
+              mirror_dst_vpc_id:
+                To: MirrorDstVpcId
+              mirror_follow_redirect:
+                To: MirrorFollowRedirect
+              mirror_headers:
+                To: MirrorHeaders
+                Type: Map
+                Schema:
+                  pass:
+                    To: Pass
+                    Type: List
+                  pass_all:
+                    To: PassAll
+                  remove:
+                    To: Remove
+                    Type: List
+                  set:
+                    To: Sets
+                    Type: List
+                    Schema:
+                      key:
+                        To: Key
+                      value:
+                        To: Value
+              mirror_is_express_tunnel:
+                To: MirrorIsExpressTunnel
+              mirror_multi_alternates:
+                Ignore: true
+              mirror_pass_original_slashes:
+                Ignore: true
+              mirror_pass_query_string:
+                To: MirrorPassQueryString
+              mirror_proxy_pass:
+                To: MirrorProxyPass
+              mirror_return_headers:
+                Ignore: true
+              mirror_role:
+                To: MirrorRole
+              mirror_save_oss_meta:
+                Ignore: true
+              mirror_sni:
+                To: MirrorSni
+              mirror_switch_all_errors:
+                To: MirrorSwitchAllErrors
+              mirror_taggings:
+                Ignore: true
+              mirror_tunnel_id:
+                To: MirrorTunnelId
+              mirror_url:
+                To: MirrorURL
+              mirror_url_probe:
+                To: MirrorUrlProbe
+              mirror_url_slave:
+                To: MirrorUrlSlave
+              mirror_user_last_modified:
+                To: MirrorUserLastModified
+              mirror_using_role:
+                To: MirrorUsingRole
+              pass_query_string:
+                To: PassQueryString
+              protocol:
+                To: Protocol
+              redirect_type:
+                To: RedirectType
+              replace_key_prefix_with:
+                To: ReplaceKeyPrefixWith
+              replace_key_with:
+                To: ReplaceKeyWith
+              transparent_mirror_response_codes:
+                Ignore: true
+          RuleNumber:
+            To: RuleNumber
   rule_number:
-    To: WebsiteConfiguration
-    Type: Map
+    To: WebsiteConfiguration.RoutingRules.RuleNumber
   set:
-    To: WebsiteConfiguration
-    Type: Map
+    To: WebsiteConfiguration.RoutingRules.Redirect.MirrorHeaders.Sets
+    Type: List
     Schema:
       key:
-        Ignore: true
+        To: Key
       value:
-        Ignore: true
+        To: Value
   starts_with:
-    To: WebsiteConfiguration
-    Type: Map
+    Ignore: true
   taggings:
-    To: WebsiteConfiguration
-    Type: Map
-    Schema:
-      key:
-        Ignore: true
-      value:
-        Ignore: true
+    Ignore: true
 Attributes:
   id:
     Ignore: true

@@ -1,0 +1,56 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_ddoscoo_web_cc_rule
+  To: ALIYUN::DDoSPro::WebRule
+Properties:
+  code:
+    Ignore: true
+  content:
+    Ignore: true
+  count_threshold:
+    Ignore: true
+  domain:
+    To: Domain
+  enabled:
+    Ignore: true
+  field:
+    Ignore: true
+  header_name:
+    Ignore: true
+  interval:
+    Ignore: true
+  match_method:
+    Ignore: true
+  mode:
+    Ignore: true
+  name:
+    Ignore: true
+  ratio_threshold:
+    Ignore: true
+  rule_detail:
+    To: Rules
+    Schema:
+      action:
+        Ignore: true
+      condition:
+        Ignore: true
+      rate_limit:
+        Ignore: true
+      statistics:
+        Ignore: true
+      status_code:
+        Ignore: true
+  sub_key:
+    Ignore: true
+  target:
+    Ignore: true
+  threshold:
+    Ignore: true
+  ttl:
+    Ignore: true
+  use_ratio:
+    Ignore: true
+Attributes:
+  id:
+    To: Domain

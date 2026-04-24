@@ -14,13 +14,13 @@ Properties:
     To: instance_amount
   InstanceType:
     To: instance_type
+  PrivatePoolOptions:
+    To: match_criteria
   ResourceGroupId:
     To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-  PrivatePoolOptions:
-    To: match_criteria
   ZoneId:
     To: zone_ids
 Attributes:

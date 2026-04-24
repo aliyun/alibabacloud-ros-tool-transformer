@@ -4,6 +4,14 @@ ResourceType:
   From: ALIYUN::GPDB::ElasticDBInstance
   To: alicloud_gpdb_elastic_instance
 Properties:
+  BackupId:
+    Ignore: true
+  DBInstanceCategory:
+    To: db_instance_category
+  DBInstanceDescription:
+    To: db_instance_description
+  DBInstanceMode:
+    Ignore: true
   EncryptionKey:
     To: encryption_key
   EncryptionType:
@@ -12,51 +20,43 @@ Properties:
     To: engine_version
   InstanceSpec:
     To: instance_spec
+  MasterNodeNum:
+    Ignore: true
+  PayType:
+    To: payment_type
   Period:
     To: payment_duration
   PeriodUnit:
     To: payment_duration_unit
-  PayType:
-    To: payment_type
+  PrivateIpAddress:
+    Ignore: true
+  SecurityIPList:
+    To: security_ip_list
   SegNodeNum:
     To: seg_node_num
   SegStorageType:
     To: seg_storage_type
+  SrcDbInstanceName:
+    Ignore: true
   StorageSize:
     To: storage_size
   Tags:
     To: tags
     Handler: handle_tags
+  VPCId:
+    Ignore: true
   VSwitchId:
     To: vswitch_id
   ZoneId:
     To: zone_id
-  DBInstanceMode:
-    Ignore: true
-  VPCId:
-    Ignore: true
-  DBInstanceDescription:
-    To: db_instance_description
-  MasterNodeNum:
-    Ignore: true
-  DBInstanceCategory:
-    To: db_instance_category
-  SecurityIPList:
-    To: security_ip_list
-  PrivateIpAddress:
-    Ignore: true
-  BackupId:
-    Ignore: true
-  SrcDbInstanceName:
-    Ignore: true
 Attributes:
-  DBInstanceId:
-    To: id
-  ConnectionString:
-    To: connection_string
-  Port:
-    To: port
-  OrderId:
-    Ignore: true
   Arn:
     Ignore: true
+  ConnectionString:
+    To: connection_string
+  DBInstanceId:
+    To: id
+  OrderId:
+    Ignore: true
+  Port:
+    To: port

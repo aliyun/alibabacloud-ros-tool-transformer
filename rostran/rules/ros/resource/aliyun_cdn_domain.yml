@@ -10,25 +10,25 @@ Properties:
     To: check_url
   DomainName:
     To: domain_name
+  OriginServers:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   Scope:
     To: scope
+  Sources:
+    To: sources
   Tags:
     To: tags
     Handler: handle_tags
-  Sources:
-    To: sources
   TopLevelDomain:
     Ignore: true
-  OriginServers:
-    Ignore: true
 Attributes:
-  DomainName:
-    To: id
-  Cname:
-    To: cname
-  DomainName$$0:
-    To: domain_name
   Arn:
     Ignore: true
+  Cname:
+    To: cname
+  DomainName:
+    To: id
+  DomainName$$0:
+    To: domain_name

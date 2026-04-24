@@ -11,21 +11,21 @@ Properties:
   SiteId:
     To: site_id
 Attributes:
-  RecordId:
-    To: id
-  CreateTime:
-    To: create_time
-  Cname:
-    Ignore: true
-  SchemdId:
-    Ignore: true
-  RecordName:
-    Ignore: true
-  UpdateTime:
-    Ignore: true
   AppId:
+    Ignore: true
+  Cname:
     Ignore: true
   ConfigId:
     Ignore: true
+  CreateTime:
+    To: create_time
+  RecordId:
+    To: id
+  RecordName:
+    Ignore: true
+  SchemdId:
+    Ignore: true
   SiteId:
+    Ignore: true
+  UpdateTime:
     Ignore: true

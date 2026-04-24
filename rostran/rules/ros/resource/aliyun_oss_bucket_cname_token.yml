@@ -13,7 +13,7 @@ Attributes:
     Ignore: true
   Domain:
     Ignore: true
-  Token:
-    Ignore: true
   ExpireTime:
+    Ignore: true
+  Token:
     Ignore: true

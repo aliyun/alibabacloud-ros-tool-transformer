@@ -6,29 +6,29 @@ ResourceType:
 Properties:
   CompactTopic:
     To: compact_topic
+  Config:
+    To: configs
   InstanceId:
     To: instance_id
   LocalTopic:
     To: local_topic
+  MinInsyncReplicas:
+    Ignore: true
   PartitionNum:
     To: partition_num
   Remark:
     To: remark
+  ReplicationFactor:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
   Topic:
     To: topic
-  Config:
-    To: configs
-  ReplicationFactor:
-    Ignore: true
-  MinInsyncReplicas:
-    Ignore: true
 Attributes:
+  Arn:
+    Ignore: true
   InstanceId:
     To: instance_id
   Topic:
     To: topic
-  Arn:
-    Ignore: true
