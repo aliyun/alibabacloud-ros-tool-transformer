@@ -49,9 +49,9 @@ Properties:
   VpcId:
     To: vpc_id
 Attributes:
-  NetworkAclId:
-    To: id
   NetworkAclEntryName:
     To: name
   NetworkAclEntryName$$0:
     To: network_acl_name
+  NetworkAclId:
+    To: id

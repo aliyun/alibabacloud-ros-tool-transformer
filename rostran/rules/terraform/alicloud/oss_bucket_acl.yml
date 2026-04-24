@@ -1,0 +1,13 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_oss_bucket_acl
+  To: ALIYUN::OSS::Bucket
+Properties:
+  acl:
+    To: AccessControl
+  bucket:
+    To: BucketName
+Attributes:
+  id:
+    To: Name

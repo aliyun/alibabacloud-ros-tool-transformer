@@ -4,20 +4,20 @@ ResourceType:
   From: ALIYUN::DNS::DomainRecord
   To: alicloud_alidns_record
 Properties:
-  RR:
-    To: host_record
   DomainName:
     To: name
+  Line:
+    To: routing
   Priority:
     To: priority
+  RR:
+    To: host_record
+  TTL:
+    To: ttl
   Type:
     To: type
   Value:
     To: value
-  Line:
-    To: routing
-  TTL:
-    To: ttl
 Attributes:
   RecordId:
     To: id

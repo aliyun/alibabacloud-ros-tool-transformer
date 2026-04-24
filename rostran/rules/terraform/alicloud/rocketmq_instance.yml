@@ -14,23 +14,18 @@ Properties:
     Ignore: true
   commodity_code:
     Ignore: true
-  create_time:
-    Ignore: true
   flow_out_bandwidth:
-    To: InternetInfo
-    Type: Map
+    To: InternetInfo.FlowOutBandwidth
   flow_out_type:
-    To: InternetInfo
-    Type: Map
+    To: InternetInfo.FlowOutType
   instance_name:
     To: InstanceName
   internet_spec:
-    To: InternetInfo
-    Type: Map
+    To: InternetInfo.InternetSpec
   ip_whitelist:
-    Ignore: true
+    To: InternetInfo.IpWhitelist
   ip_whitelists:
-    Ignore: true
+    To: InternetInfo.IpWhitelist
   network_info:
     To: VpcInfo
     Type: Map
@@ -68,26 +63,21 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   security_group_ids:
-    To: VpcInfo
-    Type: Map
+    To: VpcInfo.SecurityGroupId
   series_code:
     To: SeriesCode
   service_code:
     Ignore: true
   software:
     Ignore: true
-  status:
-    Ignore: true
   sub_series_code:
     To: SubSeriesCode
   tags:
     Ignore: true
   vpc_id:
-    To: VpcInfo
-    Type: Map
+    To: VpcInfo.VpcId
   vswitch_id:
-    To: VpcInfo
-    Type: Map
+    To: VpcInfo.VSwitchId
   vswitches:
     To: VpcInfo
     Type: Map
@@ -97,39 +87,15 @@ Properties:
 Attributes:
   id:
     To: InstanceId
-  auto_renew:
-    Ignore: true
-  auto_renew_period:
-    Ignore: true
-  auto_renew_period_unit:
-    Ignore: true
-  commodity_code:
-    Ignore: true
   create_time:
     Ignore: true
-  instance_name:
-    To: InstanceName
   network_info:
-    Ignore: true
-  payment_type:
     Ignore: true
   product_info:
     Ignore: true
   region_id:
     Ignore: true
-  remark:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  series_code:
-    Ignore: true
-  service_code:
-    Ignore: true
   software:
     Ignore: true
   status:
-    Ignore: true
-  sub_series_code:
-    Ignore: true
-  tags:
     Ignore: true

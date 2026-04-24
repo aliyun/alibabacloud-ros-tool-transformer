@@ -8,6 +8,8 @@ Properties:
     To: always_allocate_cpu
   AlwaysAllocateGPU:
     To: always_allocate_gpu
+  DefaultTarget:
+    To: target
   FunctionName:
     To: function_name
   Qualifier:
@@ -28,8 +30,6 @@ Properties:
         To: target
       TimeZone:
         To: time_zone
-  DefaultTarget:
-    To: target
   TargetTrackingPolicies:
     To: target_tracking_policies
     Type: List
@@ -50,4 +50,3 @@ Properties:
         To: start_time
       TimeZone:
         To: time_zone
-Attributes: {}

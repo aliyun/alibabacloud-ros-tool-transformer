@@ -7,22 +7,22 @@ Properties:
   input_detail:
     To: RawConfigData
   input_type:
-    Ignore: true
+    To: RawConfigData
   last_modify_time:
     Ignore: true
   log_sample:
-    Ignore: true
+    To: RawConfigData
   logstore:
     To: LogstoreName
   name:
     To: LogtailConfigName
   output_type:
-    Ignore: true
+    To: RawConfigData
   project:
     To: ProjectName
 Attributes:
   id:
-    Ignore: true
+    To: LogtailConfigName
   input_detail:
     Ignore: true
   input_type:

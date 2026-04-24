@@ -6,16 +6,16 @@ ResourceType:
 Properties:
   CharacterSetName:
     To: character_set
+  DBDescription:
+    To: description
   DBInstanceId:
     To: instance_id
   DBName:
     To: name
-  DBDescription:
-    To: description
   DBName$$0:
     To: name
 Attributes:
-  DBName:
-    Ignore: true
   DBInstanceId:
+    Ignore: true
+  DBName:
     Ignore: true

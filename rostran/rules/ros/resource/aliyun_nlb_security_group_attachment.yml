@@ -9,4 +9,3 @@ Properties:
   SecurityGroupIds:
     To: security_group_id
     Handler: select_first
-Attributes: {}

@@ -6,12 +6,11 @@ ResourceType:
 Properties:
   BandwidthLimit:
     To: bandwidth_limit
-  CenId:
-    To: instance_id
-  OppositeRegionId:
-    Ignore: true
-  LocalRegionId:
-    Ignore: true
   BandwidthType:
     Ignore: true
-Attributes: {}
+  CenId:
+    To: instance_id
+  LocalRegionId:
+    Ignore: true
+  OppositeRegionId:
+    Ignore: true

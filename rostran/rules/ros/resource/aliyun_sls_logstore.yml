@@ -10,24 +10,6 @@ Properties:
     To: auto_split
   EnableTracking:
     To: enable_web_tracking
-  LogstoreName:
-    To: logstore_name
-  MaxSplitShard:
-    To: max_split_shard_count
-  Mode:
-    To: mode
-  LogstoreName$$0:
-    To: name
-  ProjectName:
-    To: project
-  ProjectName$$0:
-    To: project_name
-  TTL:
-    To: retention_period
-  ShardCount:
-    To: shard_count
-  PreserveStorage:
-    Ignore: true
   EncryptConf:
     To: encrypt_conf
     Type: Map
@@ -38,6 +20,24 @@ Properties:
         To: encrypt_type
       UserCmkInfo:
         To: user_cmk_info
+  LogstoreName:
+    To: logstore_name
+  LogstoreName$$0:
+    To: name
+  MaxSplitShard:
+    To: max_split_shard_count
+  Mode:
+    To: mode
+  PreserveStorage:
+    Ignore: true
+  ProjectName:
+    To: project
+  ProjectName$$0:
+    To: project_name
+  ShardCount:
+    To: shard_count
+  TTL:
+    To: retention_period
 Attributes:
   LogstoreName:
     To: logstore_name

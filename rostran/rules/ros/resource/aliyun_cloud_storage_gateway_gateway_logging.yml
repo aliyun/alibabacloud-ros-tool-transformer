@@ -10,4 +10,3 @@ Properties:
     To: sls_logstore
   SlsProject:
     To: sls_project
-Attributes: {}

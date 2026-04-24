@@ -6,97 +6,101 @@ ResourceType:
 Properties:
   AccountPassword:
     To: account_password
+  AuditPolicyOptions:
+    Ignore: true
   AutoRenew:
     To: auto_renew
+  BackupId:
+    Ignore: true
+  BackupPolicyOptions:
+    To: backup_interval
+  BackupPolicyOptions$$0:
+    To: snapshot_backup_type
+  BusinessInfo:
+    Ignore: true
+  ChargeType:
+    To: instance_charge_type
+  ClusterId:
+    Ignore: true
+  CouponNo:
+    Ignore: true
   DBInstanceClass:
     To: db_instance_storage
+  DBInstanceClass$$0:
+    To: db_instance_storage
+  DBInstanceDescription:
+    To: name
+  DBInstanceReleaseProtection:
+    To: db_instance_release_protection
+  DBInstanceStorage:
+    To: db_instance_storage
+  DatabaseNames:
+    Ignore: true
+  Encrypted:
+    To: encrypted
+  EncryptionKey:
+    To: encryption_key
   EngineVersion:
     To: engine_version
   HiddenZoneId:
     To: hidden_zone_id
-  ChargeType:
-    To: instance_charge_type
-  DBInstanceDescription:
-    To: name
   Period:
     To: period
+  PrivateConnections:
+    Ignore: true
+  ProvisionedIops:
+    To: provisioned_iops
   ReadonlyReplicas:
     To: readonly_replicas
   ReplicationFactor:
     To: replication_factor
   ResourceGroupId:
     To: resource_group_id
+  RestoreTime:
+    To: restore_time
+  RestoreType:
+    Ignore: true
+  SSLOptions:
+    To: force_encryption
+  SSLOptions$$0:
+    To: ssl_action
   SecondaryZoneId:
     To: secondary_zone_id
   SecurityGroupId:
     To: security_group_id
   SecurityIPArray:
     To: security_ip_list
+  SrcDBInstanceId:
+    To: src_db_instance_id
+  SrcRegion:
+    Ignore: true
   StorageEngine:
     To: storage_engine
   StorageType:
     To: storage_type
+  TDEStatus:
+    To: tde_status
   Tags:
     To: tags
     Handler: handle_tags
-  VpcId:
-    To: vpc_id
   VSwitchId:
     To: vswitch_id
-  ZoneId:
-    To: zone_id
+  VpcId:
+    To: vpc_id
   VpcPasswordFree:
     Ignore: true
-  BusinessInfo:
-    Ignore: true
-  CouponNo:
-    Ignore: true
-  DatabaseNames:
-    Ignore: true
-  BackupId:
-    Ignore: true
-  SrcDBInstanceId:
-    To: src_db_instance_id
-  DBInstanceStorage:
-    Ignore: true
-  PrivateConnections:
-    Ignore: true
-  RestoreTime:
-    To: restore_time
-  TDEStatus:
-    To: tde_status
-  DBInstanceReleaseProtection:
-    To: db_instance_release_protection
-  DBInstanceClass$$0:
-    To: db_instance_storage
-  Encrypted:
-    To: encrypted
-  EncryptionKey:
-    To: encryption_key
-  ProvisionedIops:
-    To: provisioned_iops
-  ClusterId:
-    Ignore: true
-  SSLOptions:
-    Ignore: true
-  AuditPolicyOptions:
-    Ignore: true
-  SrcRegion:
-    Ignore: true
-  BackupPolicyOptions:
-    Ignore: true
-  RestoreType:
-    Ignore: true
+  ZoneId:
+    To: zone_id
 Attributes:
-  DBInstanceId:
-    To: id
-  ReplicaSetName:
-    To: replica_set_name
-  OrderId:
-    Ignore: true
-  DBInstanceStatus:
-    Ignore: true
   Arn:
     Ignore: true
   ConnectionURI:
     Ignore: true
+  DBInstanceId:
+    To: id
+  DBInstanceStatus:
+    Ignore: true
+  OrderId:
+    Ignore: true
+  ReplicaSetName:
+    To: replica_set_name

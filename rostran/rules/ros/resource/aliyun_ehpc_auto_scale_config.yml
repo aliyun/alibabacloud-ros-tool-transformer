@@ -1,0 +1,39 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::EHPC::AutoScaleConfig
+  To: alicloud_ehpc_queue
+Properties:
+  ClusterId:
+    To: cluster_id
+  EnableAutoGrow:
+    To: enable_scale_out
+  EnableAutoShrink:
+    To: enable_scale_in
+  ExcludeNodes:
+    Ignore: true
+  ExtraNodesGrowRatio:
+    Ignore: true
+  GrowIntervalInMinutes:
+    Ignore: true
+  GrowRatio:
+    Ignore: true
+  GrowTimeoutInMinutes:
+    Ignore: true
+  ImageId:
+    Ignore: true
+  MaxNodesInCluster:
+    To: max_count
+  Queues:
+    Ignore: true
+  ShrinkIdleTimes:
+    Ignore: true
+  ShrinkIntervalInMinutes:
+    Ignore: true
+  SpotPriceLimit:
+    Ignore: true
+  SpotStrategy:
+    Ignore: true
+Attributes:
+  ClusterId:
+    Ignore: true

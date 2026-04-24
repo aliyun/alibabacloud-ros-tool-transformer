@@ -10,6 +10,14 @@ Properties:
     To: client_ip_pool
   Compress:
     To: compress
+  EnableMultiFactorAuth:
+    Ignore: true
+  IDaaSApplicationId:
+    Ignore: true
+  IDaaSInstanceId:
+    Ignore: true
+  IDaaSRegionId:
+    Ignore: true
   LocalSubnet:
     To: local_subnet
   Name:
@@ -20,14 +28,6 @@ Properties:
     To: protocol
   VpnGatewayId:
     To: vpn_gateway_id
-  IDaaSInstanceId:
-    Ignore: true
-  IDaaSApplicationId:
-    Ignore: true
-  EnableMultiFactorAuth:
-    Ignore: true
-  IDaaSRegionId:
-    Ignore: true
 Attributes:
   SslVpnServerId:
     To: id

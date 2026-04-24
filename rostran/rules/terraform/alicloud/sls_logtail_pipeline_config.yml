@@ -1,0 +1,27 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_sls_logtail_pipeline_config
+  To: ALIYUN::SLS::LogtailConfig
+Properties:
+  aggregators:
+    To: RawConfigData
+  config_name:
+    To: LogtailConfigName
+  flushers:
+    To: RawConfigData
+  globals:
+    To: RawConfigData
+  inputs:
+    To: RawConfigData
+  log_sample:
+    To: RawConfigData
+  processors:
+    To: RawConfigData
+  project:
+    To: ProjectName
+  task:
+    To: RawConfigData
+Attributes:
+  id:
+    To: LogtailConfigName

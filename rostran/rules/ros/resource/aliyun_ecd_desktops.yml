@@ -12,18 +12,30 @@ Properties:
     To: auto_renew
   BundleId:
     To: bundle_id
-  DesktopName:
-    To: desktop_name
-  OfficeSiteId:
-    To: office_site_id
   ChargeType:
     To: payment_type
+  DesktopName:
+    To: desktop_name
+  DesktopNameSuffix:
+    Ignore: true
+  DirectoryId:
+    Ignore: true
+  EndUserId:
+    To: end_user_ids
+  GroupId:
+    Ignore: true
+  Hostname:
+    To: host_name
+  OfficeSiteId:
+    To: office_site_id
   Period:
     To: period
   PeriodUnit:
     To: period_unit
   PolicyGroupId:
     To: policy_group_id
+  PromotionId:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
@@ -31,23 +43,11 @@ Properties:
     To: user_assign_mode
   UserName:
     Ignore: true
-  PromotionId:
-    Ignore: true
-  VpcId:
-    Ignore: true
-  EndUserId:
-    To: end_user_ids
-  VolumeEncryptionKey:
-    Ignore: true
   VolumeEncryptionEnabled:
     Ignore: true
-  Hostname:
-    To: host_name
-  GroupId:
+  VolumeEncryptionKey:
     Ignore: true
-  DirectoryId:
-    Ignore: true
-  DesktopNameSuffix:
+  VpcId:
     Ignore: true
 Attributes:
   DesktopId:

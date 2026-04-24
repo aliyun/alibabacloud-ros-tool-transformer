@@ -24,3 +24,8 @@ Properties:
     To: Tags
   type:
     To: Type
+Attributes:
+  id:
+    Ignore: true
+  encrypted_data_key:
+    Ignore: true

@@ -50,3 +50,12 @@ Properties:
         To: StartTime
       time_zone:
         To: TimeZone
+Attributes:
+  id:
+    Ignore: true
+  current:
+    Ignore: true
+  current_error:
+    Ignore: true
+  function_arn:
+    Ignore: true

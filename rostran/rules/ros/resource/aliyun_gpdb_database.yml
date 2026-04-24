@@ -10,34 +10,34 @@ Properties:
     To: collate
   Ctype:
     To: ctype
-  DatabaseName:
-    To: database_name
   DBInstanceId:
     To: db_instance_id
+  DatabaseName:
+    To: database_name
   Description:
     To: description
   Owner:
     To: owner
 Attributes:
-  Collate:
-    Ignore: true
   AccessPrivilege:
-    Ignore: true
-  Ctype:
-    Ignore: true
-  TableSpace:
-    Ignore: true
-  Size:
-    Ignore: true
-  DBInstanceId:
-    Ignore: true
-  ConnLimit:
     Ignore: true
   CharacterSetName:
     Ignore: true
+  Collate:
+    Ignore: true
+  ConnLimit:
+    Ignore: true
+  Ctype:
+    Ignore: true
+  DBInstanceId:
+    Ignore: true
   DatabaseName:
+    Ignore: true
+  Description:
     Ignore: true
   Owner:
     Ignore: true
-  Description:
+  Size:
+    Ignore: true
+  TableSpace:
     Ignore: true

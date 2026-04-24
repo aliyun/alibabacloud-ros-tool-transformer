@@ -16,4 +16,3 @@ Properties:
     To: delivery_sls_project_name
   RdcEnterpriseId:
     Ignore: true
-Attributes: {}

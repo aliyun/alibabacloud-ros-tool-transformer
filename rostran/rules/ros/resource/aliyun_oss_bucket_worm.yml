@@ -11,9 +11,9 @@ Properties:
 Attributes:
   CreateTime:
     To: create_time
-  WormId:
-    To: worm_id
   ExpirationDate:
     Ignore: true
   RetentionPeriodInDays:
     Ignore: true
+  WormId:
+    To: worm_id

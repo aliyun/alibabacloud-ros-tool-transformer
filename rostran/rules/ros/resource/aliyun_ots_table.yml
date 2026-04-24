@@ -4,6 +4,14 @@ ResourceType:
   From: ALIYUN::OTS::Table
   To: alicloud_ots_table
 Properties:
+  Columns:
+    To: defined_column
+    Type: List
+    Schema:
+      Name:
+        To: name
+      Type:
+        To: type
   DeviationCellVersionInSec:
     To: deviation_cell_version_in_sec
   InstanceName:
@@ -18,22 +26,14 @@ Properties:
         To: name
       Type:
         To: type
+  ReservedThroughput:
+    Ignore: true
+  SecondaryIndices:
+    Ignore: true
   TableName:
     To: table_name
   TimeToLive:
     To: time_to_live
-  SecondaryIndices:
-    Ignore: true
-  ReservedThroughput:
-    Ignore: true
-  Columns:
-    To: defined_column
-    Type: List
-    Schema:
-      Name:
-        To: name
-      Type:
-        To: type
 Attributes:
   TableName:
     To: table_name

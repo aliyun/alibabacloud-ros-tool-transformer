@@ -10,22 +10,22 @@ Properties:
     To: access_point_name
   FileSystemId:
     To: file_system_id
-  Path:
-    To: root_path
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ProtocolServiceId:
-    To: protocol_service_id
   FsetId:
     To: fset_id
-Attributes:
+  Path:
+    To: root_path
   ProtocolServiceId:
-    To: access_point_id
-  FileSystemId:
-    Ignore: true
+    To: protocol_service_id
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+Attributes:
   ExportId:
     To: export_id
+  FileSystemId:
+    Ignore: true
   ProtocolMountTargetDomain:
     Ignore: true
+  ProtocolServiceId:
+    To: access_point_id

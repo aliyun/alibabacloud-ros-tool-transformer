@@ -11,6 +11,8 @@ Properties:
     To: description
   IpProtocol:
     To: ip_protocol
+  Ipv6SourceCidrIp:
+    To: ipv6_cidr_ip
   NicType:
     To: nic_type
   Policy:
@@ -21,16 +23,13 @@ Properties:
     To: priority
   SecurityGroupId:
     To: security_group_id
-  Ipv6SourceCidrIp:
-    To: ipv6_cidr_ip
-  SourcePrefixListId:
-    To: prefix_list_id
   SourceCidrIp:
     To: cidr_ip
-  SourcePortRange:
-    To: port_range
   SourceGroupId:
     To: source_security_group_id
   SourceGroupOwnerId:
     To: source_group_owner_account
-Attributes: {}
+  SourcePortRange:
+    To: port_range
+  SourcePrefixListId:
+    To: prefix_list_id

@@ -1,0 +1,49 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::ThreatDetection::WebLockConfig
+  To: alicloud_threat_detection_web_lock_config
+Properties:
+  DefenceMode:
+    To: defence_mode
+  Dir:
+    To: dir
+  ExclusiveDir:
+    To: exclusive_dir
+  ExclusiveFile:
+    To: exclusive_file
+  ExclusiveFileType:
+    To: exclusive_file_type
+  InclusiveFile:
+    Ignore: true
+  InclusiveFileType:
+    To: inclusive_file_type
+  LocalBackupDir:
+    To: local_backup_dir
+  Mode:
+    To: mode
+  Uuid:
+    To: uuid
+Attributes:
+  ConfigId:
+    To: id
+  DefenceMode:
+    Ignore: true
+  Dir:
+    Ignore: true
+  ExclusiveDir:
+    Ignore: true
+  ExclusiveFile:
+    Ignore: true
+  ExclusiveFileType:
+    Ignore: true
+  InclusiveFile:
+    Ignore: true
+  InclusiveFileType:
+    Ignore: true
+  LocalBackupDir:
+    Ignore: true
+  Mode:
+    Ignore: true
+  Uuid:
+    Ignore: true

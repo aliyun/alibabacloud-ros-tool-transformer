@@ -4,12 +4,12 @@ ResourceType:
   From: ALIYUN::CMS::ContactGroup
   To: alicloud_cms_alarm_contact_group
 Properties:
-  Describe:
-    To: describe
   ContactGroupName:
     To: alarm_contact_group_name
   ContactNames:
     To: contacts
+  Describe:
+    To: describe
   EnableSubscribed:
     To: enable_subscribed
 Attributes:

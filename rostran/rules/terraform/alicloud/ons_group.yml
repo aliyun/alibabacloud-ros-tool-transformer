@@ -20,7 +20,7 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    Ignore: true
+    To: GroupId
   group_id:
     To: GroupId
   group_name:

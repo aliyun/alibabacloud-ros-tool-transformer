@@ -6,26 +6,26 @@ ResourceType:
 Properties:
   Cidr:
     Ignore: true
-  TransitRouterCidrName:
+  Description:
     Ignore: true
   PublishCidrRoute:
     Ignore: true
+  TransitRouterCidrName:
+    Ignore: true
   TransitRouterId:
+    Ignore: true
+Attributes:
+  Cidr:
     Ignore: true
   Description:
     Ignore: true
-Attributes:
   Family:
     Ignore: true
-  Cidr:
-    Ignore: true
-  TransitRouterCidrName:
+  PublishCidrRoute:
     Ignore: true
   TransitRouterCidrId:
     Ignore: true
-  PublishCidrRoute:
+  TransitRouterCidrName:
     Ignore: true
   TransitRouterId:
-    Ignore: true
-  Description:
     Ignore: true

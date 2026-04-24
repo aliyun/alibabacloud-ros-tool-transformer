@@ -11,12 +11,12 @@ Properties:
   VpcId:
     To: vpc_id
 Attributes:
-  Ipv4GatewayId:
-    To: id
   CreateTime:
     To: create_time
   Ipv4GatewayDescription:
     To: ipv4_gateway_description
+  Ipv4GatewayId:
+    To: id
   Ipv4GatewayId$$0:
     To: ipv4_gateway_id
   Ipv4GatewayName:

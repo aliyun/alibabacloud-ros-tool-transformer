@@ -13,9 +13,9 @@ Properties:
   EnvironmentId:
     To: environment_id
 Attributes:
+  ConfigYaml:
+    Ignore: true
   EnvCustomJobName:
     Ignore: true
   EnvironmentId:
-    Ignore: true
-  ConfigYaml:
     Ignore: true

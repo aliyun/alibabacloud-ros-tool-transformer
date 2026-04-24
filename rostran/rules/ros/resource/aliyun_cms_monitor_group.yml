@@ -4,10 +4,10 @@ ResourceType:
   From: ALIYUN::CMS::MonitorGroup
   To: alicloud_cms_monitor_group
 Properties:
-  GroupName:
-    To: monitor_group_name
   ContactGroups:
     To: contact_groups
+  GroupName:
+    To: monitor_group_name
 Attributes:
   GroupId:
     To: id

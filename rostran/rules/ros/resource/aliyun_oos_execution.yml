@@ -14,36 +14,36 @@ Properties:
     To: parameters
   ParentExecutionId:
     To: parent_execution_id
-  SafetyCheck:
-    To: safety_check
-  TemplateContent:
-    To: template_content
-  TemplateName:
-    To: template_name
-  TemplateVersion:
-    To: template_version
   ResourceGroupId:
     Ignore: true
   ResourceOptions:
     Ignore: true
+  SafetyCheck:
+    To: safety_check
   Tags:
     Ignore: true
+  TemplateContent:
+    To: template_content
+  TemplateName:
+    To: template_name
   TemplateURL:
     Ignore: true
+  TemplateVersion:
+    To: template_version
 Attributes:
-  ExecutionId:
-    To: id
   Counters:
     To: counters
+  CurlCli:
+    Ignore: true
+  ExecutionId:
+    To: id
   Outputs:
     To: outputs
+  PowerShellCurlCli:
+    Ignore: true
   Status:
     To: status
   StatusMessage:
     To: status_message
   WindowsCurlCli:
-    Ignore: true
-  PowerShellCurlCli:
-    Ignore: true
-  CurlCli:
     Ignore: true

@@ -4,18 +4,18 @@ ResourceType:
   From: ALIYUN::OOS::ApplicationGroupDeployment
   To: alicloud_oos_application_group
 Properties:
-  Name:
-    To: application_group_name
   ApplicationName:
     To: application_name
-  RevisionId:
-    Ignore: true
   DeployParameters:
     Ignore: true
+  Name:
+    To: application_group_name
+  RevisionId:
+    Ignore: true
 Attributes:
+  ApplicationName:
+    Ignore: true
   ExecutionId:
     Ignore: true
   Name:
-    Ignore: true
-  ApplicationName:
     Ignore: true

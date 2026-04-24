@@ -8,6 +8,10 @@ Properties:
     To: restore_type
   SnapshotId:
     To: snapshot_id
+  SourceClientId:
+    Ignore: true
+  SourceInstanceId:
+    Ignore: true
   SourceType:
     To: source_type
   TargetClientId:
@@ -18,11 +22,9 @@ Properties:
     To: target_path
   VaultId:
     To: vault_id
-  SourceClientId:
-    Ignore: true
-  SourceInstanceId:
-    Ignore: true
 Attributes:
+  ErrorMessage:
+    Ignore: true
   RestoreId:
     To: id
   RestoreType:
@@ -31,5 +33,3 @@ Attributes:
     To: source_type
   Status:
     To: status
-  ErrorMessage:
-    Ignore: true

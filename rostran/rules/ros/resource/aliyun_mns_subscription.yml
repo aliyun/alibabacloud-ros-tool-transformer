@@ -4,18 +4,6 @@ ResourceType:
   From: ALIYUN::MNS::Subscription
   To: alicloud_message_service_subscription
 Properties:
-  Endpoint:
-    To: endpoint
-  FilterTag:
-    To: filter_tag
-  NotifyContentFormat:
-    To: notify_content_format
-  NotifyStrategy:
-    To: notify_strategy
-  SubscriptionName:
-    To: subscription_name
-  TopicName:
-    To: topic_name
   DlqPolicy:
     To: dlq_policy
     Type: Map
@@ -24,14 +12,26 @@ Properties:
         To: dead_letter_target_queue
       Enabled:
         To: enabled
+  Endpoint:
+    To: endpoint
+  FilterTag:
+    To: filter_tag
+  NotifyContentFormat:
+    To: notify_content_format
+  NotifyStrategy:
+    To: notify_strategy
   PushType:
     To: push_type
+  SubscriptionName:
+    To: subscription_name
+  TopicName:
+    To: topic_name
 Attributes:
   SubscriptionName:
     To: id
   SubscriptionName$$0:
     To: subscription_name
-  TopicName:
-    To: topic_name
   SubscriptionUrl:
     Ignore: true
+  TopicName:
+    To: topic_name

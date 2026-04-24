@@ -14,14 +14,14 @@ Properties:
         To: asset_type
       InstanceId:
         To: instance_id
+      InstanceName:
+        Ignore: true
       RegionId:
         To: region_id
       Vendor:
         To: vendor
-      InstanceName:
-        Ignore: true
 Attributes:
-  AttackPathSensitiveAssetConfigId:
-    To: id
   AttackPathAssetList:
     Ignore: true
+  AttackPathSensitiveAssetConfigId:
+    To: id

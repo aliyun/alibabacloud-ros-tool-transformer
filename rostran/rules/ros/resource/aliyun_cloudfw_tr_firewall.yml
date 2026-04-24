@@ -14,6 +14,10 @@ Properties:
     To: firewall_subnet_cidr
   FirewallVpcCidr:
     To: firewall_vpc_cidr
+  FirewallVpcId:
+    Ignore: true
+  FirewallVswitchId:
+    Ignore: true
   RegionNo:
     To: region_no
   RouteMode:
@@ -28,10 +32,6 @@ Properties:
     To: tr_attachment_slave_zone
   TransitRouterId:
     To: transit_router_id
-  FirewallVpcId:
-    Ignore: true
-  FirewallVswitchId:
-    Ignore: true
 Attributes:
   FirewallId:
     To: id

@@ -4,34 +4,34 @@ ResourceType:
   From: ALIYUN::CloudPhone::Image
   To: alicloud_cloud_phone_image
 Properties:
+  Description:
+    Ignore: true
   ImageName:
     To: image_name
   InstanceId:
     To: instance_id
-  Description:
-    Ignore: true
 Attributes:
-  ImageId:
-    To: id
-  IsSelfShared:
+  CreateTime:
     Ignore: true
-  OsNameEn:
-    Ignore: true
-  Platform:
+  Description:
     Ignore: true
   ImageCategory:
     Ignore: true
-  Description:
+  ImageId:
+    To: id
+  ImageName:
+    Ignore: true
+  IsSelfShared:
     Ignore: true
   OsName:
     Ignore: true
-  Progress:
-    Ignore: true
-  CreateTime:
-    Ignore: true
-  Usage:
+  OsNameEn:
     Ignore: true
   OsType:
     Ignore: true
-  ImageName:
+  Platform:
+    Ignore: true
+  Progress:
+    Ignore: true
+  Usage:
     Ignore: true

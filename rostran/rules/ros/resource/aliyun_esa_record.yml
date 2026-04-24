@@ -69,35 +69,35 @@ Properties:
   Ttl:
     To: ttl
 Attributes:
-  RecordId:
-    To: id
-  CreateTime:
-    To: create_time
-  SiteName:
-    Ignore: true
-  RecordType:
-    Ignore: true
-  Ttl:
-    Ignore: true
   AuthConf:
-    Ignore: true
-  Proxied:
     Ignore: true
   BizName:
     Ignore: true
-  ModifyTime:
-    Ignore: true
-  SourceType:
-    Ignore: true
-  RecordCname:
-    Ignore: true
   Comment:
     Ignore: true
-  RecordName:
+  CreateTime:
+    To: create_time
+  Data:
     Ignore: true
   HostPolicy:
     Ignore: true
+  ModifyTime:
+    Ignore: true
+  Proxied:
+    Ignore: true
+  RecordCname:
+    Ignore: true
+  RecordId:
+    To: id
+  RecordName:
+    Ignore: true
+  RecordType:
+    Ignore: true
   SiteId:
     Ignore: true
-  Data:
+  SiteName:
+    Ignore: true
+  SourceType:
+    Ignore: true
+  Ttl:
     Ignore: true

@@ -25,17 +25,13 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   service_id:
-    To: Service
-    Type: Map
+    To: Service.ServiceId
   service_instance_name:
     To: ServiceInstanceName
   service_version:
-    To: Service
-    Type: Map
+    To: Service.Version
   specification_name:
     To: SpecificationCode
-  status:
-    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
@@ -44,27 +40,5 @@ Properties:
 Attributes:
   id:
     To: ServiceInstanceId
-  enable_instance_ops:
-    To: EnableInstanceOps
-  enable_user_prometheus:
-    To: EnableUserPrometheus
-  operation_metadata:
-    Ignore: true
-  payment_type:
-    Ignore: true
-  resource_group_id:
-    To: ResourceGroupId
-  service_id:
-    To: ServiceInstanceId
-  service_instance_name:
-    To: Name
-  service_version:
-    Ignore: true
-  specification_name:
-    Ignore: true
   status:
     To: StatusDetail
-  tags:
-    To: Tags
-  template_name:
-    To: TemplateName

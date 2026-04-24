@@ -24,9 +24,6 @@ Properties:
     To: EnvironmentVariables
   filename:
     To: Code
-    Type: Map
-  function_id:
-    Ignore: true
   handler:
     To: Handler
   initialization_timeout:
@@ -37,8 +34,6 @@ Properties:
     To: InstanceConcurrency
   instance_type:
     To: InstanceType
-  last_modified:
-    Ignore: true
   layers:
     Ignore: true
   memory_size:
@@ -48,11 +43,9 @@ Properties:
   name_prefix:
     To: FunctionName
   oss_bucket:
-    To: Code
-    Type: Map
+    To: Code.OssBucketName
   oss_key:
-    To: Code
-    Type: Map
+    To: Code.OssObjectName
   runtime:
     To: Runtime
   service:
@@ -64,39 +57,9 @@ Attributes:
     To:
     - ServiceName
     - FunctionName
-  ca_port:
-    Ignore: true
-  code_checksum:
-    Ignore: true
-  description:
-    Ignore: true
-  environment_variables:
-    Ignore: true
-  function_arn:
-    To: ARN
-  function_id:
-    To: FunctionId
-  handler:
-    Ignore: true
-  initialization_timeout:
-    Ignore: true
-  initializer:
-    Ignore: true
-  instance_concurrency:
-    Ignore: true
-  instance_type:
-    Ignore: true
   last_modified:
     Ignore: true
-  layers:
-    Ignore: true
-  memory_size:
-    Ignore: true
-  name:
-    Ignore: true
-  runtime:
-    Ignore: true
-  service:
-    Ignore: true
-  timeout:
-    Ignore: true
+  function_id:
+    To: FunctionId
+  function_arn:
+    To: ARN

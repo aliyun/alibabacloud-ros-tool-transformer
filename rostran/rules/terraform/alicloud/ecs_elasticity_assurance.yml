@@ -14,14 +14,8 @@ Properties:
     Ignore: true
   description:
     To: Description
-  elasticity_assurance_id:
-    Ignore: true
-  end_time:
-    Ignore: true
   instance_amount:
     To: InstanceAmount
-  instance_charge_type:
-    Ignore: true
   instance_type:
     To: InstanceTypes
     Type: List
@@ -30,60 +24,34 @@ Properties:
   period_unit:
     To: PeriodUnit
   private_pool_options_match_criteria:
-    To: PrivatePoolOptions
-    Type: Map
+    To: PrivatePoolOptions.MatchCriteria
   private_pool_options_name:
-    To: PrivatePoolOptions
-    Type: Map
+    To: PrivatePoolOptions.Name
   resource_group_id:
     To: ResourceGroupId
   start_time:
     To: StartTime
-  start_time_type:
-    Ignore: true
-  status:
-    Ignore: true
   tags:
     To: Tags
     Handler: tags_dict_to_list
-  used_assurance_times:
-    Ignore: true
   zone_ids:
     To: ZoneId
 Attributes:
   id:
     To: PrivatePoolOptionsId
-  assurance_times:
-    Ignore: true
   description:
     Ignore: true
   elasticity_assurance_id:
     To: PrivatePoolOptionsId
   end_time:
     Ignore: true
-  instance_amount:
-    Ignore: true
   instance_charge_type:
     Ignore: true
-  instance_type:
-    Ignore: true
-  private_pool_options_match_criteria:
-    Ignore: true
-  private_pool_options_name:
-    Ignore: true
   region_id:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  start_time:
     Ignore: true
   start_time_type:
     Ignore: true
   status:
     Ignore: true
-  tags:
-    Ignore: true
   used_assurance_times:
-    Ignore: true
-  zone_ids:
     Ignore: true

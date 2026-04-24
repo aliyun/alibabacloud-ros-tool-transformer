@@ -10,6 +10,8 @@ Properties:
     To: event_pattern
     Type: List
     Schema:
+      CustomFilters:
+        Ignore: true
       EventTypeList:
         To: event_type_list
       LevelList:
@@ -18,22 +20,20 @@ Properties:
         To: name_list
       Product:
         To: product
-      StatusList:
-        Ignore: true
-      CustomFilters:
-        Ignore: true
       SQLFilter:
         Ignore: true
+      StatusList:
+        Ignore: true
+  EventType:
+    Ignore: true
   GroupId:
     To: group_id
   RuleName:
     To: rule_name
-  EventType:
-    Ignore: true
-  State:
-    To: status
   SilenceTime:
     To: silence_time
+  State:
+    To: status
 Attributes:
   Data:
     Ignore: true

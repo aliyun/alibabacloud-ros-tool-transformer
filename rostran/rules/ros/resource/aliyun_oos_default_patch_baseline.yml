@@ -7,25 +7,25 @@ Properties:
   PatchBaselineName:
     To: patch_baseline_name
 Attributes:
+  ApprovalRules:
+    Ignore: true
+  CreatedBy:
+    Ignore: true
+  CreatedDate:
+    Ignore: true
+  Description:
+    Ignore: true
+  OperationSystem:
+    Ignore: true
   PatchBaselineId:
     To: id
   PatchBaselineId$$0:
     To: patch_baseline_id
   PatchBaselineName:
     To: patch_baseline_name
-  ApprovalRules:
+  ShareType:
     Ignore: true
   UpdatedBy:
     Ignore: true
-  ShareType:
-    Ignore: true
-  Description:
-    Ignore: true
-  CreatedBy:
-    Ignore: true
-  CreatedDate:
-    Ignore: true
   UpdatedDate:
-    Ignore: true
-  OperationSystem:
     Ignore: true

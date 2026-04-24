@@ -6,12 +6,12 @@ ResourceType:
 Properties:
   InstanceIds:
     To: instance_ids
-  RamRoleName:
-    To: role_name
   Policy:
     To: policy
-Attributes:
   RamRoleName:
-    Ignore: true
+    To: role_name
+Attributes:
   InstanceIds:
+    Ignore: true
+  RamRoleName:
     Ignore: true

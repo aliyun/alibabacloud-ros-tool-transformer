@@ -25,23 +25,23 @@ Properties:
 Attributes:
   ConfigId:
     To: config_id
-  Uri:
+  ConfigType:
+    Ignore: true
+  QueryString:
     Ignore: true
   RewriteQueryStringType:
     Ignore: true
   RewriteUriType:
     Ignore: true
-  QueryString:
-    Ignore: true
-  ConfigType:
-    Ignore: true
   Rule:
-    Ignore: true
-  SiteVersion:
-    Ignore: true
-  Sequence:
     Ignore: true
   RuleEnable:
     Ignore: true
   RuleName:
+    Ignore: true
+  Sequence:
+    Ignore: true
+  SiteVersion:
+    Ignore: true
+  Uri:
     Ignore: true

@@ -4,16 +4,16 @@ ResourceType:
   From: ALIYUN::GPDB::InstancePublicConnection
   To: alicloud_gpdb_connection
 Properties:
+  AddressType:
+    Ignore: true
   ConnectionStringPrefix:
     To: connection_prefix
   DBInstanceId:
     To: instance_id
   Port:
     To: port
-  AddressType:
-    Ignore: true
 Attributes:
-  DBInstanceId:
-    Ignore: true
   ConnectionString:
+    Ignore: true
+  DBInstanceId:
     Ignore: true

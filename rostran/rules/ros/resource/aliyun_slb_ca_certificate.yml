@@ -4,33 +4,33 @@ ResourceType:
   From: ALIYUN::SLB::CaCertificate
   To: alicloud_slb_ca_certificate
 Properties:
+  CaCertificate:
+    Ignore: true
+  CaCertificateName:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-  CaCertificate:
-    Ignore: true
-  CaCertificateName:
-    Ignore: true
 Attributes:
-  CaCertificateName:
-    Ignore: true
-  CreatedTimestamp:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
-  Tags:
-    Ignore: true
   CaCertificateId:
     Ignore: true
-  CreateTime:
+  CaCertificateName:
     Ignore: true
   CommonName:
     Ignore: true
-  Fingerprint:
+  CreateTime:
+    Ignore: true
+  CreatedTimestamp:
     Ignore: true
   ExpiredTime:
     Ignore: true
   ExpiredTimestamp:
+    Ignore: true
+  Fingerprint:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  Tags:
     Ignore: true

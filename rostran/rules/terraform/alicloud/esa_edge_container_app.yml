@@ -34,7 +34,7 @@ Properties:
     To: TargetPort
 Attributes:
   id:
-    Ignore: true
+    To: EdgeContainerAppName
   create_time:
     To: CreateTime
   status:

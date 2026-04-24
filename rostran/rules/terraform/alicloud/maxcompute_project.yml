@@ -8,8 +8,6 @@ Properties:
     Ignore: true
   comment:
     To: Comment
-  create_time:
-    Ignore: true
   default_quota:
     To: DefaultQuota
   enable:
@@ -27,10 +25,6 @@ Properties:
   is_logical:
     Ignore: true
   key:
-    Ignore: true
-  owner:
-    Ignore: true
-  product_type:
     Ignore: true
   project_name:
     To: Name
@@ -73,28 +67,12 @@ Properties:
     Ignore: true
 Attributes:
   id:
-    To: ProjectName
-  comment:
-    Ignore: true
+    To: Name
   create_time:
-    Ignore: true
-  default_quota:
-    Ignore: true
-  ip_white_list:
     Ignore: true
   owner:
     Ignore: true
-  project_name:
-    Ignore: true
-  properties:
-    Ignore: true
   region_id:
-    Ignore: true
-  security_properties:
-    Ignore: true
-  status:
-    Ignore: true
-  tags:
     Ignore: true
   type:
     Ignore: true

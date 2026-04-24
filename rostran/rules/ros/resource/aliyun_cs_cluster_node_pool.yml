@@ -4,16 +4,38 @@ ResourceType:
   From: ALIYUN::CS::ClusterNodePool
   To: alicloud_cs_kubernetes_node_pool
 Properties:
-  ClusterId:
-    To: cluster_id
   AutoScaling:
     To: compensate_with_on_demand
+  AutoScaling$$0:
+    To: spot_strategy
+  ClusterId:
+    To: cluster_id
   Count:
     To: desired_size
-  ScalingGroup:
-    To: auto_renew
   KubernetesConfig:
     To: cpu_policy
+  KubernetesConfig$$0:
+    To: taints
+    Type: Map
+    Schema:
+      CmsEnabled:
+        Ignore: true
+      CpuPolicy:
+        Ignore: true
+      Labels:
+        Ignore: true
+      NodeNameMode:
+        Ignore: true
+      Runtime:
+        Ignore: true
+      RuntimeVersion:
+        Ignore: true
+      Taints:
+        Ignore: true
+      Unschedulable:
+        Ignore: true
+      UserData:
+        Ignore: true
   Management:
     To: management
     Type: Map
@@ -32,40 +54,18 @@ Properties:
         Ignore: true
       ResourceGroupId:
         Ignore: true
+  NodePoolInfo$$0:
+    To: vul_level
+  ScalingGroup:
+    To: auto_renew
+  ScalingGroup$$0:
+    To: vswitch_ids
   TeeConfig:
     To: tee_config
     Type: Map
     Schema:
       TeeEnable:
         To: tee_enable
-  ScalingGroup$$0:
-    To: vswitch_ids
-  NodePoolInfo$$0:
-    To: vul_level
-  KubernetesConfig$$0:
-    To: taints
-    Type: Map
-    Schema:
-      NodeNameMode:
-        Ignore: true
-      Runtime:
-        Ignore: true
-      Unschedulable:
-        Ignore: true
-      RuntimeVersion:
-        Ignore: true
-      Taints:
-        Ignore: true
-      UserData:
-        Ignore: true
-      CmsEnabled:
-        Ignore: true
-      CpuPolicy:
-        Ignore: true
-      Labels:
-        Ignore: true
-  AutoScaling$$0:
-    To: spot_strategy
 Attributes:
   NodePoolId:
     To: id

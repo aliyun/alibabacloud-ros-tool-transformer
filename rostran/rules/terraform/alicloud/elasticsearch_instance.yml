@@ -13,8 +13,7 @@ Properties:
   client_node_spec:
     Ignore: true
   data_node_amount:
-    To: DataNode
-    Type: Map
+    Ignore: true
   data_node_configuration:
     To: DataNode
     Type: Map
@@ -32,23 +31,17 @@ Properties:
       spec:
         To: Spec
   data_node_disk_encrypted:
-    To: DataNode
-    Type: Map
+    Ignore: true
   data_node_disk_performance_level:
     Ignore: true
   data_node_disk_size:
-    To: DataNode
-    Type: Map
+    Ignore: true
   data_node_disk_type:
-    To: DataNode
-    Type: Map
+    Ignore: true
   data_node_spec:
-    To: DataNode
-    Type: Map
+    Ignore: true
   description:
     To: Description
-  domain:
-    Ignore: true
   enable_kibana_private_network:
     To: EnableKibanaPrivate
   enable_kibana_public_network:
@@ -71,12 +64,7 @@ Properties:
         Ignore: true
       spec:
         To: Spec
-  kibana_domain:
-    Ignore: true
   kibana_node_spec:
-    To: KibanaNode
-    Type: Map
-  kibana_port:
     Ignore: true
   kibana_private_security_group_id:
     Ignore: true
@@ -102,11 +90,9 @@ Properties:
       spec:
         To: Spec
   master_node_disk_type:
-    To: MasterNode
-    Type: Map
+    Ignore: true
   master_node_spec:
-    To: MasterNode
-    Type: Map
+    Ignore: true
   order_action_type:
     Ignore: true
   password:
@@ -115,16 +101,10 @@ Properties:
     Ignore: true
   period:
     To: Period
-  port:
-    Ignore: true
   private_whitelist:
     To: PrivateWhitelist
     Type: List
   protocol:
-    Ignore: true
-  public_domain:
-    Ignore: true
-  public_port:
     Ignore: true
   public_whitelist:
     To: PublicWhitelist
@@ -136,9 +116,6 @@ Properties:
   resource_group_id:
     To: ResourceGroupId
   setting_config:
-    To: YMLConfig
-    Type: Map
-  status:
     Ignore: true
   tags:
     To: Tags
@@ -168,27 +145,7 @@ Attributes:
     To: InstanceId
   arch_type:
     Ignore: true
-  auto_renew_duration:
-    Ignore: true
-  client_node_amount:
-    Ignore: true
-  client_node_spec:
-    Ignore: true
   create_time:
-    Ignore: true
-  data_node_amount:
-    Ignore: true
-  data_node_disk_encrypted:
-    Ignore: true
-  data_node_disk_performance_level:
-    Ignore: true
-  data_node_disk_size:
-    Ignore: true
-  data_node_disk_type:
-    Ignore: true
-  data_node_spec:
-    Ignore: true
-  description:
     Ignore: true
   domain:
     To: Domain
@@ -202,59 +159,19 @@ Attributes:
     To: InstanceChargeType
   kibana_domain:
     To: KibanaDomain
-  kibana_node_spec:
-    Ignore: true
   kibana_port:
     To: KibanaPort
   kibana_private_domain:
     Ignore: true
-  kibana_private_security_group_id:
-    Ignore: true
-  kibana_private_whitelist:
-    Ignore: true
-  kibana_whitelist:
-    Ignore: true
-  master_node_disk_type:
-    Ignore: true
-  master_node_spec:
-    Ignore: true
   port:
     To: Port
-  private_whitelist:
-    Ignore: true
-  protocol:
-    Ignore: true
   public_domain:
     To: PublicDomain
   public_port:
     Ignore: true
-  public_whitelist:
-    Ignore: true
-  renew_status:
-    Ignore: true
-  renewal_duration_unit:
-    Ignore: true
-  resource_group_id:
-    Ignore: true
-  setting_config:
-    Ignore: true
   status:
     To: Status
-  tags:
-    Ignore: true
   version:
     To: Version
   vswitch_id:
     To: VSwitchId
-  warm_node_amount:
-    Ignore: true
-  warm_node_disk_encrypted:
-    Ignore: true
-  warm_node_disk_size:
-    Ignore: true
-  warm_node_disk_type:
-    Ignore: true
-  warm_node_spec:
-    Ignore: true
-  zone_count:
-    Ignore: true

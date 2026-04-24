@@ -4,32 +4,32 @@ ResourceType:
   From: ALIYUN::VPC::VirtualBorderRouter
   To: alicloud_express_connect_virtual_border_router
 Properties:
+  Bandwidth:
+    To: bandwidth
   CircuitCode:
     To: circuit_code
   Description:
     To: description
   LocalGatewayIp:
     To: local_gateway_ip
+  Name:
+    To: virtual_border_router_name
   PeerGatewayIp:
     To: peer_gateway_ip
   PeeringSubnetMask:
     To: peering_subnet_mask
   PhysicalConnectionId:
     To: physical_connection_id
-  VlanId:
-    To: vlan_id
-  Name:
-    To: virtual_border_router_name
-  Bandwidth:
-    To: bandwidth
   ResourceGroupId:
     To: resource_group_id
+  VlanId:
+    To: vlan_id
 Attributes:
-  VbrId:
-    To: id
-  RouteTableId:
-    To: route_table_id
   Name:
     Ignore: true
+  RouteTableId:
+    To: route_table_id
+  VbrId:
+    To: id
   VlanInterfaceId:
     Ignore: true

@@ -8,24 +8,32 @@ Properties:
     To: cold_storage
   CoreSpec:
     To: core_spec
+  DeletionProtection:
+    To: deletion_proection
   DiskCategory:
     To: disk_category
-  Period:
-    To: duration
   FilestoreNum:
     To: file_engine_node_count
   FilestoreSpec:
     To: file_engine_specification
+  InstanceChargeType:
+    To: payment_type
   InstanceName:
     To: instance_name
   InstanceStorage:
     To: instance_storage
-  InstanceChargeType:
-    To: payment_type
+  LindormNum:
+    To: table_engine_node_count
+  LindormSpec:
+    To: table_engine_specification
+  Period:
+    To: duration
   PeriodUnit:
     To: pricing_cycle
   ResourceGroupId:
     To: resource_group_id
+  SecurityIpList:
+    To: ip_white_list
   SolrNum:
     To: search_engine_node_count
   SolrSpec:
@@ -34,28 +42,20 @@ Properties:
     To: stream_engine_node_count
   StreamSpec:
     To: stream_engine_specification
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
-  LindormNum:
-    To: table_engine_node_count
-  LindormSpec:
-    To: table_engine_specification
-  SecurityIpList:
-    To: ip_white_list
-  TsdbSpec:
-    To: time_series_engine_specification
-  DeletionProtection:
-    To: deletion_proection
   TsdbNum:
     To: time_series_engine_node_count
+  TsdbSpec:
+    To: time_series_engine_specification
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
 Attributes:
-  InstanceId:
-    To: id
   AuthInfos:
     Ignore: true
+  InstanceId:
+    To: id
   JdbcUrlList:
     Ignore: true

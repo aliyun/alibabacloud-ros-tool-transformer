@@ -5,19 +5,20 @@ ResourceType:
   To: ALIYUN::SLS::Alert
 Properties:
   action_policy_id:
-    Ignore: true
+    To: Detail.Configuration.PolicyConfiguration.ActionPolicyId
   alert_name:
-    Ignore: true
+    To: Detail.Name
   alert_policy_id:
-    Ignore: true
+    To: Detail.Configuration.PolicyConfiguration.AlertPolicyId
   annotations:
-    Ignore: true
+    To: Detail.Configuration.Annotations
+    Type: List
   chart_title:
-    Ignore: true
+    To: Detail.Configuration.QueryList.ChartTitle
   condition:
     Ignore: true
   configuration:
-    To: Detail
+    To: Detail.Configuration
     Type: Map
     Schema:
       annotations:
@@ -66,18 +67,16 @@ Properties:
         Ignore: true
   count_condition:
     Ignore: true
-  create_time:
-    Ignore: true
   dashboard_id:
-    Ignore: true
+    To: Detail.Configuration.QueryList.DashboardId
   description:
-    Ignore: true
+    To: Detail.Description
   display_name:
-    Ignore: true
+    To: Detail.DisplayName
   enabled:
-    Ignore: true
+    To: Detail.State
   end:
-    Ignore: true
+    To: Detail.Configuration.QueryList.End
   endpoint:
     Ignore: true
   eval_condition:
@@ -86,36 +85,33 @@ Properties:
     Ignore: true
   fields:
     Ignore: true
-  key:
-    Ignore: true
   lang:
     Ignore: true
   power_sql_mode:
-    Ignore: true
+    To: Detail.Configuration.QueryList.PowerSqlMode
   project:
     To: Project
   project_name:
-    Ignore: true
+    To: Project
   query:
-    Ignore: true
+    To: Detail.Configuration.QueryList.Query
   region:
     Ignore: true
   repeat_interval:
-    Ignore: true
+    To: Detail.Configuration.PolicyConfiguration.RepeatInterval
   role_arn:
-    Ignore: true
+    To: Detail.Configuration.QueryList.RoleArn
   schedule:
-    To: Detail
-    Type: Map
+    To: Detail.Schedule
     Schema:
       cron_expression:
-        Ignore: true
+        To: CronExpression
       delay:
-        Ignore: true
+        To: Delay
       interval:
-        Ignore: true
+        To: Interval
       run_immdiately:
-        Ignore: true
+        To: RunImmediately
       time_zone:
         Ignore: true
       type:
@@ -123,43 +119,31 @@ Properties:
   severity:
     Ignore: true
   start:
-    Ignore: true
+    To: Detail.Configuration.QueryList.Start
   status:
     Ignore: true
   store:
-    Ignore: true
+    To: Detail.Configuration.QueryList.Store
   store_type:
-    Ignore: true
+    To: Detail.Configuration.QueryList.StoreType
   template_id:
     Ignore: true
   time_span_type:
-    Ignore: true
+    To: Detail.Configuration.QueryList.TimeSpanType
   tokens:
     Ignore: true
   type:
-    Ignore: true
+    To: Detail.Type
   ui:
     Ignore: true
-  value:
-    Ignore: true
   version:
+    To: Detail.Configuration.Version
+  key:
+    Ignore: true
+  value:
     Ignore: true
 Attributes:
   id:
     Ignore: true
-  alert_name:
-    To: Name
-  configuration:
-    Ignore: true
   create_time:
-    Ignore: true
-  description:
-    Ignore: true
-  display_name:
-    Ignore: true
-  project_name:
-    Ignore: true
-  schedule:
-    Ignore: true
-  status:
     Ignore: true

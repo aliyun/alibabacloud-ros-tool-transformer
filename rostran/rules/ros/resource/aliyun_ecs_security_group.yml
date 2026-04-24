@@ -6,17 +6,8 @@ ResourceType:
 Properties:
   Description:
     To: description
-  SecurityGroupName:
-    To: security_group_name
   ResourceGroupId:
     To: resource_group_id
-  SecurityGroupType:
-    To: security_group_type
-  Tags:
-    To: tags
-    Handler: handle_tags
-  VpcId:
-    To: vpc_id
   SecurityGroupEgress:
     ToResources:
       ResourceType:
@@ -91,8 +82,17 @@ Properties:
           To: source_security_group_id
         SourceGroupOwnerId:
           To: source_group_owner_account
+  SecurityGroupName:
+    To: security_group_name
   SecurityGroupName$$0:
     To: security_group_name
+  SecurityGroupType:
+    To: security_group_type
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VpcId:
+    To: vpc_id
 Attributes:
   SecurityGroupId:
     To: id

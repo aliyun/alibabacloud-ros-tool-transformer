@@ -6,18 +6,18 @@ ResourceType:
 Properties:
   Description:
     To: description
-  SAMLMetadataDocument:
-    To: encodedsaml_metadata_document
-  SAMLProviderName:
-    To: saml_provider_name
-  SAMLMetadataDocumentURL:
-    Ignore: true
   EncodedSAMLMetadataDocument:
     Ignore: true
-Attributes:
+  SAMLMetadataDocument:
+    To: encodedsaml_metadata_document
+  SAMLMetadataDocumentURL:
+    Ignore: true
   SAMLProviderName:
-    To: id
+    To: saml_provider_name
+Attributes:
   Arn:
     To: arn
+  SAMLProviderName:
+    To: id
   SAMLProviderName$$0:
     To: saml_provider_name

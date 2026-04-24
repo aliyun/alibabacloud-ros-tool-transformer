@@ -14,8 +14,14 @@ Properties:
     To: dest_port_range
   Direction:
     To: direction
+  DpiGroupIds:
+    Ignore: true
+  DpiSignatureIds:
+    Ignore: true
   IpProtocol:
     To: ip_protocol
+  Name:
+    Ignore: true
   Policy:
     To: policy
   Priority:
@@ -24,13 +30,7 @@ Properties:
     To: source_cidr
   SourcePortRange:
     To: source_port_range
-  DpiGroupIds:
-    Ignore: true
-  DpiSignatureIds:
-    Ignore: true
   Type:
-    Ignore: true
-  Name:
     Ignore: true
 Attributes:
   AcrId:

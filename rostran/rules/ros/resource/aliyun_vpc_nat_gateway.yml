@@ -4,45 +4,6 @@ ResourceType:
   From: ALIYUN::VPC::NatGateway
   To: alicloud_nat_gateway
 Properties:
-  DeletionProtection:
-    To: deletion_protection
-  Description:
-    To: description
-  EipBindMode:
-    To: eip_bind_mode
-  InstanceChargeType:
-    To: instance_charge_type
-  InternetChargeType:
-    To: internet_charge_type
-  NatGatewayName:
-    To: nat_gateway_name
-  NatGatewayName$$0:
-    To: nat_gateway_name
-  NatType:
-    To: nat_type
-  NetworkType:
-    To: network_type
-  InstanceChargeType$$0:
-    To: payment_type
-  Duration:
-    To: period
-  Tags:
-    To: tags
-    Handler: handle_tags
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  AutoPay:
-    Ignore: true
-  SecurityProtectionEnabled:
-    Ignore: true
-  DeletionForce:
-    To: force
-  PricingCycle:
-    Ignore: true
-  IcmpReplyEnabled:
-    To: icmp_reply_enabled
   AccessMode:
     To: access_mode
     Type: Map
@@ -51,18 +12,57 @@ Properties:
         To: mode_value
       TunnelType:
         To: tunnel_type
-  PrivateLinkEnabled:
-    To: private_link_enabled
+  AutoPay:
+    Ignore: true
   AvailabilityMode:
     Ignore: true
+  DeletionForce:
+    To: force
+  DeletionProtection:
+    To: deletion_protection
+  Description:
+    To: description
+  Duration:
+    To: period
+  EipBindMode:
+    To: eip_bind_mode
+  IcmpReplyEnabled:
+    To: icmp_reply_enabled
+  InstanceChargeType:
+    To: instance_charge_type
+  InstanceChargeType$$0:
+    To: payment_type
+  InternetChargeType:
+    To: internet_charge_type
   Ipv4Prefix:
     Ignore: true
+  NatGatewayName:
+    To: nat_gateway_name
+  NatGatewayName$$0:
+    To: nat_gateway_name
   NatIp:
     Ignore: true
+  NatType:
+    To: nat_type
+  NetworkType:
+    To: network_type
+  PricingCycle:
+    Ignore: true
+  PrivateLinkEnabled:
+    To: private_link_enabled
+  SecurityProtectionEnabled:
+    Ignore: true
+  Tags:
+    To: tags
+    Handler: handle_tags
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
 Attributes:
+  ForwardTableId:
+    To: forward_table_ids
   NatGatewayId:
     To: id
   SNatTableId:
     To: snat_table_ids
-  ForwardTableId:
-    To: forward_table_ids

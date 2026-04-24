@@ -29,7 +29,7 @@ Properties:
   public_rr:
     Ignore: true
   public_user_domain_name:
-    Ignore: true
+    To: Domain
   public_zone_name:
     To: Domain
   renew_period:

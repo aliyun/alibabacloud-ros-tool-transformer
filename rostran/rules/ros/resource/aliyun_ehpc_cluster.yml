@@ -50,6 +50,18 @@ Properties:
     To: description
   EcsChargeType:
     To: ecs_charge_type
+  EcsOrderComputeCount:
+    To: compute_count
+  EcsOrderComputeInstanceType:
+    To: compute_instance_type
+  EcsOrderLoginCount:
+    To: login_count
+  EcsOrderLoginInstanceType:
+    To: login_instance_type
+  EcsOrderManagerCount:
+    To: manager_count
+  EcsOrderManagerInstanceType:
+    To: manager_instance_type
   EhpcVersion:
     To: ehpc_version
   HaEnable:
@@ -66,6 +78,10 @@ Properties:
     To: job_queue
   KeyPairName:
     To: key_pair_name
+  Name:
+    To: name
+  NetworkInterfaceTrafficMode:
+    Ignore: true
   OsTag:
     To: os_tag
   Password:
@@ -106,6 +122,8 @@ Properties:
     To: system_disk_size
   SystemDiskType:
     To: system_disk_type
+  VSwitchId:
+    To: vswitch_id
   VolumeId:
     To: volume_id
   VolumeMountpoint:
@@ -116,34 +134,16 @@ Properties:
     To: volume_type
   VpcId:
     To: vpc_id
-  VSwitchId:
-    To: vswitch_id
   WithoutElasticIp:
     To: without_elastic_ip
   ZoneId:
     To: zone_id
-  Name:
-    To: name
-  EcsOrderManagerInstanceType:
-    To: manager_instance_type
-  EcsOrderLoginCount:
-    To: login_count
-  EcsOrderLoginInstanceType:
-    To: login_instance_type
-  EcsOrderComputeCount:
-    To: compute_count
-  EcsOrderComputeInstanceType:
-    To: compute_instance_type
-  NetworkInterfaceTrafficMode:
-    Ignore: true
-  EcsOrderManagerCount:
-    To: manager_count
 Attributes:
   ClusterId:
     To: id
+  EcsInfo:
+    Ignore: true
   Name:
     To: cluster_name
   SecurityGroupId:
     To: security_group_id
-  EcsInfo:
-    Ignore: true

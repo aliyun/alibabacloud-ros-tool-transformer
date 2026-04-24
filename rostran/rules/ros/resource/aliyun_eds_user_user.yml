@@ -4,29 +4,29 @@ ResourceType:
   From: ALIYUN::EdsUser::User
   To: alicloud_ecd_user
 Properties:
+  AutoLockTime:
+    Ignore: true
+  BusinessChannel:
+    Ignore: true
   Email:
     To: email
   EndUserId:
     To: end_user_id
-  Password:
-    To: password
-  Phone:
-    To: phone
-  Remark:
+  IsLocalAdmin:
     Ignore: true
   OrgId:
     Ignore: true
   OwnerType:
     Ignore: true
-  IsLocalAdmin:
+  Password:
+    To: password
+  PasswordExpireDays:
     Ignore: true
-  BusinessChannel:
-    Ignore: true
-  AutoLockTime:
-    Ignore: true
+  Phone:
+    To: phone
   RealNickName:
     Ignore: true
-  PasswordExpireDays:
+  Remark:
     Ignore: true
 Attributes:
   EndUserId:

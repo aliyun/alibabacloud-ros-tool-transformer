@@ -15,15 +15,15 @@ Properties:
   TransitRouterId:
     To: transit_router_id
 Attributes:
+  BandwidthGuaranteeMode:
+    Ignore: true
+  InterRegionTrafficQosPolicyDescription:
+    Ignore: true
   InterRegionTrafficQosPolicyId:
     To: id
   InterRegionTrafficQosPolicyName:
     Ignore: true
-  TransitRouterId:
-    Ignore: true
-  InterRegionTrafficQosPolicyDescription:
-    Ignore: true
   TransitRouterAttachmentId:
     Ignore: true
-  BandwidthGuaranteeMode:
+  TransitRouterId:
     Ignore: true

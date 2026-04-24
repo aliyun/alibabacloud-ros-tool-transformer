@@ -12,12 +12,12 @@ Properties:
     To: logical_region_id
   NetworkMode:
     To: network_mode
-  VpcId:
-    To: vpc_id
   OversoldFactor:
     Ignore: true
   ResourceGroupId:
     Ignore: true
+  VpcId:
+    To: vpc_id
 Attributes:
   ClusterId:
     To: id

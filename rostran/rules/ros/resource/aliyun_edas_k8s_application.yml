@@ -4,12 +4,26 @@ ResourceType:
   From: ALIYUN::EDAS::K8sApplication
   To: alicloud_edas_k8s_application
 Properties:
+  AppName:
+    To: application_name
+  ApplicationDescription:
+    To: application_descriotion
   ClusterId:
     To: cluster_id
   Command:
     To: command
+  CommandArgs:
+    To: command_args
+  DeployAcrossNodes:
+    Ignore: true
+  DeployAcrossZones:
+    Ignore: true
   EdasContainerVersion:
     To: edas_container_version
+  EnableAhas:
+    Ignore: true
+  Envs:
+    To: envs
   ImageUrl:
     To: image_url
   InternetSlbId:
@@ -20,10 +34,32 @@ Properties:
     To: internet_slb_protocol
   InternetTargetPort:
     To: internet_target_port
+  IntranetSlbId:
+    Ignore: true
+  IntranetSlbPort:
+    Ignore: true
+  IntranetSlbProtocol:
+    Ignore: true
+  IntranetTargetPort:
+    Ignore: true
+  IsMultilingualApp:
+    Ignore: true
+  JDK:
+    To: jdk
+  JavaStartUpConfig:
+    Ignore: true
+  LimitCpu:
+    To: limit_m_cpu
   LimitMem:
     To: limit_mem
+  Liveness:
+    To: liveness
+  LocalVolume:
+    To: local_volume
   LogicalRegionId:
     To: logical_region_id
+  MountDescs:
+    To: mount_descs
   Namespace:
     To: namespace
   NasId:
@@ -34,80 +70,44 @@ Properties:
     To: package_url
   PackageVersion:
     To: package_version
-  Replicas:
-    To: replicas
-  RequestsMem:
-    To: requests_mem
-  WebContainer:
-    To: web_container
-  DeployAcrossNodes:
-    Ignore: true
-  IntranetSlbProtocol:
-    Ignore: true
-  MountDescs:
-    To: mount_descs
-  RepoId:
-    Ignore: true
+  PostStart:
+    To: post_start
   PreStop:
     To: pre_stop
-  ApplicationDescription:
-    To: application_descriotion
-  Liveness:
-    To: liveness
-  JDK:
-    To: jdk
   Readiness:
     To: readiness
-  IntranetSlbId:
-    Ignore: true
-  SlsConfigs:
+  Replicas:
+    To: replicas
+  RepoId:
     Ignore: true
   RequestsCpu:
     To: requests_m_cpu
-  UriEncoding:
-    Ignore: true
-  AppName:
-    To: application_name
-  EnableAhas:
-    Ignore: true
-  IntranetSlbPort:
-    Ignore: true
-  LimitCpu:
-    To: limit_m_cpu
-  Envs:
-    To: envs
-  UseBodyEncoding:
-    Ignore: true
-  IntranetTargetPort:
-    Ignore: true
-  CommandArgs:
-    To: command_args
-  IsMultilingualApp:
-    Ignore: true
-  DeployAcrossZones:
-    Ignore: true
-  JavaStartUpConfig:
-    Ignore: true
+  RequestsMem:
+    To: requests_mem
   RuntimeClassName:
     Ignore: true
-  Timeout:
+  SlsConfigs:
     Ignore: true
   StorageType:
     Ignore: true
-  PostStart:
-    To: post_start
+  Timeout:
+    Ignore: true
+  UriEncoding:
+    Ignore: true
+  UseBodyEncoding:
+    Ignore: true
+  WebContainer:
+    To: web_container
   WebContainerConfig:
     Ignore: true
-  LocalVolume:
-    To: local_volume
 Attributes:
   AppId:
     To: id
   AppName:
     To: application_name
+  ChangeOrderId:
+    Ignore: true
   ClusterId:
     To: cluster_id
   CsClusterId:
-    Ignore: true
-  ChangeOrderId:
     Ignore: true

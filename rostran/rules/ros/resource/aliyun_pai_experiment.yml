@@ -13,23 +13,23 @@ Properties:
   WorkspaceId:
     To: workspace_id
 Attributes:
-  CreateTime:
-    To: create_time
+  Accessibility:
+    Ignore: true
   ArtifactUri:
     Ignore: true
-  OwnerId:
-    Ignore: true
-  ExperimentName:
-    Ignore: true
+  CreateTime:
+    To: create_time
   ExperimentId:
     To: id
-  TensorboardLogUri:
-    Ignore: true
-  Labels:
+  ExperimentName:
     Ignore: true
   GmtModifiedTime:
     Ignore: true
-  Accessibility:
+  Labels:
+    Ignore: true
+  OwnerId:
+    Ignore: true
+  TensorboardLogUri:
     Ignore: true
   UserId:
     Ignore: true

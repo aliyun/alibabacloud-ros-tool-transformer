@@ -6,6 +6,10 @@ ResourceType:
 Properties:
   ContactGroupList:
     To: contact_group_list
+  EnableInstallAgent:
+    Ignore: true
+  EnableSubscribeEvent:
+    Ignore: true
   MatchExpress:
     To: match_express
     Type: List
@@ -20,12 +24,8 @@ Properties:
     To: tag_key
   TemplateIdList:
     To: template_id_list
-  EnableInstallAgent:
-    Ignore: true
-  EnableSubscribeEvent:
-    Ignore: true
 Attributes:
-  TagKey:
-    To: tag_key
   DynamicTagRuleId:
     To: id
+  TagKey:
+    To: tag_key

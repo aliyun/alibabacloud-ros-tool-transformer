@@ -4,16 +4,15 @@ ResourceType:
   From: ALIYUN::CEN::RouteEntry
   To: alicloud_cen_route_entry
 Properties:
-  ChildInstanceRouteTableId:
-    To: route_table_id
-  DestinationCidrBlock:
-    To: cidr_block
   CenId:
     To: instance_id
   ChildInstanceId:
     Ignore: true
-  ChildInstanceType:
-    Ignore: true
   ChildInstanceRegionId:
     Ignore: true
-Attributes: {}
+  ChildInstanceRouteTableId:
+    To: route_table_id
+  ChildInstanceType:
+    Ignore: true
+  DestinationCidrBlock:
+    To: cidr_block

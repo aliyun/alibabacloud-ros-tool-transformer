@@ -6,7 +6,6 @@ ResourceType:
 Properties:
   assume_role_policy_document:
     To: AssumeRolePolicyDocument
-    Type: Map
   description:
     To: Description
   max_session_duration:

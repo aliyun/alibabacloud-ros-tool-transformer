@@ -16,10 +16,10 @@ Properties:
     To: instance_id
   Internal:
     To: internal
-  XDelayedType:
-    To: x_delayed_type
   VirtualHost:
     To: virtual_host_name
+  XDelayedType:
+    To: x_delayed_type
 Attributes:
   ExchangeName:
     To: exchange_name

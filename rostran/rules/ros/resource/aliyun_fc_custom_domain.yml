@@ -6,16 +6,6 @@ ResourceType:
 Properties:
   ApiVersion:
     To: api_version
-  DomainName:
-    To: domain_name
-  Protocol:
-    To: protocol
-  RouteConfig:
-    To: route_config
-    Type: Map
-    Schema:
-      Routes:
-        Ignore: true
   CertConfig:
     To: cert_config
     Type: Map
@@ -26,10 +16,20 @@ Properties:
         To: certificate
       PrivateKey:
         To: private_key
+  DomainName:
+    To: domain_name
+  Protocol:
+    To: protocol
+  RouteConfig:
+    To: route_config
+    Type: Map
+    Schema:
+      Routes:
+        Ignore: true
 Attributes:
+  Domain:
+    Ignore: true
   DomainName:
     To: id
   DomainName$$0:
     To: domain_name
-  Domain:
-    Ignore: true

@@ -50,7 +50,6 @@ Properties:
     Ignore: true
   group_configuration:
     To: Detail.Configuration.GroupConfiguration
-    Type: Map
     Schema:
       fields:
         To: Fields
@@ -115,7 +114,6 @@ Properties:
     To: Detail.Configuration.NotifyThreshold
   policy_configuration:
     To: Detail.Configuration.PolicyConfiguration
-    Type: Map
     Schema:
       action_policy_id:
         To: ActionPolicyId
@@ -142,8 +140,7 @@ Properties:
   role_arn:
     Ignore: true
   schedule:
-    To: Detail.Configuration.Schedule
-    Type: Map
+    To: Detail.Schedule
     Schema:
       cron_expression:
         To: CronExpression
@@ -160,9 +157,9 @@ Properties:
       type:
         To: Type
   schedule_interval:
-    To: Detail.Configuration.Schedule.Interval
+    To: Detail.Schedule.Interval
   schedule_type:
-    To: Detail.Configuration.Schedule.Type
+    To: Detail.Schedule.Type
   send_resolved:
     To: Detail.Configuration.SendResolved
   service_uri:
@@ -207,62 +204,3 @@ Properties:
     Ignore: true
   version:
     To: Detail.Configuration.Version
-Attributes:
-  id:
-    Ignore: true
-  alert_description:
-    Ignore: true
-  alert_displayname:
-    Ignore: true
-  alert_name:
-    To: Name
-  annotations:
-    Ignore: true
-  auto_annotation:
-    Ignore: true
-  condition:
-    Ignore: true
-  dashboard:
-    Ignore: true
-  group_configuration:
-    Ignore: true
-  join_configurations:
-    Ignore: true
-  labels:
-    Ignore: true
-  mute_until:
-    Ignore: true
-  no_data_fire:
-    Ignore: true
-  no_data_severity:
-    Ignore: true
-  notification_list:
-    Ignore: true
-  notify_threshold:
-    Ignore: true
-  policy_configuration:
-    Ignore: true
-  project_name:
-    Ignore: true
-  query_list:
-    Ignore: true
-  schedule:
-    Ignore: true
-  schedule_interval:
-    Ignore: true
-  schedule_type:
-    Ignore: true
-  send_resolved:
-    Ignore: true
-  severity_configurations:
-    Ignore: true
-  template_configuration:
-    Ignore: true
-  threshold:
-    Ignore: true
-  throttling:
-    Ignore: true
-  type:
-    Ignore: true
-  version:
-    Ignore: true

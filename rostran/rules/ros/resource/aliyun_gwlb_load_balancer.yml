@@ -24,21 +24,21 @@ Properties:
       ZoneId:
         To: zone_id
 Attributes:
-  LoadBalancerId:
-    To: id
-  CreateTime:
-    To: create_time
-  BusinessStatus:
-    To: status
-  ZoneMappings:
-    To: zone_mappings
-  ResourceGroupId:
-    Ignore: true
-  LoadBalancerName:
-    Ignore: true
   AddressIpVersion:
     Ignore: true
-  VpcId:
+  BusinessStatus:
+    To: status
+  CreateTime:
+    To: create_time
+  LoadBalancerId:
+    To: id
+  LoadBalancerName:
+    Ignore: true
+  ResourceGroupId:
     Ignore: true
   Tags:
     Ignore: true
+  VpcId:
+    Ignore: true
+  ZoneMappings:
+    To: zone_mappings

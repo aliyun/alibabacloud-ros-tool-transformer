@@ -13,23 +13,23 @@ Properties:
   WorkspaceName:
     To: workspace_name
 Attributes:
-  WorkspaceId:
-    To: id
-  Users:
-    Ignore: true
   AdminNames:
     Ignore: true
   Creator:
     Ignore: true
-  WorkspaceName:
-    Ignore: true
   Description:
-    Ignore: true
-  Owner:
-    Ignore: true
-  EnvTypes:
     Ignore: true
   DisplayName:
     Ignore: true
+  EnvTypes:
+    Ignore: true
   ExtraInfos:
+    Ignore: true
+  Owner:
+    Ignore: true
+  Users:
+    Ignore: true
+  WorkspaceId:
+    To: id
+  WorkspaceName:
     Ignore: true

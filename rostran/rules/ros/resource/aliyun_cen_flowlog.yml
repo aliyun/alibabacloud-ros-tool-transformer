@@ -4,50 +4,50 @@ ResourceType:
   From: ALIYUN::CEN::Flowlog
   To: alicloud_cen_flowlog
 Properties:
+  CenId:
+    Ignore: true
   Description:
     To: description
   FlowLogName:
     To: flow_log_name
-  LogStoreName:
-    To: log_store_name
-  ProjectName:
-    To: project_name
-  CenId:
-    Ignore: true
   Interval:
-    Ignore: true
-  TransitRouterId:
-    Ignore: true
-  TransitRouterAttachmentId:
     Ignore: true
   LogFormatString:
     Ignore: true
-  Tags:
-    Ignore: true
-Attributes:
-  FlowLogId:
-    To: id
-  Description:
-    To: description
-  FlowLogName:
-    To: flow_log_name
   LogStoreName:
     To: log_store_name
   ProjectName:
     To: project_name
-  CenId:
+  Tags:
     Ignore: true
-  Interval:
+  TransitRouterAttachmentId:
     Ignore: true
   TransitRouterId:
     Ignore: true
-  TransitRouterAttachmentId:
+Attributes:
+  CenId:
     Ignore: true
   CreateTime:
     Ignore: true
+  Description:
+    To: description
+  FlowLogId:
+    To: id
+  FlowLogName:
+    To: flow_log_name
   FlowLogVersion:
+    Ignore: true
+  Interval:
     Ignore: true
   LogFormatString:
     Ignore: true
+  LogStoreName:
+    To: log_store_name
+  ProjectName:
+    To: project_name
   Tags:
+    Ignore: true
+  TransitRouterAttachmentId:
+    Ignore: true
+  TransitRouterId:
     Ignore: true

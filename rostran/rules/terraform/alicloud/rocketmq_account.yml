@@ -1,0 +1,17 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rocketmq_account
+  To: ALIYUN::ROCKETMQ5::Acl
+Properties:
+  account_status:
+    Ignore: true
+  instance_id:
+    To: InstanceId
+  password:
+    Ignore: true
+  username:
+    To: Username
+Attributes:
+  id:
+    Ignore: true

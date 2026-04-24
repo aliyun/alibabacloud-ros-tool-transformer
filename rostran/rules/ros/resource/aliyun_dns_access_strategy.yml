@@ -6,16 +6,16 @@ ResourceType:
 Properties:
   AccessMode:
     To: access_mode
-  DefaultAddrPoolType:
-    To: default_addr_pool_type
   DefaultAddrPool:
     To: default_addr_pools
     Type: List
     Schema:
-      LbaWeight:
-        To: lba_weight
       Id:
         Ignore: true
+      LbaWeight:
+        To: lba_weight
+  DefaultAddrPoolType:
+    To: default_addr_pool_type
   DefaultLatencyOptimization:
     To: default_latency_optimization
   DefaultLbaStrategy:
@@ -24,16 +24,16 @@ Properties:
     To: default_max_return_addr_num
   DefaultMinAvailableAddrNum:
     To: default_min_available_addr_num
-  FailoverAddrPoolType:
-    To: failover_addr_pool_type
   FailoverAddrPool:
     To: failover_addr_pools
     Type: List
     Schema:
-      LbaWeight:
-        To: lba_weight
       Id:
         Ignore: true
+      LbaWeight:
+        To: lba_weight
+  FailoverAddrPoolType:
+    To: failover_addr_pool_type
   FailoverLatencyOptimization:
     To: failover_latency_optimization
   FailoverLbaStrategy:

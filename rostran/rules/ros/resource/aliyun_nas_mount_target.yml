@@ -6,6 +6,8 @@ ResourceType:
 Properties:
   AccessGroupName:
     To: access_group_name
+  EnableIpv6:
+    To: dual_stack
   FileSystemId:
     To: file_system_id
   NetworkType:
@@ -14,12 +16,10 @@ Properties:
     To: security_group_id
   Status:
     To: status
-  VpcId:
-    To: vpc_id
   VSwitchId:
     To: vswitch_id
-  EnableIpv6:
-    To: dual_stack
+  VpcId:
+    To: vpc_id
 Attributes:
   MountTargetDomain:
     To: id

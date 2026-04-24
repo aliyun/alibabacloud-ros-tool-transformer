@@ -8,6 +8,8 @@ Properties:
     To: bandwidth
   ClientIp:
     To: client_ip
+  Disable:
+    Ignore: true
   Password:
     To: password
   SmartAGId:
@@ -16,8 +18,6 @@ Properties:
     To: user_mail
   UserName:
     To: user_name
-  Disable:
-    Ignore: true
 Attributes:
   SmartAGId:
     Ignore: true

@@ -15,15 +15,15 @@ Properties:
   Scene:
     To: scene
 Attributes:
-  ImageLibId:
-    To: id
+  BizTypes:
+    Ignore: true
   Category:
-    Ignore: true
-  ImageLibName:
-    Ignore: true
-  Scene:
     Ignore: true
   Enable:
     Ignore: true
-  BizTypes:
+  ImageLibId:
+    To: id
+  ImageLibName:
+    Ignore: true
+  Scene:
     Ignore: true

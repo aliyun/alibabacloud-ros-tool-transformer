@@ -5,16 +5,24 @@ ResourceType:
   To: ALIYUN::GA::EndpointGroup
 Properties:
   endpoint:
-    To: EndpointAddress
+    To: EndpointConfigurations
+    Type: List
+    Schema:
+      endpoint:
+        To: Endpoint
   endpoint_group_id:
-    To: EndpointGroupId
+    Ignore: true
   traffic_to_endpoint_policy:
     Ignore: true
   type:
-    To: EndpointType
+    To: EndpointConfigurations
+    Type: List
+    Schema:
+      type:
+        To: Type
 Attributes:
   id:
-    To: EndpointId
+    Ignore: true
   accelerator_id:
     Ignore: true
   custom_routing_endpoint_id:

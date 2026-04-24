@@ -10,20 +10,20 @@ Properties:
     To: accepting_region_id
   AcceptingVpcId:
     To: accepting_vpc_id
-  Description:
-    To: description
-  Name:
-    To: peer_connection_name
-  VpcId:
-    To: vpc_id
-  DeletionForce:
-    To: force_delete
   Bandwidth:
     To: bandwidth
+  DeletionForce:
+    To: force_delete
+  Description:
+    To: description
   LinkType:
     To: link_type
+  Name:
+    To: peer_connection_name
   ResourceGroupId:
     To: resource_group_id
+  VpcId:
+    To: vpc_id
 Attributes:
   InstanceId:
     To: id

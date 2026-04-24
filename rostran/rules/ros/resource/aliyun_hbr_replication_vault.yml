@@ -10,6 +10,8 @@ Properties:
     To: encrypt_type
   KmsKeyId:
     To: kms_key_id
+  RedundancyType:
+    Ignore: true
   ReplicationSourceRegionId:
     To: replication_source_region_id
   ReplicationSourceVaultId:
@@ -18,8 +20,6 @@ Properties:
     To: vault_name
   VaultStorageClass:
     To: vault_storage_class
-  RedundancyType:
-    Ignore: true
 Attributes:
   VaultId:
     To: id

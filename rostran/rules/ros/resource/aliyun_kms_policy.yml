@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::KMS::Policy
   To: alicloud_kms_policy
 Properties:
+  AccessControlRules:
+    To: access_control_rules
   Description:
     To: description
   KmsInstanceId:
@@ -14,8 +16,6 @@ Properties:
     To: policy_name
   Resources:
     To: resources
-  AccessControlRules:
-    To: access_control_rules
 Attributes:
   AccessControlRules:
     To: access_control_rules

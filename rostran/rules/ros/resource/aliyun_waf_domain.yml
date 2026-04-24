@@ -30,9 +30,9 @@ Properties:
     To: log_headers
     Type: List
     Schema:
-      V:
-        Ignore: true
       K:
+        Ignore: true
+      V:
         Ignore: true
   ReadTime:
     To: read_time
@@ -65,11 +65,11 @@ Attributes:
     To: is_access_product
   LoadBalancing:
     To: load_balancing
+  LogHeaders:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   SourceIps:
     To: source_ips
-  LogHeaders:
-    Ignore: true
   Version:
     Ignore: true

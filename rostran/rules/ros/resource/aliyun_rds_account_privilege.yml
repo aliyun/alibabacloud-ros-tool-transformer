@@ -6,10 +6,9 @@ ResourceType:
 Properties:
   AccountName:
     To: account_name
-  DBInstanceId:
-    To: instance_id
   AccountPrivilege:
     To: privilege
+  DBInstanceId:
+    To: instance_id
   DBName:
     To: db_names
-Attributes: {}

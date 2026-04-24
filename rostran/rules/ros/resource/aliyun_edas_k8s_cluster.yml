@@ -6,10 +6,10 @@ ResourceType:
 Properties:
   CsClusterId:
     To: cs_cluster_id
-  NamespaceId:
-    To: namespace_id
   EnableAsm:
     Ignore: true
+  NamespaceId:
+    To: namespace_id
 Attributes:
   ClusterId:
     To: id
@@ -21,11 +21,11 @@ Attributes:
     To: cs_cluster_id
   NetworkMode:
     To: network_mode
-  VpcId:
-    To: vpc_id
   NodeNum:
     Ignore: true
   SubNetCidr:
     Ignore: true
+  VpcId:
+    To: vpc_id
   VswitchId:
     Ignore: true

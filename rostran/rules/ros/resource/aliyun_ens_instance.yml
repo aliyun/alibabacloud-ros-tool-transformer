@@ -4,6 +4,12 @@ ResourceType:
   From: ALIYUN::ENS::Instance
   To: alicloud_ens_instance
 Properties:
+  AutoRenew:
+    To: auto_renew
+  AutoRenewPeriod:
+    Ignore: true
+  DataDiskSize:
+    Ignore: true
   EnsRegionId:
     To: ens_region_id
   HostName:
@@ -28,64 +34,58 @@ Properties:
     To: period
   PrivateIpAddress:
     To: private_ip_address
+  Quantity:
+    To: amount
+  SystemDiskSize:
+    To: system_disk
   UniqueSuffix:
     To: unique_suffix
   UserData:
     To: user_data
   VSwitchId:
     To: vswitch_id
+Attributes:
   AutoRenew:
-    To: auto_renew
-  Quantity:
-    To: amount
-  DataDiskSize:
     Ignore: true
-  SystemDiskSize:
-    To: system_disk
   AutoRenewPeriod:
     Ignore: true
-Attributes:
-  InstanceId:
-    To: id
+  DataDiskSize:
+    To: data_disk
   EnsRegionId:
     To: ens_region_id
   HostName:
     To: host_name
   ImageId:
     To: image_id
+  InstanceId:
+    To: id
   InstanceName:
     To: instance_name
   InstanceType:
     To: instance_type
+  InternetChargeType:
+    Ignore: true
+  IpType:
+    Ignore: true
   KeyPairName:
     To: key_pair_name
   PaymentType:
     To: payment_type
+  Period:
+    Ignore: true
   PrivateIpAddress:
     To: private_ip_address
-  VSwitchId:
-    To: vswitch_id
-  IpType:
-    Ignore: true
-  UserData:
-    Ignore: true
-  UniqueSuffix:
-    Ignore: true
-  InternetChargeType:
-    Ignore: true
-  AutoRenew:
-    Ignore: true
-  Quantity:
-    Ignore: true
   PrivateIps:
-    Ignore: true
-  DataDiskSize:
-    To: data_disk
-  SystemDiskSize:
     Ignore: true
   PublicIps:
     Ignore: true
-  Period:
+  Quantity:
     Ignore: true
-  AutoRenewPeriod:
+  SystemDiskSize:
     Ignore: true
+  UniqueSuffix:
+    Ignore: true
+  UserData:
+    Ignore: true
+  VSwitchId:
+    To: vswitch_id

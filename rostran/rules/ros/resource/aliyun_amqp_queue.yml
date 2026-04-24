@@ -20,10 +20,10 @@ Properties:
     To: max_length
   MaximumPriority:
     To: maximum_priority
-  QueueName:
-    To: queue_name
   MessageTTL:
     To: message_ttl
+  QueueName:
+    To: queue_name
   VirtualHost:
     To: virtual_host_name
 Attributes:

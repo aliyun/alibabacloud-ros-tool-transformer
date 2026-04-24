@@ -6,12 +6,6 @@ ResourceType:
 Properties:
   EndpointId:
     To: endpoint_id
-  RuleName:
-    To: rule_name
-  Type:
-    To: type
-  ZoneName:
-    To: zone_name
   ForwardIp:
     To: forward_ips
     Type: List
@@ -20,20 +14,26 @@ Properties:
         To: ip
       Port:
         To: port
-Attributes:
-  EndpointId:
-    To: endpoint_id
   RuleName:
     To: rule_name
   Type:
     To: type
   ZoneName:
     To: zone_name
-  ForwardIp:
-    Ignore: true
+Attributes:
   CreateTime:
     Ignore: true
-  Vpcs:
-    Ignore: true
+  EndpointId:
+    To: endpoint_id
   EndpointName:
     Ignore: true
+  ForwardIp:
+    Ignore: true
+  RuleName:
+    To: rule_name
+  Type:
+    To: type
+  Vpcs:
+    Ignore: true
+  ZoneName:
+    To: zone_name

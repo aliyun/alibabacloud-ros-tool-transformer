@@ -27,35 +27,35 @@ Properties:
   WorkspaceId:
     To: workspace_id
 Attributes:
-  DatasetId:
-    To: id
+  Accessibility:
+    Ignore: true
   CreateTime:
     To: create_time
-  SourceId:
+  DataSourceType:
     Ignore: true
-  Uri:
+  DataType:
     Ignore: true
+  DatasetId:
+    To: id
   DatasetName:
     Ignore: true
-  Options:
+  Description:
     Ignore: true
   GmtModifiedTime:
     Ignore: true
+  Options:
+    Ignore: true
+  OwnerId:
+    Ignore: true
+  Property:
+    Ignore: true
+  SourceId:
+    Ignore: true
   SourceType:
+    Ignore: true
+  Uri:
     Ignore: true
   UserId:
     Ignore: true
   WorkspaceId:
-    Ignore: true
-  DataSourceType:
-    Ignore: true
-  OwnerId:
-    Ignore: true
-  DataType:
-    Ignore: true
-  Description:
-    Ignore: true
-  Property:
-    Ignore: true
-  Accessibility:
     Ignore: true

@@ -4,26 +4,26 @@ ResourceType:
   From: ALIYUN::ECS::DiskAttachment
   To: alicloud_ecs_disk_attachment
 Properties:
+  Bootable:
+    To: bootable
+  DeleteAutoSnapshot:
+    Ignore: true
   DeleteWithInstance:
     To: delete_with_instance
   Device:
     To: device
   DiskId:
     To: disk_id
+  Force:
+    Ignore: true
   InstanceId:
     To: instance_id
-  DeleteAutoSnapshot:
+  InstanceType:
     Ignore: true
-  Bootable:
-    To: bootable
   KeyPairName:
     To: key_pair_name
   Password:
     To: password
-  InstanceType:
-    Ignore: true
-  Force:
-    Ignore: true
 Attributes:
   Device:
     To: device

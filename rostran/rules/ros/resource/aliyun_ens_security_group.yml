@@ -6,14 +6,14 @@ ResourceType:
 Properties:
   Description:
     To: description
-  SecurityGroupName:
-    To: security_group_name
-  SecurityGroupIngress:
+  Permissions:
     Ignore: true
   SecurityGroupEgress:
     Ignore: true
-  Permissions:
+  SecurityGroupIngress:
     Ignore: true
+  SecurityGroupName:
+    To: security_group_name
 Attributes:
   SecurityGroupId:
     To: id

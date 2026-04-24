@@ -14,10 +14,10 @@ Properties:
     To: network_type
   Status:
     To: status
-  VpcId:
-    To: vpc_id
   VSwitchId:
     To: vswitch_id
+  VpcId:
+    To: vpc_id
 Attributes:
   MountPointId:
     To: id

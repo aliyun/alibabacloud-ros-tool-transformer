@@ -11,11 +11,11 @@ Properties:
   EnvironmentId:
     To: environment_id
 Attributes:
-  EnvPodMonitorName:
-    To: env_pod_monitor_name
-  Namespace:
-    To: namespace
-  EnvironmentId:
-    Ignore: true
   ConfigYaml:
     Ignore: true
+  EnvPodMonitorName:
+    To: env_pod_monitor_name
+  EnvironmentId:
+    Ignore: true
+  Namespace:
+    To: namespace

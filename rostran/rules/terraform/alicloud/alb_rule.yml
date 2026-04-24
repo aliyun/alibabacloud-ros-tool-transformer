@@ -53,25 +53,123 @@ Properties:
     Type: List
     Schema:
       cors_config:
-        Ignore: true
+        To: CorsConfig
+        Type: Map
+        Schema:
+          allow_credentials:
+            To: AllowCredentials
+          allow_headers:
+            To: AllowHeaders
+            Type: List
+          allow_methods:
+            To: AllowMethods
+            Type: List
+          allow_origin:
+            To: AllowOrigin
+            Type: List
+          expose_headers:
+            To: ExposeHeaders
+            Type: List
+          max_age:
+            To: MaxAge
       fixed_response_config:
-        Ignore: true
+        To: FixedResponseConfig
+        Type: Map
+        Schema:
+          content:
+            To: Content
+          content_type:
+            To: ContentType
+          http_code:
+            To: HttpCode
       forward_group_config:
-        Ignore: true
+        To: ForwardGroupConfig
+        Type: Map
+        Schema:
+          server_group_sticky_session:
+            To: ServerGroupStickySession
+            Type: Map
+            Schema:
+              enabled:
+                To: Enabled
+              timeout:
+                To: Timeout
+          server_group_tuples:
+            To: ServerGroupTuples
+            Type: List
+            Schema:
+              server_group_id:
+                To: ServerGroupId
+              weight:
+                To: Weight
       insert_header_config:
-        Ignore: true
+        To: InsertHeaderConfig
+        Type: Map
+        Schema:
+          key:
+            To: Key
+          value:
+            To: Value
+          value_type:
+            To: ValueType
       order:
         To: Order
       redirect_config:
-        Ignore: true
+        To: RedirectConfig
+        Type: Map
+        Schema:
+          host:
+            To: Host
+          http_code:
+            To: HttpCode
+          path:
+            To: Path
+          port:
+            To: Port
+          protocol:
+            To: Protocol
+          query:
+            To: Query
       remove_header_config:
-        Ignore: true
+        To: RemoveHeaderConfig
+        Type: Map
+        Schema:
+          key:
+            To: Key
       rewrite_config:
-        Ignore: true
+        To: RewriteConfig
+        Type: Map
+        Schema:
+          host:
+            To: Host
+          path:
+            To: Path
+          query:
+            To: Query
       traffic_limit_config:
-        Ignore: true
+        To: TrafficLimitConfig
+        Type: Map
+        Schema:
+          per_ip_qps:
+            To: PerIpQps
+          qps:
+            To: QPS
       traffic_mirror_config:
-        Ignore: true
+        To: TrafficMirrorConfig
+        Type: Map
+        Schema:
+          mirror_group_config:
+            To: MirrorGroupConfig
+            Type: Map
+            Schema:
+              server_group_tuples:
+                To: ServerGroupTuples
+                Type: List
+                Schema:
+                  server_group_id:
+                    To: ServerGroupId
+          target_type:
+            To: TargetType
       type:
         To: Type
   rule_conditions:
@@ -79,23 +177,82 @@ Properties:
     Type: List
     Schema:
       cookie_config:
-        Ignore: true
+        To: CookieConfig
+        Type: Map
+        Schema:
+          values:
+            To: Values
+            Type: List
+            Schema:
+              key:
+                To: Key
+              value:
+                To: Value
       header_config:
-        Ignore: true
+        To: HeaderConfig
+        Type: Map
+        Schema:
+          key:
+            To: Key
+          values:
+            To: Values
+            Type: List
       host_config:
-        Ignore: true
+        To: HostConfig
+        Type: Map
+        Schema:
+          values:
+            To: Values
+            Type: List
       method_config:
-        Ignore: true
+        To: MethodConfig
+        Type: Map
+        Schema:
+          values:
+            To: Values
+            Type: List
       path_config:
-        Ignore: true
+        To: PathConfig
+        Type: Map
+        Schema:
+          values:
+            To: Values
+            Type: List
       query_string_config:
-        Ignore: true
+        To: QueryStringConfig
+        Type: Map
+        Schema:
+          values:
+            To: Values
+            Type: List
+            Schema:
+              key:
+                To: Key
+              value:
+                To: Value
       response_header_config:
-        Ignore: true
+        To: ResponseHeaderConfig
+        Type: Map
+        Schema:
+          key:
+            To: Key
+          values:
+            To: Values
+            Type: List
       response_status_code_config:
-        Ignore: true
+        To: ResponseStatusCodeConfig
+        Type: Map
+        Schema:
+          values:
+            To: Values
+            Type: List
       source_ip_config:
-        Ignore: true
+        To: SourceIpConfig
+        Type: Map
+        Schema:
+          values:
+            To: Values
+            Type: List
       type:
         To: Type
   rule_name:
@@ -105,8 +262,6 @@ Properties:
   server_group_sticky_session:
     Ignore: true
   server_group_tuples:
-    Ignore: true
-  status:
     Ignore: true
   target_type:
     Ignore: true
@@ -119,17 +274,5 @@ Properties:
 Attributes:
   id:
     To: RuleId
-  direction:
-    Ignore: true
-  listener_id:
-    Ignore: true
-  priority:
-    Ignore: true
-  rule_actions:
-    Ignore: true
-  rule_conditions:
-    Ignore: true
-  rule_name:
-    Ignore: true
   status:
     Ignore: true

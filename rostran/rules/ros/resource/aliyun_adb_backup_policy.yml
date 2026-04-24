@@ -4,16 +4,15 @@ ResourceType:
   From: ALIYUN::ADB::BackupPolicy
   To: alicloud_adb_backup_policy
 Properties:
-  DBClusterId:
-    To: db_cluster_id
-  PreferredBackupPeriod:
-    To: preferred_backup_period
-  PreferredBackupTime:
-    To: preferred_backup_time
   BackupRetentionPeriod:
     Ignore: true
+  DBClusterId:
+    To: db_cluster_id
   EnableBackupLog:
     Ignore: true
   LogBackupRetentionPeriod:
     Ignore: true
-Attributes: {}
+  PreferredBackupPeriod:
+    To: preferred_backup_period
+  PreferredBackupTime:
+    To: preferred_backup_time

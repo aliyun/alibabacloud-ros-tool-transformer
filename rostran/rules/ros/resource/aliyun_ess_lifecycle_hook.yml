@@ -8,10 +8,10 @@ Properties:
     To: default_result
   HeartbeatTimeout:
     To: heartbeat_timeout
-  LifecycleTransition:
-    To: lifecycle_transition
   LifecycleHookName:
     To: name
+  LifecycleTransition:
+    To: lifecycle_transition
   NotificationArn:
     To: notification_arn
   NotificationMetadata:

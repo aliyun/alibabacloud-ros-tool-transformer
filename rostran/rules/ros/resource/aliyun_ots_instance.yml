@@ -4,23 +4,23 @@ ResourceType:
   From: ALIYUN::OTS::Instance
   To: alicloud_ots_instance
 Properties:
-  Network:
-    To: accessed_by
-  Description:
-    To: description
   ClusterType:
     To: instance_type
+  Description:
+    To: description
   InstanceName:
     To: name
+  Network:
+    To: accessed_by
   Tags:
     To: tags
     Handler: handle_tags
 Attributes:
   InstanceName:
     To: id
-  VpcEndpoint:
-    Ignore: true
   PrivateEndpoint:
     Ignore: true
   PublicEndpoint:
+    Ignore: true
+  VpcEndpoint:
     Ignore: true

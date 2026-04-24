@@ -19,9 +19,9 @@ Properties:
   Tags:
     Ignore: true
 Attributes:
+  InnerIpAddress:
+    Ignore: true
   InstanceId:
     To: id
   PublicIpAddress:
-    Ignore: true
-  InnerIpAddress:
     Ignore: true

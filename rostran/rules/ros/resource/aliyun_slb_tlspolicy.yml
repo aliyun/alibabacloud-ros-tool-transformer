@@ -6,18 +6,18 @@ ResourceType:
 Properties:
   Ciphers:
     To: ciphers
-  TlsVersions:
-    To: tls_versions
   TLSPolicyName:
     To: tls_cipher_policy_name
+  TlsVersions:
+    To: tls_versions
 Attributes:
   Ciphers:
     To: ciphers
-  TlsVersions:
-    To: tls_versions
-  InstanceId:
-    To: id
   CreateTime:
     Ignore: true
+  InstanceId:
+    To: id
   TLSPolicyName:
     Ignore: true
+  TlsVersions:
+    To: tls_versions

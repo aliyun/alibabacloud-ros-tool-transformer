@@ -4,8 +4,6 @@ ResourceType:
   From: alicloud_api_gateway_api
   To: ALIYUN::ApiGateway::Api
 Properties:
-  api_id:
-    Ignore: true
   auth_type:
     To: AuthType
   constant_parameters:
@@ -15,27 +13,41 @@ Properties:
       description:
         To: Description
       in:
-        Ignore: true
+        To: Location
       name:
-        Ignore: true
+        To: ServiceParameterName
       value:
-        Ignore: true
+        To: ConstValue
   description:
     To: Description
   fc_service_config:
-    To: FunctionComputeConfig
+    To: ServiceConfig.FunctionComputeConfig
     Type: Map
     Schema:
       arn_role:
-        To: roleArn
+        To: RoleArn
+      function_base_url:
+        To: FcBaseUrl
       function_name:
-        To: functionName
+        To: FunctionName
+      function_type:
+        To: FcType
+      function_version:
+        To: FcVersion
+      method:
+        To: Method
+      only_business_path:
+        To: OnlyBusinessPath
+      path:
+        To: Path
+      qualifier:
+        To: Qualifier
       region:
-        To: fcRegionId
+        To: FcRegionId
       service_name:
-        To: serviceName
+        To: ServiceName
       timeout:
-        Ignore: true
+        To: ServiceTimeOut
   force_nonce_check:
     To: ForceNonceCheck
   group_id:
@@ -45,7 +57,7 @@ Properties:
     Type: Map
     Schema:
       address:
-        Ignore: true
+        To: ServiceAddress
       aone_name:
         Ignore: true
       content_type_category:
@@ -53,11 +65,11 @@ Properties:
       content_type_value:
         To: ContentTypeValue
       method:
-        Ignore: true
+        To: ServiceHttpMethod
       path:
-        Ignore: true
+        To: ServicePath
       timeout:
-        Ignore: true
+        To: ServiceTimeOut
   http_vpc_service_config:
     To: ServiceConfig
     Type: Map
@@ -69,13 +81,13 @@ Properties:
       content_type_value:
         To: ContentTypeValue
       method:
-        Ignore: true
+        To: ServiceHttpMethod
       name:
         Ignore: true
       path:
-        Ignore: true
+        To: ServicePath
       timeout:
-        Ignore: true
+        To: ServiceTimeOut
       vpc_scheme:
         Ignore: true
   mock_service_config:
@@ -85,7 +97,7 @@ Properties:
       aone_name:
         Ignore: true
       result:
-        Ignore: true
+        To: MockResult
   name:
     To: ApiName
   request_config:
@@ -123,8 +135,7 @@ Properties:
       type:
         To: ParameterType
   service_type:
-    To: ServiceConfig
-    Type: Map
+    Ignore: true
   stage_names:
     Ignore: true
   system_parameters:
@@ -142,21 +153,3 @@ Attributes:
     To: ApiId
   api_id:
     To: ApiId
-  auth_type:
-    Ignore: true
-  constant_parameters:
-    Ignore: true
-  description:
-    Ignore: true
-  force_nonce_check:
-    Ignore: true
-  group_id:
-    Ignore: true
-  name:
-    Ignore: true
-  request_parameters:
-    Ignore: true
-  service_type:
-    Ignore: true
-  system_parameters:
-    Ignore: true

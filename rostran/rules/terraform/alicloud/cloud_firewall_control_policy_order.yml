@@ -12,4 +12,4 @@ Properties:
     To: NewOrder
 Attributes:
   id:
-    Ignore: true
+    To: AclUuid

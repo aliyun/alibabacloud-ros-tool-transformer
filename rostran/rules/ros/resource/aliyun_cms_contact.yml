@@ -4,14 +4,14 @@ ResourceType:
   From: ALIYUN::CMS::Contact
   To: alicloud_cms_alarm_contact
 Properties:
-  Describe:
-    To: describe
   Channels:
     To: channels_aliim
-  ContactName:
-    To: alarm_contact_name
   Channels$$0:
     To: channels_sms
+  ContactName:
+    To: alarm_contact_name
+  Describe:
+    To: describe
 Attributes:
   ContactName:
     To: id

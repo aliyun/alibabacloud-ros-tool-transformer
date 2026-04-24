@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::FC::Service
   To: alicloud_fc_service
 Properties:
+  DeletionForce:
+    Ignore: true
   Description:
     To: description
   InternetAccess:
@@ -12,43 +14,14 @@ Properties:
     To: log_config
     Type: Map
     Schema:
+      EnableRequestMetrics:
+        Ignore: true
+      LogBeginRule:
+        Ignore: true
       Logstore:
         To: logstore
       Project:
         To: project
-      LogBeginRule:
-        Ignore: true
-      EnableRequestMetrics:
-        Ignore: true
-  ServiceName:
-    To: name
-  ServiceName$$0:
-    To: name_prefix
-  Role:
-    To: role
-  Tags:
-    To: tags
-    Handler: handle_tags
-  VpcConfig:
-    To: vpc_config
-    Type: Map
-    Schema:
-      SecurityGroupId:
-        To: security_group_id
-      VpcId:
-        To: vpc_id
-      VSwitchIds:
-        Ignore: true
-      ZoneId:
-        Ignore: true
-  TracingConfig:
-    To: tracing_config
-    Type: Map
-    Schema:
-      Params:
-        To: params
-      Type:
-        To: type
   NasConfig:
     To: nas_config
     Type: Map
@@ -59,29 +32,56 @@ Properties:
         To: mount_points
       UserId:
         To: user_id
-  VpcBindings:
-    Ignore: true
-  DeletionForce:
-    Ignore: true
   OssMountConfig:
     Ignore: true
-Attributes:
-  ServiceId:
-    To: id
-  InternetAccess:
-    To: internet_access
   Role:
     To: role
+  ServiceName:
+    To: name
+  ServiceName$$0:
+    To: name_prefix
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TracingConfig:
+    To: tracing_config
+    Type: Map
+    Schema:
+      Params:
+        To: params
+      Type:
+        To: type
+  VpcBindings:
+    Ignore: true
+  VpcConfig:
+    To: vpc_config
+    Type: Map
+    Schema:
+      SecurityGroupId:
+        To: security_group_id
+      VSwitchIds:
+        Ignore: true
+      VpcId:
+        To: vpc_id
+      ZoneId:
+        Ignore: true
+Attributes:
+  InternetAccess:
+    To: internet_access
+  LogProject:
+    Ignore: true
+  Logstore:
+    Ignore: true
+  Role:
+    To: role
+  ServiceId:
+    To: id
   ServiceId$$0:
     To: service_id
+  ServiceName:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
   VpcId:
-    Ignore: true
-  ServiceName:
-    Ignore: true
-  Logstore:
-    Ignore: true
-  LogProject:
     Ignore: true

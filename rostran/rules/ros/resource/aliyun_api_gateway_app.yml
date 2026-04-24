@@ -4,28 +4,28 @@ ResourceType:
   From: ALIYUN::ApiGateway::App
   To: alicloud_api_gateway_app
 Properties:
-  Description:
-    To: description
+  AppCode:
+    Ignore: true
+  AppKey:
+    Ignore: true
   AppName:
     To: name
+  AppSecret:
+    Ignore: true
+  Description:
+    To: description
   Tags:
     To: tags
     Handler: handle_tags
+Attributes:
   AppCode:
     Ignore: true
-  AppSecret:
-    Ignore: true
-  AppKey:
-    Ignore: true
-Attributes:
   AppId:
     To: id
-  Tags:
-    To: tags
-    Handler: handle_tags
-  AppCode:
+  AppKey:
     Ignore: true
   AppSecret:
     Ignore: true
-  AppKey:
-    Ignore: true
+  Tags:
+    To: tags
+    Handler: handle_tags

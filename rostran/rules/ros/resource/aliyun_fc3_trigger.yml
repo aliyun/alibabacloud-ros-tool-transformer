@@ -14,22 +14,22 @@ Properties:
     To: qualifier
   SourceArn:
     To: source_arn
+  TriggerConfig:
+    To: trigger_config
   TriggerName:
     To: trigger_name
   TriggerType:
     To: trigger_type
-  TriggerConfig:
-    To: trigger_config
 Attributes:
-  TriggerId:
-    To: id
   FunctionName:
     To: function_name
+  TriggerId:
+    To: id
+  TriggerId$$0:
+    To: trigger_id
   TriggerName:
     To: trigger_name
   UrlInternet:
     Ignore: true
   UrlIntranet:
     Ignore: true
-  TriggerId$$0:
-    To: trigger_id

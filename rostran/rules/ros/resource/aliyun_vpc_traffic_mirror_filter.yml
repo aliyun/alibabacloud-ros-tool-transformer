@@ -45,13 +45,13 @@ Properties:
   TrafficMirrorFilterName:
     To: traffic_mirror_filter_name
 Attributes:
-  TrafficMirrorFilterId:
-    To: id
   EgressRules:
     To: egress_rules
   IngressRules:
     To: ingress_rules
   TrafficMirrorFilterDescription:
     To: traffic_mirror_filter_description
+  TrafficMirrorFilterId:
+    To: id
   TrafficMirrorFilterName:
     To: traffic_mirror_filter_name

@@ -25,29 +25,29 @@ Properties:
   WorkspaceId:
     To: workspace_id
 Attributes:
-  CreateTime:
-    To: create_time
-  CodeRepoAccessToken:
+  Accessibility:
     Ignore: true
-  CodeRepoUserName:
-    Ignore: true
-  Description:
+  CodeBranch:
     Ignore: true
   CodeCommit:
     Ignore: true
   CodeRepo:
     Ignore: true
-  MountPath:
+  CodeRepoAccessToken:
+    Ignore: true
+  CodeRepoUserName:
     Ignore: true
   CodeSourcesId:
     To: id
-  DisplayName:
+  CreateTime:
+    To: create_time
+  Description:
     Ignore: true
-  Accessibility:
+  DisplayName:
     Ignore: true
   GmtModifyTime:
     Ignore: true
-  CodeBranch:
+  MountPath:
     Ignore: true
   UserId:
     Ignore: true

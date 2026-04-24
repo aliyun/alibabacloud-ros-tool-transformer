@@ -9,9 +9,9 @@ Properties:
   ServicePrincipal:
     To: service_principal
 Attributes:
+  AccountId:
+    Ignore: true
   DelegationEnabledTime:
     Ignore: true
   ServicePrincipal:
-    Ignore: true
-  AccountId:
     Ignore: true

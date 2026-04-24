@@ -4,14 +4,28 @@ ResourceType:
   From: ALIYUN::ECS::ElasticityAssurance
   To: alicloud_ecs_elasticity_assurance
 Properties:
+  AutoRenew:
+    To: auto_renew
+  AutoRenewPeriod:
+    To: auto_renew_period
   Description:
     To: description
   InstanceAmount:
     To: instance_amount
+  InstanceCpuCoreCount:
+    Ignore: true
+  InstanceTypes:
+    To: instance_type
   Period:
     To: period
   PeriodUnit:
     To: period_unit
+  PrivatePoolOptions:
+    To: private_pool_options_match_criteria
+  PrivatePoolOptions$$0:
+    To: private_pool_options_name
+  RecurrenceRules:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   StartTime:
@@ -19,22 +33,8 @@ Properties:
   Tags:
     To: tags
     Handler: handle_tags
-  PrivatePoolOptions:
-    To: private_pool_options_match_criteria
   ZoneId:
     To: zone_ids
-  InstanceTypes:
-    To: instance_type
-  AutoRenew:
-    To: auto_renew
-  AutoRenewPeriod:
-    To: auto_renew_period
-  PrivatePoolOptions$$0:
-    To: private_pool_options_name
-  RecurrenceRules:
-    Ignore: true
-  InstanceCpuCoreCount:
-    Ignore: true
 Attributes:
   PrivatePoolOptionsId:
     To: id

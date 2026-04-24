@@ -21,9 +21,9 @@ Properties:
   ZoneId:
     To: zone_id
 Attributes:
+  Record:
+    Ignore: true
   RecordId:
     To: record_id
   ZoneId:
     To: zone_id
-  Record:
-    Ignore: true

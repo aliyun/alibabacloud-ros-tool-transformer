@@ -6,8 +6,6 @@ ResourceType:
 Properties:
   LoadBalancerId:
     To: load_balancer_id
-  MasterSlaveServerGroupName:
-    To: name
   MasterSlaveBackendServers:
     To: servers
     Type: List
@@ -17,14 +15,16 @@ Properties:
       ServerId:
         To: server_ids
         Handler: select_first
-      ServerType:
-        To: server_type
-      Weight:
-        To: weight
-      Type:
-        Ignore: true
       ServerIp:
         Ignore: true
+      ServerType:
+        To: server_type
+      Type:
+        Ignore: true
+      Weight:
+        To: weight
+  MasterSlaveServerGroupName:
+    To: name
 Attributes:
   MasterSlaveServerGroupId:
     To: id

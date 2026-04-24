@@ -10,10 +10,9 @@ Properties:
     To: function_args
     Type: List
     Schema:
-      ParentId:
-        Ignore: true
       FunctionArgs:
         Ignore: true
       FunctionName:
         Ignore: true
-Attributes: {}
+      ParentId:
+        Ignore: true

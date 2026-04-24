@@ -6,54 +6,54 @@ ResourceType:
 Properties:
   AutoRenewPeriod:
     To: auto_renew
+  ClusterName:
+    To: name
   ColdStorageSize:
     To: cold_storage_size
-  DiskSize:
-    To: core_disk_size
   CoreInstanceType:
     To: core_instance_type
   DeletionProtection:
     To: deletion_protection
-  Period:
-    To: duration
+  DiskSize:
+    To: core_disk_size
+  DiskType:
+    Ignore: true
+  EncryptionKey:
+    Ignore: true
   Engine:
     To: engine
   EngineVersion:
     To: engine_version
-  SecurityIPList:
-    To: ip_white
   MasterInstanceType:
     To: master_instance_type
-  ClusterName:
-    To: name
+  NodeCount:
+    Ignore: true
   PayType:
     To: pay_type
-  VpcId:
-    To: vpc_id
-  VSwitchId:
-    To: vswitch_id
-  ZoneId:
-    To: zone_id
+  Period:
+    To: duration
   PeriodUnit:
-    Ignore: true
-  EncryptionKey:
-    Ignore: true
-  DiskType:
     Ignore: true
   ResourceGroupId:
     Ignore: true
-  NodeCount:
-    Ignore: true
+  SecurityIPList:
+    To: ip_white
+  VSwitchId:
+    To: vswitch_id
+  VpcId:
+    To: vpc_id
+  ZoneId:
+    To: zone_id
 Attributes:
   ClusterId:
     To: id
+  ServiceConnAddrs:
+    Ignore: true
   SlbConnAddrs:
     Ignore: true
   ThriftConn:
     Ignore: true
   UiProxyConnAddrInfo:
-    Ignore: true
-  ServiceConnAddrs:
     Ignore: true
   ZkConnAddrs:
     Ignore: true

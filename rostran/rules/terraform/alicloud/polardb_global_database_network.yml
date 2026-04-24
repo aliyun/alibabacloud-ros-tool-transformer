@@ -9,13 +9,9 @@ Properties:
   description:
     To: GdnDescription
   status:
-    ignore: true
+    Ignore: true
 Attributes:
   id:
     To: GdnId
-  db_cluster_id:
-    Ignore: true
-  description:
-    Ignore: true
   status:
     Ignore: true

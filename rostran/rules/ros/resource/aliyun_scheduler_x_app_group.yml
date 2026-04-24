@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::SchedulerX::AppGroup
   To: alicloud_schedulerx_app_group
 Properties:
+  AppKey:
+    Ignore: true
   AppName:
     To: app_name
   AppType:
@@ -28,12 +30,10 @@ Properties:
     To: namespace_name
   NamespaceSource:
     To: namespace_source
-  ScheduleBusyWorkers:
-    To: schedule_busy_workers
-  AppKey:
-    Ignore: true
   NotificationPolicyName:
     Ignore: true
+  ScheduleBusyWorkers:
+    To: schedule_busy_workers
 Attributes:
   AppGroupId:
-    Ignore: true
+    To: id

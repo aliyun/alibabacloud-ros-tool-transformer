@@ -6,12 +6,12 @@ ResourceType:
 Properties:
   ConnectionStringPrefix:
     To: connection_string_prefix
+  ConnectionType:
+    Ignore: true
   InstanceId:
     To: instance_id
   Port:
     To: port
-  ConnectionType:
-    Ignore: true
 Attributes:
   ConnectionString:
     To: connection_string

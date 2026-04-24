@@ -10,16 +10,16 @@ Properties:
     To: allow_user_to_manage_access_keys
   AllowUserToManageMFADevices:
     To: allow_user_to_manage_mfa_devices
+  AllowUserToManagePublicKeys:
+    Ignore: true
   EnableSaveMFATicket:
+    To: enforce_mfa_for_login
+  EnableSaveMFATicket$$0:
     To: enforce_mfa_for_login
   LoginNetworkMasks:
     To: login_network_masks
   LoginSessionDuration:
     To: login_session_duration
-  AllowUserToManagePublicKeys:
-    Ignore: true
-  EnableSaveMFATicket$$0:
-    To: enforce_mfa_for_login
 Attributes:
   AllowUserToChangePassword:
     To: allow_user_to_change_password
@@ -27,11 +27,11 @@ Attributes:
     To: allow_user_to_manage_access_keys
   AllowUserToManageMFADevices:
     To: allow_user_to_manage_mfa_devices
+  AllowUserToManagePublicKeys:
+    Ignore: true
   EnableSaveMFATicket:
     To: enable_save_mfa_ticket
   LoginNetworkMasks:
     To: login_network_masks
   LoginSessionDuration:
     To: login_session_duration
-  AllowUserToManagePublicKeys:
-    Ignore: true

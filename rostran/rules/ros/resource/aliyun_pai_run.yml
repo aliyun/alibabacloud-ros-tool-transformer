@@ -13,29 +13,29 @@ Properties:
   SourceType:
     To: source_type
 Attributes:
+  Accessibility:
+    Ignore: true
   CreateTime:
     To: create_time
-  RunId:
-    To: id
-  SourceId:
-    Ignore: true
-  OwnerId:
-    Ignore: true
-  RunName:
-    Ignore: true
   ExperimentId:
     Ignore: true
   GmtModifiedTime:
     Ignore: true
   Labels:
     Ignore: true
-  SourceType:
-    Ignore: true
   Metrics:
     Ignore: true
-  Accessibility:
+  OwnerId:
     Ignore: true
   Params:
+    Ignore: true
+  RunId:
+    To: id
+  RunName:
+    Ignore: true
+  SourceId:
+    Ignore: true
+  SourceType:
     Ignore: true
   UserId:
     Ignore: true

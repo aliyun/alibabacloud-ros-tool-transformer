@@ -4,16 +4,16 @@ ResourceType:
   From: ALIYUN::SLS::Dashboard
   To: alicloud_log_dashboard
 Properties:
+  Charts:
+    To: char_list
   DashboardName:
     To: dashboard_name
+  Description:
+    Ignore: true
   DisplayName:
     To: display_name
   ProjectName:
     To: project_name
-  Description:
-    Ignore: true
-  Charts:
-    To: char_list
 Attributes:
   DashboardName:
     To: id

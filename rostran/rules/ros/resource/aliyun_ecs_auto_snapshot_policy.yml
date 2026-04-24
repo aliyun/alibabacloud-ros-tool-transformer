@@ -6,17 +6,10 @@ ResourceType:
 Properties:
   AutoSnapshotPolicyName:
     To: name
-  RepeatWeekdays:
-    To: repeat_weekdays
-  RetentionDays:
-    To: retention_days
-  Tags:
-    To: tags
-    Handler: handle_tags
-  TimePoints:
-    To: time_points
-  TargetCopyRegions:
-    To: target_copy_regions
+  AutoSnapshotPolicyName$$0:
+    To: name
+  CopiedSnapshotsRetentionDays:
+    To: copied_snapshots_retention_days
   CopyEncryptionConfiguration:
     To: copy_encryption_configuration
     Type: Map
@@ -25,18 +18,25 @@ Properties:
         To: encrypted
       KMSKeyId:
         To: kms_key_id
-  EnableCrossRegionCopy:
-    To: enable_cross_region_copy
-  CopiedSnapshotsRetentionDays:
-    To: copied_snapshots_retention_days
   DiskIds:
     Ignore: true
+  EnableCrossRegionCopy:
+    To: enable_cross_region_copy
+  RepeatWeekdays:
+    To: repeat_weekdays
   ResourceGroupId:
     To: resource_group_id
-  AutoSnapshotPolicyName$$0:
-    To: name
+  RetentionDays:
+    To: retention_days
+  Tags:
+    To: tags
+    Handler: handle_tags
+  TargetCopyRegions:
+    To: target_copy_regions
+  TimePoints:
+    To: time_points
 Attributes:
-  AutoSnapshotPolicyId:
-    To: id
   Arn:
     Ignore: true
+  AutoSnapshotPolicyId:
+    To: id

@@ -16,6 +16,8 @@ Properties:
     To: certificate_ids
   Cps:
     To: cps
+  Enable:
+    To: status
   EndPort:
     To: end_port
   IdleTimeout:
@@ -32,19 +34,6 @@ Properties:
     To: mss
   ProxyProtocolEnabled:
     To: proxy_protocol_enabled
-  SecSensorEnabled:
-    To: sec_sensor_enabled
-  SecurityPolicyId:
-    To: security_policy_id
-  ServerGroupId:
-    To: server_group_id
-  StartPort:
-    To: start_port
-  Tags:
-    To: tags
-    Handler: handle_tags
-  Enable:
-    To: status
   ProxyProtocolV2Config:
     To: proxy_protocol_config
     Type: Map
@@ -55,8 +44,19 @@ Properties:
         To: proxy_protocol_config_private_link_eps_id_enabled
       Ppv2VpcIdEnabled:
         To: proxy_protocol_config_vpc_id_enabled
+  SecSensorEnabled:
+    To: sec_sensor_enabled
+  SecurityPolicyId:
+    To: security_policy_id
+  ServerGroupId:
+    To: server_group_id
   ServerGroupTuples:
     Ignore: true
+  StartPort:
+    To: start_port
+  Tags:
+    To: tags
+    Handler: handle_tags
 Attributes:
   ListenerId:
     To: id

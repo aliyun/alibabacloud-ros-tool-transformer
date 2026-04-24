@@ -8,8 +8,7 @@ Properties:
     To: alias
   CrossAccountRoleName:
     To: cross_account_role_name
-  CrossAccountUserId:
-    To: cross_account_user_id
   CrossAccountType:
     Ignore: true
-Attributes: {}
+  CrossAccountUserId:
+    To: cross_account_user_id

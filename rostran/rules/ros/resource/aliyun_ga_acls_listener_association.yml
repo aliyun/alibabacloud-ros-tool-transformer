@@ -11,7 +11,7 @@ Properties:
   ListenerId:
     To: listener_id
 Attributes:
-  ListenerId:
-    Ignore: true
   AclIds:
+    Ignore: true
+  ListenerId:
     Ignore: true

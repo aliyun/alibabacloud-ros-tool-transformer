@@ -4,72 +4,74 @@ ResourceType:
   From: ALIYUN::HBR::DbPlan
   To: alicloud_hbr_server_backup_plan
 Properties:
-  InstanceUuid:
-    To: cluster_id
-  Source:
-    To: database_name
+  ContinuousPlan:
+    Ignore: true
+  CumulativePlan:
+    Ignore: true
   DbPlanName:
     To: plan_name
   FullPlan:
     To: schedule
-  VaultId:
-    To: vault_id
+  HostUuid:
+    Ignore: true
   IncPlan:
     Ignore: true
-  CumulativePlan:
+  InstanceUuid:
+    To: cluster_id
+  LogPlan:
+    Ignore: true
+  MaxRateLimit:
     Ignore: true
   MaxRetrySeconds:
     Ignore: true
   Options:
     To: detail
-  HostUuid:
-    Ignore: true
-  MaxRateLimit:
-    Ignore: true
+  Options$$0:
+    To: timeout_in_seconds
+  Source:
+    To: database_name
   SourceType:
     Ignore: true
+  VaultId:
+    To: vault_id
+Attributes:
   ContinuousPlan:
     Ignore: true
-  LogPlan:
+  ContinuousUuid:
     Ignore: true
-Attributes:
-  PlanId:
-    To: plan_id
-  LogUuid:
+  CumulativePlan:
+    Ignore: true
+  CumulativeUuid:
     Ignore: true
   DbPlanName:
     Ignore: true
+  FullPlan:
+    Ignore: true
+  FullUuid:
+    Ignore: true
+  HostUuid:
+    Ignore: true
+  IncPlan:
+    Ignore: true
+  IncUuid:
+    Ignore: true
   InstanceUuid:
     Ignore: true
-  FullPlan:
+  LogPlan:
+    Ignore: true
+  LogUuid:
+    Ignore: true
+  MaxRateLimit:
     Ignore: true
   MaxRetrySeconds:
     Ignore: true
   Options:
     Ignore: true
-  ContinuousUuid:
-    Ignore: true
+  PlanId:
+    To: plan_id
   SourceType:
-    Ignore: true
-  LogPlan:
-    Ignore: true
-  VaultId:
-    Ignore: true
-  IncUuid:
-    Ignore: true
-  IncPlan:
-    Ignore: true
-  CumulativePlan:
-    Ignore: true
-  FullUuid:
-    Ignore: true
-  MaxRateLimit:
-    Ignore: true
-  HostUuid:
     Ignore: true
   Target:
     Ignore: true
-  CumulativeUuid:
-    Ignore: true
-  ContinuousPlan:
+  VaultId:
     Ignore: true

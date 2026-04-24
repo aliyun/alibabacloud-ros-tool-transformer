@@ -4,20 +4,19 @@ ResourceType:
   From: ALIYUN::RDS::DBProxy
   To: alicloud_rds_db_proxy
 Properties:
+  DBInstanceId:
+    To: instance_id
   DBProxyInstanceNum:
     To: db_proxy_instance_num
   DBProxyInstanceType:
     To: db_proxy_instance_type
-  DBInstanceId:
-    To: instance_id
+  DBProxyNodes:
+    Ignore: true
+  PersistentConnectionStatus:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   VPCId:
     To: vpc_id
   VSwitchId:
     To: vswitch_id
-  PersistentConnectionStatus:
-    Ignore: true
-  DBProxyNodes:
-    Ignore: true
-Attributes: {}

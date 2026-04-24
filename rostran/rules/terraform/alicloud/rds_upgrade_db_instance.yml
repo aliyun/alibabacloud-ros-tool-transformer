@@ -1,0 +1,120 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: alicloud_rds_upgrade_db_instance
+  To: ALIYUN::RDS::DBInstance
+Properties:
+  acl:
+    Ignore: true
+  auto_upgrade_minor_version:
+    To: AutoUpgradeMinorVersion
+  ca_type:
+    Ignore: true
+  certificate:
+    Ignore: true
+  client_ca_cert:
+    Ignore: true
+  client_ca_enabled:
+    Ignore: true
+  client_cert_revocation_list:
+    Ignore: true
+  client_crl_enabled:
+    Ignore: true
+  collect_stat_mode:
+    Ignore: true
+  connection_string_prefix:
+    To: ConnectionStringPrefix
+  db_instance_class:
+    To: DBInstanceClass
+  db_instance_description:
+    To: DBInstanceDescription
+  db_instance_storage:
+    To: DBInstanceStorage
+  db_instance_storage_type:
+    To: DBInstanceStorageType
+  db_name:
+    Ignore: true
+  dedicated_host_group_id:
+    To: DedicatedHostGroupId
+  deletion_protection:
+    To: DeletionProtection
+  direction:
+    Ignore: true
+  effective_time:
+    Ignore: true
+  encryption_key:
+    To: EncryptionKey
+  engine:
+    To: Engine
+  engine_version:
+    To: EngineVersion
+  force_restart:
+    Ignore: true
+  ha_mode:
+    Ignore: true
+  instance_network_type:
+    To: InstanceNetworkType
+  maintain_time:
+    To: MaintainTime
+  parameters:
+    Ignore: true
+  password:
+    To: MasterUserPassword
+  payment_type:
+    To: PayType
+  pg_hba_conf:
+    Ignore: true
+  port:
+    To: Port
+  private_ip_address:
+    To: PrivateIpAddress
+  private_key:
+    Ignore: true
+  released_keep_policy:
+    To: ReleasedKeepPolicy
+  replication_acl:
+    Ignore: true
+  resource_group_id:
+    To: ResourceGroupId
+  role_arn:
+    To: RoleARN
+  security_ips:
+    To: SecurityIPList
+  server_cert:
+    Ignore: true
+  server_key:
+    Ignore: true
+  source_biz:
+    Ignore: true
+  source_db_instance_id:
+    Ignore: true
+  ssl_enabled:
+    Ignore: true
+  switch_over:
+    Ignore: true
+  switch_time:
+    Ignore: true
+  switch_time_mode:
+    Ignore: true
+  sync_mode:
+    Ignore: true
+  target_major_version:
+    Ignore: true
+  tcp_connection_type:
+    Ignore: true
+  tde_status:
+    Ignore: true
+  vpc_id:
+    To: VpcId
+  vswitch_id:
+    To: VSwitchId
+  zone_id:
+    To: ZoneId
+  zone_id_slave_1:
+    To: SlaveZoneIds
+    Type: List
+Attributes:
+  id:
+    To: DBInstanceId
+  connection_string:
+    Ignore: true

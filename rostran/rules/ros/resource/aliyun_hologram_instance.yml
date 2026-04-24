@@ -24,12 +24,12 @@ Properties:
         To: endpoint
       Type:
         To: type
+      VSwitchId:
+        Ignore: true
       VpcId:
         To: vpc_id
       VpcInstanceId:
         To: vpc_instance_id
-      VSwitchId:
-        Ignore: true
   GatewayCount:
     To: gateway_count
   InitialDatabases:
@@ -44,6 +44,8 @@ Properties:
     To: payment_type
   PricingCycle:
     To: pricing_cycle
+  ProductCode:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   ScaleType:
@@ -55,55 +57,53 @@ Properties:
     Handler: handle_tags
   ZoneId:
     To: zone_id
-  ProductCode:
-    Ignore: true
 Attributes:
-  InstanceId:
-    To: id
+  AutoRenewal:
+    Ignore: true
   ColdStorageSize:
     To: cold_storage_size
+  CommodityCode:
+    Ignore: true
+  ComputeNodeCount:
+    Ignore: true
   Cpu:
     To: cpu
   CreateTime:
     To: create_time
+  EnableHiveAccess:
+    Ignore: true
   Endpoints:
     To: endpoints
+  ExpirationTime:
+    Ignore: true
   GatewayCount:
     To: gateway_count
+  GatewayCpu:
+    Ignore: true
+  GatewayMemory:
+    Ignore: true
+  InstanceId:
+    To: id
   InstanceName:
     To: instance_name
+  InstanceOwner:
+    Ignore: true
   InstanceType:
     To: instance_type
+  Memory:
+    Ignore: true
   PaymentType:
     To: payment_type
   ResourceGroupId:
     To: resource_group_id
   StorageSize:
     To: storage_size
+  SuspendReason:
+    Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
-  ZoneId:
-    To: zone_id
-  CommodityCode:
-    Ignore: true
-  AutoRenewal:
-    Ignore: true
-  GatewayMemory:
-    Ignore: true
-  GatewayCpu:
-    Ignore: true
   Version:
     Ignore: true
-  ComputeNodeCount:
-    Ignore: true
-  InstanceOwner:
-    Ignore: true
-  ExpirationTime:
-    Ignore: true
-  EnableHiveAccess:
-    Ignore: true
-  SuspendReason:
-    Ignore: true
-  Memory:
-    Ignore: true
+  ZoneId:
+    To: zone_id

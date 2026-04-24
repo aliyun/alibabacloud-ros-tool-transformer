@@ -50,41 +50,41 @@ Properties:
     To: servers
     Type: List
     Schema:
+      Port:
+        Ignore: true
       ServerId:
         To: server_id
       ServerIp:
         To: server_ip
       ServerType:
         To: server_type
-      Port:
-        Ignore: true
   Tags:
     To: tags
     Handler: handle_tags
   VpcId:
     To: vpc_id
 Attributes:
-  ServerGroupId:
-    To: id
-  CreateTime:
-    To: create_time
-  Servers:
-    To: servers
-  ServerGroupName:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
   ConnectionDrainConfig:
     Ignore: true
-  VpcId:
+  CreateTime:
+    To: create_time
+  HealthCheckConfig:
     Ignore: true
   Protocol:
     Ignore: true
+  ResourceGroupId:
+    Ignore: true
   Scheduler:
     Ignore: true
-  Tags:
+  ServerGroupId:
+    To: id
+  ServerGroupName:
     Ignore: true
   ServerGroupType:
     Ignore: true
-  HealthCheckConfig:
+  Servers:
+    To: servers
+  Tags:
+    Ignore: true
+  VpcId:
     Ignore: true

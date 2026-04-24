@@ -14,24 +14,24 @@ Properties:
         To: entry_description
   AclName:
     To: acl_name
+  AddressIPVersion:
+    To: address_ip_version
   ResourceGroupId:
     To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-  AddressIPVersion:
-    To: address_ip_version
 Attributes:
+  AclEntries:
+    Ignore: true
   AclId:
     To: id
   AclName:
     To: acl_name
+  AddressIPVersion:
+    Ignore: true
   ResourceGroupId:
     To: resource_group_id
   Tags:
     To: tags
     Handler: handle_tags
-  AddressIPVersion:
-    Ignore: true
-  AclEntries:
-    Ignore: true

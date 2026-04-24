@@ -16,27 +16,27 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
-  IpamId:
-    To: id
   CreateTime:
     To: create_time
-  PrivateDefaultScopeId:
-    To: private_default_scope_id
-  OperatingRegionList:
-    Ignore: true
-  Tags:
-    Ignore: true
-  IpamName:
-    Ignore: true
-  ResourceGroupId:
-    Ignore: true
   DefaultResourceDiscoveryAssociationId:
     Ignore: true
   DefaultResourceDiscoveryId:
     Ignore: true
-  ResourceDiscoveryAssociationCount:
-    Ignore: true
   IpamDescription:
     Ignore: true
+  IpamId:
+    To: id
+  IpamName:
+    Ignore: true
+  OperatingRegionList:
+    Ignore: true
+  PrivateDefaultScopeId:
+    To: private_default_scope_id
   PublicDefaultScopeId:
     To: public_default_scope_id
+  ResourceDiscoveryAssociationCount:
+    Ignore: true
+  ResourceGroupId:
+    Ignore: true
+  Tags:
+    Ignore: true

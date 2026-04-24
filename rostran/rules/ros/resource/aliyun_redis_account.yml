@@ -4,6 +4,8 @@ ResourceType:
   From: ALIYUN::REDIS::Account
   To: alicloud_kvstore_account
 Properties:
+  AccountDescription:
+    To: description
   AccountName:
     To: account_name
   AccountPassword:
@@ -14,8 +16,6 @@ Properties:
     To: account_type
   InstanceId:
     To: instance_id
-  AccountDescription:
-    To: description
 Attributes:
   AccountName:
     To: account_name

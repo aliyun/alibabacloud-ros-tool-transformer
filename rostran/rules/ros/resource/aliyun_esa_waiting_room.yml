@@ -47,35 +47,35 @@ Properties:
   WaitingRoomType:
     To: waiting_room_type
 Attributes:
-  WaitingRoomId:
-    To: waiting_room_id
-  DisableSessionRenewalEnable:
-    Ignore: true
-  JsonResponseEnable:
-    Ignore: true
-  WaitingRoomName:
-    Ignore: true
   CookieName:
-    Ignore: true
-  Language:
-    Ignore: true
-  NewUsersPerMinute:
-    Ignore: true
-  QueuingStatusCode:
     Ignore: true
   CustomPageHtml:
     Ignore: true
   Description:
     Ignore: true
-  TotalActiveUsers:
-    Ignore: true
-  QueuingMethod:
+  DisableSessionRenewalEnable:
     Ignore: true
   HostNameAndPath:
     Ignore: true
+  JsonResponseEnable:
+    Ignore: true
+  Language:
+    Ignore: true
+  NewUsersPerMinute:
+    Ignore: true
   QueueAllEnable:
     Ignore: true
+  QueuingMethod:
+    Ignore: true
+  QueuingStatusCode:
+    Ignore: true
   SessionDuration:
+    Ignore: true
+  TotalActiveUsers:
+    Ignore: true
+  WaitingRoomId:
+    To: waiting_room_id
+  WaitingRoomName:
     Ignore: true
   WaitingRoomType:
     Ignore: true

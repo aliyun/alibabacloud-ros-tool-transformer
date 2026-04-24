@@ -1,0 +1,47 @@
+Version: '2020-06-01'
+Type: Resource
+ResourceType:
+  From: ALIYUN::FC3::LayerVersion
+  To: alicloud_fcv3_layer_version
+Properties:
+  Acl:
+    Ignore: true
+  Code:
+    To: code
+    Type: Map
+    Schema:
+      Checksum:
+        Ignore: true
+      OssBucketName:
+        To: oss_bucket_name
+      OssObjectName:
+        To: oss_object_name
+      ZipFile:
+        To: zip_file
+  CompatibleRuntime:
+    To: compatible_runtime
+  Description:
+    To: description
+  LayerName:
+    To: layer_name
+  License:
+    Ignore: true
+Attributes:
+  Acl:
+    Ignore: true
+  CodeSize:
+    Ignore: true
+  CompatibleRuntime:
+    Ignore: true
+  CreateTime:
+    Ignore: true
+  Description:
+    Ignore: true
+  LayerName:
+    Ignore: true
+  LayerVersionArn:
+    Ignore: true
+  License:
+    Ignore: true
+  Version:
+    To: version

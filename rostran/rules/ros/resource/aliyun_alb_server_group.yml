@@ -4,6 +4,44 @@ ResourceType:
   From: ALIYUN::ALB::ServerGroup
   To: alicloud_alb_server_group
 Properties:
+  ConnectionDrainConfig:
+    To: connection_drain_config
+    Type: Map
+    Schema:
+      ConnectionDrainEnabled:
+        To: connection_drain_enabled
+      ConnectionDrainTimeout:
+        To: connection_drain_timeout
+  CrossZoneEnabled:
+    To: cross_zone_enabled
+  HealthCheckConfig:
+    To: health_check_config
+    Type: Map
+    Schema:
+      HealthCheckCodes:
+        To: health_check_codes
+      HealthCheckConnectPort:
+        To: health_check_connect_port
+      HealthCheckEnabled:
+        To: health_check_enabled
+      HealthCheckHost:
+        To: health_check_host
+      HealthCheckHttpVersion:
+        To: health_check_http_version
+      HealthCheckMethod:
+        To: health_check_method
+      HealthCheckPath:
+        To: health_check_path
+      HealthCheckProtocol:
+        To: health_check_protocol
+      HealthCheckTimeout:
+        To: health_check_timeout
+      HealthyThreshold:
+        To: healthy_threshold
+      UnhealthyThreshold:
+        To: unhealthy_threshold
+  Ipv6Enabled:
+    To: ipv6_enabled
   Protocol:
     To: protocol
   ResourceGroupId:
@@ -14,15 +52,8 @@ Properties:
     To: server_group_name
   ServerGroupType:
     To: server_group_type
-  Tags:
-    To: tags
-    Handler: handle_tags
-  VpcId:
-    To: vpc_id
-  Ipv6Enabled:
-    To: ipv6_enabled
-  CrossZoneEnabled:
-    To: cross_zone_enabled
+  ServiceName:
+    To: service_name
   SlowStartConfig:
     To: slow_start_config
     Type: Map
@@ -31,44 +62,6 @@ Properties:
         To: slow_start_duration
       SlowStartEnabled:
         To: slow_start_enabled
-  UchConfig:
-    To: uch_config
-    Type: Map
-    Schema:
-      Type:
-        To: type
-      Value:
-        To: value
-  ServiceName:
-    To: service_name
-  HealthCheckConfig:
-    To: health_check_config
-    Type: Map
-    Schema:
-      HealthCheckPath:
-        To: health_check_path
-      HealthCheckConnectPort:
-        To: health_check_connect_port
-      HealthCheckCodes:
-        To: health_check_codes
-      UnhealthyThreshold:
-        To: unhealthy_threshold
-      HealthCheckMethod:
-        To: health_check_method
-      HealthCheckHost:
-        To: health_check_host
-      HealthyThreshold:
-        To: healthy_threshold
-      HealthCheckProtocol:
-        To: health_check_protocol
-      HealthCheckHttpVersion:
-        To: health_check_http_version
-      HealthCheckEnabled:
-        To: health_check_enabled
-      HealthCheckTimeout:
-        To: health_check_timeout
-  UpstreamKeepaliveEnabled:
-    To: upstream_keepalive_enabled
   StickySessionConfig:
     To: sticky_session_config
     Type: Map
@@ -81,16 +74,23 @@ Properties:
         To: sticky_session_enabled
       StickySessionType:
         To: sticky_session_type
-  ConnectionDrainConfig:
-    To: connection_drain_config
+  Tags:
+    To: tags
+    Handler: handle_tags
+  UchConfig:
+    To: uch_config
     Type: Map
     Schema:
-      ConnectionDrainEnabled:
-        To: connection_drain_enabled
-      ConnectionDrainTimeout:
-        To: connection_drain_timeout
+      Type:
+        To: type
+      Value:
+        To: value
+  UpstreamKeepaliveEnabled:
+    To: upstream_keepalive_enabled
+  VpcId:
+    To: vpc_id
 Attributes:
-  ServerGroupId:
-    To: id
   Arn:
     Ignore: true
+  ServerGroupId:
+    To: id

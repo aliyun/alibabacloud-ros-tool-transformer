@@ -15,13 +15,13 @@ Properties:
   Ipv6GatewayId:
     To: ipv6_gateway_id
 Attributes:
-  Ipv6EgressRuleId:
-    To: ipv6_egress_rule_id
-  Ipv6EgressRuleName:
-    Ignore: true
-  InstanceType:
+  Description:
     Ignore: true
   InstanceId:
     Ignore: true
-  Description:
+  InstanceType:
+    Ignore: true
+  Ipv6EgressRuleId:
+    To: ipv6_egress_rule_id
+  Ipv6EgressRuleName:
     Ignore: true

@@ -16,12 +16,12 @@ Properties:
     To: disabled
   FileSystemId:
     To: file_system_id
-  PlanName:
-    To: nas_backup_plan_name
   Options:
     To: options
   Paths:
     To: path
+  PlanName:
+    To: nas_backup_plan_name
   Retention:
     To: retention
   Schedule:

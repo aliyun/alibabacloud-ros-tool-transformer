@@ -16,17 +16,17 @@ Properties:
     To: tags
     Handler: handle_tags
 Attributes:
-  IpamScopeId:
-    To: id
   CreateTime:
     To: create_time
-  IpamScopeDescription:
-    Ignore: true
   IpamId:
     Ignore: true
-  Tags:
+  IpamScopeDescription:
+    Ignore: true
+  IpamScopeId:
+    To: id
+  IpamScopeName:
     Ignore: true
   IpamScopeType:
     Ignore: true
-  IpamScopeName:
+  Tags:
     Ignore: true

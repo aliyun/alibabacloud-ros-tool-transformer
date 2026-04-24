@@ -11,7 +11,7 @@ Properties:
 Attributes:
   ClientInstanceId:
     Ignore: true
-  VSwitchId:
-    Ignore: true
   InstanceId:
+    Ignore: true
+  VSwitchId:
     Ignore: true

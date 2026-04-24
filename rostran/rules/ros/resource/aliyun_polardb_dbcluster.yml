@@ -4,30 +4,58 @@ ResourceType:
   From: ALIYUN::POLARDB::DBCluster
   To: alicloud_polardb_cluster
 Properties:
+  AllowShutDown:
+    To: allow_shut_down
+  Architecture:
+    Ignore: true
   AutoRenewPeriod:
     To: auto_renew_period
   BackupRetentionPolicyOnClusterDeletion:
     To: backup_retention_policy_on_cluster_deletion
   CloneDataPoint:
     To: clone_data_point
+  ClusterNetworkType:
+    Ignore: true
+  ColdStorageOption:
+    Ignore: true
   CreationCategory:
     To: creation_category
   CreationOption:
     To: creation_option
+  DBClusterDescription:
+    To: description
+  DBClusterParameters:
+    To: parameters
+    Type: Map
+    Schema:
+      EffectiveTime:
+        Ignore: true
+      Parameters:
+        Ignore: true
+  DBMinorVersion:
+    To: db_minor_version
   DBNodeClass:
     To: db_node_class
+  DBNodeNum:
+    To: db_node_num
   DBType:
     To: db_type
   DBVersion:
     To: db_version
   DefaultTimeZone:
     To: default_time_zone
-  DBClusterDescription:
-    To: description
+  DeletionProtection:
+    To: deletion_lock
+  GDNId:
+    To: gdn_id
   HotStandbyCluster:
     To: hot_standby_cluster
   LoosePolarLogBin:
     To: loose_polar_log_bin
+  LooseXEngine:
+    To: loose_xengine
+  LooseXEngineUseMemoryPct:
+    To: loose_xengine_use_memory_pct
   LowerCaseTableNames:
     To: lower_case_table_names
   MaintainTime:
@@ -38,6 +66,8 @@ Properties:
     To: pay_type
   Period:
     To: period
+  PeriodUnit:
+    Ignore: true
   ProvisionedIops:
     To: provisioned_iops
   ProxyClass:
@@ -48,6 +78,10 @@ Properties:
     To: renewal_status
   ResourceGroupId:
     To: resource_group_id
+  RestartMasterNode:
+    Ignore: true
+  SSLEnabled:
+    Ignore: true
   ScaleMax:
     To: scale_max
   ScaleMin:
@@ -58,99 +92,65 @@ Properties:
     To: scale_ro_num_min
   SecurityGroupIds:
     To: security_group_ids
+  SecurityIPList:
+    To: db_cluster_ip_array
+  SecurityIPList$$0:
+    To: security_ips
   ServerlessType:
     To: serverless_type
   SourceResourceId:
     To: source_resource_id
+  StandbyAZ:
+    To: standby_az
+  StorageAutoScale:
+    Ignore: true
   StoragePayType:
     To: storage_pay_type
   StorageSpace:
     To: storage_space
   StorageType:
     To: storage_type
+  StorageUpperBound:
+    Ignore: true
+  StrictConsistency:
+    To: strict_consistency
+  TDEStatus:
+    To: tde_status
   Tags:
     To: tags
     Handler: handle_tags
-  VpcId:
-    To: vpc_id
   VSwitchId:
     To: vswitch_id
+  VpcId:
+    To: vpc_id
   ZoneId:
     To: zone_id
-  SSLEnabled:
-    Ignore: true
-  LooseXEngine:
-    To: loose_xengine
-  DeletionProtection:
-    To: deletion_lock
-  DBMinorVersion:
-    To: db_minor_version
-  LooseXEngineUseMemoryPct:
-    To: loose_xengine_use_memory_pct
-  Architecture:
-    Ignore: true
-  StorageUpperBound:
-    Ignore: true
-  ClusterNetworkType:
-    Ignore: true
-  ColdStorageOption:
-    Ignore: true
-  GDNId:
-    To: gdn_id
-  TDEStatus:
-    To: tde_status
-  DBClusterParameters:
-    To: parameters
-    Type: Map
-    Schema:
-      Parameters:
-        Ignore: true
-      EffectiveTime:
-        Ignore: true
-  StorageAutoScale:
-    Ignore: true
-  StandbyAZ:
-    To: standby_az
-  PeriodUnit:
-    Ignore: true
-  AllowShutDown:
-    To: allow_shut_down
-  SecurityIPList:
-    To: db_cluster_ip_array
-  StrictConsistency:
-    To: strict_consistency
-  DBNodeNum:
-    To: db_node_num
-  RestartMasterNode:
-    Ignore: true
-  SecurityIPList$$0:
-    To: security_ips
 Attributes:
-  PrimaryEndpointIds:
-    Ignore: true
-  ClusterEndpointId:
-    Ignore: true
-  PrimaryConnectionStrings:
-    Ignore: true
-  CustomConnectionStrings:
-    Ignore: true
-  ColdStorageInstanceId:
+  Arn:
     Ignore: true
   ClusterConnectionString:
     Ignore: true
-  DBClusterId:
+  ClusterEndpointId:
     Ignore: true
-  Arn:
+  ColdStorageInstanceId:
+    Ignore: true
+  CustomConnectionStrings:
     Ignore: true
   CustomEndpointIds:
     Ignore: true
-  PrimaryEndpointId:
-    Ignore: true
-  OrderId:
-    Ignore: true
   DBClusterDescription:
+    Ignore: true
+  DBClusterId:
     Ignore: true
   DBNodeIds:
     Ignore: true
+  OrderId:
+    Ignore: true
   PrimaryConnectionString:
     To: connection_string
+  PrimaryConnectionStrings:
+    Ignore: true
+  PrimaryEndpointId:
+    Ignore: true
+  PrimaryEndpointIds:
+    Ignore: true

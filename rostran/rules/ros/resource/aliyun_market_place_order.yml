@@ -4,20 +4,20 @@ ResourceType:
   From: ALIYUN::MarketPlace::Order
   To: alicloud_market_order
 Properties:
-  Duration:
-    To: duration
-  SkuCode:
-    To: package_version
   ChargeType:
     To: pay_type
+  Duration:
+    To: duration
+  Preference:
+    To: components
   PricingCycle:
     To: pricing_cycle
   ProductCode:
     To: product_code
   Quantity:
     To: quantity
-  Preference:
-    To: components
+  SkuCode:
+    To: package_version
 Attributes:
   OrderId:
     To: id

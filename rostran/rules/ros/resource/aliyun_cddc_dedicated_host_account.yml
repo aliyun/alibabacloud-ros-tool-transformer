@@ -10,8 +10,7 @@ Properties:
     To: account_password
   AccountType:
     To: account_type
-  DedicatedHostId:
-    To: dedicated_host_id
   BastionInstanceId:
     Ignore: true
-Attributes: {}
+  DedicatedHostId:
+    To: dedicated_host_id

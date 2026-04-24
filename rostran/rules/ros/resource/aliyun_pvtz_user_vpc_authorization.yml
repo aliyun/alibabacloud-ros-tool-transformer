@@ -6,12 +6,12 @@ ResourceType:
 Properties:
   AuthChannel:
     To: auth_channel
+  AuthCode:
+    Ignore: true
   AuthType:
     To: auth_type
   AuthorizedUserId:
     To: authorized_user_id
-  AuthCode:
-    Ignore: true
   IgnoreDeletionForbidden:
     Ignore: true
 Attributes:
