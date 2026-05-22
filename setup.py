@@ -1,9 +1,24 @@
 #!/usr/bin/python3
-import os
+import re
+import sys
 
 from setuptools import setup, find_packages
 
-from rostran import __version__
+with open("rostran/__init__.py") as f:
+    __version__ = re.search(r'__version__\s*=\s*["\']([^"\']+)["\']', f.read()).group(1)
+
+if sys.version_info >= (3, 11):
+    import tomllib
+else:
+    try:
+        import tomllib
+    except ImportError:
+        import tomli as tomllib
+
+with open("pyproject.toml", "rb") as f:
+    pyproject = tomllib.load(f)
+
+requirements = pyproject["project"]["dependencies"]
 
 NAME = "alibabacloud_ros_tran"
 DESCRIPTION = "Resource Orchestration Service Template Transformer."
@@ -14,13 +29,6 @@ URL = "https://www.alibabacloud.com/product/ros"
 # description
 with open("README.md", encoding="utf-8") as f:
     LONG_DESCRIPTION = f.read()
-
-# requirements
-requirements = []
-for line in open("requirements.txt"):
-    requirement = line.strip()
-    if requirement:
-        requirements.append(requirement)
 
 setup(
     name=NAME,
@@ -37,18 +45,17 @@ setup(
     include_package_data=True,
     platforms="any",
     install_requires=requirements,
-    python_requires=">=3.7.0",
+    python_requires=">=3.9.0",
     classifiers=[
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
         "Topic :: Software Development :: Libraries",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: POSIX",

@@ -118,3 +118,8 @@ ENV/
 CLAUDE.md
 
 .vscode
+
+# Docusaurus
+website/node_modules/
+website/build/
+website/.docusaurus/

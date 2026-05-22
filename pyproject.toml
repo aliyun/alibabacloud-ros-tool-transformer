@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=64", "wheel", "tomli; python_version < '3.11'"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alibabacloud_ros_tran"
+description = "Resource Orchestration Service Template Transformer."
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    { name = "AlibabaCloud", email = "aliyun-developers-efficiency@list.alibaba-inc.com" },
+]
+keywords = ["alibabacloud", "aliyun", "ros", "transformer", "template"]
+requires-python = ">=3.9.0"
+dynamic = ["version"]
+dependencies = [
+    "typer>=0.12.3,<1.0.0",
+    "colorama>=0.4.0,<1.0.0",
+    "openpyxl==3.*",
+    "ruamel.yaml>=0.17.0",
+    "libterraform>=0.8.2,<1.0.0",
+    "boto3>=1.35.82",
+    "alibabacloud_ros20190910>=3.5.0",
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX",
+    "Operating System :: POSIX :: BSD",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.urls]
+Homepage = "https://www.alibabacloud.com/product/ros"
+
+[project.scripts]
+rostran = "rostran.cli.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "autopep8",
+    "pre-commit",
+    "twine",
+    "wheel",
+    "requests",
+    "Markdown",
+    "beautifulsoup4",
+    "aliyun-python-sdk-core",
+    "aliyun-python-sdk-ros",
+    "black",
+    "pyyaml",
+    "jsonref",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "rostran.__version__" }
+
+[tool.setuptools.packages.find]
+exclude = ["tests*"]
