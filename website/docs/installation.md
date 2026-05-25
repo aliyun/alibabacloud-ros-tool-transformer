@@ -7,7 +7,7 @@ title: Installation
 
 ## Prerequisites
 
-Install Python 3.7 or above.
+Install Python 3.9 or above. Python 3.9 through 3.14 are tested in CI.
 
 ## Install CLI
 

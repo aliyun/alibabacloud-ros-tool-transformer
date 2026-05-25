@@ -12,4 +12,4 @@ title: 简介
 - 将 **ROS** 模板转换为 **Terraform** 模板。
 - 将 **ROS** 模板格式化。
 
-该项目使用 Python 语言开发，需要安装 Python3.7 或以上版本。
+该项目使用 Python 语言开发，需要安装 Python 3.9 或以上版本。CI 已覆盖 Python 3.9 至 3.14。

@@ -12,7 +12,7 @@ Template Transformer is a tool for transforming and formatting.
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+ (tested with Python 3.9 through 3.14)
 
 ## Installation
 
