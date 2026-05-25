@@ -1,6 +1,18 @@
 name: Run Tests
 
-on: [ push, pull_request ]
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+      - 'website/**'
+      - '*.md'
+      - '**/*.md'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - 'website/**'
+      - '*.md'
+      - '**/*.md'
 
 permissions:
   contents: read

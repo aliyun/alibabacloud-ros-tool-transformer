@@ -1,0 +1,38 @@
+{
+  "link.title.Docs": {
+    "message": "文档",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Introduction": {
+    "message": "简介",
+    "description": "The label of footer link with label=Introduction linking to /"
+  },
+  "link.item.label.Installation": {
+    "message": "安装",
+    "description": "The label of footer link with label=Installation linking to /installation"
+  },
+  "link.item.label.Usage": {
+    "message": "使用",
+    "description": "The label of footer link with label=Usage linking to /usage"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/aliyun/alibabacloud-ros-tool-transformer"
+  },
+  "link.item.label.PyPI": {
+    "message": "PyPI",
+    "description": "The label of footer link with label=PyPI linking to https://pypi.org/project/alibabacloud-ros-tran/"
+  },
+  "link.item.label.Alibaba Cloud ROS": {
+    "message": "阿里云 ROS",
+    "description": "The label of footer link with label=Alibaba Cloud ROS linking to https://www.alibabacloud.com/product/ros"
+  },
+  "copyright": {
+    "message": "Copyright © 2020-2026 阿里云。基于 Docusaurus 构建。",
+    "description": "The footer copyright"
+  }
+}
