@@ -6,13 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "alibabacloud_ros_tran"
 description = "Resource Orchestration Service Template Transformer."
 readme = "README.md"
-license = "Apache-2.0"
 authors = [
     { name = "AlibabaCloud", email = "aliyun-developers-efficiency@list.alibaba-inc.com" },
 ]
 keywords = ["alibabacloud", "aliyun", "ros", "transformer", "template"]
 requires-python = ">=3.9.0"
-dynamic = ["version"]
+dynamic = ["version", "license"]
 dependencies = [
     "typer>=0.12.3,<1.0.0",
     "colorama>=0.4.0,<1.0.0",
