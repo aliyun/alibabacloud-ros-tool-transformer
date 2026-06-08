@@ -7,7 +7,7 @@ title: 安装
 
 ## 前置条件
 
-安装 Python 3.9 或以上版本。CI 已覆盖 Python 3.9 至 3.14。
+安装 Python 3.9 或以上版本。
 
 ## 安装 CLI
 

@@ -46,7 +46,7 @@ Multiple resources can be declared back and forth in this way.
 
 [Click to View](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
 
-![Excel Template Example](https://github.com/aliyun/alibabacloud-ros-tool-transformer/raw/master/docs/_media/example-excel.png)
+![Excel Template Example](/img/example-excel.png)
 
 ## Transformed ROS Template
 

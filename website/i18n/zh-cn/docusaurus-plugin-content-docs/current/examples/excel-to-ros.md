@@ -39,7 +39,7 @@ Excel 模板仅支持 1 个 Sheet，其中：
 
 [点击查看](https://github.com/aliyun/alibabacloud-ros-tool-transformer/blob/master/templates/excel/EcsInstance.xlsx)
 
-![Excel 模板示例](https://github.com/aliyun/alibabacloud-ros-tool-transformer/raw/master/docs/_media/example-excel.png)
+![Excel 模板示例](/img/example-excel.png)
 
 ## 转换后的 ROS 模板
 
