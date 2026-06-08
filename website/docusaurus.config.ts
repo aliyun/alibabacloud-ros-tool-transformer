@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'ROS Template Transformer',
   tagline: 'Transform and format cloud resource templates',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
 
   future: {
     v4: true,
