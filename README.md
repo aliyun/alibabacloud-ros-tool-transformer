@@ -23,5 +23,5 @@ pip install alibabacloud-ros-tran
 ## Document
 
 Fantastic documentation is available at:
-[English](https://aliyun.github.io/alibabacloud-ros-tool-transformer) |
-[中文版](https://aliyun.github.io/alibabacloud-ros-tool-transformer/#/zh-cn/).
+[English](https://aliyun.github.io/alibabacloud-ros-tool-transformer/) |
+[中文版](https://aliyun.github.io/alibabacloud-ros-tool-transformer/zh-cn/).

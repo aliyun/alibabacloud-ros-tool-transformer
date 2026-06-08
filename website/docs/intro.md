@@ -12,4 +12,4 @@ title: Introduction
 - Transforms **AlibabaCloud ROS** template to **Terraform** template.
 - Formats ROS template.
 
-This project is developed in Python language and requires Python 3.9 or above. Python 3.9 through 3.14 are tested in CI.
+This project is developed in Python language and requires Python 3.9 or above.

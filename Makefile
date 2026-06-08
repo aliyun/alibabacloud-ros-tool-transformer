@@ -10,55 +10,39 @@ else
   UV_PYTHON =
 endif
 
-# Func
-.PHONY: docs
+.PHONY: help init test check clean clean-pyc clean-build clean-test publish
 
-help:
-	@echo "\033[32minit\033[0m"
-	@echo "    Init environment for ros-tran."
-	@echo "\033[32mtest\033[0m"
-	@echo "    Run tests."
-	@echo "\033[32mcheck\033[0m"
-	@echo "    Run pre-commit to check code style and auto format."
-	@echo "\033[32mclean\033[0m"
-	@echo "    Remove python and build artifacts."
-	@echo "\033[32mclean-pyc\033[0m"
-	@echo "    Remove python artifacts."
-	@echo "\033[32mclean-build\033[0m"
-	@echo "    Remove build artifacts."
-	@echo ""
-	@echo "\033[33mUse PY=3.x to specify Python version via uv:\033[0m"
-	@echo "    make init PY=3.12"
-	@echo "    make test PY=3.13"
+help: ## Show this help message.
+	@awk 'BEGIN {FS = ":.*## "; printf "Usage: make <target>\n\n"} /^[a-zA-Z0-9_-]+:.*## / {printf "\033[32m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-init:
+init: ## Init environment for ros-tran. Use PY=3.x to specify Python version via uv.
 	uv venv $(UV_PYTHON) --clear
 	uv pip install -e ".[dev]"
 	uv run pre-commit install
 
-test:
+test: ## Run tests.
 	uv run pytest tests
 
-check:
+check: ## Run pre-commit to check code style and auto format.
 	uv run pre-commit run --all-files
 
-clean: clean-pyc clean-build clean-test
+clean: clean-pyc clean-build clean-test ## Remove python, build, and test artifacts.
 
-clean-pyc:
+clean-pyc: ## Remove python artifacts.
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*.log' -exec rm -f {} +
 	find . -name '*~' -exec rm -f  {} +
 	find . -name '__pycache__' -exec rm -rf {} +
 
-clean-build:
+clean-build: ## Remove build artifacts.
 	rm -rf build dist *.egg-info .eggs
 
-clean-test:
+clean-test: ## Remove test artifacts.
 	find . -name '.pytest_cache' -exec rm -rf {} +
 	find . -name '.log' -exec rm -rf {} +
 
-publish: clean
+publish: clean ## Build and publish the package.
 	uv run python setup.py bdist_wheel
 	uv run python setup.py sdist
 	uv run twine check dist/*

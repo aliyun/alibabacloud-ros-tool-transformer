@@ -3,13 +3,11 @@ name: Run Tests
 on:
   push:
     paths-ignore:
-      - 'docs/**'
       - 'website/**'
       - '*.md'
       - '**/*.md'
   pull_request:
     paths-ignore:
-      - 'docs/**'
       - 'website/**'
       - '*.md'
       - '**/*.md'
