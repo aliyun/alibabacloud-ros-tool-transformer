@@ -422,7 +422,8 @@ class ROS2TerraformTemplate(Template):
                     self.reporter.add_failed_property(f"{res_type}.{prop_flag}")
 
                 schema_entries = []
-                if name in schema:
+                has_dollar_keys = bool(dollar_schema_keys.get(name))
+                if name in schema and not has_dollar_keys:
                     schema_entries.append((prop_flag, schema[name] or {}))
                 for dollar_key in dollar_schema_keys.get(name, []):
                     schema_entries.append((f"{prop_flag}$${dollar_key}", schema[dollar_key] or {}))
