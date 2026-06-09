@@ -83,6 +83,13 @@ def get_att(ros2tf: "ROS2TerraformTemplate", args: list):
         return tf.CommentType(msg)
 
     tf_attr = rule_attr.get(att_name, {}).get('To')
+    # If $$0 variant exists, it represents the newer (non-deprecated) field mapping,
+    # prefer it over the base (deprecated) mapping.
+    dollar_key = f"{att_name}$$0"
+    if dollar_key in rule_attr:
+        dollar_to = rule_attr[dollar_key].get('To')
+        if dollar_to:
+            tf_attr = dollar_to
     if not tf_attr:
         return tf.CommentType(msg)
 
