@@ -18,6 +18,7 @@ const config: Config = {
   projectName: 'alibabacloud-ros-tool-transformer',
 
   onBrokenLinks: 'throw',
+  clientModules: ['./src/clientModules/localeRedirect.mjs'],
 
   i18n: {
     defaultLocale: 'en',
