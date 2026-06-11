@@ -46,6 +46,9 @@ Homepage = "https://www.alibabacloud.com/product/ros"
 rostran = "rostran.cli.__main__:main"
 
 [project.optional-dependencies]
+binary = [
+    "pyinstaller==6.11.1",
+]
 dev = [
     "pytest",
     "autopep8",
