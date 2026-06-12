@@ -1,0 +1,111 @@
+name: Build Binary
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            platform: linux-amd64
+          - os: macos-latest
+            platform: darwin-arm64
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Install dependencies
+        run: |
+          uv venv --python 3.11
+          uv pip install -e ".[dev,binary]"
+          uv pip install libterraform==0.8.2
+
+      - name: Verify binary packaging helpers
+        run: uv run pytest tests/test_build_binary.py
+
+      - name: Resolve build version
+        id: build_version
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            tag="${{ github.event.release.tag_name }}"
+            echo "value=${tag#v}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build binary
+        env:
+          ROSTRAN_BUILD_VERSION: ${{ steps.build_version.outputs.value }}
+        run: uv run python build.py
+
+      - name: Smoke test
+        run: |
+          dist/rostran/rostran --help
+          dist/rostran/rostran rules --version
+
+      - name: Verify release version
+        if: github.event_name == 'release'
+        shell: bash
+        run: |
+          expected="${{ steps.build_version.outputs.value }}"
+          actual="$(dist/rostran/rostran --version)"
+          actual="${actual##* }"
+          if [ "$actual" != "$expected" ]; then
+            echo "Release tag version ($expected) does not match rostran --version ($actual)." >&2
+            exit 1
+          fi
+
+      - name: Verify archive layout
+        shell: bash
+        run: |
+          archive="$(ls dist/rostran-*.tar.gz)"
+          tar -tzf "$archive" | grep -x "rostran/rostran"
+
+      - name: Upload archive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rostran-binary-${{ matrix.platform }}
+          path: dist/rostran-*.tar.gz
+
+      - name: Upload version file
+        if: matrix.platform == 'linux-amd64'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rostran-version
+          path: dist/version.txt
+
+  upload-assets:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Upload assets to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" \
+            artifacts/rostran-binary-*/* \
+            artifacts/rostran-version/version.txt \
+            --clobber

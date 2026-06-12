@@ -10,7 +10,7 @@ else
   UV_PYTHON =
 endif
 
-.PHONY: help init test check clean clean-pyc clean-build clean-test publish
+.PHONY: help init test check build-binary clean clean-pyc clean-build clean-test publish
 
 help: ## Show this help message.
 	@awk 'BEGIN {FS = ":.*## "; printf "Usage: make <target>\n\n"} /^[a-zA-Z0-9_-]+:.*## / {printf "\033[32m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -25,6 +25,9 @@ test: ## Run tests.
 
 check: ## Run pre-commit to check code style and auto format.
 	uv run pre-commit run --all-files
+
+build-binary: ## Build standalone rostran binary using PyInstaller.
+	uv run --extra binary python build.py
 
 clean: clean-pyc clean-build clean-test ## Remove python, build, and test artifacts.
 

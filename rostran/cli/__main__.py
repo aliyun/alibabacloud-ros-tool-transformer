@@ -8,7 +8,7 @@ import logging
 import traceback
 from io import StringIO
 from pathlib import Path
-from typing import List, Set
+from typing import List, Optional, Set
 
 import typer
 from ruamel.yaml import YAML, YAMLError
@@ -29,12 +29,40 @@ yaml.preserve_quotes = True
 
 # cli
 app = typer.Typer(help=__doc__)
+COMPAT_MODE_ENV = "ALIBABA_CLOUD_ROSTRAN_COMPAT_MODE"
 SOURCE_TEMPLATE_FORMAT_DEFAULT = typer.Option(
     SourceTemplateFormat.Auto, help="Source template format"
 )
 TARGET_TEMPLATE_FORMAT_DEFAULT = typer.Option(
     TargetTemplateFormat.Auto, help="Target template format."
 )
+
+
+def get_program_name(base_name: str = "rostran") -> str:
+    prefix = os.environ.get(COMPAT_MODE_ENV, "").strip()
+    return f"{prefix} {base_name}" if prefix else base_name
+
+
+def _version_callback(value: bool):
+    if value:
+        from rostran import __version__
+
+        typer.echo(f"{get_program_name()} {__version__}")
+        raise typer.Exit()
+
+
+@app.callback()
+def cli(
+    version: Optional[bool] = typer.Option(
+        None,
+        "--version",
+        "-V",
+        callback=_version_callback,
+        is_eager=True,
+        help="Show the package version and exit.",
+    ),
+):
+    pass
 
 
 @app.command()
@@ -499,7 +527,7 @@ def main():
     logging.basicConfig(level=logging.WARNING, format="%(message)s")
     logging.getLogger("rostran").setLevel(logging.INFO)
     try:
-        typer.main.get_command(app)(prog_name="rostran")
+        typer.main.get_command(app)(prog_name=get_program_name())
     except exceptions.RosTranWarning as e:
         typer.secho(f"{e}", fg=typer.colors.YELLOW)
         typer.Exit(1)
