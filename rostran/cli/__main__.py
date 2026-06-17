@@ -537,6 +537,51 @@ def update(
     typer.secho(msg, fg=typer.colors.GREEN)
 
 
+@app.command()
+def serve(
+    host: str = typer.Option(
+        "127.0.0.1",
+        "--host",
+        "-h",
+        help="The host to bind the web service to. Use 0.0.0.0 to expose it on the network.",
+    ),
+    port: int = typer.Option(
+        8080,
+        "--port",
+        "-p",
+        help="The port to bind the web service to.",
+    ),
+    open_browser: bool = typer.Option(
+        True,
+        "--open/--no-open",
+        help="Whether to open the web UI in a browser after starting.",
+    ),
+    reload: bool = typer.Option(
+        False,
+        "--reload",
+        help="Enable auto-reload for development.",
+    ),
+):
+    """
+    Start a local web service to use the transformer from a browser.
+
+    Requires the optional web dependencies:
+
+        pip install "alibabacloud-ros-tran[serve]"
+    """
+    from rostran.web.server import run, MissingDependencies
+
+    try:
+        typer.secho(
+            f"Starting ROS Template Transformer web service at http://{host}:{port}",
+            fg=typer.colors.GREEN,
+        )
+        run(host=host, port=port, reload=reload, open_browser=open_browser)
+    except MissingDependencies as e:
+        typer.secho(str(e), fg=typer.colors.RED)
+        raise typer.Exit(1)
+
+
 def main():
     logging.basicConfig(level=logging.WARNING, format="%(message)s")
     logging.getLogger("rostran").setLevel(logging.INFO)
