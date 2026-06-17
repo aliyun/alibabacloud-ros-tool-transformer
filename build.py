@@ -34,6 +34,14 @@ EXPLICIT_HIDDENIMPORTS = [
     "configparser",
     "cgi",
 ]
+# Optional web service packages; only bundled when installed (the `serve` extra).
+WEB_HIDDENIMPORT_PACKAGES = [
+    "fastapi",
+    "starlette",
+    "uvicorn",
+    "multipart",
+    "anyio",
+]
 
 
 class UnsupportedBuildPlatform(Exception):
@@ -132,11 +140,19 @@ def _validate_system(system):
 
 
 def _collect_hiddenimports():
+    import importlib.util
+
     from PyInstaller.utils.hooks import collect_submodules
 
     hiddenimports = []
     for package in HIDDENIMPORT_PACKAGES:
         hiddenimports += collect_submodules(package)
+
+    # Bundle the web stack only when it is available in the build environment.
+    for package in WEB_HIDDENIMPORT_PACKAGES:
+        if importlib.util.find_spec(package) is not None:
+            hiddenimports += collect_submodules(package)
+
     return hiddenimports + EXPLICIT_HIDDENIMPORTS
 
 
@@ -161,6 +177,10 @@ def _build_pyinstaller_args(root, dist_dir, build_dir, hiddenimports):
         "--add-data",
         f"{root / 'rostran/rules'}{os.pathsep}rostran/rules",
     ]
+    # Bundle the built web UI when it exists so the binary can `serve` it.
+    static_dir = root / "rostran/web/static"
+    if (static_dir / "index.html").exists():
+        args.extend(["--add-data", f"{static_dir}{os.pathsep}rostran/web/static"])
     for hiddenimport in hiddenimports:
         args.extend(["--hidden-import", hiddenimport])
     return args
