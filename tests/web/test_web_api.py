@@ -188,3 +188,37 @@ def test_transform_restores_cwd_between_calls(monkeypatch):
     )
     assert res2.targets
     assert os.getcwd() == before
+
+
+def test_transform_recovers_from_corrupted_cwd(monkeypatch):
+    """If the process is already sitting in a deleted directory (e.g. a prior
+    terraform run left it there), the service must recover rather than fail
+    forever on os.getcwd()."""
+    import tempfile
+
+    import rostran.cli.__main__ as cli
+
+    def fake_transform(*, target_path, **_kwargs):
+        with open(target_path, "w") as f:
+            f.write("ROSTemplateFormatVersion: '2015-09-01'\n")
+
+    monkeypatch.setattr(cli, "transform", fake_transform)
+
+    original = os.getcwd()
+    doomed = tempfile.mkdtemp()
+    os.chdir(doomed)
+    os.rmdir(doomed)  # cwd now points at a directory that no longer exists
+    try:
+        with pytest.raises(OSError):
+            os.getcwd()  # confirm the process cwd is genuinely broken
+
+        res = service.transform(
+            files=[("t.json", b"{}")],
+            source_format=SourceTemplateFormat.CloudFormation,
+            target_format=TargetTemplateFormat.Yaml,
+        )
+        assert res.targets
+        # cwd is valid again afterwards.
+        assert os.getcwd()
+    finally:
+        os.chdir(original)

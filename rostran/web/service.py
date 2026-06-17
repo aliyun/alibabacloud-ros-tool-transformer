@@ -13,6 +13,7 @@ relies on process-global state (rule manager, ``typer.secho`` output capture).
 import io
 import json
 import os
+import tempfile
 import threading
 from contextlib import redirect_stdout, redirect_stderr
 from dataclasses import dataclass, field
@@ -24,6 +25,38 @@ from rostran.core.format import SourceTemplateFormat, TargetTemplateFormat
 
 # Underlying library uses process-global state; serialize to keep it consistent.
 _transform_lock = threading.Lock()
+
+# Captured while the working directory is guaranteed valid (at import time).
+# libterraform runs terraform with `-chdir=<tmp>`, which calls os.Chdir on the
+# whole process; if that temp dir is later removed the process is left with an
+# invalid cwd and os.getcwd() raises. This lets us recover to a stable place.
+_STABLE_CWD = os.getcwd()
+
+
+def _ensure_valid_cwd() -> str:
+    """Return the current working directory, recovering to a stable directory
+    if the process is sitting in one that no longer exists."""
+    try:
+        return os.getcwd()
+    except OSError:
+        for fallback in (_STABLE_CWD, tempfile.gettempdir()):
+            try:
+                os.chdir(fallback)
+                return fallback
+            except OSError:
+                continue
+        raise
+
+
+def _restore_cwd(target: str) -> None:
+    """Restore the working directory, falling back to a stable directory."""
+    for candidate in (target, _STABLE_CWD, tempfile.gettempdir()):
+        try:
+            os.chdir(candidate)
+            return
+        except OSError:
+            continue
+
 
 # Source formats that consume a directory of files (e.g. multiple .tf files).
 _DIRECTORY_SOURCES = {SourceTemplateFormat.Terraform}
@@ -187,9 +220,10 @@ def transform(
 
             # Terraform parsing (via libterraform) runs terraform in-process
             # with `-chdir=<tmp>`, which changes the whole process's working
-            # directory. Restore it afterwards so a later os.getcwd() does not
-            # fail once this temporary directory has been removed.
-            saved_cwd = os.getcwd()
+            # directory. Recover the cwd if a previous run left it invalid, and
+            # restore it afterwards so os.getcwd() keeps working once this
+            # temporary directory has been removed.
+            saved_cwd = _ensure_valid_cwd()
 
             log_buf = io.StringIO()
             try:
@@ -215,10 +249,7 @@ def transform(
                 )
             finally:
                 # Restore the working directory before the temp dir is removed.
-                try:
-                    os.chdir(saved_cwd)
-                except OSError:
-                    pass
+                _restore_cwd(saved_cwd)
                 for key, value in saved_env.items():
                     if value is None:
                         os.environ.pop(key, None)
