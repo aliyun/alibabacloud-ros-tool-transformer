@@ -20,6 +20,22 @@ Template Transformer is a tool for transforming and formatting.
 pip install alibabacloud-ros-tran
 ```
 
+## Web UI
+
+A browser-based playground is available for transforming and formatting
+templates without the command line. Install the optional `serve` extra and
+start the local web service:
+
+```bash
+pip install "alibabacloud-ros-tran[serve]"
+rostran serve
+```
+
+This opens `http://127.0.0.1:8080` with a dual-pane editor for converting
+CloudFormation / Terraform / Excel / ROS templates, formatting ROS templates,
+and browsing transform rules. Use `rostran serve --help` for host, port and
+other options.
+
 ## Document
 
 Fantastic documentation is available at:

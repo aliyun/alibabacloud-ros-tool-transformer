@@ -49,6 +49,11 @@ rostran = "rostran.cli.__main__:main"
 binary = [
     "pyinstaller==6.11.1",
 ]
+serve = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "python-multipart>=0.0.9",
+]
 dev = [
     "pytest",
     "ruff",
@@ -63,6 +68,10 @@ dev = [
     "aliyun-python-sdk-ros",
     "pyyaml",
     "jsonref",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "python-multipart>=0.0.9",
+    "httpx",
 ]
 
 [tool.setuptools.dynamic]
@@ -70,6 +79,9 @@ version = { attr = "rostran.__version__" }
 
 [tool.setuptools.packages.find]
 exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+"rostran.web" = ["static/**/*", "static/*"]
 
 [tool.ruff]
 target-version = "py39"
