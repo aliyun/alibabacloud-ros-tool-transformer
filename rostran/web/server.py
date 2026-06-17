@@ -40,6 +40,7 @@ def build_app():
     from fastapi.middleware.cors import CORSMiddleware
     from fastapi.responses import JSONResponse, FileResponse
     from fastapi.staticfiles import StaticFiles
+    from starlette.concurrency import run_in_threadpool
 
     from rostran import __version__
 
@@ -114,7 +115,11 @@ def build_app():
             payload.append((upload.filename or "source", data))
 
         try:
-            result = service.transform(
+            # Offload to a worker thread: the transform is synchronous and may
+            # run terraform (slow, native) for seconds. Running it inline would
+            # block the event loop and stall every other request.
+            result = await run_in_threadpool(
+                service.transform,
                 files=payload,
                 source_format=src_fmt,
                 target_format=tgt_fmt,
@@ -143,7 +148,9 @@ def build_app():
         format: str = Form(...),
     ):
         try:
-            formatted = service.format_template(content, format)
+            formatted = await run_in_threadpool(
+                service.format_template, content, format
+            )
         except service.TransformError as e:
             return _error(422, e.message, e.error_type)
         return {"content": formatted}

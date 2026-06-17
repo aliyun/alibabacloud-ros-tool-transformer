@@ -123,6 +123,39 @@ def test_service_transform_no_files():
         service.transform(files=[], source_format=None)  # type: ignore[arg-type]
 
 
+def test_transform_runs_off_the_event_loop(monkeypatch, client):
+    """The synchronous (and potentially slow) transform must be offloaded to a
+    worker thread so it never blocks the event loop. A worker thread has no
+    running asyncio loop, whereas code executed inline inside the async endpoint
+    would. This deterministically catches a regression to inline execution."""
+    import asyncio
+
+    captured = {}
+
+    def record_transform(*_args, **_kwargs):
+        try:
+            asyncio.get_running_loop()
+            captured["on_event_loop"] = True
+        except RuntimeError:
+            captured["on_event_loop"] = False
+        return service.TransformResult(
+            targets=[service.TargetFile("template.yml", "ok: true\n")],
+            log="",
+        )
+
+    monkeypatch.setattr(service, "transform", record_transform)
+
+    resp = client.post(
+        "/api/transform",
+        data={"source_format": "cloudformation"},
+        files={"files": ("a.json", "{}", "application/json")},
+    )
+    assert resp.status_code == 200, resp.text
+    assert captured.get("on_event_loop") is False, (
+        "transform ran on the event loop thread; it must be offloaded"
+    )
+
+
 def test_transform_restores_cwd_between_calls(monkeypatch):
     """libterraform changes the process cwd via terraform's -chdir; the service
     must restore it so a later transform (e.g. a second Terraform run) does not
