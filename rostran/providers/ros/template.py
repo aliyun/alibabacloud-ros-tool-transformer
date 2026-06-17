@@ -2,7 +2,7 @@ import os
 import textwrap
 import uuid
 from pathlib import Path
-from typing import Any, Optional, List
+from typing import Any, Optional, List, cast
 
 import typer
 import json
@@ -53,8 +53,13 @@ class WrapTerraformTemplate(Template):
 
         return cls(source=source)
 
-    def transform(self, target_path=None):
+    def transform(self, target_path: Optional[str] = None):
         typer.secho("Transforming ROS template to terraform template...")
+
+        if not target_path:
+            raise InvalidTargetPath(
+                target_path=target_path, reason="target_path is required"
+            )
 
         workspace = self.source.get("Workspace")
         if not isinstance(workspace, dict):
@@ -77,7 +82,7 @@ class WrapTerraformTemplate(Template):
 
 class ResourcesInProperty:
     def __init__(
-        self, resource_rule: ResourceRule, resources: dict, from_res_name: str
+        self, resource_rule: ResourceRule, resources: dict, from_res_name: Optional[str]
     ):
         self.resource_rule = resource_rule
         self.resources = resources
@@ -161,7 +166,9 @@ class ROS2TerraformTemplate(Template):
         return param
 
     @classmethod
-    def initialize(cls, source: dict, validate: bool = True, _: FileFormat = None):
+    def initialize(
+        cls, source: dict, validate: bool = True, _: Optional[FileFormat] = None
+    ):
         if validate:
             typer.secho("Validating ROS template...")
             cls.validate_ros_template(source)
@@ -213,7 +220,7 @@ class ROS2TerraformTemplate(Template):
             tf_vars.append(self.tf_region_parameter)
         return tf_vars, tf_resources
 
-    def transform(self, target_path: str = None, single_file: bool = False):
+    def transform(self, target_path: Optional[str] = None, single_file: bool = False):
         """
         transform ros to Terraform
         """
@@ -288,7 +295,9 @@ class ROS2TerraformTemplate(Template):
                     typer.secho(item, fg="green")
 
     def get_resource_rule(self, ros_res_type: str) -> Optional[ResourceRule]:
-        resource_rule: ResourceRule = self.rule_manager.resource_rules.get(ros_res_type)
+        resource_rule: Optional[ResourceRule] = self.rule_manager.resource_rules.get(
+            ros_res_type
+        )
         if resource_rule is None:
             return None
         return resource_rule
@@ -416,9 +425,9 @@ class ROS2TerraformTemplate(Template):
         self,
         res_type: str,
         values: Any,
-        schema: dict,
-        prop_name: str = None,
-        res_name: str = None,
+        schema: Optional[dict],
+        prop_name: Optional[str] = None,
+        res_name: Optional[str] = None,
     ):
         if isinstance(values, dict):
             tf_argument = {}
@@ -547,7 +556,7 @@ class ROS2TerraformTemplate(Template):
             return self.resolve_values(values)
 
     def _transform_resources(
-        self, resources_in_property: ResourcesInProperty = None
+        self, resources_in_property: Optional[ResourcesInProperty] = None
     ) -> List[tf.Resource]:
         tf_resources = []
         resources = (
@@ -585,7 +594,7 @@ class ROS2TerraformTemplate(Template):
             if isinstance(tf_argument, tf.JsonType):
                 tf_argument = tf_argument.value
 
-            tf_res_type = resource_rule.target_resource_type
+            tf_res_type = cast(str, resource_rule.target_resource_type)
             tf_res_items = []
             built_in_properties = resource_rule.built_in_properties or {}
 
@@ -643,7 +652,7 @@ class ROS2TerraformTemplate(Template):
                 if depends_on:
                     if isinstance(depends_on, str):
                         depends_on = [depends_on]
-                    tf_depends_on = []
+                    tf_depends_on: list = []
                     for depend in depends_on:
                         depend_res_type = self.resources[depend]["Type"]
                         depend_resource_rule = self.get_resource_rule(depend_res_type)

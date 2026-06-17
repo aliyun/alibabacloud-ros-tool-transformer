@@ -1,6 +1,7 @@
 import re
 import os
 import json
+from typing import Optional, cast
 
 import typer
 from ruamel.yaml import YAML
@@ -20,6 +21,8 @@ from rostran.core.rule_manager import (
     ResourceRule,
     PseudoParametersRule,
     FunctionRule,
+    MetaDataRule,
+    AssociationPropertyRule,
 )
 from rostran.core.outputs import Output, Outputs
 from rostran.core.resources import Resource, Resources
@@ -96,7 +99,7 @@ class CloudFormationTemplate(Template):
 
         return cls(source=source, rule_manager=rule_manager)
 
-    def transform(self):
+    def transform(self) -> RosTemplate:
         typer.secho("Transforming CloudFormation template to ROS template...")
 
         if self.source.get("Transform"):
@@ -123,9 +126,9 @@ class CloudFormationTemplate(Template):
         if not cf_params:
             return
 
-        association_property_rule = (
-            self.rule_manager.association_property_rule.association_property
-        )
+        association_property_rule = cast(
+            AssociationPropertyRule, self.rule_manager.association_property_rule
+        ).association_property
         cf_param_labels = (
             self.source.get("Metadata", {})
             .get("AWS::CloudFormation::Interface", {})
@@ -199,8 +202,8 @@ class CloudFormationTemplate(Template):
             typer.secho(f"Transforming resource {resource_id}<{cf_resource_type}>")
 
             # Get rule by resource type
-            resource_rule: ResourceRule = self.rule_manager.resource_rules.get(
-                cf_resource_type
+            resource_rule: Optional[ResourceRule] = (
+                self.rule_manager.resource_rules.get(cf_resource_type)
             )
             if resource_rule is None:
                 typer.secho(
@@ -376,7 +379,7 @@ class CloudFormationTemplate(Template):
 
     def _transform_meta_data(self, out_meta_data: MetaData):
         cf_meta_data = self.source.get("Metadata", {})
-        meta_data_rule = self.rule_manager.meta_data_rule
+        meta_data_rule = cast(MetaDataRule, self.rule_manager.meta_data_rule)
 
         for name, value in cf_meta_data.items():
             typer.secho(f"Transforming metadata {name}")
@@ -407,7 +410,9 @@ class CloudFormationTemplate(Template):
             is_func = False
             if len(value) == 1:
                 key = list(value.keys())[0]
-                function_rule: FunctionRule = self.rule_manager.function_rule
+                function_rule: FunctionRule = cast(
+                    FunctionRule, self.rule_manager.function_rule
+                )
                 # transform func
                 if key in function_rule.function:
                     is_func = True
@@ -416,7 +421,7 @@ class CloudFormationTemplate(Template):
                             key, value[key], function_rule.function[key]
                         )
                     )
-                elif re.match(r"^Fn::[\s\S]+$", key):
+                elif re.match(r"^Fn::[\s\S]+$", str(key)):
                     is_func = True
                     typer.secho(
                         f"  Function {key!r} is not supported and will be ignored.",
@@ -433,8 +438,8 @@ class CloudFormationTemplate(Template):
                 resolved = False
             return data, resolved
         elif isinstance(value, str):
-            pseudo_parameters_rule: PseudoParametersRule = (
-                self.rule_manager.pseudo_parameters_rule
+            pseudo_parameters_rule: PseudoParametersRule = cast(
+                PseudoParametersRule, self.rule_manager.pseudo_parameters_rule
             )
             if value in pseudo_parameters_rule.pseudo_parameters:
                 return (
@@ -492,7 +497,9 @@ class CloudFormationTemplate(Template):
         for (
             param,
             rule_props,
-        ) in self.rule_manager.pseudo_parameters_rule.pseudo_parameters.items():
+        ) in cast(
+            PseudoParametersRule, self.rule_manager.pseudo_parameters_rule
+        ).pseudo_parameters.items():
             param_ref = f"${{{param}}}"
             if param_ref not in value:
                 continue

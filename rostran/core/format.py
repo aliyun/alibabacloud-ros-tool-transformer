@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Optional
 
 
 class SourceTemplateFormat(str, Enum):
@@ -28,7 +29,9 @@ class FileFormat(Enum):
     Terraform = "terraform"
 
 
-def convert_template_to_file_format(template_format, template_path: str = None):
+def convert_template_to_file_format(
+    template_format, template_path: Optional[str] = None
+):
     if isinstance(template_format, SourceTemplateFormat):
         if template_format == SourceTemplateFormat.Excel:
             return FileFormat.Excel

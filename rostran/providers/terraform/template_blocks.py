@@ -1,11 +1,6 @@
 from abc import abstractmethod
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional, Protocol, Tuple, Union, runtime_checkable
 from dataclasses import dataclass
-
-try:
-    from typing import Protocol, runtime_checkable
-except ImportError:
-    from typing_extensions import Protocol, runtime_checkable
 
 
 @runtime_checkable
@@ -15,9 +10,8 @@ class TerraformType(Protocol):
     def __str__(self) -> str:
         return self.render()
 
-    @classmethod
     @abstractmethod
-    def render(cls, indent: int = 0) -> str:
+    def render(self, indent: int = 0) -> str:
         raise NotImplementedError
 
 
@@ -25,7 +19,7 @@ class TerraformType(Protocol):
 class LiteralType(TerraformType):
     value: Any
 
-    def render(self, _=0):
+    def render(self, indent=0):
         return self.value
 
     def ref_render(self):
@@ -36,7 +30,7 @@ class LiteralType(TerraformType):
 class QuotedString(TerraformType):
     value: str
 
-    def render(self, _=0):
+    def render(self, indent=0):
         if not isinstance(self.value, str):
             return f'"{self.value}"'
         value = self.value
@@ -51,7 +45,7 @@ class QuotedString(TerraformType):
 class NumberType(TerraformType):
     value: Union[int, float]
 
-    def render(self, _=0):
+    def render(self, indent=0):
         return str(self.value)
 
 
@@ -59,7 +53,7 @@ class NumberType(TerraformType):
 class NullType(TerraformType):
     value: str = "null"
 
-    def render(self, _=0):
+    def render(self, indent=0):
         return self.value
 
     def __eq__(self, other: object) -> bool:
@@ -70,7 +64,7 @@ class NullType(TerraformType):
 class BooleanType(TerraformType):
     value: bool
 
-    def render(self, _=0):
+    def render(self, indent=0):
         return str(self.value).lower()
 
 
@@ -131,7 +125,7 @@ class JsonType(TerraformType):
 class ListOneLineType(TerraformType):
     value: list
 
-    def render(self, _: int = 0) -> str:
+    def render(self, indent: int = 0) -> str:
         rendered = []
         for i in self.value:
             v = i.render() if hasattr(i, "render") else i
@@ -159,9 +153,7 @@ def normalize_value(value: Any):
     return value
 
 
-def convert_to_tf_type(
-    value: Any, type_: Optional[str] = None
-) -> Optional[TerraformType]:
+def convert_to_tf_type(value: Any, type_: Optional[str] = None) -> TerraformType:
     if isinstance(value, TerraformType):
         return value
     if type_ is None:
@@ -191,8 +183,7 @@ def convert_to_tf_type(
         return ListOneLineType(value)
     elif type_ == "comment":
         return CommentType(value)
-    elif type_:
-        return LiteralType(value)
+    return LiteralType(value)
 
 
 BlockLabel = Tuple[
@@ -293,7 +284,7 @@ class Data(Block):
 
 class Resource(Block):
     def __init__(
-        self, name: str, res_type: str, arguments: Dict[str, Any] = None
+        self, name: str, res_type: str, arguments: Optional[Dict[str, Any]] = None
     ) -> None:
         self.name = name
         self.res_type = res_type

@@ -8,7 +8,7 @@ import logging
 import traceback
 from io import StringIO
 from pathlib import Path
-from typing import List, Optional, Set
+from typing import List, Optional, Set, cast
 
 import typer
 from ruamel.yaml import YAML, YAMLError
@@ -250,7 +250,7 @@ def transform(
         elif len(ros_templates) == 1:
             ros_templates[0].save(target_path, target_format)
         else:
-            for i, ros_template in enumerate(ros_templates):
+            for i, ros_template in enumerate(cast(list, ros_templates)):
                 name_parts = os.path.splitext(target_path)
                 path = f"{name_parts[0]}-{i}{name_parts[1]}"
                 ros_template.save(path, target_format)
@@ -346,7 +346,7 @@ def _format_file(path: Path, replace: bool = False, check_suffix=True):
 
 
 def _format_directory(
-    path: Path, replace: bool = False, skip_paths: Set[Path] = None
+    path: Path, replace: bool = False, skip_paths: Optional[Set[Path]] = None
 ) -> list:
     formatted_paths = []
     for sub_path in path.iterdir():

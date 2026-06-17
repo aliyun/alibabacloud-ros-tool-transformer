@@ -1,13 +1,13 @@
 import json
 import logging
-from typing import Optional, Union
+from typing import Any, Dict, Optional, Union
 from functools import partial
 
 import typer
 from ruamel.yaml import YAML
 
 from .exceptions import InvalidRosTemplateFormatVersion
-from .format import FileFormat, TargetTemplateFormat
+from .format import TargetTemplateFormat
 from .parameters import Parameters
 from .resources import Resources
 from .outputs import Outputs
@@ -28,10 +28,10 @@ class Template:
         self.source = source
 
     @classmethod
-    def initialize(cls, path: str, format: FileFormat):
+    def initialize(cls, *args, **kwargs):
         pass
 
-    def transform(self):
+    def transform(self, *args, **kwargs):
         pass
 
 
@@ -143,7 +143,7 @@ class RosTemplate:
         )
 
     def as_dict(self, format=False):
-        data = {self.ROS_TEMPLATE_FORMAT_VERSION: "2015-09-01"}
+        data: Dict[str, Any] = {self.ROS_TEMPLATE_FORMAT_VERSION: "2015-09-01"}
         if self.transform:
             data[self.TRANSFORM] = self.transform
         if self.description:
@@ -169,6 +169,7 @@ class RosTemplate:
     def save(self, target_path, target_format: TargetTemplateFormat):
         typer.secho(f"Save template to {target_path}.", fg="green")
 
+        kwargs: Dict[str, Any]
         if target_format == TargetTemplateFormat.Yaml:
             dump = partial(yaml.dump)
             kwargs = {}

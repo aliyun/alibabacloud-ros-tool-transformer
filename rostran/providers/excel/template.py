@@ -120,7 +120,7 @@ class ExcelTemplate(Template):
                         else:
                             resource = None
                         cur_resources.append(resource)
-                else:
+                elif cur_resources is not None:
                     for i, cell in enumerate(row[1:max_column]):
                         resource = cur_resources[i]
                         if not resource:

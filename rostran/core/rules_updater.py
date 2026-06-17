@@ -125,7 +125,7 @@ def _urlerror_is_timeout(exc: error.URLError) -> bool:
     return False
 
 
-def _http_get(url: str, headers: dict = None, decode: bool = True):
+def _http_get(url: str, headers: Optional[dict] = None, decode: bool = True):
     hdrs = {"User-Agent": "rostran-rules-updater"}
     if headers:
         hdrs.update(headers)

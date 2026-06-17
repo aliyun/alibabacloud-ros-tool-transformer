@@ -1,5 +1,5 @@
 import re
-from typing import Union
+from typing import Any, Dict, Optional, Union
 
 from openpyxl.cell.cell import Cell
 
@@ -56,23 +56,23 @@ class Parameter:
     def __init__(
         self,
         name: str,
-        type: str,
+        type: Optional[str],
         default=None,
-        association_property: str = None,
-        association_property_metadata: dict = None,
-        description: str = None,
-        constraint_description: str = None,
-        allowed_values: list = None,
-        min_length: int = None,
-        max_length: int = None,
-        allowed_pattern: str = None,
-        min_value: Union[int, float] = None,
-        max_value: Union[int, float] = None,
+        association_property: Optional[str] = None,
+        association_property_metadata: Optional[dict] = None,
+        description: Optional[str] = None,
+        constraint_description: Optional[str] = None,
+        allowed_values: Optional[list] = None,
+        min_length: Optional[int] = None,
+        max_length: Optional[int] = None,
+        allowed_pattern: Optional[str] = None,
+        min_value: Optional[Union[int, float]] = None,
+        max_value: Optional[Union[int, float]] = None,
         label=None,
-        no_echo: bool = None,
-        confirm: bool = None,
-        text_area: bool = None,
-        orig_data: dict = None,
+        no_echo: Optional[bool] = None,
+        confirm: Optional[bool] = None,
+        text_area: Optional[bool] = None,
+        orig_data: Optional[dict] = None,
     ):
         self.name = name
         self.type = type
@@ -176,6 +176,7 @@ class Parameter:
             )
 
     def as_dict(self, format=False):
+        data: Dict[str, Any]
         if not format and self.orig_data:
             data = {k: v for k, v in self.orig_data.items() if v is not None}
         else:
@@ -235,7 +236,7 @@ class Parameters(dict):
     def add(self, param: Parameter):
         self[param.name] = param
 
-    def as_dict(self, format=False, metadata: MetaData = None) -> dict:
+    def as_dict(self, format=False, metadata: Optional[MetaData] = None) -> dict:
         data = {}
         keys = self.keys()
         if format and metadata:

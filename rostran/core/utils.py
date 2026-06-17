@@ -1,5 +1,5 @@
 from openpyxl.cell.cell import Cell
-from typing import Iterable
+from typing import Iterable, Optional
 
 from collections import defaultdict
 
@@ -49,7 +49,7 @@ def get_and_validate_cell(cell: Cell, exc_cls) -> str:
     return value
 
 
-def sorted_data(data, traverse=False, scores: dict = None):
+def sorted_data(data, traverse=False, scores: Optional[dict] = None):
     if isinstance(data, dict):
         if scores:
             return sorted_dict(data, traverse, lambda item: scores.get(item[0], 9999))

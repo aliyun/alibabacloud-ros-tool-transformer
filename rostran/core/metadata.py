@@ -1,3 +1,5 @@
+from typing import Any, Dict
+
 from rostran.core.exceptions import InvalidTemplateMetaDataItem, InvalidTemplateMetaData
 from rostran.core.utils import sorted_data
 
@@ -102,7 +104,7 @@ class MetaItem:
                             name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}]",
                             reason=f"{self.PARAMETERS} is missing",
                         )
-                    parameters = param_group[self.PARAMETERS]
+                    parameters = param_group.get(self.PARAMETERS)
                     if not isinstance(parameters, list):
                         raise InvalidTemplateMetaDataItem(
                             name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.PARAMETERS}",
@@ -118,7 +120,7 @@ class MetaItem:
                             )
                     # validate Label
                     if self.LABEL in param_group:
-                        label = param_group[self.LABEL]
+                        label = param_group.get(self.LABEL)
                         if not isinstance(label, dict):
                             raise InvalidTemplateMetaDataItem(
                                 name=f"{self.ROS_INTERFACE}.{self.PARAMETER_GROUPS}[{i}].{self.LABEL}",
@@ -147,7 +149,7 @@ class MetaItem:
                         )
 
     def as_dict(self, format=False):
-        data = {self.type: self.value}
+        data: Dict[str, Any] = {self.type: self.value}
         if not format:
             return data
 

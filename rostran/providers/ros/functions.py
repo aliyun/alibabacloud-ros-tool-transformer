@@ -1,6 +1,6 @@
 import re
 import uuid
-from typing import TYPE_CHECKING, Any, Union
+from typing import TYPE_CHECKING, Any, Callable, Dict, Union
 
 from rostran.providers.terraform import template_blocks as tf
 from tools.utils import camel_to_tf
@@ -391,13 +391,13 @@ def handle_required_string(ros2tf: "ROS2TerraformTemplate", args):
     return tf.QuotedString(f"auto-{uuid.uuid4().hex[:8]}")
 
 
-def base64_encode(ros2tf: "ROS2TerraformTemplate", args: str):
+def base64_encode(ros2tf: "ROS2TerraformTemplate", args: Any):
     if not isinstance(args, tf.TerraformType):
         args = tf.QuotedString(args)
     return tf.LiteralType(f"base64decode({args})")
 
 
-def base64_decode(ros2tf: "ROS2TerraformTemplate", args: str):
+def base64_decode(ros2tf: "ROS2TerraformTemplate", args: Any):
     if not isinstance(args, tf.TerraformType):
         args = tf.QuotedString(args)
     return tf.LiteralType(f"base64decode({args})")
@@ -725,7 +725,7 @@ def cidr(ros2tf: "ROS2TerraformTemplate", tf_args: list):
     return tf.LiteralType(f"cidrsubnets({ip_block}, {cidr_bits}, {count})")
 
 
-ALL_FUNCTIONS = {
+ALL_FUNCTIONS: Dict[Any, Callable[..., Any]] = {
     "Ref": ref,
     "Fn::GetAtt": get_att,
     "Fn::Equals": equals,

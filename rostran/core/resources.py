@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Any, Dict, Optional, Union
 
 from openpyxl.cell.cell import Cell
 
@@ -31,13 +31,13 @@ class Resource:
     def __init__(
         self,
         resource_id: str,
-        resource_type: str,
-        properties: Properties = None,
-        depends_on: Union[str, list] = None,
-        condition: str = None,
-        deletion_policy: str = None,
-        metadata: dict = None,
-        other_properties: dict = None,
+        resource_type: Optional[str],
+        properties: Optional[Properties] = None,
+        depends_on: Optional[Union[str, list]] = None,
+        condition: Optional[str] = None,
+        deletion_policy: Optional[str] = None,
+        metadata: Optional[dict] = None,
+        other_properties: Optional[dict] = None,
     ):
         self.resource_id = resource_id
         self.type = resource_type
@@ -140,7 +140,7 @@ class Resource:
             )
 
     def as_dict(self, format=False):
-        data = {Resource.TYPE: self.type}
+        data: Dict[str, Any] = {Resource.TYPE: self.type}
         if self.condition:
             data[Resource.CONDITION] = self.condition
         data[Resource.PROPERTIES] = self.properties.as_dict(format=format)

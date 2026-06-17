@@ -79,4 +79,5 @@ target-version = "py39"
 "__init__.py" = ["F401"]
 
 [tool.ty.src]
-exclude = ["tests", "templates", "terraform", "tools", "website", "build"]
+# Packaging/build scripts rely on build-time-only or optional-extra imports.
+exclude = ["tests", "templates", "terraform", "tools", "website", "build", "setup.py", "build.py"]

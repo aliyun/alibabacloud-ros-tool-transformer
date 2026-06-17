@@ -1,5 +1,5 @@
 import re
-from typing import Any
+from typing import Any, Optional
 
 from openpyxl.cell.cell import Cell
 
@@ -20,7 +20,7 @@ REF_PATTERN = re.compile(r"^!Ref ([\w\-]+)$")
 
 
 class Property:
-    def __init__(self, name: str, value: Any):
+    def __init__(self, name: Optional[str], value: Any):
         self.name = name
         self.value = value
 

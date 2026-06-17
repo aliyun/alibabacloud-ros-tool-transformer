@@ -1,7 +1,7 @@
 import json
 import os
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 import typer
 from ruamel.yaml.scalarstring import LiteralScalarString
@@ -40,8 +40,8 @@ class CompatibleTerraformTemplate(Template):
         cls,
         path: str,
         format: FileFormat = FileFormat.Terraform,
-        extra_files: List[str] = None,
-        exist_file_path: str = None,
+        extra_files: Optional[List[str]] = None,
+        exist_file_path: Optional[str] = None,
         force_overwrite: bool = False,
     ):
         if format != FileFormat.Terraform:
@@ -96,7 +96,9 @@ class CompatibleTerraformTemplate(Template):
         return exist_content
 
     @classmethod
-    def get_matched_files(cls, dirpath: str, extra_files: List[str] = None) -> list:
+    def get_matched_files(
+        cls, dirpath: str, extra_files: Optional[List[str]] = None
+    ) -> list:
         dir_path = Path(dirpath)
 
         def file_absolutes(p: str) -> list:

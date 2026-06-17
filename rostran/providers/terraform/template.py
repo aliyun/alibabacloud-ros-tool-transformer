@@ -1,7 +1,7 @@
 import os
 import linecache
 from uuid import uuid4
-from typing import Any
+from typing import Any, Optional, Tuple
 import typer
 from libterraform import TerraformCommand, TerraformConfig
 from libterraform.exceptions import TerraformCommandError
@@ -185,7 +185,7 @@ class TerraformTemplate(Template):
         cls,
         path: str,
         format: FileFormat = FileFormat.Terraform,
-        tf_plan_path: str = None,
+        tf_plan_path: Optional[str] = None,
     ):
         if format != FileFormat.Terraform:
             raise TemplateFormatNotSupport(path=path, format=format)
@@ -213,7 +213,7 @@ class TerraformTemplate(Template):
         )
 
     @classmethod
-    def _get_plan_data(cls, tf_dir, tf_plan_path=None) -> (dict, dict):
+    def _get_plan_data(cls, tf_dir, tf_plan_path=None) -> Tuple[dict, dict]:
         # Using "terraform plan/show" to parse configuration
         typer.secho("Parsing terraform config...")
         tf_plan = None
@@ -379,7 +379,10 @@ class TerraformTemplate(Template):
             raise ValueError(f"entity_type: {entity_type!r} not supported")
 
     def _parse_source_expr(
-        self, expr: dict, count_index: int = None, planned_resources: dict = None
+        self,
+        expr: dict,
+        count_index: Optional[int] = None,
+        planned_resources: Optional[dict] = None,
     ):
         data = None
         # Func
@@ -487,8 +490,8 @@ class TerraformTemplate(Template):
             tf_resource_props = tf_resource[self.PROPERTIES]
 
             # Get rule by resource type
-            resource_rule: ResourceRule = self.rule_manager.resource_rules.get(
-                tf_resource_type
+            resource_rule: Optional[ResourceRule] = (
+                self.rule_manager.resource_rules.get(tf_resource_type)
             )
             if resource_rule is None:
                 typer.secho(
@@ -641,7 +644,7 @@ class TerraformTemplate(Template):
 
             self._handle_props_and_value(sub_data, names[1:], value, _name_path)
 
-    def _transform_prop_or_attr(self, value) -> (Any, bool):
+    def _transform_prop_or_attr(self, value) -> Tuple[Any, bool]:
         if isinstance(value, list):
             data = []
             resolved = True
@@ -683,7 +686,7 @@ class TerraformTemplate(Template):
             if resource_id == resource[self.P_ADDRESS]:
                 tf_resource_type = resource[self.P_TYPE]
 
-        resource_rule: ResourceRule = self.rule_manager.resource_rules.get(
+        resource_rule: Optional[ResourceRule] = self.rule_manager.resource_rules.get(
             tf_resource_type
         )
         if tf_resource_type is None or resource_rule is None:
@@ -739,7 +742,7 @@ class TerraformTemplate(Template):
 
         return final_value
 
-    def _parse_outputs(self, planned_resources: dict = None):
+    def _parse_outputs(self, planned_resources: Optional[dict] = None):
         planned_outputs = {}
         raw_planned_outputs: dict = self.plan[self.P_PLANNED_VALUES].get(
             self.P_OUTPUTS, {}
@@ -762,8 +765,8 @@ class TerraformTemplate(Template):
     def _parse_output(
         self,
         source_output: dict,
-        planned_output: dict = None,
-        planned_resources: dict = None,
+        planned_output: Optional[dict] = None,
+        planned_resources: Optional[dict] = None,
     ):
         if planned_output is not None:
             return planned_output
