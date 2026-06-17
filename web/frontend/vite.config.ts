@@ -10,6 +10,16 @@ export default defineConfig({
     outDir: "../../rostran/web/static",
     emptyOutDir: true,
     assetsDir: "assets",
+    // Monaco's editor core is legitimately large; keep it in its own chunk for
+    // caching and lift the warning threshold above its real size.
+    chunkSizeWarningLimit: 3000,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("monaco-editor")) return "monaco";
+        },
+      },
+    },
   },
   server: {
     port: 5173,
