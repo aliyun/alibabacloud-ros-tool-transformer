@@ -1,10 +1,15 @@
 import json
+import os
 
 import pytest
 
 pytest.importorskip("fastapi")
 from fastapi.testclient import TestClient  # noqa: E402
 
+from rostran.core.format import (  # noqa: E402
+    SourceTemplateFormat,
+    TargetTemplateFormat,
+)
 from rostran.web.server import build_app  # noqa: E402
 from rostran.web import service  # noqa: E402
 
@@ -116,3 +121,37 @@ def test_rules_classifiers(client):
 def test_service_transform_no_files():
     with pytest.raises(service.TransformError):
         service.transform(files=[], source_format=None)  # type: ignore[arg-type]
+
+
+def test_transform_restores_cwd_between_calls(monkeypatch):
+    """libterraform changes the process cwd via terraform's -chdir; the service
+    must restore it so a later transform (e.g. a second Terraform run) does not
+    fail on os.getcwd() once the previous temp dir is gone."""
+    import rostran.cli.__main__ as cli
+
+    def fake_transform(*, source_path, target_path, **_kwargs):
+        # Simulate libterraform chdir-ing into the per-request temp dir.
+        os.chdir(os.path.dirname(source_path))
+        with open(target_path, "w") as f:
+            f.write("ROSTemplateFormatVersion: '2015-09-01'\n")
+
+    monkeypatch.setattr(cli, "transform", fake_transform)
+
+    before = os.getcwd()
+    res1 = service.transform(
+        files=[("t.json", b"{}")],
+        source_format=SourceTemplateFormat.CloudFormation,
+        target_format=TargetTemplateFormat.Yaml,
+    )
+    assert res1.targets
+    # Working directory restored and still valid after the temp dir is removed.
+    assert os.getcwd() == before
+
+    # A second transform must succeed rather than raising FileNotFoundError.
+    res2 = service.transform(
+        files=[("t.json", b"{}")],
+        source_format=SourceTemplateFormat.CloudFormation,
+        target_format=TargetTemplateFormat.Yaml,
+    )
+    assert res2.targets
+    assert os.getcwd() == before

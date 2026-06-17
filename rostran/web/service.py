@@ -185,6 +185,12 @@ def transform(
                 saved_env[key] = os.environ.get(key)
                 os.environ[key] = value
 
+            # Terraform parsing (via libterraform) runs terraform in-process
+            # with `-chdir=<tmp>`, which changes the whole process's working
+            # directory. Restore it afterwards so a later os.getcwd() does not
+            # fail once this temporary directory has been removed.
+            saved_cwd = os.getcwd()
+
             log_buf = io.StringIO()
             try:
                 with redirect_stdout(log_buf), redirect_stderr(log_buf):
@@ -208,6 +214,11 @@ def transform(
                     log_buf.getvalue(),
                 )
             finally:
+                # Restore the working directory before the temp dir is removed.
+                try:
+                    os.chdir(saved_cwd)
+                except OSError:
+                    pass
                 for key, value in saved_env.items():
                     if value is None:
                         os.environ.pop(key, None)
