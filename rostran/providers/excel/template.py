@@ -32,7 +32,7 @@ class ExcelTemplate(Template):
         return cls(source=source)
 
     def transform(self) -> List[RosTemplate]:
-        logger.info(f"Transform excel template to ROS template")
+        logger.info("Transform excel template to ROS template")
 
         # check column
         sheet: Worksheet = self.source.active

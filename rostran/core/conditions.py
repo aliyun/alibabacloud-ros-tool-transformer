@@ -19,7 +19,7 @@ class Condition:
         if not isinstance(self.name, str):
             raise InvalidTemplateCondition(
                 name=self.name,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if not isinstance(self.value, dict):
             raise InvalidTemplateCondition(
@@ -32,7 +32,7 @@ class Condition:
             if not isinstance(key, str):
                 raise InvalidTemplateCondition(
                     name=f"{self.name}.{key}",
-                    reason=f"The type should be str",
+                    reason="The type should be str",
                 )
             if key not in self.CONDITION_FUNCS:
                 raise InvalidTemplateCondition(

@@ -33,7 +33,7 @@ class MetaItem:
         if not isinstance(self.type, str):
             raise InvalidTemplateMetaDataItem(
                 name=self.type,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if self.type in (self.ROS_INTERFACE, self.ROS_DESIGNER) and not isinstance(
             self.value, dict

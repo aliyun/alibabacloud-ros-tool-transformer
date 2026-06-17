@@ -1,5 +1,5 @@
 import re
-from typing import Union, List, Iterable
+from typing import Union
 
 from openpyxl.cell.cell import Cell
 
@@ -150,7 +150,7 @@ class Parameter:
         if not isinstance(self.name, str):
             raise InvalidTemplateParameter(
                 name=self.name,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
 
         if self.type not in self.TYPES:

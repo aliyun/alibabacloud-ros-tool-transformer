@@ -97,22 +97,22 @@ class Resource:
         if not isinstance(self.resource_id, str):
             raise InvalidTemplateResource(
                 name=self.resource_id,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if not self.resource_id:
             raise InvalidTemplateResource(
                 name=self.resource_id,
-                reason=f"ResourceId should not be empty",
+                reason="ResourceId should not be empty",
             )
         if not isinstance(self.type, str):
             raise InvalidTemplateResource(
                 name=self.resource_id,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if not self.type:
             raise InvalidTemplateResource(
                 name=self.type,
-                reason=f"ResourceType should not be empty",
+                reason="ResourceType should not be empty",
             )
         if self.depends_on is not None and not isinstance(self.depends_on, (str, list)):
             raise InvalidTemplateResource(

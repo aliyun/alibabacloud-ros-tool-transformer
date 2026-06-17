@@ -37,7 +37,7 @@ class Output:
         if not isinstance(self.name, str):
             raise InvalidTemplateOutput(
                 name=self.name,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if self.value is None:
             raise InvalidTemplateOutput(

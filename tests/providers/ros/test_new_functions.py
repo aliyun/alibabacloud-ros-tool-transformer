@@ -1,5 +1,3 @@
-import os
-
 from rostran.providers.ros.template import ROS2TerraformTemplate
 from rostran.providers.ros.yaml_util import yaml
 from tests.providers.ros.test_transform_to_tf import TestROS2TF
@@ -169,11 +167,13 @@ def test_length_function():
     with TestROS2TF():
         template.transform()
 
+
 def _test_str_function():
     source = yaml.load(str_tpl)
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_join_function():
     source = yaml.load(join_tpl)
@@ -181,11 +181,13 @@ def _test_join_function():
     with TestROS2TF():
         template.transform()
 
+
 def _test_indent_function():
     source = yaml.load(indent_tpl)
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_split_function():
     source = yaml.load(split_tpl)
@@ -193,11 +195,13 @@ def _test_split_function():
     with TestROS2TF():
         template.transform()
 
+
 def _test_sub_function():
     source = yaml.load(sub_tpl)
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_replace_function():
     source = yaml.load(replace_tpl)
@@ -205,17 +209,20 @@ def _test_replace_function():
     with TestROS2TF():
         template.transform()
 
+
 def _test_get_az_function():
     source = yaml.load(get_az_tpl)
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
 
+
 def _test_index_function():
     source = yaml.load(index_tpl)
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_list_merge_function():
     list_merge_tpl = """
@@ -234,6 +241,7 @@ def _test_list_merge_function():
     with TestROS2TF():
         template.transform()
 
+
 def _test_get_json_value_function():
     get_json_value_tpl = """
     ROSTemplateFormatVersion: '2015-09-01'
@@ -248,6 +256,7 @@ def _test_get_json_value_function():
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_avg_function():
     avg_tpl = """
@@ -265,6 +274,7 @@ def _test_avg_function():
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_add_function():
     add_tpl = """
@@ -307,6 +317,7 @@ def _test_add_function():
     with TestROS2TF():
         template.transform()
 
+
 def _test_max_function():
     max_tpl = """
     ROSTemplateFormatVersion: '2015-09-01'
@@ -331,6 +342,7 @@ def _test_max_function():
     with TestROS2TF():
         template.transform()
 
+
 def _test_format_time_function():
     tpl = """
     ROSTemplateFormatVersion: '2015-09-01'
@@ -343,6 +355,7 @@ def _test_format_time_function():
     template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_mappings_function():
     mappings_tpl = """

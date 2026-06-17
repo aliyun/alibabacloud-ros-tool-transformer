@@ -51,7 +51,8 @@ binary = [
 ]
 dev = [
     "pytest",
-    "autopep8",
+    "ruff",
+    "ty",
     "pre-commit",
     "twine",
     "wheel",
@@ -60,7 +61,6 @@ dev = [
     "beautifulsoup4",
     "aliyun-python-sdk-core",
     "aliyun-python-sdk-ros",
-    "black",
     "pyyaml",
     "jsonref",
 ]
@@ -70,3 +70,13 @@ version = { attr = "rostran.__version__" }
 
 [tool.setuptools.packages.find]
 exclude = ["tests*"]
+
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint.per-file-ignores]
+# Re-exports in package __init__.py files are intentional.
+"__init__.py" = ["F401"]
+
+[tool.ty.src]
+exclude = ["tests", "templates", "terraform", "tools", "website", "build"]

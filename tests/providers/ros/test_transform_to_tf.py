@@ -11,7 +11,7 @@ RESULT_PATH = os.path.abspath("terraform/alicloud")
 ROS_TEMPLATE_DIR = os.path.abspath("ros_templates")
 
 
-tpl = '''
+tpl = """
 ROSTemplateFormatVersion: '2015-09-01'
 Parameters:
   PayType:
@@ -187,9 +187,9 @@ Outputs:
         - MyVSwitch
         - CidrBlock
     Description: The cidr block of vswitch.
-'''
+"""
 
-tpl_with_resources = '''
+tpl_with_resources = """
 ROSTemplateFormatVersion: '2015-09-01'
 Parameters:
   EnvType:
@@ -238,7 +238,7 @@ Outputs:
   VpcId3:
     Value: 
       Ref: Vpc3
-'''
+"""
 
 pseudo_parameter_tpl = """
 ROSTemplateFormatVersion: '2015-09-01'
@@ -332,13 +332,12 @@ Resources:
 
 
 class TestROS2TF:
-
     def __enter__(self):
         if not os.path.exists(RESULT_PATH):
             os.makedirs(RESULT_PATH, exist_ok=True)
         else:
             for filename in os.listdir(RESULT_PATH):
-                if filename.endswith('.tf'):
+                if filename.endswith(".tf"):
                     file_path = os.path.join(RESULT_PATH, filename)
                     os.unlink(file_path)
         tf = TerraformCommand(RESULT_PATH)
@@ -373,14 +372,15 @@ def _test_tpl_with_conditions():
 
 
 def _test_solution():
-    with open(f"{ROS_TEMPLATE_DIR}/technical_solution.yml", 'r') as f:
+    with open(f"{ROS_TEMPLATE_DIR}/technical_solution.yml", "r") as f:
         content = yaml.load(f)
     template = ROS2TerraformTemplate.initialize(content, validate=False)
     with TestROS2TF():
         template.transform()
 
+
 def _test_solution2():
-    with open(f"{ROS_TEMPLATE_DIR}/technical_solution2.yml", 'r') as f:
+    with open(f"{ROS_TEMPLATE_DIR}/technical_solution2.yml", "r") as f:
         content = yaml.load(f)
     template = ROS2TerraformTemplate.initialize(content, validate=False)
     with TestROS2TF():
@@ -388,7 +388,7 @@ def _test_solution2():
 
 
 def _test_template3():
-    with open(f"{ROS_TEMPLATE_DIR}/template3.yml", 'r') as f:
+    with open(f"{ROS_TEMPLATE_DIR}/template3.yml", "r") as f:
         content = yaml.load(f)
     template = ROS2TerraformTemplate.initialize(content, validate=False)
     with TestROS2TF():
@@ -404,9 +404,10 @@ def _test_tpl_pseudo_parameter():
 
 def _test_run_command():
     source = yaml.load(run_command_tpl)
-    template = ROS2TerraformTemplate.initialize(source,  validate=False)
+    template = ROS2TerraformTemplate.initialize(source, validate=False)
     with TestROS2TF():
         template.transform()
+
 
 def _test_security_group_tpl():
     source = yaml.load(security_group_tpl)
@@ -414,18 +415,22 @@ def _test_security_group_tpl():
     with TestROS2TF():
         template.transform()
 
+
 def _test_for_coverage():
     from alibabacloud_tea_openapi import models as open_api_models
     from alibabacloud_ros20190910.client import Client
     from alibabacloud_credentials.client import Client as CredClient
     from alibabacloud_ros20190910 import models
+
     ros_config = open_api_models.Config(credential=CredClient())
     ros_client = Client(ros_config)
-    request = models.ListResourceTypesRequest(entity_type='Resource', provider='ROS')
-    ret = ros_client.list_resource_types(request).to_map()['body']['ResourceTypes']
-    support_types = set([n for n in ret if '::ROS::' not in n])
-    root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+    request = models.ListResourceTypesRequest(entity_type="Resource", provider="ROS")
+    ret = ros_client.list_resource_types(request).to_map()["body"]["ResourceTypes"]
+    support_types = set([n for n in ret if "::ROS::" not in n])
+    root_dir = os.path.dirname(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    )
     ros_res_rules = os.path.join(root_dir, "rostran/rules/ros/resource")
     res_count = len([f for f in os.listdir(ros_res_rules)]) - 1
     print()
-    print(f'覆盖率为{res_count/len(support_types) * 100}%\n')
+    print(f"覆盖率为{res_count / len(support_types) * 100}%\n")

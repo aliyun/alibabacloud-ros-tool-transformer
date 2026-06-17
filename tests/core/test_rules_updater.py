@@ -1,11 +1,8 @@
 import errno
 import io
 import json
-import os
-import shutil
 import socket
 import tarfile
-import tempfile
 from unittest import mock
 from urllib import error
 
@@ -35,7 +32,9 @@ def temp_user_dir(tmp_path, monkeypatch):
 
     monkeypatch.setattr("rostran.core.rules_updater.USER_DATA_DIR", str(user_data))
     monkeypatch.setattr("rostran.core.rules_updater.USER_RULES_DIR", str(rules_dir))
-    monkeypatch.setattr("rostran.core.rules_updater.USER_RULES_META_FILE", str(meta_file))
+    monkeypatch.setattr(
+        "rostran.core.rules_updater.USER_RULES_META_FILE", str(meta_file)
+    )
 
     return {
         "user_data": user_data,
@@ -138,16 +137,17 @@ class TestHttpGetRetry:
         resp_ok.__exit__ = mock.Mock(return_value=False)
         resp_ok.read.return_value = b'{"latest": "1.0.0", "versions": {}}'
 
-        with mock.patch(
-            "rostran.core.rules_updater.request.urlopen",
-            side_effect=[
-                error.URLError(socket.timeout("timed out")),
-                error.URLError(socket.timeout("timed out")),
-                resp_ok,
-            ],
-        ) as mock_urlopen, mock.patch(
-            "rostran.core.rules_updater.time.sleep"
-        ) as mock_sleep:
+        with (
+            mock.patch(
+                "rostran.core.rules_updater.request.urlopen",
+                side_effect=[
+                    error.URLError(socket.timeout("timed out")),
+                    error.URLError(socket.timeout("timed out")),
+                    resp_ok,
+                ],
+            ) as mock_urlopen,
+            mock.patch("rostran.core.rules_updater.time.sleep") as mock_sleep,
+        ):
             out = ru._http_get("https://example.com/x")
             assert '{"latest":' in out
             assert mock_urlopen.call_count == 3
@@ -156,11 +156,12 @@ class TestHttpGetRetry:
     def test_fails_after_six_timeout_attempts(self):
         from rostran.core import rules_updater as ru
 
-        with mock.patch(
-            "rostran.core.rules_updater.request.urlopen",
-            side_effect=error.URLError(socket.timeout()),
-        ) as mock_urlopen, mock.patch(
-            "rostran.core.rules_updater.time.sleep"
+        with (
+            mock.patch(
+                "rostran.core.rules_updater.request.urlopen",
+                side_effect=error.URLError(socket.timeout()),
+            ) as mock_urlopen,
+            mock.patch("rostran.core.rules_updater.time.sleep"),
         ):
             with pytest.raises(RulesUpdateError, match="Cannot reach remote"):
                 ru._http_get("https://example.com/x")
@@ -169,14 +170,15 @@ class TestHttpGetRetry:
     def test_no_retry_on_non_timeout_urlerror(self):
         from rostran.core import rules_updater as ru
 
-        with mock.patch(
-            "rostran.core.rules_updater.request.urlopen",
-            side_effect=error.URLError(
-                OSError(errno.ECONNREFUSED, "Connection refused")
-            ),
-        ) as mock_urlopen, mock.patch(
-            "rostran.core.rules_updater.time.sleep"
-        ) as mock_sleep:
+        with (
+            mock.patch(
+                "rostran.core.rules_updater.request.urlopen",
+                side_effect=error.URLError(
+                    OSError(errno.ECONNREFUSED, "Connection refused")
+                ),
+            ) as mock_urlopen,
+            mock.patch("rostran.core.rules_updater.time.sleep") as mock_sleep,
+        ):
             with pytest.raises(RulesUpdateError, match="Cannot reach remote"):
                 ru._http_get("https://example.com/x")
             assert mock_urlopen.call_count == 1
@@ -216,15 +218,18 @@ class TestUpdateRules:
             if url.endswith(".tar.gz"):
                 return tarball_data
             return ""
+
         return side_effect
 
     def test_update_to_latest(self, temp_user_dir):
-        tarball = _make_rules_tarball({
-            "VERSIONS.json": json.dumps(
-                {"latest": "2.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
-            ),
-            "terraform/alicloud/vpc.yml": "Version: '2020-06-01'\nType: Resource\n",
-        })
+        tarball = _make_rules_tarball(
+            {
+                "VERSIONS.json": json.dumps(
+                    {"latest": "2.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
+                ),
+                "terraform/alicloud/vpc.yml": "Version: '2020-06-01'\nType: Resource\n",
+            }
+        )
 
         with mock.patch(
             "rostran.core.rules_updater._http_get",
@@ -234,15 +239,20 @@ class TestUpdateRules:
             assert "2.0.0" in msg
             assert has_user_rules()
             assert get_local_rules_version() == "2.0.0"
-            assert (temp_user_dir["rules_dir"] / "terraform" / "alicloud" / "vpc.yml").exists()
+            assert (
+                temp_user_dir["rules_dir"] / "terraform" / "alicloud" / "vpc.yml"
+            ).exists()
 
     def test_update_to_specific_version(self, temp_user_dir):
-        tarball = _make_rules_tarball({
-            "VERSIONS.json": json.dumps(
-                {"latest": "1.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
-            ),
-            "terraform/alicloud/vpc.yml": "data",
-        }, prefix="repo-b7935bb")
+        tarball = _make_rules_tarball(
+            {
+                "VERSIONS.json": json.dumps(
+                    {"latest": "1.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
+                ),
+                "terraform/alicloud/vpc.yml": "data",
+            },
+            prefix="repo-b7935bb",
+        )
 
         with mock.patch(
             "rostran.core.rules_updater._http_get",
@@ -273,11 +283,13 @@ class TestUpdateRules:
     def test_update_force_redownloads(self, temp_user_dir):
         _write_meta({"version": "2.0.0"})
 
-        tarball = _make_rules_tarball({
-            "VERSIONS.json": json.dumps(
-                {"latest": "2.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
-            ),
-        })
+        tarball = _make_rules_tarball(
+            {
+                "VERSIONS.json": json.dumps(
+                    {"latest": "2.0.0", "versions": FAKE_VERSIONS_JSON["versions"]}
+                ),
+            }
+        )
 
         with mock.patch(
             "rostran.core.rules_updater._http_get",

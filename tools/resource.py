@@ -27,7 +27,7 @@ class RosResource:
                 resp = self.client.get_resource_type(req)
                 break
             except TeaException as e:
-                if e.code != 'Throttling.User' or i == 3:
+                if e.code != "Throttling.User" or i == 3:
                     raise e
                 time.sleep(10)
         if resp:
@@ -137,7 +137,7 @@ class TerraformResource:
             p = run("asty go2json", input=code, shell=True, stdout=f)
             if p.returncode != 0:
                 raise exceptions.RosToolWarning(
-                    message=f'Run `{p.args}` failed. Reason: {p.stderr.decode("utf-8")}'
+                    message=f"Run `{p.args}` failed. Reason: {p.stderr.decode('utf-8')}"
                 )
             f.seek(0)
             self._ast = json.loads(f.read())

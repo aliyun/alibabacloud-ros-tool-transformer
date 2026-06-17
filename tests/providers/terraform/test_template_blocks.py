@@ -2,7 +2,15 @@ import json
 import textwrap
 
 from rostran.providers.terraform.template_blocks import (
-    QuotedString, NumberType, NullType, BooleanType, JsonType, CommentType, Block, Variable, Resource
+    QuotedString,
+    NumberType,
+    NullType,
+    BooleanType,
+    JsonType,
+    CommentType,
+    Block,
+    Variable,
+    Resource,
 )
 
 
@@ -32,7 +40,7 @@ def test_base_block():
     block = Block(
         "resource",
         (QuotedString("alicloud_vpc"), QuotedString("vpc")),
-        {"vpc_name": QuotedString("test-name")}
+        {"vpc_name": QuotedString("test-name")},
     )
     result = block.render()
     assert result == 'resource "alicloud_vpc" "vpc" {\n  vpc_name = "test-name"\n}'
@@ -44,11 +52,16 @@ def test_base_block():
   }
 }"""
 
-    nested_block = Block("data_disks", arguments={"category": QuotedString("cloud_essd")})
+    nested_block = Block(
+        "data_disks", arguments={"category": QuotedString("cloud_essd")}
+    )
     block = Block(
         "resource",
         ("alicloud_instance", "instance"),
-        {"system_disk_category": QuotedString("cloud_essd"), "data_disks": nested_block},
+        {
+            "system_disk_category": QuotedString("cloud_essd"),
+            "data_disks": nested_block,
+        },
     )
     assert block.render() == expect_block
 
@@ -72,11 +85,16 @@ def test_blocks():
 }"""
     assert var.render() == expect_var
 
-    tags = Block("tags", arguments={"key1": QuotedString("value1"), "key2": QuotedString("value2")})
+    tags = Block(
+        "tags",
+        arguments={"key1": QuotedString("value1"), "key2": QuotedString("value2")},
+    )
     props = {
         "cidr_block": QuotedString("192.168.0.0/16"),
         "tags": tags,
-        "security_groups": JsonType({"key1": QuotedString("value1"), "key2": QuotedString("value2")})
+        "security_groups": JsonType(
+            {"key1": QuotedString("value1"), "key2": QuotedString("value2")}
+        ),
     }
 
     res = Resource("my_demo_vpc", "alicloud_vpc", props)

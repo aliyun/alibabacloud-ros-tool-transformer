@@ -10,7 +10,12 @@ import typer
 
 from tools import exceptions
 from tools.formatter import RuleFormatter
-from tools.generator import TerraformRuleGenerator, CloudFormationRuleGenerator, ROS2TerraformRuleGenerator, MULTIPLE_MAPPINGS_PATH
+from tools.generator import (
+    TerraformRuleGenerator,
+    CloudFormationRuleGenerator,
+    ROS2TerraformRuleGenerator,
+    MULTIPLE_MAPPINGS_PATH,
+)
 from tools.settings import TF_ALI_ROS_GENERATE_MAPPINGS, CF_ROS_GENERATE_MAPPINGS
 
 from tools.settings import TF_ALI_RULES_DIR, CF_RESOURCE_RULES_DIR
@@ -33,11 +38,10 @@ def generate(
         "",
         help="The resource type of Cloud Formation. 'all' represents all types of resources.",
     ),
-
     ros2tf: bool = typer.Option(
         False,
-        '--ros2tf',
-        '-R',
+        "--ros2tf",
+        "-R",
         help="Generate rules from Terraform to ROS.",
     ),
 ):
@@ -52,14 +56,14 @@ def generate(
     if ros2tf:
         cf = None
         if not ros:
-            ros = 'all'
+            ros = "all"
         if not tf:
-            tf = 'all'
+            tf = "all"
     if not ros:
         raise exceptions.RosToolException(message="Please supply --ros")
     elif not any((tf, cf)):
         raise exceptions.RosToolException(message="Please supply --tf/--cf")
-    elif all((tf, cf)) and tf != 'all' and cf != 'all':
+    elif all((tf, cf)) and tf != "all" and cf != "all":
         raise exceptions.RosToolException(
             message="Please supply --tf or --cf, but not both"
         )
@@ -74,14 +78,16 @@ def generate(
                 )
             else:
                 typer.echo(
-                    f"Env TERRAFORM_PROVIDER_ALICLOUD not found. "
-                    f"The rule generator will use the alicloud provider on github as the source to parse."
+                    "Env TERRAFORM_PROVIDER_ALICLOUD not found. "
+                    "The rule generator will use the alicloud provider on github as the source to parse."
                 )
 
-        if tf == 'all' and ros == 'all':
+        if tf == "all" and ros == "all":
             generate_mapping = TF_ALI_ROS_GENERATE_MAPPINGS
-        elif tf == 'all' and ros != 'all':
-            generate_mapping = {t: r for t, r in TF_ALI_ROS_GENERATE_MAPPINGS.items() if r == ros}
+        elif tf == "all" and ros != "all":
+            generate_mapping = {
+                t: r for t, r in TF_ALI_ROS_GENERATE_MAPPINGS.items() if r == ros
+            }
         else:
             r = TF_ALI_ROS_GENERATE_MAPPINGS.get(tf)
             if not r:

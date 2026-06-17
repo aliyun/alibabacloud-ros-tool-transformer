@@ -125,9 +125,7 @@ def generate_extra_sections(rule_manager, lang="en"):
         if lang == "en":
             heading = "## AssociationProperty\n\nFor transform of CloudFormation AssociationProperty, the following are supported:"
         else:
-            heading = (
-                "## AssociationProperty\n\nCloudFormation AssociationProperty 转换支持如下："
-            )
+            heading = "## AssociationProperty\n\nCloudFormation AssociationProperty 转换支持如下："
         table = generate_simple_table(data, "CloudFormation", "ROS")
         sections.append(f"{heading}\n\n{table}")
 

@@ -41,8 +41,8 @@ def camel_to_snake(name):
 
 def camel_to_tf(name):
     value = camel_to_snake(name)
-    if '.' in value:
-        value = value.replace('.', '_')
+    if "." in value:
+        value = value.replace(".", "_")
     return value
 
 

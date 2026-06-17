@@ -1,7 +1,7 @@
 import json
 import os
 import shutil
-from typing import Dict, List, Optional, Union
+from typing import Dict, Optional, Union
 
 import yaml
 import boto3
@@ -15,7 +15,8 @@ from tools.settings import (
     TF_ALI_RULES_DIR,
     CF_ROS_PROP_MAPPINGS,
     CF_RESOURCE_RULES_DIR,
-    ROS_RESOURCE_RULES_DIR, TF_ALI_DEPRECATED_PROPERTIES
+    ROS_RESOURCE_RULES_DIR,
+    TF_ALI_DEPRECATED_PROPERTIES,
 )
 from tools.resource import RosResource, TerraformResource, CloudFormationResource
 from tools.utils import snake_to_camel, camel_to_snake
@@ -43,8 +44,7 @@ class BaseRuleGenerator:
         self,
         from_resource: Union[TerraformResource, CloudFormationResource, RosResource],
         to_resource: Union[TerraformResource, RosResource],
-        ros2tf: bool = False
-
+        ros2tf: bool = False,
     ):
         self.from_resource = from_resource
         self.to_resource = to_resource
@@ -328,13 +328,8 @@ class CloudFormationRuleGenerator(BaseRuleGenerator):
 
 
 class ROS2TerraformRuleGenerator(BaseRuleGenerator):
-
     @classmethod
-    def initialize(
-        cls,
-        from_resource_type: str,
-        to_resource_type: str
-    ):
+    def initialize(cls, from_resource_type: str, to_resource_type: str):
         tf_resource = TerraformResource(to_resource_type)
         ros_config = open_api_models.Config(
             credential=CredClient(),
@@ -350,7 +345,9 @@ class ROS2TerraformRuleGenerator(BaseRuleGenerator):
             if value.get("Ignore"):
                 continue
             schema_key = value.get("To")
-            tf_deprecated_props = TF_ALI_DEPRECATED_PROPERTIES.get(self.to_resource.resource_type)
+            tf_deprecated_props = TF_ALI_DEPRECATED_PROPERTIES.get(
+                self.to_resource.resource_type
+            )
             if tf_deprecated_props and key in tf_deprecated_props:
                 continue
             if not isinstance(schema_key, str):
@@ -385,7 +382,9 @@ class ROS2TerraformRuleGenerator(BaseRuleGenerator):
                     continue
             elif schema_type == "List":
                 try:
-                    ros_res_schema = ros_res_section[schema_key]["Schema"]["*"]["Schema"]
+                    ros_res_schema = ros_res_section[schema_key]["Schema"]["*"][
+                        "Schema"
+                    ]
                 except KeyError:
                     continue
             else:

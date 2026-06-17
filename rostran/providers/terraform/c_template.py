@@ -20,8 +20,15 @@ from rostran.providers.ros.yaml_util import yaml
 
 
 class CompatibleTerraformTemplate(Template):
-
-    DEFAULT_FILE_PATTERNS = ("*.tf", "*.tftpl", "*.tfvars", "*.metadata", "*.mappings", "*.conditions", "*.rules")
+    DEFAULT_FILE_PATTERNS = (
+        "*.tf",
+        "*.tftpl",
+        "*.tfvars",
+        "*.metadata",
+        "*.mappings",
+        "*.conditions",
+        "*.rules",
+    )
 
     def __init__(self, source, *args, **kwargs):
         super().__init__(source, args, kwargs)
@@ -58,16 +65,20 @@ class CompatibleTerraformTemplate(Template):
             exist_content = cls.read_exist_file(exist_file_path)
         else:
             exist_content = None
-        return cls(source=source, exist_content=exist_content, force_overwrite=force_overwrite)
+        return cls(
+            source=source, exist_content=exist_content, force_overwrite=force_overwrite
+        )
 
     @staticmethod
     def read_exist_file(exist_file_path):
         if not os.path.exists(exist_file_path):
             raise InvalidTargetFile(
-                target_file=exist_file_path, reason="the file is not exists.")
+                target_file=exist_file_path, reason="the file is not exists."
+            )
         if not os.path.isfile(exist_file_path):
             raise InvalidTargetFile(
-                target_file=exist_file_path, reason="it is not a file.")
+                target_file=exist_file_path, reason="it is not a file."
+            )
         try:
             with open(exist_file_path) as f:
                 try:
@@ -78,7 +89,10 @@ class CompatibleTerraformTemplate(Template):
         except Exception as ex:
             raise InvalidTargetFile(
                 target_file=exist_file_path,
-                reason="the file needs to be in json or yaml format. Error: {}".format(str(ex)))
+                reason="the file needs to be in json or yaml format. Error: {}".format(
+                    str(ex)
+                ),
+            )
         return exist_content
 
     @classmethod
@@ -87,6 +101,7 @@ class CompatibleTerraformTemplate(Template):
 
         def file_absolutes(p: str) -> list:
             return [str(f.absolute()) for f in dir_path.rglob(p) if f.is_file()]
+
         if extra_files and "*" in extra_files:
             return file_absolutes("*")
 
@@ -99,18 +114,30 @@ class CompatibleTerraformTemplate(Template):
         return matched_files
 
     def transform(self) -> RosTemplate:
-        typer.secho(f"Transforming terraform template to ROS template...")
+        typer.secho("Transforming terraform template to ROS template...")
 
         template = RosTemplate()
         template.transform = "Aliyun::Terraform-v1.5"
         template.workspace = Workspace.initialize(self.source)
         if self.exist_content:
-            template.outputs =  Outputs.initialize(self.exist_content.pop("Outputs", None) or {})
-            template.metadata = MetaData.initialize(self.exist_content.pop("Metadata", None) or {})
-            template.parameters = Parameters.initialize(self.exist_content.pop("Parameters", None) or {})
-            template.rules = Rules.initialize(self.exist_content.pop("Rules", None) or {})
-            template.mappings = Mappings.initialize(self.exist_content.pop("Mappings", None) or {})
-            template.conditions = Conditions.initialize(self.exist_content.pop("Conditions", None) or {})
+            template.outputs = Outputs.initialize(
+                self.exist_content.pop("Outputs", None) or {}
+            )
+            template.metadata = MetaData.initialize(
+                self.exist_content.pop("Metadata", None) or {}
+            )
+            template.parameters = Parameters.initialize(
+                self.exist_content.pop("Parameters", None) or {}
+            )
+            template.rules = Rules.initialize(
+                self.exist_content.pop("Rules", None) or {}
+            )
+            template.mappings = Mappings.initialize(
+                self.exist_content.pop("Mappings", None) or {}
+            )
+            template.conditions = Conditions.initialize(
+                self.exist_content.pop("Conditions", None) or {}
+            )
             transform = self.exist_content.pop("Transform", None)
             if transform:
                 template.transform = transform
@@ -125,7 +152,7 @@ class CompatibleTerraformTemplate(Template):
                 template.additional_data = self.exist_content
 
         typer.secho(
-            f"Transform terraform template to ROS template successful.",
+            "Transform terraform template to ROS template successful.",
             fg="green",
         )
         return template

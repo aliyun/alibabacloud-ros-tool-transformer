@@ -77,4 +77,4 @@ def test_template():
 
     for i, t in enumerate(ros_templates):
         d = t.as_dict()
-        assert d == globals().get(f"tpl{i+1}")
+        assert d == globals().get(f"tpl{i + 1}")

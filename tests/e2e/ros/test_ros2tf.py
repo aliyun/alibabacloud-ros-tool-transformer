@@ -16,14 +16,13 @@ from rostran.providers.ros.yaml_util import yaml
 
 
 class RosPlugin:
-
     def __init__(self):
-        self.ros_client = Client(
-            open_api_models.Config(credential=CredClient())
-        )
+        self.ros_client = Client(open_api_models.Config(credential=CredClient()))
 
     def list_resource_types(self):
-        request = models.ListResourceTypesRequest(entity_type="Resource", provider="ROS")
+        request = models.ListResourceTypesRequest(
+            entity_type="Resource", provider="ROS"
+        )
         response = self.ros_client.list_resource_types(request)
         return response.to_map()
 
@@ -31,7 +30,7 @@ class RosPlugin:
         request = models.GetResourceTypeTemplateRequest(resource_type=resource_type)
         response = self.ros_client.get_resource_type_template(request)
         ret = response.to_map()
-        return ret['body']['TemplateBody']
+        return ret["body"]["TemplateBody"]
 
 
 def get_supported_resource_types(rule_classifier=None):
@@ -41,14 +40,14 @@ def get_supported_resource_types(rule_classifier=None):
     supported_resources = res_rules.keys()
     return tuple(supported_resources)
 
+
 def _test_statistical_conversion_rate():
     ros_plugin = RosPlugin()
     all_ros_types = ros_plugin.list_resource_types()["body"]["ResourceTypes"]
     all_ros_count = len(all_ros_types)
     ros2tf = get_supported_resource_types()
     ros2tf_count = len(ros2tf)
-    print(f"ROS2TF: {ros2tf_count/all_ros_count}")
-
+    print(f"ROS2TF: {ros2tf_count / all_ros_count}")
 
 
 def _test_all_resource_types(resource_type: str = None):
@@ -77,7 +76,9 @@ def _test_all_resource_types(resource_type: str = None):
             tf.init()
             tf.validate(check=True)
             data = RosTemplate.initialize(template).as_dict(format=True)
-            with open(os.path.join(resource_path, "template.yml"), "w", encoding="utf-8") as f:
+            with open(
+                os.path.join(resource_path, "template.yml"), "w", encoding="utf-8"
+            ) as f:
                 yaml.dump(data, f)
             with open(success_resource_path, "a") as f:
                 f.write(f"{res_type}\n")
@@ -85,7 +86,9 @@ def _test_all_resource_types(resource_type: str = None):
             print(f"{dir_name} {res_type} failed: {e.stdout}")
         except RosTranException as e:
             print(f"{dir_name} {res_type} failed: {e}")
-            with open(os.path.join(resource_path, "template.yml"), "w", encoding="utf-8") as f:
+            with open(
+                os.path.join(resource_path, "template.yml"), "w", encoding="utf-8"
+            ) as f:
                 yaml.dump(template, f)
         except Exception as e:
             print(f"{dir_name} {res_type} failed: {e}")

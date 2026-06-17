@@ -6,6 +6,7 @@ class BaseReporter:
     """
     Base class for all transformation reporters.
     """
+
     def __init__(self):
         self.resources_supported: Set[str] = set()
         self.resources_unsupported: Set[str] = set()
@@ -29,9 +30,9 @@ class BaseReporter:
         self.outputs_section()
         self.manual_handling_section()
 
-        typer.secho("\n" + "="*60, fg="blue")
+        typer.secho("\n" + "=" * 60, fg="blue")
         typer.secho("Conversion completed successfully!", fg="green", bold=True)
-        typer.secho("="*60 + "\n\n", fg="blue")
+        typer.secho("=" * 60 + "\n\n", fg="blue")
 
     def resources_section(self):
         """
@@ -39,12 +40,17 @@ class BaseReporter:
         """
         if not self.resources_supported and not self.resources_unsupported:
             return
-        typer.secho(f"\nRESOURCES:", fg="blue", bold=True)
+        typer.secho("\nRESOURCES:", fg="blue", bold=True)
         total_count = len(self.resources_supported) + len(self.resources_unsupported)
         typer.secho(f"  • Total resources processed: {total_count}", fg="blue")
-        typer.secho(f"  • Successfully transformed: {len(self.resources_supported)}", fg="green")
+        typer.secho(
+            f"  • Successfully transformed: {len(self.resources_supported)}", fg="green"
+        )
         if self.resources_unsupported:
-            typer.secho(f"  • Unsupported resources: {', '.join(self.resources_unsupported)}", fg="yellow")
+            typer.secho(
+                f"  • Unsupported resources: {', '.join(self.resources_unsupported)}",
+                fg="yellow",
+            )
 
     def properties_section(self):
         """
@@ -90,28 +96,40 @@ class ROS2TerraformReporter(BaseReporter):
         The Properties section of the transformation report.
         """
         if self.properties_unsupported or self.properties_failed:
-            typer.secho(f"\nPROPERTIES:", fg="blue", bold=True)
+            typer.secho("\nPROPERTIES:", fg="blue", bold=True)
             if self.properties_unsupported:
-                typer.secho(f" • The following properties of ROS resources are not supported "
-                            f"by Terraform: {', '.join(self.properties_unsupported)}", fg="yellow")
+                typer.secho(
+                    f" • The following properties of ROS resources are not supported "
+                    f"by Terraform: {', '.join(self.properties_unsupported)}",
+                    fg="yellow",
+                )
             if self.properties_failed:
-                typer.secho(f" • The following properties of ROS resources are "
-                            f"transformed failed: {', '.join(self.properties_failed)}", fg="yellow")
+                typer.secho(
+                    f" • The following properties of ROS resources are "
+                    f"transformed failed: {', '.join(self.properties_failed)}",
+                    fg="yellow",
+                )
 
     def outputs_section(self):
         """
         The Outputs section of the transformation report.
         """
         if self.outputs_failed:
-            typer.secho(f"\nOUTPUTS:", fg="blue", bold=True)
-            typer.secho(f" • The following outputs of ROS template are "
-                        f"transformed failed: {', '.join(self.outputs_failed)}", fg="yellow")
+            typer.secho("\nOUTPUTS:", fg="blue", bold=True)
+            typer.secho(
+                f" • The following outputs of ROS template are "
+                f"transformed failed: {', '.join(self.outputs_failed)}",
+                fg="yellow",
+            )
 
     def manual_handling_section(self):
         """
         The manual handling required of the transformation report.
         """
         if self.properties_failed or self.outputs_failed:
-            typer.secho(f"\nMANUAL HANDLING REQUIRED:", fg="blue", bold=True)
-            typer.secho(f"  • Please manually handle the failed properties or outputs "
-                        f"which are commented in templates", fg="yellow")
+            typer.secho("\nMANUAL HANDLING REQUIRED:", fg="blue", bold=True)
+            typer.secho(
+                "  • Please manually handle the failed properties or outputs "
+                "which are commented in templates",
+                fg="yellow",
+            )

@@ -43,7 +43,7 @@ def test_template_with_2_level():
 
 def test_template_with_extra_files():
     path = os.path.join(TERRAFORM_PROVIDER_DIR, "extra-files")
-    template = CompatibleTerraformTemplate.initialize(path, extra_files=['*'])
+    template = CompatibleTerraformTemplate.initialize(path, extra_files=["*"])
     ros_template = template.transform()
     d = ros_template.as_dict(format=True)
 
@@ -55,7 +55,9 @@ def test_template_with_extra_files():
     assert workspace.get(".metadata")
     assert workspace.get("charts/example/Chart.yaml")
 
-    template = CompatibleTerraformTemplate.initialize(path, extra_files=['*.txt', '*.yaml'])
+    template = CompatibleTerraformTemplate.initialize(
+        path, extra_files=["*.txt", "*.yaml"]
+    )
     ros_template = template.transform()
     d = ros_template.as_dict(format=True)
 
@@ -65,10 +67,12 @@ def test_template_with_extra_files():
     assert workspace.get(".metadata")
     assert workspace.get("charts/example/Chart.yaml")
 
+
 def test_template_with_target_path():
     target_path = os.path.join(TERRAFORM_ALICLOUD_DIR, "ros-meta.yaml")
     template = CompatibleTerraformTemplate.initialize(
-        TERRAFORM_ALICLOUD_DIR, exist_file_path=target_path)
+        TERRAFORM_ALICLOUD_DIR, exist_file_path=target_path
+    )
     ros_template = template.transform()
     d = ros_template.as_dict(format=True)
 

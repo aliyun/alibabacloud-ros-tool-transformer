@@ -17,7 +17,7 @@ tpl = {
                 "Period": 1,
                 "PortCount": 50,
                 "ServiceBandwidth": 100,
-                "ServicePartner": "ddoscoo"
+                "ServicePartner": "ddoscoo",
             },
         }
     },

@@ -261,7 +261,7 @@ class ResourceRule(Rule):
         attributes,
         target_resource_type=None,
         handler=None,
-        built_in_properties=None
+        built_in_properties=None,
     ):
         super().__init__(version, type, rule_id)
         self.properties = properties
@@ -299,7 +299,7 @@ class ResourceRule(Rule):
             attributes,
             target_resource_type,
             handler_func,
-            built_in_properties
+            built_in_properties,
         )
 
 

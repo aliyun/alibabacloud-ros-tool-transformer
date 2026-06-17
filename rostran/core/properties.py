@@ -47,7 +47,7 @@ class Property:
         if not isinstance(self.name, str):
             raise InvalidTemplateProperty(
                 name=self.name,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
 
     def as_dict(self, format=False):

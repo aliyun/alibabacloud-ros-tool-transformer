@@ -39,9 +39,15 @@ def convert_value_for_func(value, ignore_map_key=False):
         return tf.JsonType(values)
     elif isinstance(value, dict):
         if ignore_map_key:
-            values = {k: convert_value_for_func(v, ignore_map_key=True) for k, v in value.items()}
+            values = {
+                k: convert_value_for_func(v, ignore_map_key=True)
+                for k, v in value.items()
+            }
         else:
-            values = {convert_value_for_func(k): convert_value_for_func(v) for k, v in value.items()}
+            values = {
+                convert_value_for_func(k): convert_value_for_func(v)
+                for k, v in value.items()
+            }
         return tf.JsonType(values)
     return tf.LiteralType(value)
 
@@ -57,12 +63,16 @@ def ref(ros2tf: "ROS2TerraformTemplate", args: str):
         resource = ros2tf.resources[args]
         resource_rule = ros2tf.get_resource_rule(resource.get("Type"))
         if resource_rule is None:
-            return tf.CommentType(f"Could not find resource rule for {resource.get('Type')}. Args: {args}")
+            return tf.CommentType(
+                f"Could not find resource rule for {resource.get('Type')}. Args: {args}"
+            )
         tf_res_type = resource_rule.target_resource_type
         if args in ros2tf.resources_with_count:
             tf_item = f"{tf_res_type}.{tf_value}[*].id"
-            return tf.LiteralType(f"length({tf_item}) > 0 ? {tf_item} : {tf.NullType()}")
-        return tf.LiteralType(f'{tf_res_type}.{tf_value}.id')
+            return tf.LiteralType(
+                f"length({tf_item}) > 0 ? {tf_item} : {tf.NullType()}"
+            )
+        return tf.LiteralType(f"{tf_res_type}.{tf_value}.id")
     return tf.LiteralType(f'"{args}"')
 
 
@@ -82,12 +92,12 @@ def get_att(ros2tf: "ROS2TerraformTemplate", args: list):
     if not rule_attr:
         return tf.CommentType(msg)
 
-    tf_attr = rule_attr.get(att_name, {}).get('To')
+    tf_attr = rule_attr.get(att_name, {}).get("To")
     # If $$0 variant exists, it represents the newer (non-deprecated) field mapping,
     # prefer it over the base (deprecated) mapping.
     dollar_key = f"{att_name}$$0"
     if dollar_key in rule_attr:
-        dollar_to = rule_attr[dollar_key].get('To')
+        dollar_to = rule_attr[dollar_key].get("To")
         if dollar_to:
             tf_attr = dollar_to
     if not tf_attr:
@@ -97,7 +107,7 @@ def get_att(ros2tf: "ROS2TerraformTemplate", args: list):
         tf_item = f"{tf_res_type}.{tf_res_name}[*].{tf_attr}"
         return tf.LiteralType(f"length({tf_item}) > 0 ? {tf_item} : {tf.NullType()}")
 
-    return tf.LiteralType(f'{tf_res_type}.{tf_res_name}.{tf_attr}')
+    return tf.LiteralType(f"{tf_res_type}.{tf_res_name}.{tf_attr}")
 
 
 def equals(ros2tf: "ROS2TerraformTemplate", tf_args: list):
@@ -131,7 +141,7 @@ def sub_(ros2tf: "ROS2TerraformTemplate", args: Union[str, list]):
     else:
         sub_string, sub_mapping = args, {}
 
-    pattern = re.compile(r'\$\{([^!][^}]*)}')
+    pattern = re.compile(r"\$\{([^!][^}]*)}")
     keys = pattern.findall(sub_string)
     mapping = {}
     for k in keys:
@@ -188,7 +198,7 @@ def select_(ros2tf: "ROS2TerraformTemplate", args: list):
 
 def jq_(ros2tf: "ROS2TerraformTemplate", args: list):
     method, script, data = args
-    if method != 'First':
+    if method != "First":
         return tf.LiteralType(args)
 
     unsupported_characters = ("|", " ", "&", "{", "(")
@@ -196,7 +206,7 @@ def jq_(ros2tf: "ROS2TerraformTemplate", args: list):
         if c in script:
             return tf.LiteralType(args)
 
-    script = script.replace('.[', '[')
+    script = script.replace(".[", "[")
     if isinstance(data, tf.TerraformType):
         value = data.value
     else:
@@ -206,7 +216,7 @@ def jq_(ros2tf: "ROS2TerraformTemplate", args: list):
 
 
 def index_(ros2tf: "ROS2TerraformTemplate", args):
-    return tf.LiteralType(f"count.index")
+    return tf.LiteralType("count.index")
 
 
 def stack_id_(ros2tf: "ROS2TerraformTemplate", args):
@@ -217,7 +227,9 @@ def no_value_(ros2tf: "ROS2TerraformTemplate", args):
     return tf.NullType()
 
 
-def _data_for_pseudo_param(ros2tf: "ROS2TerraformTemplate", tf_res_type, name_prefix, arguments=None):
+def _data_for_pseudo_param(
+    ros2tf: "ROS2TerraformTemplate", tf_res_type, name_prefix, arguments=None
+):
     pseudo_res = ros2tf.data_for_pseudo_param
     if tf_res_type not in pseudo_res:
         tf_name = f"{name_prefix}_for_pseudo_parameter_{uuid.uuid4().hex[:8]}"
@@ -226,31 +238,43 @@ def _data_for_pseudo_param(ros2tf: "ROS2TerraformTemplate", tf_res_type, name_pr
         tf_name = pseudo_res[tf_res_type].name
     return tf_name
 
+
 def account_id_(ros2tf: "ROS2TerraformTemplate", args):
-    tf_name = _data_for_pseudo_param(ros2tf, "alicloud_caller_identity", "caller_identity")
+    tf_name = _data_for_pseudo_param(
+        ros2tf, "alicloud_caller_identity", "caller_identity"
+    )
     return tf.LiteralType(f"data.alicloud_caller_identity.{tf_name}.account_id")
 
 
 def tenant_id_(ros2tf: "ROS2TerraformTemplate", args):
-    tf_name = _data_for_pseudo_param(ros2tf, "alicloud_caller_identity", "caller_identity")
+    tf_name = _data_for_pseudo_param(
+        ros2tf, "alicloud_caller_identity", "caller_identity"
+    )
     return tf.LiteralType(f"data.alicloud_caller_identity.{tf_name}.id")
 
 
 def resource_group_id_(ros2tf: "ROS2TerraformTemplate", args):
     tf_res_type = "alicloud_resource_manager_resource_groups"
-    tf_name = _data_for_pseudo_param(ros2tf, tf_res_type, "resource_group_id",
-                                     {"name_regex": tf.QuotedString("default")})
+    tf_name = _data_for_pseudo_param(
+        ros2tf,
+        tf_res_type,
+        "resource_group_id",
+        {"name_regex": tf.QuotedString("default")},
+    )
     return tf.LiteralType(f"data.{tf_res_type}.{tf_name}.ids[0]")
 
 
 def region_(ros2tf: "ROS2TerraformTemplate", args):
     tf_res_type = "alicloud_regions"
-    tf_name = _data_for_pseudo_param(ros2tf, tf_res_type, "current_region",
-                                     {"current": tf.BooleanType(True)})
+    tf_name = _data_for_pseudo_param(
+        ros2tf, tf_res_type, "current_region", {"current": tf.BooleanType(True)}
+    )
     return tf.LiteralType(f"data.{tf_res_type}.{tf_name}.ids[0]")
 
 
-def handle_tags(ros2tf: "ROS2TerraformTemplate", args: Any, tag_key="Key", tag_value="Value"):
+def handle_tags(
+    ros2tf: "ROS2TerraformTemplate", args: Any, tag_key="Key", tag_value="Value"
+):
     if isinstance(args, tf.LiteralType):
         return args
     if isinstance(args, tf.TerraformType):
@@ -325,11 +349,22 @@ def handle_dict_value(ros2tf: "ROS2TerraformTemplate", args: Any, key: str):
     return None
 
 
-POST_PAID = ['PayAsYouGo', 'PostPaid', 'PayOnDemand', 'Postpaid', 'PostPay', 'Postpay', 'POSTPAY', 'POST']
-PRE_PAID = ['Subscription', 'PrePaid', 'Prepaid', 'PrePay', 'Prepay', 'PREPAY', 'PRE']
+POST_PAID = [
+    "PayAsYouGo",
+    "PostPaid",
+    "PayOnDemand",
+    "Postpaid",
+    "PostPay",
+    "Postpay",
+    "POSTPAY",
+    "POST",
+]
+PRE_PAID = ["Subscription", "PrePaid", "Prepaid", "PrePay", "Prepay", "PREPAY", "PRE"]
 
 
-def handle_pay_type(ros2tf: "ROS2TerraformTemplate", args: str, pay_as_you_go, subscription):
+def handle_pay_type(
+    ros2tf: "ROS2TerraformTemplate", args: str, pay_as_you_go, subscription
+):
     if isinstance(args, tf.LiteralType):
         return args
     if isinstance(args, tf.TerraformType):
@@ -394,7 +429,9 @@ def find_in_map(ros2tf: "ROS2TerraformTemplate", args: list):
 
     args = convert_value_for_func(args).value
     map_name, top_key, second_key = args
-    return tf.LiteralType(f"local.{ros2tf.mappings_name_in_local}[{map_name}][{top_key}][{second_key}]")
+    return tf.LiteralType(
+        f"local.{ros2tf.mappings_name_in_local}[{map_name}][{top_key}][{second_key}]"
+    )
 
 
 def join_(ros2tf: "ROS2TerraformTemplate", tf_args: list):
@@ -458,7 +495,7 @@ def list_merge(ros2tf: "ROS2TerraformTemplate", args: list):
         return tf.LiteralType(args)
 
     args = convert_value_for_func(args).value
-    arg_str = ', '.join([str(i) for i in args])
+    arg_str = ", ".join([str(i) for i in args])
     return tf.LiteralType(f"concat({arg_str})")
 
 
@@ -473,19 +510,23 @@ def get_json_value(ros2tf: "ROS2TerraformTemplate", tf_args: list):
 
 
 def merge_map_to_list(ros2tf: "ROS2TerraformTemplate", args: list):
-    return tf.CommentType(f"Terraform does not support Fn::MergeMapToList function. Args: {args}")
+    return tf.CommentType(
+        f"Terraform does not support Fn::MergeMapToList function. Args: {args}"
+    )
 
 
 def avg_(ros2tf: "ROS2TerraformTemplate", args: list):
     if len(args) != 2:
         return tf.LiteralType(args)
-    _, numbers =  args
+    _, numbers = args
     numbers = convert_value_for_func(numbers)
     return tf.LiteralType(f"sum({numbers}) / length({numbers})")
 
 
 def select_map_list(ros2tf: "ROS2TerraformTemplate", args: Any):
-    return tf.CommentType(f"Terraform does not support Fn::SelectMapList function. Args: {args}")
+    return tf.CommentType(
+        f"Terraform does not support Fn::SelectMapList function. Args: {args}"
+    )
 
 
 def add_(ros2tf: "ROS2TerraformTemplate", args: list):
@@ -521,23 +562,27 @@ def add_(ros2tf: "ROS2TerraformTemplate", args: list):
             type_ = "unknown"
 
     if type_ == "list":
-        arg_str = ', '.join([i.render() for i in args])
+        arg_str = ", ".join([i.render() for i in args])
         return tf.LiteralType(f"concat({arg_str})")
     elif type_ == "map":
-        arg_str = ', '.join([str(i) for i in args])
+        arg_str = ", ".join([str(i) for i in args])
         return tf.LiteralType(f"merge({arg_str})")
     elif type_ == "string":
         arg_str = f"[{', '.join(i.render() for i in args)}]"
         return tf.LiteralType(f'join("", {arg_str})')
     elif type_ == "number":
-        args_str = '+ '.join([str(i) for i in args])
+        args_str = "+ ".join([str(i) for i in args])
         return tf.LiteralType(args_str)
     else:
-        return tf.CommentType(f"Terraform does not support Fn::Add function. Args: {args}")
+        return tf.CommentType(
+            f"Terraform does not support Fn::Add function. Args: {args}"
+        )
 
 
 def calculate(ros2tf: "ROS2TerraformTemplate", args: Any):
-    return tf.CommentType(f"Terraform does not support Fn::Calculate function. Args: {args}")
+    return tf.CommentType(
+        f"Terraform does not support Fn::Calculate function. Args: {args}"
+    )
 
 
 def max_fn(ros2tf: "ROS2TerraformTemplate", args: list):
@@ -551,7 +596,9 @@ def min_fn(ros2tf: "ROS2TerraformTemplate", args: list):
 
 
 def get_stack_output(ros2tf: "ROS2TerraformTemplate", args: Any):
-    return tf.CommentType(f"Terraform does not support Fn::GetStackOutput function. Args: {args}")
+    return tf.CommentType(
+        f"Terraform does not support Fn::GetStackOutput function. Args: {args}"
+    )
 
 
 def format_time(ros2tf: "ROS2TerraformTemplate", args: Union[list, str]):
@@ -561,22 +608,22 @@ def format_time(ros2tf: "ROS2TerraformTemplate", args: Union[list, str]):
         args = [args]
     format_string = args[0]
     replace_map = {
-        '%y': 'YY',
-        '%Y': 'YYYY',
-        '%m': 'MM',
-        '%d': 'DD',
-        '%H': 'hh',
-        '%I': 'HH',
-        '%M': 'mm',
-        '%S': 'ss',
-        '%a': 'EEE',
-        '%A': 'EEEE',
-        '%b': 'MMM',
-        '%B': 'MMMM',
-        '%c': 'DD MMM YYYY hh:mm ZZZ',
-        '%p': 'AA',
-        '%Z': 'ZZZ',
-        '%z': 'ZZZZ'
+        "%y": "YY",
+        "%Y": "YYYY",
+        "%m": "MM",
+        "%d": "DD",
+        "%H": "hh",
+        "%I": "HH",
+        "%M": "mm",
+        "%S": "ss",
+        "%a": "EEE",
+        "%A": "EEEE",
+        "%b": "MMM",
+        "%B": "MMMM",
+        "%c": "DD MMM YYYY hh:mm ZZZ",
+        "%p": "AA",
+        "%Z": "ZZZ",
+        "%z": "ZZZZ",
     }
     if isinstance(format_string, str):
         for k, v in replace_map.items():
@@ -586,7 +633,9 @@ def format_time(ros2tf: "ROS2TerraformTemplate", args: Union[list, str]):
 
 
 def marketplace_image(ros2tf: "ROS2TerraformTemplate", args: Any):
-    return tf.CommentType(f"Terraform does not support Fn::GetStackOutput function. Args: {args}")
+    return tf.CommentType(
+        f"Terraform does not support Fn::GetStackOutput function. Args: {args}"
+    )
 
 
 def _is_image_id_literal(value):
@@ -617,7 +666,11 @@ def handle_image_id(ros2tf: "ROS2TerraformTemplate", args: Any):
     else:
         name_regex = args
 
-    cache_key = name_regex.render() if isinstance(name_regex, tf.TerraformType) else str(name_regex)
+    cache_key = (
+        name_regex.render()
+        if isinstance(name_regex, tf.TerraformType)
+        else str(name_regex)
+    )
     if cache_key in ros2tf.image_data_sources:
         tf_name = ros2tf.image_data_sources[cache_key]
     else:
@@ -671,6 +724,7 @@ def cidr(ros2tf: "ROS2TerraformTemplate", tf_args: list):
     ip_block, count, cidr_bits = tf_args
     return tf.LiteralType(f"cidrsubnets({ip_block}, {cidr_bits}, {count})")
 
+
 ALL_FUNCTIONS = {
     "Ref": ref,
     "Fn::GetAtt": get_att,
@@ -717,5 +771,5 @@ ALL_FUNCTIONS = {
     "Fn::Contains": contains,
     "Fn::EachMemberIn": each_member_in,
     "Fn::MatchPattern": match_pattern,
-    "Fn::Cidr": cidr
+    "Fn::Cidr": cidr,
 }

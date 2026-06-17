@@ -67,6 +67,7 @@ class RulesUpdateError(Exception):
 # Local metadata / version helpers
 # ---------------------------------------------------------------------------
 
+
 def _read_meta() -> dict:
     if os.path.isfile(USER_RULES_META_FILE):
         with open(USER_RULES_META_FILE) as f:
@@ -111,6 +112,7 @@ def get_builtin_rules_version() -> Optional[str]:
 # HTTP helpers
 # ---------------------------------------------------------------------------
 
+
 def _urlerror_is_timeout(exc: error.URLError) -> bool:
     """True if this error is worth retrying (connection timed out, read timeout)."""
     r = exc.reason
@@ -136,9 +138,7 @@ def _http_get(url: str, headers: dict = None, decode: bool = True):
                 data = resp.read()
                 return data.decode() if decode else data
         except error.HTTPError as exc:
-            raise RulesUpdateError(
-                f"HTTP request failed ({exc.code}): {url}"
-            ) from exc
+            raise RulesUpdateError(f"HTTP request failed ({exc.code}): {url}") from exc
         except error.URLError as exc:
             if _urlerror_is_timeout(exc) and attempt < max_attempts - 1:
                 logger.warning(
@@ -150,14 +150,13 @@ def _http_get(url: str, headers: dict = None, decode: bool = True):
                 )
                 time.sleep(min(2**attempt, 8))
                 continue
-            raise RulesUpdateError(
-                f"Cannot reach remote: {exc.reason}"
-            ) from exc
+            raise RulesUpdateError(f"Cannot reach remote: {exc.reason}") from exc
 
 
 # ---------------------------------------------------------------------------
 # Remote version discovery
 # ---------------------------------------------------------------------------
+
 
 def _fetch_remote_versions_json() -> dict:
     """Fetch the VERSIONS.json from the remote main branch."""
@@ -192,12 +191,14 @@ def fetch_available_versions() -> List[Dict]:
     versions_data = _fetch_remote_versions_json()
     result = []
     for ver, info in versions_data.get("versions", {}).items():
-        result.append({
-            "version": ver,
-            "commit": info.get("commit", ""),
-            "date": info.get("date", ""),
-            "description": info.get("description", ""),
-        })
+        result.append(
+            {
+                "version": ver,
+                "commit": info.get("commit", ""),
+                "date": info.get("date", ""),
+                "description": info.get("description", ""),
+            }
+        )
     return result
 
 
@@ -221,6 +222,7 @@ def _resolve_commit_for_version(version: str) -> str:
 # ---------------------------------------------------------------------------
 # Download & extraction
 # ---------------------------------------------------------------------------
+
 
 def _download_and_extract_rules(ref: str) -> str:
     """Download the repo archive for *ref* (branch or commit SHA) and
@@ -247,9 +249,16 @@ def _download_and_extract_rules(ref: str) -> str:
             rules_prefix_slash = rules_prefix + "/"
 
             for member in tf.getmembers():
-                if not (member.name == rules_prefix or member.name.startswith(rules_prefix_slash)):
+                if not (
+                    member.name == rules_prefix
+                    or member.name.startswith(rules_prefix_slash)
+                ):
                     continue
-                rel = os.path.relpath(member.name, archive_prefix) if archive_prefix else member.name
+                rel = (
+                    os.path.relpath(member.name, archive_prefix)
+                    if archive_prefix
+                    else member.name
+                )
                 inner_rel = os.path.relpath(rel, RULES_ARCHIVE_INNER_PATH)
                 if inner_rel == ".":
                     continue
@@ -278,6 +287,7 @@ def _read_version_from_dir(rules_dir: str) -> Optional[str]:
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
+
 
 def update_rules(version: Optional[str] = None, force: bool = False) -> str:
     """Download rules for a given version (or the latest) and cache locally.

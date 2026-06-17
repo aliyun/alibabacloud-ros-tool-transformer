@@ -10,7 +10,7 @@ else
   UV_PYTHON =
 endif
 
-.PHONY: help init test check build-binary clean clean-pyc clean-build clean-test publish
+.PHONY: help init test lint format check build-binary clean clean-pyc clean-build clean-test publish
 
 help: ## Show this help message.
 	@awk 'BEGIN {FS = ":.*## "; printf "Usage: make <target>\n\n"} /^[a-zA-Z0-9_-]+:.*## / {printf "\033[32m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -22,6 +22,15 @@ init: ## Init environment for ros-tran. Use PY=3.x to specify Python version via
 
 test: ## Run tests.
 	uv run pytest tests
+
+lint: ## Lint code with ruff and type-check with ty.
+	uv run ruff check .
+	uv run ruff format --check .
+	uv run ty check
+
+format: ## Format code and auto-fix lint issues with ruff.
+	uv run ruff check --fix .
+	uv run ruff format .
 
 check: ## Run pre-commit to check code style and auto format.
 	uv run pre-commit run --all-files

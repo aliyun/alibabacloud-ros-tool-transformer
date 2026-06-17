@@ -17,7 +17,6 @@ from rostran.core import exceptions
 from rostran.core.format import (
     SourceTemplateFormat,
     TargetTemplateFormat,
-    GeneratorFileFormat,
     convert_template_to_file_format,
     FileFormat,
 )
@@ -136,14 +135,17 @@ def transform(
         elif source_path.endswith((".json", ".yaml", ".yml")):
             try:
                 from rostran.providers.ros.yaml_util import yaml
+
                 with open(source_path, "r") as f:
                     tpl = yaml.load(f)
             except YAMLError:
                 raise exceptions.InvalidTemplate(path=source_path)
-            ros_flag = tpl.get('ROSTemplateFormatVersion') == '2015-09-01'
+            ros_flag = tpl.get("ROSTemplateFormatVersion") == "2015-09-01"
             ros_tf = tpl.get("Transform")
             ros_tf_flag = False
-            if isinstance(ros_tf, str) and ros_tf.startswith(("Aliyun::Terraform", "Aliyun::OpenTofu")):
+            if isinstance(ros_tf, str) and ros_tf.startswith(
+                ("Aliyun::Terraform", "Aliyun::OpenTofu")
+            ):
                 ros_tf_flag = True
 
             if ros_flag and ros_tf_flag:
@@ -157,7 +159,10 @@ def transform(
 
     # handle target template
     if not target_path:
-        if target_format == TargetTemplateFormat.Auto and source_format == SourceTemplateFormat.ROS:
+        if (
+            target_format == TargetTemplateFormat.Auto
+            and source_format == SourceTemplateFormat.ROS
+        ):
             target_format = TargetTemplateFormat.Terraform
             target_path = "terraform/alicloud"
         elif target_format == TargetTemplateFormat.Terraform:
@@ -175,7 +180,10 @@ def transform(
         elif target_path.endswith(".json"):
             target_format = TargetTemplateFormat.Json
         else:
-            if source_format not in (SourceTemplateFormat.ROS, SourceTemplateFormat.ROSTerraform):
+            if source_format not in (
+                SourceTemplateFormat.ROS,
+                SourceTemplateFormat.ROSTerraform,
+            ):
                 raise exceptions.TemplateNotSupport(path=target_path)
 
     target_path = os.path.abspath(target_path)
@@ -218,6 +226,7 @@ def transform(
     elif source_format == SourceTemplateFormat.ROS:
         from rostran.providers.ros.template import ROS2TerraformTemplate
         from rostran.providers.ros.yaml_util import yaml
+
         if tpl is None:
             if not source_path or not source_path.endswith((".json", ".yaml", ".yml")):
                 raise exceptions.TemplateNotSupport(path=source_path)
@@ -372,16 +381,21 @@ def _show_rules_version():
     builtin_ver = get_builtin_rules_version()
 
     if has_user_rules() and local_ver:
-        typer.secho("Rules source : local cache (~/.rostran/rules/)", fg=typer.colors.BLUE)
+        typer.secho(
+            "Rules source : local cache (~/.rostran/rules/)", fg=typer.colors.BLUE
+        )
         typer.secho(f"Rules version: {local_ver}", fg=typer.colors.GREEN)
         if builtin_ver:
             typer.secho(f"Built-in ver : {builtin_ver}", fg=typer.colors.BRIGHT_BLACK)
     else:
-        typer.secho("Rules source : built-in (shipped with package)", fg=typer.colors.BLUE)
+        typer.secho(
+            "Rules source : built-in (shipped with package)", fg=typer.colors.BLUE
+        )
         if builtin_ver:
             typer.secho(f"Rules version: {builtin_ver}", fg=typer.colors.GREEN)
         else:
             from rostran import __version__
+
             typer.secho(f"Package ver  : {__version__}", fg=typer.colors.GREEN)
 
 

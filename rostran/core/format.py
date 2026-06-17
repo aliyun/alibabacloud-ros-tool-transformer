@@ -37,7 +37,7 @@ def convert_template_to_file_format(template_format, template_path: str = None):
         elif template_format in (
             SourceTemplateFormat.CloudFormation,
             SourceTemplateFormat.ROSTerraform,
-            SourceTemplateFormat.ROS
+            SourceTemplateFormat.ROS,
         ):
             if template_path:
                 if template_path.endswith((".yml", ".yaml")):

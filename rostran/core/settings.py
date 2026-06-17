@@ -26,8 +26,6 @@ RULES_RAW_URL_TEMPLATE = (
     "https://raw.githubusercontent.com/{owner}/{repo}/{ref}/rostran/rules/{file}"
 )
 # GitHub archive URL pattern (supports branch names and commit SHAs)
-RULES_ARCHIVE_URL_TEMPLATE = (
-    "https://github.com/{owner}/{repo}/archive/{ref}.tar.gz"
-)
+RULES_ARCHIVE_URL_TEMPLATE = "https://github.com/{owner}/{repo}/archive/{ref}.tar.gz"
 # Path inside the archive where rules live
 RULES_ARCHIVE_INNER_PATH = "rostran/rules"

@@ -1,7 +1,6 @@
 import re
 import os
 import json
-import importlib
 
 import typer
 from ruamel.yaml import YAML
@@ -98,7 +97,7 @@ class CloudFormationTemplate(Template):
         return cls(source=source, rule_manager=rule_manager)
 
     def transform(self):
-        typer.secho(f"Transforming CloudFormation template to ROS template...")
+        typer.secho("Transforming CloudFormation template to ROS template...")
 
         if self.source.get("Transform"):
             raise CloudFormationTransformNotSupported()
@@ -114,7 +113,7 @@ class CloudFormationTemplate(Template):
         self._transform_meta_data(template.metadata)
 
         typer.secho(
-            f"Transform CloudFormation template to ROS template successful.",
+            "Transform CloudFormation template to ROS template successful.",
             fg="green",
         )
         return template
@@ -503,5 +502,5 @@ class CloudFormationTemplate(Template):
                     fg="yellow",
                 )
                 continue
-            value = value.replace(param_ref, f'${{{rule_props["To"]}}}')
+            value = value.replace(param_ref, f"${{{rule_props['To']}}}")
         return value

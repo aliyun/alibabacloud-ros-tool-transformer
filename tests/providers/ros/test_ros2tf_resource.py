@@ -103,7 +103,7 @@ def write_summary(summary_path: str, summary: dict):
             f.write(f"- **Error**: {summary['error']}\n")
         if summary.get("validate"):
             f.write(f"- **Validate**: {summary['validate']}\n")
-        f.write(f"\n## Generated Terraform Files\n\n")
+        f.write("\n## Generated Terraform Files\n\n")
         for fname, content in summary.get("tf_files", {}).items():
             f.write(f"### {fname}\n\n```hcl\n{content}\n```\n\n")
 
@@ -142,7 +142,7 @@ def transform_and_report(
         ros2tf = ROS2TerraformTemplate.initialize(template, validate=False)
         ros2tf.transform(output_dir, single_file=single_file)
         summary["status"] = "TRANSFORM_SUCCESS"
-        print(f"\n  [OK] Transformation succeeded")
+        print("\n  [OK] Transformation succeeded")
     except RosTranException as e:
         summary["status"] = "TRANSFORM_FAILED"
         summary["error"] = str(e)
@@ -210,15 +210,18 @@ def main():
     )
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument(
-        "--resource-type", "-r",
+        "--resource-type",
+        "-r",
         help="ROS resource type, e.g. ALIYUN::ECS::Instance. Fetches template from ROS API.",
     )
     group.add_argument(
-        "--template-path", "-t",
+        "--template-path",
+        "-t",
         help="Path to a ROS template file. Relative paths are resolved under downloads/ros-templates.",
     )
     parser.add_argument(
-        "--output-dir", "-o",
+        "--output-dir",
+        "-o",
         default=str(DEFAULT_OUTPUT_DIR),
         help=f"Base output directory (default: {DEFAULT_OUTPUT_DIR}).",
     )

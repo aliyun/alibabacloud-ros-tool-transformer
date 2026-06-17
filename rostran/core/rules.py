@@ -1,5 +1,4 @@
 from rostran.core.exceptions import (
-    InvalidTemplateMetaDataItem,
     InvalidTemplateRules,
     InvalidTemplateRule,
 )
@@ -27,7 +26,7 @@ class Rule:
         if not isinstance(self.name, str):
             raise InvalidTemplateRule(
                 name=self.name,
-                reason=f"The type should be str",
+                reason="The type should be str",
             )
         if not isinstance(self.value, dict):
             raise InvalidTemplateRule(
@@ -40,7 +39,7 @@ class Rule:
             if not isinstance(key, str):
                 raise InvalidTemplateRule(
                     name=f"{self.name}.{key}",
-                    reason=f"The type should be str",
+                    reason="The type should be str",
                 )
             if key not in self.RULE_KEYS:
                 raise InvalidTemplateRule(

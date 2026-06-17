@@ -42,8 +42,8 @@ class QuotedString(TerraformType):
         value = self.value
         if '"' in self.value:
             value = value.replace('"', '\\"')
-        if '\n' in self.value:
-            value = value.replace('\n', '\\n')
+        if "\n" in self.value:
+            value = value.replace("\n", "\\n")
         return f'"{value}"'
 
 
@@ -76,7 +76,10 @@ class BooleanType(TerraformType):
 
 @dataclass
 class JsonType(TerraformType):
-    value: Union[List[Union[TerraformType, "Block"]], Dict[Union[TerraformType, str], TerraformType]]
+    value: Union[
+        List[Union[TerraformType, "Block"]],
+        Dict[Union[TerraformType, str], TerraformType],
+    ]
 
     def _is_simple_list(self) -> bool:
         if not isinstance(self.value, list):
@@ -123,6 +126,7 @@ class JsonType(TerraformType):
 
         return result
 
+
 @dataclass
 class ListOneLineType(TerraformType):
     value: list
@@ -130,8 +134,8 @@ class ListOneLineType(TerraformType):
     def render(self, _: int = 0) -> str:
         rendered = []
         for i in self.value:
-            v = i.render() if hasattr(i, 'render') else i
-            rendered.append(v.render() if hasattr(v, 'render') else str(v))
+            v = i.render() if hasattr(i, "render") else i
+            rendered.append(v.render() if hasattr(v, "render") else str(v))
         return f"[{', '.join(rendered)}]"
 
 
@@ -147,7 +151,7 @@ class CommentType(TerraformType):
 
 def normalize_value(value: Any):
     if isinstance(value, TerraformType):
-        value =  value.value
+        value = value.value
     if isinstance(value, list):
         return [normalize_value(item) for item in value]
     elif isinstance(value, dict):
@@ -155,7 +159,9 @@ def normalize_value(value: Any):
     return value
 
 
-def convert_to_tf_type(value: Any, type_: Optional[str] = None) -> Optional[TerraformType]:
+def convert_to_tf_type(
+    value: Any, type_: Optional[str] = None
+) -> Optional[TerraformType]:
     if isinstance(value, TerraformType):
         return value
     if type_ is None:
@@ -189,12 +195,17 @@ def convert_to_tf_type(value: Any, type_: Optional[str] = None) -> Optional[Terr
         return LiteralType(value)
 
 
-BlockLabel = Tuple[Union[str, QuotedString,], ...]
+BlockLabel = Tuple[
+    Union[
+        str,
+        QuotedString,
+    ],
+    ...,
+]
 Arguments = Dict[str, Union[TerraformType, "Block"]]
 
 
 class Block:
-
     def __init__(
         self,
         block_type: str,
@@ -229,7 +240,9 @@ class Block:
 
             for name, value in self.arguments.items():
                 if self.block_type == "resource" and name == "count":
-                    specific_args.append(f"{indent_spacing}{name} = {value.render(indent)}")
+                    specific_args.append(
+                        f"{indent_spacing}{name} = {value.render(indent)}"
+                    )
                     continue
 
                 if isinstance(value, Block):
@@ -239,11 +252,15 @@ class Block:
                 elif isinstance(value, JsonType):
                     json_args.append(f"{indent_spacing}{name} = {value.render(indent)}")
                 elif isinstance(value, TerraformType):
-                    common_args.append(f"{indent_spacing}{name} = {value.render(indent)}")
+                    common_args.append(
+                        f"{indent_spacing}{name} = {value.render(indent)}"
+                    )
                 else:
                     common_args.append(f"{indent_spacing}{name} = {value}")
 
-            all_args = specific_args + comment_args + common_args + json_args + block_args
+            all_args = (
+                specific_args + comment_args + common_args + json_args + block_args
+            )
             args = "\n".join(all_args)
         return f"{space}{self.block_type}{label_space}{labels} {{{newline}{args}{newline}{space}}}"
 
@@ -266,10 +283,7 @@ class Locals(Block):
 
 class Data(Block):
     def __init__(
-        self,
-        name: str,
-        block_type: str,
-        arguments: Optional[Dict[str, Any]] = None
+        self, name: str, block_type: str, arguments: Optional[Dict[str, Any]] = None
     ) -> None:
         self.name = name
         self.block_type = block_type
@@ -278,7 +292,9 @@ class Data(Block):
 
 
 class Resource(Block):
-    def __init__(self, name: str, res_type: str, arguments: Dict[str, Any] = None) -> None:
+    def __init__(
+        self, name: str, res_type: str, arguments: Dict[str, Any] = None
+    ) -> None:
         self.name = name
         self.res_type = res_type
         label = (QuotedString(res_type), QuotedString(name))
@@ -289,5 +305,3 @@ class Output(Block):
     def __init__(self, name: str, arguments: Dict[str, Any]) -> None:
         self.name = name
         super().__init__("output", (QuotedString(self.name),), arguments)
-
-
