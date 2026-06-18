@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^7.15.2",
+    "@mantine/hooks": "^7.15.2",
     "@monaco-editor/react": "^4.6.0",
+    "@tabler/icons-react": "^3.26.0",
     "jszip": "^3.10.1",
     "monaco-editor": "^0.52.2",
     "react": "^18.3.1",

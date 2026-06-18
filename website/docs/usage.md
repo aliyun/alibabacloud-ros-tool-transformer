@@ -175,6 +175,52 @@ rostran rules update --force
 rostran rules reset
 ```
 
+## Start Web Service
+
+Start a local web service to use the transformer from a browser. It provides a
+dual-pane editor for converting CloudFormation / Terraform / Excel / ROS
+templates, formatting ROS templates, and browsing transform rules — all without
+the command line.
+
+This feature requires the optional `serve` dependencies:
+
+```bash
+pip install "alibabacloud-ros-tran[serve]"
+```
+
+### Command
+
+```bash
+rostran serve [OPTIONS]
+```
+
+By default this starts the service at `http://127.0.0.1:8080` and opens it in
+your browser.
+
+#### OPTIONS
+
+The following options are supported:
+
+- `--host`/`-h`: The host to bind the web service to. Defaults to `127.0.0.1`.
+  Use `0.0.0.0` to expose it on the network.
+- `--port`/`-p`: The port to bind the web service to. Defaults to `8080`.
+- `--open`: [Default] Open the web UI in a browser after starting.
+- `--no-open`: Do not open a browser after starting.
+- `--reload`: Enable auto-reload for development.
+
+#### Examples
+
+```bash
+# Start with defaults (binds 127.0.0.1:8080 and opens the browser)
+rostran serve
+
+# Bind a custom host and port
+rostran serve --host 0.0.0.0 --port 9000
+
+# Start without opening a browser
+rostran serve --no-open
+```
+
 ## View Help Information
 
 ### Command

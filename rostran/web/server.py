@@ -4,7 +4,9 @@ The app serves a JSON API under ``/api`` and the pre-built single-page frontend
 (bundled in ``rostran/web/static``) for everything else.
 """
 
+import asyncio
 import json
+import os
 from pathlib import Path
 from typing import List
 
@@ -14,7 +16,7 @@ from . import examples as examples_mod
 from . import service
 
 STATIC_DIR = Path(__file__).parent / "static"
-MAX_UPLOAD_BYTES = 5 * 1024 * 1024  # 5 MiB per request
+MAX_UPLOAD_BYTES = 16 * 1024 * 1024  # 16 MiB per request
 
 
 class MissingDependencies(RuntimeError):
@@ -38,7 +40,7 @@ def build_app():
 
     from fastapi import FastAPI, File, Form, HTTPException, UploadFile
     from fastapi.middleware.cors import CORSMiddleware
-    from fastapi.responses import JSONResponse, FileResponse
+    from fastapi.responses import JSONResponse, FileResponse, StreamingResponse
     from fastapi.staticfiles import StaticFiles
     from starlette.concurrency import run_in_threadpool
 
@@ -79,6 +81,11 @@ def build_app():
     @api.get("/health")
     def health():
         return {"status": "ok"}
+
+    @api.get("/credentials")
+    def credentials():
+        info = service.detect_credentials()
+        return {"available": info["available"], "source": info["source"]}
 
     @api.post("/transform")
     async def transform(
@@ -125,7 +132,7 @@ def build_app():
                 target_format=tgt_fmt,
                 compatible=bool(opts.get("compatible", False)),
                 extra_files=opts.get("extra_files"),
-                credentials=opts.get("credentials"),
+                validate=bool(opts.get("validate", False)),
             )
         except service.TransformError as e:
             return _error(422, e.message, e.error_type, e.log)
@@ -141,6 +148,115 @@ def build_app():
             ],
             "log": result.log,
         }
+
+    def _sse(event: str, data: dict) -> str:
+        return f"event: {event}\ndata: {json.dumps(data)}\n\n"
+
+    def _result_payload(result) -> dict:
+        return {
+            "targets": [
+                {
+                    "filename": t.filename,
+                    "content": t.content,
+                    "is_binary": t.is_binary,
+                }
+                for t in result.targets
+            ],
+            "log": result.log,
+        }
+
+    @api.post("/transform/stream")
+    async def transform_stream(
+        source_format: str = Form(...),
+        target_format: str = Form("auto"),
+        options: str = Form("{}"),
+        files: List[UploadFile] = File(...),
+    ):
+        """Same as /transform but streams log output live via Server-Sent
+        Events: `log` events while running, then a final `result` or `error`."""
+        early_error = None
+        src_fmt = tgt_fmt = None
+        opts: dict = {}
+        payload: List = []
+        try:
+            src_fmt = SourceTemplateFormat(source_format)
+            tgt_fmt = TargetTemplateFormat(target_format)
+        except ValueError:
+            early_error = ("InvalidRequest", "Invalid source or target format.")
+        if early_error is None:
+            try:
+                opts = json.loads(options or "{}")
+            except json.JSONDecodeError:
+                early_error = ("InvalidRequest", "Invalid options JSON.")
+        if early_error is None:
+            total = 0
+            for upload in files:
+                data = await upload.read()
+                total += len(data)
+                if total > MAX_UPLOAD_BYTES:
+                    early_error = ("PayloadTooLarge", "Upload too large.")
+                    break
+                payload.append((upload.filename or "source", data))
+
+        loop = asyncio.get_running_loop()
+        queue: asyncio.Queue = asyncio.Queue()
+
+        def on_log(text: str):
+            loop.call_soon_threadsafe(queue.put_nowait, ("log", text))
+
+        async def event_gen():
+            if early_error is not None:
+                yield _sse("error", {"type": early_error[0], "message": early_error[1]})
+                return
+
+            async def worker():
+                assert src_fmt is not None and tgt_fmt is not None
+                try:
+                    result = await run_in_threadpool(
+                        service.transform,
+                        files=payload,
+                        source_format=src_fmt,
+                        target_format=tgt_fmt,
+                        compatible=bool(opts.get("compatible", False)),
+                        extra_files=opts.get("extra_files"),
+                        validate=bool(opts.get("validate", False)),
+                        on_log=on_log,
+                    )
+                    await queue.put(("result", result))
+                except service.TransformError as e:
+                    await queue.put(("error", e))
+                except Exception as e:  # noqa: BLE001
+                    await queue.put(
+                        ("error", service.TransformError(str(e), e.__class__.__name__))
+                    )
+
+            task = asyncio.create_task(worker())
+            try:
+                while True:
+                    kind, item = await queue.get()
+                    if kind == "log":
+                        yield _sse("log", {"text": item})
+                    elif kind == "result":
+                        yield _sse("result", _result_payload(item))
+                        break
+                    else:
+                        yield _sse(
+                            "error",
+                            {
+                                "type": item.error_type,
+                                "message": item.message,
+                                "log": item.log,
+                            },
+                        )
+                        break
+            finally:
+                await task
+
+        return StreamingResponse(
+            event_gen(),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+        )
 
     @api.post("/format")
     async def format_template(
@@ -215,6 +331,29 @@ def build_app():
     return app
 
 
+def _preload_libterraform():
+    """Initialize the libterraform Go runtime before uvicorn installs its signal
+    handlers.
+
+    libterraform is a Go c-shared library; the Go runtime hijacks the SIGINT
+    handler the first time it is loaded, which would stop Ctrl+C from ever
+    reaching uvicorn once a transform has used Terraform. Forcing the load now
+    (the runtime only hijacks once) lets uvicorn install its handler afterwards
+    so Ctrl+C keeps working.
+    """
+    import tempfile
+
+    try:
+        from libterraform import TerraformConfig
+
+        try:
+            TerraformConfig.load_config_dir(tempfile.gettempdir())
+        except Exception:  # noqa: BLE001 - we only care about triggering the load
+            pass
+    except Exception:  # noqa: BLE001 - libterraform optional / load best-effort
+        pass
+
+
 def run(
     host: str = "127.0.0.1",
     port: int = 8080,
@@ -225,24 +364,44 @@ def run(
     _require_web_deps()
     import uvicorn
 
+    _preload_libterraform()
+
     if open_browser and not reload:
         import threading
         import webbrowser
 
         url = f"http://{host if host != '0.0.0.0' else '127.0.0.1'}:{port}"
-        threading.Timer(1.0, lambda: webbrowser.open(url)).start()
+        # Daemon timer so it never keeps the process alive at shutdown.
+        timer = threading.Timer(1.0, lambda: webbrowser.open(url))
+        timer.daemon = True
+        timer.start()
 
     if reload:
         # Reload requires an import string rather than an app instance.
         uvicorn.run(
             "rostran.web.server:build_app",
             factory=True,
+            reload=True,
             host=host,
             port=port,
-            reload=True,
+            timeout_graceful_shutdown=3,
         )
-    else:
-        uvicorn.run(build_app(), host=host, port=port)
+        return
+
+    # Bound the graceful-shutdown wait so a long-running streaming request (e.g.
+    # a Terraform transform whose SSE connection is still open) cannot make
+    # Ctrl+C hang. Once the server stops, force-exit: transforms run in
+    # non-daemon worker threads (a stuck `terraform init` among them), which
+    # would otherwise keep the interpreter alive after shutdown.
+    try:
+        uvicorn.run(
+            build_app(),
+            host=host,
+            port=port,
+            timeout_graceful_shutdown=3,
+        )
+    finally:
+        os._exit(0)
 
 
 # Convenience for `uvicorn rostran.web.server:app`

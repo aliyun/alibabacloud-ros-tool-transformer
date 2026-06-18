@@ -1,94 +1,202 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
+import { Alert, Button, Checkbox, Menu, Select } from "@mantine/core";
+import {
+  IconAlertTriangle,
+  IconArrowRight,
+  IconBolt,
+  IconBook,
+  IconBrandGithub,
+  IconCheck,
+  IconChevronDown,
+  IconFile,
+  IconFolderUp,
+  IconSparkles,
+  IconUpload,
+  IconX,
+} from "@tabler/icons-react";
+import logoUrl from "./assets/logo.svg";
 import {
   formatTemplate,
+  getCredentials,
   getExample,
   getMeta,
   listExamples,
-  transform,
-  TransformApiError,
+  transformStream,
+  type Credentials,
+  type UploadFile,
 } from "./api";
-import type {
-  ApiError,
-  ExampleMeta,
-  Meta,
-  TransformOptions,
-  TransformResponse,
-} from "./types";
+import type { ApiError, ExampleMeta, Meta, TransformResponse } from "./types";
+import { FileTree } from "./components/FileTree";
+import { LogConsole } from "./components/LogConsole";
 import { ResultPane } from "./components/ResultPane";
-import { RulesView } from "./components/RulesView";
-import { SOURCE_FORMATS, TARGET_FORMATS, sourceInfo } from "./util";
+import {
+  SOURCE_FORMATS,
+  TARGET_FORMATS,
+  buildTree,
+  isTerraformSourceFile,
+  languageForFilename,
+  readUploadedFiles,
+  sourceInfo,
+  uploadPath,
+  type TreeNode,
+  type UploadedFile,
+} from "./util";
 
-type View = "playground" | "rules";
+const DOCS_URL = "https://aliyun.github.io/alibabacloud-ros-tool-transformer/";
+const GITHUB_URL = "https://github.com/aliyun/alibabacloud-ros-tool-transformer";
+
+const EDITOR_OPTIONS = {
+  minimap: { enabled: false },
+  fontSize: 13,
+  scrollBeyondLastLine: false,
+  padding: { top: 10 },
+  automaticLayout: true,
+} as const;
+
+type Status = { kind: "ok" | "err"; text: string };
 
 export function App() {
   const [meta, setMeta] = useState<Meta | null>(null);
-  const [view, setView] = useState<View>("playground");
   const [examples, setExamples] = useState<ExampleMeta[]>([]);
 
   const [sourceFormat, setSourceFormat] = useState("cloudformation");
   const [targetFormat, setTargetFormat] = useState("auto");
+  const [selectedExample, setSelectedExample] = useState<string | null>(null);
   const [content, setContent] = useState("");
-  const [uploads, setUploads] = useState<File[]>([]);
+  const [uploads, setUploads] = useState<UploadedFile[]>([]);
+  const [selectedPath, setSelectedPath] = useState<string | null>(null);
 
   const [compatible, setCompatible] = useState(false);
   const [validate, setValidate] = useState(false);
-  const [akId, setAkId] = useState("");
-  const [akSecret, setAkSecret] = useState("");
+  const [creds, setCreds] = useState<Credentials | null>(null);
 
-  const [busy, setBusy] = useState(false);
+  const [running, setRunning] = useState(false);
+  const [logs, setLogs] = useState("");
   const [result, setResult] = useState<TransformResponse | null>(null);
   const [error, setError] = useState<ApiError | null>(null);
+  const [status, setStatus] = useState<Status | null>(null);
+
+  // Layout: resizable source/result split and a collapsible bottom log drawer.
+  const [sourceWidth, setSourceWidth] = useState(50); // percent
+  const [logHeight, setLogHeight] = useState(200); // px
+  const [logCollapsed, setLogCollapsed] = useState(true);
 
   const fileInput = useRef<HTMLInputElement>(null);
+  const folderInput = useRef<HTMLInputElement>(null);
   const info = useMemo(() => sourceInfo(sourceFormat), [sourceFormat]);
 
   useEffect(() => {
-    getMeta().then(setMeta).catch(() => undefined);
-    listExamples().then(setExamples).catch(() => undefined);
+    getMeta()
+      .then(setMeta)
+      .catch(() => undefined);
+    listExamples()
+      .then(setExamples)
+      .catch(() => undefined);
+    getCredentials()
+      .then(setCreds)
+      .catch(() => undefined);
   }, []);
 
-  const isTerraform = sourceFormat === "terraform";
-  const isRosSource =
-    sourceFormat === "ros" || sourceFormat === "rosTerraform";
-  const canValidate = sourceFormat === "ros" && targetFormat === "tf";
+  // Expand the log drawer whenever a conversion starts.
+  useEffect(() => {
+    if (running) setLogCollapsed(false);
+  }, [running]);
 
-  const onSourceFormatChange = (value: string) => {
-    setSourceFormat(value);
-    setUploads([]);
+  const isTerraform = sourceFormat === "terraform";
+  const isRosSource = sourceFormat === "ros" || sourceFormat === "rosTerraform";
+  // Only ROS converts to Terraform; every other source converts to a ROS
+  // template (JSON/YAML). Constrain targets so invalid combinations (e.g.
+  // CloudFormation -> Terraform) can't be selected.
+  const availableTargets = useMemo(
+    () =>
+      sourceFormat === "ros"
+        ? TARGET_FORMATS.filter((t) => t.value === "auto" || t.value === "tf")
+        : TARGET_FORMATS.filter((t) => t.value !== "tf"),
+    [sourceFormat],
+  );
+  const canValidate = sourceFormat === "ros";
+
+  const targetLabel = useMemo(() => {
+    if (targetFormat === "tf") return "Terraform";
+    if (targetFormat === "yaml") return "ROS YAML";
+    if (targetFormat === "json") return "ROS JSON";
+    return sourceFormat === "ros" ? "Terraform" : "ROS";
+  }, [targetFormat, sourceFormat]);
+
+  const tree = useMemo(() => buildTree(uploads), [uploads]);
+  // Show the tree for multi-file or folder uploads (paths carry a directory).
+  const showTree =
+    uploads.length > 1 || uploads.some((u) => u.path.includes("/"));
+  const selectedFile =
+    uploads.find((u) => u.path === selectedPath) ?? uploads[0] ?? null;
+
+  const resetIO = () => {
     setResult(null);
     setError(null);
+    setLogs("");
+    setStatus(null);
+  };
+
+  const onSourceFormatChange = (value: string | null) => {
+    if (!value) return;
+    setSourceFormat(value);
+    setTargetFormat("auto");
+    setSelectedExample(null);
+    setUploads([]);
+    setSelectedPath(null);
+    resetIO();
     if (sourceInfo(value).uploadOnly) setContent("");
   };
 
-  const onFiles = (files: FileList | null) => {
-    if (!files || files.length === 0) return;
-    const arr = Array.from(files);
-    setUploads(arr);
-    setError(null);
-    // Show the first text file in the editor for reference.
-    const first = arr[0];
-    if (!info.uploadOnly) {
-      first.text().then((t) => setContent(t)).catch(() => undefined);
+  const ingest = async (fileList: FileList | null, usePath: boolean) => {
+    if (!fileList || fileList.length === 0) return;
+    let picked = Array.from(fileList);
+    if (sourceFormat === "terraform") {
+      // Folder uploads include .terraform/ provider binaries, plans, etc.
+      const kept = picked.filter((f) =>
+        isTerraformSourceFile(uploadPath(f, usePath)),
+      );
+      if (kept.length) picked = kept;
     }
+    if (!picked.length) {
+      setError({
+        type: "InvalidRequest",
+        message: "No Terraform source files (.tf) found in the selection.",
+      });
+      return;
+    }
+    const files = await readUploadedFiles(picked, usePath);
+    setSelectedExample(null);
+    setUploads(files);
+    setSelectedPath(files.find((f) => f.isText)?.path ?? files[0].path);
+    resetIO();
+  };
+
+  const clearUploads = () => {
+    setUploads([]);
+    setSelectedPath(null);
   };
 
   const loadExample = async (id: string) => {
     if (!id) return;
     try {
       const ex = await getExample(id);
+      setSelectedExample(id);
       setSourceFormat(ex.source_format);
-      setUploads([]);
+      setTargetFormat("auto");
+      clearUploads();
       setContent(ex.content);
-      setResult(null);
-      setError(null);
+      resetIO();
     } catch {
       /* ignore */
     }
   };
 
-  const buildFiles = (): File[] | null => {
-    if (uploads.length > 0) return uploads;
+  const buildFiles = (): UploadFile[] | null => {
+    if (uploads.length > 0) {
+      return uploads.map((u) => ({ path: u.path, blob: u.blob }));
+    }
     if (info.uploadOnly) {
       setError({
         type: "InvalidRequest",
@@ -100,48 +208,54 @@ export function App() {
       setError({ type: "InvalidRequest", message: "Source template is empty." });
       return null;
     }
-    return [new File([content], info.filename, { type: "text/plain" })];
+    return [
+      { path: info.filename, blob: new Blob([content], { type: "text/plain" }) },
+    ];
   };
 
   const runTransform = async () => {
     const files = buildFiles();
     if (!files) return;
-    const options: TransformOptions = {};
+    const options: Record<string, unknown> = {};
     if (isTerraform && compatible) options.compatible = true;
-    if (canValidate && validate && akId && akSecret) {
-      options.credentials = {
-        access_key_id: akId,
-        access_key_secret: akSecret,
-      };
-    }
-    setBusy(true);
-    setError(null);
-    setResult(null);
-    try {
-      const res = await transform(files, sourceFormat, targetFormat, options);
-      setResult(res);
-    } catch (e) {
-      if (e instanceof TransformApiError) {
-        setError({ type: e.type, message: e.message, log: e.log });
-      } else {
-        setError({ type: "Error", message: String(e) });
-      }
-    } finally {
-      setBusy(false);
-    }
+    if (canValidate && validate) options.validate = true;
+    setRunning(true);
+    resetIO();
+    const started = performance.now();
+    let ok = false;
+    await transformStream(files, sourceFormat, targetFormat, options, {
+      onLog: (text) => setLogs((prev) => prev + text),
+      onResult: (res) => {
+        setResult(res);
+        ok = true;
+      },
+      onError: (err) => setError(err),
+    });
+    setRunning(false);
+    const secs = ((performance.now() - started) / 1000).toFixed(1);
+    setStatus(
+      ok
+        ? { kind: "ok", text: `Converted in ${secs}s` }
+        : { kind: "err", text: "Conversion failed" },
+    );
   };
 
+  const editorValue = uploads.length ? (selectedFile?.content ?? "") : content;
+  const editorLanguage = uploads.length
+    ? languageForFilename(selectedFile?.path ?? "")
+    : info.language;
+
   const runFormat = async () => {
-    if (!content.trim()) {
+    const text = editorValue;
+    if (!text.trim()) {
       setError({ type: "InvalidRequest", message: "Source template is empty." });
       return;
     }
-    const fmt = content.trimStart().startsWith("{") ? "json" : "yaml";
-    setBusy(true);
-    setError(null);
-    setResult(null);
+    const fmt = text.trimStart().startsWith("{") ? "json" : "yaml";
+    setRunning(true);
+    resetIO();
     try {
-      const formatted = await formatTemplate(content, fmt);
+      const formatted = await formatTemplate(text, fmt);
       setResult({
         targets: [
           {
@@ -152,199 +266,325 @@ export function App() {
         ],
         log: "",
       });
+      setStatus({ kind: "ok", text: "Formatted" });
     } catch (e) {
-      if (e instanceof TransformApiError) {
-        setError({ type: e.type, message: e.message });
-      } else {
-        setError({ type: "Error", message: String(e) });
-      }
+      const err = e as { type?: string; message?: string };
+      setError({ type: err.type ?? "Error", message: err.message ?? String(e) });
+      setStatus({ kind: "err", text: "Format failed" });
     } finally {
-      setBusy(false);
+      setRunning(false);
     }
+  };
+
+  // Drag the vertical divider between the source and result panes.
+  const startColDrag = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const row = (e.currentTarget as HTMLElement).parentElement;
+    if (!row) return;
+    const rect = row.getBoundingClientRect();
+    const onMove = (ev: MouseEvent) => {
+      const pct = ((ev.clientX - rect.left) / rect.width) * 100;
+      setSourceWidth(Math.min(80, Math.max(20, pct)));
+    };
+    const stop = () => {
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", stop);
+      document.body.style.cursor = "";
+    };
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", stop);
+    document.body.style.cursor = "col-resize";
+  };
+
+  // Drag the horizontal divider between the panes and the log drawer.
+  const startRowDrag = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const startY = e.clientY;
+    const startH = logHeight;
+    const onMove = (ev: MouseEvent) => {
+      setLogHeight(Math.min(600, Math.max(90, startH + (startY - ev.clientY))));
+    };
+    const stop = () => {
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", stop);
+      document.body.style.cursor = "";
+    };
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", stop);
+    document.body.style.cursor = "row-resize";
   };
 
   return (
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <span className="logo">ROS</span>
-          <span className="title">Template Transformer</span>
+          <img className="logo" src={logoUrl} alt="ROS Template Transformer logo" />
+          <div className="brand-text">
+            <span className="title">ROS Template Transformer</span>
+            <span className="tagline">
+              Convert CloudFormation · Terraform · Excel to ROS
+            </span>
+          </div>
         </div>
-        <nav className="nav">
-          <button
-            className={view === "playground" ? "nav-item active" : "nav-item"}
-            onClick={() => setView("playground")}
+        <div className="topbar-links">
+          <a href={DOCS_URL} target="_blank" rel="noreferrer" className="topbar-link">
+            <IconBook size={16} /> Docs
+          </a>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="topbar-link"
+            aria-label="GitHub"
           >
-            Playground
-          </button>
-          <button
-            className={view === "rules" ? "nav-item active" : "nav-item"}
-            onClick={() => setView("rules")}
-          >
-            Rules
-          </button>
-        </nav>
-        <div className="version">{meta ? `v${meta.version}` : ""}</div>
+            <IconBrandGithub size={16} />
+          </a>
+          <span className="version">{meta ? `v${meta.version}` : ""}</span>
+        </div>
       </header>
 
-      {view === "rules" ? (
-        <RulesView classifiers={meta?.rules_classifiers ?? ["cloudformation"]} />
-      ) : (
-        <div className="playground">
-          <div className="toolbar">
-            <div className="field">
-              <label>Source</label>
-              <select
-                value={sourceFormat}
-                onChange={(e) => onSourceFormatChange(e.target.value)}
+      <div className="controls">
+        <Select
+          label="Source"
+          data={SOURCE_FORMATS.map((s) => ({ value: s.value, label: s.label }))}
+          value={sourceFormat}
+          onChange={onSourceFormatChange}
+          allowDeselect={false}
+          w={185}
+          comboboxProps={{ withinPortal: true }}
+        />
+        <IconArrowRight className="ctl-arrow" size={18} />
+        <Select
+          label="Target"
+          data={availableTargets}
+          value={targetFormat}
+          onChange={(v) => {
+            setTargetFormat(v ?? "auto");
+            resetIO();
+          }}
+          allowDeselect={false}
+          w={145}
+          comboboxProps={{ withinPortal: true }}
+        />
+        <Select
+          label="Example"
+          placeholder="Load…"
+          data={examples.map((e) => ({ value: e.id, label: e.title }))}
+          value={selectedExample}
+          onChange={(v) => {
+            setSelectedExample(v);
+            if (v) void loadExample(v);
+          }}
+          w={225}
+          comboboxProps={{ withinPortal: true }}
+        />
+        {info.multiple ? (
+          <Menu shadow="md" position="bottom-start" withinPortal>
+            <Menu.Target>
+              <Button
+                className="ctl-uploads"
+                variant="default"
+                leftSection={<IconUpload size={15} />}
+                rightSection={<IconChevronDown size={14} />}
               >
-                {SOURCE_FORMATS.map((s) => (
-                  <option key={s.value} value={s.value}>
-                    {s.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <span className="arrow">→</span>
-            <div className="field">
-              <label>Target</label>
-              <select
-                value={targetFormat}
-                onChange={(e) => setTargetFormat(e.target.value)}
+                Upload
+              </Button>
+            </Menu.Target>
+            <Menu.Dropdown>
+              <Menu.Item
+                leftSection={<IconFile size={15} />}
+                onClick={() => fileInput.current?.click()}
               >
-                {TARGET_FORMATS.map((t) => (
-                  <option key={t.value} value={t.value}>
-                    {t.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+                Files…
+              </Menu.Item>
+              <Menu.Item
+                leftSection={<IconFolderUp size={15} />}
+                onClick={() => folderInput.current?.click()}
+              >
+                Folder…
+              </Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
+        ) : (
+          <Button
+            className="ctl-uploads"
+            variant="default"
+            leftSection={<IconUpload size={15} />}
+            onClick={() => fileInput.current?.click()}
+          >
+            Upload
+          </Button>
+        )}
+        <input
+          ref={fileInput}
+          type="file"
+          hidden
+          accept={info.accept}
+          multiple={info.multiple}
+          onChange={(e) => {
+            void ingest(e.target.files, false);
+            e.target.value = "";
+          }}
+        />
+        <input
+          ref={folderInput}
+          type="file"
+          hidden
+          // @ts-expect-error non-standard directory upload attribute
+          webkitdirectory=""
+          onChange={(e) => {
+            void ingest(e.target.files, true);
+            e.target.value = "";
+          }}
+        />
 
-            <div className="field">
-              <label>Example</label>
-              <select
-                value=""
-                onChange={(e) => {
-                  void loadExample(e.target.value);
-                  e.target.value = "";
-                }}
-              >
-                <option value="">Load…</option>
-                {examples.map((ex) => (
-                  <option key={ex.id} value={ex.id}>
-                    {ex.title}
-                  </option>
-                ))}
-              </select>
-            </div>
+        <div className="ctl-spacer" />
 
-            <button
-              className="btn-ghost"
-              onClick={() => fileInput.current?.click()}
-            >
-              Upload
-            </button>
-            <input
-              ref={fileInput}
-              type="file"
-              hidden
-              accept={info.accept}
-              multiple={info.multiple}
-              onChange={(e) => onFiles(e.target.files)}
+        {status && (
+          <span className={`status-chip ${status.kind}`}>
+            {status.kind === "ok" ? (
+              <IconCheck size={14} />
+            ) : (
+              <IconAlertTriangle size={14} />
+            )}
+            {status.text}
+          </span>
+        )}
+        {isRosSource && (
+          <Button
+            variant="default"
+            leftSection={<IconSparkles size={15} />}
+            onClick={runFormat}
+            disabled={running}
+          >
+            Format
+          </Button>
+        )}
+        <Button
+          leftSection={<IconBolt size={16} />}
+          onClick={runTransform}
+          loading={running}
+        >
+          Transform
+        </Button>
+      </div>
+
+      {(isTerraform || canValidate || uploads.length > 0) && (
+        <div className="options">
+          {isTerraform && (
+            <Checkbox
+              size="xs"
+              label="Compatible mode (keep Terraform content)"
+              checked={compatible}
+              onChange={(e) => setCompatible(e.currentTarget.checked)}
             />
-
-            <div className="toolbar-spacer" />
-
-            {isRosSource && (
-              <button className="btn" onClick={runFormat} disabled={busy}>
-                Format
-              </button>
-            )}
-            <button className="btn primary" onClick={runTransform} disabled={busy}>
-              Transform
-            </button>
-          </div>
-
-          <div className="options">
-            {isTerraform && (
-              <label className="check">
-                <input
-                  type="checkbox"
-                  checked={compatible}
-                  onChange={(e) => setCompatible(e.target.checked)}
-                />
-                Compatible mode (keep Terraform content)
-              </label>
-            )}
-            {canValidate && (
-              <label className="check">
-                <input
-                  type="checkbox"
-                  checked={validate}
-                  onChange={(e) => setValidate(e.target.checked)}
-                />
-                Validate template (needs AccessKey)
-              </label>
-            )}
-            {canValidate && validate && (
-              <div className="creds">
-                <input
-                  placeholder="AccessKey ID"
-                  value={akId}
-                  onChange={(e) => setAkId(e.target.value)}
-                />
-                <input
-                  placeholder="AccessKey Secret"
-                  type="password"
-                  value={akSecret}
-                  onChange={(e) => setAkSecret(e.target.value)}
-                />
-                <span className="hint">Used only for this request; never stored.</span>
-              </div>
-            )}
-            {uploads.length > 0 && (
-              <span className="uploads">
-                {uploads.length} file(s): {uploads.map((f) => f.name).join(", ")}
-                <button className="link" onClick={() => setUploads([])}>
-                  clear
-                </button>
-              </span>
-            )}
-          </div>
-
-          {error && (
-            <div className="banner error">
-              <strong>{error.type}:</strong> {error.message}
-              {error.log && <pre className="log-body">{error.log}</pre>}
-            </div>
           )}
-
-          <div className="panes">
-            <div className="pane">
-              <div className="pane-head">Source ({info.label})</div>
-              <div className="editor-wrap">
-                <Editor
-                  height="100%"
-                  theme="vs-dark"
-                  language={info.language}
-                  value={content}
-                  onChange={(v) => setContent(v ?? "")}
-                  options={{
-                    readOnly: info.uploadOnly,
-                    minimap: { enabled: false },
-                    fontSize: 13,
-                    scrollBeyondLastLine: false,
-                  }}
-                />
-              </div>
-            </div>
-            <div className="pane">
-              <div className="pane-head">Result</div>
-              <ResultPane result={result} busy={busy} />
-            </div>
-          </div>
+          {canValidate && (
+            <Checkbox
+              size="xs"
+              label="Validate template"
+              checked={validate}
+              onChange={(e) => setValidate(e.currentTarget.checked)}
+            />
+          )}
+          {canValidate && validate && creds?.available && (
+            <span className="hint ok">
+              <IconCheck size={13} /> Using credentials from {creds.source}
+            </span>
+          )}
+          {canValidate && validate && creds && !creds.available && (
+            <span className="hint warn">
+              <IconAlertTriangle size={13} /> No Alibaba Cloud credentials found —
+              run <code>aliyun configure</code> to enable validation.
+            </span>
+          )}
+          {uploads.length > 0 && (
+            <span className="uploads-info">
+              {uploads.length} file(s) loaded
+              <button className="link" onClick={clearUploads}>
+                <IconX size={12} /> clear
+              </button>
+            </span>
+          )}
         </div>
       )}
+
+      {error && (
+        <Alert
+          variant="light"
+          color="red"
+          icon={<IconAlertTriangle size={16} />}
+          title={error.type}
+          className="error-alert"
+          withCloseButton
+          onClose={() => setError(null)}
+        >
+          {error.message}
+        </Alert>
+      )}
+
+      <div className="main">
+        <div className="panes">
+          <div className="pane source-pane" style={{ width: `${sourceWidth}%` }}>
+            <div className="pane-head">Source · {info.label}</div>
+            <div className="source-body">
+              {showTree && (
+                <div className="tree-panel">
+                  <FileTree
+                    nodes={tree}
+                    selected={selectedFile?.path ?? null}
+                    onSelect={(n: TreeNode) => n.file && setSelectedPath(n.path)}
+                  />
+                </div>
+              )}
+              <div className="editor-wrap">
+                {info.uploadOnly && uploads.length === 0 ? (
+                  <div className="result-empty">
+                    Paste, upload, or load an example to get started.
+                    <br />
+                    {info.label} input must be uploaded as a file.
+                  </div>
+                ) : selectedFile && !selectedFile.isText ? (
+                  <div className="result-empty">
+                    Binary file — {selectedFile.path}
+                  </div>
+                ) : (
+                  <Editor
+                    height="100%"
+                    theme="ros-light"
+                    language={editorLanguage}
+                    value={editorValue}
+                    onChange={(v) => !uploads.length && setContent(v ?? "")}
+                    options={{
+                      ...EDITOR_OPTIONS,
+                      readOnly: uploads.length > 0 || info.uploadOnly,
+                    }}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="col-split" onMouseDown={startColDrag} />
+
+          <div className="pane result-pane">
+            <div className="pane-head">Result · {targetLabel}</div>
+            <ResultPane result={result} running={running} />
+          </div>
+        </div>
+
+        {!logCollapsed && (
+          <div className="row-split" onMouseDown={startRowDrag} />
+        )}
+        <LogConsole
+          text={logs}
+          running={running}
+          collapsed={logCollapsed}
+          height={logHeight}
+          onToggle={() => setLogCollapsed((v) => !v)}
+          onClear={() => setLogs("")}
+        />
+      </div>
     </div>
   );
 }

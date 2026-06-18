@@ -9,7 +9,7 @@ export interface SourceFormatInfo {
   /** Whether this source must be uploaded as a file (cannot be pasted). */
   uploadOnly?: boolean;
   accept?: string;
-  /** Whether multiple files can be uploaded (e.g. several .tf files). */
+  /** Whether multiple files / a folder can be uploaded (e.g. several .tf files). */
   multiple?: boolean;
 }
 
@@ -68,8 +68,116 @@ export function languageForFilename(name: string): string {
   const lower = name.toLowerCase();
   if (lower.endsWith(".json")) return "json";
   if (lower.endsWith(".yml") || lower.endsWith(".yaml")) return "yaml";
-  if (lower.endsWith(".tf") || lower.endsWith(".tf.json")) return "hcl";
+  if (lower.endsWith(".tf") || lower.endsWith(".hcl")) return "hcl";
   return "plaintext";
+}
+
+export interface UploadedFile {
+  path: string;
+  content: string;
+  isText: boolean;
+  blob: Blob;
+}
+
+export interface TreeNode {
+  name: string;
+  path: string;
+  isDir: boolean;
+  children?: TreeNode[];
+  file?: UploadedFile;
+}
+
+/** Build a nested tree from flat file paths. */
+export function buildTree(files: UploadedFile[]): TreeNode[] {
+  const roots: Record<string, TreeNode> = {};
+  const ensure = (
+    bucket: Record<string, TreeNode>,
+    name: string,
+    path: string,
+    isDir: boolean,
+  ): TreeNode => {
+    if (!bucket[name]) {
+      bucket[name] = { name, path, isDir, children: isDir ? [] : undefined };
+    }
+    return bucket[name];
+  };
+
+  const childMaps = new WeakMap<TreeNode, Record<string, TreeNode>>();
+  for (const f of files) {
+    const parts = f.path.split("/").filter(Boolean);
+    let bucket = roots;
+    parts.forEach((part, i) => {
+      const isLeaf = i === parts.length - 1;
+      const path = parts.slice(0, i + 1).join("/");
+      const node = ensure(bucket, part, path, !isLeaf);
+      if (isLeaf) {
+        node.file = f;
+      } else {
+        let m = childMaps.get(node);
+        if (!m) {
+          m = {};
+          childMaps.set(node, m);
+        }
+        bucket = m;
+      }
+    });
+  }
+
+  const collect = (bucket: Record<string, TreeNode>): TreeNode[] => {
+    const nodes = Object.values(bucket).map((n) => {
+      const m = childMaps.get(n);
+      return m ? { ...n, children: collect(m) } : n;
+    });
+    return nodes.sort((a, b) => {
+      if (a.isDir !== b.isDir) return a.isDir ? -1 : 1;
+      return a.name.localeCompare(b.name);
+    });
+  };
+  return collect(roots);
+}
+
+/**
+ * Keep only real Terraform source files from a folder upload, dropping the
+ * `.terraform/` provider cache (huge plugin binaries), plans, state, locks, and
+ * unrelated files. The conversion re-runs `terraform init/plan` itself.
+ */
+export function isTerraformSourceFile(path: string): boolean {
+  const segments = path.replace(/\\/g, "/").split("/");
+  if (segments.includes(".terraform")) return false;
+  const base = (segments.pop() ?? "").toLowerCase();
+  return (
+    base.endsWith(".tf") ||
+    base.endsWith(".tfvars") ||
+    base.endsWith(".tfvars.json")
+  );
+}
+
+export function uploadPath(file: File, usePath: boolean): string {
+  const rawPath =
+    (usePath && (file as File & { webkitRelativePath?: string }).webkitRelativePath) ||
+    file.name;
+  return rawPath.replace(/^\/+/, "");
+}
+
+export async function readUploadedFiles(
+  files: File[],
+  usePath: boolean,
+): Promise<UploadedFile[]> {
+  const out: UploadedFile[] = [];
+  for (const file of files) {
+    const path = uploadPath(file, usePath);
+    const isText = !path.toLowerCase().endsWith(".xlsx");
+    let content = "";
+    if (isText) {
+      try {
+        content = await file.text();
+      } catch {
+        content = "";
+      }
+    }
+    out.push({ path, content, isText, blob: file });
+  }
+  return out;
 }
 
 export function downloadText(filename: string, content: string) {
