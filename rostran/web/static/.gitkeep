@@ -1,2 +1,0 @@
-# Frontend build output is written here by `make web-build` and bundled into the wheel.
-# Placeholder so the package directory exists when the frontend has not been built.

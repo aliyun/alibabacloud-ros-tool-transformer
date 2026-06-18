@@ -15,9 +15,9 @@ HERE = Path(__file__).parent.resolve()
 def _build_frontend():
     """Build the web UI into rostran/web/static so `rostran serve` ships it.
 
-    Skips when already built (e.g. by `make web-build`, or present in an sdist).
-    Builds with npm when the frontend source is available; warns and ships an
-    API-only service when npm is missing.
+    The built assets are committed, so this is a no-op for normal builds (and for
+    release/CI, which may lack a recent Node.js). It only rebuilds when the assets
+    are missing and a usable npm is available, and never fails the build.
     """
     static_index = HERE / "rostran" / "web" / "static" / "index.html"
     frontend = HERE / "web" / "frontend"
@@ -28,14 +28,21 @@ def _build_frontend():
     npm = shutil.which("npm")
     if not npm:
         print(
-            "WARNING: npm not found; the web UI will not be bundled. "
-            "Install Node.js (or run `make web-build`) before packaging.",
+            "WARNING: web UI not built and npm not found; shipping API only. "
+            "Run `make web-build` to bundle the UI.",
             file=sys.stderr,
         )
         return
     print("Building web frontend (npm ci && npm run build)...")
-    subprocess.check_call([npm, "ci"], cwd=str(frontend))
-    subprocess.check_call([npm, "run", "build"], cwd=str(frontend))
+    try:
+        subprocess.check_call([npm, "ci"], cwd=str(frontend))
+        subprocess.check_call([npm, "run", "build"], cwd=str(frontend))
+    except subprocess.CalledProcessError as exc:
+        print(
+            f"WARNING: web UI build failed ({exc}); shipping API only. "
+            "Build it with `make web-build`.",
+            file=sys.stderr,
+        )
 
 
 class BuildPyWithFrontend(build_py):
