@@ -58,7 +58,7 @@ const config: Config = {
     navbar: {
       title: 'ROS Template Transformer',
       logo: {
-        alt: 'ROS Logo',
+        alt: 'ROS Template Transformer logo',
         src: 'img/logo.svg',
       },
       items: [

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="website/static/img/logo.svg" alt="ROS Template Transformer logo" width="96" height="96">
+</p>
+
 # ROS Template Transformer
 
 [![alibabacloud-ros-tran](https://img.shields.io/pypi/v/alibabacloud-ros-tran.svg)](https://pypi.python.org/pypi/alibabacloud-ros-tran)
