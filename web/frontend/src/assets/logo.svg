@@ -1,0 +1,14 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ROS Template Transformer</title>
+  <desc id="desc">Minimal transform brackets with a centered arrow.</desc>
+  <defs>
+    <linearGradient id="mark" x1="40" y1="42" x2="216" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78A4FF"/>
+      <stop offset="1" stop-color="#2461FF"/>
+    </linearGradient>
+  </defs>
+  <path d="M76 54H122L104 82H82C67.5 82 58 91.5 58 106V150C58 164.5 67.5 174 82 174H104L122 202H76C48.5 202 28 181.5 28 154V102C28 74.5 48.5 54 76 54Z" fill="url(#mark)"/>
+  <path d="M180 54H134L152 82H174C188.5 82 198 91.5 198 106V150C198 164.5 188.5 174 174 174H152L134 202H180C207.5 202 228 181.5 228 154V102C228 74.5 207.5 54 180 54Z" fill="url(#mark)"/>
+  <path d="M91 128H153" stroke="#2447B8" stroke-width="14" stroke-linecap="round"/>
+  <path d="M137 103L162 128L137 153" stroke="#2447B8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
