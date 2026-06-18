@@ -162,6 +162,49 @@ rostran rules update --force
 rostran rules reset
 ```
 
+## 启动 Web 服务
+
+启动本地 Web 服务，即可在浏览器中使用转换器。它提供了双栏编辑器，可用于转换
+CloudFormation / Terraform / Excel / ROS 模板、格式化 ROS 模板以及浏览转换规则，
+全程无需使用命令行。
+
+该功能需要安装可选的 `serve` 依赖：
+
+```bash
+pip install "alibabacloud-ros-tran[serve]"
+```
+
+### 命令
+
+```bash
+rostran serve [OPTIONS]
+```
+
+默认会在 `http://127.0.0.1:8080` 启动服务，并自动在浏览器中打开。
+
+#### OPTIONS
+
+支持如下可选项：
+
+- `--host`/`-h`：Web 服务绑定的主机地址，默认为 `127.0.0.1`。使用 `0.0.0.0` 可将其暴露到网络中。
+- `--port`/`-p`：Web 服务绑定的端口，默认为 `8080`。
+- `--open`：【默认】启动后在浏览器中打开 Web UI。
+- `--no-open`：启动后不打开浏览器。
+- `--reload`：启用自动重载，便于开发调试。
+
+#### 示例
+
+```bash
+# 使用默认配置启动（绑定 127.0.0.1:8080 并打开浏览器）
+rostran serve
+
+# 绑定自定义主机和端口
+rostran serve --host 0.0.0.0 --port 9000
+
+# 启动但不打开浏览器
+rostran serve --no-open
+```
+
 ## 查看帮助信息
 
 ### 命令
