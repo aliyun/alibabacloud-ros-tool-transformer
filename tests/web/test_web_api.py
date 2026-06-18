@@ -70,6 +70,39 @@ def test_transform_cloudformation_to_ros(client):
     assert "ALIYUN::ECS::VPC" in content
 
 
+def test_transform_stream_emits_log_and_result(client):
+    with client.stream(
+        "POST",
+        "/api/transform/stream",
+        data={"source_format": "cloudformation", "target_format": "yaml"},
+        files={"files": ("vpc.json", CFN_TEMPLATE, "application/json")},
+    ) as resp:
+        assert resp.status_code == 200
+        assert "text/event-stream" in resp.headers["content-type"]
+        body = "".join(resp.iter_text())
+
+    assert "event: log" in body
+    assert "event: result" in body
+    # The final result event carries the transformed template.
+    events = body.split("\n\n")
+    result_event = [e for e in events if "event: result" in e][0]
+    data = json.loads(result_event.splitlines()[1][len("data: ") :])
+    assert data["targets"][0]["content"].count("ROSTemplateFormatVersion") == 1
+    assert "ALIYUN::ECS::VPC" in data["targets"][0]["content"]
+
+
+def test_transform_stream_error_event(client):
+    with client.stream(
+        "POST",
+        "/api/transform/stream",
+        data={"source_format": "bogus"},
+        files={"files": ("x.json", "{}", "application/json")},
+    ) as resp:
+        assert resp.status_code == 200
+        body = "".join(resp.iter_text())
+    assert "event: error" in body
+
+
 def test_transform_invalid_source_format(client):
     resp = client.post(
         "/api/transform",
@@ -123,6 +156,34 @@ def test_service_transform_no_files():
         service.transform(files=[], source_format=None)  # type: ignore[arg-type]
 
 
+def test_ros_to_terraform_without_credentials():
+    """ROS -> Terraform must work without Alibaba Cloud credentials by skipping
+    the validation API call (which would otherwise raise), and must run cleanly
+    in a worker thread (no `signal only works in main thread` error)."""
+    import concurrent.futures
+
+    ros = (
+        "ROSTemplateFormatVersion: '2015-09-01'\n"
+        "Resources:\n"
+        "  SG:\n"
+        "    Type: ALIYUN::ECS::SecurityGroup\n"
+        "    Properties:\n"
+        "      VpcId: vpc-x\n"
+    )
+
+    def run():
+        return service.transform(
+            files=[("template.yml", ros.encode())],
+            source_format=SourceTemplateFormat.ROS,
+            target_format=TargetTemplateFormat.Auto,
+        )
+
+    with concurrent.futures.ThreadPoolExecutor() as ex:
+        result = ex.submit(run).result()
+
+    assert any(t.filename.endswith(".tf") for t in result.targets)
+
+
 def test_transform_runs_off_the_event_loop(monkeypatch, client):
     """The synchronous (and potentially slow) transform must be offloaded to a
     worker thread so it never blocks the event loop. A worker thread has no
@@ -156,69 +217,18 @@ def test_transform_runs_off_the_event_loop(monkeypatch, client):
     )
 
 
-def test_transform_restores_cwd_between_calls(monkeypatch):
-    """libterraform changes the process cwd via terraform's -chdir; the service
-    must restore it so a later transform (e.g. a second Terraform run) does not
-    fail on os.getcwd() once the previous temp dir is gone."""
-    import rostran.cli.__main__ as cli
-
-    def fake_transform(*, source_path, target_path, **_kwargs):
-        # Simulate libterraform chdir-ing into the per-request temp dir.
-        os.chdir(os.path.dirname(source_path))
-        with open(target_path, "w") as f:
-            f.write("ROSTemplateFormatVersion: '2015-09-01'\n")
-
-    monkeypatch.setattr(cli, "transform", fake_transform)
-
+def test_transform_runs_in_subprocess():
+    """Transforms run out-of-process so libterraform / native crashes / chdir
+    stay isolated from the server. The conversion still works end to end."""
+    cfn = '{"AWSTemplateFormatVersion":"2010-09-09","Resources":{"Vpc":{"Type":"AWS::EC2::VPC","Properties":{"CidrBlock":"192.168.0.0/16"}}}}'
     before = os.getcwd()
-    res1 = service.transform(
-        files=[("t.json", b"{}")],
+    res = service.transform(
+        files=[("vpc.json", cfn.encode())],
         source_format=SourceTemplateFormat.CloudFormation,
         target_format=TargetTemplateFormat.Yaml,
     )
-    assert res1.targets
-    # Working directory restored and still valid after the temp dir is removed.
+    assert any("ALIYUN::ECS::VPC" in t.content for t in res.targets)
+    # The server process working directory is untouched by the child.
     assert os.getcwd() == before
-
-    # A second transform must succeed rather than raising FileNotFoundError.
-    res2 = service.transform(
-        files=[("t.json", b"{}")],
-        source_format=SourceTemplateFormat.CloudFormation,
-        target_format=TargetTemplateFormat.Yaml,
-    )
-    assert res2.targets
-    assert os.getcwd() == before
-
-
-def test_transform_recovers_from_corrupted_cwd(monkeypatch):
-    """If the process is already sitting in a deleted directory (e.g. a prior
-    terraform run left it there), the service must recover rather than fail
-    forever on os.getcwd()."""
-    import tempfile
-
-    import rostran.cli.__main__ as cli
-
-    def fake_transform(*, target_path, **_kwargs):
-        with open(target_path, "w") as f:
-            f.write("ROSTemplateFormatVersion: '2015-09-01'\n")
-
-    monkeypatch.setattr(cli, "transform", fake_transform)
-
-    original = os.getcwd()
-    doomed = tempfile.mkdtemp()
-    os.chdir(doomed)
-    os.rmdir(doomed)  # cwd now points at a directory that no longer exists
-    try:
-        with pytest.raises(OSError):
-            os.getcwd()  # confirm the process cwd is genuinely broken
-
-        res = service.transform(
-            files=[("t.json", b"{}")],
-            source_format=SourceTemplateFormat.CloudFormation,
-            target_format=TargetTemplateFormat.Yaml,
-        )
-        assert res.targets
-        # cwd is valid again afterwards.
-        assert os.getcwd()
-    finally:
-        os.chdir(original)
+    # Internal temp paths / save notices are scrubbed from the log.
+    assert "Save template to" not in res.log

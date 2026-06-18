@@ -4,6 +4,7 @@ Transforms, generates or formats ROS template.
 
 import json
 import os
+import sys
 import logging
 import traceback
 from io import StringIO
@@ -583,6 +584,14 @@ def serve(
 
 
 def main():
+    # Internal: the web service runs each transform as a child process for
+    # isolation. In a frozen binary `python -m` is unavailable, so the binary
+    # re-invokes itself with this sentinel to act as the transform worker.
+    if len(sys.argv) >= 3 and sys.argv[1] == "__web_worker__":
+        from rostran.web._worker import run_spec
+
+        sys.exit(run_spec(json.loads(sys.argv[2])))
+
     logging.basicConfig(level=logging.WARNING, format="%(message)s")
     logging.getLogger("rostran").setLevel(logging.INFO)
     try:
