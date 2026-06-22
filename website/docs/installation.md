@@ -19,7 +19,7 @@ pip install alibabacloud-ros-tran
 
 ## Install Web Service (Optional)
 
-To use the browser-based playground via `rostran serve`, install the optional
+To use the browser-based playground via `rostran server start`, install the optional
 `serve` extra:
 
 ```bash

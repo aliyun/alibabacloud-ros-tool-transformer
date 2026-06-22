@@ -179,7 +179,7 @@ rostran rules reset
 
 Start a local web service to use the transformer from a browser. It provides a
 dual-pane editor for converting CloudFormation / Terraform / Excel / ROS
-templates, formatting ROS templates, and browsing transform rules — all without
+templates and formatting ROS templates — all without
 the command line.
 
 This feature requires the optional `serve` dependencies:
@@ -191,34 +191,41 @@ pip install "alibabacloud-ros-tran[serve]"
 ### Command
 
 ```bash
-rostran serve [OPTIONS]
+rostran server start [OPTIONS]   # start the web service
+rostran server status            # show whether it is running
+rostran server stop              # stop the web service
 ```
 
-By default this starts the service at `http://127.0.0.1:8080` and opens it in
-your browser.
+By default `start` runs the service in the background at `http://127.0.0.1:8080`
+and opens it in your browser. Manage it later with `status` and `stop`.
 
 #### OPTIONS
 
-The following options are supported:
+`rostran server start` supports:
 
 - `--host`/`-h`: The host to bind the web service to. Defaults to `127.0.0.1`.
   Use `0.0.0.0` to expose it on the network.
 - `--port`/`-p`: The port to bind the web service to. Defaults to `8080`.
 - `--open`: [Default] Open the web UI in a browser after starting.
 - `--no-open`: Do not open a browser after starting.
-- `--reload`: Enable auto-reload for development.
+- `--foreground`/`-f`: Run in the foreground (blocking) instead of in the
+  background.
 
 #### Examples
 
 ```bash
-# Start with defaults (binds 127.0.0.1:8080 and opens the browser)
-rostran serve
+# Start in the background (binds 127.0.0.1:8080 and opens the browser)
+rostran server start
 
 # Bind a custom host and port
-rostran serve --host 0.0.0.0 --port 9000
+rostran server start --host 0.0.0.0 --port 9000
 
-# Start without opening a browser
-rostran serve --no-open
+# Run in the foreground without opening a browser
+rostran server start --foreground --no-open
+
+# Check status and stop
+rostran server status
+rostran server stop
 ```
 
 ## View Help Information

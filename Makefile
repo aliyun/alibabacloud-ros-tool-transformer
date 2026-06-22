@@ -40,11 +40,11 @@ web-build: ## Build the web frontend into rostran/web/static.
 	@touch rostran/web/static/.gitkeep
 
 serve: web-build ## Build web assets and start the rostran web service.
-	uv run --extra serve rostran serve --open
+	uv run --extra serve rostran server start --foreground --open
 
-serve-dev: ## Dev mode: backend (reload) + Vite dev server with hot reload.
+serve-dev: ## Dev mode: backend + Vite dev server with hot reload.
 	cd web/frontend && npm install
-	uv run --extra serve rostran serve --reload --no-open & \
+	uv run --extra serve rostran server start --foreground --no-open & \
 	cd web/frontend && npm run dev; \
 	kill %1 2>/dev/null || true
 

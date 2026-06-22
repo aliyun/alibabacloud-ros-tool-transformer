@@ -1,4 +1,4 @@
-"""FastAPI application and uvicorn launcher for ``rostran serve``.
+"""FastAPI application and uvicorn launcher for ``rostran server start``.
 
 The app serves a JSON API under ``/api`` and the pre-built single-page frontend
 (bundled in ``rostran/web/static``) for everything else.
@@ -357,7 +357,6 @@ def _preload_libterraform():
 def run(
     host: str = "127.0.0.1",
     port: int = 8080,
-    reload: bool = False,
     open_browser: bool = False,
 ):
     """Start the uvicorn server hosting the web service."""
@@ -366,7 +365,7 @@ def run(
 
     _preload_libterraform()
 
-    if open_browser and not reload:
+    if open_browser:
         import threading
         import webbrowser
 
@@ -375,18 +374,6 @@ def run(
         timer = threading.Timer(1.0, lambda: webbrowser.open(url))
         timer.daemon = True
         timer.start()
-
-    if reload:
-        # Reload requires an import string rather than an app instance.
-        uvicorn.run(
-            "rostran.web.server:build_app",
-            factory=True,
-            reload=True,
-            host=host,
-            port=port,
-            timeout_graceful_shutdown=3,
-        )
-        return
 
     # Bound the graceful-shutdown wait so a long-running streaming request (e.g.
     # a Terraform transform whose SSE connection is still open) cannot make

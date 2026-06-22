@@ -2,6 +2,7 @@
 Transforms, generates or formats ROS template.
 """
 
+import contextlib
 import json
 import os
 import sys
@@ -538,49 +539,190 @@ def update(
     typer.secho(msg, fg=typer.colors.GREEN)
 
 
-@app.command()
-def serve(
+server_app = typer.Typer(help="Manage the local web service (start/stop/status).")
+app.add_typer(server_app, name="server")
+
+
+def _server_state_dir() -> Path:
+    d = Path.home() / ".rostran"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _server_pid_file() -> Path:
+    return _server_state_dir() / "server.json"
+
+
+def _server_log_file() -> Path:
+    return _server_state_dir() / "server.log"
+
+
+def _read_server_state() -> Optional[dict]:
+    f = _server_pid_file()
+    if not f.exists():
+        return None
+    try:
+        return json.loads(f.read_text())
+    except (ValueError, OSError):
+        return None
+
+
+def _process_alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)
+    except OSError:
+        return False
+    return True
+
+
+def _self_command(args: List[str]) -> List[str]:
+    if getattr(sys, "frozen", False):
+        return [sys.executable, *args]
+    return [sys.executable, "-m", "rostran.cli.__main__", *args]
+
+
+@server_app.command("start")
+def server_start(
     host: str = typer.Option(
         "127.0.0.1",
         "--host",
         "-h",
-        help="The host to bind the web service to. Use 0.0.0.0 to expose it on the network.",
+        help="The host to bind to. Use 0.0.0.0 to expose it on the network.",
     ),
-    port: int = typer.Option(
-        8080,
-        "--port",
-        "-p",
-        help="The port to bind the web service to.",
-    ),
+    port: int = typer.Option(8080, "--port", "-p", help="The port to bind to."),
     open_browser: bool = typer.Option(
         True,
         "--open/--no-open",
         help="Whether to open the web UI in a browser after starting.",
     ),
-    reload: bool = typer.Option(
+    foreground: bool = typer.Option(
         False,
-        "--reload",
-        help="Enable auto-reload for development.",
+        "--foreground",
+        "-f",
+        help="Run in the foreground (blocking) instead of as a background service.",
     ),
 ):
     """
-    Start a local web service to use the transformer from a browser.
+    Start the local web service.
 
-    Requires the optional web dependencies:
+    Runs as a background service by default so it can be managed with
+    `rostran server stop` / `status`. Requires the web extra:
 
         pip install "alibabacloud-ros-tran[serve]"
     """
-    from rostran.web.server import run, MissingDependencies
+    from rostran.web.server import run, _require_web_deps, MissingDependencies
 
     try:
-        typer.secho(
-            f"Starting ROS Template Transformer web service at http://{host}:{port}",
-            fg=typer.colors.GREEN,
-        )
-        run(host=host, port=port, reload=reload, open_browser=open_browser)
+        _require_web_deps()
     except MissingDependencies as e:
         typer.secho(str(e), fg=typer.colors.RED)
         raise typer.Exit(1)
+
+    # Foreground mode is also how the background service runs itself, so it must
+    # not check the pid file (its own pid is in there).
+    if foreground:
+        typer.secho(
+            f"Starting web service at http://{host}:{port}", fg=typer.colors.GREEN
+        )
+        run(host=host, port=port, open_browser=open_browser)
+        return
+
+    state = _read_server_state()
+    if state and _process_alive(state.get("pid", -1)):
+        typer.secho(
+            f"Server already running (pid {state['pid']}) at "
+            f"http://{state['host']}:{state['port']}.",
+            fg=typer.colors.YELLOW,
+        )
+        raise typer.Exit(1)
+
+    import subprocess
+
+    log_file = _server_log_file()
+    args = [
+        "server",
+        "start",
+        "--foreground",
+        "--host",
+        host,
+        "--port",
+        str(port),
+        "--open" if open_browser else "--no-open",
+    ]
+    popen_kwargs: dict = {"stdin": subprocess.DEVNULL}
+    if os.name == "posix":
+        popen_kwargs["start_new_session"] = True
+    else:
+        popen_kwargs["creationflags"] = getattr(
+            subprocess, "CREATE_NEW_PROCESS_GROUP", 0
+        )
+    with open(log_file, "ab") as log:
+        proc = subprocess.Popen(
+            _self_command(args), stdout=log, stderr=subprocess.STDOUT, **popen_kwargs
+        )
+
+    _server_pid_file().write_text(
+        json.dumps({"pid": proc.pid, "host": host, "port": port})
+    )
+    typer.secho(
+        f"Server started (pid {proc.pid}) at http://{host}:{port}",
+        fg=typer.colors.GREEN,
+    )
+    typer.secho(f"Logs: {log_file}", fg=typer.colors.BRIGHT_BLACK)
+    if open_browser:
+        import threading
+        import webbrowser
+
+        url = f"http://{host if host != '0.0.0.0' else '127.0.0.1'}:{port}"
+        threading.Timer(1.5, lambda: webbrowser.open(url)).start()
+
+
+@server_app.command("stop")
+def server_stop():
+    """Stop the background web service."""
+    import signal
+    import time
+
+    state = _read_server_state()
+    if not state or not _process_alive(state.get("pid", -1)):
+        typer.secho("Server is not running.", fg=typer.colors.YELLOW)
+        _server_pid_file().unlink(missing_ok=True)
+        return
+
+    pid = state["pid"]
+    try:
+        os.kill(pid, signal.SIGTERM)
+    except OSError as e:
+        typer.secho(f"Failed to stop server (pid {pid}): {e}", fg=typer.colors.RED)
+        raise typer.Exit(1)
+
+    for _ in range(50):
+        if not _process_alive(pid):
+            break
+        time.sleep(0.1)
+    else:
+        with contextlib.suppress(OSError):
+            os.kill(pid, signal.SIGKILL)
+
+    _server_pid_file().unlink(missing_ok=True)
+    typer.secho(f"Server stopped (pid {pid}).", fg=typer.colors.GREEN)
+
+
+@server_app.command("status")
+def server_status():
+    """Show whether the web service is running."""
+    state = _read_server_state()
+    if state and _process_alive(state.get("pid", -1)):
+        typer.secho(
+            f"Server is running (pid {state['pid']}) at "
+            f"http://{state['host']}:{state['port']}.",
+            fg=typer.colors.GREEN,
+        )
+        typer.secho(f"Logs: {_server_log_file()}", fg=typer.colors.BRIGHT_BLACK)
+    else:
+        if state:
+            _server_pid_file().unlink(missing_ok=True)
+        typer.secho("Server is not running.", fg=typer.colors.YELLOW)
 
 
 def main():

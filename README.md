@@ -32,13 +32,20 @@ start the local web service:
 
 ```bash
 pip install "alibabacloud-ros-tran[serve]"
-rostran serve
+rostran server start
 ```
 
-This opens `http://127.0.0.1:8080` with a dual-pane editor for converting
-CloudFormation / Terraform / Excel / ROS templates, formatting ROS templates,
-and browsing transform rules. Use `rostran serve --help` for host, port and
-other options.
+This serves `http://127.0.0.1:8080` with a dual-pane editor for converting
+CloudFormation / Terraform / Excel / ROS templates and formatting ROS templates.
+The service runs in the background; manage it with:
+
+```bash
+rostran server status   # show whether it is running
+rostran server stop     # stop it
+```
+
+Use `rostran server start --foreground` to run it in the foreground, and
+`rostran server start --help` for host, port and other options.
 
 ## Document
 
