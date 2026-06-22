@@ -7,3 +7,13 @@ repos:
         args: [--fix]
       # Run the formatter.
       - id: ruff-format
+  - repo: local
+    hooks:
+      # Rebuild the web UI when frontend sources change and fail if the
+      # committed rostran/web/static assets are stale.
+      - id: web-ui-static
+        name: web UI static assets up to date
+        entry: tools/check_web_static.sh
+        language: script
+        pass_filenames: false
+        files: ^web/frontend/(src/|index\.html|package(-lock)?\.json|vite\.config\.ts|tsconfig.*\.json)
