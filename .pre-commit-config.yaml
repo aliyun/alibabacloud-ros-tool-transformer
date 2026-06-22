@@ -16,4 +16,4 @@ repos:
         entry: tools/check_web_static.sh
         language: script
         pass_filenames: false
-        files: ^web/frontend/(src/|index\.html|package(-lock)?\.json|vite\.config\.ts|tsconfig.*\.json)
+        files: ^frontend/(src/|index\.html|package(-lock)?\.json|vite\.config\.ts|tsconfig.*\.json)

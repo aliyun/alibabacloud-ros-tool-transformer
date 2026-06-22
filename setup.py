@@ -20,7 +20,7 @@ def _build_frontend():
     are missing and a usable npm is available, and never fails the build.
     """
     static_index = HERE / "rostran" / "web" / "static" / "index.html"
-    frontend = HERE / "web" / "frontend"
+    frontend = HERE / "frontend"
     if static_index.exists():
         return
     if not (frontend / "package.json").exists():

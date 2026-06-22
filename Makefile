@@ -10,7 +10,7 @@ else
   UV_PYTHON =
 endif
 
-.PHONY: help init test lint format check build-binary clean clean-pyc clean-build clean-test publish web-build serve serve-dev
+.PHONY: help init test lint format check build-binary clean clean-pyc clean-build clean-test publish web-build serve
 
 help: ## Show this help message.
 	@awk 'BEGIN {FS = ":.*## "; printf "Usage: make <target>\n\n"} /^[a-zA-Z0-9_-]+:.*## / {printf "\033[32m%-12s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -36,17 +36,10 @@ check: ## Run pre-commit to check code style and auto format.
 	uv run pre-commit run --all-files
 
 web-build: ## Build the web frontend into rostran/web/static.
-	cd web/frontend && npm ci && npm run build
-	@touch rostran/web/static/.gitkeep
+	cd frontend && npm ci && npm run build
 
 serve: web-build ## Build web assets and start the rostran web service.
 	uv run --extra serve rostran server start --foreground --open
-
-serve-dev: ## Dev mode: backend + Vite dev server with hot reload.
-	cd web/frontend && npm install
-	uv run --extra serve rostran server start --foreground --no-open & \
-	cd web/frontend && npm run dev; \
-	kill %1 2>/dev/null || true
 
 build-binary: web-build ## Build standalone rostran binary using PyInstaller.
 	uv run --extra binary --extra serve python build.py
