@@ -29,7 +29,10 @@ yaml = YAML()
 yaml.preserve_quotes = True
 
 # cli
-app = typer.Typer(help=__doc__)
+app = typer.Typer(
+    help=__doc__,
+    context_settings={"help_option_names": ["-h", "--help"]},
+)
 COMPAT_MODE_ENV = "ALIBABA_CLOUD_ROSTRAN_COMPAT_MODE"
 SOURCE_TEMPLATE_FORMAT_DEFAULT = typer.Option(
     SourceTemplateFormat.Auto, help="Source template format"
@@ -586,7 +589,6 @@ def server_start(
     host: str = typer.Option(
         "127.0.0.1",
         "--host",
-        "-h",
         help="The host to bind to. Use 0.0.0.0 to expose it on the network.",
     ),
     port: int = typer.Option(8080, "--port", "-p", help="The port to bind to."),
