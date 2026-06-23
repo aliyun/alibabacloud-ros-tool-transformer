@@ -4,7 +4,17 @@ const sidebars: SidebarsConfig = {
   docsSidebar: [
     'intro',
     'installation',
-    'usage',
+    {
+      type: 'category',
+      label: 'Usage',
+      link: {type: 'doc', id: 'usage'},
+      items: [
+        'usage/transform',
+        'usage/format',
+        'usage/rules',
+        'usage/web-service',
+      ],
+    },
     {
       type: 'category',
       label: 'Examples',
