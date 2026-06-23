@@ -37,6 +37,10 @@ rostran server start
 
 This serves `http://127.0.0.1:8080` with a dual-pane editor for converting
 CloudFormation / Terraform / Excel / ROS templates and formatting ROS templates.
+Terraform conversions reuse a bounded project cache at
+`~/.cache/rostran/terraform-projects` by default; override it with
+`ROSTRAN_TERRAFORM_CACHE_DIR` and set `ROSTRAN_TERRAFORM_CACHE_MAX_PROJECTS`
+to change the cache size.
 The service runs in the background; manage it with:
 
 ```bash

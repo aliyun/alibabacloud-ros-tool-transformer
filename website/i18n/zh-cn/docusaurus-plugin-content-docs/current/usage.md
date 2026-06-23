@@ -194,6 +194,16 @@ rostran server stop              # 停止 Web 服务
 - `--no-open`：启动后不打开浏览器。
 - `--foreground`/`-f`：在前台（阻塞）运行，而非后台服务。
 
+#### Terraform 项目缓存
+
+Web 服务转换 Terraform 模板时，会维护一个有界项目缓存。相同模板再次转换时，可以复用
+provider 初始化结果和已缓存的转换结果。每次 Terraform 转换的日志都会打印本次使用的缓存路径。
+
+默认缓存目录为 `~/.cache/rostran/terraform-projects`，最多保留 20 个项目。可通过如下环境变量配置：
+
+- `ROSTRAN_TERRAFORM_CACHE_DIR`：Terraform 项目缓存目录。
+- `ROSTRAN_TERRAFORM_CACHE_MAX_PROJECTS`：最多保留的缓存项目数，默认值为 `20`。
+
 #### 示例
 
 ```bash

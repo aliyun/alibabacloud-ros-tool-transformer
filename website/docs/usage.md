@@ -211,6 +211,20 @@ and opens it in your browser. Manage it later with `status` and `stop`.
 - `--foreground`/`-f`: Run in the foreground (blocking) instead of in the
   background.
 
+#### Terraform Project Cache
+
+When the web service converts Terraform templates, it keeps a bounded project
+cache so repeated conversions of the same template can reuse provider
+initialization and cached transform results. The conversion log prints the cache
+path used for each Terraform project.
+
+By default the cache lives at `~/.cache/rostran/terraform-projects` and keeps up
+to 20 projects. Configure it with:
+
+- `ROSTRAN_TERRAFORM_CACHE_DIR`: Directory used for cached Terraform projects.
+- `ROSTRAN_TERRAFORM_CACHE_MAX_PROJECTS`: Maximum cached projects to keep.
+  Defaults to `20`.
+
 #### Examples
 
 ```bash
