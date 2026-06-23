@@ -1,0 +1,346 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_resource_manager_resource_group.changeRg",
+          "expressions": {
+            "display_name": {
+              "constant_value": "tf-testacc-ipv6gateway311"
+            },
+            "resource_group_name": {
+              "references": [
+                "var.name"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "changeRg",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_resource_manager_resource_group"
+        },
+        {
+          "address": "alicloud_resource_manager_resource_group.defaultRg",
+          "expressions": {
+            "display_name": {
+              "constant_value": "tf-testacc-ipv6gateway503"
+            },
+            "resource_group_name": {
+              "references": [
+                "var.name"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "defaultRg",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_resource_manager_resource_group"
+        },
+        {
+          "address": "alicloud_vpc.defaultVpc",
+          "expressions": {
+            "description": {
+              "constant_value": "tf-testacc"
+            },
+            "enable_ipv6": {
+              "constant_value": true
+            }
+          },
+          "mode": "managed",
+          "name": "defaultVpc",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_vpc"
+        },
+        {
+          "address": "alicloud_vpc_ipv6_gateway.default",
+          "expressions": {
+            "description": {
+              "constant_value": "test"
+            },
+            "ipv6_gateway_name": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "resource_group_id": {
+              "references": [
+                "alicloud_resource_manager_resource_group.defaultRg.id",
+                "alicloud_resource_manager_resource_group.defaultRg"
+              ]
+            },
+            "vpc_id": {
+              "references": [
+                "alicloud_vpc.defaultVpc.id",
+                "alicloud_vpc.defaultVpc"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_vpc_ipv6_gateway"
+        }
+      ],
+      "variables": {
+        "name": {
+          "default": "tf-testacc-example"
+        }
+      }
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_resource_manager_resource_group.changeRg",
+          "mode": "managed",
+          "name": "changeRg",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "region_statuses": []
+          },
+          "type": "alicloud_resource_manager_resource_group",
+          "values": {
+            "display_name": "tf-testacc-ipv6gateway311",
+            "resource_group_name": "tf-testacc-example2",
+            "tags": null,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_resource_manager_resource_group.defaultRg",
+          "mode": "managed",
+          "name": "defaultRg",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "region_statuses": []
+          },
+          "type": "alicloud_resource_manager_resource_group",
+          "values": {
+            "display_name": "tf-testacc-ipv6gateway503",
+            "resource_group_name": "tf-testacc-example1",
+            "tags": null,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_vpc.defaultVpc",
+          "mode": "managed",
+          "name": "defaultVpc",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "ipv6_cidr_blocks": [],
+            "secondary_cidr_blocks": [],
+            "user_cidrs": []
+          },
+          "type": "alicloud_vpc",
+          "values": {
+            "classic_link_enabled": null,
+            "description": "tf-testacc",
+            "dry_run": null,
+            "enable_ipv6": true,
+            "ipv4_ipam_pool_id": null,
+            "ipv6_isp": null,
+            "tags": null,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_vpc_ipv6_gateway.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_vpc_ipv6_gateway",
+          "values": {
+            "description": "test",
+            "ipv6_gateway_name": "tf-testacc-example",
+            "tags": null,
+            "timeouts": null
+          }
+        }
+      ]
+    }
+  },
+  "relevant_attributes": [
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_vpc.defaultVpc"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_resource_manager_resource_group.defaultRg"
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "alicloud_resource_manager_resource_group.changeRg",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "display_name": "tf-testacc-ipv6gateway311",
+          "resource_group_name": "tf-testacc-example2",
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {
+          "region_statuses": []
+        },
+        "after_unknown": {
+          "account_id": true,
+          "create_date": true,
+          "id": true,
+          "name": true,
+          "region_statuses": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "changeRg",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_resource_manager_resource_group"
+    },
+    {
+      "address": "alicloud_resource_manager_resource_group.defaultRg",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "display_name": "tf-testacc-ipv6gateway503",
+          "resource_group_name": "tf-testacc-example1",
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {
+          "region_statuses": []
+        },
+        "after_unknown": {
+          "account_id": true,
+          "create_date": true,
+          "id": true,
+          "name": true,
+          "region_statuses": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "defaultRg",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_resource_manager_resource_group"
+    },
+    {
+      "address": "alicloud_vpc.defaultVpc",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "classic_link_enabled": null,
+          "description": "tf-testacc",
+          "dry_run": null,
+          "enable_ipv6": true,
+          "ipv4_ipam_pool_id": null,
+          "ipv6_isp": null,
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {
+          "ipv6_cidr_blocks": [],
+          "secondary_cidr_blocks": [],
+          "user_cidrs": []
+        },
+        "after_unknown": {
+          "cidr_block": true,
+          "create_time": true,
+          "id": true,
+          "ipv6_cidr_block": true,
+          "ipv6_cidr_blocks": true,
+          "name": true,
+          "resource_group_id": true,
+          "route_table_id": true,
+          "router_id": true,
+          "router_table_id": true,
+          "secondary_cidr_blocks": true,
+          "status": true,
+          "user_cidrs": true,
+          "vpc_name": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "defaultVpc",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_vpc"
+    },
+    {
+      "address": "alicloud_vpc_ipv6_gateway.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "description": "test",
+          "ipv6_gateway_name": "tf-testacc-example",
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "business_status": true,
+          "create_time": true,
+          "expired_time": true,
+          "id": true,
+          "instance_charge_type": true,
+          "ipv6_gateway_id": true,
+          "resource_group_id": true,
+          "spec": true,
+          "status": true,
+          "vpc_id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_vpc_ipv6_gateway"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:46:38Z",
+  "variables": {
+    "name": {
+      "value": "tf-testacc-example"
+    }
+  }
+}

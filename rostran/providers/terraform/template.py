@@ -1,9 +1,10 @@
 import os
+import json
 import linecache
 from uuid import uuid4
 from typing import Any, Optional, Tuple
 import typer
-from libterraform import TerraformCommand, TerraformConfig
+from libterraform import TerraformConfig
 from libterraform.exceptions import TerraformCommandError
 
 from rostran.core.exceptions import (
@@ -22,8 +23,89 @@ from rostran.core.template import Template, RosTemplate
 from rostran.core.properties import Property
 from rostran.core.resources import Resources, Resource
 from rostran.core.outputs import Outputs, Output
+from rostran.core.terraform import TerraformRunner
 import rostran.handlers.basic as basic_handler_module
 import rostran.handlers.merge as merge_handler_module
+
+
+def _plan_reference_to_expr(reference: str) -> dict:
+    traversal = []
+    for part in reference.split("."):
+        name = part.split("[", 1)[0]
+        if name:
+            traversal.append({"Name": name})
+    if not traversal:
+        return {}
+    return {"Traversal": traversal}
+
+
+def _plan_expression_to_expr(expression: dict) -> dict:
+    references = expression.get("references") or []
+    if references:
+        return _plan_reference_to_expr(references[0])
+    return {}
+
+
+def _plan_expressions_to_body(expressions: dict) -> dict:
+    attributes = {}
+    blocks = []
+    for name, expression in (expressions or {}).items():
+        if isinstance(expression, list):
+            for block_expression in expression:
+                if isinstance(block_expression, dict):
+                    blocks.append(
+                        {
+                            "Type": name,
+                            "Body": _plan_expressions_to_body(block_expression),
+                        }
+                    )
+            continue
+
+        attributes[name] = {
+            "Name": name,
+            "Expr": _plan_expression_to_expr(expression or {}),
+        }
+
+    body: dict[str, Any] = {"Attributes": attributes}
+    if blocks:
+        body["Blocks"] = blocks
+    return body
+
+
+def _tf_data_from_plan_configuration(plan: dict) -> dict:
+    root_module = (plan.get("configuration") or {}).get("root_module") or {}
+    managed_resources = {}
+    data_resources = {}
+
+    for resource in root_module.get("resources") or []:
+        mode = resource.get("mode")
+        address = resource.get("address")
+        if not address:
+            continue
+        converted = {
+            "Mode": mode,
+            "Name": resource.get("name"),
+            "Type": resource.get("type"),
+            "Config": _plan_expressions_to_body(resource.get("expressions") or {}),
+        }
+        if mode == "managed":
+            managed_resources[address] = converted
+        elif mode == "data":
+            data_resources[address] = converted
+
+    outputs = {}
+    for name, output in (root_module.get("outputs") or {}).items():
+        outputs[name] = {
+            "Name": name,
+            "Description": "",
+            "Expr": _plan_expression_to_expr(output.get("expression") or {}),
+        }
+
+    return {
+        "ManagedResources": managed_resources,
+        "DataResources": data_resources,
+        "Outputs": outputs,
+    }
 
 
 class TerraformTemplate(Template):
@@ -220,26 +302,31 @@ class TerraformTemplate(Template):
         cwd = os.getcwd()
         if not os.path.isabs(tf_dir):
             tf_dir = os.path.join(cwd, tf_dir)
-        tf = TerraformCommand(tf_dir)
         if tf_plan_path is None:
             plan_filename = f"{str(uuid4())[:8]}.tfplan"
             tf_plan_path = os.path.join(cwd, plan_filename)
             try:
-                tf.init(check=True)
-                tf.plan(out=tf_plan_path, check=True)
-                r = tf.show(tf_plan_path, check=True)
-                tf_plan = r.value
+                with TerraformRunner(max_workers=1) as runner:
+                    runner.run(tf_dir, "init", check=True)
+                    runner.run(tf_dir, "plan", out=tf_plan_path, check=True)
+                    r = runner.run(tf_dir, "show", tf_plan_path, check=True)
+                    tf_plan = r.value
             except TerraformCommandError as e:
                 raise RunCommandFailed(cmd=e.cmd, reason=e.stderr or e.stdout)
             finally:
                 if os.path.exists(tf_plan_path):
                     os.remove(tf_plan_path)
         else:
-            try:
-                r = tf.show(tf_plan_path, check=True)
-                tf_plan = r.value
-            except TerraformCommandError as e:
-                raise RunCommandFailed(cmd=e.cmd, reason=e.stderr or e.stdout)
+            if str(tf_plan_path).lower().endswith(".json"):
+                with open(tf_plan_path, encoding="utf-8") as f:
+                    tf_plan = json.load(f)
+            else:
+                try:
+                    with TerraformRunner(max_workers=1) as runner:
+                        r = runner.run(tf_dir, "show", tf_plan_path, check=True)
+                    tf_plan = r.value
+                except TerraformCommandError as e:
+                    raise RunCommandFailed(cmd=e.cmd, reason=e.stderr or e.stdout)
 
         if tf_plan is None:
             raise RosTranException()
@@ -248,7 +335,12 @@ class TerraformTemplate(Template):
         if version not in cls.SUPPORTED_PLAN_FORMAT_VERSIONS:
             raise TerraformPlanFormatVersionNotSupported(version=version)
 
-        tf_data, _ = TerraformConfig.load_config_dir(tf_dir)
+        try:
+            tf_data, _ = TerraformConfig.load_config_dir(tf_dir)
+        except Exception:  # noqa: BLE001 - fall back to terraform show JSON config
+            tf_data = _tf_data_from_plan_configuration(tf_plan)
+            if not tf_data["ManagedResources"] and not tf_data["Outputs"]:
+                raise
         typer.secho("Parse terraform config done.")
         return tf_plan, tf_data
 

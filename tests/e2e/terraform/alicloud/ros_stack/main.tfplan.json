@@ -1,0 +1,126 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_ros_stack.example",
+          "expressions": {
+            "stack_name": {
+              "constant_value": "tf-testaccstack"
+            },
+            "stack_policy_body": {
+              "constant_value": "    {\n        \"Statement\": [{\n            \"Action\": \"Update:Delete\",\n            \"Resource\": \"*\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\"\n        }]\n    }\n"
+            },
+            "template_body": {
+              "constant_value": "    {\n        \"ROSTemplateFormatVersion\": \"2015-09-01\"\n    }\n"
+            }
+          },
+          "mode": "managed",
+          "name": "example",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_ros_stack"
+        }
+      ]
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_ros_stack.example",
+          "mode": "managed",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "parameters": []
+          },
+          "type": "alicloud_ros_stack",
+          "values": {
+            "create_option": null,
+            "deletion_protection": "Disabled",
+            "disable_rollback": false,
+            "notification_urls": null,
+            "parameters": [],
+            "ram_role_name": null,
+            "replacement_option": null,
+            "retain_all_resources": null,
+            "retain_resources": null,
+            "stack_name": "tf-testaccstack",
+            "stack_policy_body": "    {\n        \"Statement\": [{\n            \"Action\": \"Update:Delete\",\n            \"Resource\": \"*\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\"\n        }]\n    }\n",
+            "stack_policy_during_update_body": null,
+            "stack_policy_during_update_url": null,
+            "stack_policy_url": null,
+            "tags": null,
+            "template_body": "    {\n        \"ROSTemplateFormatVersion\": \"2015-09-01\"\n    }\n",
+            "template_url": null,
+            "template_version": null,
+            "timeout_in_minutes": 60,
+            "timeouts": null,
+            "use_previous_parameters": null
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "alicloud_ros_stack.example",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "create_option": null,
+          "deletion_protection": "Disabled",
+          "disable_rollback": false,
+          "notification_urls": null,
+          "parameters": [],
+          "ram_role_name": null,
+          "replacement_option": null,
+          "retain_all_resources": null,
+          "retain_resources": null,
+          "stack_name": "tf-testaccstack",
+          "stack_policy_body": "    {\n        \"Statement\": [{\n            \"Action\": \"Update:Delete\",\n            \"Resource\": \"*\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\"\n        }]\n    }\n",
+          "stack_policy_during_update_body": null,
+          "stack_policy_during_update_url": null,
+          "stack_policy_url": null,
+          "tags": null,
+          "template_body": "    {\n        \"ROSTemplateFormatVersion\": \"2015-09-01\"\n    }\n",
+          "template_url": null,
+          "template_version": null,
+          "timeout_in_minutes": 60,
+          "timeouts": null,
+          "use_previous_parameters": null
+        },
+        "after_sensitive": {
+          "parameters": []
+        },
+        "after_unknown": {
+          "id": true,
+          "parameters": [],
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_ros_stack"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:46:03Z"
+}

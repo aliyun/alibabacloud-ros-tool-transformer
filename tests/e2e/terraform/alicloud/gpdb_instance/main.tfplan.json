@@ -1,0 +1,577 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_gpdb_instance.default",
+          "expressions": {
+            "db_instance_category": {
+              "constant_value": "HighAvailability"
+            },
+            "db_instance_class": {
+              "constant_value": "gpdb.group.segsdx1"
+            },
+            "db_instance_mode": {
+              "constant_value": "StorageElastic"
+            },
+            "description": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "engine": {
+              "constant_value": "gpdb"
+            },
+            "engine_version": {
+              "constant_value": "6.0"
+            },
+            "instance_network_type": {
+              "constant_value": "VPC"
+            },
+            "instance_spec": {
+              "constant_value": "2C16G"
+            },
+            "ip_whitelist": [
+              {
+                "security_ip_list": {
+                  "constant_value": "127.0.0.1"
+                }
+              }
+            ],
+            "payment_type": {
+              "constant_value": "PayAsYouGo"
+            },
+            "seg_node_num": {
+              "constant_value": 4
+            },
+            "seg_storage_type": {
+              "constant_value": "cloud_essd"
+            },
+            "storage_size": {
+              "constant_value": 50
+            },
+            "vpc_id": {
+              "constant_value": "vpc-xxx"
+            },
+            "vswitch_id": {
+              "constant_value": "vsw-xxx"
+            },
+            "zone_id": {
+              "references": [
+                "data.alicloud_gpdb_zones.default.ids[0]",
+                "data.alicloud_gpdb_zones.default.ids",
+                "data.alicloud_gpdb_zones.default"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_gpdb_instance"
+        },
+        {
+          "address": "data.alicloud_gpdb_zones.default",
+          "mode": "data",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_gpdb_zones"
+        },
+        {
+          "address": "data.alicloud_resource_manager_resource_groups.default",
+          "mode": "data",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_resource_manager_resource_groups"
+        }
+      ],
+      "variables": {
+        "name": {
+          "default": "tf-example"
+        }
+      }
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_gpdb_instance.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "ip_whitelist": [
+              {}
+            ]
+          },
+          "type": "alicloud_gpdb_instance",
+          "values": {
+            "db_instance_category": "HighAvailability",
+            "db_instance_class": "gpdb.group.segsdx1",
+            "db_instance_mode": "StorageElastic",
+            "description": "tf-example",
+            "encryption_key": null,
+            "encryption_type": null,
+            "engine": "gpdb",
+            "engine_version": "6.0",
+            "instance_group_count": null,
+            "instance_network_type": "VPC",
+            "instance_spec": "2C16G",
+            "ip_whitelist": [
+              {
+                "security_ip_list": "127.0.0.1"
+              }
+            ],
+            "master_node_num": 1,
+            "payment_type": "PayAsYouGo",
+            "period": null,
+            "private_ip_address": null,
+            "security_ip_list": null,
+            "seg_node_num": 4,
+            "seg_storage_type": "cloud_essd",
+            "storage_size": 50,
+            "tags": null,
+            "timeouts": null,
+            "used_time": null,
+            "vpc_id": "vpc-xxx",
+            "vswitch_id": "vsw-xxx",
+            "zone_id": "cn-beijing-g"
+          }
+        }
+      ]
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.8.4",
+    "values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "data.alicloud_gpdb_zones.default",
+            "mode": "data",
+            "name": "default",
+            "provider_name": "registry.terraform.io/hashicorp/alicloud",
+            "schema_version": 0,
+            "sensitive_values": {
+              "ids": [
+                false,
+                false,
+                false
+              ],
+              "zones": [
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                }
+              ]
+            },
+            "type": "alicloud_gpdb_zones",
+            "values": {
+              "id": "2818988916",
+              "ids": [
+                "cn-beijing-g",
+                "cn-beijing-h",
+                "cn-beijing-i"
+              ],
+              "multi": false,
+              "output_file": null,
+              "zones": [
+                {
+                  "id": "cn-beijing-g",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-h",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-i",
+                  "multi_zone_ids": []
+                }
+              ]
+            }
+          },
+          {
+            "address": "data.alicloud_resource_manager_resource_groups.default",
+            "mode": "data",
+            "name": "default",
+            "provider_name": "registry.terraform.io/hashicorp/alicloud",
+            "schema_version": 0,
+            "sensitive_values": {
+              "groups": [
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                },
+                {
+                  "region_statuses": []
+                }
+              ],
+              "ids": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "names": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "type": "alicloud_resource_manager_resource_groups",
+            "values": {
+              "enable_details": false,
+              "groups": [
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "\u9ed8\u8ba4\u8d44\u6e90\u7ec4",
+                  "id": "rg-acfm2xwmxvrzq6q",
+                  "name": "default",
+                  "region_statuses": [],
+                  "resource_group_name": "default",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "12",
+                  "id": "rg-aek2z4h3z5dffsi",
+                  "name": "a2341",
+                  "region_statuses": [],
+                  "resource_group_name": "a2341",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "\u751f\u4ea7\u73af\u5883",
+                  "id": "rg-aekzs3xmizsn5eq",
+                  "name": "prod",
+                  "region_statuses": [],
+                  "resource_group_name": "prod",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "\u5f00\u53d1\u73af\u5883",
+                  "id": "rg-aekzko7fsujtvqy",
+                  "name": "dev",
+                  "region_statuses": [],
+                  "resource_group_name": "dev",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "\u6d4b\u8bd5\u73af\u5883",
+                  "id": "rg-aekzsvnra53pg4y",
+                  "name": "test",
+                  "region_statuses": [],
+                  "resource_group_name": "test",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "Nasdaq\u884c\u60c5",
+                  "id": "rg-aek2hkqyanzqqoy",
+                  "name": "qitan-test",
+                  "region_statuses": [],
+                  "resource_group_name": "qitan-test",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "\u5947\u6f6d",
+                  "id": "rg-aek2dspmxcz7hka",
+                  "name": "qitan",
+                  "region_statuses": [],
+                  "resource_group_name": "qitan",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "resourcecheck",
+                  "id": "rg-aekzz7ypm6hicna",
+                  "name": "resource",
+                  "region_statuses": [],
+                  "resource_group_name": "resource",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "ROS\u6a21\u677f\u6d4b\u8bd5",
+                  "id": "rg-aekzktrsa2mggxy",
+                  "name": "suzhaoyu-test",
+                  "region_statuses": [],
+                  "resource_group_name": "suzhaoyu-test",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "ROS\u5143\u6a21\u677f\u6d4b\u8bd5",
+                  "id": "rg-aek2oecg6vb76uq",
+                  "name": "TemplateScratchTest",
+                  "region_statuses": [],
+                  "resource_group_name": "TemplateScratchTest",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "testRos8",
+                  "id": "rg-aekzxrgffd5mvgq",
+                  "name": "testRos8",
+                  "region_statuses": [],
+                  "resource_group_name": "testRos8",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "\u8d44\u6e90\u7ec4\u6d4b\u8bd5",
+                  "id": "rg-aekzjljoebwhlsy",
+                  "name": "ResourceGroupTest",
+                  "region_statuses": [],
+                  "resource_group_name": "ResourceGroupTest",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "ECS\u6570\u636e\u5907\u4efd\u4e0e\u4fdd\u62a4\u6d4b\u8bd5",
+                  "id": "rg-aek2p2wp2c3e6aq",
+                  "name": "ECS-yt",
+                  "region_statuses": [],
+                  "resource_group_name": "ECS-yt",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "test-zn",
+                  "id": "rg-aek24zq526rwt6i",
+                  "name": "test-zn",
+                  "region_statuses": [],
+                  "resource_group_name": "test-zn",
+                  "status": "OK"
+                },
+                {
+                  "account_id": "1754580903499898",
+                  "display_name": "test-rg",
+                  "id": "rg-aekzz35ereuxiva",
+                  "name": "test-rg",
+                  "region_statuses": [],
+                  "resource_group_name": "test-rg",
+                  "status": "OK"
+                }
+              ],
+              "id": "39364610",
+              "ids": [
+                "rg-acfm2xwmxvrzq6q",
+                "rg-aek2z4h3z5dffsi",
+                "rg-aekzs3xmizsn5eq",
+                "rg-aekzko7fsujtvqy",
+                "rg-aekzsvnra53pg4y",
+                "rg-aek2hkqyanzqqoy",
+                "rg-aek2dspmxcz7hka",
+                "rg-aekzz7ypm6hicna",
+                "rg-aekzktrsa2mggxy",
+                "rg-aek2oecg6vb76uq",
+                "rg-aekzxrgffd5mvgq",
+                "rg-aekzjljoebwhlsy",
+                "rg-aek2p2wp2c3e6aq",
+                "rg-aek24zq526rwt6i",
+                "rg-aekzz35ereuxiva"
+              ],
+              "name_regex": null,
+              "names": [
+                "default",
+                "a2341",
+                "prod",
+                "dev",
+                "test",
+                "qitan-test",
+                "qitan",
+                "resource",
+                "suzhaoyu-test",
+                "TemplateScratchTest",
+                "testRos8",
+                "ResourceGroupTest",
+                "ECS-yt",
+                "test-zn",
+                "test-rg"
+              ],
+              "output_file": null,
+              "status": null
+            }
+          }
+        ]
+      }
+    }
+  },
+  "relevant_attributes": [
+    {
+      "attribute": [
+        "ids",
+        0
+      ],
+      "resource": "data.alicloud_gpdb_zones.default"
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "alicloud_gpdb_instance.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "db_instance_category": "HighAvailability",
+          "db_instance_class": "gpdb.group.segsdx1",
+          "db_instance_mode": "StorageElastic",
+          "description": "tf-example",
+          "encryption_key": null,
+          "encryption_type": null,
+          "engine": "gpdb",
+          "engine_version": "6.0",
+          "instance_group_count": null,
+          "instance_network_type": "VPC",
+          "instance_spec": "2C16G",
+          "ip_whitelist": [
+            {
+              "security_ip_list": "127.0.0.1"
+            }
+          ],
+          "master_node_num": 1,
+          "payment_type": "PayAsYouGo",
+          "period": null,
+          "private_ip_address": null,
+          "security_ip_list": null,
+          "seg_node_num": 4,
+          "seg_storage_type": "cloud_essd",
+          "storage_size": 50,
+          "tags": null,
+          "timeouts": null,
+          "used_time": null,
+          "vpc_id": "vpc-xxx",
+          "vswitch_id": "vsw-xxx",
+          "zone_id": "cn-beijing-g"
+        },
+        "after_sensitive": {
+          "ip_whitelist": [
+            {}
+          ]
+        },
+        "after_unknown": {
+          "availability_zone": true,
+          "connection_string": true,
+          "create_sample_data": true,
+          "id": true,
+          "instance_charge_type": true,
+          "ip_whitelist": [
+            {
+              "ip_group_attribute": true,
+              "ip_group_name": true
+            }
+          ],
+          "maintain_end_time": true,
+          "maintain_start_time": true,
+          "master_cu": true,
+          "port": true,
+          "resource_group_id": true,
+          "ssl_enabled": true,
+          "status": true,
+          "vector_configuration_status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_gpdb_instance"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:45:42Z",
+  "variables": {
+    "name": {
+      "value": "tf-example"
+    }
+  }
+}

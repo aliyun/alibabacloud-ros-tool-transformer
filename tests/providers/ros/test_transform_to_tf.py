@@ -1,10 +1,12 @@
 import os
+import shutil
 
 from libterraform import TerraformCommand
 from libterraform.exceptions import TerraformCommandError
 
 from rostran.providers.ros.template import ROS2TerraformTemplate
 from rostran.providers.ros.yaml_util import yaml
+from tests.conf import ROOT
 
 
 RESULT_PATH = os.path.abspath("terraform/alicloud")
@@ -332,6 +334,22 @@ Resources:
 
 
 class TestROS2TF:
+    @staticmethod
+    def _ensure_provider_cache():
+        for name in (".terraform", ".terraform.lock.hcl"):
+            dst = os.path.join(RESULT_PATH, name)
+            if os.path.exists(dst):
+                continue
+            src = os.path.join(ROOT, name)
+            if not os.path.exists(src):
+                tf = TerraformCommand(RESULT_PATH)
+                tf.init(check=True)
+                return
+            if os.path.isdir(src):
+                shutil.copytree(src, dst)
+            else:
+                shutil.copyfile(src, dst)
+
     def __enter__(self):
         if not os.path.exists(RESULT_PATH):
             os.makedirs(RESULT_PATH, exist_ok=True)
@@ -340,14 +358,10 @@ class TestROS2TF:
                 if filename.endswith(".tf"):
                     file_path = os.path.join(RESULT_PATH, filename)
                     os.unlink(file_path)
-        tf = TerraformCommand(RESULT_PATH)
-        tf_flag = os.path.join(RESULT_PATH, ".terraform")
-        tf_flag2 = os.path.join(RESULT_PATH, ".terraform.lock.hcl")
-        if not os.path.exists(tf_flag) or not os.path.exists(tf_flag2):
-            tf.init(check=True)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         tf = TerraformCommand(RESULT_PATH)
+        self._ensure_provider_cache()
         try:
             tf.validate(check=True)
             print("terraform validate success!")

@@ -1,3 +1,4 @@
+import asyncio
 import json
 import os
 
@@ -184,27 +185,24 @@ def test_ros_to_terraform_without_credentials():
     assert any(t.filename.endswith(".tf") for t in result.targets)
 
 
-def test_transform_runs_off_the_event_loop(monkeypatch, client):
-    """The synchronous (and potentially slow) transform must be offloaded to a
-    worker thread so it never blocks the event loop. A worker thread has no
-    running asyncio loop, whereas code executed inline inside the async endpoint
-    would. This deterministically catches a regression to inline execution."""
-    import asyncio
-
+def test_transform_endpoint_awaits_async_service(monkeypatch, client):
+    """The web endpoint should use the async service path instead of wrapping
+    the synchronous transform in Starlette's threadpool."""
     captured = {}
 
-    def record_transform(*_args, **_kwargs):
-        try:
-            asyncio.get_running_loop()
-            captured["on_event_loop"] = True
-        except RuntimeError:
-            captured["on_event_loop"] = False
+    async def record_transform(*_args, **_kwargs):
+        asyncio.get_running_loop()
+        captured["async_service_called"] = True
         return service.TransformResult(
             targets=[service.TargetFile("template.yml", "ok: true\n")],
             log="",
         )
 
-    monkeypatch.setattr(service, "transform", record_transform)
+    def sync_transform_should_not_run(*_args, **_kwargs):
+        raise AssertionError("web endpoint should await service.transform_async")
+
+    monkeypatch.setattr(service, "transform_async", record_transform, raising=False)
+    monkeypatch.setattr(service, "transform", sync_transform_should_not_run)
 
     resp = client.post(
         "/api/transform",
@@ -212,23 +210,26 @@ def test_transform_runs_off_the_event_loop(monkeypatch, client):
         files={"files": ("a.json", "{}", "application/json")},
     )
     assert resp.status_code == 200, resp.text
-    assert captured.get("on_event_loop") is False, (
-        "transform ran on the event loop thread; it must be offloaded"
-    )
+    assert captured.get("async_service_called") is True
 
 
-def test_transform_runs_in_subprocess():
-    """Transforms run out-of-process so libterraform / native crashes / chdir
-    stay isolated from the server. The conversion still works end to end."""
+def test_service_transform_does_not_start_web_worker(monkeypatch):
+    """The service should run the transform in-process; Terraform operations are
+    isolated by libterraform's TerraformPool worker processes."""
+    import subprocess
+
     cfn = '{"AWSTemplateFormatVersion":"2010-09-09","Resources":{"Vpc":{"Type":"AWS::EC2::VPC","Properties":{"CidrBlock":"192.168.0.0/16"}}}}'
     before = os.getcwd()
+
+    def worker_should_not_run(*_args, **_kwargs):
+        raise AssertionError("service.transform should not start a worker process")
+
+    monkeypatch.setattr(subprocess, "Popen", worker_should_not_run)
     res = service.transform(
         files=[("vpc.json", cfn.encode())],
         source_format=SourceTemplateFormat.CloudFormation,
         target_format=TargetTemplateFormat.Yaml,
     )
     assert any("ALIYUN::ECS::VPC" in t.content for t in res.targets)
-    # The server process working directory is untouched by the child.
     assert os.getcwd() == before
-    # Internal temp paths / save notices are scrubbed from the log.
     assert "Save template to" not in res.log

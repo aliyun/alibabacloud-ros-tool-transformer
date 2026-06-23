@@ -1,0 +1,1686 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "const_map": {
+          "expression": {
+            "constant_value": {
+              "foo": "bar"
+            }
+          }
+        },
+        "instance_id": {
+          "expression": {
+            "references": [
+              "alicloud_instance.myinstance.id",
+              "alicloud_instance.myinstance"
+            ]
+          }
+        },
+        "log_machine_group_id": {
+          "expression": {
+            "references": [
+              "alicloud_log_machine_group.sls_machine_group.id",
+              "alicloud_log_machine_group.sls_machine_group"
+            ]
+          }
+        }
+      },
+      "resources": [
+        {
+          "address": "alicloud_instance.myinstance",
+          "depends_on": [
+            "alicloud_security_group.mysg"
+          ],
+          "expressions": {
+            "data_disks": [
+              {
+                "category": {
+                  "constant_value": "cloud_efficiency"
+                },
+                "description": {
+                  "references": [
+                    "alicloud_vswitch.myvswitch.id",
+                    "alicloud_vswitch.myvswitch"
+                  ]
+                },
+                "name": {
+                  "constant_value": "mydisk1"
+                },
+                "size": {
+                  "constant_value": 20
+                }
+              },
+              {
+                "category": {
+                  "constant_value": "cloud_essd"
+                },
+                "description": {
+                  "constant_value": "disk 2"
+                },
+                "name": {
+                  "constant_value": "mydisk2"
+                },
+                "size": {
+                  "constant_value": 25
+                }
+              }
+            ],
+            "image_id": {
+              "references": [
+                "data.alicloud_images.centos_image.images[0].id",
+                "data.alicloud_images.centos_image.images[0]",
+                "data.alicloud_images.centos_image.images",
+                "data.alicloud_images.centos_image"
+              ]
+            },
+            "instance_name": {
+              "constant_value": "myinstance"
+            },
+            "instance_type": {
+              "references": [
+                "data.alicloud_instance_types.c2g4.instance_types[0].id",
+                "data.alicloud_instance_types.c2g4.instance_types[0]",
+                "data.alicloud_instance_types.c2g4.instance_types",
+                "data.alicloud_instance_types.c2g4"
+              ]
+            },
+            "security_groups": {
+              "references": [
+                "alicloud_security_group.mysg"
+              ]
+            },
+            "system_disk_category": {
+              "references": [
+                "var.system_disk[\"category\"]",
+                "var.system_disk"
+              ]
+            },
+            "vswitch_id": {
+              "references": [
+                "alicloud_vswitch.myvswitch.id",
+                "alicloud_vswitch.myvswitch"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "myinstance",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_instance"
+        },
+        {
+          "address": "alicloud_log_machine_group.sls_machine_group",
+          "depends_on": [
+            "alicloud_log_project.sls"
+          ],
+          "expressions": {
+            "identify_list": {
+              "constant_value": [
+                "10.0.0.1",
+                "10.0.0.2"
+              ]
+            },
+            "identify_type": {
+              "constant_value": "ip"
+            },
+            "name": {
+              "constant_value": "tf-machine-group"
+            },
+            "project": {
+              "references": [
+                "alicloud_log_project.sls.name",
+                "alicloud_log_project.sls"
+              ]
+            },
+            "topic": {
+              "constant_value": "terraform"
+            }
+          },
+          "mode": "managed",
+          "name": "sls_machine_group",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_log_machine_group"
+        },
+        {
+          "address": "alicloud_log_project.sls",
+          "expressions": {
+            "description": {
+              "constant_value": "created by terraform"
+            },
+            "name": {
+              "constant_value": "tf-log"
+            }
+          },
+          "mode": "managed",
+          "name": "sls",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_log_project"
+        },
+        {
+          "address": "alicloud_security_group.mysg",
+          "expressions": {
+            "name": {
+              "constant_value": "mysg"
+            },
+            "vpc_id": {
+              "references": [
+                "alicloud_vpc.myvpc.id",
+                "alicloud_vpc.myvpc"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "mysg",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_security_group"
+        },
+        {
+          "address": "alicloud_vpc.myvpc",
+          "expressions": {
+            "cidr_block": {
+              "constant_value": "172.16.0.0/12"
+            },
+            "vpc_name": {
+              "constant_value": "myvpc"
+            }
+          },
+          "mode": "managed",
+          "name": "myvpc",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_vpc"
+        },
+        {
+          "address": "alicloud_vswitch.myvswitch",
+          "expressions": {
+            "cidr_block": {
+              "constant_value": "172.16.0.0/21"
+            },
+            "vpc_id": {
+              "references": [
+                "alicloud_vpc.myvpc.id",
+                "alicloud_vpc.myvpc"
+              ]
+            },
+            "vswitch_name": {
+              "constant_value": "myvswitch"
+            },
+            "zone_id": {
+              "constant_value": "cn-beijing-g"
+            }
+          },
+          "mode": "managed",
+          "name": "myvswitch",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_vswitch"
+        },
+        {
+          "address": "data.alicloud_images.centos_image",
+          "expressions": {
+            "most_recent": {
+              "constant_value": true
+            },
+            "name_regex": {
+              "constant_value": "^centos"
+            },
+            "owners": {
+              "constant_value": "system"
+            }
+          },
+          "mode": "data",
+          "name": "centos_image",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_images"
+        },
+        {
+          "address": "data.alicloud_instance_types.c2g4",
+          "expressions": {
+            "cpu_core_count": {
+              "constant_value": 2
+            },
+            "memory_size": {
+              "constant_value": 4
+            }
+          },
+          "mode": "data",
+          "name": "c2g4",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_instance_types"
+        }
+      ],
+      "variables": {
+        "system_disk": {
+          "default": {
+            "category": "cloud_efficiency"
+          }
+        }
+      }
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "output_changes": {
+    "const_map": {
+      "actions": [
+        "create"
+      ],
+      "after": {
+        "foo": "bar"
+      },
+      "after_sensitive": false,
+      "after_unknown": false,
+      "before": null,
+      "before_sensitive": false
+    },
+    "instance_id": {
+      "actions": [
+        "create"
+      ],
+      "after_sensitive": false,
+      "after_unknown": true,
+      "before": null,
+      "before_sensitive": false
+    },
+    "log_machine_group_id": {
+      "actions": [
+        "create"
+      ],
+      "after_sensitive": false,
+      "after_unknown": true,
+      "before": null,
+      "before_sensitive": false
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "const_map": {
+        "sensitive": false,
+        "type": [
+          "object",
+          {
+            "foo": "string"
+          }
+        ],
+        "value": {
+          "foo": "bar"
+        }
+      },
+      "instance_id": {
+        "sensitive": false
+      },
+      "log_machine_group_id": {
+        "sensitive": false
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_instance.myinstance",
+          "mode": "managed",
+          "name": "myinstance",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "data_disks": [
+              {},
+              {}
+            ],
+            "ipv6_addresses": [],
+            "maintenance_time": [],
+            "network_interfaces": [],
+            "password": true,
+            "secondary_private_ips": [],
+            "security_groups": [],
+            "volume_tags": {}
+          },
+          "type": "alicloud_instance",
+          "values": {
+            "allocate_public_ip": null,
+            "auto_release_time": null,
+            "auto_renew_period": null,
+            "data_disks": [
+              {
+                "auto_snapshot_policy_id": null,
+                "category": "cloud_efficiency",
+                "delete_with_instance": true,
+                "device": null,
+                "encrypted": false,
+                "kms_key_id": null,
+                "name": "mydisk1",
+                "size": 20,
+                "snapshot_id": null
+              },
+              {
+                "auto_snapshot_policy_id": null,
+                "category": "cloud_essd",
+                "delete_with_instance": true,
+                "description": "disk 2",
+                "device": null,
+                "encrypted": false,
+                "kms_key_id": null,
+                "name": "mydisk2",
+                "size": 25,
+                "snapshot_id": null
+              }
+            ],
+            "dedicated_host_id": null,
+            "deletion_protection": false,
+            "deployment_set_id": null,
+            "dry_run": false,
+            "force_delete": null,
+            "hpc_cluster_id": null,
+            "image_id": "centos_stream_9_x64_20G_alibase_20240923.vhd",
+            "include_data_disks": null,
+            "instance_name": "myinstance",
+            "instance_type": "ecs.n1.medium",
+            "is_outdated": null,
+            "kms_encrypted_password": null,
+            "kms_encryption_context": null,
+            "launch_template_id": null,
+            "launch_template_name": null,
+            "launch_template_version": null,
+            "maintenance_notify": null,
+            "maintenance_time": [],
+            "operator_type": null,
+            "password": null,
+            "period_unit": null,
+            "renewal_status": null,
+            "system_disk_auto_snapshot_policy_id": null,
+            "system_disk_category": "cloud_efficiency",
+            "system_disk_encrypt_algorithm": null,
+            "system_disk_kms_key_id": null,
+            "system_disk_storage_cluster_id": null,
+            "tags": null,
+            "timeouts": null,
+            "user_data": null
+          }
+        },
+        {
+          "address": "alicloud_log_machine_group.sls_machine_group",
+          "mode": "managed",
+          "name": "sls_machine_group",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "identify_list": [
+              false,
+              false
+            ]
+          },
+          "type": "alicloud_log_machine_group",
+          "values": {
+            "identify_list": [
+              "10.0.0.1",
+              "10.0.0.2"
+            ],
+            "identify_type": "ip",
+            "name": "tf-machine-group",
+            "project": "tf-log",
+            "topic": "terraform"
+          }
+        },
+        {
+          "address": "alicloud_log_project.sls",
+          "mode": "managed",
+          "name": "sls",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_log_project",
+          "values": {
+            "description": "created by terraform",
+            "name": "tf-log",
+            "policy": null,
+            "tags": null,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_security_group.mysg",
+          "mode": "managed",
+          "name": "mysg",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_security_group",
+          "values": {
+            "description": null,
+            "name": "mysg",
+            "resource_group_id": null,
+            "tags": null,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_vpc.myvpc",
+          "mode": "managed",
+          "name": "myvpc",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "ipv6_cidr_blocks": [],
+            "secondary_cidr_blocks": [],
+            "user_cidrs": []
+          },
+          "type": "alicloud_vpc",
+          "values": {
+            "cidr_block": "172.16.0.0/12",
+            "classic_link_enabled": null,
+            "description": null,
+            "dry_run": null,
+            "enable_ipv6": null,
+            "ipv4_ipam_pool_id": null,
+            "ipv6_isp": null,
+            "tags": null,
+            "timeouts": null,
+            "vpc_name": "myvpc"
+          }
+        },
+        {
+          "address": "alicloud_vswitch.myvswitch",
+          "mode": "managed",
+          "name": "myvswitch",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_vswitch",
+          "values": {
+            "cidr_block": "172.16.0.0/21",
+            "description": null,
+            "enable_ipv6": null,
+            "tags": null,
+            "timeouts": null,
+            "vswitch_name": "myvswitch",
+            "zone_id": "cn-beijing-g"
+          }
+        }
+      ]
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.8.4",
+    "values": {
+      "outputs": {
+        "const_map": {
+          "sensitive": false,
+          "type": [
+            "object",
+            {
+              "foo": "string"
+            }
+          ],
+          "value": {
+            "foo": "bar"
+          }
+        }
+      },
+      "root_module": {
+        "resources": [
+          {
+            "address": "data.alicloud_images.centos_image",
+            "mode": "data",
+            "name": "centos_image",
+            "provider_name": "registry.terraform.io/hashicorp/alicloud",
+            "schema_version": 0,
+            "sensitive_values": {
+              "ids": [
+                false
+              ],
+              "images": [
+                {
+                  "disk_device_mappings": [],
+                  "tags": {}
+                }
+              ]
+            },
+            "type": "alicloud_images",
+            "values": {
+              "action_type": null,
+              "architecture": null,
+              "dry_run": null,
+              "id": "1956932919",
+              "ids": [
+                "centos_stream_9_x64_20G_alibase_20240923.vhd"
+              ],
+              "image_family": null,
+              "image_id": null,
+              "image_name": null,
+              "image_owner_id": null,
+              "images": [
+                {
+                  "architecture": "x86_64",
+                  "creation_time": "2024-09-25T08:32:33Z",
+                  "description": "Kernel version is 5.14.0-508.el9.x86_64, 2024.9.25",
+                  "disk_device_mappings": [],
+                  "id": "centos_stream_9_x64_20G_alibase_20240923.vhd",
+                  "image_id": "centos_stream_9_x64_20G_alibase_20240923.vhd",
+                  "image_owner_alias": "system",
+                  "image_version": "v2024.9.25",
+                  "is_copied": false,
+                  "is_self_shared": "",
+                  "is_subscribed": false,
+                  "is_support_io_optimized": true,
+                  "name": "centos_stream_9_x64_20G_alibase_20240923.vhd",
+                  "os_name": "CentOS Stream  9 64\u4f4d",
+                  "os_name_en": "CentOS Stream  9 64 bit",
+                  "os_type": "linux",
+                  "platform": "CentOS Stream",
+                  "product_code": "",
+                  "progress": "100%",
+                  "size": 20,
+                  "state": "Available",
+                  "status": "Available",
+                  "tags": {},
+                  "usage": "instance"
+                }
+              ],
+              "instance_type": null,
+              "is_support_cloud_init": null,
+              "is_support_io_optimized": null,
+              "most_recent": true,
+              "name_regex": "^centos",
+              "os_type": null,
+              "output_file": null,
+              "owners": "system",
+              "resource_group_id": null,
+              "snapshot_id": null,
+              "status": "Available",
+              "tags": null,
+              "usage": null
+            }
+          },
+          {
+            "address": "data.alicloud_instance_types.c2g4",
+            "mode": "data",
+            "name": "c2g4",
+            "provider_name": "registry.terraform.io/hashicorp/alicloud",
+            "schema_version": 0,
+            "sensitive_values": {
+              "ids": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "instance_types": [
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                },
+                {
+                  "availability_zones": [
+                    false,
+                    false,
+                    false
+                  ],
+                  "burstable_instance": {},
+                  "gpu": {},
+                  "local_storage": {}
+                }
+              ]
+            },
+            "type": "alicloud_instance_types",
+            "values": {
+              "availability_zone": null,
+              "cpu_core_count": 2,
+              "eni_amount": null,
+              "gpu_amount": null,
+              "gpu_spec": null,
+              "id": "654309581",
+              "ids": [
+                "ecs.n1.medium",
+                "ecs.sn1.medium",
+                "ecs.n4.large",
+                "ecs.sn1ne.large",
+                "ecs.c5.large",
+                "ecs.t5-c1m2.large",
+                "ecs.t5-lc1m2.large",
+                "ecs.c6.large",
+                "ecs.t6-c1m2.large",
+                "ecs.s6-c1m2.large",
+                "ecs.c6e.large",
+                "ecs.c7.large",
+                "ecs.c7nex.large",
+                "ecs.u1-c1m2.large",
+                "ecs.c8y.large",
+                "ecs.c8a.large",
+                "ecs.c8i.large",
+                "ecs.e-c1m2.large"
+              ],
+              "image_id": null,
+              "instance_charge_type": "PostPaid",
+              "instance_type_family": null,
+              "instance_types": [
+                {
+                  "availability_zones": [
+                    "cn-beijing-l"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.n1",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.n1.medium",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-c"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.sn1",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.sn1.medium",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-l"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.n4",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.n4.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-c"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.sn1ne",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.sn1ne.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-c",
+                    "cn-beijing-l"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.c5",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c5.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-f"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "50",
+                    "initial_credit": "60"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.t5",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.t5-c1m2.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-f"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "40",
+                    "initial_credit": "60"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.t5",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.t5-lc1m2.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-g",
+                    "cn-beijing-i",
+                    "cn-beijing-z1-acdr"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.c6",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c6.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-i"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "40",
+                    "initial_credit": "60"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.t6",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.t6-c1m2.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-i"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.s6",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.s6-c1m2.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-g",
+                    "cn-beijing-h"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 3,
+                  "family": "ecs.c6e",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c6e.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-i"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 3,
+                  "family": "ecs.c7",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c7.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-l"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 3,
+                  "family": "ecs.c7nex",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c7nex.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-c",
+                    "cn-beijing-g",
+                    "cn-beijing-h"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.u1",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.u1-c1m2.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-i",
+                    "cn-beijing-l"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 3,
+                  "family": "ecs.c8y",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c8y.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "required",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-i",
+                    "cn-beijing-l"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 3,
+                  "family": "ecs.c8a",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c8a.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "required",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-i",
+                    "cn-beijing-l"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 3,
+                  "family": "ecs.c8i",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.c8i.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "required",
+                  "price": ""
+                },
+                {
+                  "availability_zones": [
+                    "cn-beijing-c",
+                    "cn-beijing-g",
+                    "cn-beijing-i"
+                  ],
+                  "burstable_instance": {
+                    "baseline_credit": "0",
+                    "initial_credit": "0"
+                  },
+                  "cpu_core_count": 2,
+                  "eni_amount": 2,
+                  "family": "ecs.e",
+                  "gpu": {
+                    "amount": "0",
+                    "category": ""
+                  },
+                  "id": "ecs.e-c1m2.large",
+                  "local_storage": {
+                    "amount": "0",
+                    "capacity": "0",
+                    "category": ""
+                  },
+                  "memory_size": 4,
+                  "nvme_support": "unsupported",
+                  "price": ""
+                }
+              ],
+              "is_outdated": null,
+              "kubernetes_node_role": null,
+              "memory_size": 4,
+              "minimum_eni_ipv6_address_quantity": null,
+              "network_type": null,
+              "output_file": null,
+              "sorted_by": null,
+              "spot_strategy": "NoSpot",
+              "system_disk_category": null
+            }
+          }
+        ]
+      }
+    }
+  },
+  "relevant_attributes": [
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_vpc.myvpc"
+    },
+    {
+      "attribute": [
+        "name"
+      ],
+      "resource": "alicloud_log_project.sls"
+    },
+    {
+      "attribute": [],
+      "resource": "alicloud_security_group.mysg"
+    },
+    {
+      "attribute": [
+        "instance_types",
+        0,
+        "id"
+      ],
+      "resource": "data.alicloud_instance_types.c2g4"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_vswitch.myvswitch"
+    },
+    {
+      "attribute": [
+        "images",
+        0,
+        "id"
+      ],
+      "resource": "data.alicloud_images.centos_image"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_log_machine_group.sls_machine_group"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_instance.myinstance"
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "alicloud_instance.myinstance",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "allocate_public_ip": null,
+          "auto_release_time": null,
+          "auto_renew_period": null,
+          "data_disks": [
+            {
+              "auto_snapshot_policy_id": null,
+              "category": "cloud_efficiency",
+              "delete_with_instance": true,
+              "device": null,
+              "encrypted": false,
+              "kms_key_id": null,
+              "name": "mydisk1",
+              "size": 20,
+              "snapshot_id": null
+            },
+            {
+              "auto_snapshot_policy_id": null,
+              "category": "cloud_essd",
+              "delete_with_instance": true,
+              "description": "disk 2",
+              "device": null,
+              "encrypted": false,
+              "kms_key_id": null,
+              "name": "mydisk2",
+              "size": 25,
+              "snapshot_id": null
+            }
+          ],
+          "dedicated_host_id": null,
+          "deletion_protection": false,
+          "deployment_set_id": null,
+          "dry_run": false,
+          "force_delete": null,
+          "hpc_cluster_id": null,
+          "image_id": "centos_stream_9_x64_20G_alibase_20240923.vhd",
+          "include_data_disks": null,
+          "instance_name": "myinstance",
+          "instance_type": "ecs.n1.medium",
+          "is_outdated": null,
+          "kms_encrypted_password": null,
+          "kms_encryption_context": null,
+          "launch_template_id": null,
+          "launch_template_name": null,
+          "launch_template_version": null,
+          "maintenance_notify": null,
+          "maintenance_time": [],
+          "operator_type": null,
+          "password": null,
+          "period_unit": null,
+          "renewal_status": null,
+          "system_disk_auto_snapshot_policy_id": null,
+          "system_disk_category": "cloud_efficiency",
+          "system_disk_encrypt_algorithm": null,
+          "system_disk_kms_key_id": null,
+          "system_disk_storage_cluster_id": null,
+          "tags": null,
+          "timeouts": null,
+          "user_data": null
+        },
+        "after_sensitive": {
+          "data_disks": [
+            {},
+            {}
+          ],
+          "ipv6_addresses": [],
+          "maintenance_time": [],
+          "network_interfaces": [],
+          "password": true,
+          "secondary_private_ips": [],
+          "security_groups": [],
+          "volume_tags": {}
+        },
+        "after_unknown": {
+          "availability_zone": true,
+          "cpu": true,
+          "credit_specification": true,
+          "data_disks": [
+            {
+              "description": true,
+              "performance_level": true
+            },
+            {
+              "performance_level": true
+            }
+          ],
+          "deployment_set_group_no": true,
+          "description": true,
+          "host_name": true,
+          "http_endpoint": true,
+          "http_put_response_hop_limit": true,
+          "http_tokens": true,
+          "id": true,
+          "instance_charge_type": true,
+          "internet_charge_type": true,
+          "internet_max_bandwidth_in": true,
+          "internet_max_bandwidth_out": true,
+          "io_optimized": true,
+          "ipv6_address_count": true,
+          "ipv6_addresses": true,
+          "key_name": true,
+          "maintenance_action": true,
+          "maintenance_time": [],
+          "memory": true,
+          "network_interface_id": true,
+          "network_interfaces": true,
+          "os_name": true,
+          "os_type": true,
+          "period": true,
+          "primary_ip_address": true,
+          "private_ip": true,
+          "public_ip": true,
+          "resource_group_id": true,
+          "role_name": true,
+          "secondary_private_ip_address_count": true,
+          "secondary_private_ips": true,
+          "security_enhancement_strategy": true,
+          "security_groups": true,
+          "spot_duration": true,
+          "spot_price_limit": true,
+          "spot_strategy": true,
+          "status": true,
+          "stopped_mode": true,
+          "subnet_id": true,
+          "system_disk_description": true,
+          "system_disk_encrypted": true,
+          "system_disk_id": true,
+          "system_disk_name": true,
+          "system_disk_performance_level": true,
+          "system_disk_size": true,
+          "volume_tags": true,
+          "vswitch_id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "myinstance",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_instance"
+    },
+    {
+      "address": "alicloud_log_machine_group.sls_machine_group",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "identify_list": [
+            "10.0.0.1",
+            "10.0.0.2"
+          ],
+          "identify_type": "ip",
+          "name": "tf-machine-group",
+          "project": "tf-log",
+          "topic": "terraform"
+        },
+        "after_sensitive": {
+          "identify_list": [
+            false,
+            false
+          ]
+        },
+        "after_unknown": {
+          "id": true,
+          "identify_list": [
+            false,
+            false
+          ]
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "sls_machine_group",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_log_machine_group"
+    },
+    {
+      "address": "alicloud_log_project.sls",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "description": "created by terraform",
+          "name": "tf-log",
+          "policy": null,
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "create_time": true,
+          "id": true,
+          "project_name": true,
+          "resource_group_id": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "sls",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_log_project"
+    },
+    {
+      "address": "alicloud_security_group.mysg",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "description": null,
+          "name": "mysg",
+          "resource_group_id": null,
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "id": true,
+          "inner_access": true,
+          "inner_access_policy": true,
+          "security_group_type": true,
+          "vpc_id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "mysg",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_security_group"
+    },
+    {
+      "address": "alicloud_vpc.myvpc",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "cidr_block": "172.16.0.0/12",
+          "classic_link_enabled": null,
+          "description": null,
+          "dry_run": null,
+          "enable_ipv6": null,
+          "ipv4_ipam_pool_id": null,
+          "ipv6_isp": null,
+          "tags": null,
+          "timeouts": null,
+          "vpc_name": "myvpc"
+        },
+        "after_sensitive": {
+          "ipv6_cidr_blocks": [],
+          "secondary_cidr_blocks": [],
+          "user_cidrs": []
+        },
+        "after_unknown": {
+          "create_time": true,
+          "id": true,
+          "ipv6_cidr_block": true,
+          "ipv6_cidr_blocks": true,
+          "name": true,
+          "resource_group_id": true,
+          "route_table_id": true,
+          "router_id": true,
+          "router_table_id": true,
+          "secondary_cidr_blocks": true,
+          "status": true,
+          "user_cidrs": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "myvpc",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_vpc"
+    },
+    {
+      "address": "alicloud_vswitch.myvswitch",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "cidr_block": "172.16.0.0/21",
+          "description": null,
+          "enable_ipv6": null,
+          "tags": null,
+          "timeouts": null,
+          "vswitch_name": "myvswitch",
+          "zone_id": "cn-beijing-g"
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "availability_zone": true,
+          "create_time": true,
+          "id": true,
+          "ipv6_cidr_block": true,
+          "ipv6_cidr_block_mask": true,
+          "name": true,
+          "status": true,
+          "vpc_id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "myvswitch",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_vswitch"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T12:36:54Z",
+  "variables": {
+    "system_disk": {
+      "value": {
+        "category": "cloud_efficiency"
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_cloud_firewall_address_book.example",
+          "expressions": {
+            "address_list": {
+              "constant_value": [
+                "10.168.1.12",
+                "10.168.1.11"
+              ]
+            },
+            "auto_add_tag_ecs": {
+              "constant_value": 1
+            },
+            "description": {
+              "constant_value": "example_value"
+            },
+            "ecs_tags": [
+              {
+                "tag_key": {
+                  "constant_value": "created"
+                },
+                "tag_value": {
+                  "constant_value": "tfTestAcc0"
+                }
+              }
+            ],
+            "group_name": {
+              "constant_value": "example_value"
+            },
+            "group_type": {
+              "constant_value": "tag"
+            },
+            "tag_relation": {
+              "constant_value": "and"
+            }
+          },
+          "mode": "managed",
+          "name": "example",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_cloud_firewall_address_book"
+        }
+      ]
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_cloud_firewall_address_book.example",
+          "mode": "managed",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "address_list": [
+              false,
+              false
+            ],
+            "ecs_tags": [
+              {}
+            ]
+          },
+          "type": "alicloud_cloud_firewall_address_book",
+          "values": {
+            "address_list": [
+              "10.168.1.12",
+              "10.168.1.11"
+            ],
+            "auto_add_tag_ecs": 1,
+            "description": "example_value",
+            "ecs_tags": [
+              {
+                "tag_key": "created",
+                "tag_value": "tfTestAcc0"
+              }
+            ],
+            "group_name": "example_value",
+            "group_type": "tag",
+            "lang": null,
+            "tag_relation": "and"
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "alicloud_cloud_firewall_address_book.example",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "address_list": [
+            "10.168.1.12",
+            "10.168.1.11"
+          ],
+          "auto_add_tag_ecs": 1,
+          "description": "example_value",
+          "ecs_tags": [
+            {
+              "tag_key": "created",
+              "tag_value": "tfTestAcc0"
+            }
+          ],
+          "group_name": "example_value",
+          "group_type": "tag",
+          "lang": null,
+          "tag_relation": "and"
+        },
+        "after_sensitive": {
+          "address_list": [
+            false,
+            false
+          ],
+          "ecs_tags": [
+            {}
+          ]
+        },
+        "after_unknown": {
+          "address_list": [
+            false,
+            false
+          ],
+          "ecs_tags": [
+            {}
+          ],
+          "id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_cloud_firewall_address_book"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:44:53Z"
+}

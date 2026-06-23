@@ -122,11 +122,7 @@ def build_app():
             payload.append((upload.filename or "source", data))
 
         try:
-            # Offload to a worker thread: the transform is synchronous and may
-            # run terraform (slow, native) for seconds. Running it inline would
-            # block the event loop and stall every other request.
-            result = await run_in_threadpool(
-                service.transform,
+            result = await service.transform_async(
                 files=payload,
                 source_format=src_fmt,
                 target_format=tgt_fmt,
@@ -212,8 +208,7 @@ def build_app():
             async def worker():
                 assert src_fmt is not None and tgt_fmt is not None
                 try:
-                    result = await run_in_threadpool(
-                        service.transform,
+                    result = await service.transform_async(
                         files=payload,
                         source_format=src_fmt,
                         target_format=tgt_fmt,
@@ -377,9 +372,8 @@ def run(
 
     # Bound the graceful-shutdown wait so a long-running streaming request (e.g.
     # a Terraform transform whose SSE connection is still open) cannot make
-    # Ctrl+C hang. Once the server stops, force-exit: transforms run in
-    # non-daemon worker threads (a stuck `terraform init` among them), which
-    # would otherwise keep the interpreter alive after shutdown.
+    # Ctrl+C hang. Once the server stops, force-exit so any background transform
+    # orchestration or TerraformPool workers cannot keep the interpreter alive.
     try:
         uvicorn.run(
             build_app(),

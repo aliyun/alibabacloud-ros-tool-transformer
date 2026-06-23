@@ -1,0 +1,558 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_slb_acl.listener",
+          "expressions": {
+            "ip_version": {
+              "constant_value": "ipv4"
+            },
+            "name": {
+              "references": [
+                "var.slb_listener_name"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "listener",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_slb_acl"
+        },
+        {
+          "address": "alicloud_slb_acl_entry_attachment.first",
+          "expressions": {
+            "acl_id": {
+              "references": [
+                "alicloud_slb_acl.listener.id",
+                "alicloud_slb_acl.listener"
+              ]
+            },
+            "comment": {
+              "constant_value": "first"
+            },
+            "entry": {
+              "constant_value": "10.10.10.0/24"
+            }
+          },
+          "mode": "managed",
+          "name": "first",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_slb_acl_entry_attachment"
+        },
+        {
+          "address": "alicloud_slb_acl_entry_attachment.second",
+          "expressions": {
+            "acl_id": {
+              "references": [
+                "alicloud_slb_acl.listener.id",
+                "alicloud_slb_acl.listener"
+              ]
+            },
+            "comment": {
+              "constant_value": "second"
+            },
+            "entry": {
+              "constant_value": "168.10.10.0/24"
+            }
+          },
+          "mode": "managed",
+          "name": "second",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_slb_acl_entry_attachment"
+        },
+        {
+          "address": "alicloud_slb_listener.listener",
+          "expressions": {
+            "acl_id": {
+              "references": [
+                "alicloud_slb_acl.listener.id",
+                "alicloud_slb_acl.listener"
+              ]
+            },
+            "acl_status": {
+              "constant_value": "on"
+            },
+            "acl_type": {
+              "constant_value": "white"
+            },
+            "backend_port": {
+              "constant_value": 80
+            },
+            "bandwidth": {
+              "constant_value": 10
+            },
+            "cookie": {
+              "constant_value": "tfslblistenercookie"
+            },
+            "cookie_timeout": {
+              "constant_value": 86400
+            },
+            "frontend_port": {
+              "constant_value": 80
+            },
+            "health_check": {
+              "constant_value": "on"
+            },
+            "health_check_connect_port": {
+              "constant_value": 20
+            },
+            "health_check_domain": {
+              "constant_value": "ali.com"
+            },
+            "health_check_http_code": {
+              "constant_value": "http_2xx,http_3xx"
+            },
+            "health_check_interval": {
+              "constant_value": 5
+            },
+            "health_check_timeout": {
+              "constant_value": 8
+            },
+            "health_check_uri": {
+              "constant_value": "/cons"
+            },
+            "healthy_threshold": {
+              "constant_value": 8
+            },
+            "idle_timeout": {
+              "constant_value": 30
+            },
+            "load_balancer_id": {
+              "references": [
+                "alicloud_slb_load_balancer.listener.id",
+                "alicloud_slb_load_balancer.listener"
+              ]
+            },
+            "protocol": {
+              "constant_value": "http"
+            },
+            "request_timeout": {
+              "constant_value": 80
+            },
+            "sticky_session": {
+              "constant_value": "on"
+            },
+            "sticky_session_type": {
+              "constant_value": "insert"
+            },
+            "unhealthy_threshold": {
+              "constant_value": 8
+            },
+            "x_forwarded_for": [
+              {
+                "retrive_slb_id": {
+                  "constant_value": true
+                },
+                "retrive_slb_ip": {
+                  "constant_value": true
+                }
+              }
+            ]
+          },
+          "mode": "managed",
+          "name": "listener",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_slb_listener"
+        },
+        {
+          "address": "alicloud_slb_load_balancer.listener",
+          "expressions": {
+            "address_type": {
+              "constant_value": "internet"
+            },
+            "instance_charge_type": {
+              "constant_value": "PayByCLCU"
+            },
+            "internet_charge_type": {
+              "constant_value": "PayByTraffic"
+            },
+            "load_balancer_name": {
+              "constant_value": "tf-exampleSlbListenerHttp"
+            }
+          },
+          "mode": "managed",
+          "name": "listener",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_slb_load_balancer"
+        }
+      ],
+      "variables": {
+        "slb_listener_name": {
+          "default": "forSlbListener"
+        }
+      }
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_slb_acl.listener",
+          "mode": "managed",
+          "name": "listener",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "entry_list": []
+          },
+          "type": "alicloud_slb_acl",
+          "values": {
+            "ip_version": "ipv4",
+            "name": "forSlbListener",
+            "tags": null
+          }
+        },
+        {
+          "address": "alicloud_slb_acl_entry_attachment.first",
+          "mode": "managed",
+          "name": "first",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_slb_acl_entry_attachment",
+          "values": {
+            "comment": "first",
+            "entry": "10.10.10.0/24",
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_slb_acl_entry_attachment.second",
+          "mode": "managed",
+          "name": "second",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_slb_acl_entry_attachment",
+          "values": {
+            "comment": "second",
+            "entry": "168.10.10.0/24",
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_slb_listener.listener",
+          "mode": "managed",
+          "name": "listener",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "x_forwarded_for": [
+              {}
+            ]
+          },
+          "type": "alicloud_slb_listener",
+          "values": {
+            "acl_status": "on",
+            "acl_type": "white",
+            "backend_port": 80,
+            "bandwidth": 10,
+            "ca_certificate_id": null,
+            "cookie": null,
+            "cookie_timeout": 86400,
+            "delete_protection_validation": null,
+            "description": null,
+            "enable_http2": null,
+            "established_timeout": null,
+            "forward_port": null,
+            "frontend_port": 80,
+            "gzip": true,
+            "health_check": "on",
+            "health_check_connect_port": 20,
+            "health_check_domain": "ali.com",
+            "health_check_http_code": "http_2xx,http_3xx",
+            "health_check_interval": 5,
+            "health_check_timeout": 8,
+            "health_check_type": null,
+            "health_check_uri": "/cons",
+            "healthy_threshold": 8,
+            "idle_timeout": 30,
+            "instance_port": null,
+            "lb_port": null,
+            "lb_protocol": null,
+            "master_slave_server_group_id": null,
+            "persistence_timeout": null,
+            "protocol": "http",
+            "request_timeout": 80,
+            "scheduler": "wrr",
+            "server_group_id": null,
+            "sticky_session": "on",
+            "sticky_session_type": "insert",
+            "tls_cipher_policy": null,
+            "unhealthy_threshold": 8,
+            "x_forwarded_for": [
+              {
+                "retrive_slb_id": true,
+                "retrive_slb_ip": true,
+                "retrive_slb_proto": false
+              }
+            ]
+          }
+        },
+        {
+          "address": "alicloud_slb_load_balancer.listener",
+          "mode": "managed",
+          "name": "listener",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "tags": {}
+          },
+          "type": "alicloud_slb_load_balancer",
+          "values": {
+            "address_ip_version": "ipv4",
+            "address_type": "internet",
+            "bandwidth": null,
+            "delete_protection": "off",
+            "instance_charge_type": "PayByCLCU",
+            "internet_charge_type": "PayByTraffic",
+            "load_balancer_name": "tf-exampleSlbListenerHttp",
+            "modification_protection_reason": null,
+            "period": null,
+            "timeouts": null,
+            "vswitch_id": null
+          }
+        }
+      ]
+    }
+  },
+  "relevant_attributes": [
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_slb_acl.listener"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_slb_load_balancer.listener"
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "alicloud_slb_acl.listener",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "ip_version": "ipv4",
+          "name": "forSlbListener",
+          "tags": null
+        },
+        "after_sensitive": {
+          "entry_list": []
+        },
+        "after_unknown": {
+          "entry_list": true,
+          "id": true,
+          "resource_group_id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "listener",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_slb_acl"
+    },
+    {
+      "address": "alicloud_slb_acl_entry_attachment.first",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "comment": "first",
+          "entry": "10.10.10.0/24",
+          "timeouts": null
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "acl_id": true,
+          "id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "first",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_slb_acl_entry_attachment"
+    },
+    {
+      "address": "alicloud_slb_acl_entry_attachment.second",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "comment": "second",
+          "entry": "168.10.10.0/24",
+          "timeouts": null
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "acl_id": true,
+          "id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "second",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_slb_acl_entry_attachment"
+    },
+    {
+      "address": "alicloud_slb_listener.listener",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "acl_status": "on",
+          "acl_type": "white",
+          "backend_port": 80,
+          "bandwidth": 10,
+          "ca_certificate_id": null,
+          "cookie": null,
+          "cookie_timeout": 86400,
+          "delete_protection_validation": null,
+          "description": null,
+          "enable_http2": null,
+          "established_timeout": null,
+          "forward_port": null,
+          "frontend_port": 80,
+          "gzip": true,
+          "health_check": "on",
+          "health_check_connect_port": 20,
+          "health_check_domain": "ali.com",
+          "health_check_http_code": "http_2xx,http_3xx",
+          "health_check_interval": 5,
+          "health_check_timeout": 8,
+          "health_check_type": null,
+          "health_check_uri": "/cons",
+          "healthy_threshold": 8,
+          "idle_timeout": 30,
+          "instance_port": null,
+          "lb_port": null,
+          "lb_protocol": null,
+          "master_slave_server_group_id": null,
+          "persistence_timeout": null,
+          "protocol": "http",
+          "request_timeout": 80,
+          "scheduler": "wrr",
+          "server_group_id": null,
+          "sticky_session": "on",
+          "sticky_session_type": "insert",
+          "tls_cipher_policy": null,
+          "unhealthy_threshold": 8,
+          "x_forwarded_for": [
+            {
+              "retrive_slb_id": true,
+              "retrive_slb_ip": true,
+              "retrive_slb_proto": false
+            }
+          ]
+        },
+        "after_sensitive": {
+          "x_forwarded_for": [
+            {}
+          ]
+        },
+        "after_unknown": {
+          "acl_id": true,
+          "health_check_method": true,
+          "id": true,
+          "listener_forward": true,
+          "load_balancer_id": true,
+          "proxy_protocol_v2_enabled": true,
+          "server_certificate_id": true,
+          "ssl_certificate_id": true,
+          "x_forwarded_for": [
+            {
+              "retrive_client_ip": true
+            }
+          ]
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "listener",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_slb_listener"
+    },
+    {
+      "address": "alicloud_slb_load_balancer.listener",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "address_ip_version": "ipv4",
+          "address_type": "internet",
+          "bandwidth": null,
+          "delete_protection": "off",
+          "instance_charge_type": "PayByCLCU",
+          "internet_charge_type": "PayByTraffic",
+          "load_balancer_name": "tf-exampleSlbListenerHttp",
+          "modification_protection_reason": null,
+          "period": null,
+          "timeouts": null,
+          "vswitch_id": null
+        },
+        "after_sensitive": {
+          "tags": {}
+        },
+        "after_unknown": {
+          "address": true,
+          "id": true,
+          "internet": true,
+          "load_balancer_spec": true,
+          "master_zone_id": true,
+          "modification_protection_status": true,
+          "name": true,
+          "payment_type": true,
+          "resource_group_id": true,
+          "slave_zone_id": true,
+          "specification": true,
+          "status": true,
+          "tags": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "listener",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_slb_load_balancer"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:46:09Z",
+  "variables": {
+    "slb_listener_name": {
+      "value": "forSlbListener"
+    }
+  }
+}

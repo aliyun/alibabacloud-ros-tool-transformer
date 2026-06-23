@@ -8,6 +8,10 @@ from tests.conf import ROOT
 
 def _test_tf_template(root, tf_plan_path):
     tf_dir = root if os.path.isdir(root) else os.path.dirname(root)
+    json_plan_path = f"{tf_plan_path}.json"
+    if os.path.exists(json_plan_path):
+        tf_plan_path = json_plan_path
+
     for name in (".terraform", ".terraform.lock.hcl"):
         dst = os.path.join(tf_dir, name)
         if not os.path.exists(dst):

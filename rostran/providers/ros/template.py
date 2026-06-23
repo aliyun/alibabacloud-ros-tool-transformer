@@ -11,7 +11,6 @@ from Tea.exceptions import TeaException
 from alibabacloud_credentials.exceptions import CredentialException
 from alibabacloud_tea_util.models import RuntimeOptions
 from collections import defaultdict
-from libterraform import TerraformCommand
 from libterraform.exceptions import TerraformCommandError
 from ruamel import yaml
 from alibabacloud_tea_openapi import models as open_api_models
@@ -29,6 +28,7 @@ from rostran.core.rule_manager import RuleManager, RuleClassifier, ResourceRule
 from rostran.core.template import Template
 from rostran.core.format import FileFormat
 from rostran.core.reporter import ROS2TerraformReporter
+from rostran.core.terraform import TerraformRunner
 from rostran.providers.ros import functions
 from rostran.providers.terraform import template_blocks as tf
 from tools.utils import camel_to_tf
@@ -41,7 +41,6 @@ class WrapTerraformTemplate(Template):
         path: str,
         format: FileFormat = FileFormat.Terraform,
     ):
-
         if format == FileFormat.Json:
             with open(path) as f:
                 source = json.load(f)
@@ -279,8 +278,14 @@ class ROS2TerraformTemplate(Template):
         self.reporter.generate_report()
 
         try:
-            tf_command = TerraformCommand(os.path.abspath(output_dir))
-            tf_command.fmt(check=True, no_color=False, write=True)
+            with TerraformRunner(max_workers=1) as runner:
+                runner.run(
+                    os.path.abspath(output_dir),
+                    "fmt",
+                    check=True,
+                    no_color=False,
+                    write=True,
+                )
             if not single_file:
                 for file_path in tf_files:
                     with file_path.open("r", encoding="utf-8") as f:

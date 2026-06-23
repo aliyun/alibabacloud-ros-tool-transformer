@@ -1,0 +1,1256 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_db_instance.default",
+          "expressions": {
+            "engine": {
+              "constant_value": "MySQL"
+            },
+            "engine_version": {
+              "constant_value": "5.6"
+            },
+            "instance_name": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "instance_storage": {
+              "constant_value": "10"
+            },
+            "instance_type": {
+              "references": [
+                "data.alicloud_db_instance_classes.default.instance_classes[0].instance_class",
+                "data.alicloud_db_instance_classes.default.instance_classes[0]",
+                "data.alicloud_db_instance_classes.default.instance_classes",
+                "data.alicloud_db_instance_classes.default"
+              ]
+            },
+            "vswitch_id": {
+              "references": [
+                "alicloud_vswitch.default.id",
+                "alicloud_vswitch.default"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_db_instance"
+        },
+        {
+          "address": "alicloud_rds_account.default",
+          "expressions": {
+            "account_name": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "account_password": {
+              "constant_value": "******"
+            },
+            "db_instance_id": {
+              "references": [
+                "alicloud_db_instance.default.id",
+                "alicloud_db_instance.default"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_rds_account"
+        },
+        {
+          "address": "alicloud_vpc.default",
+          "expressions": {
+            "cidr_block": {
+              "constant_value": "172.16.0.0/16"
+            },
+            "vpc_name": {
+              "references": [
+                "var.name"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_vpc"
+        },
+        {
+          "address": "alicloud_vswitch.default",
+          "expressions": {
+            "cidr_block": {
+              "constant_value": "172.16.0.0/24"
+            },
+            "vpc_id": {
+              "references": [
+                "alicloud_vpc.default.id",
+                "alicloud_vpc.default"
+              ]
+            },
+            "vswitch_name": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "zone_id": {
+              "references": [
+                "data.alicloud_db_zones.default.ids[0]",
+                "data.alicloud_db_zones.default.ids",
+                "data.alicloud_db_zones.default"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_vswitch"
+        },
+        {
+          "address": "data.alicloud_db_instance_classes.default",
+          "expressions": {
+            "engine": {
+              "constant_value": "MySQL"
+            },
+            "engine_version": {
+              "constant_value": "5.6"
+            },
+            "zone_id": {
+              "references": [
+                "data.alicloud_db_zones.default.ids[0]",
+                "data.alicloud_db_zones.default.ids",
+                "data.alicloud_db_zones.default"
+              ]
+            }
+          },
+          "mode": "data",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_db_instance_classes"
+        },
+        {
+          "address": "data.alicloud_db_zones.default",
+          "expressions": {
+            "engine": {
+              "constant_value": "MySQL"
+            },
+            "engine_version": {
+              "constant_value": "5.6"
+            }
+          },
+          "mode": "data",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_db_zones"
+        }
+      ],
+      "variables": {
+        "name": {
+          "default": "tf_example"
+        }
+      }
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_db_instance.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "babelfish_config": [],
+            "parameters": [],
+            "pg_hba_conf": [],
+            "security_group_ids": [],
+            "security_ips": [],
+            "serverless_config": []
+          },
+          "type": "alicloud_db_instance",
+          "values": {
+            "auto_renew": null,
+            "auto_renew_period": null,
+            "client_ca_cert": null,
+            "client_ca_enabled": null,
+            "client_cert_revocation_list": null,
+            "client_crl_enabled": null,
+            "db_instance_ip_array_attribute": null,
+            "db_instance_ip_array_name": null,
+            "deletion_protection": false,
+            "direction": null,
+            "effective_time": null,
+            "encryption_key": null,
+            "engine": "MySQL",
+            "engine_version": "5.6",
+            "force": null,
+            "force_restart": false,
+            "fresh_white_list_readins": null,
+            "instance_charge_type": "Postpaid",
+            "instance_name": "tf_example",
+            "instance_storage": 10,
+            "instance_type": "mysql.x4.8xlarge.2",
+            "manual_ha_time": null,
+            "modify_mode": null,
+            "period": null,
+            "pg_hba_conf": [],
+            "released_keep_policy": null,
+            "security_ip_mode": "normal",
+            "security_ip_type": null,
+            "serverless_config": [],
+            "sql_collector_config_value": 30,
+            "storage_auto_scale": null,
+            "storage_threshold": null,
+            "storage_upper_bound": null,
+            "switch_time": null,
+            "tags": null,
+            "timeouts": null,
+            "upgrade_db_instance_kernel_version": null,
+            "upgrade_time": null,
+            "whitelist_network_type": null
+          }
+        },
+        {
+          "address": "alicloud_rds_account.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "account_password": true,
+            "password": true
+          },
+          "type": "alicloud_rds_account",
+          "values": {
+            "account_name": "tf_example",
+            "account_password": "******",
+            "kms_encrypted_password": null,
+            "kms_encryption_context": null,
+            "reset_permission_flag": false,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_vpc.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "ipv6_cidr_blocks": [],
+            "secondary_cidr_blocks": [],
+            "user_cidrs": []
+          },
+          "type": "alicloud_vpc",
+          "values": {
+            "cidr_block": "172.16.0.0/16",
+            "classic_link_enabled": null,
+            "description": null,
+            "dry_run": null,
+            "enable_ipv6": null,
+            "ipv4_ipam_pool_id": null,
+            "ipv6_isp": null,
+            "tags": null,
+            "timeouts": null,
+            "vpc_name": "tf_example"
+          }
+        },
+        {
+          "address": "alicloud_vswitch.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_vswitch",
+          "values": {
+            "cidr_block": "172.16.0.0/24",
+            "description": null,
+            "enable_ipv6": null,
+            "tags": null,
+            "timeouts": null,
+            "vswitch_name": "tf_example",
+            "zone_id": "cn-beijing-c"
+          }
+        }
+      ]
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.8.4",
+    "values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "data.alicloud_db_instance_classes.default",
+            "mode": "data",
+            "name": "default",
+            "provider_name": "registry.terraform.io/hashicorp/alicloud",
+            "schema_version": 0,
+            "sensitive_values": {
+              "ids": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "instance_classes": [
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "storage_range": {},
+                  "zone_ids": [
+                    {
+                      "sub_zone_ids": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "type": "alicloud_db_instance_classes",
+            "values": {
+              "category": null,
+              "commodity_code": null,
+              "db_instance_class": null,
+              "db_instance_id": null,
+              "db_instance_storage_type": null,
+              "engine": "MySQL",
+              "engine_version": "5.6",
+              "id": "180220801",
+              "ids": [
+                "mysql.x4.8xlarge.2",
+                "rds.mysql.c1.large",
+                "rds.mysql.s3.large",
+                "rds.mysql.s2.large",
+                "rds.mysql.s1.small",
+                "rds.mysql.t1.small",
+                "rds.mysql.s2.xlarge",
+                "rds.mysql.m1.medium",
+                "rds.mysql.c1.xlarge",
+                "rds.mysql.c2.xlarge",
+                "rds.mysql.c2.xlp2",
+                "rds.mysql.c2.2xlarge",
+                "mysql.x8.xlarge.2",
+                "mysql.x4.xlarge.2",
+                "mysql.x8.large.2",
+                "mysql.x4.large.2",
+                "mysql.x8.medium.2",
+                "mysql.x4.2xlarge.2",
+                "mysql.x8.2xlarge.2",
+                "mysql.x4.4xlarge.2",
+                "mysql.x8.4xlarge.2",
+                "mysql.x8.8xlarge.2"
+              ],
+              "instance_charge_type": "PostPaid",
+              "instance_classes": [
+                {
+                  "instance_class": "mysql.x4.8xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "6000",
+                    "min": "1000",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.c1.large",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.s3.large",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.s2.large",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.s1.small",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.t1.small",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.s2.xlarge",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.m1.medium",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.c1.xlarge",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.c2.xlarge",
+                  "price": "",
+                  "storage_range": {
+                    "max": "3000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.c2.xlp2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "3000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "rds.mysql.c2.2xlarge",
+                  "price": "",
+                  "storage_range": {
+                    "max": "3000",
+                    "min": "5",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x8.xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "3000",
+                    "min": "500",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x4.xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "3000",
+                    "min": "500",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x8.large.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "20",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x4.large.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "20",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x8.medium.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "2000",
+                    "min": "20",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x4.2xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "3000",
+                    "min": "500",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x8.2xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "3000",
+                    "min": "500",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x4.4xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "6000",
+                    "min": "1000",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x8.4xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "6000",
+                    "min": "1000",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                },
+                {
+                  "instance_class": "mysql.x8.8xlarge.2",
+                  "price": "",
+                  "storage_range": {
+                    "max": "6000",
+                    "min": "1000",
+                    "step": "5"
+                  },
+                  "zone_ids": [
+                    {
+                      "id": "cn-beijing-c",
+                      "sub_zone_ids": []
+                    }
+                  ]
+                }
+              ],
+              "multi_zone": false,
+              "output_file": null,
+              "sorted_by": null,
+              "storage_type": null,
+              "zone_id": "cn-beijing-c"
+            }
+          },
+          {
+            "address": "data.alicloud_db_zones.default",
+            "mode": "data",
+            "name": "default",
+            "provider_name": "registry.terraform.io/hashicorp/alicloud",
+            "schema_version": 0,
+            "sensitive_values": {
+              "ids": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "zones": [
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                },
+                {
+                  "multi_zone_ids": []
+                }
+              ]
+            },
+            "type": "alicloud_db_zones",
+            "values": {
+              "category": null,
+              "db_instance_class": null,
+              "db_instance_storage_type": null,
+              "engine": "MySQL",
+              "engine_version": "5.6",
+              "id": "883833337",
+              "ids": [
+                "cn-beijing-c",
+                "cn-beijing-f",
+                "cn-beijing-g",
+                "cn-beijing-h",
+                "cn-beijing-i",
+                "cn-beijing-k",
+                "cn-beijing-l"
+              ],
+              "instance_charge_type": "PostPaid",
+              "multi": false,
+              "multi_zone": false,
+              "output_file": null,
+              "zones": [
+                {
+                  "id": "cn-beijing-c",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-f",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-g",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-h",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-i",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-k",
+                  "multi_zone_ids": []
+                },
+                {
+                  "id": "cn-beijing-l",
+                  "multi_zone_ids": []
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "relevant_attributes": [
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_vpc.default"
+    },
+    {
+      "attribute": [
+        "ids",
+        0
+      ],
+      "resource": "data.alicloud_db_zones.default"
+    },
+    {
+      "attribute": [
+        "instance_classes",
+        0,
+        "instance_class"
+      ],
+      "resource": "data.alicloud_db_instance_classes.default"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_vswitch.default"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_db_instance.default"
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "alicloud_db_instance.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "auto_renew": null,
+          "auto_renew_period": null,
+          "client_ca_cert": null,
+          "client_ca_enabled": null,
+          "client_cert_revocation_list": null,
+          "client_crl_enabled": null,
+          "db_instance_ip_array_attribute": null,
+          "db_instance_ip_array_name": null,
+          "deletion_protection": false,
+          "direction": null,
+          "effective_time": null,
+          "encryption_key": null,
+          "engine": "MySQL",
+          "engine_version": "5.6",
+          "force": null,
+          "force_restart": false,
+          "fresh_white_list_readins": null,
+          "instance_charge_type": "Postpaid",
+          "instance_name": "tf_example",
+          "instance_storage": 10,
+          "instance_type": "mysql.x4.8xlarge.2",
+          "manual_ha_time": null,
+          "modify_mode": null,
+          "period": null,
+          "pg_hba_conf": [],
+          "released_keep_policy": null,
+          "security_ip_mode": "normal",
+          "security_ip_type": null,
+          "serverless_config": [],
+          "sql_collector_config_value": 30,
+          "storage_auto_scale": null,
+          "storage_threshold": null,
+          "storage_upper_bound": null,
+          "switch_time": null,
+          "tags": null,
+          "timeouts": null,
+          "upgrade_db_instance_kernel_version": null,
+          "upgrade_time": null,
+          "whitelist_network_type": null
+        },
+        "after_sensitive": {
+          "babelfish_config": [],
+          "parameters": [],
+          "pg_hba_conf": [],
+          "security_group_ids": [],
+          "security_ips": [],
+          "serverless_config": []
+        },
+        "after_unknown": {
+          "acl": true,
+          "auto_upgrade_minor_version": true,
+          "babelfish_config": true,
+          "babelfish_port": true,
+          "ca_type": true,
+          "category": true,
+          "connection_string": true,
+          "connection_string_prefix": true,
+          "create_time": true,
+          "db_instance_storage_type": true,
+          "db_instance_type": true,
+          "db_is_ignore_case": true,
+          "db_time_zone": true,
+          "ha_config": true,
+          "id": true,
+          "maintain_time": true,
+          "monitoring_period": true,
+          "node_id": true,
+          "parameters": true,
+          "pg_hba_conf": [],
+          "port": true,
+          "private_ip_address": true,
+          "replication_acl": true,
+          "resource_group_id": true,
+          "role_arn": true,
+          "security_group_id": true,
+          "security_group_ids": true,
+          "security_ips": true,
+          "server_cert": true,
+          "server_key": true,
+          "serverless_config": [],
+          "sql_collector_status": true,
+          "ssl_action": true,
+          "ssl_connection_string": true,
+          "ssl_status": true,
+          "status": true,
+          "target_minor_version": true,
+          "tcp_connection_type": true,
+          "tde_status": true,
+          "vpc_id": true,
+          "vswitch_id": true,
+          "zone_id": true,
+          "zone_id_slave_a": true,
+          "zone_id_slave_b": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_db_instance"
+    },
+    {
+      "address": "alicloud_rds_account.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "account_name": "tf_example",
+          "account_password": "******",
+          "kms_encrypted_password": null,
+          "kms_encryption_context": null,
+          "reset_permission_flag": false,
+          "timeouts": null
+        },
+        "after_sensitive": {
+          "account_password": true,
+          "password": true
+        },
+        "after_unknown": {
+          "account_description": true,
+          "account_type": true,
+          "db_instance_id": true,
+          "description": true,
+          "id": true,
+          "instance_id": true,
+          "name": true,
+          "password": true,
+          "status": true,
+          "type": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_rds_account"
+    },
+    {
+      "address": "alicloud_vpc.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "cidr_block": "172.16.0.0/16",
+          "classic_link_enabled": null,
+          "description": null,
+          "dry_run": null,
+          "enable_ipv6": null,
+          "ipv4_ipam_pool_id": null,
+          "ipv6_isp": null,
+          "tags": null,
+          "timeouts": null,
+          "vpc_name": "tf_example"
+        },
+        "after_sensitive": {
+          "ipv6_cidr_blocks": [],
+          "secondary_cidr_blocks": [],
+          "user_cidrs": []
+        },
+        "after_unknown": {
+          "create_time": true,
+          "id": true,
+          "ipv6_cidr_block": true,
+          "ipv6_cidr_blocks": true,
+          "name": true,
+          "resource_group_id": true,
+          "route_table_id": true,
+          "router_id": true,
+          "router_table_id": true,
+          "secondary_cidr_blocks": true,
+          "status": true,
+          "user_cidrs": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_vpc"
+    },
+    {
+      "address": "alicloud_vswitch.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "cidr_block": "172.16.0.0/24",
+          "description": null,
+          "enable_ipv6": null,
+          "tags": null,
+          "timeouts": null,
+          "vswitch_name": "tf_example",
+          "zone_id": "cn-beijing-c"
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "availability_zone": true,
+          "create_time": true,
+          "id": true,
+          "ipv6_cidr_block": true,
+          "ipv6_cidr_block_mask": true,
+          "name": true,
+          "status": true,
+          "vpc_id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_vswitch"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:45:57Z",
+  "variables": {
+    "name": {
+      "value": "tf_example"
+    }
+  }
+}

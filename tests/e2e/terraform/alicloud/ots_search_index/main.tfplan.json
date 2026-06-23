@@ -1,0 +1,400 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_ots_search_index.default",
+          "expressions": {
+            "index_name": {
+              "constant_value": "example_index"
+            },
+            "instance_name": {
+              "constant_value": "example"
+            },
+            "schema": [
+              {
+                "field_schema": [
+                  {
+                    "analyzer": {
+                      "constant_value": "Split"
+                    },
+                    "field_name": {
+                      "constant_value": "col1"
+                    },
+                    "field_type": {
+                      "constant_value": "Text"
+                    },
+                    "index": {
+                      "constant_value": true
+                    },
+                    "is_array": {
+                      "constant_value": false
+                    },
+                    "store": {
+                      "constant_value": true
+                    }
+                  },
+                  {
+                    "enable_sort_and_agg": {
+                      "constant_value": true
+                    },
+                    "field_name": {
+                      "constant_value": "col2"
+                    },
+                    "field_type": {
+                      "constant_value": "Long"
+                    }
+                  },
+                  {
+                    "field_name": {
+                      "constant_value": "pk1"
+                    },
+                    "field_type": {
+                      "constant_value": "Long"
+                    }
+                  },
+                  {
+                    "field_name": {
+                      "constant_value": "pk2"
+                    },
+                    "field_type": {
+                      "constant_value": "Text"
+                    }
+                  }
+                ],
+                "index_setting": [
+                  {
+                    "routing_fields": {
+                      "constant_value": [
+                        "pk1",
+                        "pk2"
+                      ]
+                    }
+                  }
+                ],
+                "index_sort": [
+                  {
+                    "sorter": [
+                      {
+                        "order": {
+                          "constant_value": "Asc"
+                        },
+                        "sorter_type": {
+                          "constant_value": "PrimaryKeySort"
+                        }
+                      },
+                      {
+                        "field_name": {
+                          "constant_value": "col2"
+                        },
+                        "mode": {
+                          "constant_value": "Max"
+                        },
+                        "order": {
+                          "constant_value": "Desc"
+                        },
+                        "sorter_type": {
+                          "constant_value": "FieldSort"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "table_name": {
+              "constant_value": "example_table"
+            },
+            "time_to_live": {
+              "constant_value": -1
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_ots_search_index"
+        }
+      ]
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_ots_search_index.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "schema": [
+              {
+                "field_schema": [
+                  {},
+                  {},
+                  {},
+                  {}
+                ],
+                "index_setting": [
+                  {
+                    "routing_fields": [
+                      false,
+                      false
+                    ]
+                  }
+                ],
+                "index_sort": [
+                  {
+                    "sorter": [
+                      {},
+                      {}
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "alicloud_ots_search_index",
+          "values": {
+            "index_name": "example_index",
+            "instance_name": "example",
+            "schema": [
+              {
+                "field_schema": [
+                  {
+                    "analyzer": "Split",
+                    "enable_sort_and_agg": null,
+                    "field_name": "col1",
+                    "field_type": "Text",
+                    "index": true,
+                    "is_array": false,
+                    "store": true
+                  },
+                  {
+                    "analyzer": "",
+                    "enable_sort_and_agg": true,
+                    "field_name": "col2",
+                    "field_type": "Long",
+                    "index": true,
+                    "is_array": null,
+                    "store": null
+                  },
+                  {
+                    "analyzer": "",
+                    "enable_sort_and_agg": null,
+                    "field_name": "pk1",
+                    "field_type": "Long",
+                    "index": true,
+                    "is_array": null,
+                    "store": null
+                  },
+                  {
+                    "analyzer": "",
+                    "enable_sort_and_agg": null,
+                    "field_name": "pk2",
+                    "field_type": "Text",
+                    "index": true,
+                    "is_array": null,
+                    "store": null
+                  }
+                ],
+                "index_setting": [
+                  {
+                    "routing_fields": [
+                      "pk1",
+                      "pk2"
+                    ]
+                  }
+                ],
+                "index_sort": [
+                  {
+                    "sorter": [
+                      {
+                        "field_name": "",
+                        "mode": "",
+                        "order": "Asc",
+                        "sorter_type": "PrimaryKeySort"
+                      },
+                      {
+                        "field_name": "col2",
+                        "mode": "Max",
+                        "order": "Desc",
+                        "sorter_type": "FieldSort"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "table_name": "example_table",
+            "time_to_live": -1
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "alicloud_ots_search_index.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "index_name": "example_index",
+          "instance_name": "example",
+          "schema": [
+            {
+              "field_schema": [
+                {
+                  "analyzer": "Split",
+                  "enable_sort_and_agg": null,
+                  "field_name": "col1",
+                  "field_type": "Text",
+                  "index": true,
+                  "is_array": false,
+                  "store": true
+                },
+                {
+                  "analyzer": "",
+                  "enable_sort_and_agg": true,
+                  "field_name": "col2",
+                  "field_type": "Long",
+                  "index": true,
+                  "is_array": null,
+                  "store": null
+                },
+                {
+                  "analyzer": "",
+                  "enable_sort_and_agg": null,
+                  "field_name": "pk1",
+                  "field_type": "Long",
+                  "index": true,
+                  "is_array": null,
+                  "store": null
+                },
+                {
+                  "analyzer": "",
+                  "enable_sort_and_agg": null,
+                  "field_name": "pk2",
+                  "field_type": "Text",
+                  "index": true,
+                  "is_array": null,
+                  "store": null
+                }
+              ],
+              "index_setting": [
+                {
+                  "routing_fields": [
+                    "pk1",
+                    "pk2"
+                  ]
+                }
+              ],
+              "index_sort": [
+                {
+                  "sorter": [
+                    {
+                      "field_name": "",
+                      "mode": "",
+                      "order": "Asc",
+                      "sorter_type": "PrimaryKeySort"
+                    },
+                    {
+                      "field_name": "col2",
+                      "mode": "Max",
+                      "order": "Desc",
+                      "sorter_type": "FieldSort"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "table_name": "example_table",
+          "time_to_live": -1
+        },
+        "after_sensitive": {
+          "schema": [
+            {
+              "field_schema": [
+                {},
+                {},
+                {},
+                {}
+              ],
+              "index_setting": [
+                {
+                  "routing_fields": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "index_sort": [
+                {
+                  "sorter": [
+                    {},
+                    {}
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "after_unknown": {
+          "create_time": true,
+          "current_sync_timestamp": true,
+          "id": true,
+          "index_id": true,
+          "schema": [
+            {
+              "field_schema": [
+                {},
+                {},
+                {},
+                {}
+              ],
+              "index_setting": [
+                {
+                  "routing_fields": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "index_sort": [
+                {
+                  "sorter": [
+                    {},
+                    {}
+                  ]
+                }
+              ]
+            }
+          ],
+          "sync_phase": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_ots_search_index"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:45:55Z"
+}

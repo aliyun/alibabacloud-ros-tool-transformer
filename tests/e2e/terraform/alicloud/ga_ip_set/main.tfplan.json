@@ -1,0 +1,450 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "accelerate_region_id": {
+          "expression": {
+            "references": [
+              "alicloud_ga_ip_set.example.accelerate_region_id",
+              "alicloud_ga_ip_set.example"
+            ]
+          }
+        },
+        "ip_set_id": {
+          "expression": {
+            "references": [
+              "alicloud_ga_ip_set.example.id",
+              "alicloud_ga_ip_set.example"
+            ]
+          }
+        },
+        "ip_version": {
+          "expression": {
+            "references": [
+              "alicloud_ga_ip_set.example.ip_version",
+              "alicloud_ga_ip_set.example"
+            ]
+          }
+        }
+      },
+      "resources": [
+        {
+          "address": "alicloud_ga_accelerator.default",
+          "expressions": {
+            "auto_use_coupon": {
+              "constant_value": true
+            },
+            "duration": {
+              "constant_value": 1
+            },
+            "spec": {
+              "constant_value": "1"
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_ga_accelerator"
+        },
+        {
+          "address": "alicloud_ga_bandwidth_package.default",
+          "expressions": {
+            "bandwidth": {
+              "constant_value": 100
+            },
+            "bandwidth_type": {
+              "constant_value": "Basic"
+            },
+            "billing_type": {
+              "constant_value": "PayBy95"
+            },
+            "payment_type": {
+              "constant_value": "PayAsYouGo"
+            },
+            "ratio": {
+              "constant_value": 30
+            },
+            "type": {
+              "constant_value": "Basic"
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_ga_bandwidth_package"
+        },
+        {
+          "address": "alicloud_ga_bandwidth_package_attachment.default",
+          "expressions": {
+            "accelerator_id": {
+              "references": [
+                "alicloud_ga_accelerator.default.id",
+                "alicloud_ga_accelerator.default"
+              ]
+            },
+            "bandwidth_package_id": {
+              "references": [
+                "alicloud_ga_bandwidth_package.default.id",
+                "alicloud_ga_bandwidth_package.default"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_ga_bandwidth_package_attachment"
+        },
+        {
+          "address": "alicloud_ga_ip_set.example",
+          "expressions": {
+            "accelerate_region_id": {
+              "constant_value": "cn-beijing"
+            },
+            "accelerator_id": {
+              "references": [
+                "alicloud_ga_bandwidth_package_attachment.default.accelerator_id",
+                "alicloud_ga_bandwidth_package_attachment.default"
+              ]
+            },
+            "bandwidth": {
+              "constant_value": "5"
+            }
+          },
+          "mode": "managed",
+          "name": "example",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_ga_ip_set"
+        }
+      ]
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "output_changes": {
+    "accelerate_region_id": {
+      "actions": [
+        "create"
+      ],
+      "after": "cn-beijing",
+      "after_sensitive": false,
+      "after_unknown": false,
+      "before": null,
+      "before_sensitive": false
+    },
+    "ip_set_id": {
+      "actions": [
+        "create"
+      ],
+      "after_sensitive": false,
+      "after_unknown": true,
+      "before": null,
+      "before_sensitive": false
+    },
+    "ip_version": {
+      "actions": [
+        "create"
+      ],
+      "after_sensitive": false,
+      "after_unknown": true,
+      "before": null,
+      "before_sensitive": false
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "accelerate_region_id": {
+        "sensitive": false,
+        "type": "string",
+        "value": "cn-beijing"
+      },
+      "ip_set_id": {
+        "sensitive": false
+      },
+      "ip_version": {
+        "sensitive": false
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_ga_accelerator.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_ga_accelerator",
+          "values": {
+            "accelerator_name": null,
+            "auto_use_coupon": true,
+            "cross_border_status": null,
+            "description": null,
+            "duration": 1,
+            "pricing_cycle": null,
+            "promotion_option_no": null,
+            "spec": "1",
+            "tags": null,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_ga_bandwidth_package.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_ga_bandwidth_package",
+          "values": {
+            "auto_pay": null,
+            "auto_renew_duration": null,
+            "auto_use_coupon": false,
+            "bandwidth": 100,
+            "bandwidth_package_name": null,
+            "bandwidth_type": "Basic",
+            "billing_type": "PayBy95",
+            "description": null,
+            "duration": null,
+            "payment_type": "PayAsYouGo",
+            "promotion_option_no": null,
+            "ratio": 30,
+            "tags": null,
+            "timeouts": null,
+            "type": "Basic"
+          }
+        },
+        {
+          "address": "alicloud_ga_bandwidth_package_attachment.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "accelerators": []
+          },
+          "type": "alicloud_ga_bandwidth_package_attachment",
+          "values": {
+            "timeouts": null
+          }
+        },
+        {
+          "address": "alicloud_ga_ip_set.example",
+          "mode": "managed",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "ip_address_list": []
+          },
+          "type": "alicloud_ga_ip_set",
+          "values": {
+            "accelerate_region_id": "cn-beijing",
+            "bandwidth": 5,
+            "isp_type": null,
+            "timeouts": null
+          }
+        }
+      ]
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.8.4",
+    "values": {
+      "outputs": {
+        "accelerate_region_id": {
+          "sensitive": false,
+          "type": "string",
+          "value": "cn-beijing"
+        }
+      },
+      "root_module": {}
+    }
+  },
+  "relevant_attributes": [
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_ga_accelerator.default"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_ga_bandwidth_package.default"
+    },
+    {
+      "attribute": [
+        "accelerator_id"
+      ],
+      "resource": "alicloud_ga_bandwidth_package_attachment.default"
+    },
+    {
+      "attribute": [
+        "ip_version"
+      ],
+      "resource": "alicloud_ga_ip_set.example"
+    },
+    {
+      "attribute": [
+        "accelerate_region_id"
+      ],
+      "resource": "alicloud_ga_ip_set.example"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_ga_ip_set.example"
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "alicloud_ga_accelerator.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "accelerator_name": null,
+          "auto_use_coupon": true,
+          "cross_border_status": null,
+          "description": null,
+          "duration": 1,
+          "pricing_cycle": null,
+          "promotion_option_no": null,
+          "spec": "1",
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "auto_renew_duration": true,
+          "bandwidth_billing_type": true,
+          "cross_border_mode": true,
+          "id": true,
+          "payment_type": true,
+          "renewal_status": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_ga_accelerator"
+    },
+    {
+      "address": "alicloud_ga_bandwidth_package.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "auto_pay": null,
+          "auto_renew_duration": null,
+          "auto_use_coupon": false,
+          "bandwidth": 100,
+          "bandwidth_package_name": null,
+          "bandwidth_type": "Basic",
+          "billing_type": "PayBy95",
+          "description": null,
+          "duration": null,
+          "payment_type": "PayAsYouGo",
+          "promotion_option_no": null,
+          "ratio": 30,
+          "tags": null,
+          "timeouts": null,
+          "type": "Basic"
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "cbn_geographic_region_ida": true,
+          "cbn_geographic_region_idb": true,
+          "id": true,
+          "renewal_status": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_ga_bandwidth_package"
+    },
+    {
+      "address": "alicloud_ga_bandwidth_package_attachment.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "timeouts": null
+        },
+        "after_sensitive": {
+          "accelerators": []
+        },
+        "after_unknown": {
+          "accelerator_id": true,
+          "accelerators": true,
+          "bandwidth_package_id": true,
+          "id": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_ga_bandwidth_package_attachment"
+    },
+    {
+      "address": "alicloud_ga_ip_set.example",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "accelerate_region_id": "cn-beijing",
+          "bandwidth": 5,
+          "isp_type": null,
+          "timeouts": null
+        },
+        "after_sensitive": {
+          "ip_address_list": []
+        },
+        "after_unknown": {
+          "accelerator_id": true,
+          "id": true,
+          "ip_address_list": true,
+          "ip_version": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_ga_ip_set"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:45:41Z"
+}

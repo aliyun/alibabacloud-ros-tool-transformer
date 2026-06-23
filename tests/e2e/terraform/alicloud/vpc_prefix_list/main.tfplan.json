@@ -1,0 +1,150 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_vpc_prefix_list.default",
+          "expressions": {
+            "entrys": [
+              {
+                "cidr": {
+                  "constant_value": "192.168.0.0/16"
+                },
+                "description": {
+                  "constant_value": "test"
+                }
+              }
+            ],
+            "ip_version": {
+              "constant_value": "IPV4"
+            },
+            "max_entries": {
+              "constant_value": 50
+            },
+            "prefix_list_description": {
+              "constant_value": "test"
+            },
+            "prefix_list_name": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "resource_group_id": {
+              "constant_value": "resource_group_id"
+            }
+          },
+          "mode": "managed",
+          "name": "default",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_vpc_prefix_list"
+        }
+      ],
+      "variables": {
+        "name": {
+          "default": "tf-testacc-example"
+        }
+      }
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_vpc_prefix_list.default",
+          "mode": "managed",
+          "name": "default",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "entrys": [
+              {}
+            ],
+            "prefix_list_association": []
+          },
+          "type": "alicloud_vpc_prefix_list",
+          "values": {
+            "entrys": [
+              {
+                "cidr": "192.168.0.0/16",
+                "description": "test"
+              }
+            ],
+            "ip_version": "IPV4",
+            "max_entries": 50,
+            "prefix_list_description": "test",
+            "prefix_list_name": "tf-testacc-example",
+            "resource_group_id": "resource_group_id",
+            "tags": null,
+            "timeouts": null
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "alicloud_vpc_prefix_list.default",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "entrys": [
+            {
+              "cidr": "192.168.0.0/16",
+              "description": "test"
+            }
+          ],
+          "ip_version": "IPV4",
+          "max_entries": 50,
+          "prefix_list_description": "test",
+          "prefix_list_name": "tf-testacc-example",
+          "resource_group_id": "resource_group_id",
+          "tags": null,
+          "timeouts": null
+        },
+        "after_sensitive": {
+          "entrys": [
+            {}
+          ],
+          "prefix_list_association": []
+        },
+        "after_unknown": {
+          "create_time": true,
+          "entrys": [
+            {}
+          ],
+          "id": true,
+          "prefix_list_association": true,
+          "prefix_list_id": true,
+          "share_type": true,
+          "status": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "default",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_vpc_prefix_list"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:46:46Z",
+  "variables": {
+    "name": {
+      "value": "tf-testacc-example"
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "applyable": true,
+  "complete": true,
+  "configuration": {
+    "provider_config": {
+      "alicloud": {
+        "full_name": "registry.terraform.io/hashicorp/alicloud",
+        "name": "alicloud"
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "id": {
+          "expression": {
+            "references": [
+              "alicloud_cr_repo.example.id",
+              "alicloud_cr_repo.example"
+            ]
+          }
+        }
+      },
+      "resources": [
+        {
+          "address": "alicloud_cr_namespace.example",
+          "expressions": {
+            "auto_create": {
+              "constant_value": false
+            },
+            "default_visibility": {
+              "constant_value": "PUBLIC"
+            },
+            "name": {
+              "references": [
+                "var.name"
+              ]
+            }
+          },
+          "mode": "managed",
+          "name": "example",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_cr_namespace"
+        },
+        {
+          "address": "alicloud_cr_repo.example",
+          "expressions": {
+            "detail": {
+              "constant_value": "this is a public repo"
+            },
+            "name": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "namespace": {
+              "references": [
+                "alicloud_cr_namespace.example.name",
+                "alicloud_cr_namespace.example"
+              ]
+            },
+            "repo_type": {
+              "constant_value": "PUBLIC"
+            },
+            "summary": {
+              "constant_value": "this is summary of my new repo"
+            }
+          },
+          "mode": "managed",
+          "name": "example",
+          "provider_config_key": "alicloud",
+          "schema_version": 0,
+          "type": "alicloud_cr_repo"
+        }
+      ],
+      "variables": {
+        "name": {
+          "default": "tf-example"
+        }
+      }
+    }
+  },
+  "errored": false,
+  "format_version": "1.2",
+  "output_changes": {
+    "id": {
+      "actions": [
+        "create"
+      ],
+      "after_sensitive": false,
+      "after_unknown": true,
+      "before": null,
+      "before_sensitive": false
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "id": {
+        "sensitive": false
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "alicloud_cr_namespace.example",
+          "mode": "managed",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {},
+          "type": "alicloud_cr_namespace",
+          "values": {
+            "auto_create": false,
+            "default_visibility": "PUBLIC",
+            "name": "tf-example"
+          }
+        },
+        {
+          "address": "alicloud_cr_repo.example",
+          "mode": "managed",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/alicloud",
+          "schema_version": 0,
+          "sensitive_values": {
+            "domain_list": {}
+          },
+          "type": "alicloud_cr_repo",
+          "values": {
+            "detail": "this is a public repo",
+            "name": "tf-example",
+            "namespace": "tf-example",
+            "repo_type": "PUBLIC",
+            "summary": "this is summary of my new repo"
+          }
+        }
+      ]
+    }
+  },
+  "relevant_attributes": [
+    {
+      "attribute": [
+        "name"
+      ],
+      "resource": "alicloud_cr_namespace.example"
+    },
+    {
+      "attribute": [
+        "id"
+      ],
+      "resource": "alicloud_cr_repo.example"
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "alicloud_cr_namespace.example",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "auto_create": false,
+          "default_visibility": "PUBLIC",
+          "name": "tf-example"
+        },
+        "after_sensitive": {},
+        "after_unknown": {
+          "id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_cr_namespace"
+    },
+    {
+      "address": "alicloud_cr_repo.example",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "after": {
+          "detail": "this is a public repo",
+          "name": "tf-example",
+          "namespace": "tf-example",
+          "repo_type": "PUBLIC",
+          "summary": "this is summary of my new repo"
+        },
+        "after_sensitive": {
+          "domain_list": {}
+        },
+        "after_unknown": {
+          "domain_list": true,
+          "id": true
+        },
+        "before": null,
+        "before_sensitive": false
+      },
+      "mode": "managed",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/alicloud",
+      "type": "alicloud_cr_repo"
+    }
+  ],
+  "terraform_version": "1.8.4",
+  "timestamp": "2024-10-16T08:44:54Z",
+  "variables": {
+    "name": {
+      "value": "tf-example"
+    }
+  }
+}
