@@ -133,6 +133,70 @@ def test_terraform_runner_shuts_pool_down_after_command_error(monkeypatch):
     ]
 
 
+def test_terraform_runner_streams_command_output_to_stdout(monkeypatch, capsys):
+    from rostran.core import terraform as terraform_mod
+
+    calls = []
+
+    class FakeTerraformCommand:
+        def __init__(self, cwd=None):
+            calls.append(("command", cwd))
+
+        def stream(
+            self, cmd, args=None, options=None, chdir=None, json=False, check=False
+        ):
+            calls.append((cmd, args, options, chdir, json, check))
+            return iter(
+                ["Initializing provider plugins...", "Terraform has been initialized!"]
+            )
+
+    monkeypatch.setattr(terraform_mod, "TerraformCommand", FakeTerraformCommand)
+
+    with terraform_mod.TerraformRunner(stream_output=True) as runner:
+        result = runner.run("/tmp/module", "init", check=True)
+
+    captured = capsys.readouterr()
+
+    assert (
+        result.value
+        == "Initializing provider plugins...\nTerraform has been initialized!\n"
+    )
+    assert "Running terraform init..." in captured.out
+    assert "Initializing provider plugins..." in captured.out
+    assert "Terraform has been initialized!" in captured.out
+    assert calls == [
+        ("command", "/tmp/module"),
+        ("init", None, {"input": False, "no_color": ...}, "/tmp/module", False, True),
+    ]
+
+
+def test_terraform_runner_stream_mode_can_still_run_structured_commands(monkeypatch):
+    from rostran.core import terraform as terraform_mod
+
+    calls = []
+
+    class FakeAsyncTerraformCommand:
+        def __init__(self, cwd=None, pool=None):
+            calls.append(("command", cwd, pool))
+
+        async def show(self, path, **kwargs):
+            calls.append(("show", path, kwargs))
+            return SimpleNamespace(value={"format_version": "1.2"})
+
+    monkeypatch.setattr(
+        terraform_mod, "AsyncTerraformCommand", FakeAsyncTerraformCommand
+    )
+
+    with terraform_mod.TerraformRunner(stream_output=True) as runner:
+        result = runner.run("/tmp/module", "show", "/tmp/plan", check=True)
+
+    assert result.value == {"format_version": "1.2"}
+    assert calls == [
+        ("command", "/tmp/module", None),
+        ("show", "/tmp/plan", {"check": True}),
+    ]
+
+
 def test_terraform_template_loads_json_plan_without_running_show(tmp_path, monkeypatch):
     import json
 

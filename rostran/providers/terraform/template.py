@@ -306,7 +306,7 @@ class TerraformTemplate(Template):
             plan_filename = f"{str(uuid4())[:8]}.tfplan"
             tf_plan_path = os.path.join(cwd, plan_filename)
             try:
-                with TerraformRunner(max_workers=1) as runner:
+                with TerraformRunner(max_workers=1, stream_output=True) as runner:
                     runner.run(tf_dir, "init", check=True)
                     runner.run(tf_dir, "plan", out=tf_plan_path, check=True)
                     r = runner.run(tf_dir, "show", tf_plan_path, check=True)

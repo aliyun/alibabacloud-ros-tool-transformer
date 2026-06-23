@@ -278,7 +278,7 @@ class ROS2TerraformTemplate(Template):
         self.reporter.generate_report()
 
         try:
-            with TerraformRunner(max_workers=1) as runner:
+            with TerraformRunner(max_workers=1, stream_output=True) as runner:
                 runner.run(
                     os.path.abspath(output_dir),
                     "fmt",

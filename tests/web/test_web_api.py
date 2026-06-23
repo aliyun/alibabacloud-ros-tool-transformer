@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+from pathlib import Path, PureWindowsPath
 
 import pytest
 
@@ -11,7 +12,7 @@ from rostran.core.format import (  # noqa: E402
     SourceTemplateFormat,
     TargetTemplateFormat,
 )
-from rostran.web.server import build_app  # noqa: E402
+from rostran.web.server import STATIC_DIR, build_app  # noqa: E402
 from rostran.web import service  # noqa: E402
 
 
@@ -57,6 +58,17 @@ def test_health(client):
     assert client.get("/api/health").json() == {"status": "ok"}
 
 
+def test_web_static_declares_and_serves_favicon(client):
+    html = (STATIC_DIR / "index.html").read_text(encoding="utf-8")
+    assert 'rel="icon"' in html
+    assert 'href="/favicon.svg"' in html
+    assert (STATIC_DIR / "favicon.svg").is_file()
+
+    resp = client.get("/favicon.svg")
+    assert resp.status_code == 200
+    assert resp.text.startswith("<svg")
+
+
 def test_transform_cloudformation_to_ros(client):
     resp = client.post(
         "/api/transform",
@@ -90,6 +102,30 @@ def test_transform_stream_emits_log_and_result(client):
     data = json.loads(result_event.splitlines()[1][len("data: ") :])
     assert data["targets"][0]["content"].count("ROSTemplateFormatVersion") == 1
     assert "ALIYUN::ECS::VPC" in data["targets"][0]["content"]
+
+
+def test_transform_stream_forwards_terraform_logs(tmp_path, monkeypatch, client):
+    def fake_transform(spec):
+        print("Running terraform init...")
+        print("Initializing provider plugins...")
+        Path(spec["target_path"]).write_text("ok: true\n", encoding="utf-8")
+
+    monkeypatch.setenv("ROSTRAN_TERRAFORM_CACHE_DIR", str(tmp_path / "cache"))
+    monkeypatch.setattr(service, "_run_transform_spec", fake_transform)
+
+    with client.stream(
+        "POST",
+        "/api/transform/stream",
+        data={"source_format": "terraform", "target_format": "yaml"},
+        files={"files": ("main.tf", 'resource "x" "y" {}\n', "text/plain")},
+    ) as resp:
+        assert resp.status_code == 200
+        body = "".join(resp.iter_text())
+
+    assert "event: log" in body
+    assert "Running terraform init..." in body
+    assert "Initializing provider plugins..." in body
+    assert "event: result" in body
 
 
 def test_transform_stream_error_event(client):
@@ -155,6 +191,60 @@ def test_rules_classifiers(client):
 def test_service_transform_no_files():
     with pytest.raises(service.TransformError):
         service.transform(files=[], source_format=None)  # type: ignore[arg-type]
+
+
+def test_safe_member_path_removes_windows_drive_prefix():
+    rel = service._safe_member_path(r"C:\repo\nested\main.tf")
+
+    assert rel == "repo/nested/main.tf"
+    assert PureWindowsPath(rel).drive == ""
+    assert not PureWindowsPath(rel).is_absolute()
+
+
+def test_service_transform_uses_cached_terraform_result(tmp_path, monkeypatch):
+    calls = []
+    cache_root = tmp_path / "cache"
+
+    def fake_transform(spec):
+        calls.append(spec)
+        Path(spec["target_path"]).write_text("ok: true\n", encoding="utf-8")
+
+    monkeypatch.setenv("ROSTRAN_TERRAFORM_CACHE_DIR", str(cache_root))
+    monkeypatch.setattr(service, "_run_transform_spec", fake_transform)
+
+    kwargs = {
+        "files": [("main.tf", b'resource "x" "y" {}\n')],
+        "source_format": SourceTemplateFormat.Terraform,
+        "target_format": TargetTemplateFormat.Yaml,
+    }
+
+    first = service.transform(**kwargs)
+    second = service.transform(**kwargs)
+
+    assert len(calls) == 1
+    assert first.targets[0].content == "ok: true\n"
+    assert second.targets[0].content == "ok: true\n"
+    assert str(cache_root) in first.log
+    assert str(cache_root) in second.log
+    assert "Using cached Terraform transform result." in second.log
+
+
+def test_terraform_project_cache_evicts_least_recent_project(tmp_path):
+    cache = service.TerraformProjectCache(tmp_path, max_projects=2)
+
+    for name in ("a", "b", "c"):
+        cache.prepare_project(name, [("main.tf", name.encode())])
+        cache.save_result(
+            name,
+            service.TransformResult(
+                targets=[service.TargetFile("template.yml", f"{name}: true\n")]
+            ),
+        )
+
+    cached_projects = sorted(p.name for p in tmp_path.iterdir() if p.is_dir())
+
+    assert cached_projects == ["b", "c"]
+    assert not (tmp_path / "a").exists()
 
 
 def test_ros_to_terraform_without_credentials():
