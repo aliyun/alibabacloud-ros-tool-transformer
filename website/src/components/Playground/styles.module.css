@@ -1,0 +1,214 @@
+/* Mirrors the `rostran server start` web UI (frontend/src/styles.css), minus the
+   app's own top bar — the Docusaurus navbar already sits above the playground. */
+.app {
+  --bg: #ffffff;
+  --bg-soft: #f7f7f8;
+  --bg-panel: #fbfbfc;
+  --border: #ececf1;
+  --border-strong: #d9d9e3;
+  --text: #1f2329;
+  --muted: #8e8ea0;
+  --accent: #10a37f;
+
+  height: calc(100vh - var(--ifm-navbar-height, 60px));
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.app *,
+.app *::before,
+.app *::after {
+  box-sizing: border-box;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.ctlArrow {
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.ctlUploads {
+  align-self: flex-end;
+}
+.ctlSpacer {
+  flex: 1;
+  min-width: 8px;
+}
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.statusChip.ok {
+  background: #e2f3ee;
+  color: var(--accent);
+}
+.statusChip.err {
+  background: rgba(255, 92, 92, 0.12);
+  color: #d6453f;
+}
+
+.errorAlert {
+  margin: 12px 20px 0;
+}
+
+/* Main = panes (source | result) above a full-width log drawer */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.panes {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+.pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+.resultPane {
+  flex: 1;
+}
+.paneHead {
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Resizable splitters */
+.colSplit {
+  width: 7px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  position: relative;
+}
+.colSplit::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+  transform: translateX(-50%);
+}
+.colSplit:hover::after {
+  background: var(--accent);
+  width: 2px;
+}
+.editorWrap {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Result */
+.result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.resultEmpty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+.resultToolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 6px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+.resultTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.resultBody {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+.resultActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 996px) {
+  .app {
+    height: auto;
+    min-height: calc(100vh - var(--ifm-navbar-height, 60px));
+  }
+  .controls {
+    align-items: stretch;
+    padding: 12px 16px;
+  }
+  .ctlArrow,
+  .ctlSpacer {
+    display: none;
+  }
+  .panes {
+    flex-direction: column;
+  }
+  .pane {
+    min-height: 360px;
+    width: 100% !important;
+  }
+  .colSplit {
+    width: 100%;
+    height: 7px;
+    cursor: row-resize;
+  }
+  .colSplit::after {
+    left: 0;
+    right: 0;
+    top: 50%;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+}

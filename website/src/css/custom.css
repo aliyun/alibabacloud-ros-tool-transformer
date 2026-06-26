@@ -55,6 +55,7 @@ table th {
   padding-left: 0;
   padding-right: 0;
   width: 12rem;
+  text-align: center;
 }
 
 .footer.footer--dark .footer__bottom {

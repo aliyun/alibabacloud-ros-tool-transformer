@@ -9,10 +9,11 @@ dev: ## Start the Docusaurus development server.
 serve: build ## Build and serve the generated website locally.
 	npm run serve
 
-build: generate ## Generate supported-types docs and build the website.
+build: ## Generate derived assets and build the website.
 	npm run build
 
-generate: ## Generate supported-types docs.
+generate: ## Generate playground assets and supported-types docs.
+	python scripts/build_playground_assets.py
 	python scripts/generate_supported_types.py
 
 clean: ## Remove Docusaurus generated artifacts.

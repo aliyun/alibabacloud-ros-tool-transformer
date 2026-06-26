@@ -12,4 +12,8 @@ title: Introduction
 - Transforms **AlibabaCloud ROS** template to **Terraform** template.
 - Formats ROS template.
 
+Use the browser-only [Playground](/playground) for CloudFormation to ROS
+conversion and ROS formatting. For Terraform, Excel, ROS to Terraform and other
+full workflows, start the local web service with `rostran server start`.
+
 This project is developed in Python language and requires Python 3.9 or above.

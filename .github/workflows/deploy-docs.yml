@@ -8,7 +8,12 @@ on:
       - 'website/**'
       - '*.md'
       - '**/*.md'
-      - 'rostran/core/rule_manager.py'
+      - 'rostran/wasm.py'
+      - 'rostran/core/**'
+      - 'rostran/handlers/**'
+      - 'rostran/providers/__init__.py'
+      - 'rostran/providers/cloudformation/**'
+      - 'rostran/providers/ros/yaml_util.py'
       - 'rostran/rules/**'
 
 jobs:
@@ -43,9 +48,6 @@ jobs:
           python-version: '3.11'
       - name: Install Python dependencies
         run: python -m pip install -e .
-      - name: Generate supported-types docs
-        run: python scripts/generate_supported_types.py
-        working-directory: ./website
       - name: Build website
         run: npm run build
         working-directory: ./website

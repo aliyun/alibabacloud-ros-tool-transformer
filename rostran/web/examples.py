@@ -10,48 +10,100 @@ from typing import Dict, List, Optional
 _CFN_VPC = """\
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "A minimal VPC with a security group.",
+  "Description": "A VPC with a subnet and a security group that allows SSH.",
+  "Parameters": {
+    "VpcCidr": {
+      "Type": "String",
+      "Default": "192.168.0.0/16",
+      "Description": "CIDR block for the VPC."
+    },
+    "SubnetCidr": {
+      "Type": "String",
+      "Default": "192.168.1.0/24"
+    }
+  },
   "Resources": {
     "Vpc": {
       "Type": "AWS::EC2::VPC",
       "Properties": {
-        "CidrBlock": "192.168.0.0/16"
+        "CidrBlock": { "Ref": "VpcCidr" }
+      }
+    },
+    "Subnet": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "VpcId": { "Ref": "Vpc" },
+        "CidrBlock": { "Ref": "SubnetCidr" }
       }
     },
     "SecurityGroup": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
         "GroupDescription": "Allow SSH",
-        "VpcId": { "Ref": "Vpc" }
+        "VpcId": { "Ref": "Vpc" },
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 22,
+            "ToPort": 22,
+            "CidrIp": "0.0.0.0/0"
+          }
+        ]
       }
     }
   },
   "Outputs": {
     "VpcId": {
       "Value": { "Ref": "Vpc" }
+    },
+    "SubnetId": {
+      "Value": { "Ref": "Subnet" }
     }
   }
 }
 """
 
+# Deliberately scrambled (sections and keys out of canonical order, Properties
+# before Type) so the Format action produces a visibly reordered, normalized
+# template instead of an identical-looking one.
 _ROS_SIMPLE = """\
-ROSTemplateFormatVersion: '2015-09-01'
-Description: A simple ROS template with one ECS security group.
-Parameters:
-  VpcId:
-    Type: String
-    Description: The VPC to create the security group in.
-Resources:
-  SecurityGroup:
-    Type: ALIYUN::ECS::SecurityGroup
-    Properties:
-      VpcId:
-        Ref: VpcId
-      SecurityGroupName: web-sg
 Outputs:
   SecurityGroupId:
     Value:
       Ref: SecurityGroup
+  VpcId:
+    Value:
+      Ref: Vpc
+Resources:
+  SecurityGroup:
+    Properties:
+      SecurityGroupName: web-sg
+      VpcId:
+        Ref: Vpc
+    Type: ALIYUN::ECS::SecurityGroup
+  VSwitch:
+    Properties:
+      ZoneId:
+        Ref: ZoneId
+      VpcId:
+        Ref: Vpc
+      CidrBlock: 192.168.1.0/24
+    Type: ALIYUN::ECS::VSwitch
+  Vpc:
+    Type: ALIYUN::ECS::VPC
+    Properties:
+      CidrBlock: 192.168.0.0/16
+      VpcName: playground-vpc
+Parameters:
+  ZoneId:
+    Description: The zone to deploy the VSwitch in.
+    Type: String
+  VpcCidr:
+    Default: 192.168.0.0/16
+    Type: String
+    Description: CIDR block for the VPC.
+Description: A VPC with a VSwitch and a security group.
+ROSTemplateFormatVersion: '2015-09-01'
 """
 
 _TF_ALICLOUD = """\
@@ -74,7 +126,7 @@ resource "alicloud_security_group" "sg" {
 _EXAMPLES: List[Dict] = [
     {
         "id": "cloudformation-vpc",
-        "title": "CloudFormation: VPC + Security Group",
+        "title": "CloudFormation: VPC + Subnet + Security Group",
         "source_format": "cloudformation",
         "filename": "vpc.json",
         "language": "json",
@@ -82,7 +134,7 @@ _EXAMPLES: List[Dict] = [
     },
     {
         "id": "ros-simple",
-        "title": "ROS: Security Group (format / to Terraform)",
+        "title": "ROS: VPC + VSwitch + Security Group (format / to Terraform)",
         "source_format": "ros",
         "filename": "template.yml",
         "language": "yaml",
