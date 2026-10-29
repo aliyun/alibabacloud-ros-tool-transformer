@@ -274,18 +274,24 @@ class ResourceRule(Rule):
     def initialize_from_info(cls, path, data, version, type):
         resource_type = data.get(cls.RESOURCE_TYPE, {})
         if not isinstance(resource_type, dict):
-            InvalidRuleSchema(path=path, reason=f"{cls.RESOURCE} type should be dict")
+            raise InvalidRuleSchema(
+                path=path, reason=f"{cls.RESOURCE} type should be dict"
+            )
         rule_id = resource_type["From"]
         target_resource_type = resource_type.get("To")
         built_in_properties = resource_type.get("BuiltInProperties")
 
         properties = data.get(cls.PROPERTIES, {})
         if not isinstance(properties, dict):
-            InvalidRuleSchema(path=path, reason=f"{cls.PROPERTIES} type should be dict")
+            raise InvalidRuleSchema(
+                path=path, reason=f"{cls.PROPERTIES} type should be dict"
+            )
 
         attributes = data.get(cls.ATTRIBUTES, {})
         if not isinstance(attributes, dict):
-            InvalidRuleSchema(path=path, reason=f"{cls.ATTRIBUTES} type should be dict")
+            raise InvalidRuleSchema(
+                path=path, reason=f"{cls.ATTRIBUTES} type should be dict"
+            )
 
         handler_name = data.get(cls.HANDLER)
         handler_func = (
@@ -312,7 +318,7 @@ class PseudoParametersRule(Rule):
     def initialize_from_info(cls, path, data, version, type):
         pseudo_parameters = data.get(cls.PSEUDO_PARAMETERS, {})
         if not isinstance(pseudo_parameters, dict):
-            InvalidRuleSchema(
+            raise InvalidRuleSchema(
                 path=path, reason=f"{cls.PSEUDO_PARAMETERS} type should be dict"
             )
 
@@ -330,7 +336,9 @@ class FunctionRule(Rule):
     def initialize_from_info(cls, path, data, version, type):
         function = data.get(cls.FUNCTION, {})
         if not isinstance(function, dict):
-            InvalidRuleSchema(path=path, reason=f"{cls.FUNCTION} type should be dict")
+            raise InvalidRuleSchema(
+                path=path, reason=f"{cls.FUNCTION} type should be dict"
+            )
 
         rule_id = cls.FUNCTION
         return cls(version, type, rule_id, function)
@@ -348,7 +356,9 @@ class MetaDataRule(Rule):
     def initialize_from_info(cls, path, data, version, type):
         meta_data = data.get(cls.META_DATA, {})
         if not isinstance(meta_data, dict):
-            InvalidRuleSchema(path=path, reason=f"{cls.META_DATA} type should be dict")
+            raise InvalidRuleSchema(
+                path=path, reason=f"{cls.META_DATA} type should be dict"
+            )
 
         rule_id = cls.META_DATA
         return cls(version, type, rule_id, meta_data)
@@ -363,7 +373,7 @@ class AssociationPropertyRule(Rule):
     def initialize_from_info(cls, path, data, version, type):
         association_property = data.get(cls.ASSOCIATION_PROPERTY, {})
         if not isinstance(association_property, dict):
-            InvalidRuleSchema(
+            raise InvalidRuleSchema(
                 path=path, reason=f"{cls.ASSOCIATION_PROPERTY} type should be dict"
             )
 

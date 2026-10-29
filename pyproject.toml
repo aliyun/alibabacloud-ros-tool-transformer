@@ -72,6 +72,9 @@ dev = [
     "uvicorn[standard]>=0.29.0",
     "python-multipart>=0.0.9",
     "httpx",
+    "coverage>=7.6",
+    "setuptools>=64",
+    "tomli; python_version < '3.11'",
 ]
 
 [tool.setuptools.dynamic]
@@ -82,6 +85,14 @@ exclude = ["tests*"]
 
 [tool.setuptools.package-data]
 "rostran.web" = ["static/**/*", "static/*"]
+
+[tool.coverage.run]
+source = ["."]
+omit = ["tests/*", ".venv/*", "website/*", "rostran/wasm.py"]
+branch = true
+
+[tool.coverage.report]
+omit = ["website/*", "rostran/wasm.py"]
 
 [tool.ruff]
 target-version = "py39"

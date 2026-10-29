@@ -46,6 +46,8 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
+coverage.json
+frontend/coverage/
 *.cover
 .hypothesis/
 template.yml
