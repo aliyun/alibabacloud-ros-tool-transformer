@@ -16,6 +16,34 @@ permissions:
   contents: read
 
 jobs:
+  frontend-coverage:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: frontend
+      - name: Test frontend and enforce full coverage
+        run: npm run coverage
+        working-directory: frontend
+      - name: Enforce incremental frontend coverage
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          base="${PR_BASE:-$PUSH_BASE}"
+          if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            base="origin/$DEFAULT_BRANCH"
+          fi
+          python3 -m tools.check_frontend_coverage frontend/coverage/coverage-final.json --base "$base"
   test:
     strategy:
       matrix:
@@ -25,10 +53,29 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up uv
         uses: astral-sh/setup-uv@v4
       - name: Install dependencies
         run: uv sync --locked --extra dev --python ${{ matrix.python-version }}
       - name: Run tests
+        if: matrix.python-version != '3.12'
+        run: uv run --no-sync pytest tests
+      - name: Run tests with branch coverage
+        if: matrix.python-version == '3.12'
+        run: uv run --no-sync coverage run -m pytest tests
+      - name: Enforce coverage thresholds
+        if: matrix.python-version == '3.12'
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
-          uv run --no-sync pytest tests
+          uv run --no-sync coverage json -o coverage.json
+          uv run --no-sync coverage report -m
+          base="${PR_BASE:-$PUSH_BASE}"
+          if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            base="origin/$DEFAULT_BRANCH"
+          fi
+          uv run --no-sync python tools/check_coverage.py coverage.json --base "$base"

@@ -394,7 +394,7 @@ def handle_required_string(ros2tf: "ROS2TerraformTemplate", args):
 def base64_encode(ros2tf: "ROS2TerraformTemplate", args: Any):
     if not isinstance(args, tf.TerraformType):
         args = tf.QuotedString(args)
-    return tf.LiteralType(f"base64decode({args})")
+    return tf.LiteralType(f"base64encode({args})")
 
 
 def base64_decode(ros2tf: "ROS2TerraformTemplate", args: Any):

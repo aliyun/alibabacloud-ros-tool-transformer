@@ -143,8 +143,10 @@ def transform(
 
                 with open(source_path, "r") as f:
                     tpl = yaml.load(f)
-            except YAMLError:
-                raise exceptions.InvalidTemplate(path=source_path)
+            except YAMLError as exc:
+                raise exceptions.InvalidTemplate(
+                    reason=f"Cannot parse {source_path}: {exc}"
+                ) from exc
             ros_flag = tpl.get("ROSTemplateFormatVersion") == "2015-09-01"
             ros_tf = tpl.get("Transform")
             ros_tf_flag = False

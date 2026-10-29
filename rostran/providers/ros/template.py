@@ -12,7 +12,6 @@ from alibabacloud_credentials.exceptions import CredentialException
 from alibabacloud_tea_util.models import RuntimeOptions
 from collections import defaultdict
 from libterraform.exceptions import TerraformCommandError
-from ruamel import yaml
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_ros20190910.client import Client
 from alibabacloud_credentials.client import Client as CredClient
@@ -30,6 +29,7 @@ from rostran.core.format import FileFormat
 from rostran.core.reporter import ROS2TerraformReporter
 from rostran.core.terraform import TerraformRunner
 from rostran.providers.ros import functions
+from rostran.providers.ros.yaml_util import yaml
 from rostran.providers.terraform import template_blocks as tf
 from tools.utils import camel_to_tf
 

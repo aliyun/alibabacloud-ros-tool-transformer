@@ -350,8 +350,12 @@ class CloudFormationResource:
             self._handle_prop(prop)
 
     def _handle_prop(self, prop: dict):
+        raw_type = prop.get("type")
+        is_object = raw_type == "object" or (
+            isinstance(raw_type, list) and "object" in raw_type
+        )
         for k in list(prop):
-            if k == "required" and prop.get("type") == "object":
+            if k == "required" and is_object:
                 nk = ".RequiredList"
             else:
                 nk = "{}{}".format(k[0].upper(), k[1:])
