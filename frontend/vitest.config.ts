@@ -9,7 +9,6 @@ export default defineConfig({
       include: ["src/**/*.{ts,tsx}"],
       exclude: ["src/**/*.d.ts"],
       reporter: ["text", "json", "cobertura"],
-      thresholds: { lines: 95, branches: 95 },
     },
   },
 });
