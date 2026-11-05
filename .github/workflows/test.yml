@@ -44,6 +44,13 @@ jobs:
             base="origin/$DEFAULT_BRANCH"
           fi
           python3 -m tools.check_frontend_coverage frontend/coverage/coverage-final.json --base "$base"
+      - name: Save frontend coverage report
+        if: ${{ !cancelled() && hashFiles('frontend/coverage/cobertura-coverage.xml') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-frontend
+          path: frontend/coverage/cobertura-coverage.xml
+          if-no-files-found: error
       - name: Upload frontend coverage to Codecov
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: codecov/codecov-action@v5
@@ -90,6 +97,13 @@ jobs:
             base="origin/$DEFAULT_BRANCH"
           fi
           uv run --no-sync python tools/check_coverage.py coverage.json --base "$base"
+      - name: Save Python coverage report
+        if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('coverage.xml') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-python
+          path: coverage.xml
+          if-no-files-found: error
       - name: Upload Python coverage to Codecov
         if: matrix.python-version == '3.12' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
         uses: codecov/codecov-action@v5
