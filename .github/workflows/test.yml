@@ -2,15 +2,7 @@ name: Run Tests
 
 on:
   push:
-    paths-ignore:
-      - 'website/**'
-      - '*.md'
-      - '**/*.md'
   pull_request:
-    paths-ignore:
-      - 'website/**'
-      - '*.md'
-      - '**/*.md'
 
 permissions:
   contents: read
@@ -41,7 +33,6 @@ jobs:
           path: frontend/coverage/cobertura-coverage.xml
           if-no-files-found: error
       - name: Upload frontend coverage to Codecov
-        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -85,7 +76,7 @@ jobs:
           path: coverage.xml
           if-no-files-found: error
       - name: Upload Python coverage to Codecov
-        if: matrix.python-version == '3.12' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        if: matrix.python-version == '3.12'
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
