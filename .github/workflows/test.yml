@@ -32,8 +32,27 @@ jobs:
         run: npm ci
         working-directory: frontend
       - name: Test frontend and enforce 95% coverage
-        run: npm run coverage
+        run: npm run coverage -- --reporter=default --reporter=junit --outputFile=reports/testcase.xml
         working-directory: frontend
+      - name: Save frontend test results
+        if: ${{ !cancelled() && hashFiles('frontend/reports/testcase.xml') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut-test-results-frontend
+          path: frontend/reports/testcase.xml
+          if-no-files-found: error
+      - name: Upload frontend test results to Codecov
+        if: ${{ !cancelled() && hashFiles('frontend/reports/testcase.xml') != '' }}
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: aliyun/alibabacloud-ros-tool-transformer
+          report_type: test_results
+          files: frontend/reports/testcase.xml
+          flags: frontend
+          name: ut-test-results-frontend
+          disable_search: true
+          fail_ci_if_error: true
       - name: Enforce incremental frontend coverage
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
@@ -83,7 +102,26 @@ jobs:
         run: uv run --no-sync pytest tests
       - name: Run tests with branch coverage
         if: matrix.python-version == '3.12'
-        run: uv run --no-sync coverage run -m pytest tests
+        run: uv run --no-sync coverage run -m pytest tests --junitxml=reports/testcase.xml
+      - name: Save main test results
+        if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('reports/testcase.xml') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut-test-results-main
+          path: reports/testcase.xml
+          if-no-files-found: error
+      - name: Upload main test results to Codecov
+        if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('reports/testcase.xml') != '' }}
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: aliyun/alibabacloud-ros-tool-transformer
+          report_type: test_results
+          files: reports/testcase.xml
+          flags: main
+          name: ut-test-results-main
+          disable_search: true
+          fail_ci_if_error: true
       - name: Generate Python coverage reports
         if: matrix.python-version == '3.12'
         run: |

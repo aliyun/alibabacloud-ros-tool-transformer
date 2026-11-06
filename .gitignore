@@ -48,6 +48,8 @@ nosetests.xml
 coverage.xml
 coverage.json
 frontend/coverage/
+/reports/
+/frontend/reports/
 *.cover
 .hypothesis/
 template.yml
