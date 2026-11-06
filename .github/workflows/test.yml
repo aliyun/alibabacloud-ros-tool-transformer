@@ -24,16 +24,37 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
         working-directory: frontend
-      - name: Test frontend with coverage
+      - name: Test frontend and enforce 95% coverage
         run: npm run coverage
         working-directory: frontend
+      - name: Enforce incremental frontend coverage
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          base="${PR_BASE:-$PUSH_BASE}"
+          if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            base="origin/$DEFAULT_BRANCH"
+          fi
+          python3 -m tools.check_frontend_coverage frontend/coverage/coverage-final.json --base "$base"
       - name: Save frontend coverage report
-        if: ${{ !cancelled() && hashFiles('frontend/coverage/cobertura-coverage.xml') != '' }}
+        if: ${{ !cancelled() && hashFiles('frontend/coverage/coverage.xml') != '' }}
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-frontend
-          path: frontend/coverage/cobertura-coverage.xml
+          name: ut-coverage-frontend
+          path: frontend/coverage/coverage.xml
           if-no-files-found: error
+      - name: Upload frontend coverage to Codecov
+        if: ${{ !cancelled() && hashFiles('frontend/coverage/coverage.xml') != '' }}
+        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: aliyun/alibabacloud-ros-tool-transformer
+          files: frontend/coverage/coverage.xml
+          flags: frontend
+          disable_search: true
+          fail_ci_if_error: true
   test:
     strategy:
       matrix:
@@ -62,31 +83,32 @@ jobs:
           uv run --no-sync coverage json -o coverage.json
           uv run --no-sync coverage xml -o coverage.xml
           uv run --no-sync coverage report -m
+      - name: Enforce 95% Python coverage
+        if: matrix.python-version == '3.12'
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          base="${PR_BASE:-$PUSH_BASE}"
+          if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            base="origin/$DEFAULT_BRANCH"
+          fi
+          uv run --no-sync python tools/check_coverage.py coverage.json --base "$base"
       - name: Save Python coverage report
         if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('coverage.xml') != '' }}
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-python
+          name: ut-coverage-python
           path: coverage.xml
           if-no-files-found: error
-  codacy-coverage:
-    needs: [frontend-coverage, test]
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
+      - name: Upload Python coverage to Codecov
+        if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('coverage.xml') != '' }}
+        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-      - name: Download coverage reports
-        uses: actions/download-artifact@v4
-        with:
-          pattern: coverage-*
-          path: reports
-      - name: Upload coverage to Codacy
-        uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1.3.0
-        env:
-          CODACY_REPORTER_OPTIONS: --commit-uuid ${{ github.event.pull_request.head.sha || github.sha }}
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: reports/coverage-python/coverage.xml,reports/coverage-frontend/cobertura-coverage.xml
-          force-coverage-parser: cobertura
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: aliyun/alibabacloud-ros-tool-transformer
+          files: coverage.xml
+          flags: python
+          disable_search: true
+          fail_ci_if_error: true

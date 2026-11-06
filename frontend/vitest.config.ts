@@ -12,8 +12,9 @@ export default defineConfig({
       reporter: [
         "text",
         "json",
-        ["cobertura", { projectRoot: fileURLToPath(new URL("..", import.meta.url)) }],
+        ["cobertura", { file: "coverage.xml", projectRoot: fileURLToPath(new URL("..", import.meta.url)) }],
       ],
+      thresholds: { lines: 95, branches: 95 },
     },
   },
 });
