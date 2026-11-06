@@ -54,7 +54,7 @@ jobs:
           if-no-files-found: error
       - name: Upload frontend coverage to Codecov
         if: ${{ !cancelled() && hashFiles('frontend/coverage/coverage.xml') != '' }}
-        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: aliyun/alibabacloud-ros-tool-transformer
@@ -111,7 +111,7 @@ jobs:
           if-no-files-found: error
       - name: Upload Python coverage to Codecov
         if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('coverage.xml') != '' }}
-        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: aliyun/alibabacloud-ros-tool-transformer
