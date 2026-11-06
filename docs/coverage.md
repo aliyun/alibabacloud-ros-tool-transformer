@@ -10,15 +10,21 @@ Each independently tested component publishes one artifact named
 named `coverage.xml` at the archive root. Names do not include a branch, commit,
 runtime version, or date: those belong to the GitHub Actions run metadata.
 
+Component names describe responsibilities, not implementation languages. Every
+repository uses `main` for its primary production component, even if it has only
+one report. Separate application components use names such as `frontend`,
+`desktop`, `dsh-plugin`, and `vscode`. The bare name `ut-coverage` is not used.
+Codecov flags use the same component IDs as the artifact suffixes.
+
 The component names planned across the repositories are:
 
 | Repository | Artifacts |
 | --- | --- |
-| alibabacloud-ros-tool-transformer | `ut-coverage-python`, `ut-coverage-frontend` |
-| alibabacloud-ros-tool-iact3 | `ut-coverage-python`, `ut-coverage-frontend` |
-| iac-code | `ut-coverage-python`; `ut-coverage-desktop` if desktop coverage is collected separately |
-| infraguard | `ut-coverage-go` |
-| elastic-compute-control-cli | `ut-coverage-go` |
+| alibabacloud-ros-tool-transformer | `ut-coverage-main`, `ut-coverage-frontend` |
+| alibabacloud-ros-tool-iact3 | `ut-coverage-main`, `ut-coverage-frontend` |
+| iac-code | `ut-coverage-main`; `ut-coverage-desktop` if desktop coverage is collected separately |
+| infraguard | `ut-coverage-main` |
+| elastic-compute-control-cli | `ut-coverage-main` |
 
 Only Transformer is configured here. Other repositories must verify their
 covered components when adopting this convention.

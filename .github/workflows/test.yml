@@ -99,7 +99,7 @@ jobs:
         if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('coverage.xml') != '' }}
         uses: actions/upload-artifact@v4
         with:
-          name: ut-coverage-python
+          name: ut-coverage-main
           path: coverage.xml
           if-no-files-found: error
       - name: Upload Python coverage to Codecov
@@ -109,6 +109,6 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: aliyun/alibabacloud-ros-tool-transformer
           files: coverage.xml
-          flags: python
+          flags: main
           disable_search: true
           fail_ci_if_error: true
