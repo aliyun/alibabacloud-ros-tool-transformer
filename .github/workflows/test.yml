@@ -2,8 +2,15 @@ name: Run Tests
 
 on:
   push:
-    branches: [main]
+    paths-ignore:
+      - 'website/**'
+      - '*.md'
+      - '**/*.md'
   pull_request:
+    paths-ignore:
+      - 'website/**'
+      - '*.md'
+      - '**/*.md'
 
 permissions:
   contents: read
