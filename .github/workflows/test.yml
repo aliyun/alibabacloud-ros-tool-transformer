@@ -22,6 +22,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -30,7 +31,7 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
         working-directory: frontend
-      - name: Test frontend and enforce full coverage
+      - name: Test frontend and enforce 95% coverage
         run: npm run coverage
         working-directory: frontend
       - name: Enforce incremental frontend coverage
@@ -44,13 +45,20 @@ jobs:
             base="origin/$DEFAULT_BRANCH"
           fi
           python3 -m tools.check_frontend_coverage frontend/coverage/coverage-final.json --base "$base"
+      - name: Save frontend coverage report
+        if: ${{ !cancelled() && hashFiles('frontend/coverage/coverage.xml') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut-coverage-frontend
+          path: frontend/coverage/coverage.xml
+          if-no-files-found: error
       - name: Upload frontend coverage to Codecov
-        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        if: ${{ !cancelled() && hashFiles('frontend/coverage/coverage.xml') != '' }}
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: aliyun/alibabacloud-ros-tool-transformer
-          files: frontend/coverage/cobertura-coverage.xml
+          files: frontend/coverage/coverage.xml
           flags: frontend
           disable_search: true
           fail_ci_if_error: true
@@ -65,6 +73,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Set up uv
         uses: astral-sh/setup-uv@v4
       - name: Install dependencies
@@ -75,28 +84,62 @@ jobs:
       - name: Run tests with branch coverage
         if: matrix.python-version == '3.12'
         run: uv run --no-sync coverage run -m pytest tests
-      - name: Enforce coverage thresholds
+      - name: Generate Python coverage reports
+        if: matrix.python-version == '3.12'
+        run: |
+          uv run --no-sync coverage json -o coverage.json
+          uv run --no-sync coverage xml -o coverage.xml
+          uv run --no-sync coverage report -m
+      - name: Enforce 95% Python coverage
         if: matrix.python-version == '3.12'
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           PUSH_BASE: ${{ github.event.before }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
-          uv run --no-sync coverage json -o coverage.json
-          uv run --no-sync coverage xml -o coverage.xml
-          uv run --no-sync coverage report -m
           base="${PR_BASE:-$PUSH_BASE}"
           if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
             base="origin/$DEFAULT_BRANCH"
           fi
           uv run --no-sync python tools/check_coverage.py coverage.json --base "$base"
+      - name: Save Python coverage report
+        if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('coverage.xml') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut-coverage-main
+          path: coverage.xml
+          if-no-files-found: error
       - name: Upload Python coverage to Codecov
-        if: matrix.python-version == '3.12' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        if: ${{ !cancelled() && matrix.python-version == '3.12' && hashFiles('coverage.xml') != '' }}
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: aliyun/alibabacloud-ros-tool-transformer
           files: coverage.xml
-          flags: python
+          flags: main
           disable_search: true
           fail_ci_if_error: true
+  coverage-total:
+    needs: [frontend-coverage, test]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: ut-coverage-main
+          path: reports/main
+      - uses: actions/download-artifact@v4
+        with:
+          name: ut-coverage-frontend
+          path: reports/frontend
+      - name: Merge component coverage
+        run: python3 -m tools.merge_coverage --output coverage.xml reports/main/coverage.xml reports/frontend/coverage.xml
+      - name: Save total coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut-coverage
+          path: coverage.xml
+          if-no-files-found: error
