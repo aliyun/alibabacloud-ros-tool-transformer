@@ -23,6 +23,14 @@ The component names planned across the repositories are:
 Only Transformer is configured here. Other repositories must verify their
 covered components when adopting this convention.
 
+These are baseline report names, not a claim that every source component is
+covered. Elastic Compute Control CLI also has independent `dsh-plugin` tests;
+reserve `ut-coverage-dsh-plugin` when collecting their coverage. InfraGuard's
+Web and VS Code components currently have no coverage commands; future reports
+use `ut-coverage-frontend` and `ut-coverage-vscode`. Do not create empty artifacts
+or treat the Go report as coverage for those components. Documentation websites
+are not application UT coverage components.
+
 ## Programmatic inspection
 
 Select the relevant test workflow run and commit first, then download its reports:
