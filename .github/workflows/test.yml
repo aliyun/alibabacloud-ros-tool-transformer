@@ -112,3 +112,27 @@ jobs:
           flags: main
           disable_search: true
           fail_ci_if_error: true
+  coverage-total:
+    needs: [frontend-coverage, test]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: ut-coverage-main
+          path: reports/main
+      - uses: actions/download-artifact@v4
+        with:
+          name: ut-coverage-frontend
+          path: reports/frontend
+      - name: Merge component coverage
+        run: python3 -m tools.merge_coverage --output coverage.xml reports/main/coverage.xml reports/frontend/coverage.xml
+      - name: Save total coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ut-coverage
+          path: coverage.xml
+          if-no-files-found: error
